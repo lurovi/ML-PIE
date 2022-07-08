@@ -1,5 +1,6 @@
 #from config.setting import *
 import numpy as np
+import torch
 
 if __name__ == "__main__":
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
@@ -16,3 +17,5 @@ if __name__ == "__main__":
 
     t = type(256.24)
     print(t("234"))
+
+    print(type(torch.tensor([2,3,4])))

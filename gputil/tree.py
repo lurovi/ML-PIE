@@ -1,7 +1,7 @@
 import random
 import re
 from abc import ABC, abstractmethod
-import numpy as np
+from typing import Callable, Any, List
 
 # ==============================================================================================================
 # BUILDING BLOCKS
@@ -9,7 +9,7 @@ import numpy as np
 
 
 class Constant:
-    def __init__(self, name, val):
+    def __init__(self, name: str, val: Any):
         self.__name = name
         self.__val = val
         self.__type = type(self.__val)
@@ -26,12 +26,12 @@ class Constant:
     def type(self):
         return self.__type
 
-    def cast(self, val):
+    def cast(self, val: Any):
         return self.__type(val)
 
 
 class Ephemeral:
-    def __init__(self, name, func):
+    def __init__(self, name: str, func: Callable):
         self.__name = name
         self.__func = func
         self.__type = type(self.__func())
@@ -48,12 +48,12 @@ class Ephemeral:
     def type(self):
         return self.__type
 
-    def cast(self, val):
+    def cast(self, val: Any):
         return self.__type(val)
 
 
 class TerminalSet:
-    def __init__(self, feature_types, constants, ephemeral):
+    def __init__(self, feature_types: List[Any], constants: List[Constant], ephemeral: List[Ephemeral]):
         self.__num_features = len(feature_types)
         self.__num_constants = len(constants)
         self.__num_ephemeral = len(ephemeral)
@@ -77,7 +77,7 @@ class TerminalSet:
     def num_ephemeral(self):
         return self.__num_ephemeral
 
-    def get_constant_ephemeral(self, s_idx):
+    def get_constant_ephemeral(self, s_idx: str) -> Any:
         end_ind = s_idx.find(" ")
         ind = int(s_idx[1:end_ind])
         if s_idx[0] == "c":
@@ -87,26 +87,26 @@ class TerminalSet:
         elif s_idx[0] == "x":
             return self.__all_obj[ind]
 
-    def cast(self, s_idx):
+    def cast(self, s_idx: str) -> Any:
         objc = self.get_constant_ephemeral(s_idx)
         start_ind = s_idx.find(" ")
         return objc.cast(s_idx[(start_ind+1):])
 
     @staticmethod
-    def feature_id(s_idx):
+    def feature_id(s_idx: str) -> int:
         return int(s_idx[1:])
 
-    def sample(self):
+    def sample(self) -> str:
         ind = random.randint(0, len(self.__all_obj) - 1)
         return self.__extract(ind)
 
-    def sample_typed(self, provided_type):
+    def sample_typed(self, provided_type: Any) -> str:
         candidates = [i for i in range(len(self.__all_types)) if self.__all_types[i] == provided_type]
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__extract(ind)
 
-    def __extract(self, ind):
+    def __extract(self, ind: int) -> str:
         if self.__all_idx[ind][0] == "x" or self.__all_idx[ind][0] == "c":
             return self.__all_idx[ind]
         elif self.__all_idx[ind][0] == "e":
@@ -114,14 +114,18 @@ class TerminalSet:
 
 
 class Primitive:
-    def __init__(self, name, return_type, parameter_types, function):
-        if not(re.search(r'^[xce]\d+', name) is None):
+    def __init__(self, name: str, return_type: Any, parameter_types: List[Any], function: Callable):
+        if not(Primitive.check_valid_primitive_name(name)):
             raise AttributeError(f"Invalid name. {name} is not a valid name for a primitive. Please avoid starting the name with either x or c or e followed by a number.")
         self.__name = name
         self.__arity = len(parameter_types)
         self.__return_type = return_type
         self.__parameter_types = parameter_types
         self.__function = function
+
+    @staticmethod
+    def check_valid_primitive_name(s: str) -> bool:
+        return re.search(r'^[xce]\d+', s) is None
 
     def __str__(self):
         return f"{self.__name} : {self.__parameter_types} --> {self.__return_type}"
@@ -146,9 +150,11 @@ class Primitive:
 
 
 class PrimitiveSet:
-    def __init__(self, primitives, return_type):
+    def __init__(self, primitives: List[Primitive], return_type: Any):
         self.__primitive_dict = {p.name(): p for p in primitives}
+        self.__primitive_idx = {primitives[i].name(): i for i in range(len(primitives))}
         self.__primitives = primitives
+        self.__primitive_names = [p.name() for p in primitives]
         self.__num_primitives = len(primitives)
         self.__return_type = return_type
 
@@ -158,142 +164,46 @@ class PrimitiveSet:
     def __len__(self):
         return self.__num_primitives
 
+    def primitive_names(self):
+        return self.__primitive_names
+
     def num_primitives(self):
         return self.__num_primitives
 
     def return_type(self):
         return self.__return_type
 
-    def get_primitive(self, name):
+    def get_primitive(self, name: str) -> Primitive:
         return self.__primitive_dict[name]
 
-    def sample(self):
+    def get_primitive_idx(self, name: str) -> Primitive:
+        return self.__primitive_idx[name]
+
+    def sample(self) -> Primitive:
         ind = random.randint(0, len(self.__primitives) - 1)
         return self.__primitives[ind]
 
-    def sample_root(self):
+    def sample_root(self) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == self.__return_type]
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
-    def sample_typed(self, provided_type):
+    def sample_typed(self, provided_type: Any) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == provided_type]
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
-    def sample_parameter_typed(self, provided_types):
+    def sample_parameter_typed(self, provided_types: Any) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].parameter_types() == provided_types]
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
-    def is_primitive(self, s_idx):
+    def is_primitive(self, s_idx: str) -> bool:
         names = [p.name() for p in self.__primitives]
         return s_idx in names
-
-
-# ==============================================================================================================
-# RANDOM TREE GENERATOR
-# ==============================================================================================================
-
-def gen_half_half(primitive_set, terminal_set, max_degree, min_height=2, max_height=5):
-    ind = random.randint(0, 1)
-    if ind == 0:
-        return gen_full(primitive_set, terminal_set, max_degree, min_height, max_height)
-    else:
-        return gen_grow(primitive_set, terminal_set, max_degree, min_height, max_height)
-
-
-def gen_full(primitive_set, terminal_set, max_degree, min_height=2, max_height=5):
-    if not (min_height <= max_height):
-        raise AttributeError("Min height must be less than or equal to max height.")
-    if min_height <= 1:
-        raise AttributeError("Min height must be a positive number of at least 2.")
-    if min_height == max_height:
-        height = min_height
-    else:
-        height = random.randint(min_height, max_height)
-    tree = [[primitive_set.sample_root().name()]]
-    for layer_ind in range(1, height):
-        curr_layer = [""]*(max_degree**layer_ind)
-        previous_layer = tree[layer_ind - 1]
-        parents = [(iii, primitive_set.get_primitive(previous_layer[iii])) for iii in range(len(previous_layer)) if previous_layer[iii] != ""]
-        for parent_ind, parent_pr in parents:
-            start_ind = parent_ind * max_degree
-            for t in parent_pr.parameter_types():
-                if layer_ind == height - 1:
-                    curr_layer[start_ind] = terminal_set.sample_typed(t)
-                else:
-                    curr_layer[start_ind] = primitive_set.sample_typed(t).name()
-                start_ind += 1
-        tree.append(curr_layer)
-    for layer_ind in range(height, max_height):
-        tree.append([""]*(max_degree**layer_ind))
-    return PrimitiveTree(max_degree, max_height, tree)
-
-
-def gen_grow(primitive_set, terminal_set, max_degree, min_height=2, max_height=5):
-    if not (min_height <= max_height):
-        raise AttributeError("Min height must be less than or equal to max height.")
-    if min_height <= 1:
-        raise AttributeError("Min height must be a positive number of at least 2.")
-    if min_height == max_height:
-        height = min_height
-    else:
-        height = random.randint(min_height, max_height)
-    tree = [[primitive_set.sample_root().name()]]
-    expand = [[True]]
-    isMinHeightReached = False
-    for layer_ind in range(1, height):
-        curr_layer = [""] * (max_degree ** layer_ind)
-        curr_expand = [False] * (max_degree ** layer_ind)
-        if layer_ind + 1 == min_height:
-            isMinHeightReached = True
-        previous_layer = tree[layer_ind - 1]
-        previous_expand = expand[layer_ind - 1]
-        parents = [(iii, previous_expand[iii], primitive_set.get_primitive(previous_layer[iii])) for iii in range(len(previous_layer)) if previous_layer[iii] != "" and primitive_set.is_primitive(previous_layer[iii])]
-        if not(isMinHeightReached):
-            to_expand_necesserly = random.randint(0, len(parents) - 1)
-        else:
-            to_expand_necesserly = -1
-        for p_i in range(len(parents)):
-            parent_ind = parents[p_i][0]
-            parent_exp = parents[p_i][1]
-            parent_pr = parents[p_i][2]
-            start_ind = parent_ind * max_degree
-            parameter_types = parent_pr.parameter_types()
-            to_expand_necesserly_param = random.randint(0, len(parameter_types) - 1)
-            for t_i in range(len(parameter_types)):
-                t = parameter_types[t_i]
-                if layer_ind == height - 1:
-                    curr_layer[start_ind] = terminal_set.sample_typed(t)
-                    curr_expand[start_ind] = False
-                else:
-                    if parent_exp:
-                        if random.random() <= 0.30:
-                            curr_layer[start_ind] = terminal_set.sample_typed(t)
-                            curr_expand[start_ind] = False
-                        else:
-                            curr_layer[start_ind] = primitive_set.sample_typed(t).name()
-                            if random.random() < 0.50:
-                                curr_expand[start_ind] = True
-                            else:
-                                curr_expand[start_ind] = False
-                    elif to_expand_necesserly == p_i and to_expand_necesserly_param == t_i:
-                        curr_layer[start_ind] = primitive_set.sample_typed(t).name()
-                        curr_expand[start_ind] = True
-                    else:
-                        curr_layer[start_ind] = terminal_set.sample_typed(t)
-                        curr_expand[start_ind] = False
-                start_ind += 1
-        tree.append(curr_layer)
-        expand.append(curr_expand)
-    for layer_ind in range(height, max_height):
-        tree.append([""]*(max_degree**layer_ind))
-    return PrimitiveTree(max_degree, max_height, tree)
-
 
 # ==============================================================================================================
 # TREE
@@ -301,7 +211,7 @@ def gen_grow(primitive_set, terminal_set, max_degree, min_height=2, max_height=5
 
 
 class AbstractTree(ABC):
-    def __init__(self, max_degree, max_depth):
+    def __init__(self, max_degree: int, max_depth: int):
         self.__max_degree = max_degree
         self.__max_depth = max_depth
 
@@ -311,8 +221,12 @@ class AbstractTree(ABC):
                 self.__max_breadth = self.__max_degree ** i
             self.__max_number_of_nodes += self.__max_degree ** i
 
-    def print(self):
-        print(self.__str__())
+    def print_as_text(self):
+        return self.__str__()
+
+    @abstractmethod
+    def print_as_tree(self):
+        pass
 
     def max_degree(self):
         return self.__max_degree
@@ -327,7 +241,7 @@ class AbstractTree(ABC):
         return self.__max_breadth
 
     @abstractmethod
-    def layer(self, layer_ind):
+    def layer(self, layer_ind: int):
         pass
 
     @abstractmethod
@@ -339,7 +253,7 @@ class AbstractTree(ABC):
         pass
 
     @abstractmethod
-    def number_of_nodes_at_layer(self, layer_ind):
+    def number_of_nodes_at_layer(self, layer_ind: int):
         pass
 
     @abstractmethod
@@ -367,45 +281,71 @@ class AbstractTree(ABC):
         pass
 
     @abstractmethod
-    def node(self, layer_ind, node_ind):
+    def node(self, layer_ind: int, node_ind: int):
         pass
 
     @abstractmethod
-    def is_leaf(self, layer_ind, node_ind):
+    def is_leaf(self, layer_ind: int, node_ind: int):
         pass
 
     @abstractmethod
-    def siblings(self, layer_ind, node_ind):
+    def siblings(self, layer_ind: int, node_ind: int):
         pass
 
     @abstractmethod
-    def children(self, layer_ind, node_ind):
+    def children(self, layer_ind: int, node_ind: int):
         pass
 
     @abstractmethod
-    def parent(self, layer_ind, node_ind):
+    def parent(self, layer_ind: int, node_ind: int):
         pass
 
 
 class PrimitiveTree(AbstractTree):
-    def __init__(self, max_degree, max_depth, data):
+    def __init__(self, max_degree: int, max_depth: int, data: List[List[str]], primitive_set: PrimitiveSet, terminal_set: TerminalSet):
         super().__init__(max_degree, max_depth)
-        # [ ["+"],
-        # ["+", "*"],
-        # ["-", "x3", "c2 20", "^2"],
+        #    [ ["+"],
+        #   ["+", "*"],
+        #  ["-", "x3", "c2 20", "^2"],
         # ["x0", "x5", "", "", "", "", "e0 0.24535563", ""] ]
         self.__tree = data
+        self.__primitive_set = primitive_set
+        self.__terminal_set = terminal_set
+
+    def primitive_set(self):
+        return self.__primitive_set
+
+    def terminal_set(self):
+        return self.__terminal_set
 
     def __len__(self):
         return self.number_of_nodes()
 
     def __str__(self):
+        s = "  "
+        stack = [(0, 0, self.layer(0)[0])]
+        while len(stack) > 0:
+            val = stack.pop()
+            if type(val) == str:
+                s += val + "  "
+            else:
+                curr_i, curr_j, curr_val = val
+                children = self.children(curr_i, curr_j)
+                s += curr_val + "  "
+                if len(children) != 0:
+                    stack.append(")")
+                    for iii in reversed(range(len(children))):
+                        stack.append(children[iii])
+                    stack.append("(")
+        return s
+
+    def print_as_tree(self):
         s = ""
         n_indent = self.depth()-1
         s += "\n"
         for i in range(self.depth()):
             for _ in range(n_indent):
-                s += "\t"
+                s += " "
             n_indent -= 1
             curr_layer = self.layer(i)
             curr_elem = ["["+elem+"]\t" for elem in curr_layer if elem != ""]
@@ -414,16 +354,16 @@ class PrimitiveTree(AbstractTree):
             s += "\n"
         return s
 
-    def __check_layer_index_with_max_depth(self, layer_ind):
+    def __check_layer_index_with_max_depth(self, layer_ind: int):
         if not(0 <= layer_ind < self.max_depth()):
             raise IndexError(f"{layer_ind} is out of range as layer index.")
 
-    def __check_layer_index_with_actual_depth(self, layer_ind):
+    def __check_layer_index_with_actual_depth(self, layer_ind: int):
         if not(0 <= layer_ind < self.depth()):
             raise IndexError(f"{layer_ind} is out of range as layer index.")
 
-    def layer(self, layer_ind):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+    def layer(self, layer_ind: int):
+        self.__check_layer_index_with_max_depth(layer_ind)
         return self.__tree[layer_ind]
 
     def root(self):
@@ -436,7 +376,7 @@ class PrimitiveTree(AbstractTree):
             n_nodes += sum([1 if n != "" else 0 for n in nodes])
         return n_nodes
 
-    def number_of_nodes_at_layer(self, layer_ind):
+    def number_of_nodes_at_layer(self, layer_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         return sum([1 if n != "" else 0 for n in self.layer(layer_ind)])
 
@@ -494,7 +434,7 @@ class PrimitiveTree(AbstractTree):
                     internal_nodes.append(curr_layer[ind[j]])
         return internal_nodes
 
-    def node(self, layer_ind, node_ind):
+    def node(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
@@ -504,10 +444,10 @@ class PrimitiveTree(AbstractTree):
         curr_node = elem[node_ind]
         return curr_node
 
-    def is_leaf(self, layer_ind, node_ind):
+    def is_leaf(self, layer_ind: int, node_ind: int):
         return len(self.children(layer_ind, node_ind)) == 0
 
-    def siblings(self, layer_ind, node_ind):
+    def siblings(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
@@ -517,35 +457,179 @@ class PrimitiveTree(AbstractTree):
         curr_node = elem[node_ind]
         return elem[:node_ind], curr_node, elem[(node_ind+1):]
 
-    def children(self, layer_ind, node_ind):
+    def children(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         if layer_ind == self.depth() - 1:
             return []
         curr_layer = self.layer(layer_ind)
         next_layer = self.layer(layer_ind + 1)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        next_elem_ind = [iii for iii in range(len(next_layer)) if next_layer[iii] != ""]
         if not (0 <= node_ind < len(elem_ind)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         ind = elem_ind[node_ind]
         children = []
         start_ind = self.max_degree() * ind
+        relative_ind = -1
         for i in range(start_ind, start_ind + self.max_degree()):
-            if next_layer[i] != 0:
-                children.append(next_layer[i])
+            if next_layer[i] != "":
+                for iii in range(len(next_elem_ind)):
+                    if next_elem_ind[iii] == i:
+                        relative_ind = iii
+                        break
+                children.append((layer_ind + 1, relative_ind, next_layer[i]))
         return children
 
-    def parent(self, layer_ind, node_ind):
+    def parent(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         if layer_ind == 0:
             return None
         curr_layer = self.layer(layer_ind)
         previous_layer = self.layer(layer_ind - 1)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        previous_elem_ind = [iii for iii in range(len(previous_layer)) if previous_layer[iii] != ""]
         if not (0 <= node_ind < len(elem_ind)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         ind_of_node = elem_ind[node_ind]
         curr_ind = ind_of_node//self.max_degree()
-        return previous_layer[curr_ind]
+        relative_ind = -1
+        for iii in range(len(previous_elem_ind)):
+            if previous_elem_ind[iii] == curr_ind:
+                relative_ind = iii
+                break
+        return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
+
+    def compile(self, x: List):
+        tre = self.__tree.copy()
+        for layer_ind in reversed(range(self.depth()-1)):
+            curr_layer = tre[layer_ind]
+            next_layer = tre[layer_ind + 1]
+            elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != "" and self.__primitive_set.is_primitive(curr_layer[iii])]
+            # next_elem_ind = [iii for iii in range(len(next_layer)) if next_layer[iii] != ""]
+            for i in range(len(elem_ind)):
+                curr_ind = elem_ind[i]
+                children = []
+                start_ind = self.max_degree() * curr_ind
+                end_ind = start_ind + self.max_degree()
+                for j in range(start_ind, end_ind):
+                    child = next_layer[j]
+                    if next_layer[j] != "":
+                        if isinstance(child, str) and not(Primitive.check_valid_primitive_name(child)):
+                            child = child.strip()
+                            if not(re.search(r'^x\d+', child) is None):
+                                children.append(x[int(child[1:])])
+                            elif not(re.search(r'^[ce]\d+\s', child) is None):
+                                children.append(self.__terminal_set.cast(child))
+                            else:
+                                children.append(child)
+                        elif isinstance(child, str):
+                            children.append(child.strip())
+                        else:
+                            children.append(child)
+                tre[layer_ind][curr_ind] = self.__primitive_set.get_primitive(tre[layer_ind][curr_ind])(*children)
+        return tre[0][0]
+
+
+# ==============================================================================================================
+# RANDOM TREE GENERATOR
+# ==============================================================================================================
+
+
+def gen_half_half(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+    ind = random.randint(0, 1)
+    if ind == 0:
+        return gen_full(primitive_set, terminal_set, max_degree, min_height, max_height)
+    else:
+        return gen_grow(primitive_set, terminal_set, max_degree, min_height, max_height)
+
+
+def gen_full(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+    if not (min_height <= max_height):
+        raise AttributeError("Min height must be less than or equal to max height.")
+    if min_height <= 1:
+        raise AttributeError("Min height must be a positive number of at least 2.")
+    if min_height == max_height:
+        height = min_height
+    else:
+        height = random.randint(min_height, max_height)
+    tree = [[primitive_set.sample_root().name()]]
+    for layer_ind in range(1, height):
+        curr_layer = [""]*(max_degree**layer_ind)
+        previous_layer = tree[layer_ind - 1]
+        parents = [(iii, primitive_set.get_primitive(previous_layer[iii])) for iii in range(len(previous_layer)) if previous_layer[iii] != ""]
+        for parent_ind, parent_pr in parents:
+            start_ind = parent_ind * max_degree
+            for t in parent_pr.parameter_types():
+                if layer_ind == height - 1:
+                    curr_layer[start_ind] = terminal_set.sample_typed(t)
+                else:
+                    curr_layer[start_ind] = primitive_set.sample_typed(t).name()
+                start_ind += 1
+        tree.append(curr_layer)
+    for layer_ind in range(height, max_height):
+        tree.append([""]*(max_degree**layer_ind))
+    return PrimitiveTree(max_degree, max_height, tree, primitive_set, terminal_set)
+
+
+def gen_grow(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+    if not (min_height <= max_height):
+        raise AttributeError("Min height must be less than or equal to max height.")
+    if min_height <= 1:
+        raise AttributeError("Min height must be a positive number of at least 2.")
+    if min_height == max_height:
+        height = min_height
+    else:
+        height = random.randint(min_height, max_height)
+    tree = [[primitive_set.sample_root().name()]]
+    expand = [[True]]
+    isMinHeightReached = False
+    for layer_ind in range(1, height):
+        curr_layer = [""] * (max_degree ** layer_ind)
+        curr_expand = [False] * (max_degree ** layer_ind)
+        if layer_ind + 1 == min_height:
+            isMinHeightReached = True
+        previous_layer = tree[layer_ind - 1]
+        previous_expand = expand[layer_ind - 1]
+        parents = [(iii, previous_expand[iii], primitive_set.get_primitive(previous_layer[iii])) for iii in range(len(previous_layer)) if previous_layer[iii] != "" and primitive_set.is_primitive(previous_layer[iii])]
+        if not(isMinHeightReached):
+            to_expand_necesserly = random.randint(0, len(parents) - 1)
+        else:
+            to_expand_necesserly = -1
+        for p_i in range(len(parents)):
+            parent_ind = parents[p_i][0]
+            parent_exp = parents[p_i][1]
+            parent_pr = parents[p_i][2]
+            start_ind = parent_ind * max_degree
+            parameter_types = parent_pr.parameter_types()
+            to_expand_necesserly_param = random.randint(0, len(parameter_types) - 1)
+            for t_i in range(len(parameter_types)):
+                t = parameter_types[t_i]
+                if layer_ind == height - 1:
+                    curr_layer[start_ind] = terminal_set.sample_typed(t)
+                    curr_expand[start_ind] = False
+                else:
+                    if parent_exp:
+                        if random.random() <= 0.20:
+                            curr_layer[start_ind] = terminal_set.sample_typed(t)
+                            curr_expand[start_ind] = False
+                        else:
+                            curr_layer[start_ind] = primitive_set.sample_typed(t).name()
+                            if random.random() < 0.50:
+                                curr_expand[start_ind] = True
+                            else:
+                                curr_expand[start_ind] = False
+                    elif to_expand_necesserly == p_i and to_expand_necesserly_param == t_i:
+                        curr_layer[start_ind] = primitive_set.sample_typed(t).name()
+                        curr_expand[start_ind] = True
+                    else:
+                        curr_layer[start_ind] = terminal_set.sample_typed(t)
+                        curr_expand[start_ind] = False
+                start_ind += 1
+        tree.append(curr_layer)
+        expand.append(curr_expand)
+    for layer_ind in range(height, max_height):
+        tree.append([""]*(max_degree**layer_ind))
+    return PrimitiveTree(max_degree, max_height, tree, primitive_set, terminal_set)
 
 
 if __name__ == "__main__":
@@ -555,16 +639,19 @@ if __name__ == "__main__":
     terminal_set_0 = TerminalSet([float]*10, constants_0, ephemeral_0)
 
     primitives_0 = [Primitive("+", float, [float, float], lambda x, y: x + y),
-                  Primitive("-", float, [float, float], lambda x, y: x - y),
-                  Primitive("*", float, [float, float], lambda x, y: x * y),
-                  Primitive("^2", float, [float], lambda x: x ** 2),
-                  Primitive("*2", float, [float], lambda x: x * 2.0),
-                  Primitive("/2", float, [float], lambda x: x / 2.0),
-                  Primitive("*3", float, [float], lambda x: x * 3.0),
-                  Primitive("/3", float, [float], lambda x: x / 3.0)
-                  ]
+                    Primitive("-", float, [float, float], lambda x, y: x - y),
+                    Primitive("*", float, [float, float], lambda x, y: x * y),
+                    Primitive("^2", float, [float], lambda x: x ** 2),
+                    Primitive("*2", float, [float], lambda x: x * 2.0),
+                    Primitive("/2", float, [float], lambda x: x / 2.0),
+                    Primitive("*3", float, [float], lambda x: x * 3.0),
+                    Primitive("/3", float, [float], lambda x: x / 3.0)
+                    ]
 
     primitive_set_0 = PrimitiveSet(primitives_0, float)
 
-    gen_half_half(primitive_set_0, terminal_set_0, 2, 2, 5).print()
-
+    tr = gen_half_half(primitive_set_0, terminal_set_0, 2, 2, 5)
+    print(tr.print_as_tree())
+    print("\n\n\n")
+    print(tr)
+    print(tr.compile([3, 2, 4, 5, 6, 1, 2, 7, 4, 7]))
