@@ -10,3 +10,9 @@ if __name__ == "__main__":
     print(a[5:])
 
     print(np.array([]))
+
+    s = "ytuu"+""+"gdfgdf"+"\n"+"hyht"+"\t\t"+"def"+"dsf\t\t"+"abc"+"\n"
+    print(s.find("d"))
+
+    t = type(256.24)
+    print(t("234"))
