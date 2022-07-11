@@ -19,3 +19,6 @@ if __name__ == "__main__":
     print(t("234"))
 
     print(type(torch.tensor([2,3,4])))
+
+    print("abc\n")
+    print("abcc")

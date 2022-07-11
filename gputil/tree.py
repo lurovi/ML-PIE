@@ -157,12 +157,16 @@ class PrimitiveSet:
         self.__primitive_names = [p.name() for p in primitives]
         self.__num_primitives = len(primitives)
         self.__return_type = return_type
+        self.__max_arity = max([p.arity() for p in primitives])
 
     def __str__(self):
         return f"N. Primitives: {self.__num_primitives} - Return type: {self.__return_type}."
 
     def __len__(self):
         return self.__num_primitives
+
+    def max_arity(self):
+        return self.__max_arity
 
     def primitive_names(self):
         return self.__primitive_names
@@ -210,35 +214,12 @@ class PrimitiveSet:
 # ==============================================================================================================
 
 
-class AbstractTree(ABC):
-    def __init__(self, max_degree: int, max_depth: int):
-        self.__max_degree = max_degree
-        self.__max_depth = max_depth
-
-        self.__max_number_of_nodes = 0
-        for i in range(self.__max_depth):
-            if i == self.__max_depth - 1:
-                self.__max_breadth = self.__max_degree ** i
-            self.__max_number_of_nodes += self.__max_degree ** i
-
-    def print_as_text(self):
-        return self.__str__()
+'''
+class AbstractTree(ABC):      
 
     @abstractmethod
     def print_as_tree(self):
         pass
-
-    def max_degree(self):
-        return self.__max_degree
-
-    def max_depth(self):
-        return self.__max_depth
-
-    def max_number_of_nodes(self):
-        return self.__max_number_of_nodes
-
-    def max_breadth(self):
-        return self.__max_breadth
 
     @abstractmethod
     def layer(self, layer_ind: int):
@@ -246,6 +227,10 @@ class AbstractTree(ABC):
 
     @abstractmethod
     def root(self):
+        pass
+
+    @abstractmethod
+    def flatten(self):
         pass
 
     @abstractmethod
@@ -299,11 +284,20 @@ class AbstractTree(ABC):
     @abstractmethod
     def parent(self, layer_ind: int, node_ind: int):
         pass
+'''
 
 
-class PrimitiveTree(AbstractTree):
-    def __init__(self, max_degree: int, max_depth: int, data: List[List[str]], primitive_set: PrimitiveSet, terminal_set: TerminalSet):
-        super().__init__(max_degree, max_depth)
+class PrimitiveTree:
+    def __init__(self, data: List[List[str]], primitive_set: PrimitiveSet, terminal_set: TerminalSet):
+        self.__max_degree = primitive_set.max_arity()
+        self.__max_depth = len(data)
+
+        self.__max_number_of_nodes = 0
+        for i in range(self.__max_depth):
+            if i == self.__max_depth - 1:
+                self.__max_breadth = self.__max_degree ** i
+            self.__max_number_of_nodes += self.__max_degree ** i
+
         #    [ ["+"],
         #   ["+", "*"],
         #  ["-", "x3", "c2 20", "^2"],
@@ -311,6 +305,18 @@ class PrimitiveTree(AbstractTree):
         self.__tree = data
         self.__primitive_set = primitive_set
         self.__terminal_set = terminal_set
+
+    def max_degree(self):
+        return self.__max_degree
+
+    def max_depth(self):
+        return self.__max_depth
+
+    def max_number_of_nodes(self):
+        return self.__max_number_of_nodes
+
+    def max_breadth(self):
+        return self.__max_breadth
 
     def primitive_set(self):
         return self.__primitive_set
@@ -320,6 +326,9 @@ class PrimitiveTree(AbstractTree):
 
     def __len__(self):
         return self.number_of_nodes()
+
+    def print_as_text(self):
+        return self.__str__()
 
     def __str__(self):
         s = "  "
@@ -369,12 +378,41 @@ class PrimitiveTree(AbstractTree):
     def root(self):
         return self.__tree[0][0]
 
+    def flatten(self):
+        tre = []
+        for i in range(self.depth()):
+            curr_layer = self.layer(i)
+            tre.append([n for n in curr_layer if n != ""])
+        return tre
+
     def number_of_nodes(self):
         n_nodes = 0
         for i in range(self.max_depth()):
             nodes = self.layer(i)
             n_nodes += sum([1 if n != "" else 0 for n in nodes])
         return n_nodes
+
+    def count_primitives(self):
+        dic = {}
+        for p in self.primitive_set().primitive_names():
+            dic[p] = 0.0
+            for p0 in self.primitive_set().primitive_names():
+                lp = sorted([p, p0])
+                dic[(lp[0], lp[1])] = 0.0
+
+        for layer_ind in range(self.depth()):
+            curr_layer = self.layer(layer_ind)
+            elem = [curr_layer[i] for i in range(len(curr_layer)) if curr_layer[i] != ""]
+            prim = []
+            for i in range(len(elem)):
+                if self.primitive_set().is_primitive(elem[i]):
+                    prim.append((elem[i], [child[2] for child in self.children(layer_ind, i) if self.primitive_set().is_primitive(child[2])]))
+            for pr, child in prim:
+                dic[pr] += 1.0
+                for c in child:
+                    lp = sorted([pr, c])
+                    dic[(lp[0], lp[1])] += 1.0
+        return dic
 
     def number_of_nodes_at_layer(self, layer_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
@@ -500,12 +538,11 @@ class PrimitiveTree(AbstractTree):
         return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
 
     def compile(self, x: List):
-        tre = self.__tree.copy()
+        tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
         for layer_ind in reversed(range(self.depth()-1)):
             curr_layer = tre[layer_ind]
             next_layer = tre[layer_ind + 1]
             elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != "" and self.__primitive_set.is_primitive(curr_layer[iii])]
-            # next_elem_ind = [iii for iii in range(len(next_layer)) if next_layer[iii] != ""]
             for i in range(len(elem_ind)):
                 curr_ind = elem_ind[i]
                 children = []
@@ -535,15 +572,16 @@ class PrimitiveTree(AbstractTree):
 # ==============================================================================================================
 
 
-def gen_half_half(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+def gen_half_half(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height: int, max_height: int) -> PrimitiveTree:
     ind = random.randint(0, 1)
     if ind == 0:
-        return gen_full(primitive_set, terminal_set, max_degree, min_height, max_height)
+        return gen_full(primitive_set, terminal_set, min_height, max_height)
     else:
-        return gen_grow(primitive_set, terminal_set, max_degree, min_height, max_height)
+        return gen_grow(primitive_set, terminal_set, min_height, max_height)
 
 
-def gen_full(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+def gen_full(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height: int, max_height: int) -> PrimitiveTree:
+    max_degree = primitive_set.max_arity()
     if not (min_height <= max_height):
         raise AttributeError("Min height must be less than or equal to max height.")
     if min_height <= 1:
@@ -568,10 +606,11 @@ def gen_full(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree:
         tree.append(curr_layer)
     for layer_ind in range(height, max_height):
         tree.append([""]*(max_degree**layer_ind))
-    return PrimitiveTree(max_degree, max_height, tree, primitive_set, terminal_set)
+    return PrimitiveTree(tree, primitive_set, terminal_set)
 
 
-def gen_grow(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree: int, min_height: int = 2, max_height: int = 5) -> PrimitiveTree:
+def gen_grow(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height: int, max_height: int) -> PrimitiveTree:
+    max_degree = primitive_set.max_arity()
     if not (min_height <= max_height):
         raise AttributeError("Min height must be less than or equal to max height.")
     if min_height <= 1:
@@ -629,29 +668,4 @@ def gen_grow(primitive_set: PrimitiveSet, terminal_set: TerminalSet, max_degree:
         expand.append(curr_expand)
     for layer_ind in range(height, max_height):
         tree.append([""]*(max_degree**layer_ind))
-    return PrimitiveTree(max_degree, max_height, tree, primitive_set, terminal_set)
-
-
-if __name__ == "__main__":
-    constants_0 = [Constant("five", 5.0), Constant("ten", 10.0)]
-    ephemeral_0 = [Ephemeral("epm0", lambda: random.random()), Ephemeral("epm1", lambda: float(random.randint(0, 5)))]
-
-    terminal_set_0 = TerminalSet([float]*10, constants_0, ephemeral_0)
-
-    primitives_0 = [Primitive("+", float, [float, float], lambda x, y: x + y),
-                    Primitive("-", float, [float, float], lambda x, y: x - y),
-                    Primitive("*", float, [float, float], lambda x, y: x * y),
-                    Primitive("^2", float, [float], lambda x: x ** 2),
-                    Primitive("*2", float, [float], lambda x: x * 2.0),
-                    Primitive("/2", float, [float], lambda x: x / 2.0),
-                    Primitive("*3", float, [float], lambda x: x * 3.0),
-                    Primitive("/3", float, [float], lambda x: x / 3.0)
-                    ]
-
-    primitive_set_0 = PrimitiveSet(primitives_0, float)
-
-    tr = gen_half_half(primitive_set_0, terminal_set_0, 2, 2, 5)
-    print(tr.print_as_tree())
-    print("\n\n\n")
-    print(tr)
-    print(tr.compile([3, 2, 4, 5, 6, 1, 2, 7, 4, 7]))
+    return PrimitiveTree(tree, primitive_set, terminal_set)
