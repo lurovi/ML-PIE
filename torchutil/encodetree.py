@@ -211,7 +211,7 @@ def transform_with_weights(data, weights):
     X, y = [], []
     for t in data:
         c = total_weights_tree_converter(t, weights)
-        s = c.sum()
+        s = c.sum()*(float(t.depth())/float(t.number_of_nodes()))
         X.append(c)
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
@@ -221,7 +221,7 @@ def transform_with_weights_level_wise(data, weights):
     X, y = [], []
     for t in data:
         c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()
+        s = c.sum()*(float(t.depth())/float(t.number_of_nodes()))
         X.append(c)
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
@@ -231,7 +231,7 @@ def compute_labels_from_one_hot(data, weights):
     X, y = [], []
     for t in data:
         c = total_weights_tree_converter(t, weights)
-        s = c.sum()
+        s = c.sum()*(float(t.depth())/float(t.number_of_nodes()))
         X.append(one_hot_tree(t))
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
@@ -241,7 +241,7 @@ def compute_labels_from_one_hot_level_wise(data, weights):
     X, y = [], []
     for t in data:
         c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()
+        s = c.sum()*(float(t.depth())/float(t.number_of_nodes()))
         X.append(one_hot_tree(t))
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
@@ -252,6 +252,6 @@ def compute_labels_from_features_level_wise(data, weights):
     y = []
     for t in data:
         c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()
+        s = c.sum()*(float(t.depth())/float(t.number_of_nodes()))
         y.append(s)
     return X, np.array(y, dtype=np.float32)

@@ -38,6 +38,34 @@ class TreeData(Dataset):
         return self.X[idx], self.y[idx]
 
 
+class TreeDataTwoPoints(Dataset):
+    def __init__(self, dataset, number_of_points):
+        self.dataset = dataset
+        self.number_of_points = number_of_points
+        self.original_number_of_points = dataset.shape[0]
+        new_data = []
+        new_labels = []
+        for _ in range(self.number_of_points):
+            idx = np.random.choice(self.original_number_of_points, 2, replace=False)
+            first_point, first_label = self.dataset[idx[0]]
+            second_point, second_label = self.dataset[idx[1]]
+            if first_label >= second_label:
+                new_labels.append(-1.0)
+            else:
+                new_labels.append(1.0)
+            new_data.append(first_point.tolist() + second_point.tolist())
+        self.X = torch.tensor(new_data).float()
+        self.y = torch.tensor(new_labels).float()
+
+    def __len__(self):
+        # gets the number of rows in the dataset
+        return len(self.y)
+
+    def __getitem__(self, idx):
+        # gets a data point from the dataset as torch tensor array along with the label
+        return self.X[idx], self.y[idx]
+
+
 class TorchDataHandler:
     def __init__(self, dataset, batch_size, num_classes=0, labels_names=None, transform=None, shuffle=False):
         if len(dataset) % batch_size != 0:
@@ -149,6 +177,17 @@ def model_cost(confusion_matrix, cost_matrix):
     N = confusion_matrix.shape[0]
     a = np.subtract(cost_matrix, np.identity(N))
     return np.multiply(confusion_matrix, a).sum()
+
+
+def spearman_footrule(y_true, y_pred):
+    y_true = np.argsort(y_true, kind="heapsort")[::-1]
+    y_pred = np.argsort(y_pred, kind="heapsort")[::-1]
+    r = y_true.shape[0]
+    if r % 2 == 0:
+        r = r ** 2
+    else:
+        r = r ** 2 - 1
+    return (3.0/float(r))*np.absolute(np.subtract(y_true, y_pred)).sum()
 
 
 # ==============================================================================================================
@@ -304,7 +343,7 @@ class TwoPointsCompareTrainer(Trainer):
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
         return loss_arr, loss_epoch_arr
-    
+
     def evaluate_regressor(self, dataloader):
         total, correct = 0, 0
         y_true = []
@@ -317,7 +356,7 @@ class TwoPointsCompareTrainer(Trainer):
             total += labels.size(0)
             y_pred.extend(outputs.tolist())
             y_true.extend(labels.tolist())
-        return r2_score(y_true, y_pred)
+        return spearman_footrule(y_true, y_pred)
 
 # ==============================================================================================================
 # NEURAL NETWORK MODELS

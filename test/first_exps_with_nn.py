@@ -183,7 +183,7 @@ if __name__ == '__main__':
     print(tr.count_primitives())
     print(tr.extract_counting_features_from_tree())
     '''
-
+    '''
     train = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(400000)]
     val = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(100000)]
     test = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(60000)]
@@ -210,14 +210,30 @@ if __name__ == '__main__':
     compress_pickle("primitive_trees_dataset_features_level_wise", {"training": TreeData(X_train, y_train, scaler),
                                                                     "validation": TreeData(X_dev, y_dev, scaler),
                                                                     "test": TreeData(X_test, y_test, scaler)})
-
+    '''
+    '''
+    execute_experiment_nn_regression("Tree as Weights (ReLU, Tanh, [400, 220, 80, 25])",
+                                     "primitive_trees_dataset_weights.pbz2", nn.ReLU(), nn.Tanh(), [400, 220, 80, 25],
+                                     device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Weights (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Weights (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
 
+    execute_experiment_nn_regression("Tree as Weights Level Wise (ReLU, Tanh, [400, 220, 80, 25])",
+                                     "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
+                                     [400, 220, 80, 25], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Weights Level Wise (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Weights Level Wise (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
 
+    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Tanh, [400, 220, 80, 25])",
+                                     "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
+                                     [400, 220, 80, 25], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Tanh, [200, 120, 55, 16])",
+                                     "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
+                                     [200, 120, 55, 16], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, ReLU, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [200, 120, 55, 16], device, max_epochs=20)
     execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, ReLU, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [200, 120, 55, 16], device, max_epochs=20)
+    '''
+
+    
