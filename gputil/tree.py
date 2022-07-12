@@ -6,6 +6,7 @@ from typing import Callable, Any, List
 # ==============================================================================================================
 # BUILDING BLOCKS
 # ==============================================================================================================
+import numpy as np
 
 
 class Constant:
@@ -415,7 +416,7 @@ class PrimitiveTree:
         return dic
 
     def number_of_nodes_at_layer(self, layer_ind: int):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+        self.__check_layer_index_with_max_depth(layer_ind)
         return sum([1 if n != "" else 0 for n in self.layer(layer_ind)])
 
     def depth(self):
@@ -473,7 +474,7 @@ class PrimitiveTree:
         return internal_nodes
 
     def node(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+        self.__check_layer_index_with_max_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
         elem = [curr_layer[iii] for iii in elem_ind]
@@ -486,7 +487,7 @@ class PrimitiveTree:
         return len(self.children(layer_ind, node_ind)) == 0
 
     def siblings(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+        self.__check_layer_index_with_max_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
         elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
         elem = [curr_layer[iii] for iii in elem_ind]
@@ -496,7 +497,7 @@ class PrimitiveTree:
         return elem[:node_ind], curr_node, elem[(node_ind+1):]
 
     def children(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+        self.__check_layer_index_with_max_depth(layer_ind)
         if layer_ind == self.depth() - 1:
             return []
         curr_layer = self.layer(layer_ind)
@@ -519,7 +520,7 @@ class PrimitiveTree:
         return children
 
     def parent(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_actual_depth(layer_ind)
+        self.__check_layer_index_with_max_depth(layer_ind)
         if layer_ind == 0:
             return None
         curr_layer = self.layer(layer_ind)
@@ -536,6 +537,36 @@ class PrimitiveTree:
                 relative_ind = iii
                 break
         return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
+
+    def extract_counting_features_from_tree(self):
+        counting_dic = self.count_primitives()
+        number_of_nodes = float(self.number_of_nodes())
+        depth = float(self.depth())
+        max_breadth = float(self.actual_max_breadth())
+        leaf_internal_nodes_ratio = float(len(self.leaf_nodes())) / float(len(self.internal_nodes()))
+        keys = list(counting_dic.keys())
+        single_primitives = []
+        couples_primitives = []
+        for k in keys:
+            if isinstance(k, str):
+                single_primitives.append(k)
+            elif isinstance(k, tuple):
+                couples_primitives.append(k)
+            else:
+                raise ValueError(f"Invalid key {k} found in counting dictionary key set.")
+        single_primitives = sorted(single_primitives)
+        couples_primitives = sorted(couples_primitives)
+        counts = []
+        for p in single_primitives + couples_primitives:
+            counts.append(float(counting_dic[p]))
+        return counts + [number_of_nodes, depth, max_breadth, leaf_internal_nodes_ratio]
+
+    @staticmethod
+    def extract_counting_features_from_list_of_trees(trees: List):
+        lt = []
+        for tree in trees:
+            lt.append(tree.extract_counting_features_from_tree())
+        return np.array(lt, dtype=np.float32)
 
     def compile(self, x: List):
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]

@@ -22,3 +22,10 @@ if __name__ == "__main__":
 
     print("abc\n")
     print("abcc")
+
+    a = torch.tensor([[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7,8,9,10]], dtype=torch.float32)
+    print(a)
+    print(a.shape[1]//2)
+    print(a[:, :a.shape[1] // 2])
+    print(a[:, a.shape[1] // 2: ])
+
