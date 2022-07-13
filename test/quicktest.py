@@ -29,3 +29,6 @@ if __name__ == "__main__":
     print(a[:, :a.shape[1] // 2])
     print(a[:, a.shape[1] // 2: ])
 
+    a = torch.tensor([1,2,3,4,5])
+    b = torch.tensor([6,7,8,9,10])
+    print(torch.cat((a, b), dim=0))

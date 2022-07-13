@@ -74,6 +74,24 @@ def execute_experiment_nn_regression(title, file_name, activation_func, final_ac
     print(title, " - R2 Score on Validation Set - ", trainer.evaluate_regressor(valloader))
 
 
+def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, activation_func, final_activation_func, hidden_layer_sizes, device, max_epochs=20):
+    trees = decompress_pickle(file_name_dataset)
+    training = decompress_pickle(file_name_training)
+    validation, test = trees["validation"], trees["test"]
+    input_layer_size = len(validation[0][0])
+    output_layer_size = 1
+    trainloader = DataLoader(training, batch_size=1, shuffle=True, worker_init_fn=seed_worker,
+                             generator=generator_data_loader)
+    valloader = DataLoader(validation, batch_size=1000, shuffle=True, worker_init_fn=seed_worker,
+                           generator=generator_data_loader)
+
+    net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes)
+    trainer = TwoPointsCompareTrainer(net, device, trainloader, optimizer_name="adam",
+                                   verbose=True, max_epochs=max_epochs)
+    trainer.train()
+    print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
+
+
 if __name__ == '__main__':
 
     constants_0 = [Constant("five", 5.0), Constant("ten", 10.0)]
@@ -183,7 +201,7 @@ if __name__ == '__main__':
     print(tr.count_primitives())
     print(tr.extract_counting_features_from_tree())
     '''
-    '''
+
     train = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(400000)]
     val = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(100000)]
     test = [gen_half_half(primitive_set_0, terminal_set_0, 3, 8) for _ in range(60000)]
@@ -205,35 +223,37 @@ if __name__ == '__main__':
     X_train, y_train = compute_labels_from_features_level_wise(train, d_4)
     X_dev, y_dev = compute_labels_from_features_level_wise(val, d_4)
     X_test, y_test = compute_labels_from_features_level_wise(test, d_4)
-    scaler = StandardScaler()
+    scaler = MaxAbsScaler()
     scaler.fit(X_train)
     compress_pickle("primitive_trees_dataset_features_level_wise", {"training": TreeData(X_train, y_train, scaler),
                                                                     "validation": TreeData(X_dev, y_dev, scaler),
                                                                     "test": TreeData(X_test, y_test, scaler)})
-    '''
-    '''
-    execute_experiment_nn_regression("Tree as Weights (ReLU, Tanh, [400, 220, 80, 25])",
-                                     "primitive_trees_dataset_weights.pbz2", nn.ReLU(), nn.Tanh(), [400, 220, 80, 25],
-                                     device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Weights (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Weights (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
 
-    execute_experiment_nn_regression("Tree as Weights Level Wise (ReLU, Tanh, [400, 220, 80, 25])",
-                                     "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
-                                     [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Weights Level Wise (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Weights Level Wise (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Weights (ReLU, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Weights (Tanh, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_weights.pbz2", nn.Tanh(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
 
-    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Tanh, [400, 220, 80, 25])",
-                                     "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
-                                     [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, ReLU, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [400, 220, 80, 25], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Tanh, [200, 120, 55, 16])",
-                                     "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Tanh(),
-                                     [200, 120, 55, 16], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, ReLU, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.ReLU(), [200, 120, 55, 16], device, max_epochs=20)
-    execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, ReLU, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.ReLU(), [200, 120, 55, 16], device, max_epochs=20)
-    '''
+    execute_experiment_nn_regression("Tree as Weights Level Wise (ReLU, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Weights Level Wise (Tanh, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_weights_level_wise.pbz2", nn.Tanh(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
 
-    
+    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, Sigmoid, [400, 220, 80, 25])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.Sigmoid(), [400, 220, 80, 25], device, max_epochs=20)
+
+    execute_experiment_nn_regression("Tree as Features Level Wise (ReLU, Sigmoid, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU(), nn.Sigmoid(), [200, 120, 55, 16], device, max_epochs=20)
+    execute_experiment_nn_regression("Tree as Features Level Wise (Tanh, Sigmoid, [200, 120, 55, 16])", "primitive_trees_dataset_features_level_wise.pbz2", nn.Tanh(), nn.Sigmoid(), [200, 120, 55, 16], device, max_epochs=20)
+
+    compress_pickle("primitive_trees_twopointscomparedataset_weights", TreeDataTwoPointsCompare(decompress_pickle("primitive_trees_dataset_weights.pbz2")["training"], 500000))
+    compress_pickle("primitive_trees_twopointscomparedataset_weights_level_wise",
+                    TreeDataTwoPointsCompare(decompress_pickle("primitive_trees_dataset_weights_level_wise.pbz2")["training"], 500000))
+    compress_pickle("primitive_trees_twopointscomparedataset_features_level_wise",
+                    TreeDataTwoPointsCompare(decompress_pickle("primitive_trees_dataset_features_level_wise.pbz2")["training"], 500000))
+
+    execute_experiment_nn_ranking("Tree as Weights Level Wise (ReLU, Sigmoid, [400, 220, 80, 25])",
+                                  "primitive_trees_twopointscomparedataset_weights_level_wise.pbz2",
+                                  "primitive_trees_dataset_weights_level_wise.pbz2", nn.ReLU, nn.Sigmoid,
+                                  [400, 220, 80, 25], device, max_epochs=20)
+    execute_experiment_nn_ranking("Tree as Features Level Wise (ReLU, Sigmoid, [400, 220, 80, 25])",
+                                  "primitive_trees_twopointscomparedataset_features_level_wise.pbz2",
+                                  "primitive_trees_dataset_features_level_wise.pbz2", nn.ReLU, nn.Sigmoid,
+                                  [400, 220, 80, 25], device, max_epochs=20)
+
+

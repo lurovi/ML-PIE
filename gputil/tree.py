@@ -543,8 +543,13 @@ class PrimitiveTree:
         number_of_nodes = float(self.number_of_nodes())
         depth = float(self.depth())
         max_breadth = float(self.actual_max_breadth())
-        leaf_internal_nodes_ratio = float(len(self.leaf_nodes())) / float(len(self.internal_nodes()))
-        depth_number_of_nodes_ratio = depth/number_of_nodes
+        max_degree = float(self.actual_max_degree())
+        number_of_leaf_nodes = float(len(self.leaf_nodes()))
+        number_of_internal_nodes = float(len(self.internal_nodes()))
+        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
+        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
+        degree_breadth_ratio = max_degree / max_breadth
+        depth_number_of_nodes_ratio = depth / number_of_nodes
         keys = list(counting_dic.keys())
         single_primitives = []
         couples_primitives = []
@@ -560,14 +565,14 @@ class PrimitiveTree:
         counts = []
         for p in single_primitives + couples_primitives:
             counts.append(float(counting_dic[p]))
-        return counts + [number_of_nodes, depth, depth_number_of_nodes_ratio, max_breadth, leaf_internal_nodes_ratio]
+        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, leaf_internal_nodes_ratio]
 
     @staticmethod
     def extract_counting_features_from_list_of_trees(trees: List):
         lt = []
         for tree in trees:
             lt.append(tree.extract_counting_features_from_tree())
-        return np.array(lt, dtype=np.float32)
+        return lt
 
     def compile(self, x: List):
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]

@@ -38,18 +38,19 @@ class TreeData(Dataset):
         return self.X[idx], self.y[idx]
 
 
-class TreeDataTwoPoints(Dataset):
+class TreeDataTwoPointsCompare(Dataset):
     def __init__(self, dataset, number_of_points):
         self.dataset = dataset
         self.number_of_points = number_of_points
-        self.original_number_of_points = dataset.shape[0]
+        self.original_number_of_points = len(dataset)
         new_data = []
         new_labels = []
+        indexes = list(range(self.original_number_of_points))
         for _ in range(self.number_of_points):
-            idx = np.random.choice(self.original_number_of_points, 2, replace=False)
+            idx = random.choices(indexes, k=2)
             first_point, first_label = self.dataset[idx[0]]
             second_point, second_label = self.dataset[idx[1]]
-            if first_label >= second_label:
+            if first_label.item() >= second_label.item():
                 new_labels.append(-1.0)
             else:
                 new_labels.append(1.0)
@@ -242,7 +243,6 @@ class Trainer(ABC):
         return model_accuracy(cf_matrix)
 
     def evaluate_regressor(self, dataloader):
-        total, correct = 0, 0
         y_true = []
         y_pred = []
         self.net.eval()
@@ -250,10 +250,21 @@ class Trainer(ABC):
             inputs, labels = batch
             inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
             outputs = self.net(inputs)
-            total += labels.size(0)
             y_pred.extend(outputs.tolist())
             y_true.extend(labels.tolist())
         return r2_score(y_true, y_pred)
+
+    def evaluate_ranking(self, dataloader):
+        y_true = []
+        y_pred = []
+        self.net.eval()
+        for batch in dataloader:
+            inputs, labels = batch
+            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+            outputs = self.net(inputs)
+            y_pred.extend(outputs.tolist())
+            y_true.extend(labels.tolist())
+        return spearman_footrule(y_true, y_pred)
 
     def predict(self, X):
         self.net.eval()
@@ -283,7 +294,6 @@ class StandardBatchTrainer(Trainer):
                                   momentum=self.momentum, dampening=self.dampening)
         else:
             raise ValueError(f"{self.optimizer_name} is not a valid value for argument optimizer.")
-        loss_arr = []
         loss_epoch_arr = []
         self.net.train()
         for epoch in range(self.max_epochs):
@@ -295,11 +305,10 @@ class StandardBatchTrainer(Trainer):
                 loss = self.loss_fn(outputs, labels)
                 loss.backward()
                 optimizer.step()
-                loss_arr.append(loss.item())
             loss_epoch_arr.append(loss.item())
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
-        return loss_arr, loss_epoch_arr
+        return loss_epoch_arr
 
 
 class TwoPointsCompareTrainer(Trainer):
@@ -323,7 +332,6 @@ class TwoPointsCompareTrainer(Trainer):
                                   momentum=self.momentum, dampening=self.dampening)
         else:
             raise ValueError(f"{self.optimizer_name} is not a valid value for argument optimizer.")
-        loss_arr = []
         loss_epoch_arr = []
         self.net.train()
         for epoch in range(self.max_epochs):
@@ -335,28 +343,13 @@ class TwoPointsCompareTrainer(Trainer):
                 inputs_2 = inputs[:, single_point_dim:]
                 optimizer.zero_grad()
                 outputs_1, outputs_2 = self.net(inputs_1), self.net(inputs_1)
-                loss = torch.sum(labels * (outputs_1 - outputs_2))
-                loss.backward()
+                loss = labels * (outputs_1 - outputs_2)
+                loss.backward(gradient=torch.tensor([1.0]*loss.size(0)).float())
                 optimizer.step()
-                loss_arr.append(loss.item())
             loss_epoch_arr.append(loss.item())
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
-        return loss_arr, loss_epoch_arr
-
-    def evaluate_regressor(self, dataloader):
-        total, correct = 0, 0
-        y_true = []
-        y_pred = []
-        self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            outputs = self.net(inputs)
-            total += labels.size(0)
-            y_pred.extend(outputs.tolist())
-            y_true.extend(labels.tolist())
-        return spearman_footrule(y_true, y_pred)
+        return loss_epoch_arr
 
 # ==============================================================================================================
 # NEURAL NETWORK MODELS
@@ -413,6 +406,45 @@ class MLPNet(nn.Module):
                 linear_layers.append(self.activation_func)
             else:
                 linear_layers.append(self.final_activation_func)
+            curr_dim = layer_sizes[i]
+
+        self.fc_model = nn.Sequential(*linear_layers)
+
+    def forward(self, x):
+        x = x.view(x.size(0), -1)
+        x = self.fc_model(x)
+        return x
+
+
+class SymmetricAutoEncoder(nn.Module):
+    def __init__(self, activation_func, final_activation_func, input_layer_size: int, bottleneck_size: int, hidden_layer_sizes: List[int] = [], dropout_probability: float = 0.0):
+        super(SymmetricAutoEncoder, self).__init__()
+        self.activation_func = activation_func  # e.g., nn.ReLU()
+        self.final_activation_func = final_activation_func  # e.g., nn.Tanh()
+        self.input_layer_size = input_layer_size
+        self.bottleneck_size = bottleneck_size
+        self.dropout_probability = dropout_probability
+
+        linear_layers = []
+        layer_sizes = hidden_layer_sizes + [bottleneck_size]
+        curr_dim = input_layer_size
+        for i in range(len(layer_sizes)):
+            if i == len(layer_sizes) - 1:
+                linear_layers.append(nn.Dropout(self.dropout_probability))
+            linear_layers.append(nn.Linear(curr_dim, layer_sizes[i]))
+            linear_layers.append(self.activation_func)
+            curr_dim = layer_sizes[i]
+        layer_sizes = reversed([input_layer_size] + hidden_layer_sizes)
+        curr_dim = bottleneck_size
+        for i in range(len(layer_sizes)):
+            linear_layers.append(nn.Linear(curr_dim, layer_sizes[i]))
+            if i == 0:
+                linear_layers.append(self.activation_func)
+                linear_layers.append(nn.Dropout(self.dropout_probability))
+            elif i == len(layer_sizes) - 1:
+                linear_layers.append(self.final_activation_func)
+            else:
+                linear_layers.append(self.activation_func)
             curr_dim = layer_sizes[i]
 
         self.fc_model = nn.Sequential(*linear_layers)
