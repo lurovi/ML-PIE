@@ -565,7 +565,7 @@ class PrimitiveTree:
         counts = []
         for p in single_primitives + couples_primitives:
             counts.append(float(counting_dic[p]))
-        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, leaf_internal_nodes_ratio]
+        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, degree_breadth_ratio, leaf_internal_nodes_ratio]
 
     @staticmethod
     def extract_counting_features_from_list_of_trees(trees: List):

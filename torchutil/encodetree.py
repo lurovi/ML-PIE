@@ -227,6 +227,55 @@ def transform_with_weights_level_wise(data, weights):
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
 
+def transform_with_weights_level_wise_and_hand_crafted_interpretability_score(data, weights):
+    X, y = [], []
+    for t in data:
+        c = total_level_wise_weights_tree_converter(t, weights)
+        number_of_nodes = float(t.number_of_nodes())
+        depth = float(t.depth())
+        max_breadth = float(t.actual_max_breadth())
+        max_degree = float(t.actual_max_degree())
+        number_of_leaf_nodes = float(len(t.leaf_nodes()))
+        number_of_internal_nodes = float(len(t.internal_nodes()))
+        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
+        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
+        degree_breadth_ratio = max_degree / max_breadth
+        depth_number_of_nodes_ratio = depth / number_of_nodes
+        s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
+        X.append(c)
+        y.append(s)
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
+def compute_labels_from_features_level_wise(data, weights):
+    X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
+    y = []
+    for t in data:
+        c = total_level_wise_weights_tree_converter(t, weights)
+        s = c.sum()/float(t.number_of_nodes())
+        y.append(s)
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
+def compute_labels_from_features_level_wise_and_hand_crafted_interpretability_score(data, weights):
+    X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
+    y = []
+    for t in data:
+        number_of_nodes = float(t.number_of_nodes())
+        depth = float(t.depth())
+        max_breadth = float(t.actual_max_breadth())
+        max_degree = float(t.actual_max_degree())
+        number_of_leaf_nodes = float(len(t.leaf_nodes()))
+        number_of_internal_nodes = float(len(t.internal_nodes()))
+        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
+        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
+        degree_breadth_ratio = max_degree / max_breadth
+        depth_number_of_nodes_ratio = depth / number_of_nodes
+        s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
+        y.append(s)
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
 def compute_labels_from_one_hot(data, weights):
     X, y = [], []
     for t in data:
@@ -243,15 +292,5 @@ def compute_labels_from_one_hot_level_wise(data, weights):
         c = total_level_wise_weights_tree_converter(t, weights)
         s = c.sum()/float(t.number_of_nodes())
         X.append(one_hot_tree(t))
-        y.append(s)
-    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
-
-
-def compute_labels_from_features_level_wise(data, weights):
-    X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
-    y = []
-    for t in data:
-        c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()/float(t.number_of_nodes())
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)

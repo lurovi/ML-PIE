@@ -217,9 +217,12 @@ def two_points_compare_loss(first_pred, second_pred, feedback):
 
 class Trainer(ABC):
     def __init__(self, net, device, data):
-        self.net = net
         self.device = device
         self.data = data
+        self.net = net.to(self.device)
+
+    def model(self):
+        return self.net
 
     @abstractmethod
     def train(self):
@@ -343,8 +346,10 @@ class TwoPointsCompareTrainer(Trainer):
                 inputs_2 = inputs[:, single_point_dim:]
                 optimizer.zero_grad()
                 outputs_1, outputs_2 = self.net(inputs_1), self.net(inputs_1)
-                loss = labels * (outputs_1 - outputs_2)
-                loss.backward(gradient=torch.tensor([1.0]*loss.size(0)).float())
+                loss = torch.sum( labels * (outputs_1 - outputs_2)  )
+                loss.backward()
+                #loss = labels * (outputs_1 - outputs_2)
+                #loss.backward(gradient=torch.tensor([1.0]*loss.size(0)).float())
                 optimizer.step()
             loss_epoch_arr.append(loss.item())
             if self.verbose:
