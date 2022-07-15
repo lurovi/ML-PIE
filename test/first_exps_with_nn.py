@@ -176,16 +176,21 @@ if __name__ == '__main__':
             "e0": 0.12, "e1": 0.12}
            ]
 
-    '''
-    for i in range(3):
+
+    for i in range(4):
         tr = gen_half_half(primitive_set_0, terminal_set_0, 2, 6)
+        for _ in range(3):
+            tr_1 = gen_half_half(primitive_set_0, terminal_set_0, 2, 6)
+
     print(tr.print_as_tree())
-    print("\n")
     print(tr)
-    print(tr.compile([3, 2, 4, 5]))
-    print(tr.count_primitives())
-    print(tr.extract_counting_features_from_tree())
-    '''
+    print(tr_1.print_as_tree())
+    #print(tr.compile([3, 2, 4, 5]))
+    #print(tr.count_primitives())
+    #print(tr.extract_counting_features_from_tree())
+    print(tr.replace_subtree(tr_1, 2, 1).print_as_tree())
+    print(tr.replace_subtree(tr_1, 2, 1).print_as_text())
+
 
     #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(400000)]
     #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(100000)]
@@ -193,9 +198,9 @@ if __name__ == '__main__':
     #compress_pickle("train_trees", train)
     #compress_pickle("validation_trees", val)
     #compress_pickle("test_trees", test)
-    train = decompress_pickle("train_trees.pbz2")
-    val = decompress_pickle("validation_trees.pbz2")
-    test = decompress_pickle("test_trees.pbz2")
+    #train = decompress_pickle("train_trees.pbz2")
+    #val = decompress_pickle("validation_trees.pbz2")
+    #test = decompress_pickle("test_trees.pbz2")
 
     '''
     X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
@@ -315,6 +320,7 @@ if __name__ == '__main__':
 
     '''
 
+    '''
     execute_experiment_nn_ranking(
         "Onehot Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
         "onehot_weights_average_trees_twopointscomparesmall.pbz2",
@@ -362,4 +368,4 @@ if __name__ == '__main__':
     #    10000, nn.ReLU(), nn.Identity(), [400, 220, 80, 25], device,
     #    max_epochs_warmup=6, batch_size_warmup=1000, max_epochs=14,
     #    batch_size=1)
-
+    '''

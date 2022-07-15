@@ -66,6 +66,16 @@ class TerminalSet:
         self.__all_types = feature_types + [c.type() for c in self.__constants] + [e.type() for e in self.__ephemeral]
         self.__all_idx = ["x"+str(i) for i in range(self.__num_features)] + ["c"+str(i)+" "+str(self.__constants[i]()) for i in range(self.__num_constants)] + ["e"+str(i)+" " for i in range(self.__num_ephemeral)]
 
+    def is_there_type(self, provided_type: Any):
+        candidates = [i for i in range(len(self.__all_types)) if self.__all_types[i] == provided_type]
+        return bool(candidates)
+
+    def all_idx(self):
+        return ["x"+str(i) for i in range(self.__num_features)] + ["c"+str(i) for i in range(self.__num_constants)] + ["e"+str(i) for i in range(self.__num_ephemeral)]
+
+    def get_type(self, idx):
+        return self.__all_types[idx]
+
     def __str__(self):
         return f"N. Features: {self.__num_features} - N. Constants: {self.__num_constants} - N. Ephemeral: {self.__num_ephemeral}."
 
@@ -103,6 +113,8 @@ class TerminalSet:
 
     def sample_typed(self, provided_type: Any) -> str:
         candidates = [i for i in range(len(self.__all_types)) if self.__all_types[i] == provided_type]
+        if not(candidates):
+            raise LookupError(f"In the terminal set there is no type {str(provided_type)} available as type of one of the terminals in the set.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__extract(ind)
@@ -160,6 +172,16 @@ class PrimitiveSet:
         self.__return_type = return_type
         self.__max_arity = max([p.arity() for p in primitives])
 
+    def is_there_type(self, provided_type: Any):
+        candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == provided_type]
+        return bool(candidates)
+
+    def change_return_type(self, new_return_type: Any):
+        candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == new_return_type]
+        if not candidates:
+            raise AttributeError("You can't create a new primitive set with the provided new return type since there is no primitive in the current set that has the new return type as return type.")
+        return PrimitiveSet(self.__primitives, new_return_type)
+
     def __str__(self):
         return f"N. Primitives: {self.__num_primitives} - Return type: {self.__return_type}."
 
@@ -190,18 +212,24 @@ class PrimitiveSet:
 
     def sample_root(self) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == self.__return_type]
+        if not(candidates):
+            raise LookupError(f"In the primitive set there is no type {str(self.__return_type)} available as return type of one of the primitives in the set that can be used to sample a root primitive.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
     def sample_typed(self, provided_type: Any) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == provided_type]
+        if not(candidates):
+            raise LookupError(f"In the primitive set there is no type {str(provided_type)} available as return type of one of the primitives in the set.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
     def sample_parameter_typed(self, provided_types: Any) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].parameter_types() == provided_types]
+        if not(candidates):
+            raise LookupError(f"In the primitive set there is no type {str(provided_types)} available.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
@@ -306,6 +334,26 @@ class PrimitiveTree:
         self.__tree = data
         self.__primitive_set = primitive_set
         self.__terminal_set = terminal_set
+        self.__type_dict = {}
+        for name in self.__primitive_set.primitive_names():
+            self.__type_dict[name] = self.__primitive_set.get_primitive(name).return_type()
+        for i in range(len(self.__terminal_set.all_idx())):
+            self.__type_dict[self.__terminal_set.all_idx()[i]] = self.__terminal_set.get_type(i)
+
+    def copy(self):
+        tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
+        return PrimitiveTree(tre, self.__primitive_set, self.__terminal_set)
+
+    def get_node_string_without_value(self, node_string):
+        if self.__primitive_set.is_primitive(node_string):
+            return node_string
+        elif node_string[0] == "x":
+            return node_string
+        else:
+            return node_string[:node_string.find(" ")]
+
+    def get_node_type(self, node_string):
+        return self.__type_dict[self.get_node_string_without_value(node_string)]
 
     def max_degree(self):
         return self.__max_degree
@@ -539,7 +587,7 @@ class PrimitiveTree:
         return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
 
     def extract_subtree(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_max_depth(layer_ind)
+        self.__check_layer_index_with_actual_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
         elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
         if not (0 <= node_ind < len(elem)):
@@ -556,9 +604,9 @@ class PrimitiveTree:
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
-
+    '''
     def remove_subtree(self, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_max_depth(layer_ind)
+        self.__check_layer_index_with_actual_depth(layer_ind)
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
         curr_layer = self.layer(layer_ind)
         elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
@@ -574,21 +622,25 @@ class PrimitiveTree:
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
-
-    def insert_subtree(self, new_tree: PrimitiveTree, layer_ind: int, node_ind: int):
-        self.__check_layer_index_with_max_depth(layer_ind)
+    '''
+    def replace_subtree(self, new_tree, layer_ind: int, node_ind: int):
+        self.__check_layer_index_with_actual_depth(layer_ind)
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
         curr_layer = self.layer(layer_ind)
         elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
         if not (0 <= node_ind < len(elem)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         first_previous_node_abs_index = elem[node_ind]
-        tre[layer_ind][elem[node_ind]] = new_tree[0][0]
+        tre[layer_ind][elem[node_ind]] = new_tree.root()
         curr_layer_ind = layer_ind + 1
+        if not(layer_ind + new_tree.depth() <= self.max_depth()):
+            raise AttributeError("The new tree depth must not exceed the allowed max depth of the tree.")
+        if not( self.get_node_type(tre[layer_ind][elem[node_ind]]) == self.get_node_type(self.__tree[layer_ind][elem[node_ind]])):
+            raise AttributeError("The new tree return type must match the return type of the replaced subtree.")
         for i in range(self.max_depth() - layer_ind - 1):
             curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
             start_ind = first_previous_node_abs_index * self.max_degree()
-            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + new_tree[curr_layer_ind - layer_ind] + tre[curr_layer_ind][start_ind + curr_dim:]
+            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + new_tree.layer(curr_layer_ind - layer_ind) + tre[curr_layer_ind][start_ind + curr_dim:]
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
@@ -664,6 +716,13 @@ class PrimitiveTree:
 # ==============================================================================================================
 
 
+def gen_simple_leaf_tree_as_list(leaf: str, max_degree: int, max_depth: int) -> List[List[str]]:
+    tre = [[leaf]]
+    for i in range(1, max_depth):
+        tre.append([""]*(max_degree**i))
+    return tre
+
+
 def gen_half_half(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height: int, max_height: int) -> PrimitiveTree:
     ind = random.randint(0, 1)
     if ind == 0:
@@ -676,13 +735,17 @@ def gen_full(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height:
     max_degree = primitive_set.max_arity()
     if not (min_height <= max_height):
         raise AttributeError("Min height must be less than or equal to max height.")
-    if min_height <= 1:
-        raise AttributeError("Min height must be a positive number of at least 2.")
-    if min_height == max_height:
-        height = min_height
+    if min_height < 1:
+        raise AttributeError("Min height must be a positive number of at least 1.")
+    if min_height == 1 and not( terminal_set.is_there_type(primitive_set.return_type())):
+        min_height += 1
+        if min_height > max_height:
+            max_height += 1
+    height = random.randint(min_height, max_height)
+    if height != 1:
+        tree = [[primitive_set.sample_root().name()]]
     else:
-        height = random.randint(min_height, max_height)
-    tree = [[primitive_set.sample_root().name()]]
+        tree = [[terminal_set.sample_typed(primitive_set.return_type())]]
     for layer_ind in range(1, height):
         curr_layer = [""]*(max_degree**layer_ind)
         previous_layer = tree[layer_ind - 1]
@@ -705,13 +768,17 @@ def gen_grow(primitive_set: PrimitiveSet, terminal_set: TerminalSet, min_height:
     max_degree = primitive_set.max_arity()
     if not (min_height <= max_height):
         raise AttributeError("Min height must be less than or equal to max height.")
-    if min_height <= 1:
-        raise AttributeError("Min height must be a positive number of at least 2.")
-    if min_height == max_height:
-        height = min_height
+    if min_height < 1:
+        raise AttributeError("Min height must be a positive number of at least 1.")
+    if min_height == 1 and not (terminal_set.is_there_type(primitive_set.return_type())):
+        min_height += 1
+        if min_height > max_height:
+            max_height += 1
+    height = random.randint(min_height, max_height)
+    if height != 1:
+        tree = [[primitive_set.sample_root().name()]]
     else:
-        height = random.randint(min_height, max_height)
-    tree = [[primitive_set.sample_root().name()]]
+        tree = [[terminal_set.sample_typed(primitive_set.return_type())]]
     expand = [[True]]
     isMinHeightReached = False
     for layer_ind in range(1, height):
