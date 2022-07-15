@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 from typing import Callable, Any, Iterable, Dict, List
 from gputil.tree import *
@@ -7,21 +8,23 @@ from gputil.tree import *
 # TREE CONVERTER
 # ==============================================================================================================
 
+# weights is a dict where the key is a string representing the name of a primitive and the
+# value is a float that represents a weight for that particular primitive
+# moreover, weights must contain two special <key,value> pairs, one with key equal to "CONSTANT"
+# that contains the weight of a constant, and one with key equal to "EPHEMERAL"
+# that contains the weight for an ephemeral.
+# moreover, weights must contain a <key,value> pair with key "FEATURE" and a weight to assign to
+# appearance of a generic feature
 
+# this method generates a 1-D torch tensor with length equal to the max number of nodes of the tree
+# this tensor is flattened in breadth first order, all layers are concatenated from top to bottom
+# and from left to right, including blank nodes (represented with 0)
+
+# each node is replaced with the corresponding weight
+
+'''
 def simple_weights_tree_converter(tree: PrimitiveTree, weights: Dict[str, float]) -> torch.Tensor:
-    # weights is a dict where the key is a string representing the name of a primitive and the
-    # value is a float that represents a weight for that particular primitive
-    # moreover, weights must contain two special <key,value> pairs, one with key equal to "CONSTANT"
-    # that contains the weight of a constant, and one with key equal to "EPHEMERAL"
-    # that contains the weight for an ephemeral.
-    # moreover, weights must contain a <key,value> pair with key "FEATURE" and a weight to assign to
-    # appearance of a generic feature
-
-    # this method generates a 1-D torch tensor with length equal to the max number of nodes of the tree
-    # this tensor is flattened in breadth first order, all layers are concatenated from top to bottom
-    # and from left to right, including blank nodes (represented with 0)
-
-    # each node is replaced with the corresponding weight
+    
     def __get_right_key_from_terminal(s: str) -> str:
         is_primitive = Primitive.check_valid_primitive_name(s)
         if is_primitive:
@@ -85,6 +88,7 @@ def simple_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[
         curr_layer = [0.0 if n == "" else curr_weights[__get_right_key_from_terminal(n)] for n in curr_layer]
         arr.extend(curr_layer)
     return np.array(arr, dtype=np.float32)
+'''
 
 
 def total_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[Dict[str, float]]) -> torch.Tensor:
@@ -153,7 +157,7 @@ def one_hot_tree(tree: PrimitiveTree):
         arr.extend(curr_arr)
     return np.array(arr, dtype=np.float32)
 
-
+'''
 def one_hot_tree_as_image(tree: PrimitiveTree):
     def __get_right_key_from_terminal(s: str) -> str:
         is_primitive = Primitive.check_valid_primitive_name(s)
@@ -200,54 +204,15 @@ def one_hot_tree_as_image(tree: PrimitiveTree):
             curr_arr.append(0.0)
         arr.append(curr_arr)
     return np.array([arr], dtype=np.float32)
-
+'''
 
 # ==============================================================================================================
 # LABELS CALCULATOR
 # ==============================================================================================================
 
+
 # weights is a dictionary or list of dictionary while data is a list of primitive trees (this holds for methods of this section)
-def transform_with_weights(data, weights):
-    X, y = [], []
-    for t in data:
-        c = total_weights_tree_converter(t, weights)
-        s = c.sum()/float(t.number_of_nodes())
-        X.append(c)
-        y.append(s)
-    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
-
-
-def transform_with_weights_level_wise(data, weights):
-    X, y = [], []
-    for t in data:
-        c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()/float(t.number_of_nodes())
-        X.append(c)
-        y.append(s)
-    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
-
-
-def transform_with_weights_level_wise_and_hand_crafted_interpretability_score(data, weights):
-    X, y = [], []
-    for t in data:
-        c = total_level_wise_weights_tree_converter(t, weights)
-        number_of_nodes = float(t.number_of_nodes())
-        depth = float(t.depth())
-        max_breadth = float(t.actual_max_breadth())
-        max_degree = float(t.actual_max_degree())
-        number_of_leaf_nodes = float(len(t.leaf_nodes()))
-        number_of_internal_nodes = float(len(t.internal_nodes()))
-        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
-        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
-        degree_breadth_ratio = max_degree / max_breadth
-        depth_number_of_nodes_ratio = depth / number_of_nodes
-        s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
-        X.append(c)
-        y.append(s)
-    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
-
-
-def compute_labels_from_features_level_wise(data, weights):
+def build_dataset_counts_as_input_weights_average_as_target(data, weights):
     X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
     y = []
     for t in data:
@@ -257,7 +222,7 @@ def compute_labels_from_features_level_wise(data, weights):
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
 
-def compute_labels_from_features_level_wise_and_hand_crafted_interpretability_score(data, weights):
+def build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(data, weights):
     X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
     y = []
     for t in data:
@@ -276,21 +241,30 @@ def compute_labels_from_features_level_wise_and_hand_crafted_interpretability_sc
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
 
-def compute_labels_from_one_hot(data, weights):
+def build_dataset_onehot_as_input_weights_average_as_target(data, weights):
     X, y = [], []
     for t in data:
-        c = total_weights_tree_converter(t, weights)
+        c = total_level_wise_weights_tree_converter(t, weights)
         s = c.sum()/float(t.number_of_nodes())
         X.append(one_hot_tree(t))
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
 
-def compute_labels_from_one_hot_level_wise(data, weights):
+def build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(data, weights):
     X, y = [], []
     for t in data:
-        c = total_level_wise_weights_tree_converter(t, weights)
-        s = c.sum()/float(t.number_of_nodes())
+        number_of_nodes = float(t.number_of_nodes())
+        depth = float(t.depth())
+        max_breadth = float(t.actual_max_breadth())
+        max_degree = float(t.actual_max_degree())
+        number_of_leaf_nodes = float(len(t.leaf_nodes()))
+        number_of_internal_nodes = float(len(t.internal_nodes()))
+        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
+        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
+        degree_breadth_ratio = max_degree / max_breadth
+        depth_number_of_nodes_ratio = depth / number_of_nodes
+        s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
         X.append(one_hot_tree(t))
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)

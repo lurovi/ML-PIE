@@ -3,10 +3,10 @@ import re
 from abc import ABC, abstractmethod
 from typing import Callable, Any, List
 
+
 # ==============================================================================================================
 # BUILDING BLOCKS
 # ==============================================================================================================
-import numpy as np
 
 
 class Constant:
@@ -538,6 +538,61 @@ class PrimitiveTree:
                 break
         return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
 
+    def extract_subtree(self, layer_ind: int, node_ind: int):
+        self.__check_layer_index_with_max_depth(layer_ind)
+        curr_layer = self.layer(layer_ind)
+        elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        if not (0 <= node_ind < len(elem)):
+            raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
+        tre = [[curr_layer[elem[node_ind]]]]
+        if self.is_leaf(layer_ind, node_ind):
+            return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
+        first_previous_node_abs_index = elem[node_ind]
+        curr_layer_ind = layer_ind + 1
+        for i in range(self.max_depth() - layer_ind - 1):
+            curr_dim = self.max_degree()**(curr_layer_ind - layer_ind)
+            start_ind = first_previous_node_abs_index * self.max_degree()
+            tre.append(self.layer(curr_layer_ind)[start_ind:start_ind + curr_dim])
+            curr_layer_ind += 1
+            first_previous_node_abs_index = start_ind
+        return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
+
+    def remove_subtree(self, layer_ind: int, node_ind: int):
+        self.__check_layer_index_with_max_depth(layer_ind)
+        tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
+        curr_layer = self.layer(layer_ind)
+        elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        if not (0 <= node_ind < len(elem)):
+            raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
+        first_previous_node_abs_index = elem[node_ind]
+        tre[layer_ind][elem[node_ind]] = ""
+        curr_layer_ind = layer_ind + 1
+        for i in range(self.max_depth() - layer_ind - 1):
+            curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
+            start_ind = first_previous_node_abs_index * self.max_degree()
+            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + [""]*curr_dim + tre[curr_layer_ind][start_ind+curr_dim:]
+            curr_layer_ind += 1
+            first_previous_node_abs_index = start_ind
+        return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
+
+    def insert_subtree(self, new_tree: PrimitiveTree, layer_ind: int, node_ind: int):
+        self.__check_layer_index_with_max_depth(layer_ind)
+        tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
+        curr_layer = self.layer(layer_ind)
+        elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        if not (0 <= node_ind < len(elem)):
+            raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
+        first_previous_node_abs_index = elem[node_ind]
+        tre[layer_ind][elem[node_ind]] = new_tree[0][0]
+        curr_layer_ind = layer_ind + 1
+        for i in range(self.max_depth() - layer_ind - 1):
+            curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
+            start_ind = first_previous_node_abs_index * self.max_degree()
+            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + new_tree[curr_layer_ind - layer_ind] + tre[curr_layer_ind][start_ind + curr_dim:]
+            curr_layer_ind += 1
+            first_previous_node_abs_index = start_ind
+        return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
+
     def extract_counting_features_from_tree(self):
         counting_dic = self.count_primitives()
         number_of_nodes = float(self.number_of_nodes())
@@ -563,9 +618,9 @@ class PrimitiveTree:
         single_primitives = sorted(single_primitives)
         couples_primitives = sorted(couples_primitives)
         counts = []
-        for p in single_primitives + couples_primitives:
+        for p in single_primitives:  # + couples_primitives:
             counts.append(float(counting_dic[p]))
-        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, degree_breadth_ratio, leaf_internal_nodes_ratio]
+        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, leaf_internal_nodes_ratio]
 
     @staticmethod
     def extract_counting_features_from_list_of_trees(trees: List):
