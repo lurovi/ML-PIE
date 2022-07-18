@@ -586,6 +586,13 @@ class PrimitiveTree:
                 break
         return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
 
+    def node_indexes_iterate(self):
+        candidates = []
+        for layer_ind in range(self.depth()):
+            for node_ind in range(self.number_of_nodes_at_layer(layer_ind)):
+                candidates.append((layer_ind, node_ind))
+        return candidates
+
     def extract_subtree(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         curr_layer = self.layer(layer_ind)
@@ -593,8 +600,6 @@ class PrimitiveTree:
         if not (0 <= node_ind < len(elem)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         tre = [[curr_layer[elem[node_ind]]]]
-        if self.is_leaf(layer_ind, node_ind):
-            return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
         first_previous_node_abs_index = elem[node_ind]
         curr_layer_ind = layer_ind + 1
         for i in range(self.max_depth() - layer_ind - 1):
@@ -603,7 +608,33 @@ class PrimitiveTree:
             tre.append(self.layer(curr_layer_ind)[start_ind:start_ind + curr_dim])
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
+        for i in range(self.max_depth() - layer_ind - 1, self.max_depth()):
+            curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
+            tre.append([""]*curr_dim)
+            curr_layer_ind += 1
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
+
+    def subtree_depth(self, layer_ind: int, node_ind: int) -> int:
+        self.__check_layer_index_with_actual_depth(layer_ind)
+        curr_layer = self.layer(layer_ind)
+        elem = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
+        if not (0 <= node_ind < len(elem)):
+            raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
+        first_previous_node_abs_index = elem[node_ind]
+        depth = 1
+        curr_layer_ind = layer_ind + 1
+        for i in range(self.max_depth() - layer_ind - 1):
+            curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
+            start_ind = first_previous_node_abs_index * self.max_degree()
+            lll = self.layer(curr_layer_ind)[start_ind:start_ind + curr_dim]
+            curr_layer_ind += 1
+            first_previous_node_abs_index = start_ind
+            lll = [nnn for nnn in lll if nnn != ""]
+            if not(lll):
+                return depth
+            depth += 1
+        return depth
+
     '''
     def remove_subtree(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
@@ -623,6 +654,7 @@ class PrimitiveTree:
             first_previous_node_abs_index = start_ind
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
     '''
+
     def replace_subtree(self, new_tree, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_actual_depth(layer_ind)
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]

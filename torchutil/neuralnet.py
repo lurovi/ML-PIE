@@ -93,9 +93,10 @@ def model_cost(confusion_matrix, cost_matrix):
 
 
 def spearman_footrule(y_true, y_pred):
+    r = len(y_true)
     y_true = np.argsort(y_true, kind="heapsort")[::-1]
     y_pred = np.argsort(y_pred, kind="heapsort")[::-1]
-    r = y_true.shape[0]
+    #y_pred = np.random.choice(r, r, replace=False)
     if r % 2 == 0:
         r = r ** 2
     else:

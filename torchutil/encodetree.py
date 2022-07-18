@@ -212,6 +212,14 @@ def one_hot_tree_as_image(tree: PrimitiveTree):
 
 
 # weights is a dictionary or list of dictionary while data is a list of primitive trees (this holds for methods of this section)
+def build_dataset_counts_as_input_number_of_nodes_as_target(data, weights):
+    X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
+    y = []
+    for t in data:
+        y.append(t.number_of_nodes())
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
 def build_dataset_counts_as_input_weights_average_as_target(data, weights):
     X = PrimitiveTree.extract_counting_features_from_list_of_trees(data)
     y = []
@@ -238,6 +246,14 @@ def build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(da
         depth_number_of_nodes_ratio = depth / number_of_nodes
         s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
         y.append(s)
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
+def build_dataset_onehot_as_input_number_of_nodes_as_target(data, weights):
+    X, y = [], []
+    for t in data:
+        X.append(one_hot_tree(t))
+        y.append(t.number_of_nodes())
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
 

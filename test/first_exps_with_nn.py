@@ -1,4 +1,5 @@
 from config.setting import *
+from gputil.operator import ShrinkMutation, UniformMutation, OnePointCrossover
 from gputil.tree import *
 from torchutil.neuralnet import *
 from torchutil.encodetree import *
@@ -176,7 +177,7 @@ if __name__ == '__main__':
             "e0": 0.12, "e1": 0.12}
            ]
 
-
+    '''
     for i in range(4):
         tr = gen_half_half(primitive_set_0, terminal_set_0, 2, 6)
         for _ in range(3):
@@ -185,13 +186,23 @@ if __name__ == '__main__':
     print(tr.print_as_tree())
     print(tr)
     print(tr_1.print_as_tree())
+    print(tr_1)
+    print()
     #print(tr.compile([3, 2, 4, 5]))
     #print(tr.count_primitives())
     #print(tr.extract_counting_features_from_tree())
-    print(tr.replace_subtree(tr_1, 2, 1).print_as_tree())
-    print(tr.replace_subtree(tr_1, 2, 1).print_as_text())
+    #print(tr.replace_subtree(tr_1, 2, 1).print_as_tree())
+    #print(tr.replace_subtree(tr_1, 2, 1).print_as_text())
+    print(ShrinkMutation().mute(tr).print_as_tree())
+    print(ShrinkMutation().mute(tr_1).print_as_tree())
+    print(UniformMutation().mute(tr).print_as_tree())
+    print(UniformMutation().mute(tr_1).print_as_tree())
+    lll = OnePointCrossover().cross([tr, tr_1])
+    print(lll[0].print_as_tree())
+    print(lll[1].print_as_tree())
+    '''
 
-
+    '''
     #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(400000)]
     #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(100000)]
     #test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(60000)]
@@ -201,6 +212,7 @@ if __name__ == '__main__':
     #train = decompress_pickle("train_trees.pbz2")
     #val = decompress_pickle("validation_trees.pbz2")
     #test = decompress_pickle("test_trees.pbz2")
+    '''
 
     '''
     X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
@@ -369,3 +381,46 @@ if __name__ == '__main__':
     #    max_epochs_warmup=6, batch_size_warmup=1000, max_epochs=14,
     #    batch_size=1)
     '''
+
+    #########################################
+
+
+    #execute_experiment_nn_ranking(
+    #   "Onehot Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
+    #   "onehot_weights_average_trees_twopointscomparesmall.pbz2",
+    #   "onehot_weights_average_trees.pbz2", 10000, nn.ReLU(), nn.Identity(),
+    #   [400, 220, 80, 25], device, max_epochs=14, batch_size=1)
+
+    #execute_experiment_nn_ranking(
+    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
+    #    "counts_weights_average_trees_twopointscomparesmall.pbz2",
+    #    "counts_weights_average_trees.pbz2", 10000, nn.ReLU(), nn.Identity(),
+    #    [400, 220, 80, 25], device, max_epochs=14, batch_size=1)
+
+    execute_experiment_nn_ranking_with_warmup(
+       "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",
+       "onehot_hci_score_trees.pbz2",
+       "onehot_weights_average_trees_twopointscomparesmall.pbz2",
+       "onehot_weights_average_trees.pbz2",
+       6000, nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device,
+       max_epochs_warmup=8, batch_size_warmup=1000, max_epochs=10,
+       batch_size=1)
+
+    #execute_experiment_nn_ranking_with_warmup(
+    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: Weights average.",
+    #    "counts_weights_average_trees.pbz2",
+    #    "counts_weights_average_trees_twopointscomparesmall.pbz2",
+    #    "counts_weights_average_trees.pbz2",
+    #    10000, nn.ReLU(), nn.Identity(), [400, 220, 80, 25], device,
+    #    max_epochs_warmup=6, batch_size_warmup=1000, max_epochs=14,
+    #    batch_size=1)
+
+    #execute_experiment_nn_ranking_with_warmup(
+    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",
+    #    "counts_hci_score_trees.pbz2",
+    #    "counts_weights_average_trees_twopointscomparesmall.pbz2",
+    #    "counts_weights_average_trees.pbz2",
+    #    10000, nn.ReLU(), nn.Identity(), [400, 220, 80, 25], device,
+    #    max_epochs_warmup=6, batch_size_warmup=1000, max_epochs=14,
+    #    batch_size=1)
+
