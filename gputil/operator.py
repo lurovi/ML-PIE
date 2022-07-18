@@ -72,7 +72,7 @@ class OnePointCrossover(Crossover):
                 if node_type_1 == node_type_2 and (tree_2.subtree_depth(layer_ind_2, node_ind_2) <= tree_1.max_depth() - layer_ind_1) and (tree_1.subtree_depth(layer_ind_1, node_ind_1) <= tree_2.max_depth() - layer_ind_2):
                     candidates.append([(layer_ind_1, node_ind_1), (layer_ind_2, node_ind_2)])
         if not candidates:
-            return [tree_1.copy(), tree_2.copy()]
+            return [PrimitiveTreeIndividual(tree_1.copy()), PrimitiveTreeIndividual(tree_2.copy())]
         candidate = random.choice(candidates)
         new_tree_1 = tree_1.extract_subtree(candidate[0][0], candidate[0][1])
         new_tree_2 = tree_2.extract_subtree(candidate[1][0], candidate[1][1])
