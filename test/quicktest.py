@@ -1,6 +1,8 @@
-#from config.setting import *
+#from util.setting import *
 import numpy as np
 import torch
+
+from util.sort import heapsort
 
 if __name__ == "__main__":
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
@@ -31,4 +33,18 @@ if __name__ == "__main__":
 
     a = torch.tensor([1,2,3,4,5])
     b = torch.tensor([6,7,8,9,10])
-    print(torch.cat((a, b), dim=0))
+    print((torch.cat((a, b), dim=0).float().reshape(1, -1)[:, 2]*torch.cat((a, b), dim=0).float().reshape(1, -1)[:, 3]).sum())
+    print(torch.sum( torch.tensor([[3]]) * (torch.tensor([[5]])-torch.tensor([[2]])) ))
+    print(torch.tensor([1,2]).tolist() + torch.tensor([3,4]).tolist())
+    print("######################")
+
+    arr = [torch.tensor([2,3,4]),
+           torch.tensor([1,5,6]),
+           torch.tensor([10,2,4]),
+           torch.tensor([2,1,1]),
+           torch.tensor([2,40,4]),
+           torch.tensor([5,5,1])]
+    arr0 = [12, 11, 13, 5, 6, 7]
+    arr, ind = heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
+    print(arr)
+    print(ind)

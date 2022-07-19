@@ -1,8 +1,6 @@
-from config.setting import *
-from gputil.operator import ShrinkMutation, UniformMutation, OnePointCrossover
-from gputil.tree import *
-from torchutil.neuralnet import *
-from torchutil.encodetree import *
+from util.setting import *
+from deeplearn.neuralnet import *
+from gp.encodetree import *
 
 
 # ========================================================
@@ -83,11 +81,29 @@ def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, 
     output_layer_size = 1
     trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
-    valloader = DataLoader(validation, batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                            generator=generator_data_loader)
 
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes)
     trainer = TwoPointsCompareTrainer(net, device, trainloader,
+                                   verbose=True, max_epochs=max_epochs)
+    trainer.train()
+    print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
+
+
+def execute_experiment_nn_ranking_double_output(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, device, max_epochs=20, batch_size=1000):
+    trees = decompress_pickle(file_name_dataset)
+    training = decompress_pickle(file_name_training)["training"]
+    validation, test = trees["validation"], trees["test"]
+    input_layer_size = len(training[0][0])
+    output_layer_size = 2
+    trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+                             generator=generator_data_loader)
+    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+                           generator=generator_data_loader)
+
+    net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes)
+    trainer = TwoPointsCompareDoubleOutputTrainer(net, device, trainloader,
                                    verbose=True, max_epochs=max_epochs)
     trainer.train()
     print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
@@ -135,46 +151,36 @@ if __name__ == '__main__':
 
     primitive_set_0 = PrimitiveSet(primitives_0, float)
 
-    weights_dict = [{"+": 0.90, "-": 0.70, "*": 0.55, "max": 0.21, "min": 0.21,
-            "^2": 0.16, "/2": 0.57,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.88, "-": 0.68, "*": 0.55, "max": 0.23, "min": 0.23,
-            "^2": 0.18, "/2": 0.57,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.86, "-": 0.66, "*": 0.56, "max": 0.24, "min": 0.24,
-            "^2": 0.18, "/2": 0.56,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.85, "-": 0.65, "*": 0.56, "max": 0.25, "min": 0.25,
-            "^2": 0.18, "/2": 0.55,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.84, "-": 0.64, "*": 0.57, "max": 0.26, "min": 0.26,
-            "^2": 0.19, "/2": 0.54,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.82, "-": 0.62, "*": 0.57, "max": 0.27, "min": 0.27,
-            "^2": 0.19, "/2": 0.54,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.81, "-": 0.61, "*": 0.58, "max": 0.28, "min": 0.28,
-            "^2": 0.20, "/2": 0.53,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12},
-           {"+": 0.80, "-": 0.60, "*": 0.60, "max": 0.30, "min": 0.30,
-            "^2": 0.22, "/2": 0.52,
-            "x0": 0.80, "x1": 0.80, "x2": 0.80, "x3": 0.80,
-            "c0": 0.23, "c1": 0.23,
-            "e0": 0.12, "e1": 0.12}
+    weights_dict = [{"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+            "^2": 43.42, "/2": 73.41,
+            "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+            "c0": 82.4, "c1": 82.4,
+            "e0": 82.4, "e1": 82.4},
+            {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+             "^2": 43.42, "/2": 73.41,
+             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+             "c0": 82.4, "c1": 82.4,
+             "e0": 82.4, "e1": 82.4},
+            {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+             "^2": 43.42, "/2": 73.41,
+             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+             "c0": 82.4, "c1": 82.4,
+             "e0": 82.4, "e1": 82.4},
+            {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+             "^2": 43.42, "/2": 73.41,
+             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+             "c0": 82.4, "c1": 82.4,
+             "e0": 82.4, "e1": 82.4},
+            {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+             "^2": 43.42, "/2": 73.41,
+             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+             "c0": 82.4, "c1": 82.4,
+             "e0": 82.4, "e1": 82.4},
+            {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
+             "^2": 43.42, "/2": 73.41,
+             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
+             "c0": 82.4, "c1": 82.4,
+             "e0": 82.4, "e1": 82.4}
            ]
 
     '''
@@ -202,7 +208,6 @@ if __name__ == '__main__':
     print(lll[1].print_as_tree())
     '''
 
-    '''
     #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(400000)]
     #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(100000)]
     #test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(60000)]
@@ -212,6 +217,32 @@ if __name__ == '__main__':
     #train = decompress_pickle("train_trees.pbz2")
     #val = decompress_pickle("validation_trees.pbz2")
     #test = decompress_pickle("test_trees.pbz2")
+
+    '''
+    X_train, y_train = build_dataset_onehot_as_input_number_of_nodes_as_target(train)
+    X_dev, y_dev = build_dataset_onehot_as_input_number_of_nodes_as_target(val)
+    X_test, y_test = build_dataset_onehot_as_input_number_of_nodes_as_target(test)
+    compress_pickle("onehot_number_of_nodes_trees", {"training": TreeData(X_train, y_train),
+                                                     "validation": TreeData(X_dev, y_dev),
+                                                     "test": TreeData(X_test, y_test)})
+
+    compress_pickle("onehot_number_of_nodes_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("onehot_number_of_nodes_trees.pbz2")["training"], 120000)})
+    
+
+    X_train, y_train = build_dataset_counts_as_input_number_of_nodes_as_target(train)
+    scaler = MaxAbsScaler()
+    scaler.fit(X_train)
+    X_dev, y_dev = build_dataset_counts_as_input_number_of_nodes_as_target(val)
+    X_test, y_test = build_dataset_counts_as_input_number_of_nodes_as_target(test)
+    compress_pickle("counts_number_of_nodes_trees", {"training": TreeData(X_train, y_train, scaler),
+                                                     "validation": TreeData(X_dev, y_dev, scaler),
+                                                     "test": TreeData(X_test, y_test, scaler)})
+
+    compress_pickle("counts_number_of_nodes_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("counts_number_of_nodes_trees.pbz2")["training"], 120000)})
     '''
 
     '''
@@ -266,19 +297,14 @@ if __name__ == '__main__':
     '''
 
     '''
-    compress_pickle("onehot_weights_average_trees_twopointscomparelarge",
+    compress_pickle("onehot_weights_average_trees_twopointscompare",
                     {"training": TreeDataTwoPointsCompare(
                         decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 120000)})
-    compress_pickle("onehot_weights_average_trees_twopointscomparesmall",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 45000)})
 
-    compress_pickle("counts_weights_average_trees_twopointscomparelarge",
+    compress_pickle("counts_weights_average_trees_twopointscompare",
                     {"training": TreeDataTwoPointsCompare(
                         decompress_pickle("counts_weights_average_trees.pbz2")["training"], 120000)})
-    compress_pickle("counts_weights_average_trees_twopointscomparesmall",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 45000)})
+    
     '''
 
     '''
@@ -385,11 +411,11 @@ if __name__ == '__main__':
     #########################################
 
 
-    #execute_experiment_nn_ranking(
-    #   "Onehot Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
-    #   "onehot_weights_average_trees_twopointscomparesmall.pbz2",
-    #   "onehot_weights_average_trees.pbz2", 10000, nn.ReLU(), nn.Identity(),
-    #   [400, 220, 80, 25], device, max_epochs=14, batch_size=1)
+    execute_experiment_nn_ranking_double_output(
+       "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 26]). Small Training Data.",
+       "onehot_number_of_nodes_trees_twopointscompare.pbz2",
+       "onehot_number_of_nodes_trees.pbz2", 4000, nn.ReLU(), nn.Sigmoid(),
+       [400, 220, 80, 26], device, max_epochs=10, batch_size=1)
 
     #execute_experiment_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
@@ -397,14 +423,14 @@ if __name__ == '__main__':
     #    "counts_weights_average_trees.pbz2", 10000, nn.ReLU(), nn.Identity(),
     #    [400, 220, 80, 25], device, max_epochs=14, batch_size=1)
 
-    execute_experiment_nn_ranking_with_warmup(
-       "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",
-       "onehot_hci_score_trees.pbz2",
-       "onehot_weights_average_trees_twopointscomparesmall.pbz2",
-       "onehot_weights_average_trees.pbz2",
-       6000, nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device,
-       max_epochs_warmup=8, batch_size_warmup=1000, max_epochs=10,
-       batch_size=1)
+    #execute_experiment_nn_ranking_with_warmup(
+    #   "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",
+    #   "onehot_hci_score_trees.pbz2",
+    #   "onehot_weights_average_trees_twopointscomparesmall.pbz2",
+    #   "onehot_weights_average_trees.pbz2",
+    #   6000, nn.ReLU(), nn.Sigmoid(), [400, 220, 80, 25], device,
+    #   max_epochs_warmup=8, batch_size_warmup=1000, max_epochs=10,
+    #   batch_size=1)
 
     #execute_experiment_nn_ranking_with_warmup(
     #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: Weights average.",
