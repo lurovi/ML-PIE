@@ -1,5 +1,6 @@
 import random
 from abc import ABC, abstractmethod
+from functools import partial
 from typing import List
 
 import numpy as np
@@ -26,7 +27,7 @@ class TreeData(Dataset):
         self.y = y  # numpy array
         self.scaler = scaler  # e.g., StandardScaler(), already fitted to the training data
         if not(scaler is None):
-            self.X = scaler.transform(self.X)
+            self.X = scaler.transform(self.X)  # transform data
         self.X = torch.from_numpy(self.X).float()
         self.y = torch.from_numpy(self.y).float()
 
@@ -38,23 +39,37 @@ class TreeData(Dataset):
         # gets a data point from the dataset as torch tensor array along with the label
         return self.X[idx], self.y[idx]
 
+    def to_numpy(self):
+        dataset, labels = [], []
+        for i in range(len(self)):
+            curr_point, curr_label = self[i]
+            dataset.append(curr_point.tolist())
+            labels.append(curr_label.item())
+        return np.array(dataset), np.array(labels)
+
 
 class TreeDataTwoPointsCompare(Dataset):
-    def __init__(self, dataset, number_of_points):
-        self.dataset = dataset
-        self.number_of_points = number_of_points
-        self.original_number_of_points = len(dataset)
+    def __init__(self, dataset, number_of_points, binary_label=False):
+        self.dataset = dataset  # this is an instance of a class that inherits torch.utils.data.Dataset class
+        self.number_of_points = number_of_points  # how many points we want to generate
+        self.original_number_of_points = len(dataset)  # the number of points in dataset instance
         new_data = []
         new_labels = []
-        indexes = list(range(self.original_number_of_points))
+        indexes = list(range(self.original_number_of_points))  # [0, 1, 2, ..., self.original_number_of_points-2, self.original_number_of_points-1]
         for _ in range(self.number_of_points):
-            idx = random.choices(indexes, k=2)
-            first_point, first_label = self.dataset[idx[0]]
-            second_point, second_label = self.dataset[idx[1]]
-            if first_label.item() >= second_label.item():
-                new_labels.append(-1.0)
-            else:
-                new_labels.append(1.0)
+            idx = random.choices(indexes, k=2)  # extract two points at random with replacement (for computational efficiency reasons)
+            first_point, first_label = self.dataset[idx[0]]  # first point extracted
+            second_point, second_label = self.dataset[idx[1]]  # second point extracted
+            if first_label.item() >= second_label.item():  # first point has a higher score than the second one
+                if binary_label:
+                    new_labels.append(1)  # close to one when the first point is higher: sigmoid(z_final) >= 0.5
+                else:
+                    new_labels.append(-1.0)  # if the first point is higher, then the loss decreases: -1*(p1-p2)
+            else:  # first point has a lower score than the second one
+                if binary_label:
+                    new_labels.append(0)  # close to zero when the first point is lower: sigmoid(z_final) < 0.5
+                else:
+                    new_labels.append(1.0)  # if the second point is higher, then the loss decreases: 1*(p1-p2)
             new_data.append(first_point.tolist() + second_point.tolist())
         self.X = torch.tensor(new_data).float()
         self.y = torch.tensor(new_labels).float()
@@ -67,45 +82,37 @@ class TreeDataTwoPointsCompare(Dataset):
         # gets a data point from the dataset as torch tensor array along with the label
         return self.X[idx], self.y[idx]
 
+    def to_numpy(self):
+        dataset, labels = [], []
+        for i in range(len(self)):
+            curr_point, curr_label = self[i]
+            dataset.append(curr_point.tolist())
+            labels.append(curr_label.item())
+        return np.array(dataset), np.array(labels)
+
 
 # ==============================================================================================================
 # MODEL PERFORMANCE
 # ==============================================================================================================
 
 
-def model_accuracy(confusion_matrix):
-    N = confusion_matrix.shape[0]
-    acc = sum([confusion_matrix[i, i] for i in range(N)])
-    class_performance = {i: {} for i in range(N)}
-    for i in range(N):
-        positive_rate = confusion_matrix[i, i]
-        true_positives = confusion_matrix[i, :].sum()
-        predicted_positives = confusion_matrix[:, i].sum()
-        class_performance[i]["precision"] = positive_rate/predicted_positives if predicted_positives != 0 else 0
-        class_performance[i]["recall"] = positive_rate/true_positives if true_positives != 0 else 0
-        class_performance[i]["f1"] = (2*class_performance[i]["precision"]*class_performance[i]["recall"])/(class_performance[i]["precision"]+class_performance[i]["recall"]) if class_performance[i]["precision"]+class_performance[i]["recall"] != 0 else 0
-    return acc/confusion_matrix.sum(), class_performance
-
-
-def model_cost(confusion_matrix, cost_matrix):
-    N = confusion_matrix.shape[0]
-    a = np.subtract(cost_matrix, np.identity(N))
-    return np.multiply(confusion_matrix, a).sum()
-
-
 def spearman_footrule(y_true, y_pred):
+    # y_true (or y_pred) is a list of scalar values
+    # each argument is arg sorted in reverse order, i.e., the first element is the index of the greatest value in each list
     y_true = np.argsort(y_true, kind="heapsort")[::-1]
     y_pred = np.argsort(y_pred, kind="heapsort")[::-1]
-    return spearman_footrule_direct(y_true, y_pred)
+    return spearman_footrule_direct(y_true, y_pred)  # apply spearman footrule directly
 
 
 def spearman_footrule_direct(y_true, y_pred):
-    r = len(y_true)
-    if r % 2 == 0:
+    # y_true (or y_pred) is a list of integer indexes which represents a sorting of a list of scalar values
+    r = len(y_true)  # number of values
+    # compute normalization factor
+    if r % 2 == 0:  # even number of values
         r = r ** 2
-    else:
+    else:  # odd number of values
         r = r ** 2 - 1
-    return (3.0 / float(r)) * np.absolute(np.subtract(y_true, y_pred)).sum()
+    return (3.0 / float(r)) * np.absolute(np.subtract(y_true, y_pred)).sum()  # factor * sum( |y_true_argsorted - y_pred_argsorted| )
 
 
 # ==============================================================================================================
@@ -113,18 +120,42 @@ def spearman_footrule_direct(y_true, y_pred):
 # ==============================================================================================================
 
 
-def two_points_compare_loss(first_pred, second_pred, feedback):
-    '''
-    feedback is a 1-D tensor containing either 1 or -1. Length of feedback is equal to the number of records of the feedback data.
-    first_pred and second_pred are both scalar tensor resulting from the application of a neural network model
-    to some input. The computed formula is:
-    feedback*(first_pred - second_pred)
-    therefore, if feedback is -1 then the user says that first error is more serious than the second one.
-    in this way if the models says that first_pred is greater then the loss decreases because the model is correct,
-    otherwise the loss increases.
-    if feedback is 1 then the user says that second error is more serious than the first one.
-    '''
-    return torch.sum( feedback*(first_pred - second_pred) )
+def two_points_compare_loss(outputs, labels):
+    return torch.sum( labels[:, 0] * (outputs[:, 0] - outputs[:, 1]) )  # sum( labels*(first_prediction - second_prediction) ) where labels can be either -1 or 1.
+
+
+# ==============================================================================================================
+# COMPARATOR
+# ==============================================================================================================
+
+
+def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
+    neural_network.eval()
+    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+    output = neural_network(point)[0]
+    return output[0].item() < output[1].item()  # first element is lower than the second one
+
+
+def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_network):
+    neural_network.eval()
+    sm = nn.Softmax(dim=0)
+    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+    output = sm(neural_network(point)[0])
+    return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
+
+
+def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_network):
+    neural_network.eval()
+    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+    output = neural_network(point)[0]
+    return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
+
+
+def neuralnet_one_output_neurons_tanh_comparator(point_1, point_2, neural_network):
+    neural_network.eval()
+    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+    output = neural_network(point)[0]
+    return output[0].item() < 0.0  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
 # ==============================================================================================================
@@ -200,9 +231,10 @@ class Trainer(ABC):
 
 class StandardBatchTrainer(Trainer):
     def __init__(self, net, device, dataloader, loss_fn, optimizer_name='adam',
-                 verbose=False,
+                 is_classification_task=False, verbose=False,
                  learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20):
         super(StandardBatchTrainer, self).__init__(net, device, dataloader)
+        self.is_classification_task = is_classification_task
         self.optimizer_name = optimizer_name
         self.verbose = verbose
         self.loss_fn = loss_fn
@@ -225,7 +257,11 @@ class StandardBatchTrainer(Trainer):
         for epoch in range(self.max_epochs):
             for batch in self.data:
                 inputs, labels = batch
-                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                inputs = inputs.to(self.device).float()
+                if self.is_classification_task:
+                    labels = labels.to(self.device).long()
+                else:
+                    labels = labels.to(self.device).float().reshape((labels.shape[0], 1))
                 optimizer.zero_grad()
                 outputs = self.net(inputs)
                 loss = self.loss_fn(outputs, labels)
@@ -274,10 +310,14 @@ class TwoPointsCompareTrainer(Trainer):
 
 
 class TwoPointsCompareDoubleOutputTrainer(Trainer):
-    def __init__(self, net, device, dataloader,
-                 verbose=False,
+    def __init__(self, net, device, dataloader, comparator_fn, loss_fn, optimizer_name='adam',
+                 is_classification_task=False, verbose=False,
                  learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20):
         super(TwoPointsCompareDoubleOutputTrainer, self).__init__(net, device, dataloader)
+        self.is_classification_task = is_classification_task
+        self.comparator_fn = comparator_fn
+        self.loss_fn = loss_fn
+        self.optimizer_name = optimizer_name
         self.verbose = verbose
         self.learning_rate = learning_rate
         self.weight_decay = weight_decay
@@ -286,19 +326,27 @@ class TwoPointsCompareDoubleOutputTrainer(Trainer):
         self.max_epochs = max_epochs
 
     def train(self):
-        optimizer = optim.SGD(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay, momentum=0.9)
+        if self.optimizer_name == 'adam':
+            optimizer = optim.Adam(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
+        elif self.optimizer_name == 'sgd':
+            optimizer = optim.SGD(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay,
+                                  momentum=self.momentum, dampening=self.dampening)
+        else:
+            raise ValueError(f"{self.optimizer_name} is not a valid value for argument optimizer.")
         loss_epoch_arr = []
         self.net.train()
         for epoch in range(self.max_epochs):
             for batch in self.data:
                 inputs, labels = batch
-                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                inputs = inputs.to(self.device).float()
+                if self.is_classification_task:
+                    labels = labels.to(self.device).long()
+                else:
+                    labels = labels.to(self.device).float().reshape((labels.shape[0], 1))
                 optimizer.zero_grad()
                 outputs = self.net(inputs)
-                loss = labels[:, 0] * (outputs[:, 0] - outputs[:, 1])
-                loss = loss.sum()
+                loss = self.loss_fn(outputs, labels)
                 loss.backward()
-                #loss.backward(gradient=torch.tensor([1.0]*loss.size(0)).float())
                 optimizer.step()
             loss_epoch_arr.append(loss.item())
             if self.verbose:
@@ -316,14 +364,9 @@ class TwoPointsCompareDoubleOutputTrainer(Trainer):
                 points.append(inputs[i])
                 y_true.append(labels[i][0].item())
         y_true = np.argsort(y_true, kind="heapsort")[::-1]
-        _, y_pred = heapsort(points, self.comparator, inplace=False, reverse=True)
+        comparator = partial(self.comparator_fn, neural_network=self.net)
+        _, y_pred = heapsort(points, comparator, inplace=False, reverse=True)
         return spearman_footrule_direct(y_true, np.array(y_pred))
-
-    def comparator(self, point_1, point_2):
-        self.net.eval()
-        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-        output = self.net(point)[0]
-        return output[0].item() < output[1].item()
 
 
 # ==============================================================================================================
@@ -365,12 +408,13 @@ class LeNet(nn.Module):
 
 
 class MLPNet(nn.Module):
-    def __init__(self, activation_func, final_activation_func, input_layer_size: int, output_layer_size: int, hidden_layer_sizes: List[int] = []):
+    def __init__(self, activation_func, final_activation_func, input_layer_size: int, output_layer_size: int, hidden_layer_sizes: List[int] = [], dropout_prob: float = 0.0):
         super(MLPNet, self).__init__()
         self.activation_func = activation_func  # e.g., nn.ReLU()
         self.final_activation_func = final_activation_func  # e.g., nn.Tanh()
         self.input_layer_size = input_layer_size
         self.output_layer_size = output_layer_size
+        self.dropout_prob = dropout_prob
 
         linear_layers = []
         layer_sizes = hidden_layer_sizes + [output_layer_size]
@@ -381,6 +425,8 @@ class MLPNet(nn.Module):
                 linear_layers.append(self.activation_func)
             else:
                 linear_layers.append(self.final_activation_func)
+            if i == len(layer_sizes) - 3 or i == len(layer_sizes) - 5 or i == len(layer_sizes) - 7 or i == len(layer_sizes) - 9:
+                linear_layers.append(nn.Dropout(self.dropout_prob))
             curr_dim = layer_sizes[i]
 
         self.fc_model = nn.Sequential(*linear_layers)

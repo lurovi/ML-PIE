@@ -1,6 +1,7 @@
 #from util.setting import *
 import numpy as np
 import torch
+from torch import nn
 
 from util.sort import heapsort
 
@@ -36,6 +37,8 @@ if __name__ == "__main__":
     print((torch.cat((a, b), dim=0).float().reshape(1, -1)[:, 2]*torch.cat((a, b), dim=0).float().reshape(1, -1)[:, 3]).sum())
     print(torch.sum( torch.tensor([[3]]) * (torch.tensor([[5]])-torch.tensor([[2]])) ))
     print(torch.tensor([1,2]).tolist() + torch.tensor([3,4]).tolist())
+    print(nn.Softmax(dim=0)(torch.tensor([23,45]).float()))
+    print(np.concatenate((np.array([1,2,3]),np.array([4,5,6])), axis=None).reshape(1, -1))
     print("######################")
 
     arr = [torch.tensor([2,3,4]),
@@ -48,3 +51,4 @@ if __name__ == "__main__":
     arr, ind = heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
     print(arr)
     print(ind)
+
