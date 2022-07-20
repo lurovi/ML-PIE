@@ -1,6 +1,7 @@
 from sklearn import ensemble
 
-from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule
+from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
+    build_numpy_dataset_twopointscompare
 from util.setting import *
 from deeplearn.neuralnet import *
 from gp.encodetree import *
@@ -136,7 +137,8 @@ def execute_experiment_nn_ranking_double_output(title, file_name_training, file_
     print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
 
 
-def execute_experiment_rf_ranking_double_output(title, dev_set, dev_labels, train_set, train_labels, seed, device):
+def execute_experiment_rf_ranking_double_output(title, file_name_dataset, seed):
+    trees = decompress_pickle(file_name_dataset)
     model = ensemble.RandomForestClassifier(random_state=seed)
     scaler = MaxAbsScaler()
     pipe = Pipeline([('scaler', scaler), ('model', model)])
@@ -147,9 +149,9 @@ def execute_experiment_rf_ranking_double_output(title, dev_set, dev_labels, trai
              }
     estimator = MLEstimator(pipe, space, scoring="accuracy", random_state=seed,
                             n_splits=5, n_repeats=3, n_jobs=-1,
-                            randomized_search=True, n_iter=100)
-    estimator.train(train_set, train_labels, verbose=True)
-    eval = evaluate_ml_ranking_with_spearman_footrule(dev_set[:500], dev_labels[:500], estimator)
+                            randomized_search=True, n_iter=20)
+    estimator.train(trees["training"][0][:3000], trees["training"][1][:3000], verbose=True)
+    eval = evaluate_ml_ranking_with_spearman_footrule(trees["validation"][0][:500], trees["validation"][1][:500], estimator)
     print(title, " - Spearman Footrule on Validation Set - ", eval)
 
 
@@ -243,8 +245,8 @@ if __name__ == '__main__':
     #compress_pickle("train_trees", train)
     #compress_pickle("validation_trees", val)
     #compress_pickle("test_trees", test)
-    train = decompress_pickle("train_trees.pbz2")
-    val = decompress_pickle("validation_trees.pbz2")
+    #train = decompress_pickle("train_trees.pbz2")
+    #val = decompress_pickle("validation_trees.pbz2")
     #test = decompress_pickle("test_trees.pbz2")
 
 
@@ -300,10 +302,18 @@ if __name__ == '__main__':
 
     #########################################
 
+    '''
     X_train, y_train = build_dataset_counts_as_input_weights_average_as_target(train, weights_dict)
+    X_train, y_train = build_numpy_dataset_twopointscompare(X_train, y_train, 120000, binary_label=True)
     X_dev, y_dev = build_dataset_counts_as_input_weights_average_as_target(val, weights_dict)
+    X_test, y_test = build_dataset_counts_as_input_weights_average_as_target(test, weights_dict)
+    compress_pickle("counts_weights_average_trees_twopointscomparebinary_numpy",
+                    {"training": (X_train, y_train), "validation": (X_dev, y_dev), "test": (X_test, y_test)})
+    '''
+
     execute_experiment_rf_ranking_double_output("Counts Tree (Random Forest)",
-                                                X_dev, y_dev, X_train, y_train, seed, device)
+                                                "counts_weights_average_trees_twopointscomparebinary_numpy.pbz2",
+                                                seed)
 
     #execute_experiment_nn_ranking_double_output(
     #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",

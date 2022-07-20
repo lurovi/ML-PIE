@@ -6,13 +6,44 @@ import numpy as np
 from sklearn.model_selection import RepeatedStratifiedKFold, RepeatedKFold, RandomizedSearchCV, GridSearchCV
 from sklearn.utils.multiclass import type_of_target
 from sklearn import metrics
+import random
+from deeplearn.neuralnet import spearman_footrule_direct
+from util.sort import heapsort
+
+
+# ==============================================================================================================
+# DATASET HANDLER
+# ==============================================================================================================
+
+
+def build_numpy_dataset_twopointscompare(X, y, num_points_to_generate, binary_label=False):
+    original_number_of_points = len(X)  # the number of points in dataset instance
+    new_data = []
+    new_labels = []
+    indexes = list(range(original_number_of_points))  # [0, 1, 2, ..., original_number_of_points-2, original_number_of_points-1]
+    for _ in range(num_points_to_generate):
+        idx = random.choices(indexes, k=2)  # extract two points at random with replacement (for computational efficiency reasons)
+        first_point = X[idx[0]]  # first point extracted
+        first_label = y[idx[0]]  # first label extracted
+        second_point = X[idx[1]]  # second point extracted
+        second_label = y[idx[1]]  # second label extracted
+        if first_label >= second_label:  # first point has a higher score than the second one
+            if binary_label:
+                new_labels.append(1)  # close to one when the first point is higher: sigmoid(z_final) >= 0.5
+            else:
+                new_labels.append(-1.0)  # if the first point is higher, then the loss decreases: -1*(p1-p2)
+        else:  # first point has a lower score than the second one
+            if binary_label:
+                new_labels.append(0)  # close to zero when the first point is lower: sigmoid(z_final) < 0.5
+            else:
+                new_labels.append(1.0)  # if the second point is higher, then the loss decreases: 1*(p1-p2)
+        new_data.append(first_point.tolist() + second_point.tolist())
+    return np.array(new_data), np.array(new_labels)
 
 
 # ==============================================================================================================
 # MODEL PERFORMANCE
 # ==============================================================================================================
-from deeplearn.neuralnet import spearman_footrule_direct
-from util.sort import heapsort
 
 
 def model_accuracy(confusion_matrix):
@@ -48,7 +79,7 @@ def compute_binary_confusion_matrix_metrics(y_true, y_pred):
     fn_rate = fn/(fn+tp)
     f1 = (2*precision*recall)/(precision+recall)
     mcc = ( (tn*tp) - (fp*fn) )/np.sqrt( (tn+fn)*(fp+tp)*(tn+fp)*(fn+tp) )
-    roc_auc = metrics.roc_auc_score(y_true,y_pred)
+    roc_auc = metrics.roc_auc_score(y_true, y_pred)
     return {"total number of predictions": len(y_true), "TP": tp, "TN": tn, "FP": fp, "FN": fn,
             "accuracy": accuracy, "f1": f1, "mcc": mcc, "precision": precision, "recall": recall,
             "specificity": specificity, "fp_rate": fp_rate, "fn_rate": fn_rate, "roc_auc_score": roc_auc}
@@ -87,8 +118,11 @@ class Estimator(ABC):
     def __init__(self, model):
         self.__model = model
 
-    def estimator(self):
+    def get_model(self):
         return self.__model
+
+    def set_model(self, model):
+        self.__model = model
 
     @abstractmethod
     def train(self, X, y, save_path=None, verbose=False):
@@ -120,23 +154,24 @@ class MLEstimator(Estimator):
             cv = RepeatedKFold(n_splits=self.n_splits, n_repeats=self.n_repeats, random_state=self.random_state)
         refit = True if isinstance(self.scoring, str) else self.scoring[0]
         if self.randomized_search:
-            search = RandomizedSearchCV(self.__model, self.space, scoring=self.scoring, n_jobs=self.n_jobs, cv=cv,
+            search = RandomizedSearchCV(self.get_model(), self.space, scoring=self.scoring, n_jobs=self.n_jobs, cv=cv,
                                         random_state=self.random_state, n_iter=self.n_iter, refit=refit)
         else:
-            search = GridSearchCV(self.__model, self.space, scoring=self.scoring, n_jobs=self.n_jobs, cv=cv, refit=refit)
+            search = GridSearchCV(self.get_model(), self.space, scoring=self.scoring, n_jobs=self.n_jobs,
+                                  cv=cv, refit=refit)
         search.fit(X, y)
         if verbose:
             print('Best Estimator: %s' % search.best_estimator_)
             print('Best Score: %s' % search.best_score_)
             print('Best Hyper-parameters: %s' % search.best_params_)
             print("=" * 50)
-        self.__model = search
+        self.set_model(search)
         if not (save_path is None):
             pickling_on = open(save_path, "wb")
             pickle.dump(self, pickling_on)
             pickling_on.close()
 
     def estimate(self, X):
-        return self.__model.predict(X)
+        return self.get_model().predict(X)
 
 
