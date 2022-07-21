@@ -5,6 +5,8 @@ from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_foo
 from util.setting import *
 from deeplearn.neuralnet import *
 from gp.encodetree import *
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 # ========================================================
@@ -128,13 +130,31 @@ def execute_experiment_nn_ranking_double_output(title, file_name_training, file_
                              generator=generator_data_loader)
     valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                            generator=generator_data_loader)
-
+    trainloader_original = DataLoader(Subset(trees["training"], list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+                             generator=generator_data_loader)
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes, dropout_prob=0.25)
     trainer = TwoPointsCompareDoubleOutputTrainer(net, device, trainloader, comparator_fn=comparator_fn, loss_fn=loss_fn,
                                                   optimizer_name=optimizer_name, momentum=momentum,
                                    verbose=True, is_classification_task=is_classification_task, max_epochs=max_epochs)
     trainer.train()
-    print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
+    eval_val = trainer.evaluate_ranking(valloader)
+    eval_train = trainer.evaluate_ranking(trainloader_original)
+    print(title, " - Spearman Footrule on Validation Set - ", eval_val)
+    return eval_train, eval_val
+
+
+def plot_multiple_experiments_nn_ranking_double_output(title, file_name_training, file_name_dataset, max_train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
+    num_iters = np.arange(50, max_train_size+1, 50)
+    df = {"Training Size": [], "Footrule": [], "Partition": []}
+    for train_size in num_iters:
+        eval_train, eval_val = execute_experiment_nn_ranking_double_output(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs, batch_size, optimizer_name, momentum)
+        df["Training Size"].extend([train_size]*2)
+        df["Footrule"].append(eval_train)
+        df["Footrule"].append(eval_val)
+        df["Partition"].extend(["Training Set", "Validation Set"])
+    plot = sns.lineplot(data=df, x="Training Size", y="Footrule", hue="Partition")
+    plt.show()
+    return plot
 
 
 def execute_experiment_rf_ranking_double_output(title, file_name_dataset, seed):
@@ -315,13 +335,23 @@ if __name__ == '__main__':
     #                                            "onehot_weights_average_trees_twopointscomparebinary_numpy.pbz2",
     #                                            seed)
 
-    execute_experiment_nn_ranking_double_output(
-       "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
-       "onehot_number_of_nodes_trees_twopointscomparebinary.pbz2",
-       "onehot_number_of_nodes_trees.pbz2", 120000, nn.ReLU(), nn.Identity(),
-        hidden_layer_sizes=[140, 80, 26], output_layer_size=2,
-        device=device, is_classification_task=True,
-        comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=100, batch_size=1000)
+    #execute_experiment_nn_ranking_double_output(
+    #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
+    #   "onehot_number_of_nodes_trees_twopointscomparebinary.pbz2",
+    #   "onehot_number_of_nodes_trees.pbz2", 120000, nn.ReLU(), nn.Identity(),
+    #    hidden_layer_sizes=[140, 80, 26], output_layer_size=2,
+    #    device=device, is_classification_task=True,
+    #    comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=100, batch_size=1000)
+
+    plot = plot_multiple_experiments_nn_ranking_double_output(
+        "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]).",
+        "counts_weights_average_trees_twopointscomparebinary.pbz2",
+        "counts_weights_average_trees.pbz2", 5000, nn.ReLU(), nn.Sigmoid(),
+        hidden_layer_sizes=[140, 80, 26], output_layer_size=1,
+        device=device, is_classification_task=False,
+        comparator_fn=sigmoidcomparator, loss_fn=mseloss, max_epochs=100, batch_size=50)
+
+
 
     #execute_experiment_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
