@@ -303,25 +303,25 @@ if __name__ == '__main__':
     #########################################
 
     '''
-    X_train, y_train = build_dataset_counts_as_input_weights_average_as_target(train, weights_dict)
+    X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
     X_train, y_train = build_numpy_dataset_twopointscompare(X_train, y_train, 120000, binary_label=True)
-    X_dev, y_dev = build_dataset_counts_as_input_weights_average_as_target(val, weights_dict)
-    X_test, y_test = build_dataset_counts_as_input_weights_average_as_target(test, weights_dict)
-    compress_pickle("counts_weights_average_trees_twopointscomparebinary_numpy",
+    X_dev, y_dev = build_dataset_onehot_as_input_weights_average_as_target(val, weights_dict)
+    X_test, y_test = build_dataset_onehot_as_input_weights_average_as_target(test, weights_dict)
+    compress_pickle("onehot_weights_average_trees_twopointscomparebinary_numpy",
                     {"training": (X_train, y_train), "validation": (X_dev, y_dev), "test": (X_test, y_test)})
     '''
 
-    execute_experiment_rf_ranking_double_output("Counts Tree (Random Forest)",
-                                                "counts_weights_average_trees_twopointscomparebinary_numpy.pbz2",
-                                                seed)
+    #execute_experiment_rf_ranking_double_output("Onehot Tree (Random Forest)",
+    #                                            "onehot_weights_average_trees_twopointscomparebinary_numpy.pbz2",
+    #                                            seed)
 
-    #execute_experiment_nn_ranking_double_output(
-    #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
-    #   "counts_weights_average_trees_twopointscomparebinary.pbz2",
-    #   "counts_weights_average_trees.pbz2", 120000, nn.ReLU(), nn.Identity(),
-    #    hidden_layer_sizes=[140, 80, 26], output_layer_size=2,
-    #    device=device, is_classification_task=True,
-    #    comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=100, batch_size=1000)
+    execute_experiment_nn_ranking_double_output(
+       "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
+       "onehot_number_of_nodes_trees_twopointscomparebinary.pbz2",
+       "onehot_number_of_nodes_trees.pbz2", 120000, nn.ReLU(), nn.Identity(),
+        hidden_layer_sizes=[140, 80, 26], output_layer_size=2,
+        device=device, is_classification_task=True,
+        comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=100, batch_size=1000)
 
     #execute_experiment_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
