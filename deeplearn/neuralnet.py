@@ -129,6 +129,13 @@ def two_points_compare_loss(outputs, labels):
 # ==============================================================================================================
 
 
+def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
+    neural_network.eval()
+    output_1 = neural_network(point_1.reshape(1, -1))[0][0]
+    output_2 = neural_network(point_2.reshape(1, -1))[0][0]
+    return output_1.item() < output_2.item()  # first element is lower than the second one
+
+
 def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
@@ -288,32 +295,50 @@ class TwoPointsCompareTrainer(Trainer):
     def train(self):
         optimizer = optim.Adam(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         loss_epoch_arr = []
-        self.net.train()
+        one = torch.tensor(1, dtype=torch.float32)
+        minus_one = torch.tensor(-1, dtype=torch.float32)
         for epoch in range(self.max_epochs):
             for batch in self.data:
+                self.net.train()
+                optimizer.zero_grad()
                 inputs, labels = batch
-                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
                 single_point_dim = inputs.shape[1]//2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                optimizer.zero_grad()
-                outputs_1, outputs_2 = self.net(inputs_1), self.net(inputs_2)
-                loss = torch.sum( labels * (outputs_1 - outputs_2)  )
+                outputs_1 = self.net(inputs_1).flatten()
+                loss_1 = one*torch.mean(labels*outputs_1)
+                outputs_2 = self.net(inputs_2).flatten()
+                loss_2 = minus_one*torch.mean(labels*outputs_2)
+                loss = loss_1 + loss_2
                 loss.backward()
-                #loss = labels * (outputs_1 - outputs_2)
-                #loss.backward(gradient=torch.tensor([1.0]*loss.size(0)).float())
                 optimizer.step()
             loss_epoch_arr.append(loss.item())
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
         return loss_epoch_arr
 
+    def evaluate_ranking(self, dataloader):
+        y_true = []
+        points = []
+        self.net.eval()
+        for batch in dataloader:
+            inputs, labels = batch
+            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+            for i in range(len(inputs)):
+                points.append(inputs[i])
+                y_true.append(labels[i][0].item())
+        y_true = np.argsort(y_true, kind="heapsort")[::-1]
+        comparator = partial(neuralnet_one_output_neurons_comparator, neural_network=self.net)
+        _, y_pred = heapsort(points, comparator, inplace=False, reverse=True)
+        return spearman_footrule_direct(y_true, np.array(y_pred))
 
-class TwoPointsCompareDoubleOutputTrainer(Trainer):
+
+class TwoPointsCompareDoubleInputTrainer(Trainer):
     def __init__(self, net, device, dataloader, comparator_fn, loss_fn, optimizer_name='adam',
                  is_classification_task=False, verbose=False,
                  learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20):
-        super(TwoPointsCompareDoubleOutputTrainer, self).__init__(net, device, dataloader)
+        super(TwoPointsCompareDoubleInputTrainer, self).__init__(net, device, dataloader)
         self.is_classification_task = is_classification_task
         self.comparator_fn = comparator_fn
         self.loss_fn = loss_fn

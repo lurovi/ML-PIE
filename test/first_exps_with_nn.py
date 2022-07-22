@@ -87,7 +87,7 @@ def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, 
     output_layer_size = 1
     trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
-    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+    valloader = DataLoader(Subset(validation, list(range(100))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                            generator=generator_data_loader)
 
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes, dropout_prob=0.25)
@@ -121,7 +121,7 @@ def execute_experiment_nn_ranking_with_warmup(title, file_name_warmup, file_name
     print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
 
 
-def execute_experiment_nn_ranking_double_output(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
+def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
     trees = decompress_pickle(file_name_dataset)
     training = decompress_pickle(file_name_training)["training"]
     validation, test = trees["validation"], trees["test"]
@@ -133,9 +133,9 @@ def execute_experiment_nn_ranking_double_output(title, file_name_training, file_
     trainloader_original = DataLoader(Subset(trees["training"], list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes, dropout_prob=0.25)
-    trainer = TwoPointsCompareDoubleOutputTrainer(net, device, trainloader, comparator_fn=comparator_fn, loss_fn=loss_fn,
-                                                  optimizer_name=optimizer_name, momentum=momentum,
-                                   verbose=True, is_classification_task=is_classification_task, max_epochs=max_epochs)
+    trainer = TwoPointsCompareDoubleInputTrainer(net, device, trainloader, comparator_fn=comparator_fn, loss_fn=loss_fn,
+                                                 optimizer_name=optimizer_name, momentum=momentum,
+                                                 verbose=True, is_classification_task=is_classification_task, max_epochs=max_epochs)
     trainer.train()
     eval_val = trainer.evaluate_ranking(valloader)
     eval_train = trainer.evaluate_ranking(trainloader_original)
@@ -143,11 +143,11 @@ def execute_experiment_nn_ranking_double_output(title, file_name_training, file_
     return eval_train, eval_val
 
 
-def plot_multiple_experiments_nn_ranking_double_output(title, file_name_training, file_name_dataset, max_train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
+def plot_multiple_experiments_nn_ranking_double_input(title, file_name_training, file_name_dataset, max_train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
     num_iters = np.arange(50, max_train_size+1, 50)
     df = {"Training Size": [], "Footrule": [], "Partition": []}
     for train_size in num_iters:
-        eval_train, eval_val = execute_experiment_nn_ranking_double_output(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs, batch_size, optimizer_name, momentum)
+        eval_train, eval_val = execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs, batch_size, optimizer_name, momentum)
         df["Training Size"].extend([train_size]*2)
         df["Footrule"].append(eval_train)
         df["Footrule"].append(eval_val)
@@ -157,7 +157,7 @@ def plot_multiple_experiments_nn_ranking_double_output(title, file_name_training
     return plot
 
 
-def execute_experiment_rf_ranking_double_output(title, file_name_dataset, seed):
+def execute_experiment_rf_ranking_double_input(title, file_name_dataset, seed):
     trees = decompress_pickle(file_name_dataset)
     model = ensemble.RandomForestClassifier(random_state=seed)
     scaler = MaxAbsScaler()
@@ -331,11 +331,11 @@ if __name__ == '__main__':
                     {"training": (X_train, y_train), "validation": (X_dev, y_dev), "test": (X_test, y_test)})
     '''
 
-    #execute_experiment_rf_ranking_double_output("Onehot Tree (Random Forest)",
+    #execute_experiment_rf_ranking_double_input("Onehot Tree (Random Forest)",
     #                                            "onehot_weights_average_trees_twopointscomparebinary_numpy.pbz2",
     #                                            seed)
 
-    #execute_experiment_nn_ranking_double_output(
+    #execute_experiment_nn_ranking_double_input(
     #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
     #   "onehot_number_of_nodes_trees_twopointscomparebinary.pbz2",
     #   "onehot_number_of_nodes_trees.pbz2", 120000, nn.ReLU(), nn.Identity(),
@@ -343,21 +343,20 @@ if __name__ == '__main__':
     #    device=device, is_classification_task=True,
     #    comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=100, batch_size=1000)
 
-    plot = plot_multiple_experiments_nn_ranking_double_output(
-        "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]).",
-        "counts_weights_average_trees_twopointscomparebinary.pbz2",
-        "counts_weights_average_trees.pbz2", 5000, nn.ReLU(), nn.Sigmoid(),
-        hidden_layer_sizes=[140, 80, 26], output_layer_size=1,
-        device=device, is_classification_task=False,
-        comparator_fn=sigmoidcomparator, loss_fn=mseloss, max_epochs=100, batch_size=50)
+    #plot = plot_multiple_experiments_nn_ranking_double_input(
+    #    "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]).",
+    #    "counts_weights_average_trees_twopointscomparebinary.pbz2",
+    #    "counts_weights_average_trees.pbz2", 5000, nn.ReLU(), nn.Sigmoid(),
+    #    hidden_layer_sizes=[140, 80, 26], output_layer_size=1,
+    #    device=device, is_classification_task=False,
+    #    comparator_fn=sigmoidcomparator, loss_fn=mseloss, max_epochs=100, batch_size=50)
 
-
-
-    #execute_experiment_nn_ranking(
-    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data.",
-    #    "counts_weights_average_trees_twopointscomparesmall.pbz2",
-    #    "counts_weights_average_trees.pbz2", 10000, nn.ReLU(), nn.Identity(),
-    #    [400, 220, 80, 25], device, max_epochs=14, batch_size=1)
+    execute_experiment_nn_ranking(
+        "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [140, 80, 26]).",
+        "counts_number_of_nodes_trees_twopointscompare.pbz2",
+        "counts_number_of_nodes_trees.pbz2", 5000, nn.ReLU(), nn.Sigmoid(),
+        [500, 360, 220, 140, 80, 26], device, max_epochs=1, batch_size=1
+        )
 
     #execute_experiment_nn_ranking_with_warmup(
     #   "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",
