@@ -55,11 +55,17 @@ class TreeDataTwoPointsCompare(Dataset):
         self.original_number_of_points = len(dataset)  # the number of points in dataset instance
         new_data = []
         new_labels = []
+        original_data = []
+        original_labels = []
         indexes = list(range(self.original_number_of_points))  # [0, 1, 2, ..., self.original_number_of_points-2, self.original_number_of_points-1]
         for _ in range(self.number_of_points):
             idx = random.choices(indexes, k=2)  # extract two points at random with replacement (for computational efficiency reasons)
             first_point, first_label = self.dataset[idx[0]]  # first point extracted
             second_point, second_label = self.dataset[idx[1]]  # second point extracted
+            original_data.append(first_point.tolist())
+            original_data.append(second_point.tolist())
+            original_labels.append(first_label.item())
+            original_labels.append(second_label.item())
             if first_label.item() >= second_label.item():  # first point has a higher score than the second one
                 if binary_label:
                     new_labels.append(1)  # close to one when the first point is higher: sigmoid(z_final) >= 0.5
@@ -73,6 +79,8 @@ class TreeDataTwoPointsCompare(Dataset):
             new_data.append(first_point.tolist() + second_point.tolist())
         self.X = torch.tensor(new_data).float()
         self.y = torch.tensor(new_labels).float()
+        self.original_X = np.array(original_data, dtype=np.float32)
+        self.original_y = np.array(original_labels, dtype=np.float32)
 
     def __len__(self):
         # gets the number of rows in the dataset
@@ -89,6 +97,9 @@ class TreeDataTwoPointsCompare(Dataset):
             dataset.append(curr_point.tolist())
             labels.append(curr_label.item())
         return np.array(dataset), np.array(labels)
+
+    def to_simple_torch_dataset(self):
+        return TreeData(self.original_X, self.original_y, scaler=None)
 
 
 # ==============================================================================================================
