@@ -22,90 +22,25 @@ from gp.tree import *
 
 # each node is replaced with the corresponding weight
 
-'''
-def simple_weights_tree_converter(tree: PrimitiveTree, weights: Dict[str, float]) -> torch.Tensor:
-    
-    def __get_right_key_from_terminal(s: str) -> str:
-        is_primitive = Primitive.check_valid_primitive_name(s)
-        if is_primitive:
-            return s
-        else:
-            if s[0] == "x":
-                return "FEATURE"
-            elif s[0] == "c":
-                return "CONSTANT"
-            elif s[0] == "e":
-                return "EPHEMERAL"
-    arr = []
-    for layer_ind in range(tree.max_depth()):
-        curr_layer = tree.layer(layer_ind)
-        curr_layer = [0.0 if n == "" else weights[__get_right_key_from_terminal(n)] for n in curr_layer]
-        arr.extend(curr_layer)
-    return np.array(arr, dtype=np.float32)
-
-
-def total_weights_tree_converter(tree: PrimitiveTree, weights: Dict[str, float]) -> torch.Tensor:
-    # the same as before but different weights are applied to different terminals too
-    # therefore, in the dictionary there must be keys for all features, constants and ephemeral
-    def __get_right_key_from_terminal(s: str) -> str:
-        is_primitive = Primitive.check_valid_primitive_name(s)
-        if is_primitive:
-            return s
-        else:
-            if s[0] == "x":
-                return s
-            elif s[0] == "c":
-                return s[:s.find(" ")]
-            elif s[0] == "e":
-                return s[:s.find(" ")]
-    arr = []
-    for layer_ind in range(tree.max_depth()):
-        curr_layer = tree.layer(layer_ind)
-        curr_layer = [0.0 if n == "" else weights[__get_right_key_from_terminal(n)] for n in curr_layer]
-        arr.extend(curr_layer)
-    return np.array(arr, dtype=np.float32)
-
-
-def simple_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[Dict[str, float]]) -> torch.Tensor:
-    # just like simple_level_weights_tree_converter but now there are different weights for each layer
-    # that is, the same type of node may have different weight depending on the layer in which it is collocated
-    # now weights is a list of dict, one per layer, starting from the root (first element of the list) to the bottom
-    def __get_right_key_from_terminal(s: str) -> str:
-        is_primitive = Primitive.check_valid_primitive_name(s)
-        if is_primitive:
-            return s
-        else:
-            if s[0] == "x":
-                return "FEATURE"
-            elif s[0] == "c":
-                return "CONSTANT"
-            elif s[0] == "e":
-                return "EPHEMERAL"
-    arr = []
-    for layer_ind in range(tree.max_depth()):
-        curr_layer = tree.layer(layer_ind)
-        curr_weights = weights[layer_ind]
-        curr_layer = [0.0 if n == "" else curr_weights[__get_right_key_from_terminal(n)] for n in curr_layer]
-        arr.extend(curr_layer)
-    return np.array(arr, dtype=np.float32)
-'''
-
 
 def total_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[Dict[str, float]]) -> torch.Tensor:
     # just like total_level_weights_tree_converter but now there are different weights for each layer
     # that is, the same type of node may have different weight depending on the layer in which it is collocated
     # now weights is a list of dict, one per layer, starting from the root (first element of the list) to the bottom
     def __get_right_key_from_terminal(s: str) -> str:
+        if s.strip() == "":
+            return ""
         is_primitive = Primitive.check_valid_primitive_name(s)
         if is_primitive:
             return s
         else:
-            if s[0] == "x":
-                return s
-            elif s[0] == "c":
-                return s[:s.find(" ")]
-            elif s[0] == "e":
-                return s[:s.find(" ")]
+            return "x0"
+            #if s[0] == "x":
+            #    return s
+            #elif s[0] == "c":
+            #    return s[:s.find(" ")]
+            #elif s[0] == "e":
+            #    return s[:s.find(" ")]
     arr = []
     for layer_ind in range(tree.max_depth()):
         curr_layer = tree.layer(layer_ind)
@@ -117,33 +52,38 @@ def total_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[D
 
 def one_hot_tree(tree: PrimitiveTree):
     def __get_right_key_from_terminal(s: str) -> str:
+        if s.strip() == "":
+            return ""
         is_primitive = Primitive.check_valid_primitive_name(s)
         if is_primitive:
             return s
         else:
-            if s[0] == "x":
-                return s
-            elif s[0] == "c":
-                return s[:s.find(" ")]
-            elif s[0] == "e":
-                return s[:s.find(" ")]
+            return "x0"
+            #if s[0] == "x":
+            #    return s
+            #elif s[0] == "c":
+            #    return s[:s.find(" ")]
+            #elif s[0] == "e":
+            #    return s[:s.find(" ")]
     num_primitives = tree.primitive_set().num_primitives()
-    num_features = tree.terminal_set().num_features()
-    num_constants = tree.terminal_set().num_constants()
-    num_ephemeral = tree.terminal_set().num_ephemeral()
-    tot_attr = num_primitives + num_features + num_constants + num_ephemeral
-    tot_attr_names = tree.primitive_set().primitive_names() + list(range(tree.terminal_set().num_features())) + list(range(tree.terminal_set().num_constants())) + list(range(tree.terminal_set().num_ephemeral()))
+    #num_features = tree.terminal_set().num_features()
+    #num_constants = tree.terminal_set().num_constants()
+    #num_ephemeral = tree.terminal_set().num_ephemeral()
+    tot_attr = num_primitives + 1  # num_features + num_constants + num_ephemeral
+    tot_attr_names = tree.primitive_set().primitive_names() + ["x0"]  # list(range(tree.terminal_set().num_features())) + list(range(tree.terminal_set().num_constants())) + list(range(tree.terminal_set().num_ephemeral()))
     dic = {"": [0.0]*tot_attr}
     t = 0
     for p in tot_attr_names:
         if t < num_primitives:
             curr_key = p
-        elif num_primitives <= t < num_primitives + num_features:
-            curr_key = "x" + str(p)
-        elif num_primitives + num_features <= t < num_primitives + num_features + num_constants:
-            curr_key = "c" + str(p)
-        elif num_primitives + num_features + num_constants <= t < num_primitives + num_features + num_constants + num_ephemeral:
-            curr_key = "e" + str(p)
+        else:
+            curr_key = "x0"
+        #elif num_primitives <= t < num_primitives + num_features:
+        #    curr_key = "x" + str(p)
+        #elif num_primitives + num_features <= t < num_primitives + num_features + num_constants:
+        #    curr_key = "c" + str(p)
+        #elif num_primitives + num_features + num_constants <= t < num_primitives + num_features + num_constants + num_ephemeral:
+        #    curr_key = "e" + str(p)
         li = [0.0] * tot_attr
         li[t] = 1.0
         dic[curr_key] = li
@@ -157,54 +97,6 @@ def one_hot_tree(tree: PrimitiveTree):
         arr.extend(curr_arr)
     return np.array(arr, dtype=np.float32)
 
-'''
-def one_hot_tree_as_image(tree: PrimitiveTree):
-    def __get_right_key_from_terminal(s: str) -> str:
-        is_primitive = Primitive.check_valid_primitive_name(s)
-        if is_primitive:
-            return s
-        else:
-            if s[0] == "x":
-                return s
-            elif s[0] == "c":
-                return s[:s.find(" ")]
-            elif s[0] == "e":
-                return s[:s.find(" ")]
-    num_primitives = tree.primitive_set().num_primitives()
-    num_features = tree.terminal_set().num_features()
-    num_constants = tree.terminal_set().num_constants()
-    num_ephemeral = tree.terminal_set().num_ephemeral()
-    tot_attr = num_primitives + num_features + num_constants + num_ephemeral
-    tot_attr_names = tree.primitive_set().primitive_names() + list(range(tree.terminal_set().num_features())) + list(range(tree.terminal_set().num_constants())) + list(range(tree.terminal_set().num_ephemeral()))
-    dic = {"": [0.0]*tot_attr}
-    t = 0
-    for p in tot_attr_names:
-        if t < num_primitives:
-            curr_key = p
-        elif num_primitives <= t < num_primitives + num_features:
-            curr_key = "x" + str(p)
-        elif num_primitives + num_features <= t < num_primitives + num_features + num_constants:
-            curr_key = "c" + str(p)
-        elif num_primitives + num_features + num_constants <= t < num_primitives + num_features + num_constants + num_ephemeral:
-            curr_key = "e" + str(p)
-        li = [0.0]*tot_attr
-        li[t] = 1.0
-        dic[curr_key] = li
-        t += 1
-    max_breadth = tree.max_breadth()
-    height = tree.max_depth()
-    width = max_breadth*tot_attr
-    arr = []
-    for layer_ind in range(height):
-        curr_layer = tree.layer(layer_ind)
-        curr_arr = []
-        for i in range(len(curr_layer)):
-            curr_arr.extend(dic[__get_right_key_from_terminal(curr_layer[i])])
-        for i in range(len(curr_layer)*tot_attr, width):
-            curr_arr.append(0.0)
-        arr.append(curr_arr)
-    return np.array([arr], dtype=np.float32)
-'''
 
 # ==============================================================================================================
 # LABELS CALCULATOR
@@ -281,6 +173,15 @@ def build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(da
         degree_breadth_ratio = max_degree / max_breadth
         depth_number_of_nodes_ratio = depth / number_of_nodes
         s = depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc
+        X.append(one_hot_tree(t))
+        y.append(s)
+    return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
+
+def build_dataset_onehot_as_input_pwis_as_target(data, ranking, max_weight=1.0):
+    X, y = [], []
+    for t in data:
+        s = t.compute_property_and_weights_based_interpretability_score(ranking, max_weight)
         X.append(one_hot_tree(t))
         y.append(s)
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)

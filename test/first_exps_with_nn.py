@@ -2,6 +2,7 @@ from sklearn import ensemble
 
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
     build_numpy_dataset_twopointscompare
+from gp.operator import ShrinkMutation, OnePointCrossover, UniformMutation
 from util.setting import *
 from deeplearn.neuralnet import *
 from gp.encodetree import *
@@ -62,6 +63,108 @@ def divby2(a):
     return a/2.0
 
 
+def generate_datasets(terminal_set_0, primitive_set_0, weights_dict):
+    train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(200000)]
+    val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(50000)]
+    test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(20000)]
+    compress_pickle("train_trees", train)
+    compress_pickle("validation_trees", val)
+    compress_pickle("test_trees", test)
+    train = decompress_pickle("train_trees.pbz2")
+    val = decompress_pickle("validation_trees.pbz2")
+    test = decompress_pickle("test_trees.pbz2")
+
+    X_train, y_train = build_dataset_onehot_as_input_number_of_nodes_as_target(train)
+    X_dev, y_dev = build_dataset_onehot_as_input_number_of_nodes_as_target(val)
+    X_test, y_test = build_dataset_onehot_as_input_number_of_nodes_as_target(test)
+    compress_pickle("onehot_number_of_nodes_trees", {"training": TreeData(X_train, y_train),
+                                                     "validation": TreeData(X_dev, y_dev),
+                                                     "test": TreeData(X_test, y_test)})
+
+    X_train, y_train = build_dataset_counts_as_input_number_of_nodes_as_target(train)
+    scaler = MaxAbsScaler()
+    scaler.fit(X_train)
+    X_dev, y_dev = build_dataset_counts_as_input_number_of_nodes_as_target(val)
+    X_test, y_test = build_dataset_counts_as_input_number_of_nodes_as_target(test)
+    compress_pickle("counts_number_of_nodes_trees", {"training": TreeData(X_train, y_train, scaler),
+                                                     "validation": TreeData(X_dev, y_dev, scaler),
+                                                     "test": TreeData(X_test, y_test, scaler)})
+
+    X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
+    X_dev, y_dev = build_dataset_onehot_as_input_weights_average_as_target(val, weights_dict)
+    X_test, y_test = build_dataset_onehot_as_input_weights_average_as_target(test, weights_dict)
+    compress_pickle("onehot_weights_average_trees", {"training": TreeData(X_train, y_train),
+                                                     "validation": TreeData(X_dev, y_dev),
+                                                     "test": TreeData(X_test, y_test)})
+
+    X_train, y_train = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(train)
+    X_dev, y_dev = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(val)
+    X_test, y_test = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(test)
+    compress_pickle("onehot_hci_score_trees", {"training": TreeData(X_train, y_train),
+                                                     "validation": TreeData(X_dev, y_dev),
+                                                     "test": TreeData(X_test, y_test)})
+
+    X_train, y_train = build_dataset_counts_as_input_weights_average_as_target(train, weights_dict)
+    scaler = MaxAbsScaler()
+    scaler.fit(X_train)
+    X_dev, y_dev = build_dataset_counts_as_input_weights_average_as_target(val, weights_dict)
+    X_test, y_test = build_dataset_counts_as_input_weights_average_as_target(test, weights_dict)
+    compress_pickle("counts_weights_average_trees", {"training": TreeData(X_train, y_train, scaler),
+                                                     "validation": TreeData(X_dev, y_dev, scaler),
+                                                     "test": TreeData(X_test, y_test, scaler)})
+
+    X_train, y_train = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(train)
+    scaler = MaxAbsScaler()
+    scaler.fit(X_train)
+    X_dev, y_dev = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(val)
+    X_test, y_test = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(test)
+    compress_pickle("counts_hci_score_trees", {"training": TreeData(X_train, y_train, scaler),
+                                                     "validation": TreeData(X_dev, y_dev, scaler),
+                                                     "test": TreeData(X_test, y_test, scaler)})
+
+    compress_pickle("counts_number_of_nodes_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("counts_number_of_nodes_trees.pbz2")["training"], 30000)})
+
+    compress_pickle("counts_number_of_nodes_trees_twopointscomparebinary",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("counts_number_of_nodes_trees.pbz2")["training"], 30000, True)})
+
+    compress_pickle("counts_weights_average_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 30000)})
+
+    compress_pickle("counts_weights_average_trees_twopointscomparebinary",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 30000, True)})
+
+    compress_pickle("onehot_number_of_nodes_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("onehot_number_of_nodes_trees.pbz2")["training"], 30000)})
+
+    compress_pickle("onehot_number_of_nodes_trees_twopointscomparebinary",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("onehot_number_of_nodes_trees.pbz2")["training"], 30000, True)})
+
+    compress_pickle("onehot_weights_average_trees_twopointscompare",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 30000)})
+
+    compress_pickle("onehot_weights_average_trees_twopointscomparebinary",
+                    {"training": TreeDataTwoPointsCompare(
+                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 30000, True)})
+
+    X_train, y_train = build_dataset_onehot_as_input_pwis_as_target(train,
+                                                                    [["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]])
+    X_dev, y_dev = build_dataset_onehot_as_input_pwis_as_target(val,
+                                                                [["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]])
+    X_test, y_test = build_dataset_onehot_as_input_pwis_as_target(test,
+                                                                  [["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]])
+    compress_pickle("onehot_pwis_trees", {"training": (X_train, y_train),
+                                          "validation": (X_dev, y_dev),
+                                          "test": (X_test, y_test)})
+
+
 def execute_experiment_nn_regression(title, file_name, activation_func, final_activation_func, hidden_layer_sizes, device, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
     trees = decompress_pickle(file_name)
     training, validation, test = trees["training"], trees["validation"], trees["test"]
@@ -87,8 +190,8 @@ def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, 
     output_layer_size = 1
     trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
-    valloader = DataLoader(Subset(validation, list(range(100))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
-                           generator=generator_data_loader)
+    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,generator=generator_data_loader)
+    #valloader = DataLoader(validation.remove_ground_truth_duplicates(), batch_size=batch_size, shuffle=True,worker_init_fn=seed_worker,generator=generator_data_loader)
     trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size * 2))),
                                       batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                                       generator=generator_data_loader)
@@ -100,6 +203,7 @@ def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, 
     eval_train = trainer.evaluate_ranking(trainloader_original)
     print(title, " - Spearman Footrule on Training Set - ", eval_train)
     print(title, " - Spearman Footrule on Validation Set - ", eval_val)
+    print(trainer.evaluate_classifier(valloader))
     return eval_train, eval_val
 
 
@@ -196,9 +300,28 @@ def execute_experiment_rf_ranking_double_input(title, file_name_dataset, seed):
     print(title, " - Spearman Footrule on Validation Set - ", eval)
 
 
+def execute_experiment_regression_with_pwis_and_rf(title, file_name_dataset, seed):
+    trees = decompress_pickle(file_name_dataset)
+    model = ensemble.RandomForestRegressor(random_state=seed)
+    scaler = MaxAbsScaler()
+    pipe = Pipeline([('scaler', scaler), ('model', model)])
+    space = {"model__n_estimators": [50, 100, 150, 200, 300, 500, 700, 1000, 2000],
+             "model__criterion": ["squared_error", "absolute_error", "poisson"],
+             "model__max_depth": [20, 30, 40, 50, 70, 100, 200, 500],
+             "model__max_features": [None, "sqrt", "log2"]
+             }
+    estimator = MLEstimator(pipe, space, scoring="r2", random_state=seed,
+                            n_splits=5, n_repeats=3, n_jobs=-1,
+                            randomized_search=True, n_iter=20)
+    estimator.train(trees["training"][0][:1000], trees["training"][1][:1000], verbose=True)
+    valx, valy = trees["validation"][0][:1000], trees["validation"][1][:1000]
+    pred = estimator.estimate(valx)
+    print(r2_score(valy, pred))
+
+
 if __name__ == '__main__':
 
-    twopointscompareloss = two_points_compare_loss
+    # twopointscompareloss = two_points_compare_loss
     mseloss = nn.MSELoss(reduction="mean")
     crossentropyloss = nn.CrossEntropyLoss()
 
@@ -225,34 +348,22 @@ if __name__ == '__main__':
 
     weights_dict = [{"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
             "^2": 43.42, "/2": 73.41,
-            "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-            "c0": 82.4, "c1": 82.4,
-            "e0": 82.4, "e1": 82.4},
+            "x0": 82.4},
             {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
              "^2": 43.42, "/2": 73.41,
-             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-             "c0": 82.4, "c1": 82.4,
-             "e0": 82.4, "e1": 82.4},
+             "x0": 82.4},
             {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
              "^2": 43.42, "/2": 73.41,
-             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-             "c0": 82.4, "c1": 82.4,
-             "e0": 82.4, "e1": 82.4},
+             "x0": 82.4},
             {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
              "^2": 43.42, "/2": 73.41,
-             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-             "c0": 82.4, "c1": 82.4,
-             "e0": 82.4, "e1": 82.4},
+             "x0": 82.4},
             {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
              "^2": 43.42, "/2": 73.41,
-             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-             "c0": 82.4, "c1": 82.4,
-             "e0": 82.4, "e1": 82.4},
+             "x0": 82.4},
             {"+": 97.54, "-": 79.93, "*": 59.46, "max": 21.16, "min": 21.16,
              "^2": 43.42, "/2": 73.41,
-             "x0": 82.4, "x1": 82.4, "x2": 82.4, "x3": 82.4,
-             "c0": 82.4, "c1": 82.4,
-             "e0": 82.4, "e1": 82.4}
+             "x0": 82.4}
            ]
 
     '''
@@ -263,6 +374,11 @@ if __name__ == '__main__':
 
     print(tr.print_as_tree())
     print(tr)
+    print(tr.find_all_sub_chains())
+    print(PrimitiveTree.weight_primitives_ranking([["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]]))
+    print(tr.compute_weighted_sub_chains_average([["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]]))
+    print(tr.compute_internal_nodes_weights_average([["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]]))
+    print(tr.compute_property_and_weights_based_interpretability_score([["+", "-"], ["/2"], ["*"], ["^2"], ["max", "min"]]))
     print(tr_1.print_as_tree())
     print(tr_1)
     print()
@@ -280,9 +396,9 @@ if __name__ == '__main__':
     print(lll[1].print_as_tree())
     '''
 
-    #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(400000)]
-    #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(100000)]
-    #test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(60000)]
+    #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(200000)]
+    #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(50000)]
+    #test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(20000)]
     #compress_pickle("train_trees", train)
     #compress_pickle("validation_trees", val)
     #compress_pickle("test_trees", test)
@@ -290,92 +406,12 @@ if __name__ == '__main__':
     #val = decompress_pickle("validation_trees.pbz2")
     #test = decompress_pickle("test_trees.pbz2")
 
+    #generate_datasets(terminal_set_0, primitive_set_0, weights_dict)
 
-    '''
-    X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
-    X_dev, y_dev = build_dataset_onehot_as_input_weights_average_as_target(val, weights_dict)
-    X_test, y_test = build_dataset_onehot_as_input_weights_average_as_target(test, weights_dict)
-    compress_pickle("onehot_weights_average_trees", {"training": TreeData(X_train, y_train),
-                                                     "validation": TreeData(X_dev, y_dev),
-                                                     "test": TreeData(X_test, y_test)})
-
-    X_train, y_train = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(train)
-    X_dev, y_dev = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(val)
-    X_test, y_test = build_dataset_onehot_as_input_handcraftedinterpretability_score_as_target(test)
-    compress_pickle("onehot_hci_score_trees", {"training": TreeData(X_train, y_train),
-                                                     "validation": TreeData(X_dev, y_dev),
-                                                     "test": TreeData(X_test, y_test)})
-
-    compress_pickle("onehot_weights_average_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 120000)})
-    
-    compress_pickle("onehot_weights_average_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 120000, True)})
-
-    X_train, y_train = build_dataset_counts_as_input_weights_average_as_target(train, weights_dict)
-    scaler = MaxAbsScaler()
-    scaler.fit(X_train)
-    X_dev, y_dev = build_dataset_counts_as_input_weights_average_as_target(val, weights_dict)
-    X_test, y_test = build_dataset_counts_as_input_weights_average_as_target(test, weights_dict)
-    compress_pickle("counts_weights_average_trees", {"training": TreeData(X_train, y_train, scaler),
-                                                     "validation": TreeData(X_dev, y_dev, scaler),
-                                                     "test": TreeData(X_test, y_test, scaler)})
-
-    X_train, y_train = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(train)
-    scaler = MaxAbsScaler()
-    scaler.fit(X_train)
-    X_dev, y_dev = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(val)
-    X_test, y_test = build_dataset_counts_as_input_handcraftedinterpretability_score_as_target(test)
-    compress_pickle("counts_hci_score_trees", {"training": TreeData(X_train, y_train, scaler),
-                                                     "validation": TreeData(X_dev, y_dev, scaler),
-                                                     "test": TreeData(X_test, y_test, scaler)})
-
-    compress_pickle("counts_weights_average_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 120000)})
-
-    compress_pickle("counts_weights_average_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 120000, True)})
-    '''
-
-    '''
-    compress_pickle("counts_number_of_nodes_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_number_of_nodes_trees.pbz2")["training"], 30000)})
-
-    compress_pickle("counts_number_of_nodes_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_number_of_nodes_trees.pbz2")["training"], 30000, True)})
-
-    compress_pickle("counts_weights_average_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 30000)})
-
-    compress_pickle("counts_weights_average_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("counts_weights_average_trees.pbz2")["training"], 30000, True)})
-
-    compress_pickle("onehot_number_of_nodes_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_number_of_nodes_trees.pbz2")["training"], 30000)})
-
-    compress_pickle("onehot_number_of_nodes_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_number_of_nodes_trees.pbz2")["training"], 30000, True)})
-
-    compress_pickle("onehot_weights_average_trees_twopointscompare",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 30000)})
-
-    compress_pickle("onehot_weights_average_trees_twopointscomparebinary",
-                    {"training": TreeDataTwoPointsCompare(
-                        decompress_pickle("onehot_weights_average_trees.pbz2")["training"], 30000, True)})
-    '''
 
     #########################################
+
+    execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "onehot_pwis_trees.pbz2", seed)
 
     '''
     X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
@@ -389,6 +425,8 @@ if __name__ == '__main__':
     #execute_experiment_rf_ranking_double_input("Onehot Tree (Random Forest)",
     #                                            "onehot_weights_average_trees_twopointscomparebinary_numpy.pbz2",
     #                                            seed)
+
+    #########################################
 
     #execute_experiment_nn_ranking_double_input(
     #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]). Large Training Data.",
@@ -414,11 +452,11 @@ if __name__ == '__main__':
     #    comparator_fn=sigmoidcomparator, loss_fn=mseloss, max_epochs=100, batch_size=50)
 
     #execute_experiment_nn_ranking(
-    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [140, 80, 26]).",
-    #    "counts_number_of_nodes_trees_twopointscompare.pbz2",
-    #    "counts_number_of_nodes_trees.pbz2", 5000, nn.ReLU(), nn.Sigmoid(),
-    #    [500, 360, 220, 140, 80, 26], device, max_epochs=1, batch_size=1
-    #    )
+    #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [220, 140, 80, 26]).",
+    #    "onehot_weights_average_trees_twopointscompare.pbz2",
+    #    "onehot_weights_average_trees.pbz2", 300, nn.ReLU(), nn.Tanh(),
+    #    [220, 140, 80, 26], device, max_epochs=1, batch_size=1
+    #)
 
     #execute_experiment_nn_ranking_with_warmup(
     #   "Onehot Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [400, 220, 80, 25]). Small Training Data. Warm Up: HCI score.",

@@ -3,6 +3,7 @@ import numpy as np
 import torch
 from torch import nn
 
+from gp.tree import Primitive
 from util.sort import heapsort
 
 if __name__ == "__main__":
@@ -51,4 +52,3 @@ if __name__ == "__main__":
     arr, ind = heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
     print(arr)
     print(ind)
-

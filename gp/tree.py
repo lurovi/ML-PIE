@@ -138,7 +138,7 @@ class Primitive:
 
     @staticmethod
     def check_valid_primitive_name(s: str) -> bool:
-        return re.search(r'^[xce]\d+', s) is None
+        return s.strip() != "" and re.search(r'^[xce]\d+', s) is None
 
     def __str__(self):
         return f"{self.__name} : {self.__parameter_types} --> {self.__return_type}"
@@ -712,6 +712,72 @@ class PrimitiveTree:
         for tree in trees:
             lt.append(tree.extract_counting_features_from_tree())
         return lt
+
+    def find_all_sub_chains(self):
+        primitives_leafs = []
+        candidates = self.node_indexes_iterate()
+        for layer_ind, node_ind in candidates:
+            if not(self.is_leaf(layer_ind, node_ind)) and all([True if self.is_leaf(ci,cj) else False for ci, cj, cc in self.children(layer_ind, node_ind)]):
+                primitives_leafs.append((layer_ind, node_ind))
+        sub_chains = []
+        for layer_ind, node_ind in primitives_leafs:
+            curr_chain = [self.node(layer_ind, node_ind)]
+            curr_layer = layer_ind
+            curr_node = node_ind
+            curr_parent = self.parent(curr_layer, curr_node)
+            while curr_parent is not None:
+                curr_chain.append(curr_parent[2])
+                curr_layer = curr_parent[0]
+                curr_node = curr_parent[1]
+                curr_parent = self.parent(curr_layer, curr_node)
+            sub_chains.append(curr_chain)
+        return sub_chains
+
+    @staticmethod
+    def weight_primitives_ranking(ranking: List[List[str]], max_weight: float = 1.0):
+        part = max_weight / float(len(ranking))
+        weights = {}
+        curr_weight = max_weight
+        for i in range(len(ranking)):
+            for p in ranking[i]:
+                weights[p] = curr_weight
+            curr_weight -= part
+        return weights
+
+    def compute_internal_nodes_weights_average(self, ranking: List[List[str]], max_weight: float = 1.0):
+        weights = PrimitiveTree.weight_primitives_ranking(ranking, max_weight)
+        internal_nodes = self.internal_nodes()
+        s = 0.0
+        for c in internal_nodes:
+            s += weights[c]
+        return s/float(len(internal_nodes))
+
+    def compute_weighted_sub_chains_average(self, ranking: List[List[str]], max_weight: float = 1.0):
+        weights = PrimitiveTree.weight_primitives_ranking(ranking, max_weight)
+        sub_chains = self.find_all_sub_chains()
+        weighted_sub_chains = 0.0
+        for i in range(len(sub_chains)):
+            curr_weight = 1.0
+            for j in range(len(sub_chains[i])):
+                curr_weight *= weights[sub_chains[i][j]]
+            weighted_sub_chains += curr_weight
+        return weighted_sub_chains/float(len(sub_chains))
+
+    def compute_property_and_weights_based_interpretability_score(self,  ranking: List[List[str]], max_weight: float = 1.0):
+        counting_dic = self.count_primitives()
+        number_of_nodes = float(self.number_of_nodes())
+        depth = float(self.depth())
+        max_breadth = float(self.actual_max_breadth())
+        max_degree = float(self.actual_max_degree())
+        number_of_leaf_nodes = float(len(self.leaf_nodes()))
+        number_of_internal_nodes = float(len(self.internal_nodes()))
+        leaf_internal_nodes_ratio = number_of_leaf_nodes / number_of_internal_nodes
+        leaf_nodes_perc = number_of_leaf_nodes / number_of_nodes
+        degree_breadth_ratio = max_degree / max_breadth
+        depth_number_of_nodes_ratio = depth / number_of_nodes
+        weights_average = self.compute_internal_nodes_weights_average(ranking, max_weight)
+        weighted_sub_chains_average = self.compute_weighted_sub_chains_average(ranking, max_weight)
+        return weights_average + weighted_sub_chains_average + depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc + 1.0/number_of_nodes
 
     def compile(self, x: List):
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
