@@ -410,11 +410,21 @@ if __name__ == '__main__':
     #train = decompress_pickle("train_trees.pbz2")
     #val = decompress_pickle("validation_trees.pbz2")
     #test = decompress_pickle("test_trees.pbz2")
-
+    print([34,25,65,47,94][::-1])
     #generate_datasets(terminal_set_0, primitive_set_0, weights_dict)
-
-    plot_random_ranking(device, DataLoader(Subset(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"], list(range(500))), batch_size=1, shuffle=True))
-
+    print(np.argsort([34,25,65,47,94],kind="heapsort"))
+    print(np.argsort([34, 25, 65, 47, 94][::-1], kind="heapsort"))
+    print(np.argsort([34, 25, 65, 47, 94], kind="heapsort")[::-1])
+    print(spearman_footrule([34,25,65,47,94], [34,25,65,47,94][::-1]))
+    print(heapsort([34,25,65,47,94],lambda x,y:x<y,inplace=False,reverse=True)[1])
+    print(heapsort([34,25,65,47,94][::-1],lambda x,y:x<y,inplace=False,reverse=True)[1])
+    #  [30,12,54,24,64,45] e [45,64,24,54,12,30], l'arg sort del primo è [1,3,0,5,2,4] mentre l'arg sort del secondo è [4,2,5,]
+    plot_random_ranking(device, DataLoader(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"].remove_ground_truth_duplicates(), batch_size=1, shuffle=True))
+    print(spearman_footrule([ 8, 28, 35, 20, 44, 30, 43, 42, 36, 25, 47, 49, 10, 55, 14, 53, 61, 40, 52, 59,  4,  5, 29, 27,
+ 22, 50,  0, 19, 60, 51, 32, 56, 58, 37, 57, 24, 21, 38, 45, 33, 23, 17, 26, 16,  3,  1, 46, 13,
+ 18,  7, 31,  6, 54, 48,  9, 15, 12, 41, 11, 34, 39,  2], [ 8, 28, 35, 20, 44, 30, 43, 42, 36, 25, 47, 49, 10, 55, 14, 53, 61, 40, 52, 59,  4,  5, 29, 27,
+ 22, 50,  0, 19, 60, 51, 32, 56, 58, 37, 57, 24, 21, 38, 45, 33, 23, 17, 26, 16,  3,  1, 46, 13,
+ 18,  7, 31,  6, 54, 48,  9, 15, 12, 41, 11, 34, 39,  2][::-1]))
     #########################################
 
     #execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "train_trees.pbz2", "onehot_pwis_trees.pbz2", seed)

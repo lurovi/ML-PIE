@@ -155,6 +155,8 @@ def spearman_footrule(y_true, y_pred):
     # each argument is arg sorted in reverse order, i.e., the first element is the index of the greatest value in each list
     y_true = np.argsort(y_true, kind="heapsort")[::-1]
     y_pred = np.argsort(y_pred, kind="heapsort")[::-1]
+    print(y_true)
+    print(y_pred)
     return spearman_footrule_direct(y_true, y_pred)  # apply spearman footrule directly
 
 
@@ -204,9 +206,16 @@ def random_spearman(device, dataloader, p):
             points.append(inputs[i])
             y_true.append(labels[i][0].item())
     y_true_2 = [x for x in y_true]
+    print(spearman_footrule(y_true, y_true_2[::-1]))
     y_true = np.argsort(y_true, kind="heapsort")[::-1]
     comparator = partial(random_comparator, p=p)
     _, y_pred = heapsort(y_true_2, comparator, inplace=False, reverse=True)
+    print(len(y_true))
+    print(y_true)
+    print(np.array(y_pred)[::-1])
+    print(np.array(y_pred)[::-1] - y_true)
+    print(spearman_footrule_direct(y_true, np.array(y_pred)))
+    exit(1)
     return spearman_footrule_direct(y_true, np.array(y_pred))
 
 
