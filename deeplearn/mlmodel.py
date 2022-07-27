@@ -1,3 +1,4 @@
+import math
 import pickle
 from abc import ABC, abstractmethod
 from functools import partial
@@ -175,3 +176,81 @@ class MLEstimator(Estimator):
         return self.get_model().predict(X)
 
 
+# ==============================================================================================================
+# FEEDBACK COLLECTOR
+# ==============================================================================================================
+
+
+class FeedbackCollector(ABC):
+
+    @abstractmethod
+    def collect_feedback(self, number_of_feedbacks):
+        pass
+
+
+class RawTerminalFeedbackCollector(FeedbackCollector):
+    def __init__(self, tree_list, X, y, oversampling_size):
+        self.__tree_list = tree_list
+        self.__X = X
+        self.__y = y
+        self.__oversampling_size = oversampling_size
+        self.__extended_X = None
+        self.__extended_y = None
+
+    def __sample_pairs(self, number_of_feedbacks):
+        n = len(self.__tree_list)
+        indexes = list(range(n))
+        sampled_obj = []
+        for _ in range(number_of_feedbacks):
+            exit_loop = False
+            while not(exit_loop):
+                ind_1 = random.choice(indexes)
+                tree_1, point_1, label_1 = self.__tree_list[ind_1], self.__X[ind_1], self.__y[ind_1]
+                inf, sup = math.floor(label_1), math.ceil(label_1)
+                candidates = []
+                for iii in indexes:
+                    if iii != ind_1 and inf <= self.__y[iii] <= sup:
+                        candidates.append(iii)
+                if len(candidates) > 0:
+                    exit_loop = True
+            ind_2 = random.choice(candidates)
+            tree_2, point_2, label_2 = self.__tree_list[ind_2], self.__X[ind_2], self.__y[ind_2]
+            if label_1 >= label_2:
+                tmp_10, tmp_11, tmp_12, tmp_13 = ind_1, tree_1, point_1, label_1
+                ind_1, tree_1, point_1, label_1 = ind_2, tree_2, point_2, label_2
+                ind_2, tree_2, point_2, label_2 = tmp_10, tmp_11, tmp_12, tmp_13
+            sampled_obj.append([(ind_1, tree_1, point_1, label_1), (ind_2, tree_2, point_2, label_2)])
+        return sampled_obj
+
+    def collect_feedback(self, number_of_feedbacks):
+        sampled_obj = self.__sample_pairs(number_of_feedbacks)
+        new_X, new_y = [], []
+        for i in range(len(sampled_obj)):
+            ind_1, tree_1, point_1, label_1 = sampled_obj[i][0][0], sampled_obj[i][0][1], sampled_obj[i][0][2], sampled_obj[i][0][3]
+            ind_2, tree_2, point_2, label_2 = sampled_obj[i][1][0], sampled_obj[i][1][1], sampled_obj[i][1][2], sampled_obj[i][1][3]
+            print("==============================================================")
+            print(tree_1.print_as_tree())
+            print("################")
+            print(tree_2.print_as_tree())
+            print("==============================================================")
+            exit_loop = False
+            while not(exit_loop):
+                s = input("According to the interpretability score, the model on the right is more interpretable than the model on the left. Is this true or false?").strip().lower()
+                if s not in ("t", "f"):
+                    print("Please. Type t for true, f for false.")
+                else:
+                    exit_loop = True
+            print()
+            if s == "f":
+                tmp = self.__y[ind_1]
+                self.__y[ind_1] = self.__y[ind_2]
+                self.__y[ind_2] = tmp
+                new_X.extend([self.__X[ind_1]] * self.__oversampling_size)
+                new_X.extend([self.__X[ind_2]] * self.__oversampling_size)
+                new_y.extend([self.__y[ind_1]] * self.__oversampling_size)
+                new_y.extend([self.__y[ind_2]] * self.__oversampling_size)
+        new_X = np.array(new_X, dtype=np.float32)
+        new_y = np.array(new_y, dtype=np.float32)
+        self.__extended_X = np.concatenate((self.__X, new_X))
+        self.__extended_y = np.concatenate((self.__y, new_y))
+        return self.__extended_X, self.__extended_y

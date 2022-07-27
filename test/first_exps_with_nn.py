@@ -1,7 +1,7 @@
 from sklearn import ensemble
 
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
-    build_numpy_dataset_twopointscompare
+    build_numpy_dataset_twopointscompare, RawTerminalFeedbackCollector
 from gp.operator import ShrinkMutation, OnePointCrossover, UniformMutation
 from util.setting import *
 from deeplearn.neuralnet import *
@@ -300,8 +300,9 @@ def execute_experiment_rf_ranking_double_input(title, file_name_dataset, seed):
     print(title, " - Spearman Footrule on Validation Set - ", eval)
 
 
-def execute_experiment_regression_with_pwis_and_rf(title, file_name_dataset, seed):
+def execute_experiment_regression_with_pwis_and_rf(title, trees_dataset, file_name_dataset, seed, collect_feedback=False):
     trees = decompress_pickle(file_name_dataset)
+    original_trees = decompress_pickle(trees_dataset)
     model = ensemble.RandomForestRegressor(random_state=seed)
     scaler = MaxAbsScaler()
     pipe = Pipeline([('scaler', scaler), ('model', model)])
@@ -313,10 +314,13 @@ def execute_experiment_regression_with_pwis_and_rf(title, file_name_dataset, see
     estimator = MLEstimator(pipe, space, scoring="r2", random_state=seed,
                             n_splits=5, n_repeats=3, n_jobs=-1,
                             randomized_search=True, n_iter=20)
-    estimator.train(trees["training"][0][:1000], trees["training"][1][:1000], verbose=True)
-    valx, valy = trees["validation"][0][:1000], trees["validation"][1][:1000]
-    pred = estimator.estimate(valx)
-    print(r2_score(valy, pred))
+    training_set, training_labels, validation_set, validation_labels = trees["training"][0][:1000], trees["training"][1][:1000], trees["validation"][0][:1000], trees["validation"][1][:1000]
+    feedback_collector = RawTerminalFeedbackCollector(original_trees[:1000], training_set, training_labels, 20)
+    training_set, training_labels = feedback_collector.collect_feedback(20)
+    estimator.train(training_set, training_labels, verbose=True)
+
+    pred = estimator.estimate(validation_set)
+    print(r2_score(validation_labels, pred))
 
 
 if __name__ == '__main__':
@@ -411,7 +415,7 @@ if __name__ == '__main__':
 
     #########################################
 
-    execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "onehot_pwis_trees.pbz2", seed)
+    execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "train_trees.pbz2", "onehot_pwis_trees.pbz2", seed)
 
     '''
     X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)
