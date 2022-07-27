@@ -203,7 +203,7 @@ def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, 
     eval_train = trainer.evaluate_ranking(trainloader_original)
     print(title, " - Spearman Footrule on Training Set - ", eval_train)
     print(title, " - Spearman Footrule on Validation Set - ", eval_val)
-    print(trainer.evaluate_classifier(valloader))
+    print("Accuracy: ", trainer.evaluate_classifier(valloader))
     return eval_train, eval_val
 
 
@@ -238,7 +238,7 @@ def execute_experiment_nn_ranking_double_input(title, file_name_training, file_n
     input_layer_size = len(training[0][0])
     trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
-    valloader = DataLoader(Subset(validation, list(range(100))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
+    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                            generator=generator_data_loader)
     trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size*2))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
@@ -251,6 +251,7 @@ def execute_experiment_nn_ranking_double_input(title, file_name_training, file_n
     eval_train = trainer.evaluate_ranking(trainloader_original)
     print(title, " - Spearman Footrule on Training Set - ", eval_train)
     print(title, " - Spearman Footrule on Validation Set - ", eval_val)
+    print("Accuracy:  ", trainer.evaluate_classifier(valloader))
     return eval_train, eval_val
 
 
@@ -412,10 +413,11 @@ if __name__ == '__main__':
 
     #generate_datasets(terminal_set_0, primitive_set_0, weights_dict)
 
+    plot_random_ranking(device, DataLoader(Subset(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"], list(range(500))), batch_size=1, shuffle=True))
 
     #########################################
 
-    execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "train_trees.pbz2", "onehot_pwis_trees.pbz2", seed)
+    #execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "train_trees.pbz2", "onehot_pwis_trees.pbz2", seed)
 
     '''
     X_train, y_train = build_dataset_onehot_as_input_weights_average_as_target(train, weights_dict)

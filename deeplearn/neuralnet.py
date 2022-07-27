@@ -4,6 +4,9 @@ from abc import ABC, abstractmethod
 from functools import partial
 from typing import List
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 import numpy as np
 import torch
 import torch.nn as nn
@@ -169,6 +172,42 @@ def spearman_footrule_direct(y_true, y_pred):
 # ==============================================================================================================
 # COMPARATOR
 # ==============================================================================================================
+
+
+def random_comparator(point_1, point_2, p):  # here point is the ground truth label and p a probability
+    if random.random() < p:
+        return point_1 < point_2
+    else:
+        return not(point_1 < point_2)
+
+
+def plot_random_ranking(device, dataloader):
+    df = {"Probability": [], "Footrule": []}
+    for p in np.arange(0, 1.1, 0.1):
+        df["Probability"].append(p)
+        ll = sum([random_spearman(device, dataloader, p) for _ in range(20)])/20.0
+        df["Footrule"].append(ll)
+        if p == 0:
+            print(ll)
+    plot = sns.lineplot(data=df, x="Probability", y="Footrule")
+    plt.show()
+    return plot
+
+
+def random_spearman(device, dataloader, p):
+    y_true = []
+    points = []
+    for batch in dataloader:
+        inputs, labels = batch
+        inputs, labels = inputs.to(device).float(), labels.to(device).float().reshape((labels.shape[0], 1))
+        for i in range(len(inputs)):
+            points.append(inputs[i])
+            y_true.append(labels[i][0].item())
+    y_true_2 = [x for x in y_true]
+    y_true = np.argsort(y_true, kind="heapsort")[::-1]
+    comparator = partial(random_comparator, p=p)
+    _, y_pred = heapsort(y_true_2, comparator, inplace=False, reverse=True)
+    return spearman_footrule_direct(y_true, np.array(y_pred))
 
 
 def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
@@ -456,6 +495,43 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
         return loss_epoch_arr
+
+    def evaluate_classifier(self, dataloader):
+        self.net.eval()
+        y_true = []
+        points = []
+        for batch in dataloader:
+            inputs, labels = batch
+            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+            for i in range(len(inputs)):
+                points.append(inputs[i].tolist())
+                y_true.append(labels[i][0].item())
+        y_true = np.array(y_true, dtype=np.float32)
+        points = np.array(points, dtype=np.float32)
+        ddd = TreeData(points, y_true, scaler=None)
+        ddd = TreeDataTwoPointsCompare(ddd, 2000, binary_label=True)
+        ddd = DataLoader(ddd, batch_size=1, shuffle=True)
+        y_true = []
+        y_pred = []
+        self.net.eval()
+        for batch in ddd:
+            inputs, labels = batch
+            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
+            outputs = self.net(inputs)[0]
+            if len(outputs) == 1:
+                res = outputs[0]
+                if res < 0.5:
+                    pred = 0
+                else:
+                    pred = 1
+            else:
+                pred = np.argmax(outputs)
+            y_pred.append(pred)
+            y_true.append(labels[0].item())
+        #y_true = list(np.concatenate(y_true).flat)
+        #y_pred = list(np.concatenate(y_pred).flat)
+        cf_matrix = confusion_matrix(y_true, y_pred)
+        return model_accuracy(cf_matrix)
 
     def evaluate_ranking(self, dataloader):
         y_true = []
