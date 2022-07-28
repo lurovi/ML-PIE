@@ -11,23 +11,8 @@ from gp.tree import *
 # ==============================================================================================================
 
 
-class Individual(ABC):
-
-    @abstractmethod
-    def get_individual(self):
-        pass
-
-
-class PrimitiveTreeIndividual(Individual):
-    def __int__(self, individual: PrimitiveTree):
-        self.__individual = individual
-
-    def get_individual(self):
-        return self.__individual
-
-
 class Population:
-    def __init__(self, population: List[Individual]):
+    def __init__(self, population: List[PrimitiveTree]):
         self.__size = len(population)
         self.__population = population
         self.__fitness = [[] for _ in range(self.__size)]
@@ -45,7 +30,7 @@ class Population:
             raise IndexError(f"{idx} is out of range as index for this population.")
         return self.__fitness[idx]
 
-    def get_individual(self, idx: int) -> Individual:
+    def get_individual(self, idx: int) -> PrimitiveTree:
         if not (0 <= idx < self.get_size()):
             raise IndexError(f"{idx} is out of range as index for this population.")
         return self.__population[idx]
@@ -58,7 +43,7 @@ class Population:
         min_ = np.min(v, axis=0)
         return {"MEAN": mean, "STD_DEV": std, "MAX": max_, "MIN": min_}
 
-    def update_population(self, population: List[Individual], fitness: List[List[float]]):
+    def update_population(self, population: List[PrimitiveTree], fitness: List[List[float]]):
         if len(population) != len(fitness):
             raise AttributeError("The size of the population must be equal to the size of the fitness array.")
         self.__size = len(population)
@@ -102,7 +87,7 @@ class Fitness(ABC):
         return sum([self.__weights[i]*fitness_eval[i] for i in range(len(fitness_eval))])
 
     @abstractmethod
-    def evaluate(self, individual: Individual) -> List[float]:
+    def evaluate(self, individual: PrimitiveTree) -> List[float]:
         pass
 
 
@@ -112,12 +97,11 @@ class MSESizeFitness(Fitness):
         self.X = X if isinstance(X, np.ndarray) else np.array(X)
         self.y = y if isinstance(y, np.ndarray) else np.array(y)
 
-    def evaluate(self, individual: Individual) -> List[float]:
+    def evaluate(self, individual: PrimitiveTree) -> List[float]:
         pred = np.zeros(self.y.shape[0])
-        curr_individual = individual.get_individual()
-        num_nodes = curr_individual.number_of_nodes()
+        num_nodes = individual.number_of_nodes()
         for i in range(len(self.X)):
-            pred[i] = curr_individual.compile(self.X[i])
+            pred[i] = individual.compile(self.X[i])
         return [np.sum(np.square(pred - self.y))/float(self.X.shape[0]), -1.0/float(num_nodes)]
 
 

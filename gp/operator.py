@@ -4,7 +4,7 @@ from typing import Tuple
 
 import numpy as np
 
-from gp.evolution import Population, Individual, PrimitiveTreeIndividual
+from gp.evolution import Population
 from gp.tree import *
 
 
@@ -16,7 +16,7 @@ from gp.tree import *
 class Selection(ABC):
 
     @abstractmethod
-    def select(self, population: Population) -> Tuple[List[Individual], List[List[float]]]:
+    def select(self, population: Population) -> Tuple[List[PrimitiveTree], List[List[float]]]:
         pass
 
 
@@ -25,7 +25,7 @@ class TournamentSelection(Selection):
         self.num_individuals = num_individuals
         self.tournament_size = tournament_size
 
-    def select(self, population: Population) -> Tuple[List[Individual], List[List[float]]]:
+    def select(self, population: Population) -> Tuple[List[PrimitiveTree], List[List[float]]]:
         new_population = []
         new_fitness_eval = []
         n_sample = list(range(population.get_size()))
@@ -52,31 +52,31 @@ class TournamentSelection(Selection):
 class Crossover(ABC):
 
     @abstractmethod
-    def cross(self, individuals: List[Individual]) -> List[Individual]:
+    def cross(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
         pass
 
 
 class OnePointCrossover(Crossover):
 
-    def cross(self, individuals: List[Individual]) -> List[Individual]:
-        tree_1, tree_2 = individuals[0].get_individual(), individuals[1].get_individual()
+    def cross(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
+        tree_1, tree_2 = individuals[0], individuals[1]
         if tree_1.depth() > tree_2.depth():
             tree_1, tree_2 = tree_2, tree_1
         iter_1 = tree_1.node_indexes_iterate()
+        iter_2 = tree_2.node_indexes_iterate()
         candidates = []
         for layer_ind_1, node_ind_1 in iter_1:
             node_type_1 = tree_1.get_node_type(tree_1.node(layer_ind_1, node_ind_1))
-            iter_2 = tree_2.node_indexes_iterate()
             for layer_ind_2, node_ind_2 in iter_2:
                 node_type_2 = tree_2.get_node_type(tree_2.node(layer_ind_2, node_ind_2))
                 if node_type_1 == node_type_2 and (tree_2.subtree_depth(layer_ind_2, node_ind_2) <= tree_1.max_depth() - layer_ind_1) and (tree_1.subtree_depth(layer_ind_1, node_ind_1) <= tree_2.max_depth() - layer_ind_2):
                     candidates.append([(layer_ind_1, node_ind_1), (layer_ind_2, node_ind_2)])
         if not candidates:
-            return [PrimitiveTreeIndividual(tree_1.copy()), PrimitiveTreeIndividual(tree_2.copy())]
+            return [tree_1.copy(), tree_2.copy()]
         candidate = random.choice(candidates)
         new_tree_1 = tree_1.extract_subtree(candidate[0][0], candidate[0][1])
         new_tree_2 = tree_2.extract_subtree(candidate[1][0], candidate[1][1])
-        return [PrimitiveTreeIndividual(tree_1.replace_subtree(new_tree_2, candidate[0][0], candidate[0][1])), PrimitiveTreeIndividual(tree_2.replace_subtree(new_tree_1, candidate[1][0], candidate[1][1]))]
+        return [tree_1.replace_subtree(new_tree_2, candidate[0][0], candidate[0][1]), tree_2.replace_subtree(new_tree_1, candidate[1][0], candidate[1][1])]
 
 
 # ==============================================================================================================
@@ -87,14 +87,14 @@ class OnePointCrossover(Crossover):
 class Mutation(ABC):
 
     @abstractmethod
-    def mute(self, individual: Individual) -> Individual:
+    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
         pass
 
 
 class ShrinkMutation(Mutation):
 
-    def mute(self, individual: Individual) -> Individual:
-        tree = individual.get_individual()
+    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
+        tree = individual
         candidates = []
         for layer_ind in range(tree.depth()-1):
             for node_ind in range(tree.number_of_nodes_at_layer(layer_ind)):
@@ -105,21 +105,21 @@ class ShrinkMutation(Mutation):
                         if tree.get_node_type(c) == tree.get_node_type(tree.node(father_layer, father_ind)):
                             candidates.append([(father_layer, father_ind), (child_layer, child_ind)])
         if not candidates:
-            return PrimitiveTreeIndividual(tree.copy())
+            return tree.copy()
         candidate = random.choice(candidates)
         new_tree = tree.extract_subtree(candidate[1][0], candidate[1][1])
-        return PrimitiveTreeIndividual(tree.replace_subtree(new_tree, candidate[0][0], candidate[0][1]))
+        return tree.replace_subtree(new_tree, candidate[0][0], candidate[0][1])
 
 
 class UniformMutation(Mutation):
 
-    def mute(self, individual: Individual) -> Individual:
-        tree = individual.get_individual()
+    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
+        tree = individual
         layer_ind_mut = random.randint(0, tree.depth()-1)
         node_ind_mut = random.randint(0, tree.number_of_nodes_at_layer(layer_ind_mut)-1)
         node_type = tree.get_node_type(tree.node(layer_ind_mut, node_ind_mut))
         if (layer_ind_mut == tree.max_depth() - 1) or (tree.is_leaf(layer_ind_mut, node_ind_mut) and not(tree.primitive_set().is_there_type(node_type))):
-            return PrimitiveTreeIndividual(tree.replace_subtree(
+            return tree.replace_subtree(
                 PrimitiveTree(
                     gen_simple_leaf_tree_as_list(
                         tree.terminal_set().sample_typed(node_type), tree.max_degree(), tree.max_depth() - layer_ind_mut
@@ -127,9 +127,9 @@ class UniformMutation(Mutation):
                     tree.primitive_set(), tree.terminal_set()
                 ),
                 layer_ind_mut, node_ind_mut
-            ))
+            )
         new_pset = tree.primitive_set().change_return_type(node_type)
-        return PrimitiveTreeIndividual(tree.replace_subtree(
+        return tree.replace_subtree(
             gen_half_half(new_pset, tree.terminal_set(), 1, tree.max_depth() - layer_ind_mut),
             layer_ind_mut, node_ind_mut
-        ))
+        )
