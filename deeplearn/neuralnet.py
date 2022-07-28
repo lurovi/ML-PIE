@@ -150,25 +150,29 @@ def model_accuracy(confusion_matrix):
     return acc / confusion_matrix.sum(), class_performance
 
 
-def spearman_footrule(y_true, y_pred):
-    # y_true (or y_pred) is a list of scalar values
-    # each argument is arg sorted in reverse order, i.e., the first element is the index of the greatest value in each list
-    y_true = np.argsort(y_true, kind="heapsort")[::-1]
-    y_pred = np.argsort(y_pred, kind="heapsort")[::-1]
-    print(y_true)
-    print(y_pred)
-    return spearman_footrule_direct(y_true, y_pred)  # apply spearman footrule directly
+def spearman_footrule(origin, estimated, equality):
+    distance = 0
+    for ie, e in enumerate(origin):
+        for it, t in enumerate(estimated):
+            if equality(e, t):
+                distance += abs(ie - it)
+                break
+    # normalize
+    n = len(origin)
+    if n % 2 == 0:
+        distance *= 3.0/float(np.square(n))
+    else:
+        distance *= 3.0/float(np.square(n)-1.0)
+    return distance
 
 
-def spearman_footrule_direct(y_true, y_pred):
-    # y_true (or y_pred) is a list of integer indexes which represents a sorting of a list of scalar values
-    r = len(y_true)  # number of values
-    # compute normalization factor
-    if r % 2 == 0:  # even number of values
-        r = r ** 2
-    else:  # odd number of values
-        r = r ** 2 - 1
-    return (3.0 / float(r)) * np.absolute(np.subtract(y_true, y_pred)).sum()  # factor * sum( |y_true_argsorted - y_pred_argsorted| )
+# ==============================================================================================================
+# ACTIVATIONS
+# ==============================================================================================================
+
+
+def softmax_stable(x):
+    return np.exp(x - np.max(x))/np.exp(x - np.max(x)).sum()
 
 
 # ==============================================================================================================
@@ -189,8 +193,6 @@ def plot_random_ranking(device, dataloader):
         df["Probability"].append(p)
         ll = sum([random_spearman(device, dataloader, p) for _ in range(20)])/20.0
         df["Footrule"].append(ll)
-        if p == 0:
-            print(ll)
     plot = sns.lineplot(data=df, x="Probability", y="Footrule")
     plt.show()
     return plot
@@ -206,20 +208,14 @@ def random_spearman(device, dataloader, p):
             points.append(inputs[i])
             y_true.append(labels[i][0].item())
     y_true_2 = [x for x in y_true]
-    print(spearman_footrule(y_true, y_true_2[::-1]))
-    y_true = np.argsort(y_true, kind="heapsort")[::-1]
+    y_true, _ = heapsort(y_true, lambda x, y: x < y, inplace=False, reverse=False)
     comparator = partial(random_comparator, p=p)
-    _, y_pred = heapsort(y_true_2, comparator, inplace=False, reverse=True)
-    print(len(y_true))
-    print(y_true)
-    print(np.array(y_pred)[::-1])
-    print(np.array(y_pred)[::-1] - y_true)
-    print(spearman_footrule_direct(y_true, np.array(y_pred)))
-    exit(1)
-    return spearman_footrule_direct(y_true, np.array(y_pred))
+    y_pred, _ = heapsort(y_true_2, comparator, inplace=False, reverse=False)
+    return spearman_footrule(y_true, y_pred, lambda x, y: x == y)
 
 
 def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     output_1 = neural_network(point_1.reshape(1, -1))[0][0]
     output_2 = neural_network(point_2.reshape(1, -1))[0][0]
@@ -227,6 +223,7 @@ def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
 
 
 def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
     output = neural_network(point)[0]
@@ -234,6 +231,7 @@ def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
 
 
 def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     sm = nn.Softmax(dim=0)
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
@@ -242,6 +240,7 @@ def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_net
 
 
 def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
     output = neural_network(point)[0]
@@ -249,6 +248,7 @@ def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_net
 
 
 def neuralnet_one_output_neurons_tanh_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
     output = neural_network(point)[0]
@@ -314,11 +314,13 @@ class Trainer(ABC):
             inputs, labels = batch
             inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
             outputs = self.net(inputs)
-            y_pred.extend(outputs.tolist())
-            y_true.extend(labels.tolist())
-        y_true = list(np.concatenate(y_true).flat)
-        y_pred = list(np.concatenate(y_pred).flat)
-        return spearman_footrule(y_true, y_pred)
+            for i in range(len(inputs)):
+                curr_input, curr_label, curr_output = inputs[i], labels[i][0].item(), outputs[i][0].item()
+                y_true.append((curr_input, curr_label))
+                y_pred.append((curr_input, curr_output))
+        y_true, _ = heapsort(y_true, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        y_pred, _ = heapsort(y_pred, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
     def predict(self, X):
         self.net.eval()
@@ -381,6 +383,8 @@ class TwoPointsCompareTrainer(Trainer):
         self.momentum = momentum
         self.dampening = dampening
         self.max_epochs = max_epochs
+        self.output_layer_size = net.number_of_output_neurons()
+        self.input_layer_size = net.number_of_input_neurons()
 
     def train(self):
         optimizer = optim.Adam(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
@@ -440,25 +444,8 @@ class TwoPointsCompareTrainer(Trainer):
                 pred = 0
             y_pred.append(pred)
             y_true.append(labels[0].item())
-        #y_true = list(np.concatenate(y_true).flat)
-        #y_pred = list(np.concatenate(y_pred).flat)
         cf_matrix = confusion_matrix(y_true, y_pred)
         return model_accuracy(cf_matrix)
-
-    def evaluate_ranking(self, dataloader):
-        y_true = []
-        points = []
-        self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            for i in range(len(inputs)):
-                points.append(inputs[i])
-                y_true.append(labels[i][0].item())
-        y_true = np.argsort(y_true, kind="heapsort")[::-1]
-        comparator = partial(neuralnet_one_output_neurons_comparator, neural_network=self.net)
-        _, y_pred = heapsort(points, comparator, inplace=False, reverse=True)
-        return spearman_footrule_direct(y_true, np.array(y_pred))
 
 
 class TwoPointsCompareDoubleInputTrainer(Trainer):
@@ -476,6 +463,8 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
         self.momentum = momentum
         self.dampening = dampening
         self.max_epochs = max_epochs
+        self.output_layer_size = net.number_of_output_neurons()
+        self.input_layer_size = net.number_of_input_neurons()
 
     def train(self):
         if self.optimizer_name == 'adam':
@@ -528,34 +517,33 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
             inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
             outputs = self.net(inputs)[0]
             if len(outputs) == 1:
-                res = outputs[0]
+                res = outputs[0].item()
                 if res < 0.5:
                     pred = 0
                 else:
                     pred = 1
+            elif len(outputs) == 2:
+                res = softmax_stable(outputs.detach().numpy())
+                pred = np.argmax(res)
             else:
-                pred = np.argmax(outputs)
+                raise ValueError(f"{len(outputs)} is different from 1 or 2. The number of output neurons is not 1 or 2.")
             y_pred.append(pred)
             y_true.append(labels[0].item())
-        #y_true = list(np.concatenate(y_true).flat)
-        #y_pred = list(np.concatenate(y_pred).flat)
         cf_matrix = confusion_matrix(y_true, y_pred)
         return model_accuracy(cf_matrix)
 
     def evaluate_ranking(self, dataloader):
-        y_true = []
         points = []
         self.net.eval()
         for batch in dataloader:
             inputs, labels = batch
             inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
             for i in range(len(inputs)):
-                points.append(inputs[i])
-                y_true.append(labels[i][0].item())
-        y_true = np.argsort(y_true, kind="heapsort")[::-1]
+                points.append((inputs[i], labels[i][0].item()))
+        y_true, _ = heapsort(points, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
         comparator = partial(self.comparator_fn, neural_network=self.net)
-        _, y_pred = heapsort(points, comparator, inplace=False, reverse=True)
-        return spearman_footrule_direct(y_true, np.array(y_pred))
+        y_pred, _ = heapsort(points, comparator, inplace=False, reverse=False)
+        return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
 
 # ==============================================================================================================
@@ -591,3 +579,9 @@ class MLPNet(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.fc_model(x)
         return x
+
+    def number_of_output_neurons(self):
+        return self.output_layer_size
+
+    def number_of_input_neurons(self):
+        return self.input_layer_size
