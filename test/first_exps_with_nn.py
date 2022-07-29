@@ -373,9 +373,9 @@ if __name__ == '__main__':
 
     '''
     for i in range(4):
-        tr = gen_half_half(primitive_set_0, terminal_set_0, 2, 6)
+        tr = HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree()
         for _ in range(3):
-            tr_1 = gen_half_half(primitive_set_0, terminal_set_0, 2, 6)
+            tr_1 = HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree()
 
     print(tr.print_as_tree())
     print(tr)
@@ -401,9 +401,9 @@ if __name__ == '__main__':
     print(lll[1].print_as_tree())
     '''
 
-    #train = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(200000)]
-    #val = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(50000)]
-    #test = [gen_half_half(primitive_set_0, terminal_set_0, 2, 6) for _ in range(20000)]
+    #train = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(200000)]
+    #val = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(50000)]
+    #test = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(20000)]
     #compress_pickle("train_trees", train)
     #compress_pickle("validation_trees", val)
     #compress_pickle("test_trees", test)

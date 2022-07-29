@@ -130,6 +130,6 @@ class UniformMutation(Mutation):
             )
         new_pset = tree.primitive_set().change_return_type(node_type)
         return tree.replace_subtree(
-            gen_half_half(new_pset, tree.terminal_set(), 1, tree.max_depth() - layer_ind_mut),
+            HalfHalfGenerator(new_pset, tree.terminal_set(), 1, tree.max_depth() - layer_ind_mut).generate_tree(),
             layer_ind_mut, node_ind_mut
         )

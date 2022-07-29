@@ -11,6 +11,11 @@ from gp.tree import *
 # ==============================================================================================================
 
 
+class Individual:
+    def __init__(self, individual: PrimitiveTree):
+        pass
+
+
 class Population:
     def __init__(self, population: List[PrimitiveTree]):
         self.__size = len(population)
