@@ -1,4 +1,6 @@
 from abc import abstractmethod, ABC
+from typing import List
+
 from gp.tree.PrimitiveTree import PrimitiveTree
 
 

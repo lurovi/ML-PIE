@@ -1,6 +1,7 @@
 from typing import List, Any
 from gp.tree.Constant import Constant
 from gp.tree.Ephemeral import Ephemeral
+import random
 
 
 class TerminalSet:

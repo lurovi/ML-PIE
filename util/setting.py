@@ -156,7 +156,6 @@ def percentile_multi_axis(n, axis=0):
 seed = 1
 random.seed(seed)
 np.random.seed(seed)
-def_rng = default_rng(seed)
 torch.manual_seed(seed)
 generator_data_loader = torch.Generator(device="cuda" if torch.cuda.is_available() else "cpu")
 generator_data_loader.manual_seed(seed)
