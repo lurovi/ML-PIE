@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 import math
 import random
 from abc import ABC, abstractmethod
 from functools import partial
-from typing import List
+from typing import List, Any, Callable, Tuple, Dict
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -18,7 +20,7 @@ import torch.optim as optim
 from torch.optim import lr_scheduler
 from sklearn.metrics import r2_score, confusion_matrix
 
-from util.sort import heapsort
+from util.Sort import Sort
 
 
 # ==============================================================================================================
@@ -27,7 +29,7 @@ from util.sort import heapsort
 
 
 class TreeData(Dataset):
-    def __init__(self, X, y, scaler=None):
+    def __init__(self, X: np.ndarray, y: np.ndarray, scaler: Any = None):
         self.X = X  # numpy matrix of float values
         self.y = y  # numpy array
         self.scaler = scaler  # e.g., StandardScaler(), already fitted to the training data
@@ -36,15 +38,15 @@ class TreeData(Dataset):
         self.X = torch.from_numpy(self.X).float()
         self.y = torch.from_numpy(self.y).float()
 
-    def __len__(self):
+    def __len__(self) -> int:
         # gets the number of rows in the dataset
         return len(self.y)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
         # gets a data point from the dataset as torch tensor array along with the label
         return self.X[idx], self.y[idx]
 
-    def to_numpy(self):
+    def to_numpy(self) -> Tuple[np.ndarray, np.ndarray]:
         dataset, labels = [], []
         for i in range(len(self)):
             curr_point, curr_label = self[i]
@@ -52,7 +54,7 @@ class TreeData(Dataset):
             labels.append(curr_label.item())
         return np.array(dataset), np.array(labels)
 
-    def remove_ground_truth_duplicates(self):
+    def remove_ground_truth_duplicates(self) -> TreeData:
         new_X, new_y = [], []
         for i in range(len(self)):
             is_dupl = False
@@ -70,7 +72,7 @@ class TreeData(Dataset):
 
 
 class TreeDataTwoPointsCompare(Dataset):
-    def __init__(self, dataset, number_of_points, binary_label=False):
+    def __init__(self, dataset: torch.utils.data.Dataset, number_of_points: int, binary_label: bool = False):
         self.dataset = dataset  # this is an instance of a class that inherits torch.utils.data.Dataset class
         self.number_of_points = number_of_points  # how many points we want to generate
         self.original_number_of_points = len(dataset)  # the number of points in dataset instance
@@ -107,15 +109,15 @@ class TreeDataTwoPointsCompare(Dataset):
         self.original_X = np.array(original_data, dtype=np.float32)
         self.original_y = np.array(original_labels, dtype=np.float32)
 
-    def __len__(self):
+    def __len__(self) -> int:
         # gets the number of rows in the dataset
         return len(self.y)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
         # gets a data point from the dataset as torch tensor array along with the label
         return self.X[idx], self.y[idx]
 
-    def to_numpy(self):
+    def to_numpy(self) -> Tuple[np.ndarray, np.ndarray]:
         dataset, labels = [], []
         for i in range(len(self)):
             curr_point, curr_label = self[i]
@@ -123,7 +125,7 @@ class TreeDataTwoPointsCompare(Dataset):
             labels.append(curr_label.item())
         return np.array(dataset), np.array(labels)
 
-    def to_simple_torch_dataset(self):
+    def to_simple_torch_dataset(self) -> TreeData:
         return TreeData(self.original_X, self.original_y, scaler=None)
 
 
@@ -132,7 +134,7 @@ class TreeDataTwoPointsCompare(Dataset):
 # ==============================================================================================================
 
 
-def model_accuracy(confusion_matrix):
+def model_accuracy(confusion_matrix: np.ndarray) -> Tuple[float, Dict[int, Dict[str, float]]]:
     N = confusion_matrix.shape[0]
     acc = sum([confusion_matrix[i, i] for i in range(N)])
     class_performance = {i: {} for i in range(N)}
@@ -150,29 +152,22 @@ def model_accuracy(confusion_matrix):
     return acc / confusion_matrix.sum(), class_performance
 
 
-def spearman_footrule(origin, estimated, equality):
+def spearman_footrule(origin: List[Any], estimated: List[Any], equality: Callable[[Any, Any], bool]) -> float:
     distance = 0
-    for ie, e in enumerate(origin):
-        for it, t in enumerate(estimated):
-            if equality(e, t):
+    for ie in range(len(origin)):
+        exit_loop = False
+        it = 0
+        while not(exit_loop) and it < len(estimated):
+            if equality(origin[ie], estimated[it]):
                 distance += abs(ie - it)
-                break
-    # normalize
+                exit_loop = True
+            it += 1
     n = len(origin)
     if n % 2 == 0:
         distance *= 3.0/float(np.square(n))
     else:
         distance *= 3.0/float(np.square(n)-1.0)
     return distance
-
-
-# ==============================================================================================================
-# ACTIVATIONS
-# ==============================================================================================================
-
-
-def softmax_stable(x):
-    return np.exp(x - np.max(x))/np.exp(x - np.max(x)).sum()
 
 
 # ==============================================================================================================
@@ -208,18 +203,105 @@ def random_spearman(device, dataloader, p):
             points.append(inputs[i])
             y_true.append(labels[i][0].item())
     y_true_2 = [x for x in y_true]
-    y_true, _ = heapsort(y_true, lambda x, y: x < y, inplace=False, reverse=False)
+    y_true, _ = Sort.heapsort(y_true, lambda x, y: x < y, inplace=False, reverse=False)
     comparator = partial(random_comparator, p=p)
-    y_pred, _ = heapsort(y_true_2, comparator, inplace=False, reverse=False)
+    y_pred, _ = Sort.heapsort(y_true_2, comparator, inplace=False, reverse=False)
     return spearman_footrule(y_true, y_pred, lambda x, y: x == y)
 
 
-def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    output_1 = neural_network(point_1.reshape(1, -1))[0][0]
-    output_2 = neural_network(point_2.reshape(1, -1))[0][0]
-    return output_1.item() < output_2.item()  # first element is lower than the second one
+class NeuralNetComparator:
+    def __init__(self, net: nn.Module):
+        self.__net = net
+
+    def eval(self) -> None:
+        self.__net.eval()
+
+    def apply(self, data: torch.Tensor) -> torch.Tensor:
+        return self.__net(data)
+
+    @abstractmethod
+    def compare(self, point_1: Any, point_2: Any) -> bool:
+        pass
+
+
+class OneOutputNeuronsComparator(NeuralNetComparator):
+    def __init__(self, net: nn.Module):
+        super(OneOutputNeuronsComparator, self).__init__(net)
+
+    def compare(self, point_1: Any, point_2: Any) -> bool:
+        point_1, point_2 = point_1[0], point_2[0]
+        self.eval()
+        output_1 = self.apply(point_1.reshape(1, -1))[0][0]
+        output_2 = self.apply(point_2.reshape(1, -1))[0][0]
+        return output_1.item() < output_2.item()  # first element is lower than the second one
+
+
+class TwoOutputNeuronsComparator(NeuralNetComparator):
+    def __init__(self, net: nn.Module):
+        super(TwoOutputNeuronsComparator, self).__init__(net)
+
+    def compare(self, point_1: Any, point_2: Any) -> bool:
+        point_1, point_2 = point_1[0], point_2[0]
+        self.eval()
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output = self.apply(point)[0]
+        return output[0].item() < output[1].item()  # first element is lower than the second one
+
+
+class TwoOutputNeuronsSoftmaxComparator(NeuralNetComparator):
+    def __init__(self, net: nn.Module):
+        super(TwoOutputNeuronsSoftmaxComparator, self).__init__(net)
+
+    def compare(self, point_1: Any, point_2: Any) -> bool:
+        point_1, point_2 = point_1[0], point_2[0]
+        self.eval()
+        sm = nn.Softmax(dim=0)
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output = sm(self.apply(point)[0])
+        return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
+
+
+class OneOutputNeuronsSigmoidComparator(NeuralNetComparator):
+    def __init__(self, net: nn.Module):
+        super(OneOutputNeuronsSigmoidComparator, self).__init__(net)
+
+    def compare(self, point_1: Any, point_2: Any) -> bool:
+        point_1, point_2 = point_1[0], point_2[0]
+        self.eval()
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output = self.apply(point)[0]
+        return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
+
+
+class NeuralNetComparatorFactory:
+
+    @abstractmethod
+    def create(self, net: nn.Module) -> NeuralNetComparator:
+        pass
+
+
+class OneOutputNeuronsComparatorFactory(NeuralNetComparatorFactory):
+
+    def create(self, net: nn.Module) -> NeuralNetComparator:
+        return OneOutputNeuronsComparator(net)
+
+
+class TwoOutputNeuronsComparatorFactory(NeuralNetComparatorFactory):
+
+    def create(self, net: nn.Module) -> NeuralNetComparator:
+        return TwoOutputNeuronsComparator(net)
+
+
+class TwoOutputNeuronsSoftmaxComparatorFactory(NeuralNetComparatorFactory):
+
+    def create(self, net: nn.Module) -> NeuralNetComparator:
+        return TwoOutputNeuronsSoftmaxComparator(net)
+
+
+class OneOutputNeuronsSigmoidComparatorFactory(NeuralNetComparatorFactory):
+
+    def create(self, net: nn.Module) -> NeuralNetComparator:
+        return OneOutputNeuronsSigmoidComparator(net)
 
 
 def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
@@ -228,6 +310,14 @@ def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
     output = neural_network(point)[0]
     return output[0].item() < output[1].item()  # first element is lower than the second one
+
+
+def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
+    point_1, point_2 = point_1[0], point_2[0]
+    neural_network.eval()
+    output_1 = neural_network(point_1.reshape(1, -1))[0][0]
+    output_2 = neural_network(point_2.reshape(1, -1))[0][0]
+    return output_1.item() < output_2.item()  # first element is lower than the second one
 
 
 def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_network):
@@ -245,14 +335,6 @@ def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_net
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
     output = neural_network(point)[0]
     return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
-
-
-def neuralnet_one_output_neurons_tanh_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output = neural_network(point)[0]
-    return output[0].item() < 0.0  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
 # ==============================================================================================================
@@ -318,8 +400,8 @@ class Trainer(ABC):
                 curr_input, curr_label, curr_output = inputs[i], labels[i][0].item(), outputs[i][0].item()
                 y_true.append((curr_input, curr_label))
                 y_pred.append((curr_input, curr_output))
-        y_true, _ = heapsort(y_true, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
-        y_pred, _ = heapsort(y_pred, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        y_true, _ = Sort.heapsort(y_true, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        y_pred, _ = Sort.heapsort(y_pred, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
         return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
     def predict(self, X):
@@ -449,12 +531,12 @@ class TwoPointsCompareTrainer(Trainer):
 
 
 class TwoPointsCompareDoubleInputTrainer(Trainer):
-    def __init__(self, net, device, dataloader, comparator_fn, loss_fn, optimizer_name='adam',
+    def __init__(self, net, device, dataloader, comparator_factory, loss_fn, optimizer_name='adam',
                  is_classification_task=False, verbose=False,
                  learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20):
         super(TwoPointsCompareDoubleInputTrainer, self).__init__(net, device, dataloader)
         self.is_classification_task = is_classification_task
-        self.comparator_fn = comparator_fn
+        self.comparator_factory = comparator_factory
         self.loss_fn = loss_fn
         self.optimizer_name = optimizer_name
         self.verbose = verbose
@@ -523,8 +605,8 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
                 else:
                     pred = 1
             elif len(outputs) == 2:
-                res = softmax_stable(outputs.detach().numpy())
-                pred = np.argmax(res)
+                res = nn.Softmax(dim=0)(outputs)
+                pred = torch.argmax(res)
             else:
                 raise ValueError(f"{len(outputs)} is different from 1 or 2. The number of output neurons is not 1 or 2.")
             y_pred.append(pred)
@@ -540,9 +622,9 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
             inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
             for i in range(len(inputs)):
                 points.append((inputs[i], labels[i][0].item()))
-        y_true, _ = heapsort(points, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
-        comparator = partial(self.comparator_fn, neural_network=self.net)
-        y_pred, _ = heapsort(points, comparator, inplace=False, reverse=False)
+        y_true, _ = Sort.heapsort(points, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        comparator = self.comparator_factory.create(self.net)
+        y_pred, _ = Sort.heapsort(points, comparator.compare, inplace=False, reverse=False)
         return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
 
@@ -552,7 +634,7 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
 
 
 class MLPNet(nn.Module):
-    def __init__(self, activation_func, final_activation_func, input_layer_size: int, output_layer_size: int, hidden_layer_sizes: List[int] = [], dropout_prob: float = 0.0):
+    def __init__(self, activation_func: Any, final_activation_func: Any, input_layer_size: int, output_layer_size: int, hidden_layer_sizes: List[int] = [], dropout_prob: float = 0.0):
         super(MLPNet, self).__init__()
         self.activation_func = activation_func  # e.g., nn.ReLU()
         self.final_activation_func = final_activation_func  # e.g., nn.Tanh()
@@ -575,13 +657,13 @@ class MLPNet(nn.Module):
 
         self.fc_model = nn.Sequential(*linear_layers)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = x.view(x.size(0), -1)
         x = self.fc_model(x)
         return x
 
-    def number_of_output_neurons(self):
+    def number_of_output_neurons(self) -> int:
         return self.output_layer_size
 
-    def number_of_input_neurons(self):
+    def number_of_input_neurons(self) -> int:
         return self.input_layer_size

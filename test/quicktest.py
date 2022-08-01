@@ -4,7 +4,7 @@ import torch
 from torch import nn
 
 from gp.tree import Primitive
-from util.sort import heapsort
+from util.Sort import heapsort
 
 if __name__ == "__main__":
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
@@ -52,3 +52,4 @@ if __name__ == "__main__":
     arr, ind = heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
     print(arr)
     print(ind)
+

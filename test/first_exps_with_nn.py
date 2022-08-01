@@ -1,11 +1,10 @@
 from sklearn import ensemble
 
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
-    build_numpy_dataset_twopointscompare, RawTerminalFeedbackCollector
-from gp.operator import ShrinkMutation, OnePointCrossover, UniformMutation
+    RawTerminalFeedbackCollector
 from util.setting import *
 from deeplearn.neuralnet import *
-from gp.encodetree import *
+from util.encodetree import *
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -231,7 +230,7 @@ def execute_experiment_nn_ranking_with_warmup(title, file_name_warmup, file_name
     print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
 
 
-def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_fn, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
+def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_factory, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
     trees = decompress_pickle(file_name_dataset)
     training = decompress_pickle(file_name_training)["training"]
     validation, test = trees["validation"], trees["test"]
@@ -243,7 +242,7 @@ def execute_experiment_nn_ranking_double_input(title, file_name_training, file_n
     trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size*2))), batch_size=batch_size, shuffle=True, worker_init_fn=seed_worker,
                              generator=generator_data_loader)
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes, dropout_prob=0.25)
-    trainer = TwoPointsCompareDoubleInputTrainer(net, device, trainloader, comparator_fn=comparator_fn, loss_fn=loss_fn,
+    trainer = TwoPointsCompareDoubleInputTrainer(net, device, trainloader, comparator_factory=comparator_factory, loss_fn=loss_fn,
                                                  optimizer_name=optimizer_name, momentum=momentum,
                                                  verbose=True, is_classification_task=is_classification_task, max_epochs=max_epochs)
     trainer.train()
@@ -330,7 +329,6 @@ if __name__ == '__main__':
     mseloss = nn.MSELoss(reduction="mean")
     crossentropyloss = nn.CrossEntropyLoss()
 
-    tanhcomparator = neuralnet_one_output_neurons_tanh_comparator
     sigmoidcomparator = neuralnet_one_output_neurons_sigmoid_comparator
     softmaxcomparator = neuralnet_two_output_neurons_softmax_comparator
     simplecomparator = neuralnet_two_output_neurons_comparator
@@ -439,7 +437,7 @@ if __name__ == '__main__':
        "counts_weights_average_trees.pbz2", 200, nn.ReLU(), nn.Identity(),
         hidden_layer_sizes=[220, 140, 80, 26], output_layer_size=2,
         device=device, is_classification_task=True,
-        comparator_fn=softmaxcomparator, loss_fn=crossentropyloss, max_epochs=1, batch_size=1)
+        comparator_factory=TwoOutputNeuronsSoftmaxComparatorFactory(), loss_fn=crossentropyloss, max_epochs=1, batch_size=1)
 
     #plot = plot_multiple_experiments_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]).",
@@ -458,8 +456,8 @@ if __name__ == '__main__':
 
     #execute_experiment_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Identity, Hidden Layer Sizes: [220, 140, 80, 26]).",
-    #    "onehot_weights_average_trees_twopointscompare.pbz2",
-    #    "onehot_weights_average_trees.pbz2", 200, nn.ReLU(), nn.Tanh(),
+    #    "counts_number_of_nodes_trees_twopointscompare.pbz2",
+    #    "counts_number_of_nodes_trees.pbz2", 200, nn.ReLU(), nn.Identity(),
     #    [220, 140, 80, 26], device, max_epochs=1, batch_size=1
     #)
 

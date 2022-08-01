@@ -8,7 +8,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold, RepeatedKFold, Rand
 from sklearn.utils.multiclass import type_of_target
 from sklearn import metrics
 import random
-from util.sort import heapsort
+from util.Sort import Sort
 
 
 # ==============================================================================================================
