@@ -1,6 +1,7 @@
 from typing import List, Any
 from gp.tree.Constant import Constant
 from gp.tree.Ephemeral import Ephemeral
+import random
 
 
 class TerminalSet:
@@ -14,14 +15,18 @@ class TerminalSet:
 
         self.__all_obj = feature_types + self.__constants + self.__ephemeral
         self.__all_types = feature_types + [c.type() for c in self.__constants] + [e.type() for e in self.__ephemeral]
-        self.__all_idx = ["x"+str(i) for i in range(self.__num_features)] + ["c"+str(i)+" "+str(self.__constants[i]()) for i in range(self.__num_constants)] + ["e"+str(i)+" " for i in range(self.__num_ephemeral)]
+        self.__all_idx = ["x" + str(i) for i in range(self.__num_features)] + \
+                         ["c" + str(i) + " " + str(self.__constants[i]()) for i in range(self.__num_constants)] + \
+                         ["e" + str(i) + " " for i in range(self.__num_ephemeral)]
 
     def is_there_type(self, provided_type: Any):
         candidates = [i for i in range(len(self.__all_types)) if self.__all_types[i] == provided_type]
         return bool(candidates)
 
     def all_idx(self):
-        return ["x"+str(i) for i in range(self.__num_features)] + ["c"+str(i) for i in range(self.__num_constants)] + ["e"+str(i) for i in range(self.__num_ephemeral)]
+        return ["x" + str(i) for i in range(self.__num_features)] + \
+               ["c" + str(i) for i in range(self.__num_constants)] + \
+               ["e" + str(i) for i in range(self.__num_ephemeral)]
 
     def get_type(self, idx):
         return self.__all_types[idx]
@@ -51,7 +56,7 @@ class TerminalSet:
     def cast(self, s_idx: str) -> Any:
         objc = self.get_constant_ephemeral(s_idx)
         start_ind = s_idx.find(" ")
-        return objc.cast(s_idx[(start_ind+1):])
+        return objc.cast(s_idx[(start_ind + 1):])
 
     @staticmethod
     def feature_id(s_idx: str) -> int:
@@ -63,8 +68,9 @@ class TerminalSet:
 
     def sample_typed(self, provided_type: Any) -> str:
         candidates = [i for i in range(len(self.__all_types)) if self.__all_types[i] == provided_type]
-        if not(candidates):
-            raise LookupError(f"In the terminal set there is no type {str(provided_type)} available as type of one of the terminals in the set.")
+        if not candidates:
+            raise LookupError(
+                f"In the terminal set there is no type {str(provided_type)} available as type of one of the terminals in the set.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__extract(ind)
