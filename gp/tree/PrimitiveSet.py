@@ -20,7 +20,8 @@ class PrimitiveSet:
     def change_return_type(self, new_return_type: Any):
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == new_return_type]
         if not candidates:
-            raise AttributeError("You can't create a new primitive set with the provided new return type since there is no primitive in the current set that has the new return type as return type.")
+            raise AttributeError(
+                "You can't create a new primitive set with the provided new return type since there is no primitive in the current set that has the new return type as return type.")
         return PrimitiveSet(self.__primitives, new_return_type)
 
     def __str__(self):
@@ -52,24 +53,28 @@ class PrimitiveSet:
         return self.__primitives[ind]
 
     def sample_root(self) -> Primitive:
-        candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == self.__return_type]
-        if not(candidates):
-            raise LookupError(f"In the primitive set there is no type {str(self.__return_type)} available as return type of one of the primitives in the set that can be used to sample a root primitive.")
+        candidates = [i for i in range(len(self.__primitives)) if
+                      self.__primitives[i].return_type() == self.__return_type]
+        if not candidates:
+            raise LookupError(
+                f"In the primitive set there is no type {str(self.__return_type)} available as return type of one of the primitives in the set that can be used to sample a root primitive.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
     def sample_typed(self, provided_type: Any) -> Primitive:
         candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].return_type() == provided_type]
-        if not(candidates):
-            raise LookupError(f"In the primitive set there is no type {str(provided_type)} available as return type of one of the primitives in the set.")
+        if not candidates:
+            raise LookupError(
+                f"In the primitive set there is no type {str(provided_type)} available as return type of one of the primitives in the set.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]
         return self.__primitives[ind]
 
     def sample_parameter_typed(self, provided_types: Any) -> Primitive:
-        candidates = [i for i in range(len(self.__primitives)) if self.__primitives[i].parameter_types() == provided_types]
-        if not(candidates):
+        candidates = [i for i in range(len(self.__primitives)) if
+                      self.__primitives[i].parameter_types() == provided_types]
+        if not candidates:
             raise LookupError(f"In the primitive set there is no type {str(provided_types)} available.")
         ind = random.randint(0, len(candidates) - 1)
         ind = candidates[ind]

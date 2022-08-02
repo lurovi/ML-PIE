@@ -4,8 +4,9 @@ import re
 
 class Primitive:
     def __init__(self, name: str, return_type: Any, parameter_types: List[Any], function: Callable):
-        if not(Primitive.check_valid_primitive_name(name)):
-            raise AttributeError(f"Invalid name. {name} is not a valid name for a primitive. Please avoid starting the name with either x or c or e followed by a number.")
+        if not (Primitive.check_valid_primitive_name(name)):
+            raise AttributeError(
+                f"Invalid name. {name} is not a valid name for a primitive. Please avoid starting the name with either x or c or e followed by a number.")
         self.__name = name
         self.__arity = len(parameter_types)
         self.__return_type = return_type
