@@ -37,16 +37,16 @@ tree_crossover = TreeCrossover(OnePointCrossover())
 
 tree_mutation = TreeMutation(UniformMutation())
 
-algorithm = NSGA2(pop_size=10,
+algorithm = NSGA2(pop_size=100,
                   sampling=tree_sampling,
                   crossover=tree_crossover,
                   mutation=tree_mutation,
-                  eliminate_duplicates=DuplicateTreeElimination())
+                  eliminate_duplicates=DuplicateTreeElimination([[32], [12], [54], [0.2], [5], [123], [7], [0.69], [45.34], [87], [231], [1234.56], [23.78], [12.34]]))
 
 res = minimize(SampleProblem(),
                algorithm,
-               ('n_gen', 5),
+               ('n_gen', 10),
                seed=1,
-               verbose=False)
+               verbose=True)
 
 Scatter().add(res.F).show()

@@ -5,5 +5,5 @@ from gp.tree.PrimitiveTree import PrimitiveTree
 class Mutation(ABC):
 
     @abstractmethod
-    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
+    def mutate(self, individual: PrimitiveTree) -> PrimitiveTree:
         pass

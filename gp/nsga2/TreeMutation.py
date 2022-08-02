@@ -13,6 +13,6 @@ class TreeMutation(Mutation):
     def _do(self, problem, x, **kwargs):
         # for each individual
         for i in range(len(x)):
-            x[i, 0] = self.tree_mutation.mute(x[i, 0])
+            x[i, 0] = self.tree_mutation.mutate(x[i, 0])
 
         return x
