@@ -4,6 +4,7 @@ from pymoo.optimize import minimize
 from pymoo.visualization.scatter import Scatter
 
 from gp.nsga2.DuplicateTreeElimination import DuplicateTreeElimination
+from gp.nsga2.Nsgp2 import NSGP2
 from gp.nsga2.SampleProblem import SampleProblem
 from gp.nsga2.TreeCrossover import TreeCrossover
 from gp.nsga2.TreeMutation import TreeMutation
@@ -37,7 +38,7 @@ tree_crossover = TreeCrossover(OnePointCrossover())
 
 tree_mutation = TreeMutation(UniformMutation())
 
-algorithm = NSGA2(pop_size=100,
+algorithm = NSGP2(pop_size=100,
                   sampling=tree_sampling,
                   crossover=tree_crossover,
                   mutation=tree_mutation,
