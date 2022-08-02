@@ -288,7 +288,7 @@ if __name__ == '__main__':
 
     #plot_random_ranking(device, DataLoader(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"].remove_ground_truth_duplicates(), batch_size=1, shuffle=True))
 
-    #ExpsExecutor.example_execution_1(generator_data_loader, device)
+    ExpsExecutor.example_execution_1(generator_data_loader, device)
     
     #########################################
 

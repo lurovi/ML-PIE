@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import List
 import re
 
@@ -63,6 +64,9 @@ class PrimitiveTree:
     def terminal_set(self):
         return self.__terminal_set
 
+    def __eq__(self, other: PrimitiveTree):
+        return self.print_as_text() == other.print_as_text()
+
     def __len__(self):
         return self.number_of_nodes()
 
@@ -85,7 +89,7 @@ class PrimitiveTree:
                     for iii in reversed(range(len(children))):
                         stack.append(children[iii])
                     stack.append("(")
-        return s
+        return s.strip()
 
     def print_as_tree(self):
         s = ""

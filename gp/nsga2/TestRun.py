@@ -42,7 +42,9 @@ algorithm = NSGP2(pop_size=100,
                   sampling=tree_sampling,
                   crossover=tree_crossover,
                   mutation=tree_mutation,
-                  eliminate_duplicates=DuplicateTreeElimination([[32], [12], [54], [0.2], [5], [123], [7], [0.69], [45.34], [87], [231], [1234.56], [23.78], [12.34]]))
+                  #eliminate_duplicates=DuplicateTreeElimination([[32], [12], [54], [0.2], [5], [123], [7], [0.69], [45.34], [87], [231], [1234.56], [23.78], [12.34]])
+                  eliminate_duplicates=DuplicateTreeElimination()
+                  )
 
 res = minimize(SampleProblem(),
                algorithm,

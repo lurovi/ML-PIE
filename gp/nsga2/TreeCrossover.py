@@ -14,7 +14,7 @@ class TreeCrossover(Crossover):
         # The input of has the following shape (n_parents, n_matings, n_var)
         _, n_matings, n_var = x.shape
 
-        # The output owith the shape (n_offsprings, n_matings, n_var)
+        # The output with the shape (n_offsprings, n_matings, n_var)
         # Because there the number of parents and offsprings are equal it keeps the shape of X
         y = np.full_like(x, None, dtype=object)
 
@@ -24,7 +24,7 @@ class TreeCrossover(Crossover):
             a, b = x[0, k, 0], x[1, k, 0]
 
             # prepare the offsprings
-            offsprings = self.tree_crossover.cross([a, b])
+            offsprings = self.tree_crossover.mate([a, b])
             y[0, k, 0], y[1, k, 0] = offsprings[0], offsprings[1]
 
         return y

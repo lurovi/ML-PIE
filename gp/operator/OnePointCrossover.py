@@ -6,7 +6,7 @@ import random
 
 class OnePointCrossover(Crossover):
 
-    def cross(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
+    def mate(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
         tree_1, tree_2 = individuals[0], individuals[1]
         if tree_1.depth() > tree_2.depth():
             tree_1, tree_2 = tree_2, tree_1
