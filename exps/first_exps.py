@@ -288,19 +288,8 @@ if __name__ == '__main__':
 
     #plot_random_ranking(device, DataLoader(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"].remove_ground_truth_duplicates(), batch_size=1, shuffle=True))
 
-    for target in ["weights_average", "weights_sum"]:
-        for i in range(1, 5):
-            i_str = str(i)
-            for representation in ["counts", "onehot"]:
-                for final_activation in [nn.Identity(), nn.Sigmoid(), nn.Tanh()]:
-                    print(ExpsExecutor.execute_experiment_nn_ranking(
-                        target + " " + i_str + " " + representation,
-                        generator_data_loader,
-                        "data/"+representation+"_"+target+"_"+"trees_twopointscompare"+"_"+i_str+".pbz2",
-                        "data/"+representation+"_"+target+"_"+"trees"+"_"+i_str+".pbz2", 200, nn.ReLU(), final_activation,
-                        [220, 140, 80, 26], device, max_epochs=1, batch_size=1
-                    ))
-
+    #ExpsExecutor.example_execution_1(generator_data_loader, device)
+    
     #########################################
 
     #execute_experiment_regression_with_pwis_and_rf("Regression PWIS", "train_trees.pbz2", "onehot_pwis_trees.pbz2", seed)

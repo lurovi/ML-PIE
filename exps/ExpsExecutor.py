@@ -42,7 +42,7 @@ class ExpsExecutor:
         return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
 
     @staticmethod
-    def example_execution(generator_data_loader, device):
+    def example_execution_1(generator_data_loader, device):
         for target in ["weights_average", "weights_sum"]:
             for i in range(1, 5):
                 i_str = str(i)
