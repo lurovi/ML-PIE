@@ -6,5 +6,5 @@ from gp.tree.PrimitiveTree import PrimitiveTree
 class Crossover(ABC):
 
     @abstractmethod
-    def cross(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
+    def mate(self, individuals: List[PrimitiveTree]) -> List[PrimitiveTree]:
         pass

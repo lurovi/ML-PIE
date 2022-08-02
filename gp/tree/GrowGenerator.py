@@ -30,21 +30,21 @@ class GrowGenerator(TreeGenerator):
         else:
             tree = [[terminal_set.sample_typed(primitive_set.return_type())]]
         expand = [[True]]
-        isMinHeightReached = False
+        is_min_height_reached = True if min_height == 1 else False
         for layer_ind in range(1, height):
             curr_layer = [""] * (max_degree ** layer_ind)
             curr_expand = [False] * (max_degree ** layer_ind)
             if layer_ind + 1 == min_height:
-                isMinHeightReached = True
+                is_min_height_reached = True
             previous_layer = tree[layer_ind - 1]
             previous_expand = expand[layer_ind - 1]
             parents = [(iii, previous_expand[iii], primitive_set.get_primitive(previous_layer[iii])) for iii in
                        range(len(previous_layer)) if
                        previous_layer[iii] != "" and primitive_set.is_primitive(previous_layer[iii])]
-            if not (isMinHeightReached):
-                to_expand_necesserly = random.randint(0, len(parents) - 1)
+            if not is_min_height_reached:
+                to_expand_necessarily = random.randint(0, len(parents) - 1)
             else:
-                to_expand_necesserly = -1
+                to_expand_necessarily = -1
             for p_i in range(len(parents)):
                 parent_ind = parents[p_i][0]
                 parent_exp = parents[p_i][1]
@@ -68,7 +68,7 @@ class GrowGenerator(TreeGenerator):
                                     curr_expand[start_ind] = True
                                 else:
                                     curr_expand[start_ind] = False
-                        elif to_expand_necesserly == p_i and to_expand_necesserly_param == t_i:
+                        elif to_expand_necessarily == p_i and to_expand_necesserly_param == t_i:
                             curr_layer[start_ind] = primitive_set.sample_typed(t).name()
                             curr_expand[start_ind] = True
                         else:

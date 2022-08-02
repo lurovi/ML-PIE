@@ -8,7 +8,7 @@ from gp.tree.TreeGenerator import TreeGenerator
 
 class UniformMutation(Mutation):
 
-    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
+    def mutate(self, individual: PrimitiveTree) -> PrimitiveTree:
         tree = individual
         layer_ind_mut = random.randint(0, tree.depth()-1)
         node_ind_mut = random.randint(0, tree.number_of_nodes_at_layer(layer_ind_mut)-1)

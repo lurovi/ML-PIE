@@ -1,5 +1,8 @@
+from __future__ import annotations
 from typing import List
+import re
 
+from gp.tree.Primitive import Primitive
 from gp.tree.PrimitiveSet import PrimitiveSet
 from gp.tree.TerminalSet import TerminalSet
 
@@ -61,6 +64,9 @@ class PrimitiveTree:
     def terminal_set(self):
         return self.__terminal_set
 
+    def __eq__(self, other: PrimitiveTree):
+        return self.print_as_text() == other.print_as_text()
+
     def __len__(self):
         return self.number_of_nodes()
 
@@ -83,29 +89,29 @@ class PrimitiveTree:
                     for iii in reversed(range(len(children))):
                         stack.append(children[iii])
                     stack.append("(")
-        return s
+        return s.strip()
 
     def print_as_tree(self):
         s = ""
-        n_indent = self.depth()-1
+        n_indent = self.depth() - 1
         s += "\n"
         for i in range(self.depth()):
             for _ in range(n_indent):
                 s += " "
             n_indent -= 1
             curr_layer = self.layer(i)
-            curr_elem = ["["+elem+"]\t" for elem in curr_layer if elem != ""]
+            curr_elem = ["[" + elem + "]\t" for elem in curr_layer if elem != ""]
             for elem in curr_elem:
                 s += elem
             s += "\n"
         return s
 
     def __check_layer_index_with_max_depth(self, layer_ind: int):
-        if not(0 <= layer_ind < self.max_depth()):
+        if not (0 <= layer_ind < self.max_depth()):
             raise IndexError(f"{layer_ind} is out of range as layer index.")
 
     def __check_layer_index_with_actual_depth(self, layer_ind: int):
-        if not(0 <= layer_ind < self.depth()):
+        if not (0 <= layer_ind < self.depth()):
             raise IndexError(f"{layer_ind} is out of range as layer index.")
 
     def layer(self, layer_ind: int):
@@ -143,7 +149,8 @@ class PrimitiveTree:
             prim = []
             for i in range(len(elem)):
                 if self.primitive_set().is_primitive(elem[i]):
-                    prim.append((elem[i], [child[2] for child in self.children(layer_ind, i) if self.primitive_set().is_primitive(child[2])]))
+                    prim.append((elem[i], [child[2] for child in self.children(layer_ind, i) if
+                                           self.primitive_set().is_primitive(child[2])]))
             for pr, child in prim:
                 dic[pr] += 1.0
                 for c in child:
@@ -165,7 +172,7 @@ class PrimitiveTree:
         max_layer = -1000000
         for i in range(self.max_depth()):
             n_nodes = self.number_of_nodes_at_layer(i)
-            if ( n_nodes > max_layer):
+            if n_nodes > max_layer:
                 max_layer = n_nodes
         return max_layer
 
@@ -184,7 +191,7 @@ class PrimitiveTree:
         ind = -1
         for i in range(self.max_depth()):
             n_nodes = self.number_of_nodes_at_layer(i)
-            if (n_nodes > max_layer):
+            if n_nodes > max_layer:
                 max_layer = n_nodes
                 ind = i
         return ind
@@ -205,7 +212,7 @@ class PrimitiveTree:
             curr_layer = self.layer(i)
             ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != ""]
             for j in range(len(ind)):
-                if not(self.is_leaf(i, j)):
+                if not (self.is_leaf(i, j)):
                     internal_nodes.append(curr_layer[ind[j]])
         return internal_nodes
 
@@ -230,7 +237,7 @@ class PrimitiveTree:
         if not (0 <= node_ind < len(elem)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         curr_node = elem[node_ind]
-        return elem[:node_ind], curr_node, elem[(node_ind+1):]
+        return elem[:node_ind], curr_node, elem[(node_ind + 1):]
 
     def children(self, layer_ind: int, node_ind: int):
         self.__check_layer_index_with_max_depth(layer_ind)
@@ -266,13 +273,13 @@ class PrimitiveTree:
         if not (0 <= node_ind < len(elem_ind)):
             raise IndexError(f"{node_ind} is out of range as node index for layer {layer_ind}.")
         ind_of_node = elem_ind[node_ind]
-        curr_ind = ind_of_node//self.max_degree()
+        curr_ind = ind_of_node // self.max_degree()
         relative_ind = -1
         for iii in range(len(previous_elem_ind)):
             if previous_elem_ind[iii] == curr_ind:
                 relative_ind = iii
                 break
-        return (layer_ind - 1, relative_ind, previous_layer[curr_ind])
+        return layer_ind - 1, relative_ind, previous_layer[curr_ind]
 
     def node_indexes_iterate(self):
         candidates = []
@@ -291,14 +298,14 @@ class PrimitiveTree:
         first_previous_node_abs_index = elem[node_ind]
         curr_layer_ind = layer_ind + 1
         for i in range(self.max_depth() - layer_ind - 1):
-            curr_dim = self.max_degree()**(curr_layer_ind - layer_ind)
+            curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
             start_ind = first_previous_node_abs_index * self.max_degree()
             tre.append(self.layer(curr_layer_ind)[start_ind:start_ind + curr_dim])
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
         for i in range(self.max_depth() - layer_ind - 1, self.max_depth()):
             curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
-            tre.append([""]*curr_dim)
+            tre.append([""] * curr_dim)
             curr_layer_ind += 1
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
 
@@ -318,7 +325,7 @@ class PrimitiveTree:
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
             lll = [nnn for nnn in lll if nnn != ""]
-            if not(lll):
+            if not lll:
                 return depth
             depth += 1
         return depth
@@ -353,14 +360,17 @@ class PrimitiveTree:
         first_previous_node_abs_index = elem[node_ind]
         tre[layer_ind][elem[node_ind]] = new_tree.root()
         curr_layer_ind = layer_ind + 1
-        if not(layer_ind + new_tree.depth() <= self.max_depth()):
+        if not (layer_ind + new_tree.depth() <= self.max_depth()):
             raise AttributeError("The new tree depth must not exceed the allowed max depth of the tree.")
-        if not( self.get_node_type(tre[layer_ind][elem[node_ind]]) == self.get_node_type(self.__tree[layer_ind][elem[node_ind]])):
+        if not (self.get_node_type(tre[layer_ind][elem[node_ind]]) == self.get_node_type(
+                self.__tree[layer_ind][elem[node_ind]])):
             raise AttributeError("The new tree return type must match the return type of the replaced subtree.")
         for i in range(self.max_depth() - layer_ind - 1):
             curr_dim = self.max_degree() ** (curr_layer_ind - layer_ind)
             start_ind = first_previous_node_abs_index * self.max_degree()
-            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + new_tree.layer(curr_layer_ind - layer_ind) + tre[curr_layer_ind][start_ind + curr_dim:]
+            tre[curr_layer_ind] = tre[curr_layer_ind][:start_ind] + new_tree.layer(curr_layer_ind - layer_ind) + tre[
+                                                                                                                     curr_layer_ind][
+                                                                                                                 start_ind + curr_dim:]
             curr_layer_ind += 1
             first_previous_node_abs_index = start_ind
         return PrimitiveTree(tre, self.primitive_set(), self.terminal_set())
@@ -392,7 +402,8 @@ class PrimitiveTree:
         counts = []
         for p in single_primitives:  # + couples_primitives:
             counts.append(float(counting_dic[p]))
-        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio, leaf_internal_nodes_ratio]
+        return counts + [number_of_nodes, depth, max_degree, max_breadth, depth_number_of_nodes_ratio,
+                         leaf_internal_nodes_ratio]
 
     @staticmethod
     def extract_counting_features_from_list_of_trees(trees: List):
@@ -405,7 +416,8 @@ class PrimitiveTree:
         primitives_leafs = []
         candidates = self.node_indexes_iterate()
         for layer_ind, node_ind in candidates:
-            if not(self.is_leaf(layer_ind, node_ind)) and all([True if self.is_leaf(ci,cj) else False for ci, cj, cc in self.children(layer_ind, node_ind)]):
+            if not (self.is_leaf(layer_ind, node_ind)) and all(
+                    [True if self.is_leaf(ci, cj) else False for ci, cj, cc in self.children(layer_ind, node_ind)]):
                 primitives_leafs.append((layer_ind, node_ind))
         sub_chains = []
         for layer_ind, node_ind in primitives_leafs:
@@ -438,7 +450,7 @@ class PrimitiveTree:
         s = 0.0
         for c in internal_nodes:
             s += weights[c]
-        return s/float(len(internal_nodes))
+        return s / float(len(internal_nodes))
 
     def compute_weighted_sub_chains_average(self, ranking: List[List[str]], max_weight: float = 1.0):
         weights = PrimitiveTree.weight_primitives_ranking(ranking, max_weight)
@@ -449,9 +461,10 @@ class PrimitiveTree:
             for j in range(len(sub_chains[i])):
                 curr_weight *= weights[sub_chains[i][j]]
             weighted_sub_chains += curr_weight
-        return weighted_sub_chains/float(len(sub_chains))
+        return weighted_sub_chains / float(len(sub_chains))
 
-    def compute_property_and_weights_based_interpretability_score(self,  ranking: List[List[str]], max_weight: float = 1.0):
+    def compute_property_and_weights_based_interpretability_score(self, ranking: List[List[str]],
+                                                                  max_weight: float = 1.0):
         counting_dic = self.count_primitives()
         number_of_nodes = float(self.number_of_nodes())
         depth = float(self.depth())
@@ -465,14 +478,26 @@ class PrimitiveTree:
         depth_number_of_nodes_ratio = depth / number_of_nodes
         weights_average = self.compute_internal_nodes_weights_average(ranking, max_weight)
         weighted_sub_chains_average = self.compute_weighted_sub_chains_average(ranking, max_weight)
-        return weights_average + weighted_sub_chains_average + depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc + 1.0/number_of_nodes
+        return weights_average + weighted_sub_chains_average + depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc + 1.0 / number_of_nodes
 
     def compile(self, x: List):
+        # TODO reduce code duplication
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
-        for layer_ind in reversed(range(self.depth()-1)):
+        if self.depth() == 1:
+            node = tre[0][0]
+            child = node.strip()
+            if not (re.search(r'^x\d+', child) is None):
+                return x[int(child[1:])]
+            elif not (re.search(r'^[ce]\d+\s', child) is None):
+                return self.__terminal_set.cast(child)
+            else:
+                raise ValueError("Not valid terminal")
+
+        for layer_ind in reversed(range(self.depth() - 1)):
             curr_layer = tre[layer_ind]
             next_layer = tre[layer_ind + 1]
-            elem_ind = [iii for iii in range(len(curr_layer)) if curr_layer[iii] != "" and self.__primitive_set.is_primitive(curr_layer[iii])]
+            elem_ind = [iii for iii in range(len(curr_layer)) if
+                        curr_layer[iii] != "" and self.__primitive_set.is_primitive(curr_layer[iii])]
             for i in range(len(elem_ind)):
                 curr_ind = elem_ind[i]
                 children = []
@@ -481,11 +506,11 @@ class PrimitiveTree:
                 for j in range(start_ind, end_ind):
                     child = next_layer[j]
                     if next_layer[j] != "":
-                        if isinstance(child, str) and not(Primitive.check_valid_primitive_name(child)):
+                        if isinstance(child, str) and not (Primitive.check_valid_primitive_name(child)):
                             child = child.strip()
-                            if not(re.search(r'^x\d+', child) is None):
+                            if not (re.search(r'^x\d+', child) is None):
                                 children.append(x[int(child[1:])])
-                            elif not(re.search(r'^[ce]\d+\s', child) is None):
+                            elif not (re.search(r'^[ce]\d+\s', child) is None):
                                 children.append(self.__terminal_set.cast(child))
                             else:
                                 children.append(child)

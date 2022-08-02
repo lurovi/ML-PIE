@@ -655,12 +655,24 @@ class MLPNet(nn.Module):
                 linear_layers.append(nn.Dropout(self.dropout_prob))
             curr_dim = layer_sizes[i]
 
-        self.fc_model = nn.Sequential(*linear_layers)
+        self.fc_model = nn.Sequential(*linear_layers[:-1])
+        self.last_layer = nn.Sequential(linear_layers[-1])
+        self.dropout_last_layer = nn.Sequential(nn.Dropout(self.dropout_prob), linear_layers[-1])
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = x.view(x.size(0), -1)
         x = self.fc_model(x)
-        return x
+        z = x.detach().clone()
+        x = self.last_layer(x)
+
+        uncertainty = []
+        uncert = [self.dropout_last_layer(z) for _ in range(10)]
+        for i in range(x.size(0)):
+            curr_uncert = []
+            for j in range(len(uncert)):
+                curr_uncert.append(uncert[j][i][0].item())
+            uncertainty.append(np.std(curr_uncert))
+        return x#, uncertainty
 
     def number_of_output_neurons(self) -> int:
         return self.output_layer_size

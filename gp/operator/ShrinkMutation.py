@@ -5,7 +5,7 @@ from gp.operator.Mutation import Mutation
 
 class ShrinkMutation(Mutation):
 
-    def mute(self, individual: PrimitiveTree) -> PrimitiveTree:
+    def mutate(self, individual: PrimitiveTree) -> PrimitiveTree:
         tree = individual
         candidates = []
         for layer_ind in range(tree.depth()-1):
