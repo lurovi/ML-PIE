@@ -41,7 +41,7 @@ class GrowGenerator(TreeGenerator):
             parents = [(iii, previous_expand[iii], primitive_set.get_primitive(previous_layer[iii])) for iii in
                        range(len(previous_layer)) if
                        previous_layer[iii] != "" and primitive_set.is_primitive(previous_layer[iii])]
-            if not is_min_height_reached:
+            if not is_min_height_reached and len(parents) > 0:
                 to_expand_necessarily = random.randint(0, len(parents) - 1)
             else:
                 to_expand_necessarily = -1
