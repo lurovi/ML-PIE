@@ -477,7 +477,18 @@ class PrimitiveTree:
         return weights_average + weighted_sub_chains_average + depth_number_of_nodes_ratio + degree_breadth_ratio + leaf_nodes_perc + 1.0 / number_of_nodes
 
     def compile(self, x: List):
+        # TODO reduce code duplication
         tre = [[self.__tree[i][j] for j in range(len(self.__tree[i]))] for i in range(len(self.__tree))]
+        if self.depth() == 1:
+            node = tre[0][0]
+            child = node.strip()
+            if not (re.search(r'^x\d+', child) is None):
+                return x[int(child[1:])]
+            elif not (re.search(r'^[ce]\d+\s', child) is None):
+                return self.__terminal_set.cast(child)
+            else:
+                raise ValueError("Not valid terminal")
+
         for layer_ind in reversed(range(self.depth() - 1)):
             curr_layer = tre[layer_ind]
             next_layer = tre[layer_ind + 1]
