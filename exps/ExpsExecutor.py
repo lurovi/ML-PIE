@@ -29,7 +29,7 @@ class ExpsExecutor:
             # trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size * 2))), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker, generator=generator_data_loader)
             net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                          hidden_layer_sizes, dropout_prob=0.25)
-            trainer = TwoPointsCompareTrainer(net, device, trainloader, verbose=False, max_epochs=max_epochs)
+            trainer = TwoPointsCompareTrainer(net, device, trainloader, verbose=True, max_epochs=max_epochs)
             trainer.train()
             # eval_val = trainer.evaluate_ranking(valloader)
             # eval_train = trainer.evaluate_ranking(trainloader_original)

@@ -233,12 +233,11 @@ class OneOutputNeuronsComparator(NeuralNetComparator):
 
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
-        self.eval()
-        with torch.no_grad():
-            output_1, _ = self.apply(point_1.reshape(1, -1))[0][0]
-            output_2, _ = self.apply(point_2.reshape(1, -1))[0][0]
-        self.train()
-        return output_1.item() < output_2.item()  # first element is lower than the second one
+        output_1, _ = self.apply(point_1.reshape(1, -1))
+        output_1 = output_1[0][0].item()
+        output_2, _ = self.apply(point_2.reshape(1, -1))
+        output_2 = output_2[0][0].item()
+        return output_1 < output_2  # first element is lower than the second one
 
 
 class TwoOutputNeuronsComparator(NeuralNetComparator):
@@ -247,12 +246,11 @@ class TwoOutputNeuronsComparator(NeuralNetComparator):
 
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
-        self.eval()
-        with torch.no_grad():
-            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-            output, _ = self.apply(point)[0]
-        self.train()
-        return output[0].item() < output[1].item()  # first element is lower than the second one
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output, _ = self.apply(point)
+        output = output[0]
+        output_1, output_2 = output[0].item(), output[1].item()
+        return output_1 < output_2  # first element is lower than the second one
 
 
 class TwoOutputNeuronsSoftmaxComparator(NeuralNetComparator):
@@ -261,13 +259,11 @@ class TwoOutputNeuronsSoftmaxComparator(NeuralNetComparator):
 
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
-        self.eval()
-        with torch.no_grad():
-            sm = nn.Softmax(dim=0)
-            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-            output = sm(self.apply(point)[0][0])
-        self.train()
-        return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
+        sm = nn.Softmax(dim=0)
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output = sm(self.apply(point)[0][0])
+        output_1, output_2 = output[0].item(), output[1].item()
+        return output_1 >= output_2  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
 class OneOutputNeuronsSigmoidComparator(NeuralNetComparator):
@@ -276,12 +272,10 @@ class OneOutputNeuronsSigmoidComparator(NeuralNetComparator):
 
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
-        self.eval()
-        with torch.no_grad():
-            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-            output, _ = self.apply(point)[0]
-        self.train()
-        return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
+        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+        output, _ = self.apply(point)
+        output = output[0][0].item()
+        return output < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
 class NeuralNetComparatorFactory:
@@ -313,39 +307,6 @@ class OneOutputNeuronsSigmoidComparatorFactory(NeuralNetComparatorFactory):
 
     def create(self, net: nn.Module) -> NeuralNetComparator:
         return OneOutputNeuronsSigmoidComparator(net)
-
-
-def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output, _ = neural_network(point)[0]
-    return output[0].item() < output[1].item()  # first element is lower than the second one
-
-
-def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    output_1, _ = neural_network(point_1.reshape(1, -1))[0][0]
-    output_2, _ = neural_network(point_2.reshape(1, -1))[0][0]
-    return output_1.item() < output_2.item()  # first element is lower than the second one
-
-
-def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    sm = nn.Softmax(dim=0)
-    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output = sm(neural_network(point)[0][0])
-    return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
-
-
-def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_network):
-    point_1, point_2 = point_1[0], point_2[0]
-    neural_network.eval()
-    point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output, _ = neural_network(point)[0]
-    return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
 # ==============================================================================================================
@@ -502,9 +463,11 @@ class TwoPointsCompareTrainer(Trainer):
                 single_point_dim = inputs.shape[1]//2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = self.net(inputs_1).flatten()
+                outputs_1, _ = self.net(inputs_1)
+                outputs_1 = outputs_1.flatten()
                 loss_1 = one*torch.mean(labels*outputs_1)
-                outputs_2, _ = self.net(inputs_2).flatten()
+                outputs_2, _ = self.net(inputs_2)
+                outputs_2 = outputs_2.flatten()
                 loss_2 = minus_one*torch.mean(labels*outputs_2)
                 loss = loss_1 + loss_2
                 loss.backward()
@@ -539,8 +502,10 @@ class TwoPointsCompareTrainer(Trainer):
                 single_point_dim = inputs.shape[1] // 2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = self.net(inputs_1)[0][0].item()
-                outputs_2, _ = self.net(inputs_2)[0][0].item()
+                outputs_1, _ = self.net(inputs_1)
+                outputs_1 = outputs_1[0][0].item()
+                outputs_2, _ = self.net(inputs_2)
+                outputs_2 = outputs_2[0][0].item()
                 if outputs_1 >= outputs_2:
                     pred = 1
                 else:
@@ -620,7 +585,8 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
             for batch in ddd:
                 inputs, labels = batch
                 inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
-                outputs, _ = self.net(inputs)[0]
+                outputs, _ = self.net(inputs)
+                outputs = outputs[0]
                 if len(outputs) == 1:
                     res = outputs[0].item()
                     if res < 0.5:
@@ -641,14 +607,16 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
     def evaluate_ranking(self, dataloader):
         points = []
         self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            for i in range(len(inputs)):
-                points.append((inputs[i], labels[i][0].item()))
-        y_true, _ = Sort.heapsort(points, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
-        comparator = self.comparator_factory.create(self.net)
-        y_pred, _ = Sort.heapsort(points, comparator.compare, inplace=False, reverse=False)
+        with torch.no_grad():
+            for batch in dataloader:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                for i in range(len(inputs)):
+                    points.append((inputs[i], labels[i][0].item()))
+            y_true, _ = Sort.heapsort(points, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+            comparator = self.comparator_factory.create(self.net)
+            y_pred, _ = Sort.heapsort(points, comparator.compare, inplace=False, reverse=False)
+        self.net.train()
         return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
 
@@ -684,19 +652,20 @@ class MLPNet(nn.Module):
         self.fc_model = nn.Sequential(*fc_components[:-2])
         self.last_layer = nn.Sequential(fc_components[-2], fc_components[-1])
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, List[float]]:
         x = x.view(x.size(0), -1)
         x = self.fc_model(x)
         z = x.detach().clone()
         x = self.last_layer(x)
 
         uncertainty = []
-        uncert = [self.last_layer(nn.Dropout(self.dropout_prob)(z)) for _ in range(10)]
-        for i in range(x.size(0)):
-            curr_uncert = []
-            for j in range(len(uncert)):
-                curr_uncert.append(uncert[j][i][0].item())
-            uncertainty.append(np.std(curr_uncert))
+        if not self.training:
+            uncert = [self.last_layer(nn.Dropout(self.dropout_prob)(z)) for _ in range(10)]
+            for i in range(x.size(0)):
+                curr_uncert = []
+                for j in range(len(uncert)):
+                    curr_uncert.append(uncert[j][i][0].item())
+                uncertainty.append(np.std(curr_uncert))
         return x, uncertainty
 
     def number_of_output_neurons(self) -> int:
