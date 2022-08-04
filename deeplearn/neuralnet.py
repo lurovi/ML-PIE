@@ -216,6 +216,9 @@ class NeuralNetComparator:
     def eval(self) -> None:
         self.__net.eval()
 
+    def train(self) -> None:
+        self.__net.train()
+
     def apply(self, data: torch.Tensor) -> torch.Tensor:
         return self.__net(data)
 
@@ -231,8 +234,10 @@ class OneOutputNeuronsComparator(NeuralNetComparator):
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
         self.eval()
-        output_1 = self.apply(point_1.reshape(1, -1))[0][0]
-        output_2 = self.apply(point_2.reshape(1, -1))[0][0]
+        with torch.no_grad():
+            output_1, _ = self.apply(point_1.reshape(1, -1))[0][0]
+            output_2, _ = self.apply(point_2.reshape(1, -1))[0][0]
+        self.train()
         return output_1.item() < output_2.item()  # first element is lower than the second one
 
 
@@ -243,8 +248,10 @@ class TwoOutputNeuronsComparator(NeuralNetComparator):
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
         self.eval()
-        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-        output = self.apply(point)[0]
+        with torch.no_grad():
+            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+            output, _ = self.apply(point)[0]
+        self.train()
         return output[0].item() < output[1].item()  # first element is lower than the second one
 
 
@@ -255,9 +262,11 @@ class TwoOutputNeuronsSoftmaxComparator(NeuralNetComparator):
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
         self.eval()
-        sm = nn.Softmax(dim=0)
-        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-        output = sm(self.apply(point)[0])
+        with torch.no_grad():
+            sm = nn.Softmax(dim=0)
+            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+            output = sm(self.apply(point)[0][0])
+        self.train()
         return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
@@ -268,8 +277,10 @@ class OneOutputNeuronsSigmoidComparator(NeuralNetComparator):
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]
         self.eval()
-        point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-        output = self.apply(point)[0]
+        with torch.no_grad():
+            point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
+            output, _ = self.apply(point)[0]
+        self.train()
         return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
@@ -308,15 +319,15 @@ def neuralnet_two_output_neurons_comparator(point_1, point_2, neural_network):
     point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output = neural_network(point)[0]
+    output, _ = neural_network(point)[0]
     return output[0].item() < output[1].item()  # first element is lower than the second one
 
 
 def neuralnet_one_output_neurons_comparator(point_1, point_2, neural_network):
     point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
-    output_1 = neural_network(point_1.reshape(1, -1))[0][0]
-    output_2 = neural_network(point_2.reshape(1, -1))[0][0]
+    output_1, _ = neural_network(point_1.reshape(1, -1))[0][0]
+    output_2, _ = neural_network(point_2.reshape(1, -1))[0][0]
     return output_1.item() < output_2.item()  # first element is lower than the second one
 
 
@@ -325,7 +336,7 @@ def neuralnet_two_output_neurons_softmax_comparator(point_1, point_2, neural_net
     neural_network.eval()
     sm = nn.Softmax(dim=0)
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output = sm(neural_network(point)[0])
+    output = sm(neural_network(point)[0][0])
     return output[0].item() >= output[1].item()  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
@@ -333,7 +344,7 @@ def neuralnet_one_output_neurons_sigmoid_comparator(point_1, point_2, neural_net
     point_1, point_2 = point_1[0], point_2[0]
     neural_network.eval()
     point = torch.cat((point_1, point_2), dim=0).float().reshape(1, -1)
-    output = neural_network(point)[0]
+    output, _ = neural_network(point)[0]
     return output[0].item() < 0.5  # the neural network predicted class 0, it means that first element is lower than the second one
 
 
@@ -360,54 +371,63 @@ class Trainer(ABC):
         y_true = []
         y_pred = []
         self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            outputs = self.net(inputs)
-            _, pred = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (pred == labels).sum().item()
-            y_pred.extend(pred.tolist())
-            y_true.extend(labels.tolist())
-        y_true = list(np.concatenate(y_true).flat)
-        y_pred = list(np.concatenate(y_pred).flat)
-        cf_matrix = confusion_matrix(y_true, y_pred)
+        with torch.no_grad():
+            for batch in dataloader:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                outputs, _ = self.net(inputs)
+                _, pred = torch.max(outputs.data, 1)
+                total += labels.size(0)
+                correct += (pred == labels).sum().item()
+                y_pred.extend(pred.tolist())
+                y_true.extend(labels.tolist())
+            y_true = list(np.concatenate(y_true).flat)
+            y_pred = list(np.concatenate(y_pred).flat)
+            cf_matrix = confusion_matrix(y_true, y_pred)
+        self.net.train()
         return model_accuracy(cf_matrix)
 
     def evaluate_regressor(self, dataloader):
         y_true = []
         y_pred = []
         self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            outputs = self.net(inputs)
-            y_pred.extend(outputs.tolist())
-            y_true.extend(labels.tolist())
-        y_true = list(np.concatenate(y_true).flat)
-        y_pred = list(np.concatenate(y_pred).flat)
+        with torch.no_grad():
+            for batch in dataloader:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                outputs, _ = self.net(inputs)
+                y_pred.extend(outputs.tolist())
+                y_true.extend(labels.tolist())
+            y_true = list(np.concatenate(y_true).flat)
+            y_pred = list(np.concatenate(y_pred).flat)
+        self.net.train()
         return r2_score(y_true, y_pred)
 
     def evaluate_ranking(self, dataloader):
         y_true = []
         y_pred = []
         self.net.eval()
-        for batch in dataloader:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
-            outputs = self.net(inputs)
-            for i in range(len(inputs)):
-                curr_input, curr_label, curr_output = inputs[i], labels[i][0].item(), outputs[i][0].item()
-                y_true.append((curr_input, curr_label))
-                y_pred.append((curr_input, curr_output))
-        y_true, _ = Sort.heapsort(y_true, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
-        y_pred, _ = Sort.heapsort(y_pred, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        with torch.no_grad():
+            for batch in dataloader:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+                outputs, _ = self.net(inputs)
+                for i in range(len(inputs)):
+                    curr_input, curr_label, curr_output = inputs[i], labels[i][0].item(), outputs[i][0].item()
+                    y_true.append((curr_input, curr_label))
+                    y_pred.append((curr_input, curr_output))
+            y_true, _ = Sort.heapsort(y_true, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+            y_pred, _ = Sort.heapsort(y_pred, lambda x, y: x[1] < y[1], inplace=False, reverse=False)
+        self.net.train()
         return spearman_footrule(y_true, y_pred, lambda x, y: torch.equal(x[0], y[0]))
 
     def predict(self, X):
         self.net.eval()
-        X = X.to(self.device)
-        return self.net(X)
+        with torch.no_grad():
+            X = X.to(self.device)
+            res = self.net(X)
+        self.net.train()
+        return res
 
 
 class StandardBatchTrainer(Trainer):
@@ -444,7 +464,7 @@ class StandardBatchTrainer(Trainer):
                 else:
                     labels = labels.to(self.device).float().reshape((labels.shape[0], 1))
                 optimizer.zero_grad()
-                outputs = self.net(inputs)
+                outputs, _ = self.net(inputs)
                 loss = self.loss_fn(outputs, labels)
                 loss.backward()
                 optimizer.step()
@@ -482,9 +502,9 @@ class TwoPointsCompareTrainer(Trainer):
                 single_point_dim = inputs.shape[1]//2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1 = self.net(inputs_1).flatten()
+                outputs_1, _ = self.net(inputs_1).flatten()
                 loss_1 = one*torch.mean(labels*outputs_1)
-                outputs_2 = self.net(inputs_2).flatten()
+                outputs_2, _ = self.net(inputs_2).flatten()
                 loss_2 = minus_one*torch.mean(labels*outputs_2)
                 loss = loss_1 + loss_2
                 loss.backward()
@@ -512,21 +532,23 @@ class TwoPointsCompareTrainer(Trainer):
         y_true = []
         y_pred = []
         self.net.eval()
-        for batch in ddd:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
-            single_point_dim = inputs.shape[1] // 2
-            inputs_1 = inputs[:, :single_point_dim]
-            inputs_2 = inputs[:, single_point_dim:]
-            outputs_1 = self.net(inputs_1)[0][0].item()
-            outputs_2 = self.net(inputs_2)[0][0].item()
-            if outputs_1 >= outputs_2:
-                pred = 1
-            else:
-                pred = 0
-            y_pred.append(pred)
-            y_true.append(labels[0].item())
-        cf_matrix = confusion_matrix(y_true, y_pred)
+        with torch.no_grad():
+            for batch in ddd:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
+                single_point_dim = inputs.shape[1] // 2
+                inputs_1 = inputs[:, :single_point_dim]
+                inputs_2 = inputs[:, single_point_dim:]
+                outputs_1, _ = self.net(inputs_1)[0][0].item()
+                outputs_2, _ = self.net(inputs_2)[0][0].item()
+                if outputs_1 >= outputs_2:
+                    pred = 1
+                else:
+                    pred = 0
+                y_pred.append(pred)
+                y_true.append(labels[0].item())
+            cf_matrix = confusion_matrix(y_true, y_pred)
+        self.net.train()
         return model_accuracy(cf_matrix)
 
 
@@ -567,7 +589,7 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
                 else:
                     labels = labels.to(self.device).float().reshape((labels.shape[0], 1))
                 optimizer.zero_grad()
-                outputs = self.net(inputs)
+                outputs, _ = self.net(inputs)
                 loss = self.loss_fn(outputs, labels)
                 loss.backward()
                 optimizer.step()
@@ -594,24 +616,26 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
         y_true = []
         y_pred = []
         self.net.eval()
-        for batch in ddd:
-            inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
-            outputs = self.net(inputs)[0]
-            if len(outputs) == 1:
-                res = outputs[0].item()
-                if res < 0.5:
-                    pred = 0
+        with torch.no_grad():
+            for batch in ddd:
+                inputs, labels = batch
+                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
+                outputs, _ = self.net(inputs)[0]
+                if len(outputs) == 1:
+                    res = outputs[0].item()
+                    if res < 0.5:
+                        pred = 0
+                    else:
+                        pred = 1
+                elif len(outputs) == 2:
+                    res = nn.Softmax(dim=0)(outputs)
+                    pred = torch.argmax(res)
                 else:
-                    pred = 1
-            elif len(outputs) == 2:
-                res = nn.Softmax(dim=0)(outputs)
-                pred = torch.argmax(res)
-            else:
-                raise ValueError(f"{len(outputs)} is different from 1 or 2. The number of output neurons is not 1 or 2.")
-            y_pred.append(pred)
-            y_true.append(labels[0].item())
-        cf_matrix = confusion_matrix(y_true, y_pred)
+                    raise ValueError(f"{len(outputs)} is different from 1 or 2. The number of output neurons is not 1 or 2.")
+                y_pred.append(pred)
+                y_true.append(labels[0].item())
+            cf_matrix = confusion_matrix(y_true, y_pred)
+        self.net.train()
         return model_accuracy(cf_matrix)
 
     def evaluate_ranking(self, dataloader):
@@ -641,23 +665,24 @@ class MLPNet(nn.Module):
         self.input_layer_size = input_layer_size
         self.output_layer_size = output_layer_size
         self.dropout_prob = dropout_prob
+        self.dropout = nn.Dropout(self.dropout_prob)
 
-        linear_layers = []
+        fc_components = []
         layer_sizes = hidden_layer_sizes + [output_layer_size]
         curr_dim = input_layer_size
         for i in range(len(layer_sizes)):
-            linear_layers.append(nn.Linear(curr_dim, layer_sizes[i]))
+            curr_layer = nn.Linear(curr_dim, layer_sizes[i])
+            fc_components.append(curr_layer)
             if i != len(layer_sizes) - 1:
-                linear_layers.append(self.activation_func)
+                fc_components.append(self.activation_func)
             else:
-                linear_layers.append(self.final_activation_func)
+                fc_components.append(self.final_activation_func)
             if i == len(layer_sizes) - 3 or i == len(layer_sizes) - 5 or i == len(layer_sizes) - 7 or i == len(layer_sizes) - 9:
-                linear_layers.append(nn.Dropout(self.dropout_prob))
+                fc_components.append(self.dropout)
             curr_dim = layer_sizes[i]
 
-        self.fc_model = nn.Sequential(*linear_layers[:-1])
-        self.last_layer = nn.Sequential(linear_layers[-1])
-        self.dropout_last_layer = nn.Sequential(nn.Dropout(self.dropout_prob), linear_layers[-1])
+        self.fc_model = nn.Sequential(*fc_components[:-2])
+        self.last_layer = nn.Sequential(fc_components[-2], fc_components[-1])
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = x.view(x.size(0), -1)
@@ -666,13 +691,13 @@ class MLPNet(nn.Module):
         x = self.last_layer(x)
 
         uncertainty = []
-        uncert = [self.dropout_last_layer(z) for _ in range(10)]
+        uncert = [self.last_layer(nn.Dropout(self.dropout_prob)(z)) for _ in range(10)]
         for i in range(x.size(0)):
             curr_uncert = []
             for j in range(len(uncert)):
                 curr_uncert.append(uncert[j][i][0].item())
             uncertainty.append(np.std(curr_uncert))
-        return x#, uncertainty
+        return x, uncertainty
 
     def number_of_output_neurons(self) -> int:
         return self.output_layer_size
