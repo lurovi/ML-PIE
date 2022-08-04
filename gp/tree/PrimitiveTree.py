@@ -520,3 +520,41 @@ class PrimitiveTree:
                             children.append(child)
                 tre[layer_ind][curr_ind] = self.__primitive_set.get_primitive(tre[layer_ind][curr_ind])(*children)
         return tre[0][0]
+
+    @staticmethod
+    def from_strings_list(tree: List[str], max_degree: int, max_depth: int) -> List[List[str]]:
+        tre_s, tre_ind = [], []
+        for i in range(max_depth):
+            tre_s.append([""] * max_degree ** i)
+            tre_ind.append([-1] * max_degree ** i)
+        tre_s[0][0] = tree[0]
+        tre_ind[0][0] = 0
+        if len(tree) == 1:
+            return tre_s
+        for curr_layer in range(1, max_depth):
+            previous_layer_ind = tre_ind[curr_layer - 1]
+            parents = [(i, previous_layer_ind[i]) for i in range(len(previous_layer_ind)) if previous_layer_ind[i] != -1 and tree[previous_layer_ind[i]+1] == "("]
+            if len(parents) == 0:
+                return tre_s
+            for node_ind, tree_ind in parents:
+                start_ind = max_degree * node_ind
+                open_parenthesis = 0
+                children = []
+                exit_loop = False
+                t = tree_ind + 2
+                while not(exit_loop) and t < len(tree):
+                    if tree[t] == "(":
+                        open_parenthesis += 1
+                    elif tree[t] == ")":
+                        open_parenthesis -= 1
+                        if open_parenthesis == -1:
+                            exit_loop = True
+                    else:
+                        if open_parenthesis == 0:
+                            children.append(t)
+                    t += 1
+                for c in children:
+                    tre_ind[curr_layer][start_ind] = c
+                    tre_s[curr_layer][start_ind] = tree[c]
+                    start_ind += 1
+        return tre_s

@@ -1,3 +1,4 @@
+import math
 import random
 
 
@@ -14,27 +15,27 @@ class SimpleFunctions:
         return float(random.randint(0, 4))
 
     @staticmethod
-    def sum_f(a, b):
+    def sum(a, b):
         return a + b
 
     @staticmethod
-    def sub_f(a, b):
+    def sub(a, b):
         return a - b
 
     @staticmethod
-    def mul_f(a, b):
+    def mul(a, b):
         return a * b
 
     @staticmethod
-    def max_f(a, b):
+    def max(a, b):
         return max(a, b)
 
     @staticmethod
-    def min_f(a, b):
+    def min(a, b):
         return min(a, b)
 
     @staticmethod
-    def abs_f(a):
+    def abs(a):
         return abs(a)
 
     @staticmethod
@@ -52,3 +53,11 @@ class SimpleFunctions:
     @staticmethod
     def divby2(a):
         return a / 2.0
+
+    @staticmethod
+    def cos(a):
+        return math.cos(a)
+
+    @staticmethod
+    def sin(a):
+        return math.sin(a)

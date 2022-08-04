@@ -1,13 +1,55 @@
+from functools import partial
+
 from torch import nn
 from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Subset
-
-from deeplearn.neuralnet import MLPNet, TwoPointsCompareTrainer
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import random
+from deeplearn.model.MLPNet import MLPNet
+from deeplearn.trainer.TwoPointsCompareTrainer import TwoPointsCompareTrainer
+from util.EvaluationMetrics import EvaluationMetrics
 from util.PicklePersist import PicklePersist
+from util.Sort import Sort
 from util.TorchSeedWorker import TorchSeedWorker
 
 
 class ExpsExecutor:
+
+    @staticmethod
+    def random_comparator(point_1, point_2, p):  # here point is the ground truth label and p a probability
+        if random.random() < p:
+            return point_1 < point_2
+        else:
+            return not (point_1 < point_2)
+
+    @staticmethod
+    def plot_random_ranking(device, dataloader):
+        df = {"Probability": [], "Footrule": []}
+        for p in np.arange(0, 1.1, 0.1):
+            df["Probability"].append(p)
+            ll = sum([ExpsExecutor.random_spearman(device, dataloader, p) for _ in range(20)]) / 20.0
+            df["Footrule"].append(ll)
+        plot = sns.lineplot(data=df, x="Probability", y="Footrule")
+        plt.show()
+        return plot
+
+    @staticmethod
+    def random_spearman(device, dataloader, p):
+        y_true = []
+        points = []
+        for batch in dataloader:
+            inputs, labels = batch
+            inputs, labels = inputs.to(device).float(), labels.to(device).float().reshape((labels.shape[0], 1))
+            for i in range(len(inputs)):
+                points.append(inputs[i])
+                y_true.append(labels[i][0].item())
+        y_true_2 = [x for x in y_true]
+        y_true, _ = Sort.heapsort(y_true, lambda x, y: x < y, inplace=False, reverse=False)
+        comparator = partial(ExpsExecutor.random_comparator, p=p)
+        y_pred, _ = Sort.heapsort(y_true_2, comparator, inplace=False, reverse=False)
+        return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda x, y: x == y)
 
     @staticmethod
     def execute_experiment_nn_ranking(title, generator_data_loader, file_name_training, file_name_dataset, train_size, activation_func,
@@ -43,16 +85,36 @@ class ExpsExecutor:
 
     @staticmethod
     def example_execution_1(generator_data_loader, device):
-        for target in ["weights_average", "weights_sum"]:
-            for i in range(1, 5):
+        activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
+        for target in ["weights_sum"]:
+            for i in range(1, 4+1):
                 i_str = str(i)
                 for representation in ["counts", "onehot"]:
-                    for final_activation in [nn.Identity(), nn.Sigmoid(), nn.Tanh()]:
+                    for final_activation in ["identity", "sigmoid", "tanh"]:
                         print(ExpsExecutor.execute_experiment_nn_ranking(
-                            target + " " + i_str + " " + representation,
+                            target + " " + i_str + " " + representation + " " + final_activation,
                             generator_data_loader,
                             "data/" + representation + "_" + target + "_" + "trees_twopointscompare" + "_" + i_str + ".pbz2",
                             "data/" + representation + "_" + target + "_" + "trees" + "_" + i_str + ".pbz2", 200,
-                            nn.ReLU(), final_activation,
+                            nn.ReLU(), activations[final_activation],
                             [220, 140, 80, 26], device, max_epochs=1, batch_size=1
                         ))
+
+    @staticmethod
+    def example_execution_2(generator_data_loader, device):
+        activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
+        for target in ["weights_sum"]:
+            for i in range(1, 10+1):
+                i_str = str(i)
+                for representation in ["counts", "onehot"]:
+                    for final_activation in ["identity"]:
+                        for criterion in ["target", "nodes"]:
+                            twopointscomparename = "trees_twopointscompare" if criterion == "target" else "trees_twopointscompare_samenodes"
+                            print(ExpsExecutor.execute_experiment_nn_ranking(
+                                target + " " + i_str + " " + representation + " " + final_activation,
+                                generator_data_loader,
+                                "data/" + representation + "_" + target + "_" + twopointscomparename + "_" + i_str + ".pbz2",
+                                "data/" + representation + "_" + target + "_" + "trees" + "_" + i_str + ".pbz2", 200,
+                                nn.ReLU(), activations[final_activation],
+                                [220, 140, 80, 26], device, max_epochs=1, batch_size=1
+                            ))
