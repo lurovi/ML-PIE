@@ -33,9 +33,10 @@ class TreeEncoder:
             if is_primitive:
                 return s
             else:
-                return "x0"
-                #if s[0] == "x":
-                #    return s
+                if s[0] == "x":
+                    return s
+                else:
+                    return "c0"
                 #elif s[0] == "c":
                 #    return s[:s.find(" ")]
                 #elif s[0] == "e":
@@ -58,32 +59,31 @@ class TreeEncoder:
             if is_primitive:
                 return s
             else:
-                return "x0"
-                #if s[0] == "x":
-                #    return s
-                #elif s[0] == "c":
+                if s[0] == "x":
+                    return s
+                else:
+                    return "c0"
+                # elif s[0] == "c":
                 #    return s[:s.find(" ")]
-                #elif s[0] == "e":
+                # elif s[0] == "e":
                 #    return s[:s.find(" ")]
         num_primitives = tree.primitive_set().num_primitives()
-        #num_features = tree.terminal_set().num_features()
-        #num_constants = tree.terminal_set().num_constants()
-        #num_ephemeral = tree.terminal_set().num_ephemeral()
-        tot_attr = num_primitives + 1  # num_features + num_constants + num_ephemeral
-        tot_attr_names = tree.primitive_set().primitive_names() + ["x0"]  # list(range(tree.terminal_set().num_features())) + list(range(tree.terminal_set().num_constants())) + list(range(tree.terminal_set().num_ephemeral()))
+        num_features = tree.terminal_set().num_features()
+        tot_attr = num_primitives + num_features + 1
+        tot_attr_names = tree.primitive_set().primitive_names() + list(range(tree.terminal_set().num_features())) + ["c0"]  # list(range(tree.terminal_set().num_constants())) + list(range(tree.terminal_set().num_ephemeral()))
         dic = {"": [0.0]*tot_attr}
         t = 0
         for p in tot_attr_names:
             if t < num_primitives:
                 curr_key = p
-            else:
-                curr_key = "x0"
-            #elif num_primitives <= t < num_primitives + num_features:
-            #    curr_key = "x" + str(p)
+            elif num_primitives <= t < num_primitives + num_features:
+                curr_key = "x" + str(p)
             #elif num_primitives + num_features <= t < num_primitives + num_features + num_constants:
             #    curr_key = "c" + str(p)
             #elif num_primitives + num_features + num_constants <= t < num_primitives + num_features + num_constants + num_ephemeral:
             #    curr_key = "e" + str(p)
+            else:
+                curr_key = "c0"
             li = [0.0] * tot_attr
             li[t] = 1.0
             dic[curr_key] = li

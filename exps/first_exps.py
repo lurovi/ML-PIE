@@ -1,15 +1,26 @@
+import random
+
 from sklearn import ensemble
+from sklearn.metrics import r2_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MaxAbsScaler
+from torch.utils.data import DataLoader
+from torch.utils.data.dataset import Subset
 
+from deeplearn.comparator.OneOutputNeuronsSigmoidComparatorFactory import OneOutputNeuronsSigmoidComparatorFactory
+from deeplearn.comparator.TwoOutputNeuronsSoftmaxComparatorFactory import TwoOutputNeuronsSoftmaxComparatorFactory
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
     RawTerminalFeedbackCollector
-from deeplearn.neuralnet import *
+from deeplearn.model.MLPNet import *
+from deeplearn.trainer.StandardBatchTrainer import StandardBatchTrainer
+from deeplearn.trainer.TwoPointsCompareDoubleInputTrainer import TwoPointsCompareDoubleInputTrainer
+from deeplearn.trainer.TwoPointsCompareTrainer import TwoPointsCompareTrainer
 from exps.DatasetGenerator import DatasetGenerator
 
 from exps.ExpsExecutor import ExpsExecutor
 from gp.tree.Constant import Constant
 from gp.tree.Ephemeral import Ephemeral
+from gp.tree.HalfHalfGenerator import HalfHalfGenerator
 from gp.tree.PrimitiveSet import PrimitiveSet
 from gp.tree.TerminalSet import TerminalSet
 from exps.SimpleFunctions import SimpleFunctions
@@ -196,24 +207,27 @@ if __name__ == '__main__':
     mseloss = nn.MSELoss(reduction="mean")
     crossentropyloss = nn.CrossEntropyLoss()
 
-    softmaxcomparator = TwoOutputNeuronsSoftmaxComparatorFactory
-    sigmoidcomparator = OneOutputNeuronsSigmoidComparatorFactory
+    softmaxcomparator = TwoOutputNeuronsSoftmaxComparatorFactory()
+    sigmoidcomparator = OneOutputNeuronsSigmoidComparatorFactory()
 
     constants_0 = [Constant("five", 5.0), Constant("ten", 10.0)]
     ephemeral_0 = [Ephemeral("epm0", SimpleFunctions.ephe_0), Ephemeral("epm1", SimpleFunctions.ephe_1)]
 
     terminal_set_0 = TerminalSet([float] * 4, constants_0, ephemeral_0)
 
-    primitives_0 = [Primitive("+", float, [float, float], SimpleFunctions.sum_f),
-                    Primitive("-", float, [float, float], SimpleFunctions.sub_f),
-                    Primitive("*", float, [float, float], SimpleFunctions.mul_f),
-                    Primitive("max", float, [float, float], SimpleFunctions.max_f),
-                    Primitive("min", float, [float, float], SimpleFunctions.min_f),
+    primitives_0 = [Primitive("+", float, [float, float], SimpleFunctions.sum),
+                    Primitive("-", float, [float, float], SimpleFunctions.sub),
+                    Primitive("*", float, [float, float], SimpleFunctions.mul),
+                    Primitive("max", float, [float, float], SimpleFunctions.max),
+                    Primitive("min", float, [float, float], SimpleFunctions.min),
                     Primitive("^2", float, [float], SimpleFunctions.power2),
                     Primitive("/2", float, [float], SimpleFunctions.divby2),
+                    Primitive("cos", float, [float], SimpleFunctions.cos),
+                    Primitive("sin", float, [float], SimpleFunctions.sin)
                     ]
 
     primitive_set_0 = PrimitiveSet(primitives_0, float)
+
 
     weights_dict_avg_1 = [{"+": 0.9754, "-": 0.7993, "*": 0.5946, "max": 0.2116, "min": 0.2116,
                            "^2": 0.4342, "/2": 0.7341}] * 6
@@ -230,7 +244,7 @@ if __name__ == '__main__':
     weights_avg_dict_list = [weights_dict_avg_1, weights_dict_avg_2, weights_dict_avg_3, weights_dict_avg_4]
 
     weights_dict_sum_1 = [{"+": 0.6354, "-": 0.6093, "*": 0.2046, "max": -0.4116, "min": -0.4116,
-                           "^2": -0.2342, "/2": 0.7341}] * 6
+                           "^2": -0.2342, "/2": 0.7341, "cos": 0.1221, "sin": 0.1221}] * 6
 
     weights_dict_sum_2 = [{"+": 0.2264, "-": 0.4923, "*": 0.9126, "max": -0.2513, "min": -0.2513,
                            "^2": -0.6215, "/2": 0.6842}] * 6
@@ -271,24 +285,25 @@ if __name__ == '__main__':
     lll = OnePointCrossover().cross([tr, tr_1])
     print(lll[0].print_as_tree())
     print(lll[1].print_as_tree())
+    
+    for _ in range(3):
+        tr = HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree()
+    print(tr.print_as_tree())
+    print(TreeEncoder.one_hot_tree(tr))
+    print(TreeEncoder.build_dataset_onehot_as_input_weights_sum_as_target([tr], weights_dict_sum_1))
     '''
 
-    #train = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(200000)]
-    #val = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(50000)]
-    #test = [HalfHalfGenerator(primitive_set_0, terminal_set_0, 2, 6).generate_tree() for _ in range(20000)]
-    #compress_pickle("train_trees", train)
-    #compress_pickle("validation_trees", val)
-    #compress_pickle("test_trees", test)
-    #train = decompress_pickle("train_trees.pbz2")
-    #val = decompress_pickle("validation_trees.pbz2")
-    #test = decompress_pickle("test_trees.pbz2")
 
-
-    #DatasetGenerator.generate_datasets(terminal_set_0, primitive_set_0, weights_avg_dict_list, weights_sum_dict_list)
+    #DatasetGenerator.generate_datasets_rand(terminal_set_0, primitive_set_0)
 
     #plot_random_ranking(device, DataLoader(decompress_pickle("onehot_number_of_nodes_trees.pbz2")["validation"].remove_ground_truth_duplicates(), batch_size=1, shuffle=True))
 
-    ExpsExecutor.example_execution_1(generator_data_loader, device)
+    #print(ExpsExecutor.execute_experiment_nn_ranking("", generator_data_loader,
+    #                                           "data/counts_number_of_nodes_trees_twopointscompare.pbz2",
+    #                                           "data/counts_number_of_nodes_trees.pbz2",
+    #                                           200, nn.ReLU(), nn.Tanh(), [220, 140, 80, 26], device, 1, 1))
+
+    #ExpsExecutor.example_execution_1(generator_data_loader, device)
     
     #########################################
 
