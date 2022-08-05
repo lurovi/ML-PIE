@@ -4,7 +4,7 @@ import torch
 from torch import nn
 
 from gp.tree import Primitive
-from util.Sort import heapsort
+from util.Sort import Sort
 
 if __name__ == "__main__":
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
@@ -49,7 +49,8 @@ if __name__ == "__main__":
            torch.tensor([2,40,4]),
            torch.tensor([5,5,1])]
     arr0 = [12, 11, 13, 5, 6, 7]
-    arr, ind = heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
+    arr, ind = Sort.heapsort(arr, lambda x, y: x.sum().item() < y.sum().item(), inplace=False, reverse=True)
     print(arr)
     print(ind)
-
+    print(torch.tensor([[1],[2],[3]]).flatten())
+    print(torch.tensor(4).reshape(-1))

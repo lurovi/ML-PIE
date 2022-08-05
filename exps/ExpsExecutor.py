@@ -8,6 +8,8 @@ import seaborn as sns
 import numpy as np
 import random
 from deeplearn.model.MLPNet import MLPNet
+from deeplearn.trainer.OnlineTwoPointsCompareDoubleInputTrainer import OnlineTwoPointsCompareDoubleInputTrainer
+from deeplearn.trainer.TwoPointsCompareDoubleInputTrainer import TwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.TwoPointsCompareTrainer import TwoPointsCompareTrainer
 from util.EvaluationMetrics import EvaluationMetrics
 from util.PicklePersist import PicklePersist
@@ -52,7 +54,7 @@ class ExpsExecutor:
         return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda x, y: x == y)
 
     @staticmethod
-    def execute_experiment_nn_ranking(title, generator_data_loader, file_name_training, file_name_dataset, train_size, activation_func,
+    def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, train_size, activation_func,
                                       final_activation_func, hidden_layer_sizes, device, max_epochs=20, batch_size=1000,
                                       optimizer_name="adam", momentum=0.9):
         accs, ftrs = [], []
@@ -62,11 +64,8 @@ class ExpsExecutor:
             validation, test = trees["validation"], trees["test"]
             input_layer_size = len(validation[0][0])
             output_layer_size = 1
-            trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True,
-                                     worker_init_fn=TorchSeedWorker.seed_worker,
-                                     generator=generator_data_loader)
-            valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True,
-                                   worker_init_fn=TorchSeedWorker.seed_worker, generator=generator_data_loader)
+            trainloader = Subset(training, list(range(train_size)))
+            valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True)
             # valloader = DataLoader(validation.remove_ground_truth_duplicates(), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker, generator=generator_data_loader)
             # trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size * 2))), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker, generator=generator_data_loader)
             net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
@@ -84,7 +83,41 @@ class ExpsExecutor:
         return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
 
     @staticmethod
-    def example_execution_1(generator_data_loader, device):
+    def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size,
+                                                   activation_func, final_activation_func, hidden_layer_sizes,
+                                                   output_layer_size, device, is_classification_task,
+                                                   comparator_factory, loss_fn, max_epochs=20, batch_size=1000,
+                                                   optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        for _ in range(10):
+            trees = PicklePersist.decompress_pickle(file_name_dataset)
+            training = PicklePersist.decompress_pickle(file_name_training)["training"]
+            validation, test = trees["validation"], trees["test"]
+            input_layer_size = len(training[0][0])
+            trainloader = Subset(training, list(range(train_size)))
+            valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True)
+            trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size * 2))),
+                                              batch_size=batch_size, shuffle=True)
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes,
+                         dropout_prob=0.25)
+            trainer = TwoPointsCompareDoubleInputTrainer(net, device, comparator_factory=comparator_factory,
+                                                         loss_fn=loss_fn, data=trainloader,
+                                                         optimizer_name=optimizer_name, momentum=momentum,
+                                                         verbose=True, is_classification_task=is_classification_task,
+                                                         max_epochs=max_epochs)
+            trainer.train()
+            #eval_val = trainer.evaluate_ranking(valloader)
+            #eval_train = trainer.evaluate_ranking(trainloader_original)
+            #print(title, " - Spearman Footrule on Training Set - ", eval_train)
+            #print(title, " - Spearman Footrule on Validation Set - ", eval_val)
+            #print("Accuracy:  ", trainer.evaluate_classifier(valloader))
+            accs.append(trainer.evaluate_classifier(valloader)[0])
+            ftrs.append(trainer.evaluate_ranking(valloader))
+        print(title)
+        return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
+
+    @staticmethod
+    def example_execution_1(device):
         activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
         for target in ["weights_sum"]:
             for i in range(1, 4+1):
@@ -93,7 +126,6 @@ class ExpsExecutor:
                     for final_activation in ["identity", "sigmoid", "tanh"]:
                         print(ExpsExecutor.execute_experiment_nn_ranking(
                             target + " " + i_str + " " + representation + " " + final_activation,
-                            generator_data_loader,
                             "data/" + representation + "_" + target + "_" + "trees_twopointscompare" + "_" + i_str + ".pbz2",
                             "data/" + representation + "_" + target + "_" + "trees" + "_" + i_str + ".pbz2", 200,
                             nn.ReLU(), activations[final_activation],
@@ -101,7 +133,7 @@ class ExpsExecutor:
                         ))
 
     @staticmethod
-    def example_execution_2(generator_data_loader, device):
+    def example_execution_2(device):
         activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
         for target in ["weights_sum"]:
             for i in range(1, 10+1):
@@ -112,9 +144,47 @@ class ExpsExecutor:
                             twopointscomparename = "trees_twopointscompare" if criterion == "target" else "trees_twopointscompare_samenodes"
                             print(ExpsExecutor.execute_experiment_nn_ranking(
                                 target + " " + i_str + " " + representation + " " + final_activation,
-                                generator_data_loader,
                                 "data/" + representation + "_" + target + "_" + twopointscomparename + "_" + i_str + ".pbz2",
                                 "data/" + representation + "_" + target + "_" + "trees" + "_" + i_str + ".pbz2", 200,
                                 nn.ReLU(), activations[final_activation],
                                 [220, 140, 80, 26], device, max_epochs=1, batch_size=1
                             ))
+
+    @staticmethod
+    def execute_experiment_nn_ranking_double_input_online(title, file_name_training, file_name_dataset, train_size,
+                                                   activation_func, final_activation_func, hidden_layer_sizes,
+                                                   output_layer_size, device, is_classification_task,
+                                                   comparator_factory, loss_fn,
+                                                   optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        for _ in range(10):
+            trees = PicklePersist.decompress_pickle(file_name_dataset)
+            training = PicklePersist.decompress_pickle(file_name_training)["training"]
+            validation, test = trees["validation"], trees["test"]
+            input_layer_size = len(training[0][0])
+            trainloader = Subset(training, list(range(train_size)))
+            valloader = DataLoader(Subset(validation, list(range(500))), batch_size=1, shuffle=True)
+            trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size * 2))),
+                                              batch_size=1, shuffle=True)
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                         hidden_layer_sizes,
+                         dropout_prob=0.25)
+            trainer = OnlineTwoPointsCompareDoubleInputTrainer(net, device, comparator_factory=comparator_factory,
+                                                         loss_fn=loss_fn, data=None,
+                                                         optimizer_name=optimizer_name, momentum=momentum,
+                                                         verbose=False, is_classification_task=is_classification_task)
+
+            for idx in range(len(trainloader)):
+                trainer.change_data(Subset(trainloader, [idx]))
+                loss_epoch_array = trainer.train()
+                if idx == len(trainloader) - 1:
+                    print(f"Loss: {loss_epoch_array[0]}")
+            # eval_val = trainer.evaluate_ranking(valloader)
+            # eval_train = trainer.evaluate_ranking(trainloader_original)
+            # print(title, " - Spearman Footrule on Training Set - ", eval_train)
+            # print(title, " - Spearman Footrule on Validation Set - ", eval_val)
+            # print("Accuracy:  ", trainer.evaluate_classifier(valloader))
+            accs.append(trainer.evaluate_classifier(valloader)[0])
+            ftrs.append(trainer.evaluate_ranking(valloader))
+        print(title)
+        return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))

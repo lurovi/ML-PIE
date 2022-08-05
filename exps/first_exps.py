@@ -98,30 +98,6 @@ def execute_experiment_nn_ranking_with_warmup(title, file_name_warmup, file_name
     print(title, " - Spearman Footrule on Validation Set - ", trainer.evaluate_ranking(valloader))
 
 
-def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size, activation_func, final_activation_func, hidden_layer_sizes, output_layer_size, device, is_classification_task, comparator_factory, loss_fn, max_epochs=20, batch_size=1000, optimizer_name="adam", momentum=0.9):
-    trees = PicklePersist.decompress_pickle(file_name_dataset)
-    training = PicklePersist.decompress_pickle(file_name_training)["training"]
-    validation, test = trees["validation"], trees["test"]
-    input_layer_size = len(training[0][0])
-    trainloader = DataLoader(Subset(training, list(range(train_size))), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker,
-                             generator=generator_data_loader)
-    valloader = DataLoader(Subset(validation, list(range(500))), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker,
-                           generator=generator_data_loader)
-    trainloader_original = DataLoader(Subset(training.to_simple_torch_dataset(), list(range(train_size*2))), batch_size=batch_size, shuffle=True, worker_init_fn=TorchSeedWorker.seed_worker,
-                             generator=generator_data_loader)
-    net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size, hidden_layer_sizes, dropout_prob=0.25)
-    trainer = TwoPointsCompareDoubleInputTrainer(net, device, trainloader, comparator_factory=comparator_factory, loss_fn=loss_fn,
-                                                 optimizer_name=optimizer_name, momentum=momentum,
-                                                 verbose=True, is_classification_task=is_classification_task, max_epochs=max_epochs)
-    trainer.train()
-    eval_val = trainer.evaluate_ranking(valloader)
-    eval_train = trainer.evaluate_ranking(trainloader_original)
-    print(title, " - Spearman Footrule on Training Set - ", eval_train)
-    print(title, " - Spearman Footrule on Validation Set - ", eval_val)
-    print("Accuracy:  ", trainer.evaluate_classifier(valloader))
-    return eval_train, eval_val
-
-
 def plot_multiple_experiments_nn_ranking(title, file_name_training, file_name_dataset, max_train_size, activation_func, final_activation_func, hidden_layer_sizes, device, max_epochs=1, batch_size=1, optimizer_name="adam", momentum=0.9):
     num_iters = np.arange(50, max_train_size + 1, 50)
     df = {"Training Size": [], "Footrule": [], "Partition": []}
@@ -324,13 +300,25 @@ if __name__ == '__main__':
 
     #########################################
 
-    #execute_experiment_nn_ranking_double_input(
-    #   "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [220, 140, 80, 26]). Large Training Data.",
-    #   "counts_weights_average_trees_twopointscomparebinary.pbz2",
-    #   "counts_weights_average_trees.pbz2", 200, nn.ReLU(), nn.Identity(),
-    #    hidden_layer_sizes=[220, 140, 80, 26], output_layer_size=2,
-    #    device=device, is_classification_task=True,
-    #    comparator_factory=TwoOutputNeuronsSoftmaxComparatorFactory(), loss_fn=crossentropyloss, max_epochs=1, batch_size=1)
+    '''
+    print(ExpsExecutor.execute_experiment_nn_ranking_double_input(
+        "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [220, 140, 80, 26]). Large Training Data.",
+        "data/onehot_weights_sum_trees_twopointscomparebinary_1.pbz2",
+        "data/onehot_weights_sum_trees_1.pbz2", 200, nn.ReLU(), nn.Identity(),
+        hidden_layer_sizes=[220, 140, 80, 26], output_layer_size=2,
+        device=device, is_classification_task=True,
+        comparator_factory=TwoOutputNeuronsSoftmaxComparatorFactory(), loss_fn=crossentropyloss,
+        max_epochs=1, batch_size=1))
+    '''
+
+    print(ExpsExecutor.execute_experiment_nn_ranking_double_input_online(
+       "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [220, 140, 80, 26]). Large Training Data.",
+       "data/counts_weights_sum_trees_twopointscomparebinary_1.pbz2",
+       "data/counts_weights_sum_trees_1.pbz2", 200, nn.ReLU(), nn.Sigmoid(),
+        hidden_layer_sizes=[220, 140, 80, 26], output_layer_size=1,
+        device=device, is_classification_task=False,
+        comparator_factory=OneOutputNeuronsSigmoidComparatorFactory(), loss_fn=mseloss))
+
 
     #plot = plot_multiple_experiments_nn_ranking(
     #    "Counts Tree (Activation: ReLU, Final Activation: Sigmoid, Hidden Layer Sizes: [140, 80, 26]).",

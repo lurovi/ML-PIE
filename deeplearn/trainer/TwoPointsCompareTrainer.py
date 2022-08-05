@@ -12,10 +12,10 @@ from util.EvaluationMetrics import EvaluationMetrics
 
 
 class TwoPointsCompareTrainer(Trainer):
-    def __init__(self, net, device, dataloader,
+    def __init__(self, net, device, data,
                  verbose=False,
-                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20):
-        super(TwoPointsCompareTrainer, self).__init__(net, device, dataloader)
+                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20, batch_size=1):
+        super(TwoPointsCompareTrainer, self).__init__(net, device, data, batch_size)
         self.verbose = verbose
         self.learning_rate = learning_rate
         self.weight_decay = weight_decay
@@ -26,25 +26,26 @@ class TwoPointsCompareTrainer(Trainer):
         self.input_layer_size = net.number_of_input_neurons()
 
     def train(self):
-        optimizer = optim.Adam(self.net.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
+        optimizer = optim.Adam(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         loss_epoch_arr = []
+        loss = None
         one = torch.tensor(1, dtype=torch.float32)
         minus_one = torch.tensor(-1, dtype=torch.float32)
+        self.set_train_mode()
         for epoch in range(self.max_epochs):
-            for batch in self.data:
-                self.net.train()
+            for batch in self.all_batches():
                 optimizer.zero_grad()
                 inputs, labels = batch
-                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
+                inputs, labels = self.to_device(inputs).float(), self.to_device(labels).float()
                 single_point_dim = inputs.shape[1]//2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = self.net(inputs_1)
+                outputs_1, _ = self.apply(inputs_1)
                 outputs_1 = outputs_1.flatten()
-                loss_1 = one*torch.mean(labels*outputs_1)
-                outputs_2, _ = self.net(inputs_2)
+                loss_1 = one*torch.sum(labels*outputs_1)
+                outputs_2, _ = self.apply(inputs_2)
                 outputs_2 = outputs_2.flatten()
-                loss_2 = minus_one*torch.mean(labels*outputs_2)
+                loss_2 = minus_one*torch.sum(labels*outputs_2)
                 loss = loss_1 + loss_2
                 loss.backward()
                 optimizer.step()
@@ -54,12 +55,11 @@ class TwoPointsCompareTrainer(Trainer):
         return loss_epoch_arr
 
     def evaluate_classifier(self, dataloader):
-        self.net.eval()
         y_true = []
         points = []
         for batch in dataloader:
             inputs, labels = batch
-            inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float().reshape((labels.shape[0], 1))
+            inputs, labels = self.to_device(inputs).float(), self.to_device(labels).float().reshape((labels.shape[0], 1))
             for i in range(len(inputs)):
                 points.append(inputs[i].tolist())
                 y_true.append(labels[i][0].item())
@@ -70,17 +70,17 @@ class TwoPointsCompareTrainer(Trainer):
         ddd = DataLoader(ddd, batch_size=1, shuffle=True)
         y_true = []
         y_pred = []
-        self.net.eval()
+        self.set_eval_mode()
         with torch.no_grad():
             for batch in ddd:
                 inputs, labels = batch
-                inputs, labels = inputs.to(self.device).float(), labels.to(self.device).float()
+                inputs, labels = self.to_device(inputs).float(), self.to_device(labels).float()
                 single_point_dim = inputs.shape[1] // 2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = self.net(inputs_1)
+                outputs_1, _ = self.apply(inputs_1)
                 outputs_1 = outputs_1[0][0].item()
-                outputs_2, _ = self.net(inputs_2)
+                outputs_2, _ = self.apply(inputs_2)
                 outputs_2 = outputs_2[0][0].item()
                 if outputs_1 >= outputs_2:
                     pred = 1
@@ -89,5 +89,5 @@ class TwoPointsCompareTrainer(Trainer):
                 y_pred.append(pred)
                 y_true.append(labels[0].item())
             cf_matrix = confusion_matrix(y_true, y_pred)
-        self.net.train()
+        self.set_train_mode()
         return EvaluationMetrics.model_accuracy(cf_matrix)
