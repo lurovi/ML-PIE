@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from sklearn.metrics import confusion_matrix
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 import torch.optim as optim
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
@@ -11,11 +11,13 @@ from util.EvaluationMetrics import EvaluationMetrics
 from util.Sort import Sort
 
 
-class TwoPointsCompareDoubleInputTrainer(Trainer):
-    def __init__(self, net, device, comparator_factory, loss_fn, data, optimizer_name='adam',
+class OnlineTwoPointsCompareDoubleInputTrainer(Trainer):
+    def __init__(self, net, device, comparator_factory, loss_fn, data=None, optimizer_name='adam',
                  is_classification_task=False, verbose=False,
-                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20, batch_size=1):
-        super(TwoPointsCompareDoubleInputTrainer, self).__init__(net, device, data, batch_size)
+                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0):
+        super(OnlineTwoPointsCompareDoubleInputTrainer, self).__init__(net, device, data, 1)
+        if data is not None and len(data) != 1:
+            raise AttributeError("Online training requires a training set with exactly one record at time.")
         self.is_classification_task = is_classification_task
         self.comparator_factory = comparator_factory
         self.loss_fn = loss_fn
@@ -25,37 +27,38 @@ class TwoPointsCompareDoubleInputTrainer(Trainer):
         self.weight_decay = weight_decay
         self.momentum = momentum
         self.dampening = dampening
-        self.max_epochs = max_epochs
         self.output_layer_size = net.number_of_output_neurons()
         self.input_layer_size = net.number_of_input_neurons()
-
-    def train(self):
         if self.optimizer_name == 'adam':
-            optimizer = optim.Adam(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
+            self.optimizer = optim.Adam(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         elif self.optimizer_name == 'sgd':
-            optimizer = optim.SGD(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay,
+            self.optimizer = optim.SGD(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay,
                                   momentum=self.momentum, dampening=self.dampening)
         else:
             raise ValueError(f"{self.optimizer_name} is not a valid value for argument optimizer.")
+
+    def change_data(self, data: Dataset) -> None:
+        if len(data) != 1:
+            raise AttributeError("Online training requires a training set with exactly one record at time.")
+        super().change_data(data)
+
+    def train(self):
         loss_epoch_arr = []
-        loss = None
         self.set_train_mode()
-        for epoch in range(self.max_epochs):
-            for batch in self.all_batches():
-                inputs, labels = batch
-                inputs = self.to_device(inputs).float()
-                if self.is_classification_task:
-                    labels = self.to_device(labels).long()
-                else:
-                    labels = self.to_device(labels).float().reshape((labels.shape[0], 1))
-                optimizer.zero_grad()
-                outputs, _ = self.apply(inputs)
-                loss = self.loss_fn(outputs, labels)
-                loss.backward()
-                optimizer.step()
-            loss_epoch_arr.append(loss.item())
-            if self.verbose:
-                print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
+        inputs, labels = self.all_batches()[0]
+        inputs = self.to_device(inputs).float()
+        if self.is_classification_task:
+            labels = self.to_device(labels).long()
+        else:
+            labels = self.to_device(labels).float().reshape((labels.shape[0], 1))
+        self.optimizer.zero_grad()
+        outputs, _ = self.apply(inputs)
+        loss = self.loss_fn(outputs, labels)
+        loss.backward()
+        self.optimizer.step()
+        loss_epoch_arr.append(loss.item())
+        if self.verbose:
+            print(f"Loss: {loss.item()}.")
         return loss_epoch_arr
 
     def evaluate_classifier(self, dataloader):
