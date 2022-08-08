@@ -32,7 +32,7 @@ Math Grammar:
 Parser.parse is the main program.
 """
 
-from .tokenizer import Operator
+from .tokenizer import Operator, Token
 from .ast import *
 
 
@@ -166,7 +166,10 @@ class Parser:
         token = self.current_token
         if (token.name == Operator.minus.name
                 or token.name == Operator.plus.name):
-            op = AtomOp(token, is_func=True)
+
+            """ identify and separate cases of leading [+-] """
+            unary_token = Token("u" + token.name, "u" + token.value)
+            op = AtomOp(unary_token, is_func=True)
             self.forward()
             node = FuncOp(func=op, ops=[self.factor()])
             return node

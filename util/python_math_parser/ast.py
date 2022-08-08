@@ -37,8 +37,6 @@ class AtomOp(AST):
         self.is_func = is_func
 
     def __str__(self):
-        if self.token.is_operator():
-            return self.token.name
         return self.value
 
 
