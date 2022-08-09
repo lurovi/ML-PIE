@@ -55,14 +55,12 @@ for index, row in df.iterrows():
     formula = formula.replace("ln", "log")
     formula = protected_replace(formula, substitutions, functions)
 
-    print(formula)
-
     token_iter = Tokenizer.token_iter("y=" + formula)
     PSR = Parser(token_iter)
     ast_formula = PSR.parse()
 
     renamed_formulae.append(formula)
-    ast_formulae.append(ast_formula)
+    ast_formulae.append(str(ast_formula).replace("y = ", "").replace("(", ",").replace(")", "").replace(" ", ""))
 
 df["Standardized_formula"] = renamed_formulae
 df["AST_formula"] = ast_formulae
