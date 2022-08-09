@@ -24,7 +24,7 @@ def protected_replace(string: str, values: dict, protected_subs: list):
     return "".join(substituted_tokens)
 
 
-data_dir = "D:\\Research\\ML-PIE\\"
+data_dir = "dataset\\"
 
 df = pd.read_csv(data_dir + "FeynmanEquations.csv")
 df = df.iloc[:100]
