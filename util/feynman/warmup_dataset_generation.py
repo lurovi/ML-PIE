@@ -38,11 +38,14 @@ data_dir = "dataset\\"
 
 df = pd.read_csv(data_dir + "FeynmanEquationsRegularized.csv")
 ast_formulae = df['AST_formula'].tolist()
+
+formulae = []
 complexified_formulae = []
 for formula in ast_formulae:
+    formulae.append(formula.replace("pi", str(math.pi)))
     parsed_tree = tree_from_prefix_repr(formula.replace("pi", str(math.pi)))
     complexified_tree = complexify(parsed_tree)
     complexified_formulae.append(str(complexified_tree.get_subtree()))
 
-d = {'Formula': ast_formulae, 'Complexified_formula': complexified_formulae}
+d = {'Formula': formulae, 'Complexified_formula': complexified_formulae}
 pd.DataFrame(data=d).to_csv(data_dir + "FeynmanEquationsWarmUp.csv")
