@@ -1,3 +1,4 @@
+import math
 from functools import partial
 from typing import Dict, List, Any
 
@@ -204,8 +205,14 @@ class ExpsExecutor:
             train_samples.append(train_original[i][0].tolist())
             train_labels.append(train_original[i][1].item())
         train_samples = torch.tensor(train_samples, dtype=torch.float32)
+        train_indexes = list(range(len(train_labels)))
 
-        for _ in range(10):
+        for curr_seed in range(1, 10 + 1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+            torch.use_deterministic_algorithms(True)
+
             curr_accs, curr_ftrs = [], []
             net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                          hidden_layer_sizes, dropout_prob=0.25)
@@ -213,7 +220,27 @@ class ExpsExecutor:
             already_seen = []
             for idx in range(len(trainloader)):
                 if not uncertainty:
-                    trainer.change_data(Subset(trainloader, [idx]))
+                    #trainer.change_data(Subset(trainloader, [idx]))
+                    exit_loop = False
+                    while not (exit_loop):
+                        idx_1 = random.choice(train_indexes)
+                        if idx_1 not in already_seen:
+                            exit_loop = True
+                            already_seen.append(idx_1)
+                            first_point, first_label = train_samples[idx_1], train_labels[idx_1]
+                    exit_loop = False
+                    while not(exit_loop):
+                        idx_2 = random.choice(train_indexes)
+                        if idx_2 != idx_1 and idx_2 not in already_seen:
+                            exit_loop = True
+                            already_seen.append(idx_2)
+                            second_point, second_label = train_samples[idx_2], train_labels[idx_2]
+                    if first_label >= second_label:
+                        curr_feedback = np.array([-1])
+                    else:
+                        curr_feedback = np.array([1])
+                    curr_point = np.array([first_point.tolist() + second_point.tolist()])
+                    trainer.change_data(TreeData(None, curr_point, curr_feedback, scaler=None))
                 else:
                     _, uncertainty = trainer.predict(train_samples)
                     _, ind_points = Sort.heapsort(uncertainty, lambda x, y: x < y, inplace=False, reverse=True)
@@ -268,7 +295,11 @@ class ExpsExecutor:
                                                    comparator_factory, loss_fn, max_epochs=20, batch_size=1000,
                                                    optimizer_name="adam", momentum=0.9):
         accs, ftrs = [], []
-        for _ in range(10):
+        for curr_seed in range(1,10+1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
             trees = PicklePersist.decompress_pickle(file_name_dataset)
             training = PicklePersist.decompress_pickle(file_name_training)["training"]
             validation, test = trees["validation"], trees["test"]

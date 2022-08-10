@@ -7,6 +7,7 @@ from sklearn.preprocessing import MaxAbsScaler
 from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Subset
 
+import genepro
 from deeplearn.comparator.OneOutputNeuronsSigmoidComparatorFactory import OneOutputNeuronsSigmoidComparatorFactory
 from deeplearn.comparator.TwoOutputNeuronsSoftmaxComparatorFactory import TwoOutputNeuronsSoftmaxComparatorFactory
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
@@ -237,6 +238,12 @@ if __name__ == '__main__':
                     Primitive("sin", float, [float], SimpleFunctions.sin)
                     ]
 
+    operators = [genepro.node_impl.Plus(), genepro.node_impl.Minus(), genepro.node_impl.Times(),
+                 genepro.node_impl.Max(), genepro.node_impl.Min(),
+                 genepro.node_impl.Square(), genepro.node_impl.Exp(),
+                 genepro.node_impl.Cos(), genepro.node_impl.Sin(), genepro.node_impl.UnaryMinus(),
+                 ]
+
     primitive_set_0 = PrimitiveSet(primitives_0, float)
 
     weights_dict_avg_1 = [{"+": 0.9754, "-": 0.7993, "*": 0.5946, "max": 0.2116, "min": 0.2116,
@@ -302,6 +309,8 @@ if __name__ == '__main__':
     print(TreeEncoder.one_hot_tree(tr))
     print(TreeEncoder.build_dataset_onehot_as_input_weights_sum_as_target([tr], weights_dict_sum_1))
     '''
+
+    # DatasetGenerator.create_datasets(operators, 4, 5, 2)
 
     # DatasetGenerator.generate_datasets_rand(terminal_set_0, primitive_set_0)
 
