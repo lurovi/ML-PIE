@@ -13,6 +13,10 @@ from nsgp.TreeGrammarStructure import TreeGrammarStructure
 
 class TreeEncoder:
 
+    #########################################################################################################
+    # ===================================== ENCODING WITH genepro ===========================================
+    #########################################################################################################
+
     @staticmethod
     def compute_ground_truth_as_number_of_nodes(tree: Node) -> float:
         return float(tree.get_n_nodes())
@@ -88,6 +92,10 @@ class TreeEncoder:
         data = [structure.generate_counts_encoding(t, True) for t in data]
         base_scaler.fit(np.array(data))
         return base_scaler
+
+    #########################################################################################################
+    # ===================================== ENCODING WITH custom_gp =========================================
+    #########################################################################################################
 
     @staticmethod
     def total_level_wise_weights_tree_converter(tree: PrimitiveTree, weights: List[Dict[str, float]]) -> np.ndarray:

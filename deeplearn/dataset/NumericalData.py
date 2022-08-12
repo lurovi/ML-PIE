@@ -3,7 +3,7 @@ import math
 import torch
 from torch.utils.data import Dataset
 import numpy as np
-from typing import Tuple, Any
+from typing import Tuple, Any, List
 
 
 class NumericalData(Dataset):
@@ -23,6 +23,27 @@ class NumericalData(Dataset):
     def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
         # gets a data point from the dataset as torch tensor array along with the label
         return self.X[idx], self.y[idx]
+
+    def subset(self, indexes: List[int]) -> NumericalData:
+        X, y = [], []
+        for i in indexes:
+            if not (0 <= i < len(self)):
+                raise IndexError(f"{i} is out of range as index for this dataset.")
+            point, label = self[i]
+            X.append(point.tolist())
+            y.append(label.item())
+        return NumericalData(np.array(X, dtype=np.float32), np.array(y, dtype=np.float32))
+
+    def get_points_and_labels(self) -> Tuple[torch.Tensor, torch.Tensor]:
+        X, y = [], []
+        for i in self.all_indexes():
+            point, label = self[i]
+            X.append(point.tolist())
+            y.append(label.item())
+        return torch.tensor(X, dtype=torch.float32), torch.tensor(y, dtype=torch.float32)
+
+    def all_indexes(self) -> List[int]:
+        return list(range(len(self)))
 
     def to_numpy(self) -> Tuple[np.ndarray, np.ndarray]:
         dataset, labels = [], []

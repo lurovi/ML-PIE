@@ -14,13 +14,17 @@ from util.TreeEncoder import TreeEncoder
 
 class DatasetGenerator:
 
+    #########################################################################################################
+    # ===================================== DATA GENERATION WITH genepro ====================================
+    #########################################################################################################
+
     @staticmethod
-    def create_datasets(operators: List[Node], n_features: int, max_depth: int, max_arity: int) -> None:
+    def create_datasets(operators: List[Node], n_features: int, max_depth: int) -> None:
         size = len(operators) + n_features + 1
         n_layers = max_depth + 1
         number_of_distr = 10
         weights = [ [[-abs(np.random.normal(0, 1)) for _ in range(size)]]*n_layers for _ in range(number_of_distr)]
-        structure = TreeGrammarStructure(operators, n_features, max_depth, max_arity)
+        structure = TreeGrammarStructure(operators, n_features, max_depth)
 
         train = [structure.generate_tree() for _ in range(100000)]
         val = [structure.generate_tree() for _ in range(4000)]
@@ -85,6 +89,10 @@ class DatasetGenerator:
                                           {"training": NumericalData(X_train, y_train),
                                            "validation": NumericalData(X_dev, y_dev),
                                            "test": NumericalData(X_test, y_test)})
+
+    #########################################################################################################
+    # ===================================== DATA GENERATION WITH custom_gp ==================================
+    #########################################################################################################
 
     @staticmethod
     def generate_datasets_rand(terminal_set_0, primitive_set_0):

@@ -10,7 +10,7 @@ from genepro.util import one_hot_encode_tree, counts_encode_tree
 
 class TreeGrammarStructure:
     def __init__(self, operators: List[Node], n_features: int,
-                 max_depth: int, max_arity: int, weights: List[List[float]] = None):
+                 max_depth: int, weights: List[List[float]] = None):
         self.__size = len(operators) + n_features + 1
         if weights is not None:
             if len(weights) != max_depth + 1:
@@ -29,7 +29,7 @@ class TreeGrammarStructure:
         self.__n_features = n_features
         self.__max_depth = max_depth
         self.__n_layers = max_depth + 1
-        self.__max_arity = max_arity
+        self.__max_arity = max([int(op.arity) for op in operators])
         self.__terminals = [Feature(i) for i in range(n_features)] + [Constant()]
         self.__n_terminals = len(self.__terminals)
 
@@ -94,7 +94,7 @@ class TreeGrammarStructure:
     def generate_tree(self) -> Node:
         t = generate_random_tree(self.__operators, self.__terminals, max_depth=self.get_max_depth(), curr_depth=0)
         # This call initializes empty ephemeral constants to valid floating-point values,
-        # otherwise, this ephemeral remanins equal to "const?" which is not a valid floating-point value.
+        # otherwise, this ephemeral remains equal to "const?" which is not a valid floating-point value.
         t.get_readable_repr()
         return t
 

@@ -14,13 +14,19 @@ from util.Sort import Sort
 
 
 class Trainer(ABC):
-    def __init__(self, net: nn.Module(), device: torch.device, data: Dataset, batch_size: int = 1):
+    def __init__(self, net: nn.Module, device: torch.device, data: Dataset, batch_size: int = 1):
         self.__device = device
         self.__batch_size = batch_size
         self.__net = net.to(self.__device)
         self.__data = data
         if self.__data is not None:
             self.__dataloader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True)
+
+    def get_net(self) -> nn.Module:
+        return self.__net
+
+    def get_device(self) -> torch.device:
+        return self.__device
 
     def set_train_mode(self) -> None:
         self.__net.train()
@@ -53,6 +59,9 @@ class Trainer(ABC):
         self.__data = data
         if self.__data is not None:
             self.__dataloader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True)
+
+    def get_batch_size(self) -> int:
+        return self.__batch_size
 
     def set_batch_size(self, batch_size: int) -> None:
         self.__batch_size = batch_size
