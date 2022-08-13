@@ -66,9 +66,8 @@ from torch.utils.data.sampler import SubsetRandomSampler
 hrule = lambda x: "="*x
 Hrule = lambda x, y: "="*(x//2)+y+"="*(x//2)
 
-
-sns.set(style="whitegrid") #White Grid
 sns.set(rc={'figure.figsize':(10,8)})
+sns.set(style="white")
 mpl.rc('axes', labelsize=14)
 mpl.rc('xtick', labelsize=12)
 mpl.rc('ytick', labelsize=12)

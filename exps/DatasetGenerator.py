@@ -1,7 +1,12 @@
+import random
 from typing import List
+
+import pandas as pd
 
 from deeplearn.dataset.NumericalData import NumericalData
 from genepro.node import Node
+from genepro import node_impl
+from genepro.util import tree_from_prefix_repr
 from sklearn.preprocessing import MaxAbsScaler
 import numpy as np
 from deeplearn.dataset.TreeData import TreeData
@@ -89,6 +94,80 @@ class DatasetGenerator:
                                           {"training": NumericalData(X_train, y_train),
                                            "validation": NumericalData(X_dev, y_dev),
                                            "test": NumericalData(X_test, y_test)})
+
+    @staticmethod
+    def create_dataset_feynman_warm_up():
+        fey_eq = pd.read_csv("D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquations.csv")
+        fey_eq_reg = pd.read_csv(
+            "D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsRegularized.csv")
+        fey_eq_wu = pd.read_csv(
+            "D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsWarmUp.csv")
+        fey_eq_wu.drop("Unnamed: 0", axis=1, inplace=True)
+        fey_eq_wu.drop(15, axis=0, inplace=True)  # this rows contains x_1_0
+        fey_eq_wu.drop(42, axis=0, inplace=True)  # this rows contains x_2_0
+        fey_eq_wu.drop(23, axis=0, inplace=True)  # this rows contains x_3_0
+        fey_eq_wu.drop(55, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
+        fey_eq_wu.drop(83, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
+        train_size = 60
+
+        feymann_operators = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
+                             node_impl.Sqrt(), node_impl.Exp(),
+                             node_impl.Log(), node_impl.Sin(),
+                             node_impl.Cos(), node_impl.Arcsin(), node_impl.Tanh(), node_impl.UnaryMinus(),
+                             node_impl.Power(), node_impl.Max(), node_impl.Min(), node_impl.Square(),
+                             node_impl.Cube()
+                             ]
+
+        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 11)
+        scaler = MaxAbsScaler()
+        X_counts_first, X_counts_second, X_onehot_first, X_onehot_second, y = [], [], [], [], []
+        n_pairs = len(fey_eq_wu)
+        for i in range(n_pairs):
+            first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
+            first_formula.get_readable_repr()
+            second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
+            second_formula.get_readable_repr()
+            first_counts = structure_feymann.generate_counts_encoding(first_formula, True)
+            second_counts = structure_feymann.generate_counts_encoding(second_formula, True)
+            first_onehot = structure_feymann.generate_one_hot_encoding(first_formula)
+            second_onehot = structure_feymann.generate_one_hot_encoding(second_formula)
+            X_counts_first.append(first_counts)
+            X_counts_second.append(second_counts)
+            X_onehot_first.append(first_onehot)
+            X_onehot_second.append(second_onehot)
+        a = X_counts_first[:train_size]
+        b = X_counts_second[:train_size]
+        a.extend(b)
+        scaler.fit(np.array(a))
+        X_counts_first = scaler.transform(np.array(X_counts_first))
+        X_counts_second = scaler.transform(np.array(X_counts_second))
+        X_onehot_first = np.array(X_onehot_first)
+        X_onehot_second = np.array(X_onehot_second)
+
+        X_counts_pairs, X_onehot_pairs = [], []
+        for i in range(n_pairs):
+            first_counts, second_counts = X_counts_first[i], X_counts_second[i]
+            first_onehot, second_onehot = X_onehot_first[i], X_onehot_second[i]
+            if random.uniform(0.0, 1.0) < 0.50:
+                counts_pair = np.concatenate((first_counts, second_counts), axis=None)
+                onehot_pair = np.concatenate((first_onehot, second_onehot), axis=None)
+                y.append(-1)
+            else:
+                counts_pair = np.concatenate((second_counts, first_counts), axis=None)
+                onehot_pair = np.concatenate((second_onehot, first_onehot), axis=None)
+                y.append(1)
+            X_counts_pairs.append(counts_pair)
+            X_onehot_pairs.append(onehot_pair)
+        y = np.array(y)
+        X_counts_pairs, X_onehot_pairs = np.array(X_counts_pairs), np.array(X_onehot_pairs)
+        y_train, y_test = y[:train_size], y[train_size:]
+        X_counts_train, X_counts_test, X_onehot_train, X_onehot_test = X_counts_pairs[:train_size], X_counts_pairs[train_size:], X_onehot_pairs[:train_size], X_onehot_pairs[train_size:]
+        PicklePersist.compress_pickle("data_genepro/feynman_pairs",
+                                      {"counts_training": NumericalData(X_counts_train, y_train),
+                                       "counts_test": NumericalData(X_counts_test, y_test),
+                                       "onehot_training": NumericalData(X_onehot_train, y_train),
+                                       "onehot_test": NumericalData(X_onehot_test, y_test)})
+
 
     #########################################################################################################
     # ===================================== DATA GENERATION WITH custom_gp ==================================

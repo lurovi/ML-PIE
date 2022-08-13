@@ -86,6 +86,45 @@ class ExpsExecutor:
     #########################################################################################################
 
     @staticmethod
+    def perform_experiment_accuracy_feynman_pairs(device):
+        counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
+        verbose = False
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        data = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
+        counts_input_layer_size = len(data["counts_training"][0][0])//2
+        onehot_input_layer_size = len(data["onehot_training"][0][0])//2
+        print(counts_input_layer_size)
+        print(onehot_input_layer_size)
+        output_layer_size = 1
+        print(data["counts_training"].count_labels())
+        print(data["counts_test"].count_labels())
+
+        for curr_seed in range(1, 10 + 1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+            counts_test_loader = DataLoader(data["counts_test"], batch_size=1, shuffle=True)
+            onehot_test_loader = DataLoader(data["onehot_test"], batch_size=1, shuffle=True)
+            counts_net = MLPNet(nn.ReLU(), nn.Identity(), counts_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
+            onehot_net = MLPNet(nn.ReLU(), nn.Identity(), onehot_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
+            counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=1)
+            onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=1)
+            counts_trainer.train()
+            #onehot_trainer.train()
+            counts_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(counts_trainer.get_net(), counts_test_loader, device))
+            #onehot_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(onehot_trainer.get_net(), onehot_test_loader, device))
+            print(curr_seed)
+
+        return sum(counts_accs) / float(len(counts_accs))#, sum(onehot_accs) / float(len(onehot_accs))
+
+
+
+    @staticmethod
     def perform_experiment_nn_ranking_online(title, file_name_dataset, train_size, activation_func,
                                              final_activation_func, hidden_layer_sizes, device, uncertainty=False,
                                              optimizer_name="adam", momentum=0.9):

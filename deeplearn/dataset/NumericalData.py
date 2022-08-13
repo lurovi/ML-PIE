@@ -1,5 +1,7 @@
 from __future__ import annotations
 import math
+from collections import Counter
+
 import torch
 from torch.utils.data import Dataset
 import numpy as np
@@ -68,3 +70,6 @@ class NumericalData(Dataset):
                 new_X.append(self[i][0].tolist())
                 new_y.append(self[i][1].item())
         return NumericalData(np.array(new_X, dtype=np.float32), np.array(new_y, dtype=np.float32), scaler=None)
+
+    def count_labels(self) -> Counter:
+        return Counter(self.y.tolist())

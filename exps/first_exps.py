@@ -8,6 +8,8 @@ from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Subset
 
 import genepro
+from genepro import node_impl as node_impl
+from genepro.util import tree_from_prefix_repr
 from deeplearn.comparator.OneOutputNeuronsSigmoidComparatorFactory import OneOutputNeuronsSigmoidComparatorFactory
 from deeplearn.comparator.TwoOutputNeuronsSoftmaxComparatorFactory import TwoOutputNeuronsSoftmaxComparatorFactory
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
@@ -28,8 +30,12 @@ from exps.SimpleFunctions import SimpleFunctions
 from util.PicklePersist import PicklePersist
 from util.TorchSeedWorker import TorchSeedWorker
 from util.TreeEncoder import *
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+pd.options.display.float_format = '{:.3f}'.format
+pd.set_option('display.max_columns', None)
 
 
 def execute_experiment_nn_regression(title, file_name, activation_func, final_activation_func, hidden_layer_sizes,
@@ -343,6 +349,10 @@ if __name__ == '__main__':
 
     ExpsExecutor.plot_line(df, "Training size", "Footrule", "Representation", "Sampling")
     '''
+
+    ##################################
+
+    print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs(device))
 
     ##################################
 
