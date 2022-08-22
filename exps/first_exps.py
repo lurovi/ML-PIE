@@ -352,7 +352,7 @@ if __name__ == '__main__':
 
     ##################################
 
-    print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs(device))
+    # print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs(device))
 
     ##################################
 

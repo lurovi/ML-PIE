@@ -112,15 +112,15 @@ class ExpsExecutor:
             onehot_test_loader = DataLoader(data["onehot_test"], batch_size=1, shuffle=True)
             counts_net = MLPNet(nn.ReLU(), nn.Identity(), counts_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
             onehot_net = MLPNet(nn.ReLU(), nn.Identity(), onehot_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
-            counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=1)
-            onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=1)
+            counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=5)
+            onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=5)
             counts_trainer.train()
-            #onehot_trainer.train()
+            onehot_trainer.train()
             counts_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(counts_trainer.get_net(), counts_test_loader, device))
-            #onehot_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(onehot_trainer.get_net(), onehot_test_loader, device))
+            onehot_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(onehot_trainer.get_net(), onehot_test_loader, device))
             print(curr_seed)
 
-        return sum(counts_accs) / float(len(counts_accs))#, sum(onehot_accs) / float(len(onehot_accs))
+        return sum(counts_accs) / float(len(counts_accs)), sum(onehot_accs) / float(len(onehot_accs))
 
 
 
@@ -241,6 +241,78 @@ class ExpsExecutor:
         #accs = np.array(accs)
         ftrs = np.array(ftrs)
         #mean_acc = np.mean(accs, axis=0)
+        mean_ftrs = np.mean(ftrs, axis=0)
+        for i in range(len(mean_ftrs)):
+            df["Training size"].append(i + 1)
+            # df["Accuracy"].append(mean_acc[i])
+            df["Footrule"].append(mean_ftrs[i])
+            if "/counts_" in file_name_dataset:
+                df["Representation"].append("Counts")
+            elif "/onehot_" in file_name_dataset:
+                df["Representation"].append("Onehot")
+            else:
+                raise AttributeError(f"Bad representation.")
+            if uncertainty:
+                df["Sampling"].append("Uncertainty")
+            else:
+                df["Sampling"].append("Random")
+        return df
+
+    @staticmethod
+    def create_dict_experiment_nn_ranking_online_warm_up(title, file_name_dataset, train_size, activation_func,
+                                                 final_activation_func, hidden_layer_sizes, device, uncertainty=False,
+                                                 optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        df = {"Training size": [], "Accuracy": [], "Footrule": [], "Representation": [], "Sampling": [], "Warm-up": []}
+        verbose = True
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        trees = PicklePersist.decompress_pickle(file_name_dataset)
+        training, validation, test = trees["training"], trees["validation"], trees["test"]
+        input_layer_size = len(validation[0][0])
+        output_layer_size = 1
+        training = training.subset(list(range(500)))
+        validation = validation.subset(list(range(700)))
+        X_tr, y_tr = training.get_points_and_labels()
+        X_va, y_va = validation.get_points_and_labels()
+        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        valloader = DataLoader(validation, batch_size=1, shuffle=True)
+        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+        feynman = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
+        feynman = feynman["counts_training"]
+
+        for curr_seed in range(1, 10 + 1):
+            curr_accs, curr_ftrs = [], []
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                         hidden_layer_sizes, dropout_prob=0.25)
+            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+            already_seen = []
+            for idx in range(train_size):
+                if not uncertainty:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+                else:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
+                                                                                                  already_seen)
+                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+                trainer.change_data(pairs_train)
+                loss_epoch_array = trainer.train()
+                if verbose and idx == train_size - 1:
+                    print(f"Loss: {loss_epoch_array[0]}")
+                # curr_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
+                curr_ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
+            accs.append(curr_accs)
+            ftrs.append(curr_ftrs)
+        # accs = np.array(accs)
+        ftrs = np.array(ftrs)
+        # mean_acc = np.mean(accs, axis=0)
         mean_ftrs = np.mean(ftrs, axis=0)
         for i in range(len(mean_ftrs)):
             df["Training size"].append(i + 1)
