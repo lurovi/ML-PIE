@@ -1,6 +1,7 @@
 #from util.setting import *
 import numpy as np
 import torch
+from sklearn.metrics import confusion_matrix
 from torch import nn
 
 from exps.ExpsExecutor import ExpsExecutor
@@ -56,5 +57,7 @@ if __name__ == "__main__":
     print(torch.tensor([[1],[2],[3]]).flatten())
     print(torch.tensor(4).reshape(-1))
 
+    print(torch.tensor([[23, 24, 17], [124, 53, 2], [78, 123, 45], [12, 32, 55]]).data.argmax(dim=1).float().tolist())
+    print(confusion_matrix([1.0,1.0,-1.0,1,-1.0,1.0,-1.0],[-1.0,1,-1,1.0,-1,1.0,1]))
     print(ExpsExecutor.merge_dictionaries_of_list([{"a":[1],"b":[1]},{"a":[2],"b":[2]},{"a":[3],"b":[3]},{"a":[4],"b":[4]}]))
     #ExpsExecutor.plot_line({"a":[1,2,3]*4,"b":[34,12,36,23,37,45,23,15,46,12,23,45],"c":["a","a","b","b"]*3,"d":["a","b","a","b"]*3}, "a", "b", "c", "d")

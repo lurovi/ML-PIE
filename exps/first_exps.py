@@ -7,6 +7,9 @@ from sklearn.preprocessing import MaxAbsScaler
 from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Subset
 
+import genepro
+from genepro import node_impl as node_impl
+from genepro.util import tree_from_prefix_repr
 from deeplearn.comparator.OneOutputNeuronsSigmoidComparatorFactory import OneOutputNeuronsSigmoidComparatorFactory
 from deeplearn.comparator.TwoOutputNeuronsSoftmaxComparatorFactory import TwoOutputNeuronsSoftmaxComparatorFactory
 from deeplearn.mlmodel import MLEstimator, evaluate_ml_ranking_with_spearman_footrule, \
@@ -27,8 +30,12 @@ from exps.SimpleFunctions import SimpleFunctions
 from util.PicklePersist import PicklePersist
 from util.TorchSeedWorker import TorchSeedWorker
 from util.TreeEncoder import *
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+pd.options.display.float_format = '{:.3f}'.format
+pd.set_option('display.max_columns', None)
 
 
 def execute_experiment_nn_regression(title, file_name, activation_func, final_activation_func, hidden_layer_sizes,
@@ -237,6 +244,12 @@ if __name__ == '__main__':
                     Primitive("sin", float, [float], SimpleFunctions.sin)
                     ]
 
+    operators = [genepro.node_impl.Plus(), genepro.node_impl.Minus(), genepro.node_impl.Times(),
+                 genepro.node_impl.Max(), genepro.node_impl.Min(),
+                 genepro.node_impl.Square(), genepro.node_impl.Exp(),
+                 genepro.node_impl.Cos(), genepro.node_impl.Sin(), genepro.node_impl.UnaryMinus(),
+                 ]
+
     primitive_set_0 = PrimitiveSet(primitives_0, float)
 
     weights_dict_avg_1 = [{"+": 0.9754, "-": 0.7993, "*": 0.5946, "max": 0.2116, "min": 0.2116,
@@ -302,6 +315,46 @@ if __name__ == '__main__':
     print(TreeEncoder.one_hot_tree(tr))
     print(TreeEncoder.build_dataset_onehot_as_input_weights_sum_as_target([tr], weights_dict_sum_1))
     '''
+
+    # DatasetGenerator.create_datasets(operators, 4, 5)
+
+    #print(ExpsExecutor.perform_experiment_nn_ranking_online("",
+    #                                                        "data_genepro/onehot_number_of_nodes_trees.pbz2",
+    #                                                        200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+    #                                                        device, True))
+
+    #ExpsExecutor.perform_execution_2(device)
+
+    '''
+    df = ExpsExecutor.merge_dictionaries_of_list([
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("",
+                                                       "data_genepro/counts_weights_sum_trees_1.pbz2",
+                                                        200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=False),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("",
+                                                       "data_genepro/counts_weights_sum_trees_1.pbz2",
+                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=True),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("",
+                                                       "data_genepro/onehot_weights_sum_trees_1.pbz2",
+                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=False),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("",
+                                                       "data_genepro/onehot_weights_sum_trees_1.pbz2",
+                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=True)
+
+    ])
+    PicklePersist.compress_pickle("data_genepro/plot_train_size", df)
+
+    ExpsExecutor.plot_line(df, "Training size", "Footrule", "Representation", "Sampling")
+    '''
+
+    ##################################
+
+    # print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs(device))
+
+    ##################################
 
     # DatasetGenerator.generate_datasets_rand(terminal_set_0, primitive_set_0)
 

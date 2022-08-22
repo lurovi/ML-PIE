@@ -1,3 +1,4 @@
+import math
 from functools import partial
 from typing import Dict, List, Any
 
@@ -10,8 +11,11 @@ import seaborn as sns
 import numpy as np
 import random
 
+from deeplearn.dataset.NumericalData import NumericalData
+from deeplearn.dataset.PairSampler import PairSampler
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.model.MLPNet import MLPNet
+from deeplearn.model.NeuralNetEvaluator import NeuralNetEvaluator
 from deeplearn.trainer.OnlineTwoPointsCompareDoubleInputTrainer import OnlineTwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.TwoPointsCompareDoubleInputTrainer import TwoPointsCompareDoubleInputTrainer
@@ -23,6 +27,10 @@ from util.TorchSeedWorker import TorchSeedWorker
 
 
 class ExpsExecutor:
+
+    #########################################################################################################
+    # ===================================== UTILITIES =======================================================
+    #########################################################################################################
 
     @staticmethod
     def merge_dictionaries_of_list(dicts: List[Dict[str, List[Any]]]) -> Dict[str, List[Any]]:
@@ -72,6 +80,259 @@ class ExpsExecutor:
         comparator = partial(ExpsExecutor.random_comparator, p=p)
         y_pred, _ = Sort.heapsort(y_true_2, comparator, inplace=False, reverse=False)
         return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda x, y: x == y)
+
+    #########################################################################################################
+    # ===================================== SINGLE INPUT ARCHITECTURES WITH genepro =========================
+    #########################################################################################################
+
+    @staticmethod
+    def perform_experiment_accuracy_feynman_pairs(device):
+        counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
+        verbose = False
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        data = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
+        counts_input_layer_size = len(data["counts_training"][0][0])//2
+        onehot_input_layer_size = len(data["onehot_training"][0][0])//2
+        print(counts_input_layer_size)
+        print(onehot_input_layer_size)
+        output_layer_size = 1
+        print(data["counts_training"].count_labels())
+        print(data["counts_test"].count_labels())
+
+        for curr_seed in range(1, 10 + 1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+            counts_test_loader = DataLoader(data["counts_test"], batch_size=1, shuffle=True)
+            onehot_test_loader = DataLoader(data["onehot_test"], batch_size=1, shuffle=True)
+            counts_net = MLPNet(nn.ReLU(), nn.Identity(), counts_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
+            onehot_net = MLPNet(nn.ReLU(), nn.Identity(), onehot_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
+            counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=5)
+            onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=5)
+            counts_trainer.train()
+            onehot_trainer.train()
+            counts_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(counts_trainer.get_net(), counts_test_loader, device))
+            onehot_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(onehot_trainer.get_net(), onehot_test_loader, device))
+            print(curr_seed)
+
+        return sum(counts_accs) / float(len(counts_accs)), sum(onehot_accs) / float(len(onehot_accs))
+
+
+
+    @staticmethod
+    def perform_experiment_nn_ranking_online(title, file_name_dataset, train_size, activation_func,
+                                             final_activation_func, hidden_layer_sizes, device, uncertainty=False,
+                                             optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        verbose = False
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        trees = PicklePersist.decompress_pickle(file_name_dataset)
+        training, validation, test = trees["training"], trees["validation"], trees["test"]
+        input_layer_size = len(validation[0][0])
+        output_layer_size = 1
+        training = training.subset(list(range(500)))
+        validation = validation.subset(list(range(700)))
+        X_tr, y_tr = training.get_points_and_labels()
+        X_va, y_va = validation.get_points_and_labels()
+        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        valloader = DataLoader(validation, batch_size=1, shuffle=True)
+        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+
+        for curr_seed in range(1, 10 + 1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                         hidden_layer_sizes, dropout_prob=0.25)
+            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+            already_seen = []
+            for idx in range(train_size):
+                if not uncertainty:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+                else:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer, already_seen)
+                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+                trainer.change_data(pairs_train)
+                loss_epoch_array = trainer.train()
+                if verbose and idx == train_size - 1:
+                    print(f"Loss: {loss_epoch_array[0]}")
+            accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
+            ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
+        print(title)
+        return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
+
+    @staticmethod
+    def perform_execution_2(device):
+        activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
+        for target in ["weights_sum"]:
+            for i in range(1, 10 + 1):
+                i_str = str(i)
+                for representation in ["counts", "onehot"]:
+                    for final_activation in ["identity"]:
+                        for uncertainty in [False, True]:
+                            print(ExpsExecutor.perform_experiment_nn_ranking_online(
+                                target + " " + i_str + " " + representation + " " + final_activation + " " + ("uncertainty" if uncertainty else "random"),
+                                "data_genepro/" + representation + "_" + target + "_" + "trees" + "_" + i_str + ".pbz2",
+                                200,
+                                nn.ReLU(), activations[final_activation],
+                                [220, 140, 80, 26], device, uncertainty
+                            ))
+
+    @staticmethod
+    def create_dict_experiment_nn_ranking_online(title, file_name_dataset, train_size, activation_func,
+                                             final_activation_func, hidden_layer_sizes, device, uncertainty=False,
+                                             optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        df = {"Training size": [], "Accuracy": [], "Footrule": [], "Representation": [], "Sampling": []}
+        verbose = True
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        trees = PicklePersist.decompress_pickle(file_name_dataset)
+        training, validation, test = trees["training"], trees["validation"], trees["test"]
+        input_layer_size = len(validation[0][0])
+        output_layer_size = 1
+        training = training.subset(list(range(500)))
+        validation = validation.subset(list(range(700)))
+        X_tr, y_tr = training.get_points_and_labels()
+        X_va, y_va = validation.get_points_and_labels()
+        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        valloader = DataLoader(validation, batch_size=1, shuffle=True)
+        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+
+        for curr_seed in range(1, 10 + 1):
+            curr_accs, curr_ftrs = [], []
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                         hidden_layer_sizes, dropout_prob=0.25)
+            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+            already_seen = []
+            for idx in range(train_size):
+                if not uncertainty:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+                else:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer, already_seen)
+                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+                trainer.change_data(pairs_train)
+                loss_epoch_array = trainer.train()
+                if verbose and idx == train_size - 1:
+                    print(f"Loss: {loss_epoch_array[0]}")
+                #curr_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
+                curr_ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
+            accs.append(curr_accs)
+            ftrs.append(curr_ftrs)
+        #accs = np.array(accs)
+        ftrs = np.array(ftrs)
+        #mean_acc = np.mean(accs, axis=0)
+        mean_ftrs = np.mean(ftrs, axis=0)
+        for i in range(len(mean_ftrs)):
+            df["Training size"].append(i + 1)
+            # df["Accuracy"].append(mean_acc[i])
+            df["Footrule"].append(mean_ftrs[i])
+            if "/counts_" in file_name_dataset:
+                df["Representation"].append("Counts")
+            elif "/onehot_" in file_name_dataset:
+                df["Representation"].append("Onehot")
+            else:
+                raise AttributeError(f"Bad representation.")
+            if uncertainty:
+                df["Sampling"].append("Uncertainty")
+            else:
+                df["Sampling"].append("Random")
+        return df
+
+    @staticmethod
+    def create_dict_experiment_nn_ranking_online_warm_up(title, file_name_dataset, train_size, activation_func,
+                                                 final_activation_func, hidden_layer_sizes, device, uncertainty=False,
+                                                 optimizer_name="adam", momentum=0.9):
+        accs, ftrs = [], []
+        df = {"Training size": [], "Accuracy": [], "Footrule": [], "Representation": [], "Sampling": [], "Warm-up": []}
+        verbose = True
+
+        random.seed(1)
+        np.random.seed(1)
+        torch.manual_seed(1)
+        torch.use_deterministic_algorithms(True)
+
+        trees = PicklePersist.decompress_pickle(file_name_dataset)
+        training, validation, test = trees["training"], trees["validation"], trees["test"]
+        input_layer_size = len(validation[0][0])
+        output_layer_size = 1
+        training = training.subset(list(range(500)))
+        validation = validation.subset(list(range(700)))
+        X_tr, y_tr = training.get_points_and_labels()
+        X_va, y_va = validation.get_points_and_labels()
+        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        valloader = DataLoader(validation, batch_size=1, shuffle=True)
+        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+        feynman = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
+        feynman = feynman["counts_training"]
+
+        for curr_seed in range(1, 10 + 1):
+            curr_accs, curr_ftrs = [], []
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
+            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                         hidden_layer_sizes, dropout_prob=0.25)
+            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+            already_seen = []
+            for idx in range(train_size):
+                if not uncertainty:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+                else:
+                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
+                                                                                                  already_seen)
+                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+                trainer.change_data(pairs_train)
+                loss_epoch_array = trainer.train()
+                if verbose and idx == train_size - 1:
+                    print(f"Loss: {loss_epoch_array[0]}")
+                # curr_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
+                curr_ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
+            accs.append(curr_accs)
+            ftrs.append(curr_ftrs)
+        # accs = np.array(accs)
+        ftrs = np.array(ftrs)
+        # mean_acc = np.mean(accs, axis=0)
+        mean_ftrs = np.mean(ftrs, axis=0)
+        for i in range(len(mean_ftrs)):
+            df["Training size"].append(i + 1)
+            # df["Accuracy"].append(mean_acc[i])
+            df["Footrule"].append(mean_ftrs[i])
+            if "/counts_" in file_name_dataset:
+                df["Representation"].append("Counts")
+            elif "/onehot_" in file_name_dataset:
+                df["Representation"].append("Onehot")
+            else:
+                raise AttributeError(f"Bad representation.")
+            if uncertainty:
+                df["Sampling"].append("Uncertainty")
+            else:
+                df["Sampling"].append("Random")
+        return df
+
+    #########################################################################################################
+    # ===================================== SINGLE INPUT ARCHITECTURES WITH custom_gp =======================
+    #########################################################################################################
 
     @staticmethod
     def execute_experiment_nn_ranking(title, file_name_training, file_name_dataset, train_size, activation_func,
@@ -204,8 +465,15 @@ class ExpsExecutor:
             train_samples.append(train_original[i][0].tolist())
             train_labels.append(train_original[i][1].item())
         train_samples = torch.tensor(train_samples, dtype=torch.float32)
+        train_labels = torch.tensor(train_labels, dtype=torch.float32)
+        train_indexes = list(range(len(train_labels)))
 
-        for _ in range(10):
+        for curr_seed in range(1, 10 + 1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+            torch.use_deterministic_algorithms(True)
+
             curr_accs, curr_ftrs = [], []
             net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                          hidden_layer_sizes, dropout_prob=0.25)
@@ -213,7 +481,27 @@ class ExpsExecutor:
             already_seen = []
             for idx in range(len(trainloader)):
                 if not uncertainty:
-                    trainer.change_data(Subset(trainloader, [idx]))
+                    #trainer.change_data(Subset(trainloader, [idx]))
+                    exit_loop = False
+                    while not (exit_loop):
+                        idx_1 = random.choice(train_indexes)
+                        if idx_1 not in already_seen:
+                            exit_loop = True
+                            already_seen.append(idx_1)
+                            first_point, first_label = train_samples[idx_1], train_labels[idx_1].item()
+                    exit_loop = False
+                    while not(exit_loop):
+                        idx_2 = random.choice(train_indexes)
+                        if idx_2 != idx_1 and idx_2 not in already_seen:
+                            exit_loop = True
+                            already_seen.append(idx_2)
+                            second_point, second_label = train_samples[idx_2], train_labels[idx_2].item()
+                    if first_label >= second_label:
+                        curr_feedback = np.array([-1])
+                    else:
+                        curr_feedback = np.array([1])
+                    curr_point = np.array([first_point.tolist() + second_point.tolist()])
+                    trainer.change_data(TreeData(None, curr_point, curr_feedback, scaler=None))
                 else:
                     _, uncertainty = trainer.predict(train_samples)
                     _, ind_points = Sort.heapsort(uncertainty, lambda x, y: x < y, inplace=False, reverse=True)
@@ -224,7 +512,7 @@ class ExpsExecutor:
                         if ind_points[i] not in already_seen:
                             already_seen.append(ind_points[i])
                             count += 1
-                            points.append((train_samples[ind_points[i]], train_labels[ind_points[i]]))
+                            points.append((train_samples[ind_points[i]], train_labels[ind_points[i]].item()))
                         i += 1
                     first_point, first_label = points[0]
                     second_point, second_label = points[1]
@@ -261,6 +549,10 @@ class ExpsExecutor:
                 df["Sampling"].append("Random")
         return df
 
+    #########################################################################################################
+    # ===================================== DOUBLE INPUT ARCHITECTURES WITH custom_gp =======================
+    #########################################################################################################
+
     @staticmethod
     def execute_experiment_nn_ranking_double_input(title, file_name_training, file_name_dataset, train_size,
                                                    activation_func, final_activation_func, hidden_layer_sizes,
@@ -268,7 +560,11 @@ class ExpsExecutor:
                                                    comparator_factory, loss_fn, max_epochs=20, batch_size=1000,
                                                    optimizer_name="adam", momentum=0.9):
         accs, ftrs = [], []
-        for _ in range(10):
+        for curr_seed in range(1,10+1):
+            random.seed(curr_seed)
+            np.random.seed(curr_seed)
+            torch.manual_seed(curr_seed)
+
             trees = PicklePersist.decompress_pickle(file_name_dataset)
             training = PicklePersist.decompress_pickle(file_name_training)["training"]
             validation, test = trees["validation"], trees["test"]
