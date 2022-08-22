@@ -12,7 +12,7 @@ import numpy as np
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
 from gp.tree.HalfHalfGenerator import HalfHalfGenerator
-from nsgp.TreeGrammarStructure import TreeGrammarStructure
+from util.TreeGrammarStructure import TreeGrammarStructure
 from util.PicklePersist import PicklePersist
 from util.TreeEncoder import TreeEncoder
 

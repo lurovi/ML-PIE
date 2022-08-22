@@ -1,10 +1,7 @@
 import random
-from genepro.node import Node
 import genepro
 import numpy as np
-from genepro.variation import generate_random_tree
-from genepro.util import tree_from_prefix_repr, one_hot_encode_tree, counts_encode_tree
-from nsgp.TreeGrammarStructure import TreeGrammarStructure
+from util.TreeGrammarStructure import TreeGrammarStructure
 
 if __name__ == "__main__":
     random.seed(1)

@@ -1,14 +1,14 @@
 import re
 
 import numpy as np
-from typing import Callable, Any, Iterable, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from genepro.node import Node
 
 from gp.tree.PrimitiveTree import PrimitiveTree
 from gp.tree.Primitive import Primitive
 
-from nsgp.TreeGrammarStructure import TreeGrammarStructure
+from util.TreeGrammarStructure import TreeGrammarStructure
 
 
 class TreeEncoder:
