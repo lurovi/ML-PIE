@@ -345,7 +345,7 @@ if __name__ == '__main__':
                                                        device, uncertainty=True)
 
     ])
-    PicklePersist.compress_pickle("data_genepro/plot_train_size", df)
+    PicklePersist.compress_pickle("data_genepro/plot_train_size_200", df)
 
     ExpsExecutor.plot_line(df, "Training size", "Footrule", "Representation", "Sampling")
     '''

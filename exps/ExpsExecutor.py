@@ -2,10 +2,12 @@ import math
 from functools import partial
 from typing import Dict, List, Any
 
+import pandas as pd
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Subset
+import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -40,12 +42,20 @@ class ExpsExecutor:
         return df
 
     @staticmethod
-    def plot_line(df, x, y, hue, style):
-        sns.set(rc={"figure.figsize":(8, 8)})
+    def plot_line(df, x, y, hue, style, pgfplot=False):
+        sns.set(rc={"figure.figsize": (10, 6)})
         sns.set_style("white")
-        g = sns.lineplot(data=df, x=x, y=y, hue=hue, style=style)
-        plt.show()
-        return g
+        df = pd.DataFrame(df)
+        ax = sns.lineplot(data=df, x=x, y=y, hue=hue, style=style, estimator=np.mean, ci=90)
+        if pgfplot:
+            matplotlib.use("pgf")
+            matplotlib.rcParams.update(
+                {"pgf.texsystem": "pdflatex", 'font.family': 'serif', 'font.size': 11, 'text.usetex': True,
+                 'pgf.rcfonts': False, })
+            plt.savefig("img/plot.pgf")
+        else:
+            plt.show()
+        return ax
 
     @staticmethod
     def random_comparator(point_1, point_2, p):  # here point is the ground truth label and p a probability
@@ -140,7 +150,7 @@ class ExpsExecutor:
         training, validation, test = trees["training"], trees["validation"], trees["test"]
         input_layer_size = len(validation[0][0])
         output_layer_size = 1
-        training = training.subset(list(range(500)))
+        training = training.subset(list(range(train_size*2+200)))
         validation = validation.subset(list(range(700)))
         X_tr, y_tr = training.get_points_and_labels()
         X_va, y_va = validation.get_points_and_labels()
@@ -193,9 +203,19 @@ class ExpsExecutor:
     def create_dict_experiment_nn_ranking_online(title, file_name_dataset, train_size, activation_func,
                                              final_activation_func, hidden_layer_sizes, device, uncertainty=False,
                                              optimizer_name="adam", momentum=0.9):
-        accs, ftrs = [], []
-        df = {"Training size": [], "Accuracy": [], "Footrule": [], "Representation": [], "Sampling": []}
+        df = {"Training size": [], "Footrule": [], "Representation": [], "Sampling": []}
         verbose = True
+
+        if "/counts_" in file_name_dataset:
+            repr_plot = "Counts"
+        elif "/onehot_" in file_name_dataset:
+            repr_plot = "Onehot"
+        else:
+            raise AttributeError(f"Bad representation.")
+        if uncertainty:
+            sampl_plot = "Uncertainty"
+        else:
+            sampl_plot = "Random"
 
         random.seed(1)
         np.random.seed(1)
@@ -206,16 +226,15 @@ class ExpsExecutor:
         training, validation, test = trees["training"], trees["validation"], trees["test"]
         input_layer_size = len(validation[0][0])
         output_layer_size = 1
-        training = training.subset(list(range(500)))
+        training = training.subset(list(range(train_size*2+200)))
         validation = validation.subset(list(range(700)))
         X_tr, y_tr = training.get_points_and_labels()
-        X_va, y_va = validation.get_points_and_labels()
-        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        # X_va, y_va = validation.get_points_and_labels()
+        # pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
-        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+        # pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
 
         for curr_seed in range(1, 10 + 1):
-            curr_accs, curr_ftrs = [], []
             random.seed(curr_seed)
             np.random.seed(curr_seed)
             torch.manual_seed(curr_seed)
@@ -234,100 +253,11 @@ class ExpsExecutor:
                 loss_epoch_array = trainer.train()
                 if verbose and idx == train_size - 1:
                     print(f"Loss: {loss_epoch_array[0]}")
-                #curr_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
-                curr_ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
-            accs.append(curr_accs)
-            ftrs.append(curr_ftrs)
-        #accs = np.array(accs)
-        ftrs = np.array(ftrs)
-        #mean_acc = np.mean(accs, axis=0)
-        mean_ftrs = np.mean(ftrs, axis=0)
-        for i in range(len(mean_ftrs)):
-            df["Training size"].append(i + 1)
-            # df["Accuracy"].append(mean_acc[i])
-            df["Footrule"].append(mean_ftrs[i])
-            if "/counts_" in file_name_dataset:
-                df["Representation"].append("Counts")
-            elif "/onehot_" in file_name_dataset:
-                df["Representation"].append("Onehot")
-            else:
-                raise AttributeError(f"Bad representation.")
-            if uncertainty:
-                df["Sampling"].append("Uncertainty")
-            else:
-                df["Sampling"].append("Random")
-        return df
-
-    @staticmethod
-    def create_dict_experiment_nn_ranking_online_warm_up(title, file_name_dataset, train_size, activation_func,
-                                                 final_activation_func, hidden_layer_sizes, device, uncertainty=False,
-                                                 optimizer_name="adam", momentum=0.9):
-        accs, ftrs = [], []
-        df = {"Training size": [], "Accuracy": [], "Footrule": [], "Representation": [], "Sampling": [], "Warm-up": []}
-        verbose = True
-
-        random.seed(1)
-        np.random.seed(1)
-        torch.manual_seed(1)
-        torch.use_deterministic_algorithms(True)
-
-        trees = PicklePersist.decompress_pickle(file_name_dataset)
-        training, validation, test = trees["training"], trees["validation"], trees["test"]
-        input_layer_size = len(validation[0][0])
-        output_layer_size = 1
-        training = training.subset(list(range(500)))
-        validation = validation.subset(list(range(700)))
-        X_tr, y_tr = training.get_points_and_labels()
-        X_va, y_va = validation.get_points_and_labels()
-        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
-        valloader = DataLoader(validation, batch_size=1, shuffle=True)
-        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
-        feynman = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
-        feynman = feynman["counts_training"]
-
-        for curr_seed in range(1, 10 + 1):
-            curr_accs, curr_ftrs = [], []
-            random.seed(curr_seed)
-            np.random.seed(curr_seed)
-            torch.manual_seed(curr_seed)
-
-            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
-                         hidden_layer_sizes, dropout_prob=0.25)
-            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
-            already_seen = []
-            for idx in range(train_size):
-                if not uncertainty:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
-                else:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
-                                                                                                  already_seen)
-                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
-                trainer.change_data(pairs_train)
-                loss_epoch_array = trainer.train()
-                if verbose and idx == train_size - 1:
-                    print(f"Loss: {loss_epoch_array[0]}")
-                # curr_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
-                curr_ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
-            accs.append(curr_accs)
-            ftrs.append(curr_ftrs)
-        # accs = np.array(accs)
-        ftrs = np.array(ftrs)
-        # mean_acc = np.mean(accs, axis=0)
-        mean_ftrs = np.mean(ftrs, axis=0)
-        for i in range(len(mean_ftrs)):
-            df["Training size"].append(i + 1)
-            # df["Accuracy"].append(mean_acc[i])
-            df["Footrule"].append(mean_ftrs[i])
-            if "/counts_" in file_name_dataset:
-                df["Representation"].append("Counts")
-            elif "/onehot_" in file_name_dataset:
-                df["Representation"].append("Onehot")
-            else:
-                raise AttributeError(f"Bad representation.")
-            if uncertainty:
-                df["Sampling"].append("Uncertainty")
-            else:
-                df["Sampling"].append("Random")
+                this_ftrs = NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
+                df["Training size"].append(idx + 1)
+                df["Footrule"].append(this_ftrs)
+                df["Representation"].append(repr_plot)
+                df["Sampling"].append(sampl_plot)
         return df
 
     #########################################################################################################

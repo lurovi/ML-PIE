@@ -5,7 +5,7 @@ from genepro.variation import generate_random_tree
 from genepro.node_impl import *
 from genepro.node import Node
 
-from genepro.util import one_hot_encode_tree, counts_encode_tree
+from genepro.util import one_hot_encode_tree, counts_encode_tree, counts_level_wise_encode_tree
 
 
 class TreeGrammarStructure:
@@ -95,7 +95,7 @@ class TreeGrammarStructure:
         t = generate_random_tree(self.__operators, self.__terminals, max_depth=self.get_max_depth(), curr_depth=0)
         # This call initializes empty ephemeral constants to valid floating-point values,
         # otherwise, this ephemeral remains equal to "const?" which is not a valid floating-point value.
-        t.get_readable_repr()
+        # t.get_readable_repr()
         return t
 
     def get_dict_representation(self, tree: Node) -> Dict[int, str]:
@@ -104,6 +104,11 @@ class TreeGrammarStructure:
     def generate_counts_encoding(self, tree: Node, additional_properties: bool = False) -> List[float]:
 
         return counts_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
+                                  self.get_max_arity(), additional_properties)
+
+    def generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = False) -> List[float]:
+
+        return counts_level_wise_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
                                   self.get_max_arity(), additional_properties)
 
     def generate_one_hot_encoding(self, tree: Node) -> List[float]:
