@@ -109,7 +109,7 @@ class TreeGrammarStructure:
     def generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = False) -> List[float]:
 
         return counts_level_wise_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
-                                  self.get_max_arity(), additional_properties)
+                                             self.get_max_arity(), additional_properties)
 
     def generate_one_hot_encoding(self, tree: Node) -> List[float]:
         return one_hot_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),

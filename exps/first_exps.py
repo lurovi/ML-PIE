@@ -316,39 +316,34 @@ if __name__ == '__main__':
     print(TreeEncoder.build_dataset_onehot_as_input_weights_sum_as_target([tr], weights_dict_sum_1))
     '''
 
-    # DatasetGenerator.create_datasets(operators, 4, 5)
-
-    #print(ExpsExecutor.perform_experiment_nn_ranking_online("",
-    #                                                        "data_genepro/onehot_number_of_nodes_trees.pbz2",
-    #                                                        200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
-    #                                                        device, True))
+    #DatasetGenerator.create_datasets(operators, 4, 5)
 
     #ExpsExecutor.perform_execution_2(device)
 
-    '''
+
     df = ExpsExecutor.merge_dictionaries_of_list([
         ExpsExecutor.create_dict_experiment_nn_ranking_online("",
                                                        "data_genepro/counts_weights_sum_trees_1.pbz2",
-                                                        200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                        500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
                                                        device, uncertainty=False),
         ExpsExecutor.create_dict_experiment_nn_ranking_online("",
                                                        "data_genepro/counts_weights_sum_trees_1.pbz2",
-                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
                                                        device, uncertainty=True),
         ExpsExecutor.create_dict_experiment_nn_ranking_online("",
                                                        "data_genepro/onehot_weights_sum_trees_1.pbz2",
-                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
                                                        device, uncertainty=False),
         ExpsExecutor.create_dict_experiment_nn_ranking_online("",
                                                        "data_genepro/onehot_weights_sum_trees_1.pbz2",
-                                                       200, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
                                                        device, uncertainty=True)
 
     ])
-    PicklePersist.compress_pickle("data_genepro/plot_train_size_200", df)
+    PicklePersist.compress_pickle("data_genepro/plot_train_size_500", df)
 
     ExpsExecutor.plot_line(df, "Training size", "Footrule", "Representation", "Sampling")
-    '''
+
 
     ##################################
 

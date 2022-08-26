@@ -66,21 +66,25 @@ class TreeEncoder:
         return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
 
     @staticmethod
-    def create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(data: List[Node], structure: TreeGrammarStructure) -> Tuple[np.ndarray, np.ndarray]:
+    def create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(data: List[Node], structure: TreeGrammarStructure, scaler: Any = None) -> Tuple[np.ndarray, np.ndarray]:
         X, y = [], []
         for t in data:
             X.append(structure.generate_level_wise_counts_encoding(t, True))
             y.append(t.get_n_nodes())
         X = np.array(X, dtype=np.float32)
+        if scaler is not None:
+            X = scaler.transform(X)
         return X, np.array(y, dtype=np.float32)
 
     @staticmethod
-    def create_dataset_level_wise_counts_as_input_weights_sum_as_target(data: List[Node], structure: TreeGrammarStructure) -> Tuple[np.ndarray, np.ndarray]:
+    def create_dataset_level_wise_counts_as_input_weights_sum_as_target(data: List[Node], structure: TreeGrammarStructure, scaler: Any = None) -> Tuple[np.ndarray, np.ndarray]:
         X, y = [], []
         for t in data:
             X.append(structure.generate_level_wise_counts_encoding(t, True))
             y.append(TreeEncoder.compute_ground_truth_as_weights_sum(t, structure))
         X = np.array(X, dtype=np.float32)
+        if scaler is not None:
+            X = scaler.transform(X)
         return X, np.array(y, dtype=np.float32)
 
     @staticmethod
@@ -108,6 +112,12 @@ class TreeEncoder:
     @staticmethod
     def create_scaler_on_counts(structure: TreeGrammarStructure, base_scaler: Any, data: List[Node]) -> Any:
         data = [structure.generate_counts_encoding(t, True) for t in data]
+        base_scaler.fit(np.array(data))
+        return base_scaler
+
+    @staticmethod
+    def create_scaler_on_level_wise_counts(structure: TreeGrammarStructure, base_scaler: Any, data: List[Node]) -> Any:
+        data = [structure.generate_level_wise_counts_encoding(t, True) for t in data]
         base_scaler.fit(np.array(data))
         return base_scaler
 

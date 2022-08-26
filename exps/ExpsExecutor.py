@@ -185,6 +185,17 @@ class ExpsExecutor:
     @staticmethod
     def perform_execution_2(device):
         activations = {"identity": nn.Identity(), "sigmoid": nn.Sigmoid(), "tanh": nn.Tanh()}
+        for target in ["number_of_nodes"]:
+            for representation in ["counts", "onehot"]:
+                for final_activation in ["identity"]:
+                    for uncertainty in [False, True]:
+                        print(ExpsExecutor.perform_experiment_nn_ranking_online(
+                            target + " " + representation + " " + final_activation + " " + ("uncertainty" if uncertainty else "random"),
+                            "data_genepro/" + representation + "_" + target + "_" + "trees" + ".pbz2",
+                            200,
+                            nn.ReLU(), activations[final_activation],
+                            [220, 140, 80, 26], device, uncertainty
+                        ))
         for target in ["weights_sum"]:
             for i in range(1, 10 + 1):
                 i_str = str(i)
