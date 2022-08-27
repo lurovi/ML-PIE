@@ -43,7 +43,7 @@ class DatasetGenerator:
         PicklePersist.compress_pickle("data_genepro/validation_trees", val)
         PicklePersist.compress_pickle("data_genepro/test_trees", test)
         train, val, test = None, None, None
-        PicklePersist.compress_pickle("data_genepro/counts_scaler", TreeEncoder.create_scaler_on_level_wise_counts(structure, MinMaxScaler(), [structure.generate_tree() for _ in range(1000000)]))
+        PicklePersist.compress_pickle("data_genepro/counts_scaler", TreeEncoder.create_scaler_on_counts(structure, MinMaxScaler(), [structure.generate_tree() for _ in range(1000000)]))
         train = PicklePersist.decompress_pickle("data_genepro/train_trees.pbz2")
         val = PicklePersist.decompress_pickle("data_genepro/validation_trees.pbz2")
         test = PicklePersist.decompress_pickle("data_genepro/test_trees.pbz2")
@@ -51,9 +51,9 @@ class DatasetGenerator:
 
         # TARGET: NUMBER OF NODES
 
-        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(train, structure, scaler)
-        X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(val, structure, scaler)
-        X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(test, structure, scaler)
+        X_train, y_train = TreeEncoder.create_dataset_counts_as_input_number_of_nodes_as_target(train, structure, scaler)
+        X_dev, y_dev = TreeEncoder.create_dataset_counts_as_input_number_of_nodes_as_target(val, structure, scaler)
+        X_test, y_test = TreeEncoder.create_dataset_counts_as_input_number_of_nodes_as_target(test, structure, scaler)
         PicklePersist.compress_pickle("data_genepro/counts_number_of_nodes_trees",
                                       {"training": NumericalData(X_train, y_train),
                                        "validation": NumericalData(X_dev, y_dev),
@@ -76,11 +76,11 @@ class DatasetGenerator:
             curr_weights = weights[i]
             structure.set_weights(curr_weights)
 
-            X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(train,
+            X_train, y_train = TreeEncoder.create_dataset_counts_as_input_weights_sum_as_target(train,
                                                                                                 structure, scaler)
-            X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(val,
+            X_dev, y_dev = TreeEncoder.create_dataset_counts_as_input_weights_sum_as_target(val,
                                                                                             structure, scaler)
-            X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(test,
+            X_test, y_test = TreeEncoder.create_dataset_counts_as_input_weights_sum_as_target(test,
                                                                                               structure, scaler)
             PicklePersist.compress_pickle("data_genepro/counts_weights_sum_trees_" + str(i + 1),
                                           {"training": NumericalData(X_train, y_train),
