@@ -24,7 +24,7 @@ class DatasetGenerator:
     #########################################################################################################
 
     @staticmethod
-    def create_datasets(operators: List[Node], n_features: int, max_depth: int) -> None:
+    def create_datasets(operators: List[Node], n_features: int, max_depth: int, folder: str) -> None:
         size = len(operators) + n_features + 1
         n_layers = max_depth + 1
         number_of_distr = 10
@@ -39,22 +39,30 @@ class DatasetGenerator:
         train = [structure.generate_tree() for _ in range(100000)]
         val = [structure.generate_tree() for _ in range(4000)]
         test = [structure.generate_tree() for _ in range(1000)]
-        PicklePersist.compress_pickle("data_genepro/train_trees", train)
-        PicklePersist.compress_pickle("data_genepro/validation_trees", val)
-        PicklePersist.compress_pickle("data_genepro/test_trees", test)
+        PicklePersist.compress_pickle(folder+"/train_trees", train)
+        PicklePersist.compress_pickle(folder+"/validation_trees", val)
+        PicklePersist.compress_pickle(folder+"/test_trees", test)
         train, val, test = None, None, None
-        PicklePersist.compress_pickle("data_genepro/counts_scaler", TreeEncoder.create_scaler_on_level_wise_counts(structure, MinMaxScaler(), [structure.generate_tree() for _ in range(1000000)]))
-        train = PicklePersist.decompress_pickle("data_genepro/train_trees.pbz2")
-        val = PicklePersist.decompress_pickle("data_genepro/validation_trees.pbz2")
-        test = PicklePersist.decompress_pickle("data_genepro/test_trees.pbz2")
-        scaler = PicklePersist.decompress_pickle("data_genepro/counts_scaler.pbz2")
+        PicklePersist.compress_pickle(folder+"/counts_scaler",
+                                      TreeEncoder.create_scaler_on_level_wise_counts(structure, MinMaxScaler(),
+                                                                                     [structure.generate_tree() for _ in
+                                                                                      range(1000000)]))
+        train = PicklePersist.decompress_pickle(folder+"/train_trees.pbz2")
+        val = PicklePersist.decompress_pickle(folder+"/validation_trees.pbz2")
+        test = PicklePersist.decompress_pickle(folder+"/test_trees.pbz2")
+        scaler = PicklePersist.decompress_pickle(folder+"/counts_scaler.pbz2")
 
         # TARGET: NUMBER OF NODES
 
-        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(train, structure, scaler)
-        X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(val, structure, scaler)
-        X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(test, structure, scaler)
-        PicklePersist.compress_pickle("data_genepro/counts_number_of_nodes_trees",
+        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(train,
+                                                                                                           structure,
+                                                                                                           scaler)
+        X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(val, structure,
+                                                                                                       scaler)
+        X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(test,
+                                                                                                         structure,
+                                                                                                         scaler)
+        PicklePersist.compress_pickle(folder+"/counts_number_of_nodes_trees",
                                       {"training": NumericalData(X_train, y_train),
                                        "validation": NumericalData(X_dev, y_dev),
                                        "test": NumericalData(X_test, y_test)})
@@ -65,7 +73,7 @@ class DatasetGenerator:
                                                                                             structure)
         X_test, y_test = TreeEncoder.create_dataset_onehot_as_input_number_of_nodes_as_target(test,
                                                                                               structure)
-        PicklePersist.compress_pickle("data_genepro/onehot_number_of_nodes_trees",
+        PicklePersist.compress_pickle(folder+"/onehot_number_of_nodes_trees",
                                       {"training": NumericalData(X_train, y_train),
                                        "validation": NumericalData(X_dev, y_dev),
                                        "test": NumericalData(X_test, y_test)})
@@ -77,12 +85,15 @@ class DatasetGenerator:
             structure.set_weights(curr_weights)
 
             X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(train,
-                                                                                                structure, scaler)
+                                                                                                           structure,
+                                                                                                           scaler)
             X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(val,
-                                                                                            structure, scaler)
+                                                                                                       structure,
+                                                                                                       scaler)
             X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(test,
-                                                                                              structure, scaler)
-            PicklePersist.compress_pickle("data_genepro/counts_weights_sum_trees_" + str(i + 1),
+                                                                                                         structure,
+                                                                                                         scaler)
+            PicklePersist.compress_pickle(folder+"/counts_weights_sum_trees_" + str(i + 1),
                                           {"training": NumericalData(X_train, y_train),
                                            "validation": NumericalData(X_dev, y_dev),
                                            "test": NumericalData(X_test, y_test)})
@@ -93,13 +104,54 @@ class DatasetGenerator:
                                                                                             structure)
             X_test, y_test = TreeEncoder.create_dataset_onehot_as_input_weights_sum_as_target(test,
                                                                                               structure)
-            PicklePersist.compress_pickle("data_genepro/onehot_weights_sum_trees_" + str(i + 1),
+            PicklePersist.compress_pickle(folder+"/onehot_weights_sum_trees_" + str(i + 1),
                                           {"training": NumericalData(X_train, y_train),
                                            "validation": NumericalData(X_dev, y_dev),
                                            "test": NumericalData(X_test, y_test)})
 
     @staticmethod
-    def create_dataset_feynman_warm_up():
+    def create_datasets_custom_weights(operators: List[Node], n_features: int, max_depth: int, folder: str, weights: List[List[float]]) -> None:
+        size = len(operators) + n_features + 1
+        n_layers = max_depth + 1
+        number_of_distr = 10
+        index = 11
+
+        structure = TreeGrammarStructure(operators, n_features, max_depth)
+
+        train = PicklePersist.decompress_pickle(folder + "/train_trees.pbz2")
+        val = PicklePersist.decompress_pickle(folder + "/validation_trees.pbz2")
+        test = PicklePersist.decompress_pickle(folder + "/test_trees.pbz2")
+        scaler = PicklePersist.decompress_pickle(folder + "/counts_scaler.pbz2")
+
+        structure.set_weights(weights)
+
+        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(train,
+                                                                                                       structure,
+                                                                                                       scaler)
+        X_dev, y_dev = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(val,
+                                                                                                   structure,
+                                                                                                   scaler)
+        X_test, y_test = TreeEncoder.create_dataset_level_wise_counts_as_input_weights_sum_as_target(test,
+                                                                                                     structure,
+                                                                                                     scaler)
+        PicklePersist.compress_pickle(folder + "/counts_weights_sum_trees_" + str(index),
+                                      {"training": NumericalData(X_train, y_train),
+                                       "validation": NumericalData(X_dev, y_dev),
+                                       "test": NumericalData(X_test, y_test)})
+
+        X_train, y_train = TreeEncoder.create_dataset_onehot_as_input_weights_sum_as_target(train,
+                                                                                            structure)
+        X_dev, y_dev = TreeEncoder.create_dataset_onehot_as_input_weights_sum_as_target(val,
+                                                                                        structure)
+        X_test, y_test = TreeEncoder.create_dataset_onehot_as_input_weights_sum_as_target(test,
+                                                                                          structure)
+        PicklePersist.compress_pickle(folder + "/onehot_weights_sum_trees_" + str(index),
+                                      {"training": NumericalData(X_train, y_train),
+                                       "validation": NumericalData(X_dev, y_dev),
+                                       "test": NumericalData(X_test, y_test)})
+
+    @staticmethod
+    def create_dataset_feynman_warm_up(folder: str):
         fey_eq = pd.read_csv("D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquations.csv")
         fey_eq_reg = pd.read_csv(
             "D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsRegularized.csv")
@@ -114,34 +166,49 @@ class DatasetGenerator:
         train_size = 60
 
         feymann_operators = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
-                             node_impl.Sqrt(), node_impl.Exp(),
-                             node_impl.Log(), node_impl.Sin(),
-                             node_impl.Cos(), node_impl.Arcsin(), node_impl.Tanh(), node_impl.UnaryMinus(),
-                             node_impl.Power(), node_impl.Max(), node_impl.Min(), node_impl.Square(),
-                             node_impl.Cube()
-                             ]
+                 node_impl.Sqrt(), node_impl.Exp(),
+                 node_impl.Log(), node_impl.Sin(),
+                 node_impl.Cos(), node_impl.Arccos(), node_impl.Arcsin(), node_impl.Tanh(), node_impl.UnaryMinus(),
+                 node_impl.Power(), node_impl.Max(), node_impl.Min(), node_impl.Square(),
+                 node_impl.Cube()
+                 ]
 
-        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 11)
-        scaler = MaxAbsScaler()
+        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 7)
+        scaler = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/data_genepro_2/counts_scaler.pbz2")
         X_counts_first, X_counts_second, X_onehot_first, X_onehot_second, y = [], [], [], [], []
         n_pairs = len(fey_eq_wu)
+        '''
+        heights = []
+        count = 0
         for i in range(n_pairs):
             first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
-            first_formula.get_readable_repr()
             second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
-            second_formula.get_readable_repr()
-            first_counts = structure_feymann.generate_counts_encoding(first_formula, True)
-            second_counts = structure_feymann.generate_counts_encoding(second_formula, True)
+            if first_formula.get_height() == 8:
+                continue
+            heights.append(first_formula.get_height())
+            heights.append(second_formula.get_height())
+            if first_formula.get_height() == 7:
+                count += 1
+        print(count)
+        print(max(heights))
+        '''
+        cc = 0
+        for i in range(n_pairs):
+            first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
+            second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
+            if first_formula.get_height() == 8:
+                cc += 1
+                continue
+            first_counts = structure_feymann.generate_level_wise_counts_encoding(first_formula, True)
+            second_counts = structure_feymann.generate_level_wise_counts_encoding(second_formula, True)
             first_onehot = structure_feymann.generate_one_hot_encoding(first_formula)
             second_onehot = structure_feymann.generate_one_hot_encoding(second_formula)
             X_counts_first.append(first_counts)
             X_counts_second.append(second_counts)
             X_onehot_first.append(first_onehot)
             X_onehot_second.append(second_onehot)
-        a = X_counts_first[:train_size]
-        b = X_counts_second[:train_size]
-        a.extend(b)
-        scaler.fit(np.array(a))
+        n_pairs -= cc
+
         X_counts_first = scaler.transform(np.array(X_counts_first))
         X_counts_second = scaler.transform(np.array(X_counts_second))
         X_onehot_first = np.array(X_onehot_first)
@@ -165,11 +232,13 @@ class DatasetGenerator:
         X_counts_pairs, X_onehot_pairs = np.array(X_counts_pairs), np.array(X_onehot_pairs)
         y_train, y_test = y[:train_size], y[train_size:]
         X_counts_train, X_counts_test, X_onehot_train, X_onehot_test = X_counts_pairs[:train_size], X_counts_pairs[train_size:], X_onehot_pairs[:train_size], X_onehot_pairs[train_size:]
-        PicklePersist.compress_pickle("data_genepro/feynman_pairs",
+        PicklePersist.compress_pickle(folder+"/feynman_pairs",
                                       {"counts_training": NumericalData(X_counts_train, y_train),
                                        "counts_test": NumericalData(X_counts_test, y_test),
                                        "onehot_training": NumericalData(X_onehot_train, y_train),
-                                       "onehot_test": NumericalData(X_onehot_test, y_test)})
+                                       "onehot_test": NumericalData(X_onehot_test, y_test),
+                                       "counts": NumericalData(X_counts_pairs, y),
+                                       "onehot": NumericalData(X_onehot_pairs, y)})
 
 
     #########################################################################################################

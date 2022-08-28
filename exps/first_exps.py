@@ -320,7 +320,7 @@ if __name__ == '__main__':
 
     #ExpsExecutor.perform_execution_2(device)
 
-
+    '''
     df = ExpsExecutor.merge_dictionaries_of_list([
         ExpsExecutor.create_dict_experiment_nn_ranking_online("",
                                                        "data_genepro/counts_weights_sum_trees_1.pbz2",
@@ -343,7 +343,7 @@ if __name__ == '__main__':
     PicklePersist.compress_pickle("data_genepro/plot_train_size_500", df)
 
     ExpsExecutor.plot_line(df, "Training size", "Footrule", "Representation", "Sampling")
-
+    '''
 
     ##################################
 

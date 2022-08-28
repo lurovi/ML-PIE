@@ -2,6 +2,7 @@ import inspect
 import math
 import random
 
+import numpy as np
 import pandas as pd
 
 from genepro import node_impl
@@ -10,6 +11,8 @@ from genepro.node_impl import Constant, Feature, IfThenElse
 from genepro.util import tree_from_prefix_repr
 from genepro.variation import subtree_mutation
 from sympy import parse_expr, latex
+
+from util.TreeGrammarStructure import TreeGrammarStructure
 
 
 def truncate(number, decimals=0):
@@ -43,9 +46,10 @@ def complexify(tree: Node) -> Node:
         leaf_nodes.append(Feature(i))
         leaf_nodes.append(Constant(truncate(random.random(), 2)))
 
-    mutated_tree = tree
-    while not mutated_tree.get_n_nodes() > tree.get_n_nodes() | mutated_tree.get_height() > tree.get_height():
-        mutated_tree = subtree_mutation(tree_from_prefix_repr(str(tree.get_subtree())), internal_nodes, leaf_nodes)
+    while True:
+        mutated_tree = subtree_mutation(tree_from_prefix_repr(str(tree.get_subtree())), internal_nodes, leaf_nodes, max_depth=7)
+        if mutated_tree.get_n_nodes() >= tree.get_n_nodes():
+            break
 
     return mutated_tree
 
@@ -55,6 +59,10 @@ def formula_to_latex(math_formula):
         "3.141592653589793", "pi")
     return latex(parse_expr(readable_formula, evaluate=False))
 
+
+seed = 1
+random.seed(seed)
+np.random.seed(seed)
 
 data_dir = "dataset\\"
 

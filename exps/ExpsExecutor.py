@@ -96,7 +96,7 @@ class ExpsExecutor:
     #########################################################################################################
 
     @staticmethod
-    def perform_experiment_accuracy_feynman_pairs(device):
+    def perform_experiment_accuracy_feynman_pairs(folder, device):
         counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
         verbose = False
 
@@ -105,7 +105,7 @@ class ExpsExecutor:
         torch.manual_seed(1)
         torch.use_deterministic_algorithms(True)
 
-        data = PicklePersist.decompress_pickle("data_genepro/feynman_pairs.pbz2")
+        data = PicklePersist.decompress_pickle(folder+"/feynman_pairs.pbz2")
         counts_input_layer_size = len(data["counts_training"][0][0])//2
         onehot_input_layer_size = len(data["onehot_training"][0][0])//2
         print(counts_input_layer_size)
