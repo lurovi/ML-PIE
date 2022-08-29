@@ -5,6 +5,7 @@ import torch.nn as nn
 from abc import ABC, abstractmethod
 import numpy as np
 from sklearn.metrics import confusion_matrix, r2_score
+from torch import optim
 from torch.utils.data import Dataset, DataLoader
 
 from deeplearn.comparator.NeuralNetComparator import NeuralNetComparator
@@ -14,16 +15,67 @@ from util.Sort import Sort
 
 
 class Trainer(ABC):
-    def __init__(self, net: nn.Module, device: torch.device, data: Dataset, batch_size: int = 1):
+    def __init__(self, net: nn.Module, device: torch.device, data: Dataset,
+                 optimizer_name: str,
+                 batch_size: int = 1,
+                 learning_rate: float = 0.001, weight_decay: float = 0.00001,
+                 momentum: float = 0, dampening: float = 0, custom_optimizer: torch.optim.Optimizer = None):
         self.__device = device
         self.__batch_size = batch_size
         self.__net = net.to(self.__device)
         self.__data = data
         if self.__data is not None:
             self.__dataloader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True)
+        self.__learning_rate = learning_rate
+        self.__weight_decay = weight_decay
+        self.__momentum = momentum
+        self.__dampening = dampening
+        self.__optimizer_name = optimizer_name
+        if custom_optimizer is not None:
+            self.__optimizer = custom_optimizer
+        else:
+            if self.__optimizer_name == 'adam':
+                self.__optimizer = optim.Adam(self.net_parameters(), lr=self.get_learning_rate(), weight_decay=self.get_weight_decay())
+            elif self.__optimizer_name == 'sgd':
+                self.__optimizer = optim.SGD(self.net_parameters(), lr=self.get_learning_rate(), weight_decay=self.get_weight_decay(),
+                                      momentum=self.get_momentum(), dampening=self.get_dampening())
+            else:
+                raise ValueError(f"{self.__optimizer_name} is not a valid value for argument optimizer.")
+        self.__output_layer_size = net.number_of_output_neurons()
+        self.__input_layer_size = net.number_of_input_neurons()
+
+    def get_output_layer_size(self) -> int:
+        return self.__output_layer_size
+
+    def get_input_layer_size(self) -> int:
+        return self.__input_layer_size
+
+    def get_learning_rate(self) -> float:
+        return self.__learning_rate
+
+    def get_weight_decay(self) -> float:
+        return self.__weight_decay
+
+    def get_momentum(self) -> float:
+        return self.__momentum
+
+    def get_dampening(self) -> float:
+        return self.__dampening
 
     def get_net(self) -> nn.Module:
         return self.__net
+
+    def get_optimizer(self) -> torch.optim.Optimizer:
+        return self.__optimizer
+
+    def optimizer_zero_grad(self) -> None:
+        self.__optimizer.zero_grad()
+
+    def optimizer_step(self) -> None:
+        self.__optimizer.step()
+
+    def net_zero_grad(self) -> None:
+        self.__net.zero_grad()
 
     def get_device(self) -> torch.device:
         return self.__device

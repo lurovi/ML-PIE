@@ -20,8 +20,10 @@ from deeplearn.model.MLPNet import MLPNet
 from deeplearn.model.NeuralNetEvaluator import NeuralNetEvaluator
 from deeplearn.trainer.OnlineTwoPointsCompareDoubleInputTrainer import OnlineTwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
+from deeplearn.trainer.StandardBatchTrainerFactory import StandardBatchTrainerFactory
 from deeplearn.trainer.TwoPointsCompareDoubleInputTrainer import TwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.TwoPointsCompareTrainer import TwoPointsCompareTrainer
+from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
 from util.EvaluationMetrics import EvaluationMetrics
 from util.PicklePersist import PicklePersist
 from util.Sort import Sort
@@ -211,10 +213,11 @@ class ExpsExecutor:
                             ))
 
     @staticmethod
-    def create_dict_experiment_nn_ranking_online(title, file_name_dataset, train_size, activation_func,
+    def create_dict_experiment_nn_ranking_online(title, folder: str, file_name_dataset, train_size, activation_func,
                                              final_activation_func, hidden_layer_sizes, device, uncertainty=False,
-                                             optimizer_name="adam", momentum=0.9):
-        df = {"Training size": [], "Footrule": [], "Representation": [], "Sampling": []}
+                                             optimizer_name="adam", momentum=0.9,
+                                             warmup=None):
+        df = {"Training size": [], "Footrule": [], "Representation": [], "Sampling": [], "Warm-up": []}
         verbose = True
 
         if "/counts_" in file_name_dataset:
@@ -245,6 +248,28 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
         # pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
 
+        if warmup is not None:
+            warmup_plot = "Warm-up"
+            if warmup == "feynman":
+                feynam_data = PicklePersist.decompress_pickle(folder + "/feynman_pairs.pbz2")
+                if repr_plot == "Counts":
+                    warmup_data = feynam_data["counts"]
+                elif repr_plot == "Onehot":
+                    warmup_data = feynam_data["onehot"]
+                pretrainer_factory = TwoPointsCompareTrainerFactory(False, 5)
+            elif warmup == "n_nodes":
+                if repr_plot == "Counts":
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_number_of_nodes_trees.pbz2")["training"].subset(list(range(50)))
+                elif repr_plot == "Onehot":
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/onehot_number_of_nodes_trees.pbz2")["training"].subset(list(range(50)))
+                pretrainer_factory = StandardBatchTrainerFactory(nn.MSELoss(reduction="mean"), False, False, 5)
+            else:
+                raise AttributeError("Bad warmup parameter.")
+        else:
+            warmup_plot = "No Warm-up"
+            warmup_data = None
+            pretrainer_factory = None
+
         for curr_seed in range(1, 10 + 1):
             random.seed(curr_seed)
             np.random.seed(curr_seed)
@@ -252,7 +277,8 @@ class ExpsExecutor:
 
             net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                          hidden_layer_sizes, dropout_prob=0.25)
-            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False,
+                                                    warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
             already_seen = []
             for idx in range(train_size):
                 if not uncertainty:
@@ -269,6 +295,7 @@ class ExpsExecutor:
                 df["Footrule"].append(this_ftrs)
                 df["Representation"].append(repr_plot)
                 df["Sampling"].append(sampl_plot)
+                df["Warm-up"].append(warmup_plot)
         return df
 
     #########################################################################################################

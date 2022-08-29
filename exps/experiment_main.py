@@ -87,7 +87,35 @@ if __name__ == "__main__":
 
     ##############
 
+    df = ExpsExecutor.merge_dictionaries_of_list([
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("", "data_genepro_2",
+                                                       "data_genepro_2/counts_weights_sum_trees_11.pbz2",
+                                                        500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=False, warmup="n_nodes"),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("", "data_genepro_2",
+                                                       "data_genepro_2/counts_weights_sum_trees_11.pbz2",
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=True, warmup="n_nodes"),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("", "data_genepro_2",
+                                                       "data_genepro_2/counts_weights_sum_trees_11.pbz2",
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=False, warmup=None),
+        ExpsExecutor.create_dict_experiment_nn_ranking_online("", "data_genepro_2",
+                                                       "data_genepro_2/counts_weights_sum_trees_11.pbz2",
+                                                       500, nn.ReLU(), nn.Identity(), [220, 140, 80, 26],
+                                                       device, uncertainty=True, warmup=None)
+
+    ])
+    PicklePersist.compress_pickle("data_genepro_2/plot_train_size_number_of_nodes_warmup_500", df)
+
+    ExpsExecutor.plot_line(df, "Training size", "Footrule", "Warm-up", "Sampling")
 
 
     ##############
 
+    #print(NeuralNetEvaluator.evaluate_regression(net_model,
+    #                                             DataLoader(
+    #                                                 PicklePersist.decompress_pickle(
+    #                                                     "data_genepro_2/counts_number_of_nodes_trees.pbz2")[
+    #                                                     "validation"],
+    #                                                 shuffle=True, batch_size=1), device))
