@@ -84,6 +84,7 @@ if __name__ == "__main__":
     # DatasetGenerator.create_datasets_custom_weights(operators, n_features, max_depth, "data_genepro_2", weights)
     # DatasetGenerator.create_dataset_feynman_warm_up("data_genepro_2")
     # print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs("data_genepro_2", device))
+    # ExpsExecutor.perform_execution_2(device)
 
     ##############
 

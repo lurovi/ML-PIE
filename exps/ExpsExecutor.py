@@ -1,16 +1,18 @@
 import math
 from functools import partial
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple
 
 import pandas as pd
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
-from torch.utils.data.dataset import Subset
+from torch.utils.data.dataset import Subset, Dataset
 import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
+import multiprocessing
 import random
 
 from deeplearn.dataset.NumericalData import NumericalData
@@ -21,6 +23,7 @@ from deeplearn.model.NeuralNetEvaluator import NeuralNetEvaluator
 from deeplearn.trainer.OnlineTwoPointsCompareDoubleInputTrainer import OnlineTwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.StandardBatchTrainerFactory import StandardBatchTrainerFactory
+from deeplearn.trainer.TrainerFactory import TrainerFactory
 from deeplearn.trainer.TwoPointsCompareDoubleInputTrainer import TwoPointsCompareDoubleInputTrainer
 from deeplearn.trainer.TwoPointsCompareTrainer import TwoPointsCompareTrainer
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
@@ -99,6 +102,7 @@ class ExpsExecutor:
 
     @staticmethod
     def perform_experiment_accuracy_feynman_pairs(folder, device):
+
         counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
         verbose = False
 
@@ -116,21 +120,16 @@ class ExpsExecutor:
         print(data["counts_training"].count_labels())
         print(data["counts_test"].count_labels())
 
-        for curr_seed in range(1, 10 + 1):
-            random.seed(curr_seed)
-            np.random.seed(curr_seed)
-            torch.manual_seed(curr_seed)
-            counts_test_loader = DataLoader(data["counts_test"], batch_size=1, shuffle=True)
-            onehot_test_loader = DataLoader(data["onehot_test"], batch_size=1, shuffle=True)
-            counts_net = MLPNet(nn.ReLU(), nn.Identity(), counts_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
-            onehot_net = MLPNet(nn.ReLU(), nn.Identity(), onehot_input_layer_size, output_layer_size, [220, 140, 80, 26], 0.20)
-            counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=5)
-            onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=5)
-            counts_trainer.train()
-            onehot_trainer.train()
-            counts_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(counts_trainer.get_net(), counts_test_loader, device))
-            onehot_accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(onehot_trainer.get_net(), onehot_test_loader, device))
-            print(curr_seed)
+        pool = multiprocessing.Pool(4)
+        exec_func = partial(parallel_execution_perform_experiment_accuracy_feynman_pairs,
+                            data=data, counts_input_layer_size=counts_input_layer_size, onehot_input_layer_size=onehot_input_layer_size, output_layer_size=output_layer_size, device=device)
+
+        exec_res = pool.map(exec_func, list(range(10)))
+        pool.close()
+        pool.join()
+        for curr_acc_counts, curr_acc_onehot in exec_res:
+            counts_accs.append(curr_acc_counts)
+            onehot_accs.append(curr_acc_onehot)
 
         return sum(counts_accs) / float(len(counts_accs)), sum(onehot_accs) / float(len(onehot_accs))
 
@@ -160,29 +159,18 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
         pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
 
-        for curr_seed in range(1, 10 + 1):
-            random.seed(curr_seed)
-            np.random.seed(curr_seed)
-            torch.manual_seed(curr_seed)
-
-            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
-                         hidden_layer_sizes, dropout_prob=0.25)
-            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
-            already_seen = []
-            for idx in range(train_size):
-                if not uncertainty:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
-                else:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer, already_seen)
-                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
-                trainer.change_data(pairs_train)
-                loss_epoch_array = trainer.train()
-                if verbose and idx == train_size - 1:
-                    print(f"Loss: {loss_epoch_array[0]}")
-            accs.append(NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(), pairs_valloader, device))
-            ftrs.append(NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device))
+        pool = multiprocessing.Pool(4)
+        exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, train_size=train_size, uncertainty=uncertainty, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
+        exec_res = pool.map(exec_func, list(range(10)))
+        pool.close()
+        pool.join()
+        for curr_acc, curr_ftrs in exec_res:
+            accs.append(curr_acc)
+            ftrs.append(curr_ftrs)
         print(title)
+
         return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
+
 
     @staticmethod
     def perform_execution_2(device):
@@ -218,7 +206,7 @@ class ExpsExecutor:
                                              optimizer_name="adam", momentum=0.9,
                                              warmup=None):
         df = {"Training size": [], "Footrule": [], "Representation": [], "Sampling": [], "Warm-up": []}
-        verbose = True
+        verbose = False
 
         if "/counts_" in file_name_dataset:
             repr_plot = "Counts"
@@ -256,13 +244,13 @@ class ExpsExecutor:
                     warmup_data = feynam_data["counts"]
                 elif repr_plot == "Onehot":
                     warmup_data = feynam_data["onehot"]
-                pretrainer_factory = TwoPointsCompareTrainerFactory(False, 5)
+                pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
             elif warmup == "n_nodes":
                 if repr_plot == "Counts":
-                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_number_of_nodes_trees.pbz2")["training"].subset(list(range(50)))
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_number_of_nodes_trees.pbz2")["training"].subset(list(range(80)))
                 elif repr_plot == "Onehot":
-                    warmup_data = PicklePersist.decompress_pickle(folder + "/onehot_number_of_nodes_trees.pbz2")["training"].subset(list(range(50)))
-                pretrainer_factory = StandardBatchTrainerFactory(nn.MSELoss(reduction="mean"), False, False, 5)
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/onehot_number_of_nodes_trees.pbz2")["training"].subset(list(range(80)))
+                pretrainer_factory = StandardBatchTrainerFactory(nn.MSELoss(reduction="mean"), False, False, 1)
             else:
                 raise AttributeError("Bad warmup parameter.")
         else:
@@ -270,32 +258,26 @@ class ExpsExecutor:
             warmup_data = None
             pretrainer_factory = None
 
-        for curr_seed in range(1, 10 + 1):
-            random.seed(curr_seed)
-            np.random.seed(curr_seed)
-            torch.manual_seed(curr_seed)
-
-            net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
-                         hidden_layer_sizes, dropout_prob=0.25)
-            trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False,
-                                                    warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
-            already_seen = []
-            for idx in range(train_size):
-                if not uncertainty:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
-                else:
-                    pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer, already_seen)
-                pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
-                trainer.change_data(pairs_train)
-                loss_epoch_array = trainer.train()
-                if verbose and idx == train_size - 1:
-                    print(f"Loss: {loss_epoch_array[0]}")
-                this_ftrs = NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
-                df["Training size"].append(idx + 1)
-                df["Footrule"].append(this_ftrs)
-                df["Representation"].append(repr_plot)
-                df["Sampling"].append(sampl_plot)
-                df["Warm-up"].append(warmup_plot)
+        pool = multiprocessing.Pool(1)
+        exec_func = partial(parallel_execution_create_dict_experiment_nn_ranking_online,activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size,
+                                                                output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
+                                                                device=device, pretrainer_factory=pretrainer_factory,
+                                                                warmup_data=warmup_data, train_size=train_size,
+                                                                uncertainty=uncertainty, X_tr=X_tr,
+                                                                y_tr=y_tr, verbose=verbose,
+                                                                valloader=valloader, repr_plot=repr_plot,
+                                                                sampl_plot=sampl_plot, warmup_plot=warmup_plot)
+        exec_res = pool.map(exec_func, list(range(10)))
+        pool.close()
+        pool.join()
+        for l in exec_res:
+            for curr_train_index, curr_ftrs, curr_repr_plot, curr_sampl_plot, curr_warmup_plot in l:
+                df["Training size"].append(curr_train_index)
+                df["Footrule"].append(curr_ftrs)
+                df["Representation"].append(curr_repr_plot)
+                df["Sampling"].append(curr_sampl_plot)
+                df["Warm-up"].append(curr_warmup_plot)
+        print("Done")
         return df
 
     #########################################################################################################
@@ -599,3 +581,96 @@ class ExpsExecutor:
             ftrs.append(trainer.evaluate_ranking(valloader))
         print(title)
         return sum(accs) / float(len(accs)), sum(ftrs) / float(len(ftrs))
+
+
+####################
+# PARALLEL METHODS #
+####################
+
+def parallel_execution_perform_experiment_accuracy_feynman_pairs(exec_ind: int, data: Dict, counts_input_layer_size: int, onehot_input_layer_size, output_layer_size: int, device) -> Tuple:
+    curr_seed = exec_ind + 1
+    random.seed(curr_seed)
+    np.random.seed(curr_seed)
+    torch.manual_seed(curr_seed)
+    counts_test_loader = DataLoader(data["counts_test"], batch_size=1, shuffle=True)
+    onehot_test_loader = DataLoader(data["onehot_test"], batch_size=1, shuffle=True)
+    counts_net = MLPNet(nn.ReLU(), nn.Identity(), counts_input_layer_size, output_layer_size,
+                        [220, 140, 80, 26], 0.20)
+    onehot_net = MLPNet(nn.ReLU(), nn.Identity(), onehot_input_layer_size, output_layer_size,
+                        [220, 140, 80, 26], 0.20)
+    counts_trainer = TwoPointsCompareTrainer(counts_net, device, data["counts_training"], False, max_epochs=1)
+    onehot_trainer = TwoPointsCompareTrainer(onehot_net, device, data["onehot_training"], False, max_epochs=1)
+    counts_trainer.train()
+    onehot_trainer.train()
+    return NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(counts_trainer.get_net(),
+                                                                                   counts_test_loader,
+                                                                                   device), NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(
+        onehot_trainer.get_net(),
+        onehot_test_loader, device)
+
+
+def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activation_func: Any,
+                                                            final_activation_func: Any, input_layer_size: int,
+                                                            output_layer_size: int, hidden_layer_sizes: List,
+                                                            train_size: int, uncertainty: bool, device: Any,
+                                                            X_tr: np.ndarray, y_tr: np.ndarray, verbose: bool,
+                                                            valloader: DataLoader, pairs_valloader: DataLoader) -> Tuple:
+    curr_seed = exec_ind + 1
+    random.seed(curr_seed)
+    np.random.seed(curr_seed)
+    torch.manual_seed(curr_seed)
+
+    net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                 hidden_layer_sizes, dropout_prob=0.25)
+    trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
+    already_seen = []
+    for idx in range(train_size):
+        if not uncertainty:
+            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+        else:
+            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
+                                                                                          already_seen)
+        pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+        trainer.change_data(pairs_train)
+        loss_epoch_array = trainer.train()
+        if verbose and idx == train_size - 1:
+            print(f"Loss: {loss_epoch_array[0]}")
+    return NeuralNetEvaluator.evaluate_pairs_classification_accuracy_with_siso_net(trainer.get_net(),
+                                                                                   pairs_valloader,
+                                                                                   device), NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
+
+
+def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, activation_func: Any,
+                                                                final_activation_func: Any, input_layer_size: int,
+                                                                output_layer_size: int, hidden_layer_sizes: int,
+                                                                device: Any, pretrainer_factory: TrainerFactory,
+                                                                warmup_data: Dataset, train_size: int,
+                                                                uncertainty: bool, X_tr: np.ndarray,
+                                                                y_tr: np.ndarray, verbose: bool,
+                                                                valloader: DataLoader, repr_plot: str,
+                                                                sampl_plot: str, warmup_plot: str) -> List:
+    curr_seed = exec_ind + 1
+    random.seed(curr_seed)
+    np.random.seed(curr_seed)
+    torch.manual_seed(curr_seed)
+
+    net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
+                 hidden_layer_sizes, dropout_prob=0.25)
+    trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False,
+                                            warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
+    already_seen = []
+    results = []
+    for idx in range(train_size):
+        if not uncertainty:
+            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
+        else:
+            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
+                                                                                          already_seen)
+        pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+        trainer.change_data(pairs_train)
+        loss_epoch_array = trainer.train()
+        if verbose and idx == train_size - 1:
+            print(f"Loss: {loss_epoch_array[0]}")
+        this_ftrs = NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
+        results.append((idx + 1, this_ftrs, repr_plot, sampl_plot, warmup_plot))
+    return results
