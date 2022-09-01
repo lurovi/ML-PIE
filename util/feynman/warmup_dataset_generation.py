@@ -12,8 +12,6 @@ from genepro.util import tree_from_prefix_repr
 from genepro.variation import subtree_mutation
 from sympy import parse_expr, latex
 
-from util.TreeGrammarStructure import TreeGrammarStructure
-
 
 def truncate(number, decimals=0):
     """

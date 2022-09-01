@@ -35,7 +35,7 @@ class DatasetGenerator:
             ]
             for _ in range(number_of_distr)
         ]
-        structure = TreeGrammarStructure(operators, n_features, max_depth)
+        structure = TreeGrammarStructure(operators, n_features, max_depth, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
         train = [structure.generate_tree() for _ in range(100000)]
         val = [structure.generate_tree() for _ in range(4000)]
         test = [structure.generate_tree() for _ in range(1000)]
@@ -116,7 +116,7 @@ class DatasetGenerator:
         number_of_distr = 10
         index = 11
 
-        structure = TreeGrammarStructure(operators, n_features, max_depth)
+        structure = TreeGrammarStructure(operators, n_features, max_depth, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
 
         train = PicklePersist.decompress_pickle(folder + "/train_trees.pbz2")
         val = PicklePersist.decompress_pickle(folder + "/validation_trees.pbz2")
@@ -173,7 +173,7 @@ class DatasetGenerator:
                  node_impl.Cube()
                  ]
 
-        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 7)
+        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 7, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
         scaler = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/data_genepro_2/counts_scaler.pbz2")
         X_counts_first, X_counts_second, X_onehot_first, X_onehot_second, y = [], [], [], [], []
         n_pairs = len(fey_eq_wu)

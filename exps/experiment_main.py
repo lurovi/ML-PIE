@@ -37,6 +37,7 @@ import matplotlib.pyplot as plt
 pd.options.display.float_format = '{:.3f}'.format
 pd.set_option('display.max_columns', None)
 
+
 if __name__ == "__main__":
     # Setting random seed to allow scientific reproducibility
     seed = 1
@@ -76,7 +77,7 @@ if __name__ == "__main__":
                  ]
     n_features = 10
     max_depth = 7
-    structure = TreeGrammarStructure(operators, n_features, max_depth)
+    structure = TreeGrammarStructure(operators, n_features, max_depth, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
 
     ##############
 
@@ -87,7 +88,7 @@ if __name__ == "__main__":
     # ExpsExecutor.perform_execution_2(device)
 
     ##############
-
+    '''
     df = ExpsExecutor.merge_dictionaries_of_list([
         ExpsExecutor.create_dict_experiment_nn_ranking_online("", "data_genepro_2",
                                                        "data_genepro_2/counts_weights_sum_trees_11.pbz2",
@@ -110,7 +111,7 @@ if __name__ == "__main__":
     PicklePersist.compress_pickle("data_genepro_2/plot_train_size_number_of_nodes_warmup_500", df)
 
     ExpsExecutor.plot_line(df, "Training size", "Footrule", "Warm-up", "Sampling")
-
+    '''
 
     ##############
 
