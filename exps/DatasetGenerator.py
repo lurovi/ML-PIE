@@ -4,6 +4,7 @@ from typing import List
 import pandas as pd
 
 from deeplearn.dataset.NumericalData import NumericalData
+from deeplearn.dataset.PairSampler import PairSampler
 from genepro.node import Node
 from genepro import node_impl
 from genepro.util import tree_from_prefix_repr
@@ -12,7 +13,7 @@ import numpy as np
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
 from gp.tree.HalfHalfGenerator import HalfHalfGenerator
-from util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
 from util.PicklePersist import PicklePersist
 from util.TreeEncoder import TreeEncoder
 
@@ -149,6 +150,35 @@ class DatasetGenerator:
                                       {"training": NumericalData(X_train, y_train),
                                        "validation": NumericalData(X_dev, y_dev),
                                        "test": NumericalData(X_test, y_test)})
+
+    @staticmethod
+    def create_dataset_n_nodes_add_prop_warm_up_pairs(operators: List[Node], n_features: int, max_depth: int, folder: str):
+        structure = TreeGrammarStructure(operators, n_features, max_depth,
+                                         ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+        scaler = PicklePersist.decompress_pickle(folder + "/counts_scaler.pbz2")
+        train = [structure.generate_tree() for _ in range(5000)]
+
+        # GROUND-TRUTH: NUMBER OF NODES
+
+        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_number_of_nodes_as_target(train,
+                                                                                                           structure,
+                                                                                                           scaler)
+        dataset = NumericalData(X_train, y_train)
+        X_train, y_train = dataset.get_points_and_labels()
+        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 50)
+
+        PicklePersist.compress_pickle(folder + "/counts_number_of_nodes_warmup_pairs", NumericalData(X_train, y_train))
+
+        # GROUND_TRUTH: ADDITIONAL PROPERTIES OF COUNTS ENCODING
+
+        X_train, y_train = TreeEncoder.create_dataset_level_wise_counts_as_input_add_prop_as_target(train,
+                                                                                                    structure,
+                                                                                                    scaler)
+        dataset = NumericalData(X_train, y_train)
+        X_train, y_train = dataset.get_points_and_labels()
+        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 50)
+
+        PicklePersist.compress_pickle(folder + "/counts_add_prop_warmup_pairs", NumericalData(X_train, y_train))
 
     @staticmethod
     def create_dataset_feynman_warm_up(folder: str):

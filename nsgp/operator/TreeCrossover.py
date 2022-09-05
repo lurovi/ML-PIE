@@ -1,7 +1,7 @@
 from pymoo.core.crossover import Crossover
 import numpy as np
 
-from util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
 
 
 class TreeCrossover(Crossover):

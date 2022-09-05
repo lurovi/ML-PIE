@@ -1,6 +1,6 @@
 from pymoo.core.mutation import Mutation
 
-from util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
 
 
 class TreeMutation(Mutation):

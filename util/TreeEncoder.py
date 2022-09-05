@@ -8,7 +8,7 @@ from genepro.node import Node
 from gp.tree.PrimitiveTree import PrimitiveTree
 from gp.tree.Primitive import Primitive
 
-from util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
 
 
 class TreeEncoder:
@@ -82,6 +82,18 @@ class TreeEncoder:
         for t in data:
             X.append(structure.generate_level_wise_counts_encoding_fast(t, True))
             y.append(TreeEncoder.compute_ground_truth_as_weights_sum(t, structure))
+        X = np.array(X, dtype=np.float32)
+        if scaler is not None:
+            X = scaler.transform(X)
+        return X, np.array(y, dtype=np.float32)
+
+    @staticmethod
+    def create_dataset_level_wise_counts_as_input_add_prop_as_target(data: List[Node], structure: TreeGrammarStructure, scaler: Any = None) -> Tuple[np.ndarray, np.ndarray]:
+        X, y = [], []
+        for t in data:
+            enc = structure.generate_level_wise_counts_encoding_fast(t, True)
+            X.append(enc)
+            y.append(sum(enc[-3:]))
         X = np.array(X, dtype=np.float32)
         if scaler is not None:
             X = scaler.transform(X)
