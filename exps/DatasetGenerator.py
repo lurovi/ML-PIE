@@ -165,7 +165,7 @@ class DatasetGenerator:
                                                                                                            scaler)
         dataset = NumericalData(X_train, y_train)
         X_train, y_train = dataset.get_points_and_labels()
-        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 50)
+        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 20)
 
         PicklePersist.compress_pickle(folder + "/counts_number_of_nodes_warmup_pairs", NumericalData(X_train, y_train))
 
@@ -176,7 +176,7 @@ class DatasetGenerator:
                                                                                                     scaler)
         dataset = NumericalData(X_train, y_train)
         X_train, y_train = dataset.get_points_and_labels()
-        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 50)
+        X_train, y_train, _ = PairSampler.random_sampler(X_train, y_train, [], 20)
 
         PicklePersist.compress_pickle(folder + "/counts_add_prop_warmup_pairs", NumericalData(X_train, y_train))
 

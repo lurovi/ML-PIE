@@ -16,4 +16,4 @@ class DuplicateTreeElimination(ElementwiseDuplicateElimination):
     def is_equal(self, a, b) -> bool:
         a_tree: Node = a.X[0]
         b_tree: Node = b.X[0]
-        return a_tree.semantically_equals(b_tree, self.__little_data)
+        return a_tree.semantically_equal(b_tree, self.__little_data)

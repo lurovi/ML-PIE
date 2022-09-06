@@ -247,10 +247,16 @@ class ExpsExecutor:
                 pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
             elif warmup == "n_nodes":
                 if repr_plot == "Counts":
-                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_number_of_nodes_trees.pbz2")["training"].subset(list(range(80)))
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_number_of_nodes_warmup_pairs.pbz2")
                 elif repr_plot == "Onehot":
                     warmup_data = PicklePersist.decompress_pickle(folder + "/onehot_number_of_nodes_trees.pbz2")["training"].subset(list(range(80)))
-                pretrainer_factory = StandardBatchTrainerFactory(nn.MSELoss(reduction="mean"), False, False, 1)
+                pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
+            elif warmup == "add_prop":
+                if repr_plot == "Counts":
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/counts_add_prop_warmup_pairs.pbz2")
+                elif repr_plot == "Onehot":
+                    warmup_data = PicklePersist.decompress_pickle(folder + "/onehot_number_of_nodes_trees.pbz2")["training"].subset(list(range(80)))
+                pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
             else:
                 raise AttributeError("Bad warmup parameter.")
         else:

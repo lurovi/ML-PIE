@@ -76,6 +76,7 @@ class NeuralNetEvaluator:
         y_true = []
         y_pred = []
         net.eval()
+        idx = 0
         with torch.no_grad():
             for batch in dataloader:
                 inputs, labels = batch
@@ -83,9 +84,10 @@ class NeuralNetEvaluator:
                 outputs, _ = net(inputs)
                 for i in range(len(labels)):
                     curr_input, curr_label, curr_output = inputs[i], labels[i].item(), outputs[i][0].item()
-                    y_true.append((curr_input, curr_label))
-                    y_pred.append((curr_input, curr_output))
+                    y_true.append((curr_input, curr_label, idx))
+                    y_pred.append((curr_input, curr_output, idx))
+                    idx += 1
             y_true, _ = Sort.heapsort(y_true, lambda a, b: a[1] < b[1], inplace=False, reverse=False)
             y_pred, _ = Sort.heapsort(y_pred, lambda a, b: a[1] < b[1], inplace=False, reverse=False)
         net.train()
-        return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda a, b: torch.equal(a[0], b[0]))
+        return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda a, b: a[2] == b[2])
