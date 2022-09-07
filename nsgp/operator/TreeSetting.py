@@ -2,7 +2,7 @@ from nsgp.operator.DuplicateTreeElimination import DuplicateTreeElimination
 from nsgp.operator.TreeCrossover import TreeCrossover
 from nsgp.operator.TreeMutation import TreeMutation
 from nsgp.operator.TreeSampling import TreeSampling
-from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
 import numpy as np
 
 

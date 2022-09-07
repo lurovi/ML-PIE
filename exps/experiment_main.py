@@ -39,6 +39,12 @@ pd.set_option('display.max_columns', None)
 
 
 if __name__ == "__main__":
+    P = 18
+    V = 10
+    B = 2
+    L = 8
+    # print(TreeGrammarStructure.encoding_size(P, V, B, L))
+
     # Setting random seed to allow scientific reproducibility
     seed = 1
     random.seed(seed)
@@ -79,13 +85,12 @@ if __name__ == "__main__":
     max_depth = 7
     structure = TreeGrammarStructure(operators, n_features, max_depth, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
 
-
     ##############
 
     # DatasetGenerator.create_datasets(operators, n_features, max_depth, "data_genepro_2")
     # DatasetGenerator.create_datasets_custom_weights(operators, n_features, max_depth, "data_genepro_2", weights)
     # DatasetGenerator.create_dataset_feynman_warm_up("data_genepro_2")
-    DatasetGenerator.create_dataset_n_nodes_add_prop_warm_up_pairs(operators, n_features, max_depth, "data_genepro_2")
+    # DatasetGenerator.create_dataset_n_nodes_add_prop_warm_up_pairs(operators, n_features, max_depth, "data_genepro_2")
     # print(ExpsExecutor.perform_experiment_accuracy_feynman_pairs("data_genepro_2", device))
     # ExpsExecutor.perform_execution_2(device)
 

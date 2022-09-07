@@ -13,7 +13,7 @@ import numpy as np
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
 from gp.tree.HalfHalfGenerator import HalfHalfGenerator
-from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
 from util.PicklePersist import PicklePersist
 from util.TreeEncoder import TreeEncoder
 
@@ -44,10 +44,7 @@ class DatasetGenerator:
         PicklePersist.compress_pickle(folder+"/validation_trees", val)
         PicklePersist.compress_pickle(folder+"/test_trees", test)
         train, val, test = None, None, None
-        PicklePersist.compress_pickle(folder+"/counts_scaler",
-                                      TreeEncoder.create_scaler_on_level_wise_counts(structure, MinMaxScaler(),
-                                                                                     [structure.generate_tree() for _ in
-                                                                                      range(1000000)]))
+        PicklePersist.compress_pickle(folder+"/counts_scaler", structure.generate_scaler_on_level_wise_counts_encoding())
         train = PicklePersist.decompress_pickle(folder+"/train_trees.pbz2")
         val = PicklePersist.decompress_pickle(folder+"/validation_trees.pbz2")
         test = PicklePersist.decompress_pickle(folder+"/test_trees.pbz2")
@@ -269,7 +266,6 @@ class DatasetGenerator:
                                        "onehot_test": NumericalData(X_onehot_test, y_test),
                                        "counts": NumericalData(X_counts_pairs, y),
                                        "onehot": NumericalData(X_onehot_pairs, y)})
-
 
     #########################################################################################################
     # ===================================== DATA GENERATION WITH custom_gp ==================================

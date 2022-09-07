@@ -16,7 +16,8 @@ from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.BinaryClassificationProblem import BinaryClassificationProblem
 from nsgp.problem.RegressionProblem import RegressionProblem
 from nsgp.problem.SimpleFunctionProblem import SimpleFunctionProblem
-from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
+from util.PicklePersist import PicklePersist
 
 
 def example_of_difficult_target_for_regression(x):
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     regression_y = np.array([example_of_difficult_target_for_regression(random_data_X[i]) for i in range(random_data_X.shape[0])])
     binary_classification_y = np.array([example_of_difficult_target_for_binary_classification(random_data_X[i]) for i in range(random_data_X.shape[0])])
     print(collections.Counter(binary_classification_y))
-    duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 10))
+    duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 7))
     duplicates_elimination_little_data_0 = np.array([[0.23], [12], [0.45], [0.45], [1.23], [2.4], [1.8], [0.90]])
 
     node_classes = [c[1] for c in inspect.getmembers(node_impl, inspect.isclass)]
@@ -56,7 +57,7 @@ if __name__ == "__main__":
         node_obj = node_cls()
         internal_nodes.append(node_obj)
 
-    structure = TreeGrammarStructure(internal_nodes, 10, 7, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+    structure = TreeGrammarStructure(internal_nodes, 7, 7, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
     setting = TreeSetting(structure, duplicates_elimination_little_data)
     tree_sampling = setting.get_sampling()
     tree_crossover = setting.get_crossover()
@@ -69,8 +70,9 @@ if __name__ == "__main__":
                       mutation=tree_mutation,
                       eliminate_duplicates=duplicates_elimination
                       )
+    wind_speed = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/windspeed/wind_dataset_split.pbz2")
     start = time.time()
-    res = minimize(BinaryClassificationProblem(random_data_X, binary_classification_y),
+    res = minimize(RegressionProblem(wind_speed["training"][0], wind_speed["training"][1]),
                    algorithm,
                    ('n_gen', 30),
                    seed=10,

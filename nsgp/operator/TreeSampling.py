@@ -1,7 +1,7 @@
 from pymoo.core.sampling import Sampling
 import numpy as np
 
-from nsgp.util.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
 
 
 class TreeSampling(Sampling):

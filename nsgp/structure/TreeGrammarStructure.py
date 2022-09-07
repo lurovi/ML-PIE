@@ -1,11 +1,15 @@
-from typing import List, Dict, Callable, Tuple
+from typing import List, Dict, Callable, Tuple, Any
+
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler
 
 from genepro.variation import generate_random_tree, safe_subtree_mutation, safe_subtree_crossover_two_children
 
 from genepro.node_impl import *
 from genepro.node import Node
 
-from genepro.util import one_hot_encode_tree, counts_encode_tree, counts_level_wise_encode_tree, counts_level_wise_encode_tree_fast
+from genepro.util import one_hot_encode_tree, counts_encode_tree, counts_level_wise_encode_tree, \
+    compute_linear_model_discovered_in_math_formula_interpretability_paper
 
 
 class TreeGrammarStructure:
@@ -120,21 +124,69 @@ class TreeGrammarStructure:
     def get_dict_representation(self, tree: Node) -> Dict[int, str]:
         return tree.get_dict_repr(self.get_max_arity())
 
-    def generate_counts_encoding(self, tree: Node, additional_properties: bool = False) -> List[float]:
+    def generate_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
 
-        return counts_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
-                                  self.get_max_arity(), additional_properties)
+        return counts_encode_tree(tree, self.__symbols, self.get_number_of_features(), additional_properties)
 
-    def generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = False) -> List[float]:
+    def generate_scaler_on_counts_encoding(self) -> Any:
+        scaler = MinMaxScaler(feature_range=(0, 1))
+        data = [self.generate_tree() for _ in range(10 ** 6)]
+        data = [self.generate_counts_encoding(t, True) for t in data]
+        scaler.fit(np.array(data))
+        return scaler
+
+    def generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
 
         return counts_level_wise_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
-                                             self.get_max_arity(), additional_properties)
+                                             additional_properties)
 
-    def generate_level_wise_counts_encoding_fast(self, tree: Node, additional_properties: bool = False) -> List[float]:
-
-        return counts_level_wise_encode_tree_fast(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
-                                                  self.get_max_arity(), additional_properties)
+    def generate_scaler_on_level_wise_counts_encoding(self) -> Any:
+        scaler = MinMaxScaler(feature_range=(0, 1))
+        data = [self.generate_tree() for _ in range(10 ** 6)]
+        data = [self.generate_level_wise_counts_encoding(t, True) for t in data]
+        scaler.fit(np.array(data))
+        return scaler
 
     def generate_one_hot_encoding(self, tree: Node) -> List[float]:
         return one_hot_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
                                    self.get_max_arity())
+
+    def generate_scaler_on_one_hot_encoding(self) -> Any:
+        scaler = Pipeline(steps=[("do_nothing_scaler", None)])
+        data = [self.generate_tree() for _ in range(5)]
+        data = [self.generate_one_hot_encoding(t) for t in data]
+        scaler.fit(np.array(data))
+        return scaler
+
+    def generate_encoding(self, encoding_type: str, tree: Node, additional_properties: bool = True) -> List[float]:
+        if encoding_type == "one_hot":
+            return self.generate_one_hot_encoding(tree)
+        elif encoding_type == "counts":
+            return self.generate_counts_encoding(tree, additional_properties)
+        elif encoding_type == "level_wise_counts":
+            return self.generate_level_wise_counts_encoding(tree, additional_properties)
+        else:
+            raise AttributeError(
+                f"{encoding_type} is not a valid encoding type. Allowed ones are: one_hot, counts, level_wise_counts.")
+
+    def generate_scaler_on_encoding(self, encoding_type: str) -> Any:
+        if encoding_type == "one_hot":
+            return self.generate_scaler_on_one_hot_encoding()
+        elif encoding_type == "counts":
+            return self.generate_scaler_on_counts_encoding()
+        elif encoding_type == "level_wise_counts":
+            return self.generate_scaler_on_level_wise_counts_encoding()
+        else:
+            raise AttributeError(
+                f"{encoding_type} is not a valid encoding type. Allowed ones are: one_hot, counts, level_wise_counts.")
+
+    @staticmethod
+    def encoding_size(num_primitives: int, num_features: int, max_arity: int, max_n_levels: int) -> Tuple[int, int, int]:
+        counts = num_primitives + num_features + 4
+        level_wise_counts = max_n_levels * (num_primitives + num_features + 1) + 3
+        one_hot = int((num_primitives + num_features + 1) * ((max_arity ** max_n_levels - 1) / float(max_arity - 1)))
+        return counts, level_wise_counts, one_hot
+
+    @staticmethod
+    def calculate_linear_model_discovered_in_math_formula_interpretability_paper(tree: Node, difficult_operators: List[str] = None) -> float:
+        return compute_linear_model_discovered_in_math_formula_interpretability_paper(tree, difficult_operators)
