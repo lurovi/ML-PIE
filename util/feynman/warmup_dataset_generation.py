@@ -2,6 +2,7 @@ import inspect
 import math
 import random
 
+import numpy as np
 import pandas as pd
 
 from genepro import node_impl
@@ -10,6 +11,8 @@ from genepro.node_impl import Constant, Feature, IfThenElse
 from genepro.util import tree_from_prefix_repr
 from genepro.variation import subtree_mutation
 from sympy import parse_expr, latex
+
+from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
 
 
 def truncate(number, decimals=0):
@@ -43,9 +46,19 @@ def complexify(tree: Node) -> Node:
         leaf_nodes.append(Feature(i))
         leaf_nodes.append(Constant(truncate(random.random(), 2)))
 
-    mutated_tree = tree
-    while not mutated_tree.get_n_nodes() > tree.get_n_nodes() | mutated_tree.get_height() > tree.get_height():
-        mutated_tree = subtree_mutation(tree_from_prefix_repr(str(tree.get_subtree())), internal_nodes, leaf_nodes)
+    feymann_operators = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
+                         node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
+                         node_impl.Sqrt(), node_impl.Exp(),
+                         node_impl.Log(), node_impl.Sin(),
+                         node_impl.Cos()]
+
+    structure_feymann = TreeGrammarStructure(feymann_operators, 7, 5,
+                                             ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+
+    while True:
+        mutated_tree = structure_feymann.safe_subtree_mutation(tree_from_prefix_repr(str(tree.get_subtree())))
+        if mutated_tree.get_n_nodes() >= tree.get_n_nodes():
+            break
 
     return mutated_tree
 
@@ -56,6 +69,10 @@ def formula_to_latex(math_formula):
     return latex(parse_expr(readable_formula, evaluate=False))
 
 
+seed = 1
+random.seed(seed)
+np.random.seed(seed)
+
 data_dir = "dataset\\"
 
 df = pd.read_csv(data_dir + "FeynmanEquationsRegularized.csv")
@@ -65,9 +82,23 @@ formulae = []
 complexified_formulae = []
 
 for formula in ast_formulae:
-    formulae.append(formula.replace("pi", str(math.pi)))
-    parsed_tree = tree_from_prefix_repr(formula.replace("pi", str(math.pi)))
+    jump = False
+    formu = formula.replace("pi", str(math.pi))
+    parsed_tree = tree_from_prefix_repr(formu)
+    if parsed_tree.get_height() > 5:
+        jump = True
+    feat = parsed_tree.retrieve_features_from_tree()
+    for f in feat:
+        if int(f[2:]) > 6:
+            jump = True
+    oper = parsed_tree.retrieve_operators_from_tree()
+    for o in oper:
+        if o.startswith("arc") or o == "tanh":
+            jump = True
+    if jump:
+        continue
     complexified_tree = complexify(parsed_tree)
+    formulae.append(formu)
     complexified_formulae.append(str(complexified_tree.get_subtree()))
 
 latex_formulae = list(map(formula_to_latex, formulae))

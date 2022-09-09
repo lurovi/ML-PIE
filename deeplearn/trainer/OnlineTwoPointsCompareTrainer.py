@@ -3,29 +3,34 @@ from torch.utils.data import DataLoader, Dataset
 
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
+from deeplearn.model.NeuralNetEvaluator import NeuralNetEvaluator
 from deeplearn.trainer.Trainer import Trainer
-import torch.optim as optim
+from deeplearn.trainer.TrainerFactory import TrainerFactory
 import torch
 import numpy as np
 
 from util.EvaluationMetrics import EvaluationMetrics
+from util.PicklePersist import PicklePersist
 
 
 class OnlineTwoPointsCompareTrainer(Trainer):
     def __init__(self, net, device, data=None,
                  verbose=False,
-                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0):
-        super(OnlineTwoPointsCompareTrainer, self).__init__(net, device, data, 1)
+                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0,
+                 warmup_trainer_factory: TrainerFactory = None, warmup_dataset: Dataset = None):
+        optimizer = None
+        net_model = net
+        if warmup_trainer_factory is not None and warmup_dataset is not None:
+            pre_trainer = warmup_trainer_factory.create_trainer(net_model, device, warmup_dataset, "adam", 1, learning_rate, weight_decay, momentum, dampening, None)
+            pre_trainer.train()
+            net_model = pre_trainer.get_net()
+            optimizer = pre_trainer.get_optimizer()
+        super(OnlineTwoPointsCompareTrainer, self).__init__(net_model, device, data, "adam", 1,
+                                                            learning_rate, weight_decay, momentum, dampening,
+                                                            optimizer)
         if data is not None and len(data) != 1:
             raise AttributeError("Online training requires a training set with exactly one record at time.")
         self.verbose = verbose
-        self.learning_rate = learning_rate
-        self.weight_decay = weight_decay
-        self.momentum = momentum
-        self.dampening = dampening
-        self.output_layer_size = net.number_of_output_neurons()
-        self.input_layer_size = net.number_of_input_neurons()
-        self.optimizer = optim.Adam(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
 
     def change_data(self, data: Dataset) -> None:
         if len(data) != 1:
@@ -37,7 +42,7 @@ class OnlineTwoPointsCompareTrainer(Trainer):
         one = torch.tensor(1, dtype=torch.float32)
         minus_one = torch.tensor(-1, dtype=torch.float32)
         self.set_train_mode()
-        self.optimizer.zero_grad()
+        self.optimizer_zero_grad()
         inputs, labels = self.all_batches()[0]
         inputs, labels = self.to_device(inputs).float(), self.to_device(labels).float()
         single_point_dim = inputs.shape[1] // 2
@@ -51,7 +56,7 @@ class OnlineTwoPointsCompareTrainer(Trainer):
         loss_2 = minus_one * torch.sum(labels * outputs_2)
         loss = loss_1 + loss_2
         loss.backward()
-        self.optimizer.step()
+        self.optimizer_step()
         loss_epoch_arr.append(loss.item())
         if self.verbose:
             print(f"Loss: {loss.item()}.")

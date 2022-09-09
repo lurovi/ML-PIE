@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 from deeplearn.dataset.TreeData import TreeData
 from deeplearn.dataset.TreeDataTwoPointsCompare import TreeDataTwoPointsCompare
 from deeplearn.trainer.Trainer import Trainer
-import torch.optim as optim
+
 import torch
 import numpy as np
 
@@ -15,18 +15,13 @@ class TwoPointsCompareTrainer(Trainer):
     def __init__(self, net, device, data,
                  verbose=False,
                  learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, max_epochs=20, batch_size=1):
-        super(TwoPointsCompareTrainer, self).__init__(net, device, data, batch_size)
+        super(TwoPointsCompareTrainer, self).__init__(net, device, data, "adam", batch_size,
+                                                      learning_rate, weight_decay, momentum, dampening,
+                                                      None)
         self.verbose = verbose
-        self.learning_rate = learning_rate
-        self.weight_decay = weight_decay
-        self.momentum = momentum
-        self.dampening = dampening
         self.max_epochs = max_epochs
-        self.output_layer_size = net.number_of_output_neurons()
-        self.input_layer_size = net.number_of_input_neurons()
 
     def train(self):
-        optimizer = optim.Adam(self.net_parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         loss_epoch_arr = []
         loss = None
         one = torch.tensor(1, dtype=torch.float32)
@@ -34,7 +29,7 @@ class TwoPointsCompareTrainer(Trainer):
         self.set_train_mode()
         for epoch in range(self.max_epochs):
             for batch in self.all_batches():
-                optimizer.zero_grad()
+                self.optimizer_zero_grad()
                 inputs, labels = batch
                 inputs, labels = self.to_device(inputs).float(), self.to_device(labels).float()
                 single_point_dim = inputs.shape[1]//2
@@ -48,7 +43,7 @@ class TwoPointsCompareTrainer(Trainer):
                 loss_2 = minus_one*torch.sum(labels*outputs_2)
                 loss = loss_1 + loss_2
                 loss.backward()
-                optimizer.step()
+                self.optimizer_step()
             loss_epoch_arr.append(loss.item())
             if self.verbose:
                 print(f"Epoch {epoch + 1}/{self.max_epochs}. Loss: {loss.item()}.")
