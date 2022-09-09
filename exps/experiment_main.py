@@ -38,6 +38,32 @@ pd.options.display.float_format = '{:.3f}'.format
 pd.set_option('display.max_columns', None)
 
 
+def plot_encoding_size():
+    P = [12, 16]
+    V = [7, 9]
+    B = [2, 3]
+    L = [6, 7]
+    E = ["Counts", "Level-wise Counts", "One-hot"]
+
+    df = {"Encoding": [], "P-V": [], "B-L": [], "Size": []}
+    for p in P:
+        for v in V:
+            for b in B:
+                for l in L:
+                    cou, levcou, onh = TreeGrammarStructure.encoding_size(p, v, b, l)
+                    df["Encoding"].extend(E)
+                    df["P-V"].extend([str(p)+"-"+str(v)]*3)
+                    df["B-L"].extend([str(b)+"-"+str(l)]*3)
+                    df["Size"].extend([cou, levcou, onh])
+    sns.set(rc={"figure.figsize": (20, 20)})
+    sns.set_style("white")
+    df = pd.DataFrame(df)
+    g = sns.catplot(data=df, x="Encoding", y="Size", col="P-V", hue="B-L", kind="bar", legend=True, palette="colorblind")
+    g.set(yscale='log')
+    plt.show()
+    return g
+
+
 if __name__ == "__main__":
     P = 18
     V = 10
@@ -86,6 +112,8 @@ if __name__ == "__main__":
     structure = TreeGrammarStructure(operators, n_features, max_depth, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
 
     ##############
+
+    #plot_encoding_size()
 
     # DatasetGenerator.create_datasets(operators, n_features, max_depth, "data_genepro_2")
     # DatasetGenerator.create_datasets_custom_weights(operators, n_features, max_depth, "data_genepro_2", weights)

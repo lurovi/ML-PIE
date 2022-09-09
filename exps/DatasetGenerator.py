@@ -44,7 +44,7 @@ class DatasetGenerator:
         PicklePersist.compress_pickle(folder+"/validation_trees", val)
         PicklePersist.compress_pickle(folder+"/test_trees", test)
         train, val, test = None, None, None
-        PicklePersist.compress_pickle(folder+"/counts_scaler", structure.generate_scaler_on_level_wise_counts_encoding())
+        PicklePersist.compress_pickle(folder+"/counts_scaler", structure.generate_scaler_on_encoding("level_wise_counts"))
         train = PicklePersist.decompress_pickle(folder+"/train_trees.pbz2")
         val = PicklePersist.decompress_pickle(folder+"/validation_trees.pbz2")
         test = PicklePersist.decompress_pickle(folder+"/test_trees.pbz2")
@@ -185,51 +185,61 @@ class DatasetGenerator:
         fey_eq_wu = pd.read_csv(
             "D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsWarmUp.csv")
         fey_eq_wu.drop("Unnamed: 0", axis=1, inplace=True)
-        fey_eq_wu.drop(15, axis=0, inplace=True)  # this rows contains x_1_0
-        fey_eq_wu.drop(42, axis=0, inplace=True)  # this rows contains x_2_0
-        fey_eq_wu.drop(23, axis=0, inplace=True)  # this rows contains x_3_0
-        fey_eq_wu.drop(55, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
-        fey_eq_wu.drop(83, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
-        train_size = 60
+        #fey_eq_wu.drop(15, axis=0, inplace=True)  # this rows contains x_1_0
+        #fey_eq_wu.drop(42, axis=0, inplace=True)  # this rows contains x_2_0
+        #fey_eq_wu.drop(23, axis=0, inplace=True)  # this rows contains x_3_0
+        #fey_eq_wu.drop(55, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
+        #fey_eq_wu.drop(83, axis=0, inplace=True)  # this rows contains x_3_1 x_3_2
 
         feymann_operators = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
-                 node_impl.Sqrt(), node_impl.Exp(),
-                 node_impl.Log(), node_impl.Sin(),
-                 node_impl.Cos(), node_impl.Arccos(), node_impl.Arcsin(), node_impl.Tanh(), node_impl.UnaryMinus(),
-                 node_impl.Power(), node_impl.Max(), node_impl.Min(), node_impl.Square(),
-                 node_impl.Cube()
-                 ]
+                             node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
+                             node_impl.Sqrt(), node_impl.Exp(),
+                             node_impl.Log(), node_impl.Sin(),
+                             node_impl.Cos()]
 
-        structure_feymann = TreeGrammarStructure(feymann_operators, 10, 7, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+        structure_feymann = TreeGrammarStructure(feymann_operators, 7, 5, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+
         scaler = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/data_genepro_2/counts_scaler.pbz2")
         X_counts_first, X_counts_second, X_onehot_first, X_onehot_second, y = [], [], [], [], []
         n_pairs = len(fey_eq_wu)
         '''
         heights = []
+        operators_symb, features_symb = [], []
         count = 0
         for i in range(n_pairs):
+            jump = False
             first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
             second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
-            if first_formula.get_height() == 8:
+            if first_formula.get_height() > 5:
+                jump = True
+            feat = first_formula.retrieve_features_from_tree()
+            for f in feat:
+                if int(f[2:]) > 6:
+                    jump = True
+            oper = first_formula.retrieve_operators_from_tree()
+            for o in oper:
+                if o.startswith("arc") or o == "tanh":
+                    jump = True
+            if jump:
                 continue
             heights.append(first_formula.get_height())
-            heights.append(second_formula.get_height())
-            if first_formula.get_height() == 7:
-                count += 1
-        print(count)
-        print(max(heights))
+            #heights.append(second_formula.get_height())
+            operators_symb.extend(first_formula.retrieve_operators_from_tree())
+            features_symb.extend(first_formula.retrieve_features_from_tree())
+        print(list(set(operators_symb)))
+        print(list(set(features_symb)))
+        print(len(heights))
         '''
+        train_size = 50
+
         cc = 0
         for i in range(n_pairs):
             first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
             second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
-            if first_formula.get_height() == 8:
-                cc += 1
-                continue
-            first_counts = structure_feymann.generate_level_wise_counts_encoding(first_formula, True)
-            second_counts = structure_feymann.generate_level_wise_counts_encoding(second_formula, True)
-            first_onehot = structure_feymann.generate_one_hot_encoding(first_formula)
-            second_onehot = structure_feymann.generate_one_hot_encoding(second_formula)
+            first_counts = structure_feymann.generate_encoding("level_wise_counts", first_formula)
+            second_counts = structure_feymann.generate_encoding("level_wise_counts", second_formula)
+            first_onehot = structure_feymann.generate_encoding("one_hot", first_formula)
+            second_onehot = structure_feymann.generate_encoding("one_hot", second_formula)
             X_counts_first.append(first_counts)
             X_counts_second.append(second_counts)
             X_onehot_first.append(first_onehot)

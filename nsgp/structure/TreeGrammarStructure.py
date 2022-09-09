@@ -124,58 +124,58 @@ class TreeGrammarStructure:
     def get_dict_representation(self, tree: Node) -> Dict[int, str]:
         return tree.get_dict_repr(self.get_max_arity())
 
-    def generate_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
+    def __generate_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
 
         return counts_encode_tree(tree, self.__symbols, self.get_number_of_features(), additional_properties)
 
-    def generate_scaler_on_counts_encoding(self) -> Any:
+    def __generate_scaler_on_counts_encoding(self) -> Any:
         scaler = MinMaxScaler(feature_range=(0, 1))
         data = [self.generate_tree() for _ in range(10 ** 6)]
-        data = [self.generate_counts_encoding(t, True) for t in data]
+        data = [self.__generate_counts_encoding(t, True) for t in data]
         scaler.fit(np.array(data))
         return scaler
 
-    def generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
+    def __generate_level_wise_counts_encoding(self, tree: Node, additional_properties: bool = True) -> List[float]:
 
         return counts_level_wise_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
                                              additional_properties)
 
-    def generate_scaler_on_level_wise_counts_encoding(self) -> Any:
+    def __generate_scaler_on_level_wise_counts_encoding(self) -> Any:
         scaler = MinMaxScaler(feature_range=(0, 1))
         data = [self.generate_tree() for _ in range(10 ** 6)]
-        data = [self.generate_level_wise_counts_encoding(t, True) for t in data]
+        data = [self.__generate_level_wise_counts_encoding(t, True) for t in data]
         scaler.fit(np.array(data))
         return scaler
 
-    def generate_one_hot_encoding(self, tree: Node) -> List[float]:
+    def __generate_one_hot_encoding(self, tree: Node) -> List[float]:
         return one_hot_encode_tree(tree, self.__symbols, self.get_number_of_features(), self.get_max_depth(),
                                    self.get_max_arity())
 
-    def generate_scaler_on_one_hot_encoding(self) -> Any:
+    def __generate_scaler_on_one_hot_encoding(self) -> Any:
         scaler = Pipeline(steps=[("do_nothing_scaler", None)])
         data = [self.generate_tree() for _ in range(5)]
-        data = [self.generate_one_hot_encoding(t) for t in data]
+        data = [self.__generate_one_hot_encoding(t) for t in data]
         scaler.fit(np.array(data))
         return scaler
 
     def generate_encoding(self, encoding_type: str, tree: Node, additional_properties: bool = True) -> List[float]:
         if encoding_type == "one_hot":
-            return self.generate_one_hot_encoding(tree)
+            return self.__generate_one_hot_encoding(tree)
         elif encoding_type == "counts":
-            return self.generate_counts_encoding(tree, additional_properties)
+            return self.__generate_counts_encoding(tree, additional_properties)
         elif encoding_type == "level_wise_counts":
-            return self.generate_level_wise_counts_encoding(tree, additional_properties)
+            return self.__generate_level_wise_counts_encoding(tree, additional_properties)
         else:
             raise AttributeError(
                 f"{encoding_type} is not a valid encoding type. Allowed ones are: one_hot, counts, level_wise_counts.")
 
     def generate_scaler_on_encoding(self, encoding_type: str) -> Any:
         if encoding_type == "one_hot":
-            return self.generate_scaler_on_one_hot_encoding()
+            return self.__generate_scaler_on_one_hot_encoding()
         elif encoding_type == "counts":
-            return self.generate_scaler_on_counts_encoding()
+            return self.__generate_scaler_on_counts_encoding()
         elif encoding_type == "level_wise_counts":
-            return self.generate_scaler_on_level_wise_counts_encoding()
+            return self.__generate_scaler_on_level_wise_counts_encoding()
         else:
             raise AttributeError(
                 f"{encoding_type} is not a valid encoding type. Allowed ones are: one_hot, counts, level_wise_counts.")
