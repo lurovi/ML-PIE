@@ -20,13 +20,19 @@ class TreeEncoder(ABC):
         return self.__scaler
 
     def set_scaler(self, scaler: Any) -> None:
-        self.__scaler = scaler
+        if self.__scaler is None:
+            self.__scaler = scaler
+        else:
+            raise AttributeError("Once the scaler has been set, it can't be modified anymore.")
 
     def get_name(self) -> str:
         return self.__name
 
     def set_name(self, name: str) -> None:
-        self.__name = name
+        if self.__name is None or self.__name.strip() == "":
+            self.__name = name
+        else:
+            raise AttributeError("Once the name has been set, it can't be modified anymore.")
 
     def scale(self, encoding: np.ndarray) -> np.ndarray:
         if self.__scaler is None:

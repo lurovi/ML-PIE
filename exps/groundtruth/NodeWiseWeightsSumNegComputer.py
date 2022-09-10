@@ -1,13 +1,18 @@
 from genepro.node import Node
-
+import random
+import numpy as np
 from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 
 from nsgp.structure.TreeStructure import TreeStructure
 
 
 class NodeWiseWeightsSumNegComputer(GroundTruthComputer):
-    def __init__(self, structure: TreeStructure):
+    def __init__(self, structure: TreeStructure, seed: int = None):
         super().__init__()
+        self.__seed = seed
+        if self.__seed is not None:
+            random.seed(self.__seed)
+            np.random.seed(self.__seed)
         self.__structure = structure
         self.__weights = []
         for _ in range(self.__structure.get_max_n_nodes()):

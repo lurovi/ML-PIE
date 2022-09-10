@@ -149,7 +149,7 @@ class TreeStructure:
             raise AttributeError(f"The input tree encoder has a tree structure that is different from current tree structure (self).)")
         if encoder.get_name() in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoder.get_name()} already exists as key of the dictionary of encodings in this tree structure.")
-        self.__encoding_func_dict[encoder.get_name()] = {"encode": encoder.encode, "scaler": encoder.get_scaler(), "scale": encoder.scale}
+        self.__encoding_func_dict[encoder.get_name()] = {"encode": encoder.encode, "scaler": encoder.get_scaler(), "scale": encoder.scale, "size": encoder.size()}
 
     def register_encoders(self, encoders: List[TreeEncoder]) -> None:
         names = []
@@ -164,7 +164,7 @@ class TreeStructure:
         for e in encoders:
             self.register_encoder(e)
 
-    def unregister_encoder(self, encoding_type: str):
+    def unregister_encoder(self, encoding_type: str) -> None:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
         self.__encoding_func_dict.pop(encoding_type)
@@ -183,6 +183,11 @@ class TreeStructure:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
         return self.__encoding_func_dict[encoding_type]["scaler"]
+
+    def get_encoding_size(self, encoding_type: str) -> int:
+        if encoding_type not in self.__encoding_func_dict.keys():
+            raise AttributeError(f"{encoding_type} is not a valid encoding type.")
+        return self.__encoding_func_dict[encoding_type]["size"]
 
     @staticmethod
     def calculate_linear_model_discovered_in_math_formula_interpretability_paper(tree: Node,
