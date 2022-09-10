@@ -1,6 +1,6 @@
 import random
 import torch
-import torch.nn as nn
+
 from typing import List, Tuple
 import numpy as np
 
@@ -11,7 +11,9 @@ from util.Sort import Sort
 class PairSampler:
 
     @staticmethod
-    def random_sampler_with_replacement(X: torch.Tensor, y: torch.Tensor, n_pairs: int) -> Tuple[np.ndarray, np.ndarray]:
+    def random_sampler_with_replacement(X: torch.Tensor, y: torch.Tensor,
+                                        n_pairs: int) -> Tuple[np.ndarray, np.ndarray]:
+        second_label, second_point = None, None
         train_indexes = list(range(len(y)))
         X_pairs, y_pairs = [], []
         for _ in range(n_pairs):
@@ -33,7 +35,9 @@ class PairSampler:
         return np.array(X_pairs, dtype=np.float32), np.array(y_pairs, dtype=np.float32)
 
     @staticmethod
-    def random_sampler(X: torch.Tensor, y: torch.Tensor, already_seen: List[int], n_pairs: int) -> Tuple[np.ndarray, np.ndarray, List[float]]:
+    def random_sampler(X: torch.Tensor, y: torch.Tensor, already_seen: List[int],
+                       n_pairs: int) -> Tuple[np.ndarray, np.ndarray, List[float]]:
+        idx_1, first_point, first_label, second_point, second_label = None, None, None, None, None
         train_indexes = list(range(len(y)))
         X_pairs, y_pairs = [], []
         for _ in range(n_pairs):
@@ -61,7 +65,9 @@ class PairSampler:
         return np.array(X_pairs, dtype=np.float32), np.array(y_pairs, dtype=np.float32), already_seen
 
     @staticmethod
-    def random_sampler_online(X: torch.Tensor, y: torch.Tensor, already_seen: List[int]) -> Tuple[np.ndarray, np.ndarray, List[float]]:
+    def random_sampler_online(X: torch.Tensor, y: torch.Tensor,
+                              already_seen: List[int]) -> Tuple[np.ndarray, np.ndarray, List[float]]:
+        idx_1, first_point, first_label, second_point, second_label = None, None, None, None, None
         train_indexes = list(range(len(y)))
         exit_loop = False
         while not (exit_loop):

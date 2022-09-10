@@ -32,4 +32,6 @@ if __name__ == "__main__":
     X_dev, y_dev = scaler.transform(val_X), val_y.values
     X_test, y_test = scaler.transform(test_X), test_y.values
 
-    PicklePersist.compress_pickle("wind_dataset_split", {"training":(X_train, y_train), "validation":(X_dev, y_dev), "test":(X_test, y_test)})
+    PicklePersist.compress_pickle("wind_dataset_split", {"training": (X_train, y_train),
+                                                         "validation": (X_dev, y_dev),
+                                                         "test": (X_test, y_test)})

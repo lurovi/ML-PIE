@@ -10,21 +10,21 @@ from typing import Tuple, Any, List
 
 class NumericalData(Dataset):
     def __init__(self, X: np.ndarray, y: np.ndarray, scaler: Any = None):
-        self.X = X  # numpy matrix of float values
-        self.y = y  # numpy array
-        self.scaler = scaler  # e.g., StandardScaler(), already fitted to the training data
+        self.__X = X  # numpy matrix of float values
+        self.__y = y  # numpy array
+        self.__scaler = scaler  # e.g., StandardScaler(), already fitted to the training data
         if not(scaler is None):
-            self.X = scaler.transform(self.X)  # transform data
-        self.X = torch.from_numpy(self.X).float()
-        self.y = torch.from_numpy(self.y).float()
+            self.__X = scaler.transform(self.__X)  # transform data
+        self.__X = torch.from_numpy(self.__X).float()
+        self.__y = torch.from_numpy(self.__y).float()
 
     def __len__(self) -> int:
         # gets the number of rows in the dataset
-        return len(self.y)
+        return len(self.__y)
 
     def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
         # gets a data point from the dataset as torch tensor array along with the label
-        return self.X[idx], self.y[idx]
+        return self.__X[idx], self.__y[idx]
 
     def subset(self, indexes: List[int]) -> NumericalData:
         X, y = [], []
@@ -72,4 +72,4 @@ class NumericalData(Dataset):
         return NumericalData(np.array(new_X, dtype=np.float32), np.array(new_y, dtype=np.float32), scaler=None)
 
     def count_labels(self) -> Counter:
-        return Counter(self.y.tolist())
+        return Counter(self.__y.tolist())

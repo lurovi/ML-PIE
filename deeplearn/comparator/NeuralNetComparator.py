@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 
 class NeuralNetComparator(ABC):
     def __init__(self, net: nn.Module):
-        self.__net = net
+        self.__net: nn.Module = net
 
     def apply(self, data: torch.Tensor) -> torch.Tensor:
         return self.__net(data)

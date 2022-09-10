@@ -12,7 +12,9 @@ from typing import Tuple, Dict
 class NeuralNetEvaluator:
 
     @staticmethod
-    def evaluate_softmax_classification_accuracy_f1(net: nn.Module, dataloader: DataLoader, device: torch.device) -> Tuple[float, Dict[int, Dict[str, float]]]:
+    def evaluate_softmax_classification_accuracy_f1(net: nn.Module,
+                                                    dataloader: DataLoader,
+                                                    device: torch.device) -> Tuple[float, Dict[int, Dict[str, float]]]:
         y_true = []
         y_pred = []
         net.eval()
@@ -29,7 +31,9 @@ class NeuralNetEvaluator:
         return EvaluationMetrics.model_accuracy(cf_matrix)
 
     @staticmethod
-    def evaluate_pairs_classification_accuracy_with_siso_net(net: nn.Module, dataloader: DataLoader, device: torch.device) -> float:
+    def evaluate_pairs_classification_accuracy_with_siso_net(net: nn.Module,
+                                                             dataloader: DataLoader,
+                                                             device: torch.device) -> float:
         y_true = []
         y_pred = []
         net.eval()

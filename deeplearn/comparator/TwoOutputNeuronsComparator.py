@@ -6,7 +6,7 @@ from deeplearn.comparator.NeuralNetComparator import NeuralNetComparator
 
 class TwoOutputNeuronsComparator(NeuralNetComparator):
     def __init__(self, net: nn.Module):
-        super(TwoOutputNeuronsComparator, self).__init__(net)
+        super().__init__(net=net)
 
     def compare(self, point_1: Any, point_2: Any) -> bool:
         point_1, point_2 = point_1[0], point_2[0]

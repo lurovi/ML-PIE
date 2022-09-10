@@ -16,7 +16,7 @@ from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.BinaryClassificationProblem import BinaryClassificationProblem
 from nsgp.problem.RegressionProblem import RegressionProblem
 from nsgp.problem.SimpleFunctionProblem import SimpleFunctionProblem
-from nsgp.structure.TreeGrammarStructure import TreeGrammarStructure
+from nsgp.structure.TreeStructure import TreeGrammarStructure
 from util.PicklePersist import PicklePersist
 
 

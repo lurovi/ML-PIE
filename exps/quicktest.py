@@ -2,13 +2,21 @@
 import numpy as np
 import torch
 from sklearn.metrics import confusion_matrix
+from sklearn.preprocessing import MinMaxScaler
 from torch import nn
 
 from exps.ExpsExecutor import ExpsExecutor
-from gp.tree import Primitive
+
 from util.Sort import Sort
 
 if __name__ == "__main__":
+    scaler = MinMaxScaler()
+    a = np.random.uniform(-5, 5, (100, 5))
+    scaler.fit(a)
+    l = np.array([34, 23, 21, -33, -12]).reshape(1, -1)
+    l = scaler.transform(l)[0]
+    print(l)
+    exit(1)
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
 
     print(np.all(a == 0.0))

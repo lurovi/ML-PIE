@@ -1,19 +1,33 @@
+from typing import Callable, List
+import torch
+import torch.nn as nn
+from torch.utils.data import Dataset
 from deeplearn.trainer.Trainer import Trainer
 
 
 class StandardBatchTrainer(Trainer):
-    def __init__(self, net, device, loss_fn, data, optimizer_name='adam',
-                 is_classification_task=False, verbose=False,
-                 learning_rate=0.001, weight_decay=0.00001, momentum=0, dampening=0, batch_size=1, max_epochs=20):
-        super(StandardBatchTrainer, self).__init__(net, device, data, optimizer_name, batch_size,
-                                                   learning_rate, weight_decay, momentum, dampening,
-                                                   None)
-        self.is_classification_task = is_classification_task
-        self.verbose = verbose
-        self.loss_fn = loss_fn
-        self.max_epochs = max_epochs
+    def __init__(self, net: nn.Module,
+                 device: torch.device,
+                 loss_fn: Callable,
+                 data: Dataset,
+                 optimizer_name: str = 'adam',
+                 is_classification_task: bool = False,
+                 verbose: bool = False,
+                 learning_rate: float = 0.001,
+                 weight_decay: float = 0.00001,
+                 momentum: float = 0,
+                 dampening: float = 0,
+                 batch_size: int = 1,
+                 max_epochs: int = 20):
+        super().__init__(net=net, device=device, data=data, optimizer_name=optimizer_name, batch_size=batch_size,
+                         learning_rate=learning_rate, weight_decay=weight_decay,
+                         momentum=momentum, dampening=dampening, custom_optimizer=None)
+        self.is_classification_task: bool = is_classification_task
+        self.verbose: bool = verbose
+        self.loss_fn: Callable = loss_fn
+        self.max_epochs: int = max_epochs
 
-    def train(self):
+    def fit(self) -> List[float]:
         loss_epoch_arr = []
         loss = None
         self.set_train_mode()
