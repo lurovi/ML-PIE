@@ -42,7 +42,7 @@ class TreeStructure:
         self.__terminals: List[Node] = self.__features + self.__constants
         self.__n_terminals: int = len(self.__terminals) + (1 if self.__ephemeral_func is not None else 0)
 
-        self.__encoding_func_dict: Dict = {}
+        self.__encoding_func_dict: Dict[str, TreeEncoder] = {}
 
     def get_encoding_type_strings(self) -> List[str]:
         return list(self.__encoding_func_dict.keys())
@@ -145,18 +145,14 @@ class TreeStructure:
         return tree.get_dict_repr(self.get_max_arity())
 
     def register_encoder(self, encoder: TreeEncoder) -> None:
-        if self != encoder.get_structure():
-            raise AttributeError(f"The input tree encoder has a tree structure that is different from current tree structure (self).)")
         if encoder.get_name() in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoder.get_name()} already exists as key of the dictionary of encodings in this tree structure.")
-        self.__encoding_func_dict[encoder.get_name()] = {"encode": encoder.encode, "scaler": encoder.get_scaler(), "scale": encoder.scale, "size": encoder.size()}
+        self.__encoding_func_dict[encoder.get_name()] = encoder
 
     def register_encoders(self, encoders: List[TreeEncoder]) -> None:
         names = []
         for e in encoders:
             names.append(e.get_name())
-            if self != e.get_structure():
-                raise AttributeError(f"The input tree encoder has a tree structure that is different from current tree structure (self).)")
             if e.get_name() in self.__encoding_func_dict.keys():
                 raise AttributeError(f"{e.get_name()} already exists as key of the dictionary of encodings in this tree structure.")
         if len(names) != len(list(set(names))):
@@ -172,22 +168,22 @@ class TreeStructure:
     def generate_encoding(self, encoding_type: str, tree: Node, apply_scaler: bool = True) -> np.ndarray:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
-        return self.__encoding_func_dict[encoding_type]["encode"](tree, apply_scaler)
+        return self.__encoding_func_dict[encoding_type].encode(tree, apply_scaler)
 
     def scale_encoding(self, encoding_type: str, encoding: np.ndarray) -> np.ndarray:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
-        return self.__encoding_func_dict[encoding_type]["scale"](encoding)
+        return self.__encoding_func_dict[encoding_type].scale(encoding)
 
     def get_scaler_on_encoding(self, encoding_type: str) -> Any:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
-        return self.__encoding_func_dict[encoding_type]["scaler"]
+        return self.__encoding_func_dict[encoding_type].get_scaler()
 
     def get_encoding_size(self, encoding_type: str) -> int:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
-        return self.__encoding_func_dict[encoding_type]["size"]
+        return self.__encoding_func_dict[encoding_type].size()
 
     @staticmethod
     def calculate_linear_model_discovered_in_math_formula_interpretability_paper(tree: Node,

@@ -9,6 +9,7 @@ from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 class MathElasticModelComputer(GroundTruthComputer):
     def __init__(self, difficult_operators: List[str] = None):
         super().__init__()
+        self.set_name("elastic_model")
         self.__difficult_operators = difficult_operators
 
     def compute(self, tree: Node) -> float:

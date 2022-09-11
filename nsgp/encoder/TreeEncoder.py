@@ -4,17 +4,12 @@ from typing import Any, Tuple
 import numpy as np
 
 from genepro.node import Node
-from nsgp.structure.TreeStructure import TreeStructure
 
 
 class TreeEncoder(ABC):
-    def __init__(self, structure: TreeStructure):
-        self.__structure: TreeStructure = structure
+    def __init__(self):
         self.__scaler: Any = None
         self.__name: str = None
-
-    def get_structure(self) -> TreeStructure:
-        return self.__structure
 
     def get_scaler(self) -> Any:
         return self.__scaler

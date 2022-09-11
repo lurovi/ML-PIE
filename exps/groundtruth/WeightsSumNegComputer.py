@@ -9,6 +9,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 class WeightsSumNegComputer(GroundTruthComputer):
     def __init__(self, structure: TreeStructure, seed: int = None):
         super().__init__()
+        self.set_name("weights_sum")
         self.__seed = seed
         if self.__seed is not None:
             random.seed(self.__seed)

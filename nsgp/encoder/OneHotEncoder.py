@@ -10,9 +10,10 @@ from nsgp.structure.TreeStructure import TreeStructure
 
 class OneHotEncoder(TreeEncoder):
     def __init__(self, structure: TreeStructure):
-        super().__init__(structure=structure)
+        super().__init__()
+        self.__structure = structure
         scaler = Pipeline(steps=[("do_nothing_scaler", None)])
-        data = [self.get_structure().generate_tree() for _ in range(5)]
+        data = [self.__structure.generate_tree() for _ in range(5)]
         data = [self.encode(t, False) for t in data]
         scaler.fit(np.array(data))
         self.set_scaler(scaler)
@@ -20,11 +21,11 @@ class OneHotEncoder(TreeEncoder):
 
     def encode(self, tree: Node, apply_scaler: bool = True) -> np.ndarray:
         a = np.array(one_hot_encode_tree(tree,
-                                     [self.get_structure().get_symbol(i) for i in range(self.get_structure().get_number_of_operators())],
-                                     self.get_structure().get_number_of_features(),
-                                     self.get_structure().get_max_depth(),
-                                     self.get_structure().get_max_arity()))
+                                     [self.__structure.get_symbol(i) for i in range(self.__structure.get_number_of_operators())],
+                                     self.__structure.get_number_of_features(),
+                                     self.__structure.get_max_depth(),
+                                     self.__structure.get_max_arity()))
         return a
 
     def size(self) -> int:
-        return int((self.get_structure().get_number_of_operators() + self.get_structure().get_number_of_features() + 1) * self.get_structure().get_max_n_nodes())
+        return int((self.__structure.get_number_of_operators() + self.__structure.get_number_of_features() + 1) * self.__structure.get_max_n_nodes())

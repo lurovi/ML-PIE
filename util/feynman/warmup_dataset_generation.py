@@ -9,10 +9,10 @@ from genepro import node_impl
 from genepro.node import Node
 from genepro.node_impl import Constant, Feature, IfThenElse
 from genepro.util import tree_from_prefix_repr
-from genepro.variation import subtree_mutation
+
 from sympy import parse_expr, latex
 
-from nsgp.structure.TreeStructure import TreeGrammarStructure
+from nsgp.structure.TreeStructure import TreeStructure
 
 
 def truncate(number, decimals=0):
@@ -52,7 +52,7 @@ def complexify(tree: Node) -> Node:
                          node_impl.Log(), node_impl.Sin(),
                          node_impl.Cos()]
 
-    structure_feymann = TreeGrammarStructure(feymann_operators, 7, 5,
+    structure_feymann = TreeStructure(feymann_operators, 7, 5,
                                              ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
 
     while True:
@@ -69,42 +69,45 @@ def formula_to_latex(math_formula):
     return latex(parse_expr(readable_formula, evaluate=False))
 
 
-seed = 1
-random.seed(seed)
-np.random.seed(seed)
+if __name__ == "__main__":
+    seed = 42
+    random.seed(seed)
+    np.random.seed(seed)
 
-data_dir = "dataset\\"
+    data_dir = "dataset\\"
 
-df = pd.read_csv(data_dir + "FeynmanEquationsRegularized.csv")
-ast_formulae = df['AST_formula'].tolist()
+    df = pd.read_csv(data_dir + "FeynmanEquationsRegularized.csv")
+    ast_formulae = df['AST_formula'].tolist()
 
-formulae = []
-complexified_formulae = []
+    formulae = []
+    complexified_formulae = []
 
-for formula in ast_formulae:
-    jump = False
-    formu = formula.replace("pi", str(math.pi))
-    parsed_tree = tree_from_prefix_repr(formu)
-    if parsed_tree.get_height() > 5:
-        jump = True
-    feat = parsed_tree.retrieve_features_from_tree()
-    for f in feat:
-        if int(f[2:]) > 6:
+    for formula in ast_formulae:
+        jump = False
+        formu = formula.replace("pi", str(math.pi))
+        parsed_tree = tree_from_prefix_repr(formu)
+        if parsed_tree.get_height() > 5:
             jump = True
-    oper = parsed_tree.retrieve_operators_from_tree()
-    for o in oper:
-        if o.startswith("arc") or o == "tanh":
-            jump = True
-    if jump:
-        continue
-    complexified_tree = complexify(parsed_tree)
-    formulae.append(formu)
-    complexified_formulae.append(str(complexified_tree.get_subtree()))
+        feat = parsed_tree.retrieve_features_from_tree()
+        for f in feat:
+            if int(f[2:]) > 6:
+                jump = True
+        oper = parsed_tree.retrieve_operators_from_tree()
+        for o in oper:
+            if o.startswith("arc") or o == "tanh":
+                jump = True
+        if jump:
+            continue
+        complexified_tree = complexify(parsed_tree)
+        formulae.append(formu)
+        complexified_formulae.append(str(complexified_tree.get_subtree()))
 
-latex_formulae = list(map(formula_to_latex, formulae))
-latex_complexified_formulae = list(map(formula_to_latex, complexified_formulae))
+    latex_formulae = list(map(formula_to_latex, formulae))
+    latex_complexified_formulae = list(map(formula_to_latex, complexified_formulae))
 
-d = {'Formula': formulae, 'Complexified_formula': complexified_formulae, 'Latex_formula': latex_formulae,
-     'Latex_complexified_formula': latex_complexified_formulae}
+    d = {'Formula': formulae, 'Complexified_formula': complexified_formulae, 'Latex_formula': latex_formulae,
+         'Latex_complexified_formula': latex_complexified_formulae}
 
-pd.DataFrame(data=d).to_csv(data_dir + "FeynmanEquationsWarmUp.csv")
+    d = pd.DataFrame(data=d)
+
+    d.to_csv(data_dir + "FeynmanEquationsWarmUp.csv", index=False)
