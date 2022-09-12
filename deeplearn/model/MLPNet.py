@@ -40,13 +40,14 @@ class MLPNet(nn.Module):
         self.__fc_model: Any = nn.Sequential(*fc_components[:-2])
         self.__last_layer: Any = nn.Sequential(fc_components[-2], fc_components[-1])
 
-    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, List[float]]:
+    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
         uncertainty: List[float] = []
         x: torch.Tensor = self.__fc_model(x)
+        z: torch.Tensor = None
         if self.training:
             x = self.__last_layer(x)
         else:
-            z: torch.Tensor = x.detach().clone()
+            z = x.detach().clone()
             x = self.__last_layer(x)
             uncert: List = [self.__last_layer(nn.Dropout(self.__dropout_prob)(z)) for _ in range(self.__num_uncertainty_samples)]
             for i in range(x.size(0)):
@@ -54,7 +55,7 @@ class MLPNet(nn.Module):
                 for j in range(len(uncert)):
                     curr_uncert.append(uncert[j][i][0].item())
                 uncertainty.append(statistics.pstdev(curr_uncert))
-        return x, uncertainty
+        return x, uncertainty, z
 
     def number_of_output_neurons(self) -> int:
         return self.__output_layer_size

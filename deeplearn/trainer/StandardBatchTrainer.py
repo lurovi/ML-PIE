@@ -40,7 +40,7 @@ class StandardBatchTrainer(Trainer):
                 else:
                     labels = self.to_device(labels).float().reshape((labels.shape[0], 1))
                 self.optimizer_zero_grad()
-                outputs, _ = self.apply(inputs)
+                outputs, _, _ = self.apply(inputs)
                 loss = self.loss_fn(outputs, labels)
                 loss.backward()
                 self.optimizer_step()

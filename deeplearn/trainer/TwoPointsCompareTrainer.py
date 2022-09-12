@@ -38,10 +38,10 @@ class TwoPointsCompareTrainer(Trainer):
                 single_point_dim = inputs.shape[1]//2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = self.apply(inputs_1)
+                outputs_1, _, _ = self.apply(inputs_1)
                 outputs_1 = outputs_1.flatten()
                 loss_1 = one*torch.sum(labels*outputs_1)
-                outputs_2, _ = self.apply(inputs_2)
+                outputs_2, _, _ = self.apply(inputs_2)
                 outputs_2 = outputs_2.flatten()
                 loss_2 = minus_one*torch.sum(labels*outputs_2)
                 loss = loss_1 + loss_2

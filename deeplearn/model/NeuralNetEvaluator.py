@@ -22,7 +22,7 @@ class NeuralNetEvaluator:
             for batch in dataloader:
                 inputs, labels = batch
                 inputs, labels = inputs.to(device).float(), labels.to(device).float()
-                outputs, _ = net(inputs)
+                outputs, _, _ = net(inputs)
                 pred = outputs.data.argmax(dim=1).float()
                 y_pred.extend(pred.tolist())
                 y_true.extend(labels.tolist())
@@ -44,9 +44,9 @@ class NeuralNetEvaluator:
                 single_point_dim = inputs.shape[1] // 2
                 inputs_1 = inputs[:, :single_point_dim]
                 inputs_2 = inputs[:, single_point_dim:]
-                outputs_1, _ = net(inputs_1)
+                outputs_1, _, _ = net(inputs_1)
                 outputs_1 = outputs_1.flatten()
-                outputs_2, _ = net(inputs_2)
+                outputs_2, _, _ = net(inputs_2)
                 outputs_2 = outputs_2.flatten()
                 pred = []
                 for i in range(len(outputs_1)):
@@ -69,7 +69,7 @@ class NeuralNetEvaluator:
             for batch in dataloader:
                 inputs, labels = batch
                 inputs, labels = inputs.to(device).float(), labels.to(device).float()
-                outputs, _ = net(inputs)
+                outputs, _, _ = net(inputs)
                 y_pred.extend(outputs.flatten().tolist())
                 y_true.extend(labels.tolist())
         net.train()
@@ -85,7 +85,7 @@ class NeuralNetEvaluator:
             for batch in dataloader:
                 inputs, labels = batch
                 inputs, labels = inputs.to(device).float(), labels.to(device).float()
-                outputs, _ = net(inputs)
+                outputs, _, _ = net(inputs)
                 for i in range(len(labels)):
                     curr_input, curr_label, curr_output = inputs[i], labels[i].item(), outputs[i][0].item()
                     y_true.append((curr_input, curr_label, idx))

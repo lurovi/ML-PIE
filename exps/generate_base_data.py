@@ -3,6 +3,7 @@ import random
 from functools import partial
 
 from exps.DatasetGenerator import DatasetGenerator
+from exps.ExpsExecutor import ExpsExecutor
 from exps.groundtruth.InterpretabilityShapeComputer import InterpretabilityShapeComputer
 from exps.groundtruth.LevelWiseWeightsSumNegComputer import LevelWiseWeightsSumNegComputer
 from exps.groundtruth.LispExprHashComputer import LispExprHashComputer
@@ -23,6 +24,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 import pandas as pd
 import numpy as np
 
+from util.PlotGenerator import PlotGenerator
 
 pd.options.display.float_format = '{:.3f}'.format
 pd.set_option('display.max_columns', None)
@@ -60,17 +62,18 @@ if __name__ == "__main__":
     ground_truths = [NumNodesNegComputer(), InterpretabilityShapeComputer(), MathElasticModelComputer(),
                      LispExprHashComputer(), WeightsSumNegComputer(structure, 100),
                      LevelWiseWeightsSumNegComputer(structure, 100), NodeWiseWeightsSumNegComputer(structure, 100)]
+    ground_truths_names = [g.get_name() for g in ground_truths]
 
     set_random_seed(101)
 
-    data_generator = DatasetGenerator("tree_data_1", structure, 4000, 700, 500, 101)
+    data_generator = DatasetGenerator("tree_data_1", structure, 50, 10, 10, 101)
 
     data_generator.generate_tree_encodings(True)
 
     data_generator.generate_ground_truth(ground_truths)
 
     for e in structure.get_encoding_type_strings():
-        for i in range(2):
+        for i in range(3):
             set_random_seed(102)
             data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i])
 
@@ -80,3 +83,17 @@ if __name__ == "__main__":
                                                    "feynman_pairs", 20)
 
     data_generator.persist("datasets")
+
+    exp_exec = ExpsExecutor(data_generator, 200, 15)
+    df_list = []
+    for enc in structure.get_encoding_type_strings():
+        for gro in ground_truths_names:
+            for unc in ["random", "uncertainty", "uncertainty_L2"]:
+                for war in [None, "feynman", "elastic"]:
+                    df_list.append(exp_exec.create_dict_experiment_nn_ranking_online("tree_data_1", enc, gro,
+                                                 5, nn.ReLU(),
+                                             nn.Identity(), [220, 150, 70, 20], device, sampling=unc,
+                                             warmup=war))
+
+    df = PlotGenerator.merge_dictionaries_of_list(df_list)
+    print(pd.DataFrame(df).head(20))

@@ -91,7 +91,7 @@ class Trainer(ABC):
     def net_parameters(self) -> Iterator[Any]:
         return self.__net.parameters()
 
-    def apply(self, X: torch.Tensor) -> Tuple[torch.Tensor, List[float]]:
+    def apply(self, X: torch.Tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
         return self.__net(X)
 
     def to_device(self, X: torch.Tensor) -> torch.Tensor:
@@ -123,11 +123,11 @@ class Trainer(ABC):
     def create_comparator(self, comparator_factory: NeuralNetComparatorFactory) -> NeuralNetComparator:
         return comparator_factory.create(self.__net)
 
-    def predict(self, X: torch.Tensor) -> Tuple[torch.Tensor, List[float]]:
+    def predict(self, X: torch.Tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
         self.set_eval_mode()
         with torch.no_grad():
             X: torch.Tensor = self.to_device(X)
-            res: Tuple[torch.Tensor, List[float]] = self.apply(X)
+            res: Tuple[torch.Tensor, List[float], torch.Tensor] = self.apply(X)
         self.set_train_mode()
         return res
 

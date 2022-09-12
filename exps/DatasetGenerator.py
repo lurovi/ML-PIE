@@ -145,7 +145,7 @@ class DatasetGenerator:
             test = np.array([gro.compute(self.__test[i])
                              for i in range(self.__test_size)])
             name_gro = gro.get_name()
-            self.__data_encoded[name_gro] = {"training": train, "validation": val, "test": test}
+            self.__ground_truths[name_gro] = {"training": train, "validation": val, "test": test}
 
     def create_dataset_warm_up_from_encoding_ground_truth(self, n_pairs: int, encoding_type: str, ground_truth: GroundTruthComputer) -> None:
         trees = [self.__structure.generate_tree() for _ in range(n_pairs * 4)]
@@ -157,6 +157,13 @@ class DatasetGenerator:
         if encoding_type not in self.__warm_up_data:
             self.__warm_up_data[encoding_type] = {}
         self.__warm_up_data[encoding_type][ground_truth.get_name()] = NumericalData(X, y)
+
+    def get_warm_up_data(self, encoding_type: str, ground_truth_type: str) -> NumericalData:
+        if encoding_type not in self.__warm_up_data.keys():
+            raise AttributeError(f"{encoding_type} is not a valid encoding type.")
+        if ground_truth_type not in self.__warm_up_data.keys():
+            raise AttributeError(f"{ground_truth_type} is not a valid ground truth type.")
+        return self.__warm_up_data[encoding_type][ground_truth_type]
 
     def create_dataset_warm_up_from_csv(self, file_path: str, file_name: str, train_size: int):
         fey_eq_wu = pd.read_csv(file_path)

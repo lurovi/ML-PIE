@@ -92,7 +92,7 @@ class PairSampler:
 
     @staticmethod
     def uncertainty_sampler_online(X: torch.Tensor, y: torch.Tensor, trainer: Trainer, already_seen: List[int]) -> Tuple[np.ndarray, np.ndarray, List[float]]:
-        _, uncertainty = trainer.predict(X)
+        _, uncertainty, _ = trainer.predict(X)
         _, ind_points = Sort.heapsort(uncertainty, lambda a, b: a < b, inplace=False, reverse=True)
         count = 0
         i = 0
@@ -104,6 +104,32 @@ class PairSampler:
                 points.append((X[ind_points[i]], y[ind_points[i]].item()))
             i += 1
         first_point, first_label = points[0]
+        second_point, second_label = points[1]
+        if first_label >= second_label:
+            curr_feedback = np.array([-1], dtype=np.float32)
+        else:
+            curr_feedback = np.array([1], dtype=np.float32)
+        curr_point = np.array([first_point.tolist() + second_point.tolist()], dtype=np.float32)
+        return curr_point, curr_feedback, already_seen
+
+    @staticmethod
+    def uncertainty_L2_sampler_online(X: torch.Tensor, y: torch.Tensor, trainer: Trainer, already_seen: List[int]) -> Tuple[np.ndarray, np.ndarray, List[float]]:
+        _, uncertainty, embeddings = trainer.predict(X)
+        _, ind_points = Sort.heapsort(uncertainty, lambda a, b: a < b, inplace=False, reverse=True)
+        count = 0
+        i = 0
+        points = []
+        while count < 1 and i < len(ind_points):
+            if ind_points[i] not in already_seen:
+                already_seen.append(ind_points[i])
+                count += 1
+                points.append((X[ind_points[i]], y[ind_points[i]].item()))
+            i += 1
+        first_point, first_label = points[0]
+        first_emb = embeddings[ind_points[i]]
+        count = 0
+        i = 0
+        #euclidean_distances = torch.sum((first_emb.reshape() - embeddings)**2, axis=0)
         second_point, second_label = points[1]
         if first_label >= second_label:
             curr_feedback = np.array([-1], dtype=np.float32)

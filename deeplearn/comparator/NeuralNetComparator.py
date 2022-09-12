@@ -8,7 +8,7 @@ class NeuralNetComparator(ABC):
     def __init__(self, net: nn.Module):
         self.__net: nn.Module = net
 
-    def apply(self, data: torch.Tensor) -> torch.Tensor:
+    def apply(self, data: torch.Tensor) -> Any:
         return self.__net(data)
 
     @abstractmethod
