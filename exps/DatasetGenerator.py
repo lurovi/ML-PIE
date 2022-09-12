@@ -70,6 +70,17 @@ class DatasetGenerator:
         }
         '''
         self.__ground_truths: Dict[str, Dict[str, np.ndarray]] = {}
+        '''
+        {
+        "encoding_type_1": {
+                                "ground_truth_1": NumericalData,
+                                "ground_truth_2": NumericalData,
+                                ... 
+                           },
+        ...
+        }
+        '''
+        self.__warm_up_data: Dict[str, Dict[str, NumericalData]] = {}
 
     def shape(self) -> Tuple[int, int, int]:
         return self.__training_size, self.__validation_size, self.__test_size
@@ -89,13 +100,13 @@ class DatasetGenerator:
             df[s] = NumericalData(X[s], y[s])
         return df
 
-    def get_training_pairs(self, encoding_type: str, ground_truth_type: str, n_pairs: int, replacement: bool = False) -> Tuple[np.ndarray, np.ndarray]:
+    def get_training_pairs(self, encoding_type: str, ground_truth_type: str, n_pairs: int, replacement: bool = False) -> NumericalData:
         X, y = self.get_X_y(encoding_type, ground_truth_type)["training"].get_points_and_labels()
         if replacement:
             X, y = PairSampler.random_sampler_with_replacement(X, y, n_pairs)
         else:
             X, y, _ = PairSampler.random_sampler(X, y, [], n_pairs)
-        return X, y
+        return NumericalData(X, y)
 
     def get_seed(self) -> int:
         return self.__seed
@@ -106,8 +117,8 @@ class DatasetGenerator:
             random.seed(seed)
             np.random.seed(seed)
 
-    def persist(self) -> None:
-        PicklePersist.compress_pickle(self.__folder_path + "/datasets", self)
+    def persist(self, file_name: str) -> None:
+        PicklePersist.compress_pickle(self.__folder_path + "/" + file_name, self)
 
     def get_folder_path(self) -> str:
         return self.__folder_path
@@ -136,8 +147,19 @@ class DatasetGenerator:
             name_gro = gro.get_name()
             self.__data_encoded[name_gro] = {"training": train, "validation": val, "test": test}
 
-    def create_dataset_feynman_warm_up(self, file_path: str, train_size: int):
-        fey_eq_wu = pd.read_csv(file_path)  # "D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsWarmUp.csv"
+    def create_dataset_warm_up_from_encoding_ground_truth(self, n_pairs: int, encoding_type: str, ground_truth: GroundTruthComputer) -> None:
+        trees = [self.__structure.generate_tree() for _ in range(n_pairs * 4)]
+        encodings = np.array([self.__structure.generate_encoding(encoding_type, t, True) for t in trees])
+        grounds = np.array([ground_truth.compute(t) for t in trees])
+        data = NumericalData(encodings, grounds)
+        X, y = data.get_points_and_labels()
+        X, y, _ = PairSampler.random_sampler(X, y, [], n_pairs)
+        if encoding_type not in self.__warm_up_data:
+            self.__warm_up_data[encoding_type] = {}
+        self.__warm_up_data[encoding_type][ground_truth.get_name()] = NumericalData(X, y)
+
+    def create_dataset_warm_up_from_csv(self, file_path: str, file_name: str, train_size: int):
+        fey_eq_wu = pd.read_csv(file_path)
         encoding_types = self.__structure.get_encoding_type_strings()
         df = {k: {"left": [], "right": []} for k in encoding_types}
         n_pairs = len(fey_eq_wu)
@@ -152,14 +174,16 @@ class DatasetGenerator:
                 df[k]["right"].append(second_encode)
 
             X, y = [], []
+            swap = True
             for i in range(n_pairs):
                 first_encode, second_encode = df[k]["left"][i], df[k]["right"][i]
-                if random.uniform(0.0, 1.0) < 0.50:
+                if swap:
                     pair = np.concatenate((first_encode, second_encode), axis=None)
                     y.append(-1)
                 else:
                     pair = np.concatenate((second_encode, first_encode), axis=None)
                     y.append(1)
+                swap = not swap
                 X.append(pair)
             X, y = np.array(X), np.array(y)
             df[k].pop("left")
@@ -170,4 +194,4 @@ class DatasetGenerator:
             df[k]["training"] = NumericalData(X_train, y_train)
             df[k]["test"] = NumericalData(X_test, y_test)
 
-        PicklePersist.compress_pickle(self.__folder_path+"/feynman_pairs", df)
+        PicklePersist.compress_pickle(self.__folder_path + "/" + file_name, df)

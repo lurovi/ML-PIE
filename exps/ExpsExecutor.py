@@ -33,7 +33,6 @@ from util.Sort import Sort
 
 class ExpsExecutor:
 
-
     @staticmethod
     def perform_experiment_accuracy_feynman_pairs(folder, device):
 
@@ -66,7 +65,6 @@ class ExpsExecutor:
             onehot_accs.append(curr_acc_onehot)
 
         return sum(counts_accs) / float(len(counts_accs)), sum(onehot_accs) / float(len(onehot_accs))
-
 
 
     @staticmethod

@@ -10,6 +10,8 @@ import numpy as np
 
 import random
 
+from nsgp.encoder.TreeEncoder import TreeEncoder
+from nsgp.structure.TreeStructure import TreeStructure
 from util.EvaluationMetrics import EvaluationMetrics
 
 from util.Sort import Sort
@@ -72,3 +74,30 @@ class PlotGenerator:
         plot = sns.lineplot(data=df, x="Probability", y="Footrule")
         plt.show()
         return plot
+
+    @staticmethod
+    def plot_encoding_size():
+        P = [12, 16]
+        V = [7, 9]
+        B = [2, 3]
+        L = [6, 7]
+        E = ["Counts", "Level-wise Counts", "One-hot"]
+
+        df = {"Encoding": [], "P-V": [], "B-L": [], "Size": []}
+        for p in P:
+            for v in V:
+                for b in B:
+                    for l in L:
+                        cou, levcou, onh = TreeEncoder.encoding_size(p, v, b, l)
+                        df["Encoding"].extend(E)
+                        df["P-V"].extend([str(p) + "-" + str(v)] * 3)
+                        df["B-L"].extend([str(b) + "-" + str(l)] * 3)
+                        df["Size"].extend([cou, levcou, onh])
+        sns.set(rc={"figure.figsize": (20, 20)})
+        sns.set_style("white")
+        df = pd.DataFrame(df)
+        g = sns.catplot(data=df, x="Encoding", y="Size", col="P-V", hue="B-L", kind="bar", legend=True,
+                        palette="colorblind")
+        g.set(yscale='log')
+        plt.show()
+        return g
