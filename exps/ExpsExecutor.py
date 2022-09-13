@@ -17,6 +17,7 @@ import random
 
 from deeplearn.dataset.NumericalData import NumericalData
 from deeplearn.dataset.PairSampler import PairSampler
+from deeplearn.dataset.RandomSamplerWithReplacement import RandomSamplerWithReplacement
 
 from deeplearn.model.MLPNet import MLPNet
 from deeplearn.model.NeuralNetEvaluator import NeuralNetEvaluator
@@ -43,7 +44,7 @@ class ExpsExecutor:
 
     def perform_experiment_nn_ranking_online(self, encoding_type, ground_truth_type,
                                              amount_of_feedback, activation_func,
-                                             final_activation_func, hidden_layer_sizes, device, uncertainty=False):
+                                             final_activation_func, hidden_layer_sizes, device, sampler):
         accs, ftrs = [], []
         verbose = False
         random.seed(self.__starting_seed)
@@ -57,12 +58,12 @@ class ExpsExecutor:
         output_layer_size = 1
         X_tr, y_tr = training.get_points_and_labels()
         X_va, y_va = validation.get_points_and_labels()
-        pairs_X_va, pairs_y_va = PairSampler.random_sampler_with_replacement(X_va, y_va, 2000)
+        pairs_X_y_va = RandomSamplerWithReplacement(n_pairs=2000).sample(X_va, y_va)
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
-        pairs_valloader = DataLoader(NumericalData(pairs_X_va, pairs_y_va), batch_size=1, shuffle=True)
+        pairs_valloader = DataLoader(pairs_X_y_va, batch_size=1, shuffle=True)
 
         pool = multiprocessing.Pool(os.cpu_count() - 1)
-        exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, amount_of_feedback=amount_of_feedback, uncertainty=uncertainty, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
+        exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, amount_of_feedback=amount_of_feedback, sampler=sampler, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
         pool.join()
@@ -103,7 +104,7 @@ class ExpsExecutor:
 
     def create_dict_experiment_nn_ranking_online(self, folder, encoding_type, ground_truth_type,
                                                  amount_of_feedback, activation_func,
-                                             final_activation_func, hidden_layer_sizes, device, sampling="random",
+                                             final_activation_func, hidden_layer_sizes, device, sampler,
                                              warmup=None):
         df = {"Amount of feedback": [], "Spearman footrule": [], "Encoding": [], "Ground-truth": [],
               "Sampling": [], "Warm-up": []}
@@ -112,7 +113,8 @@ class ExpsExecutor:
         repr_plot = repr_plot.replace("_", " ")
         ground_plot = ground_truth_type[0].upper() + ground_truth_type[1:]
         ground_plot = ground_plot.replace("_", " ")
-        sampl_plot = sampling[0].upper() + sampling[1:]
+        sampl_plot = sampler.__class__.__name__
+        sampl_plot = sampl_plot[0].upper() + sampl_plot[1:]
         sampl_plot = sampl_plot.replace("_", " ")
 
         random.seed(self.__starting_seed)
@@ -130,14 +132,9 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
 
         if warmup is not None:
-            if warmup == "feynman":
-                warmup_plot = "Feynman warm-up"
-                warmup_data = PicklePersist.decompress_pickle(folder + "/feynman_pairs.pbz2")[encoding_type]["training"]
-            elif warmup == "elastic":
-                warmup_plot = "Elastic warm-up"
-                warmup_data = self.__data_generator.get_warm_up_data(encoding_type, "elastic_model")
-            else:
-                raise AttributeError("Bad warmup parameter.")
+            warmup_plot = warmup[0].upper() + warmup[1:]
+            warmup_plot = warmup_plot.replace("_", " ")
+            warmup_data = self.__data_generator.get_warm_up_data(encoding_type, warmup)
             pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
         else:
             warmup_plot = "No Warm-up"
@@ -150,7 +147,7 @@ class ExpsExecutor:
                                                                 output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
                                                                 device=device, pretrainer_factory=pretrainer_factory,
                                                                 warmup_data=warmup_data, amount_of_feedback=amount_of_feedback,
-                                                                sampling=sampling, X_tr=X_tr,
+                                                                sampler=sampler, X_tr=X_tr,
                                                                 y_tr=y_tr, verbose=verbose,
                                                                 valloader=valloader, repr_plot=repr_plot, ground_plot=ground_plot,
                                                                 sampl_plot=sampl_plot, warmup_plot=warmup_plot)
@@ -233,7 +230,7 @@ def parallel_execution_perform_experiment_accuracy_feynman_pairs(exec_ind: int, 
 def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activation_func: Any,
                                                             final_activation_func: Any, input_layer_size: int,
                                                             output_layer_size: int, hidden_layer_sizes: List,
-                                                            amount_of_feedback: int, uncertainty: bool, device: Any,
+                                                            amount_of_feedback: int, sampler: PairSampler, device: Any,
                                                             X_tr: np.ndarray, y_tr: np.ndarray, verbose: bool,
                                                             valloader: DataLoader, pairs_valloader: DataLoader) -> Tuple:
     curr_seed = exec_ind
@@ -244,14 +241,9 @@ def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activ
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                  hidden_layer_sizes, dropout_prob=0.25)
     trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
-    already_seen = []
+
     for idx in range(amount_of_feedback):
-        if not uncertainty:
-            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
-        else:
-            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
-                                                                                          already_seen)
-        pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+        pairs_train = sampler.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:
@@ -266,7 +258,7 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                                                 output_layer_size: int, hidden_layer_sizes: int,
                                                                 device: Any, pretrainer_factory: TrainerFactory,
                                                                 warmup_data: Dataset, amount_of_feedback: int,
-                                                                sampling: str, X_tr: np.ndarray,
+                                                                sampler: PairSampler, X_tr: np.ndarray,
                                                                 y_tr: np.ndarray, verbose: bool,
                                                                 valloader: DataLoader, repr_plot: str, ground_plot: str,
                                                                 sampl_plot: str, warmup_plot: str) -> List:
@@ -279,20 +271,10 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                  hidden_layer_sizes, dropout_prob=0.25)
     trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False,
                                             warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
-    already_seen = []
+
     results = []
     for idx in range(amount_of_feedback):
-        if sampling == "random":
-            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.random_sampler_online(X_tr, y_tr, already_seen)
-        elif sampling == "uncertainty":
-            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_sampler_online(X_tr, y_tr, trainer,
-                                                                                          already_seen)
-        elif sampling == "uncertainty_L2":
-            pairs_X_tr, pairs_y_tr, already_seen = PairSampler.uncertainty_L2_sampler_online(X_tr, y_tr, trainer,
-                                                                                          already_seen)
-        else:
-            raise AttributeError(f"{sampling} is not a valid sampling criterion.")
-        pairs_train = NumericalData(pairs_X_tr, pairs_y_tr)
+        pairs_train = sampler.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:

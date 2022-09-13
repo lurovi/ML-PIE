@@ -9,6 +9,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 class LevelWiseWeightsSumNegComputer(GroundTruthComputer):
     def __init__(self, structure: TreeStructure, seed: int = None, idx: int = 1):
         super().__init__()
+        self.__idx = idx
         self.set_name("level_wise_weights_sum"+"_"+str(idx))
         self.__seed = seed
         if self.__seed is not None:
@@ -23,7 +24,7 @@ class LevelWiseWeightsSumNegComputer(GroundTruthComputer):
             self.__weights.extend(self.__operator_weights + self.__feature_weights + self.__constant_weight)
 
     def compute(self, tree: Node) -> float:
-        encoding = self.__structure.generate_encoding("level_wise_counts", tree, False).tolist()
+        encoding = self.__structure.generate_encoding("level_wise_counts"+"_"+str(self.__idx), tree, False).tolist()
         if len(encoding) > self.__structure.get_size() * self.__structure.get_number_of_layers():
             encoding = encoding[:len(encoding)-3]
         return sum([encoding[i] * self.__weights[i] for i in range(len(encoding))])

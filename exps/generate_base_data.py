@@ -2,6 +2,8 @@ import random
 
 from functools import partial
 
+from deeplearn.dataset.RandomSamplerOnline import RandomSamplerOnline
+from deeplearn.dataset.UncertaintySamplerOnline import UncertaintySamplerOnline
 from exps.DatasetGenerator import DatasetGenerator
 from exps.ExpsExecutor import ExpsExecutor
 from exps.groundtruth.InterpretabilityShapeComputer import InterpretabilityShapeComputer
@@ -28,6 +30,7 @@ from util.PlotGenerator import PlotGenerator
 
 pd.options.display.float_format = '{:.3f}'.format
 pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 100)
 
 
 def set_random_seed(seed: int = None) -> None:
@@ -74,13 +77,12 @@ if __name__ == "__main__":
 
     for e in structure.get_encoding_type_strings():
         for i in range(3):
-            set_random_seed(102)
-            data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i])
+            data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i], 102)
 
     set_random_seed(103)
 
     data_generator.create_dataset_warm_up_from_csv("D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsWarmUp.csv",
-                                                   "feynman_pairs", 20)
+                                                   "feynman", 20)
 
     data_generator.persist("datasets")
 
@@ -88,12 +90,12 @@ if __name__ == "__main__":
     df_list = []
     for enc in structure.get_encoding_type_strings():
         for gro in ground_truths_names:
-            for unc in ["random", "uncertainty", "uncertainty_L2"]:
-                for war in [None, "feynman", "elastic"]:
+            for unc in [RandomSamplerOnline(), UncertaintySamplerOnline()]:
+                for war in [None, "feynman", "elastic_model"]:
                     df_list.append(exp_exec.create_dict_experiment_nn_ranking_online("tree_data_1", enc, gro,
                                                  5, nn.ReLU(),
-                                             nn.Identity(), [220, 150, 70, 20], device, sampling=unc,
+                                             nn.Identity(), [220, 150, 70, 20], device, sampler=unc,
                                              warmup=war))
 
     df = PlotGenerator.merge_dictionaries_of_list(df_list)
-    print(pd.DataFrame(df).head(20))
+    print(pd.DataFrame(df).head(100))

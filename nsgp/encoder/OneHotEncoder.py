@@ -9,7 +9,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 
 
 class OneHotEncoder(TreeEncoder):
-    def __init__(self, structure: TreeStructure):
+    def __init__(self, structure: TreeStructure, idx: int = 1):
         super().__init__()
         self.__structure = structure
         scaler = Pipeline(steps=[("do_nothing_scaler", None)])
@@ -17,7 +17,7 @@ class OneHotEncoder(TreeEncoder):
         data = [self.encode(t, False) for t in data]
         scaler.fit(np.array(data))
         self.set_scaler(scaler)
-        self.set_name("one_hot")
+        self.set_name("one_hot"+"_"+str(idx))
 
     def encode(self, tree: Node, apply_scaler: bool = True) -> np.ndarray:
         a = np.array(one_hot_encode_tree(tree,

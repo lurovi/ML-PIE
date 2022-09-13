@@ -3,6 +3,8 @@ from typing import List, Dict, Tuple
 
 import pandas as pd
 
+from deeplearn.dataset.RandomSampler import RandomSampler
+from deeplearn.dataset.RandomSamplerWithReplacement import RandomSamplerWithReplacement
 from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 
 from copy import deepcopy
@@ -103,10 +105,9 @@ class DatasetGenerator:
     def get_training_pairs(self, encoding_type: str, ground_truth_type: str, n_pairs: int, replacement: bool = False) -> NumericalData:
         X, y = self.get_X_y(encoding_type, ground_truth_type)["training"].get_points_and_labels()
         if replacement:
-            X, y = PairSampler.random_sampler_with_replacement(X, y, n_pairs)
+            return RandomSamplerWithReplacement(n_pairs=n_pairs).sample(X, y)
         else:
-            X, y, _ = PairSampler.random_sampler(X, y, [], n_pairs)
-        return NumericalData(X, y)
+            return RandomSampler(n_pairs=n_pairs).sample(X, y)
 
     def get_seed(self) -> int:
         return self.__seed
@@ -147,31 +148,31 @@ class DatasetGenerator:
             name_gro = gro.get_name()
             self.__ground_truths[name_gro] = {"training": train, "validation": val, "test": test}
 
-    def create_dataset_warm_up_from_encoding_ground_truth(self, n_pairs: int, encoding_type: str, ground_truth: GroundTruthComputer) -> None:
+    def create_dataset_warm_up_from_encoding_ground_truth(self, n_pairs: int, encoding_type: str, ground_truth: GroundTruthComputer, seed: int = None) -> None:
+        if encoding_type not in self.__warm_up_data.keys():
+            self.__warm_up_data[encoding_type] = {}
+        if ground_truth.get_name() in self.__warm_up_data[encoding_type].keys():
+            raise AttributeError(f"{ground_truth.get_name()} is already present as key in warm up data.")
+        self.set_seed(seed)
         trees = [self.__structure.generate_tree() for _ in range(n_pairs * 4)]
         encodings = np.array([self.__structure.generate_encoding(encoding_type, t, True) for t in trees])
         grounds = np.array([ground_truth.compute(t) for t in trees])
         data = NumericalData(encodings, grounds)
         X, y = data.get_points_and_labels()
-        X, y, _ = PairSampler.random_sampler(X, y, [], n_pairs)
-        if encoding_type not in self.__warm_up_data:
-            self.__warm_up_data[encoding_type] = {}
-        self.__warm_up_data[encoding_type][ground_truth.get_name()] = NumericalData(X, y)
+        numer_data = RandomSampler(n_pairs=n_pairs).sample(X, y)
+        self.__warm_up_data[encoding_type][ground_truth.get_name()] = numer_data
 
-    def get_warm_up_data(self, encoding_type: str, ground_truth_type: str) -> NumericalData:
-        if encoding_type not in self.__warm_up_data.keys():
-            raise AttributeError(f"{encoding_type} is not a valid encoding type.")
-        if ground_truth_type not in self.__warm_up_data.keys():
-            raise AttributeError(f"{ground_truth_type} is not a valid ground truth type.")
-        return self.__warm_up_data[encoding_type][ground_truth_type]
-
-    def create_dataset_warm_up_from_csv(self, file_path: str, file_name: str, train_size: int):
+    def create_dataset_warm_up_from_csv(self, file_path: str, ground_truth_name: str, train_size: int) -> None:
         fey_eq_wu = pd.read_csv(file_path)
         encoding_types = self.__structure.get_encoding_type_strings()
         df = {k: {"left": [], "right": []} for k in encoding_types}
         n_pairs = len(fey_eq_wu)
 
         for k in df.keys():
+            if k not in self.__warm_up_data.keys():
+                self.__warm_up_data[k] = {}
+            if ground_truth_name in self.__warm_up_data[k].keys():
+                raise AttributeError(f"{ground_truth_name} is already present as key in warm up data.")
             for i in range(n_pairs):
                 first_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 0])
                 second_formula = tree_from_prefix_repr(fey_eq_wu.iloc[i, 1])
@@ -201,4 +202,23 @@ class DatasetGenerator:
             df[k]["training"] = NumericalData(X_train, y_train)
             df[k]["test"] = NumericalData(X_test, y_test)
 
-        PicklePersist.compress_pickle(self.__folder_path + "/" + file_name, df)
+            self.__warm_up_data[k][ground_truth_name] = df[k]["training"]
+
+    def get_warm_up_data(self, encoding_type: str, ground_truth_type: str) -> NumericalData:
+        if encoding_type not in self.__warm_up_data.keys():
+            raise AttributeError(f"{encoding_type} is not a valid encoding type.")
+        if ground_truth_type not in self.__warm_up_data[encoding_type].keys():
+            raise AttributeError(f"{ground_truth_type} is not a valid ground truth type.")
+        return self.__warm_up_data[encoding_type][ground_truth_type]
+
+    def pop_data_encoding(self, encoding_type: str) -> None:
+        self.__data_encoded.pop(encoding_type)
+
+    def pop_ground_truth(self, ground_truth_type: str) -> None:
+        self.__ground_truths.pop(ground_truth_type)
+
+    def pop_warm_up_encoding(self, encoding_type: str) -> None:
+        self.__warm_up_data.pop(encoding_type)
+
+    def pop_warm_up_ground_truth(self, encoding_type: str, ground_truth_type: str) -> None:
+        self.__warm_up_data[encoding_type].pop(ground_truth_type)
