@@ -16,6 +16,16 @@ if __name__ == "__main__":
     l = np.array([34, 23, 21, -33, -12]).reshape(1, -1)
     l = scaler.transform(l)[0]
     print(l)
+
+    a = torch.tensor([3, 4, 51, 3, 2, 8]).repeat(3, 1).float()
+    print(a)
+    print(nn.Dropout(0.25)(a))
+    print(nn.Dropout(0.25)(a))
+    print(a)
+    b = torch.tensor([[1,2,3,4,5,6], [3,2,1,4,5,6], [5,4,3,6,2,1]]).float()
+    l = ((a - b)**2).sum(axis=1).tolist()
+    print(l, np.max(l))
+
     exit(1)
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
 

@@ -10,7 +10,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 
 
 class LevelWiseCountsEncoder(TreeEncoder):
-    def __init__(self, structure: TreeStructure, additional_properties: bool = True, seed: int = None, idx: int = 1):
+    def __init__(self, structure: TreeStructure, additional_properties: bool = True, seed: int = None):
         super().__init__()
         self.__structure = structure
         self.__seed = seed
@@ -19,11 +19,11 @@ class LevelWiseCountsEncoder(TreeEncoder):
             np.random.seed(self.__seed)
         self.__additional_properties: bool = additional_properties
         scaler = MinMaxScaler(feature_range=(0, 1))
-        data = [self.__structure.generate_tree() for _ in range(10 ** 1)]
+        data = [self.__structure.generate_tree() for _ in range(10 ** 6)]
         data = [self.encode(t, False) for t in data]
         scaler.fit(np.array(data))
         self.set_scaler(scaler)
-        self.set_name("level_wise_counts"+"_"+str(idx))
+        self.set_name("level_wise_counts")
 
     def encode(self, tree: Node, apply_scaler: bool = True) -> np.ndarray:
         a = np.array(counts_level_wise_encode_tree(tree,

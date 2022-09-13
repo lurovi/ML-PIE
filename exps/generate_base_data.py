@@ -4,6 +4,7 @@ from functools import partial
 
 from deeplearn.dataset.RandomSamplerOnline import RandomSamplerOnline
 from deeplearn.dataset.UncertaintySamplerOnline import UncertaintySamplerOnline
+from deeplearn.dataset.UncertaintySamplerOnlineDistanceEmbeddings import UncertaintySamplerOnlineDistanceEmbeddings
 from exps.DatasetGenerator import DatasetGenerator
 from exps.ExpsExecutor import ExpsExecutor
 from exps.groundtruth.InterpretabilityShapeComputer import InterpretabilityShapeComputer
@@ -26,6 +27,7 @@ from nsgp.structure.TreeStructure import TreeStructure
 import pandas as pd
 import numpy as np
 
+from util.PicklePersist import PicklePersist
 from util.PlotGenerator import PlotGenerator
 
 pd.options.display.float_format = '{:.3f}'.format
@@ -62,26 +64,29 @@ if __name__ == "__main__":
 
     structure = TreeStructure(operators, 7, 5, ephemeral_func=partial(np.random.uniform, -5.0, 5.0), normal_distribution_parameters=normal_distribution_parameters)
     structure.register_encoders([CountsEncoder(structure, True, 100), LevelWiseCountsEncoder(structure, True, 100), OneHotEncoder(structure)])
-    ground_truths = [NumNodesNegComputer(), InterpretabilityShapeComputer(), MathElasticModelComputer(),
-                     LispExprHashComputer(), WeightsSumNegComputer(structure, 100),
+    #ground_truths = [NumNodesNegComputer(), InterpretabilityShapeComputer(), MathElasticModelComputer(),
+    #                 LispExprHashComputer(), WeightsSumNegComputer(structure, 100),
+    #                 LevelWiseWeightsSumNegComputer(structure, 100), NodeWiseWeightsSumNegComputer(structure, 100)]
+    ground_truths = [NumNodesNegComputer(), MathElasticModelComputer(),
+                     WeightsSumNegComputer(structure, 100),
                      LevelWiseWeightsSumNegComputer(structure, 100), NodeWiseWeightsSumNegComputer(structure, 100)]
     ground_truths_names = [g.get_name() for g in ground_truths]
 
     set_random_seed(101)
-
-    data_generator = DatasetGenerator("tree_data_1", structure, 50, 10, 10, 101)
+    folder_name = "tree_data_1"
+    data_generator = DatasetGenerator(folder_name, structure, 600 * 4, 700, 500, 101)
 
     data_generator.generate_tree_encodings(True)
 
     data_generator.generate_ground_truth(ground_truths)
 
     for e in structure.get_encoding_type_strings():
-        for i in range(3):
+        for i in range(2):
             data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i], 102)
 
     set_random_seed(103)
 
-    data_generator.create_dataset_warm_up_from_csv("D:/shared_folder/python_projects/ML-PIE/util/feynman/dataset/FeynmanEquationsWarmUp.csv",
+    data_generator.create_dataset_warm_up_from_csv(folder_name+"/FeynmanEquationsWarmUp.csv",
                                                    "feynman", 20)
 
     data_generator.persist("datasets")
@@ -90,12 +95,12 @@ if __name__ == "__main__":
     df_list = []
     for enc in structure.get_encoding_type_strings():
         for gro in ground_truths_names:
-            for unc in [RandomSamplerOnline(), UncertaintySamplerOnline()]:
+            for unc in [RandomSamplerOnline(), UncertaintySamplerOnline(), UncertaintySamplerOnlineDistanceEmbeddings(normalization_func="max"), UncertaintySamplerOnlineDistanceEmbeddings(normalization_func="median")]:
                 for war in [None, "feynman", "elastic_model"]:
-                    df_list.append(exp_exec.create_dict_experiment_nn_ranking_online("tree_data_1", enc, gro,
-                                                 5, nn.ReLU(),
+                    df_list.append(exp_exec.create_dict_experiment_nn_ranking_online(folder_name, enc, gro,
+                                                 600, nn.ReLU(),
                                              nn.Identity(), [220, 150, 70, 20], device, sampler=unc,
                                              warmup=war))
 
     df = PlotGenerator.merge_dictionaries_of_list(df_list)
-    print(pd.DataFrame(df).head(100))
+    PicklePersist.compress_pickle(folder_name+"/dict_res", pd.DataFrame(df))

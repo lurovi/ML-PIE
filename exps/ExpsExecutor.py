@@ -113,7 +113,7 @@ class ExpsExecutor:
         repr_plot = repr_plot.replace("_", " ")
         ground_plot = ground_truth_type[0].upper() + ground_truth_type[1:]
         ground_plot = ground_plot.replace("_", " ")
-        sampl_plot = sampler.__class__.__name__
+        sampl_plot = sampler.get_string_repr()
         sampl_plot = sampl_plot[0].upper() + sampl_plot[1:]
         sampl_plot = sampl_plot.replace("_", " ")
 

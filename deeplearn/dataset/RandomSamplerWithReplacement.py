@@ -34,3 +34,6 @@ class RandomSamplerWithReplacement(PairSampler):
             y_pairs.append(curr_feedback)
             X_pairs.append(curr_point)
         return NumericalData(np.array(X_pairs, dtype=np.float32), np.array(y_pairs, dtype=np.float32))
+
+    def get_string_repr(self) -> str:
+        return "Random Sampler With Replacement"

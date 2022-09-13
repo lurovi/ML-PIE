@@ -24,7 +24,7 @@ class LevelWiseWeightsSumNegComputer(GroundTruthComputer):
             self.__weights.extend(self.__operator_weights + self.__feature_weights + self.__constant_weight)
 
     def compute(self, tree: Node) -> float:
-        encoding = self.__structure.generate_encoding("level_wise_counts"+"_"+str(self.__idx), tree, False).tolist()
+        encoding = self.__structure.generate_encoding("level_wise_counts", tree, False).tolist()
         if len(encoding) > self.__structure.get_size() * self.__structure.get_number_of_layers():
             encoding = encoding[:len(encoding)-3]
         return sum([encoding[i] * self.__weights[i] for i in range(len(encoding))])

@@ -23,7 +23,7 @@ class WeightsSumNegComputer(GroundTruthComputer):
         self.__weights = self.__operator_weights + self.__feature_weights + self.__constant_weight
 
     def compute(self, tree: Node) -> float:
-        encoding = self.__structure.generate_encoding("counts"+"_"+str(self.__idx), tree, False).tolist()
+        encoding = self.__structure.generate_encoding("counts", tree, False).tolist()
         if len(encoding) > self.__structure.get_size():
             encoding = encoding[:len(encoding)-3]
         return sum([encoding[i] * self.__weights[i] for i in range(len(encoding))])

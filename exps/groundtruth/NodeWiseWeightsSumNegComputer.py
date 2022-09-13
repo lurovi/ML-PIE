@@ -24,5 +24,5 @@ class NodeWiseWeightsSumNegComputer(GroundTruthComputer):
             self.__weights.extend(self.__operator_weights + self.__feature_weights + self.__constant_weight)
 
     def compute(self, tree: Node) -> float:
-        encoding = self.__structure.generate_encoding("one_hot"+"_"+str(self.__idx), tree, False).tolist()
+        encoding = self.__structure.generate_encoding("one_hot", tree, False).tolist()
         return sum([encoding[i] * self.__weights[i] for i in range(len(encoding))])

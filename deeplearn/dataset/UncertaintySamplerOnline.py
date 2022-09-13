@@ -34,3 +34,6 @@ class UncertaintySamplerOnline(PairSampler):
             curr_feedback = np.array([1], dtype=np.float32)
         curr_point = np.array([first_point.tolist() + second_point.tolist()], dtype=np.float32)
         return NumericalData(curr_point, curr_feedback)
+
+    def get_string_repr(self) -> str:
+        return "Uncertainty Sampler Online"
