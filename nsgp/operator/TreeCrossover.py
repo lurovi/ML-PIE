@@ -1,14 +1,14 @@
 from pymoo.core.crossover import Crossover
 import numpy as np
 
-from nsgp.structure.TreeStructure import TreeGrammarStructure
+from nsgp.structure.TreeStructure import TreeStructure
 
 
 class TreeCrossover(Crossover):
-    def __init__(self, structure: TreeGrammarStructure):
+    def __init__(self, structure: TreeStructure):
         # define the crossover: number of parents and number of offsprings
         super().__init__(2, 2)
-        self.__structure: TreeGrammarStructure = structure
+        self.__structure: TreeStructure = structure
 
     def _do(self, problem, x, **kwargs):
         # The input of has the following shape (n_parents, n_matings, n_var)

@@ -16,7 +16,7 @@ from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.BinaryClassificationProblem import BinaryClassificationProblem
 from nsgp.problem.RegressionProblem import RegressionProblem
 from nsgp.problem.SimpleFunctionProblem import SimpleFunctionProblem
-from nsgp.structure.TreeStructure import TreeGrammarStructure
+from nsgp.structure.TreeStructure import TreeStructure
 from util.PicklePersist import PicklePersist
 
 
@@ -57,7 +57,20 @@ if __name__ == "__main__":
         node_obj = node_cls()
         internal_nodes.append(node_obj)
 
-    structure = TreeGrammarStructure(internal_nodes, 7, 7, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0))
+    internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
+                 node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
+                 node_impl.Sqrt(), node_impl.Exp(),
+                 node_impl.Log(), node_impl.Sin(),
+                 node_impl.Cos()]
+
+    normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5),
+                                      (0, 15), (0, 5), (0, 8), (0, 20), (0, 30),
+                                      (0, 30), (0, 23), (0, 23),
+                                      (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8),
+                                      (0, 0.8), (0, 0.8),
+                                      (0, 0.5)]
+
+    structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0), normal_distribution_parameters=normal_distribution_parameters)
     setting = TreeSetting(structure, duplicates_elimination_little_data)
     tree_sampling = setting.get_sampling()
     tree_crossover = setting.get_crossover()

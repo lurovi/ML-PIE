@@ -1,13 +1,13 @@
 from pymoo.core.mutation import Mutation
 
-from nsgp.structure.TreeStructure import TreeGrammarStructure
+from nsgp.structure.TreeStructure import TreeStructure
 
 
 class TreeMutation(Mutation):
 
-    def __init__(self, structure: TreeGrammarStructure):
+    def __init__(self, structure: TreeStructure):
         super().__init__()
-        self.__structure: TreeGrammarStructure = structure
+        self.__structure: TreeStructure = structure
 
     def _do(self, problem, x, **kwargs):
         # for each individual
