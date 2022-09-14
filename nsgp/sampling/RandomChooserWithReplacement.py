@@ -12,7 +12,7 @@ from nsgp.encoder.TreeEncoder import TreeEncoder
 from nsgp.sampling.PairChooser import PairChooser
 
 
-class RandomChooser(PairChooser):
+class RandomChooserWithReplacement(PairChooser):
     def __init__(self, n_pairs: int = 1, already_seen: Set[Node] = None):
         super().__init__(n_pairs, already_seen)
 
@@ -20,31 +20,17 @@ class RandomChooser(PairChooser):
         curr_queue = list(queue)
         train_indexes = list(range(len(curr_queue)))
         candidates = []
-        already_seen_indexes = []
         for _ in range(self.get_n_pairs()):
-            exit_loop = False
-            while not (exit_loop):
-                idx_1 = random.choice(train_indexes)
-                first_tree = curr_queue[idx_1]
-                if idx_1 not in already_seen_indexes:
-                    already_seen_indexes.append(idx_1)
-                    if not self.node_in_already_seen(first_tree):
-                        self.add_node_to_already_seen(first_tree)
-                        exit_loop = True
+            idx_1 = random.choice(train_indexes)
+            first_tree = curr_queue[idx_1]
             exit_loop = False
             while not (exit_loop):
                 idx_2 = random.choice(train_indexes)
                 second_tree = curr_queue[idx_2]
-                if idx_2 not in already_seen_indexes:
-                    already_seen_indexes.append(idx_2)
-                    if not self.node_in_already_seen(second_tree):
-                        self.add_node_to_already_seen(second_tree)
-                        exit_loop = True
+                if idx_2 != idx_1:
+                    exit_loop = True
             candidates.append((first_tree, second_tree))
-        for first_tree, second_tree in candidates:
-            queue.remove(first_tree)
-            queue.remove(second_tree)
         return candidates
 
     def get_string_repr(self) -> str:
-        return "Random Sampler"
+        return "Random Sampler With Replacement"

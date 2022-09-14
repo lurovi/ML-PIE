@@ -13,7 +13,7 @@ from nsgp.sampling.PairChooser import PairChooser
 
 
 class RandomChooserOnline(PairChooser):
-    def __init__(self, n_pairs: int, already_seen: Set[Node] = None):
+    def __init__(self, n_pairs: int = 1, already_seen: Set[Node] = None):
         super().__init__(1, already_seen)
 
     def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
