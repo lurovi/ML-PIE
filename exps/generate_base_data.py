@@ -74,7 +74,11 @@ if __name__ == "__main__":
 
     set_random_seed(101)
     folder_name = "tree_data_1"
-    data_generator = DatasetGenerator(folder_name, structure, 600 * 4, 700, 500, 101)
+    amount_of_feedback = 500
+    train_size = amount_of_feedback * 2 + 250
+    validation_size = 700
+    test_size = 400
+    data_generator = DatasetGenerator(folder_name, structure, train_size, validation_size, test_size, 101)
 
     data_generator.generate_tree_encodings(True)
 
@@ -91,15 +95,15 @@ if __name__ == "__main__":
 
     data_generator.persist("datasets")
 
-    exp_exec = ExpsExecutor(data_generator, 200, 15)
+    exp_exec = ExpsExecutor(data_generator, 200, 10)
     df_list = []
     for enc in structure.get_encoding_type_strings():
         for gro in ground_truths_names:
             for unc in [RandomSamplerOnline(), UncertaintySamplerOnline(), UncertaintySamplerOnlineDistanceEmbeddings(normalization_func="max"), UncertaintySamplerOnlineDistanceEmbeddings(normalization_func="median")]:
                 for war in [None, "feynman", "elastic_model"]:
                     df_list.append(exp_exec.create_dict_experiment_nn_ranking_online(folder_name, enc, gro,
-                                                 600, nn.ReLU(),
-                                             nn.Identity(), [220, 150, 70, 20], device, sampler=unc,
+                                                 amount_of_feedback, nn.ReLU(),
+                                             nn.Identity(), [220, 110, 25], device, sampler=unc,
                                              warmup=war))
 
     df = PlotGenerator.merge_dictionaries_of_list(df_list)
