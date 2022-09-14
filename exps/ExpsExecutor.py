@@ -62,11 +62,10 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
         pairs_valloader = DataLoader(pairs_X_y_va, batch_size=1, shuffle=True)
 
-        pool = multiprocessing.Pool(os.cpu_count() - 1)
+        pool = multiprocessing.Pool(multiprocessing.cpu_count())
         exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, amount_of_feedback=amount_of_feedback, sampler=sampler, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
-        pool.join()
         for curr_acc, curr_ftrs in exec_res:
             accs.append(curr_acc)
             ftrs.append(curr_ftrs)
@@ -141,7 +140,7 @@ class ExpsExecutor:
             warmup_data = None
             pretrainer_factory = None
 
-        pool = multiprocessing.Pool(os.cpu_count() - 1)
+        pool = multiprocessing.Pool(multiprocessing.cpu_count())
         exec_func = partial(parallel_execution_create_dict_experiment_nn_ranking_online,
                             activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size,
                                                                 output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
@@ -153,7 +152,6 @@ class ExpsExecutor:
                                                                 sampl_plot=sampl_plot, warmup_plot=warmup_plot)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
-        pool.join()
         for l in exec_res:
             for curr_train_index, curr_ftrs, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot in l:
                 df["Amount of feedback"].append(curr_train_index)
@@ -185,7 +183,7 @@ class ExpsExecutor:
         print(data["counts_training"].count_labels())
         print(data["counts_test"].count_labels())
 
-        pool = multiprocessing.Pool(4)
+        pool = multiprocessing.Pool(multiprocessing.cpu_count())
         exec_func = partial(parallel_execution_perform_experiment_accuracy_feynman_pairs,
                             data=data, counts_input_layer_size=counts_input_layer_size,
                             onehot_input_layer_size=onehot_input_layer_size, output_layer_size=output_layer_size,
@@ -193,7 +191,6 @@ class ExpsExecutor:
 
         exec_res = pool.map(exec_func, list(range(10)))
         pool.close()
-        pool.join()
         for curr_acc_counts, curr_acc_onehot in exec_res:
             counts_accs.append(curr_acc_counts)
             onehot_accs.append(curr_acc_onehot)
