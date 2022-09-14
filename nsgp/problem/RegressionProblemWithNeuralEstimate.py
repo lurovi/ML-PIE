@@ -1,0 +1,56 @@
+import numpy as np
+import torch
+from pymoo.core.problem import Problem
+
+from deeplearn.trainer.Trainer import Trainer
+from nsgp.encoder.TreeEncoder import TreeEncoder
+
+
+class RegressionProblemWithNeuralEstimate(Problem):
+    def __init__(self, X: np.ndarray, y: np.ndarray, mutex=None, tree_encoder: TreeEncoder = None,
+                 interpretability_estimator: Trainer = None):
+        super().__init__(n_var=1, n_obj=2, n_ieq_constr=0, n_eq_constr=0)
+        if y.shape[0] != X.shape[0]:
+            raise AttributeError(
+                f"Number of observations in X ({X.shape[0]}) and y ({y.shape[0]}) mismatched.")
+        if len(y.shape) != 1:
+            raise AttributeError(
+                f"y must be one-dimensional, but here has {len(y.shape)} dimensions.")
+        self.__n_records: int = X.shape[0]
+        self.__X: np.ndarray = X
+        self.__y: np.ndarray = y
+        self.mutex = mutex
+        self.__tree_encoder = tree_encoder
+        self.__interpretability_estimator = interpretability_estimator
+
+    def _evaluate(self, x, out, *args, **kwargs):
+        if self.mutex is not None:
+            with self.mutex:
+                print("EVAL")
+                self._eval(x, out)
+        else:
+            self._eval(x, out)
+
+    def _eval(self, x, out):
+        out["F"] = np.empty((len(x), 2), dtype=np.float32)
+        for i in range(len(x)):
+            tree = x[i, 0]
+            res: np.ndarray = tree(self.__X)
+            mse: float = np.square(np.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
+            if mse > 1e+20:
+                mse = 1e+20
+            out["F"][i, 0] = mse
+            # TODO this might be done in batch to speed up
+            encoded_tree = self.__tree_encoder.encode(tree, True)
+            tensor_encoded_tree = torch.tensor(encoded_tree).float().reshape(1, -1)
+            out["F"][i, 1] = -1 * self.__interpretability_estimator.predict(tensor_encoded_tree)[0][0].item()
+
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        # Don't pickle mutex
+        del state["mutex"]
+        return state
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+        self.mutex = None
