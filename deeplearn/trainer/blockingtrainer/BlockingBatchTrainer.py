@@ -1,3 +1,5 @@
+import threading
+
 from torch.utils.data import Dataset
 
 from deeplearn.trainer.Trainer import Trainer
@@ -10,7 +12,7 @@ class BlockingBatchTrainer(BlockingTrainer):
         self.batch_size = batch_size
         self.dataset = []
 
-    def update(self, trainer: Trainer, data: Dataset, mutex) -> None:
+    def update(self, trainer: Trainer, data: Dataset, mutex: threading.Lock) -> None:
         self.dataset.append(data)
         if len(self.dataset) >= self.batch_size:
             with mutex:

@@ -1,3 +1,5 @@
+import threading
+
 import numpy as np
 import torch
 from pymoo.core.problem import Problem
@@ -7,7 +9,7 @@ from nsgp.encoder.TreeEncoder import TreeEncoder
 
 
 class RegressionProblemWithNeuralEstimate(Problem):
-    def __init__(self, X: np.ndarray, y: np.ndarray, mutex=None, tree_encoder: TreeEncoder = None,
+    def __init__(self, X: np.ndarray, y: np.ndarray, mutex: threading.Lock = None, tree_encoder: TreeEncoder = None,
                  interpretability_estimator: Trainer = None):
         super().__init__(n_var=1, n_obj=2, n_ieq_constr=0, n_eq_constr=0)
         if y.shape[0] != X.shape[0]:
