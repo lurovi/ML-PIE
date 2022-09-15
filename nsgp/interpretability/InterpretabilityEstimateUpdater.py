@@ -1,5 +1,5 @@
+import threading
 from copy import deepcopy
-import random
 import time
 
 import numpy as np
@@ -10,37 +10,36 @@ from deeplearn.trainer.blockingtrainer.BlockingBatchTrainer import BlockingBatch
 from deeplearn.trainer.blockingtrainer.BlockingOnlineTrainer import BlockingOnlineTrainer
 from deeplearn.trainer.blockingtrainer.BlockingTrainer import BlockingTrainer
 from nsgp.encoder.TreeEncoder import TreeEncoder
+from nsgp.sampling.FeedbackCollector import FeedbackCollector
+from nsgp.sampling.PairChooser import PairChooser
 
 
 class InterpretabilityEstimateUpdater:
-    def __init__(self, individuals: set, mutex, interpretability_estimator: Trainer, encoder: TreeEncoder,
-                 candidate_selector=None, feedback_collector=None, batch_size: int = 1) -> None:
-        super().__init__()
+    def __init__(self, individuals: set, mutex: threading.Lock, interpretability_estimator: Trainer,
+                 encoder: TreeEncoder, pair_chooser: PairChooser, feedback_collector: FeedbackCollector,
+                 batch_size: int = 1) -> None:
         self.nn_updater: BlockingTrainer = BlockingOnlineTrainer() if batch_size == 1 else BlockingBatchTrainer(
             batch_size)
-        self.feedback_provider = feedback_collector
-        self.candidate_selector = candidate_selector
+        self.feedback_collector = feedback_collector
+        self.pair_chooser = pair_chooser
         self.individuals = individuals
         self.mutex = mutex
         self.interpretability_estimator = interpretability_estimator
         self.encoder = encoder
 
-    def collect_feedback(self):
+    def immediate_update(self):
+        if len(self.individuals) < 2:
+            return
         local_individuals = deepcopy(self.individuals)
-
-        # t1, t2 = self.candidate_selector.select(local_individuals, self.interpretability_estimator, self.encoder)
-        # feedback = self.feedback_provider.evaluate(t1, t2)
-
-        # dummy workaround
-        selected = random.sample(local_individuals, 2)
-        t1 = selected[0]
-        t2 = selected[1]
-        feedback = random.random()
-        time.sleep(0.5)
-        print("FEED")
-
-        t1_encoded = self.encoder.encode(t1, True)
-        t2_encoded = self.encoder.encode(t2, True)
+        selected = self.pair_chooser.sample(local_individuals, self.encoder, self.interpretability_estimator)
+        feedback = self.feedback_collector.collect_feedback(selected)[0]
+        print("FEEDBACK")
+        t1_encoded = self.encoder.encode(selected[0][0], True)
+        t2_encoded = self.encoder.encode(selected[0][1], True)
         encoded_trees = np.concatenate((t1_encoded, t2_encoded), axis=None).reshape(1, -1)
         data = NumericalData(encoded_trees, np.array([feedback]))
         self.nn_updater.update(self.interpretability_estimator, data, self.mutex)
+
+    def delayed_update(self, delay: float = 0.5):
+        time.sleep(delay)
+        self.immediate_update()
