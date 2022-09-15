@@ -4,12 +4,15 @@ import threading
 import numpy as np
 import torch
 from pymoo.algorithms.moo.nsga2 import NSGA2
+from pymoo.core.individual import Individual
+from pymoo.visualization.scatter import Scatter
 from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from exps.groundtruth.InterpretabilityShapeComputer import InterpretabilityShapeComputer
 from genepro import node_impl
+from genepro.node import Node
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 from nsgp.encoder.CountsEncoder import CountsEncoder
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
@@ -49,7 +52,7 @@ if __name__ == '__main__':
     tree_mutation = setting.get_mutation()
     duplicates_elimination = setting.get_duplicates_elimination()
 
-    # other parameters
+    # shared parameters
     tree_encoder = CountsEncoder(structure)
     mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25])
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device)
@@ -68,7 +71,7 @@ if __name__ == '__main__':
                                                   tree_encoder=tree_encoder,
                                                   interpretability_estimator=interpretability_estimator
                                                   )
-    termination = ('n_gen', 10)
+    termination = ('n_gen', 5)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
@@ -99,4 +102,11 @@ if __name__ == '__main__':
     feedback_thread.join()
     print("Feedback collection is stopped")
 
-    print("\nThe program will shut down")
+    history = optimization_thread.result.history
+    for generation in history:
+        for individual in generation.opt:
+            individual: Individual = individual
+            tree: Node = individual.X[0]
+            print(
+                f"Accuracy: {individual.F[0]}\t Interpretability: {individual.F[1]} \t Tree: {tree.get_readable_repr()}")
+        print()
