@@ -33,7 +33,6 @@ class InterpretabilityEstimateUpdater:
         local_individuals = deepcopy(self.individuals)
         selected = self.pair_chooser.sample(local_individuals, self.encoder, self.interpretability_estimator)
         feedback = self.feedback_collector.collect_feedback(selected)[0]
-        print("FEEDBACK")
         t1_encoded = self.encoder.encode(selected[0][0], True)
         t2_encoded = self.encoder.encode(selected[0][1], True)
         encoded_trees = np.concatenate((t1_encoded, t2_encoded), axis=None).reshape(1, -1)

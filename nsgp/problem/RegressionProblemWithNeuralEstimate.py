@@ -28,7 +28,6 @@ class RegressionProblemWithNeuralEstimate(Problem):
     def _evaluate(self, x, out, *args, **kwargs):
         if self.mutex is not None:
             with self.mutex:
-                print("EVAL")
                 self._eval(x, out)
         else:
             self._eval(x, out)
