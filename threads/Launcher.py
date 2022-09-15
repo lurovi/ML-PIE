@@ -1,5 +1,6 @@
 import random
 import threading
+import time
 
 import numpy as np
 import torch
@@ -20,6 +21,7 @@ from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
 from nsgp.sampling.GroundTruthCollector import GroundTruthCollector
 from nsgp.sampling.RandomChooserOnline import RandomChooserOnline
+from nsgp.sampling.StringFromTerminalCollector import StringFromTerminalCollector
 from nsgp.structure.TreeStructure import TreeStructure
 from threads.FeedbackThread import FeedbackThread
 from threads.OptimizationThread import OptimizationThread
@@ -93,6 +95,7 @@ if __name__ == '__main__':
 
     # thread execution
     optimization_thread.start()
+    callback.population_non_empty.wait()
     feedback_thread.start()
 
     # thread termination
