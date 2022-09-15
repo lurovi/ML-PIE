@@ -13,9 +13,9 @@ from nsgp.sampling.PairChooser import PairChooser
 from util.Sort import Sort
 
 
-class UncertaintyChooserOnline(PairChooser):
+class UncertaintyChooser(PairChooser):
     def __init__(self, n_pairs: int = 1, already_seen: Set[Node] = None):
-        super().__init__(1, already_seen)
+        super().__init__(n_pairs, already_seen)
 
     def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
         curr_queue = list(queue)
@@ -26,7 +26,7 @@ class UncertaintyChooserOnline(PairChooser):
         _, ind_points = Sort.heapsort(uncertainty, lambda a, b: a < b, inplace=False, reverse=True)
         count = 0
         i = 0
-        while count < 2 and i < len(ind_points):
+        while count < self.get_n_pairs() * 2 and i < len(ind_points):
             idx = ind_points[i]
             curr_tree = curr_queue[idx]
             if idx not in already_seen_indexes:
@@ -39,7 +39,10 @@ class UncertaintyChooserOnline(PairChooser):
 
         for first_tree in candidates:
             queue.remove(first_tree)
-        return [(candidates[0], candidates[1])]
+        res_cand = []
+        for i in range(0, len(candidates), 2):
+            res_cand.append((candidates[i], candidates[i+1]))
+        return res_cand
 
     def get_string_repr(self) -> str:
-        return "Uncertainty Sampler Online"
+        return "Uncertainty Sampler"
