@@ -73,7 +73,7 @@ if __name__ == '__main__':
                                                   tree_encoder=tree_encoder,
                                                   interpretability_estimator=interpretability_estimator
                                                   )
-    termination = ('n_gen', 5)
+    termination = ('n_gen', 100)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
@@ -86,12 +86,14 @@ if __name__ == '__main__':
 
     # feedback thread creation
     pair_chooser = RandomChooserOnline()
-    feedback_collector = GroundTruthCollector(InterpretabilityShapeComputer())
+    # feedback_collector = GroundTruthCollector(InterpretabilityShapeComputer())
+    feedback_collector = StringFromTerminalCollector()
     interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser,
                                                                         feedback_collector=feedback_collector)
-    feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater, delay=0.3)
+    feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater)
+    # feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater, delay=0.3)
 
     # thread execution
     optimization_thread.start()
