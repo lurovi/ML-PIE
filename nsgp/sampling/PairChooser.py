@@ -11,12 +11,12 @@ from nsgp.encoder.TreeEncoder import TreeEncoder
 
 
 class PairChooser(ABC):
-    def __init__(self, n_pairs: int, already_seen: Set[Node] = None):
+    def __init__(self, n_pairs: int = 1, already_seen: Set[Node] = None):
         self.__n_pairs = n_pairs
         if already_seen is not None:
             self.__already_seen: Set[Node] = deepcopy(already_seen)
         else:
-            self.__already_seen: Set[Node] = {}
+            self.__already_seen: Set[Node] = set()
 
     def get_already_seen(self) -> Set[Node]:
         return deepcopy(self.__already_seen)
