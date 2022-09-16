@@ -1,5 +1,8 @@
 import time
 
+from sympy import latex
+
+from genepro.node import Node
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from threads import OptimizationThread
 
@@ -35,7 +38,7 @@ class MlPieRun:
             return self.feedback_requests[self.feedback_counter]
         self.feedback_counter += 1
         requested_values = self.interpretability_estimate_updater.request_trees()
-        trees = (requested_values["t1"].get_string_as_lisp_expr(), requested_values["t2"].get_string_as_lisp_expr())
+        trees = (self.tree_to_latex(requested_values["t1"]), self.tree_to_latex(requested_values["t2"]))
         self.feedback_requests.append(trees)
         self.encoded_requests.append(requested_values["encoding"])
         self.feedback_request_time = time.time()
@@ -62,3 +65,9 @@ class MlPieRun:
             self.feedback_duration, tree_1, tree_2, self.encoded_requests, self.feedback_responses)),
             columns=['duration', 'tree_1', 'tree_2', 'encoding', 'feedback'])
         feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
+
+    @staticmethod
+    def tree_to_latex(tree: Node) -> str:
+        readable_repr = tree.get_readable_repr().replace("u-", "-")
+        latex_repr = latex(readable_repr)
+        return latex_repr
