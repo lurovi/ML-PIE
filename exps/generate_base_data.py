@@ -27,7 +27,7 @@ from nsgp.encoder.LevelWiseCountsEncoder import LevelWiseCountsEncoder
 from nsgp.encoder.OneHotEncoder import OneHotEncoder
 from nsgp.structure.TreeStructure import TreeStructure
 
-
+import torch.multiprocessing as mp
 import pandas as pd
 import numpy as np
 
@@ -50,6 +50,11 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    try:
+        mp.set_start_method('spawn', force=True)
+    except RuntimeError:
+        pass
 
     set_random_seed(100)
 
@@ -78,9 +83,9 @@ if __name__ == "__main__":
 
     set_random_seed(101)
     folder_name = "tree_data_1"
-    amount_of_feedback = 10
+    amount_of_feedback = 500
     train_size = amount_of_feedback * 2 + 250
-    validation_size = 7
+    validation_size = 400
     test_size = 250
     data_generator = DatasetGenerator(folder_name, structure, train_size, validation_size, test_size, 101)
 
@@ -99,7 +104,7 @@ if __name__ == "__main__":
 
     data_generator.persist("datasets")
     print("Starting...")
-    exp_exec = ExpsExecutor(data_generator, 200, 13)
+    exp_exec = ExpsExecutor(data_generator, 200, 12)
     df_list = []
     for enc in structure.get_encoding_type_strings():
         for gro in ground_truths_names:
