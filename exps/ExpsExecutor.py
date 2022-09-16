@@ -17,6 +17,7 @@ import random
 
 from deeplearn.dataset.NumericalData import NumericalData
 from deeplearn.dataset.PairSampler import PairSampler
+from deeplearn.dataset.PairSamplerFactory import PairSamplerFactory
 from deeplearn.dataset.RandomSamplerWithReplacement import RandomSamplerWithReplacement
 
 from deeplearn.model.MLPNet import MLPNet
@@ -112,7 +113,7 @@ class ExpsExecutor:
         repr_plot = repr_plot.replace("_", " ")
         ground_plot = ground_truth_type[0].upper() + ground_truth_type[1:]
         ground_plot = ground_plot.replace("_", " ")
-        sampl_plot = sampler.get_string_repr()
+        sampl_plot = sampler.create_sampler(1, None).get_string_repr()
         sampl_plot = sampl_plot[0].upper() + sampl_plot[1:]
         sampl_plot = sampl_plot.replace("_", " ")
 
@@ -227,8 +228,8 @@ def parallel_execution_perform_experiment_accuracy_feynman_pairs(exec_ind: int, 
 def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activation_func: Any,
                                                             final_activation_func: Any, input_layer_size: int,
                                                             output_layer_size: int, hidden_layer_sizes: List,
-                                                            amount_of_feedback: int, sampler: PairSampler, device: Any,
-                                                            X_tr: np.ndarray, y_tr: np.ndarray, verbose: bool,
+                                                            amount_of_feedback: int, sampler: PairSamplerFactory, device: Any,
+                                                            X_tr: torch.Tensor, y_tr: torch.Tensor, verbose: bool,
                                                             valloader: DataLoader, pairs_valloader: DataLoader) -> Tuple:
     curr_seed = exec_ind
     random.seed(curr_seed)
@@ -238,9 +239,9 @@ def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activ
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                  hidden_layer_sizes, dropout_prob=0.25)
     trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
-
+    samplerrr = sampler.create_sampler(1)
     for idx in range(amount_of_feedback):
-        pairs_train = sampler.sample(X_tr, y_tr, trainer)
+        pairs_train = samplerrr.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:
@@ -255,8 +256,8 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                                                 output_layer_size: int, hidden_layer_sizes: int,
                                                                 device: Any, pretrainer_factory: TrainerFactory,
                                                                 warmup_data: Dataset, amount_of_feedback: int,
-                                                                sampler: PairSampler, X_tr: np.ndarray,
-                                                                y_tr: np.ndarray, verbose: bool,
+                                                                sampler: PairSamplerFactory, X_tr: torch.Tensor,
+                                                                y_tr: torch.Tensor, verbose: bool,
                                                                 valloader: DataLoader, repr_plot: str, ground_plot: str,
                                                                 sampl_plot: str, warmup_plot: str) -> List:
     curr_seed = exec_ind
@@ -270,8 +271,9 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                             warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
 
     results = []
+    samplerrr = sampler.create_sampler(1)
     for idx in range(amount_of_feedback):
-        pairs_train = sampler.sample(X_tr, y_tr, trainer)
+        pairs_train = samplerrr.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:
