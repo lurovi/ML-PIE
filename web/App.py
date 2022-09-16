@@ -3,7 +3,7 @@ import threading
 
 import torch
 import uuid
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from torch import nn
 
@@ -56,6 +56,21 @@ duplicates_elimination = setting.get_duplicates_elimination()
 
 
 @app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/feedback")
+def feedback():
+    return render_template("feedback.html")
+
+
+@app.route("/thanks")
+def thanks():
+    return render_template("thanks.html")
+
+
+@app.route("/startRun")
 def start_run():
     run_id = str(uuid.uuid1())
 
