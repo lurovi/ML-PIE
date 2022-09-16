@@ -16,7 +16,7 @@ from genepro import node_impl
 from genepro.node import Node
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 from nsgp.encoder.CountsEncoder import CountsEncoder
-from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
+from nsgp.interpretability.AutomaticInterpretabilityEstimateUpdater import AutomaticInterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
 from nsgp.sampling.GroundTruthCollector import GroundTruthCollector
@@ -88,10 +88,12 @@ if __name__ == '__main__':
     pair_chooser = RandomChooserOnline()
     # feedback_collector = GroundTruthCollector(InterpretabilityShapeComputer())
     feedback_collector = StringFromTerminalCollector()
-    interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
-                                                                        interpretability_estimator=interpretability_estimator,
-                                                                        encoder=tree_encoder, pair_chooser=pair_chooser,
-                                                                        feedback_collector=feedback_collector)
+    interpretability_estimate_updater = AutomaticInterpretabilityEstimateUpdater(individuals=population_storage,
+                                                                                 mutex=mutex,
+                                                                                 interpretability_estimator=interpretability_estimator,
+                                                                                 encoder=tree_encoder,
+                                                                                 pair_chooser=pair_chooser,
+                                                                                 feedback_collector=feedback_collector)
     feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater)
     # feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater, delay=0.3)
 

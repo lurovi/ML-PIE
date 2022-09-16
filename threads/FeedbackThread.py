@@ -1,9 +1,9 @@
-from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
+from nsgp.interpretability.AutomaticInterpretabilityEstimateUpdater import AutomaticInterpretabilityEstimateUpdater
 from threads.StoppableThread import StoppableThread
 
 
 class FeedbackThread(StoppableThread):
-    def __init__(self, interpretability_estimate_updater: InterpretabilityEstimateUpdater, delay: float = None, *args,
+    def __init__(self, interpretability_estimate_updater: AutomaticInterpretabilityEstimateUpdater, delay: float = None, *args,
                  **kwargs):
         super().__init__(*args, **kwargs)
         self.interpretability_estimate_updater = interpretability_estimate_updater
