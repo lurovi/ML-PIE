@@ -15,6 +15,7 @@ path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\"
 
 class MlPieRun:
     def __init__(self, run_id, optimization_thread, interpretability_estimate_updater):
+        self.timeout_time = 3 * 60
         self.run_id = run_id
         self.optimization_thread: OptimizationThread = optimization_thread
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
@@ -76,6 +77,9 @@ class MlPieRun:
             self.feedback_requests_iterations, self.feedback_responses_iterations)),
             columns=['duration', 'tree_1', 'tree_2', 'encoding', 'feedback', 'req_iteration', 'resp_iteration'])
         feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
+
+    def is_abandoned(self) -> bool:
+        return time.time() - self.feedback_request_time > self.timeout_time
 
     @staticmethod
     def tree_to_latex(tree: Node) -> str:

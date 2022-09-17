@@ -93,7 +93,7 @@ def start_run():
                                                   tree_encoder=tree_encoder,
                                                   interpretability_estimator=interpretability_estimator
                                                   )
-    termination = ('n_gen', 100)
+    termination = ('n_gen', 20)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
@@ -125,6 +125,10 @@ def get_data():
         return {'message': 'no ongoing run with that id'}
     dictionary = ongoing_runs[run_id].request_trees()
     if not dictionary:
+        try:
+            del ongoing_runs[run_id]
+        except KeyError:
+            pass
         return {'message': 'optimization is over'}
     return dictionary
 
@@ -140,4 +144,17 @@ def provide_feedback():
     if feedback_outcome:
         return {'message': 'feedback provided'}
     else:
+        try:
+            del ongoing_runs[run_id]
+        except KeyError:
+            pass
         return {'message': 'optimization is over'}
+
+
+def runs_cleanup():
+    for run_id in ongoing_runs:
+        if ongoing_runs[run_id].is_abandoned():
+            try:
+                del ongoing_runs[run_id]
+            except KeyError:
+                pass
