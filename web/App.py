@@ -1,3 +1,5 @@
+import glob
+import os
 import random
 import threading
 
@@ -157,6 +159,21 @@ def provide_feedback():
             'outcome': 'successful',
             'over': 'true'
         }
+
+
+@app.route("/restart")
+def restart():
+    if 'x-access-tokens' not in request.headers:
+        abort(404)
+    old_run_id = request.headers['x-access-tokens']
+    path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\"
+    files = glob.glob(path + "*-" + old_run_id + ".*")
+    for file in files:
+        try:
+            os.remove(file)
+        except OSError:
+            pass
+    return start_run()
 
 
 def runs_cleanup():
