@@ -27,8 +27,9 @@ function retrieveModels(){
         optimizationOver();
       } else {
         formula_latex = $("h4.mb-0");
-        formula_latex[0].innerHTML = data.t1;
-        formula_latex[1].innerHTML = data.t2;
+        formula_latex[0].innerHTML = "$$" + data.t1 + "$$";
+        formula_latex[1].innerHTML = "$$" + data.t2 + "$$";
+        MathJax.typeset();
         updateProgressBar(data.progress);
       }
     }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}

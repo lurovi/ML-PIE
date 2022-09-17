@@ -1,6 +1,6 @@
 import time
 
-from sympy import latex
+from sympy import latex, parse_expr
 
 from genepro.node import Node
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
@@ -84,5 +84,5 @@ class MlPieRun:
     @staticmethod
     def tree_to_latex(tree: Node) -> str:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
-        latex_repr = latex(readable_repr)
+        latex_repr = latex(parse_expr(readable_repr, evaluate=False))
         return latex_repr
