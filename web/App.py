@@ -3,7 +3,7 @@ import threading
 
 import torch
 import uuid
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, abort
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from torch import nn
 
@@ -119,10 +119,10 @@ def start_run():
 @app.route("/getData", methods=['GET'])
 def get_data():
     if 'x-access-tokens' not in request.headers:
-        return jsonify({'message': 'UUID is missing'})
+        abort(404)
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_runs:
-        return {'message': 'no ongoing run with that id'}
+        abort(404)
     dictionary = ongoing_runs[run_id].request_trees()
     if not dictionary:
         try:
@@ -136,10 +136,10 @@ def get_data():
 @app.route("/provideFeedback", methods=['POST'])
 def provide_feedback():
     if 'x-access-tokens' not in request.headers:
-        return jsonify({'message': 'UUID is missing'})
+        abort(404)
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_runs:
-        return {'message': 'no ongoing run with that id'}
+        abort(404)
     feedback_outcome = ongoing_runs[run_id].provide_feedback(int(request.json["feedback"]))
     if feedback_outcome:
         return {'message': 'feedback provided'}

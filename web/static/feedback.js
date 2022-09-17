@@ -25,7 +25,8 @@ function retrieveModels(){
       formula_latex[0].innerHTML = data.t1;
       formula_latex[1].innerHTML = data.t2;
       updateProgressBar(data.progress);
-    });
+    }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
+    );
     $("#div-loading-img").attr("hidden", true)
 }
 
@@ -38,7 +39,8 @@ function provideFeedback(feedback){
       contentType: "application/json"
     }).done(data => {
       console.log(data.message);
-    });
+    }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
+    );
 }
 
 function updateProgressBar(progressPercentage){

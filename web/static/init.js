@@ -3,7 +3,7 @@ $("#btn-proceed").on("click",function() {
       url: "startRun"
     }).done( data => {
           localStorage.setItem("token", data.id);
-          window.location = window.location = window.location.protocol + "//" + window.location.host + "/" + "feedback";
+          window.location = window.location.protocol + "//" + window.location.host + "/feedback";
         }
     );
 })
