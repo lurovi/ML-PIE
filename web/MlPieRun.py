@@ -22,7 +22,7 @@ class MlPieRun:
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
         self.feedback_counter: int = -1
         self.feedback_duration: list[float] = []
-        self.feedback_requests: list[tuple] = []
+        self.feedback_requests: list[dict] = []
         self.encoded_requests: list[np.ndarray] = []
         self.feedback_responses: list[int] = []
         self.feedback_request_time: float = 0
@@ -39,21 +39,18 @@ class MlPieRun:
         # if the previous request was not answered I give it back again
         # might change it to -> sample again without incrementing the counter
         if len(self.feedback_requests) > len(self.feedback_responses):
-            return {
-                't1': self.feedback_requests[self.feedback_counter][0],
-                't2': self.feedback_requests[self.feedback_counter][1],
-                'it': self.feedback_requests_iterations[self.feedback_counter]
-            }
+            return self.feedback_requests[self.feedback_counter]
         self.feedback_counter += 1
         requested_values = self.interpretability_estimate_updater.request_trees()
         iteration = self.optimization_thread.get_current_iteration()
         self.feedback_requests_iterations.append(iteration)
-        trees = (self.tree_to_latex(requested_values["t1"]), self.tree_to_latex(requested_values["t2"]))
-        self.feedback_requests.append(trees)
-        self.encoded_requests.append(requested_values["encoding"])
-        self.feedback_request_time = time.time()
+        trees = (self.format_tree(requested_values["t1"]), self.format_tree(requested_values["t2"]))
         total_generations = self.optimization_thread.termination[1]
-        return {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
+        dictionary = {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
+        self.feedback_request_time = time.time()
+        self.feedback_requests.append(dictionary)
+        self.encoded_requests.append(requested_values["encoding"])
+        return dictionary
 
     def provide_feedback(self, feedback: int) -> bool:
         if not self.optimization_thread.is_alive():
@@ -72,11 +69,12 @@ class MlPieRun:
 
     def flush(self) -> None:
         self.optimization_thread.join()
-        tree_1, tree_2 = zip(*self.feedback_requests)
+        t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)
         feedback_data = pd.DataFrame(list(zip(
-            self.feedback_duration, tree_1, tree_2, self.encoded_requests, self.feedback_responses,
-            self.feedback_requests_iterations, self.feedback_responses_iterations)),
-            columns=['duration', 'tree_1', 'tree_2', 'encoding', 'feedback', 'req_iteration', 'resp_iteration'])
+            self.feedback_duration, t1_latex, t1_parsable, t2_latex, t2_parsable, self.encoded_requests,
+            self.feedback_responses, self.feedback_requests_iterations, self.feedback_responses_iterations)),
+            columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable', 'encoding',
+                     'feedback', 'req_iteration', 'resp_iteration'])
         feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
 
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
@@ -86,7 +84,22 @@ class MlPieRun:
         return time.time() - self.feedback_request_time > self.timeout_time
 
     @staticmethod
-    def tree_to_latex(tree: Node) -> str:
+    def format_tree(tree: Node) -> dict:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
         latex_repr = latex(parse_expr(readable_repr, evaluate=False))
-        return latex_repr
+        parsable_repr = str(tree.get_subtree())
+        return {"latex": latex_repr, "parsable": parsable_repr}
+
+    @staticmethod
+    def unwrap_requests(list_of_requests: list[dict]) -> tuple[list[str], list[str], list[str], list[str]]:
+        t1_latex = []
+        t1_parsable = []
+        t2_latex = []
+        t2_parsable = []
+        for a_dict in list_of_requests:
+            models = a_dict['models']
+            t1_latex.append(models[0]["latex"])
+            t2_latex.append(models[1]["latex"])
+            t1_parsable.append(models[0]["parsable"])
+            t2_parsable.append(models[1]["parsable"])
+        return t1_latex, t1_parsable, t2_latex, t2_parsable
