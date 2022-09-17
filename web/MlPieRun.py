@@ -69,6 +69,8 @@ class MlPieRun:
 
     def flush(self) -> None:
         self.optimization_thread.join()
+
+        # write feedback file
         t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)
         feedback_data = pd.DataFrame(list(zip(
             self.feedback_duration, t1_latex, t1_parsable, t2_latex, t2_parsable, self.encoded_requests,
@@ -76,9 +78,15 @@ class MlPieRun:
             columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable', 'encoding',
                      'feedback', 'req_iteration', 'resp_iteration'])
         feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
-
+        # write nn file
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
         torch.save(model, path + "nn-" + self.run_id + ".pth")
+        # write optimization file
+        generations, parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
+            self.optimization_thread.result.history)
+        best_data = pd.DataFrame(list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
+                                 columns=['generation', 'parable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+        best_data.to_csv(path_or_buf=path + "best-" + self.run_id + ".csv")
 
     def is_abandoned(self) -> bool:
         return time.time() - self.feedback_request_time > self.timeout_time
@@ -103,3 +111,22 @@ class MlPieRun:
             t1_parsable.append(models[0]["parsable"])
             t2_parsable.append(models[1]["parsable"])
         return t1_latex, t1_parsable, t2_latex, t2_parsable
+
+    @staticmethod
+    def parse_optimization_history(history) -> tuple[list[int], list[str], list[str], list[float], list[float]]:
+        generations = []
+        parsable_trees = []
+        latex_trees = []
+        accuracies = []
+        interpretabilities = []
+        generation_count = 0
+        for generation in history:
+            for individual in generation.opt:
+                generations.append(generation_count)
+                tree = individual.X[0]
+                parsable_trees.append(str(tree.get_subtree()))
+                latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
+                accuracies.append(individual.F[0])
+                interpretabilities.append(individual.F[1])
+            generation_count += 1
+        return generations, parsable_trees, latex_trees, accuracies, interpretabilities
