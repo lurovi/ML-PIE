@@ -3,7 +3,7 @@ import threading
 
 import torch
 import uuid
-from flask import Flask, request, jsonify, render_template, abort
+from flask import Flask, request, render_template, abort
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from torch import nn
 
@@ -63,6 +63,11 @@ def index():
 @app.route("/feedback")
 def feedback():
     return render_template("feedback.html")
+
+
+@app.route("/survey")
+def survey():
+    return render_template("survey.html")
 
 
 @app.route("/thanks")
@@ -129,7 +134,7 @@ def get_data():
             del ongoing_runs[run_id]
         except KeyError:
             pass
-        return {'message': 'optimization is over'}
+        return {'over': 'true'}
     return dictionary
 
 
@@ -142,13 +147,16 @@ def provide_feedback():
         abort(404)
     feedback_outcome = ongoing_runs[run_id].provide_feedback(int(request.json["feedback"]))
     if feedback_outcome:
-        return {'message': 'feedback provided'}
+        return {'outcome': 'successful'}
     else:
         try:
             del ongoing_runs[run_id]
         except KeyError:
             pass
-        return {'message': 'optimization is over'}
+        return {
+            'outcome': 'successful',
+            'over': 'true'
+        }
 
 
 def runs_cleanup():
