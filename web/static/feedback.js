@@ -27,8 +27,16 @@ function retrieveModels(){
         optimizationOver();
       } else {
         formula_latex = $("h4.mb-0");
-        formula_latex[0].innerHTML = "$$" + data.t1 + "$$";
-        formula_latex[1].innerHTML = "$$" + data.t2 + "$$";
+        formula_size = $("span.formula-size");
+        for (var i = 0; i < 2; i++) {
+          let new_model = data.models[i];
+          formula_latex[i].innerHTML = "$$" + new_model + "$$";
+          w = $("h4.mb-0").width()/5;
+          fsize = Math.min(1.5, w / new_model.length);
+          $(formula_latex[i]).attr("style", "font-size: " + fsize + "em;");
+          // formula_uncer[i].innerHTML = data.models[i].uncertainty;
+          // formula_size[i].innerHTML = data.models[i].n_components;
+        }
         MathJax.typeset();
         updateProgressBar(data.progress);
       }

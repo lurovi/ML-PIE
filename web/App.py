@@ -128,7 +128,7 @@ def get_data():
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_runs:
         abort(404)
-    dictionary = ongoing_runs[run_id].request_trees()
+    dictionary = ongoing_runs[run_id].request_models()
     if not dictionary:
         try:
             del ongoing_runs[run_id]

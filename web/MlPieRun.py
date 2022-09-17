@@ -31,7 +31,7 @@ class MlPieRun:
     def start(self) -> None:
         self.optimization_thread.start()
 
-    def request_trees(self) -> dict:
+    def request_models(self) -> dict:
         if not self.optimization_thread.is_alive():
             self.flush()
             return {}
@@ -52,7 +52,7 @@ class MlPieRun:
         self.encoded_requests.append(requested_values["encoding"])
         self.feedback_request_time = time.time()
         total_generations = self.optimization_thread.termination[1]
-        return {'t1': trees[0], 't2': trees[1], 'it': iteration, 'progress': 100 * iteration / total_generations}
+        return {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
 
     def provide_feedback(self, feedback: int) -> bool:
         if not self.optimization_thread.is_alive():
