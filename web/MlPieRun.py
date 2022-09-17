@@ -1,5 +1,6 @@
 import time
 
+import torch
 from sympy import latex, parse_expr
 
 from genepro.node import Node
@@ -77,6 +78,9 @@ class MlPieRun:
             self.feedback_requests_iterations, self.feedback_responses_iterations)),
             columns=['duration', 'tree_1', 'tree_2', 'encoding', 'feedback', 'req_iteration', 'resp_iteration'])
         feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
+
+        model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
+        torch.save(model, path + "nn-" + self.run_id + ".pth")
 
     def is_abandoned(self) -> bool:
         return time.time() - self.feedback_request_time > self.timeout_time
