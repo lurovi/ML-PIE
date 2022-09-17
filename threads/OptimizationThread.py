@@ -2,16 +2,17 @@ import threading
 from typing import Any
 
 from pymoo.algorithms.base.genetic import GeneticAlgorithm
-from pymoo.core.callback import Callback
 from pymoo.core.problem import Problem
 
 from pymoo.optimize import minimize
+
+from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 
 
 class OptimizationThread(threading.Thread):
 
     def __init__(self, optimization_algorithm: GeneticAlgorithm, problem: Problem, termination: Any, seed: int,
-                 callback: Callback = None, verbose: bool = False, save_history: bool = True):
+                 callback: PopulationAccumulator = None, verbose: bool = False, save_history: bool = True):
         threading.Thread.__init__(self)
         self.optimization_algorithm = optimization_algorithm
         self.problem = problem
@@ -32,6 +33,10 @@ class OptimizationThread(threading.Thread):
             callback=self.callback,
             save_history=self.save_history
         )
+
+    def get_current_iteration(self) -> int:
+        if self.callback is not None:
+            return self.callback.get_current_iteration()
 
     def get_result(self):
         return self.result

@@ -123,10 +123,10 @@ def get_data():
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_runs:
         return {'message': 'no ongoing run with that id'}
-    trees = ongoing_runs[run_id].request_trees()
-    if not trees:
+    dictionary = ongoing_runs[run_id].request_trees()
+    if not dictionary:
         return {'message': 'optimization is over'}
-    return {'t1': trees[0], 't2': trees[1]}
+    return dictionary
 
 
 @app.route("/provideFeedback", methods=['POST'])

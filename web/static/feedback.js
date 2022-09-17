@@ -24,6 +24,7 @@ function retrieveModels(){
       formula_latex = $("h4.mb-0");
       formula_latex[0].innerHTML = data.t1;
       formula_latex[1].innerHTML = data.t2;
+      updateProgressBar(data.progress);
     });
     $("#div-loading-img").attr("hidden", true)
 }
@@ -38,4 +39,11 @@ function provideFeedback(feedback){
     }).done(data => {
       console.log(data.message);
     });
+}
+
+function updateProgressBar(progressPercentage){
+    progressBar = $("#evolution-progress-bar")
+    progressBar.width(progressPercentage+"%")
+    progressBar.attr("aria-valuenow", progressPercentage)
+    progressBar.html(progressPercentage+"%")
 }
