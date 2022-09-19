@@ -26,7 +26,10 @@ import numpy as np
 
 from web.MlPieRun import MlPieRun
 
+RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
+
 app = Flask(__name__)
+app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 # TODO move this to a neater setup
 ongoing_runs = {}
@@ -117,7 +120,7 @@ def start_run():
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser)
 
-    ml_pie_run = MlPieRun(run_id, optimization_thread, interpretability_estimate_updater)
+    ml_pie_run = MlPieRun(run_id, optimization_thread, interpretability_estimate_updater, app.config['RESULTS_FOLDER'])
     ongoing_runs[run_id] = ml_pie_run
     ml_pie_run.start()
     return {"id": run_id}
@@ -166,8 +169,7 @@ def restart():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     old_run_id = request.headers['x-access-tokens']
-    path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\"
-    files = glob.glob(path + "*-" + old_run_id + ".*")
+    files = glob.glob(app.config['RESULTS_FOLDER'] + "*-" + old_run_id + ".*")
     for file in files:
         try:
             os.remove(file)

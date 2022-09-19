@@ -11,15 +11,14 @@ import numpy as np
 
 import pandas as pd
 
-path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\"
-
 
 class MlPieRun:
-    def __init__(self, run_id, optimization_thread, interpretability_estimate_updater):
+    def __init__(self, run_id, optimization_thread, interpretability_estimate_updater, path: str = None):
         self.timeout_time = 3 * 60
         self.run_id = run_id
         self.optimization_thread: OptimizationThread = optimization_thread
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
+        self.path = path
         self.feedback_counter: int = -1
         self.feedback_duration: list[float] = []
         self.feedback_requests: list[dict] = []
@@ -77,16 +76,16 @@ class MlPieRun:
             self.feedback_responses, self.feedback_requests_iterations, self.feedback_responses_iterations)),
             columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable', 'encoding',
                      'feedback', 'req_iteration', 'resp_iteration'])
-        feedback_data.to_csv(path_or_buf=path + "feedback-" + self.run_id + ".csv")
+        feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
         # write nn file
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
-        torch.save(model, path + "nn-" + self.run_id + ".pth")
+        torch.save(model, self.path + "nn-" + self.run_id + ".pth")
         # write optimization file
         generations, parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
             self.optimization_thread.result.history)
         best_data = pd.DataFrame(list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
                                  columns=['generation', 'parable_tree', 'latex_tree', 'accuracy', 'interpretability'])
-        best_data.to_csv(path_or_buf=path + "best-" + self.run_id + ".csv")
+        best_data.to_csv(path_or_buf=self.path + "best-" + self.run_id + ".csv")
 
     def is_abandoned(self) -> bool:
         return time.time() - self.feedback_request_time > self.timeout_time
