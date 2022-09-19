@@ -15,3 +15,7 @@ $("#btn-undo").on("click", function(){
         }
     );
 })
+
+$("#btn-submit").on("click", function(){
+    window.location = window.location.protocol + "//" + window.location.host + "/thanks";
+})
