@@ -13,6 +13,7 @@ $("#btn-undo").on("click", function(){
           localStorage.getItem("token")
           window.location = window.location.protocol + "//" + window.location.host + "/feedback";
         }
+    ).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
     );
 })
 
