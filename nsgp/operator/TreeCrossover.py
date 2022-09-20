@@ -5,10 +5,11 @@ from nsgp.structure.TreeStructure import TreeStructure
 
 
 class TreeCrossover(Crossover):
-    def __init__(self, structure: TreeStructure):
+    def __init__(self, structure: TreeStructure, prob: float = 0.9):
         # define the crossover: number of parents and number of offsprings
-        super().__init__(2, 2)
+        super().__init__(n_parents=2, n_offsprings=2, prob=prob)
         self.__structure: TreeStructure = structure
+        self.__prob = prob
 
     def _do(self, problem, x, **kwargs):
         # The input of has the following shape (n_parents, n_matings, n_var)
