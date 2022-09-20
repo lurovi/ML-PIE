@@ -1,5 +1,3 @@
-import glob
-import os
 import random
 import threading
 
@@ -169,12 +167,12 @@ def restart():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     old_run_id = request.headers['x-access-tokens']
-    files = glob.glob(app.config['RESULTS_FOLDER'] + "*-" + old_run_id + ".*")
-    for file in files:
-        try:
-            os.remove(file)
-        except OSError:
-            pass
+    try:
+        file = open(app.config['RESULTS_FOLDER'] + 'reset.txt', 'a')
+        file.write(old_run_id + '\n')
+        file.close()
+    except IOError:
+        pass
     return start_run()
 
 
