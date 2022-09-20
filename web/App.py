@@ -141,6 +141,16 @@ def get_data():
     return dictionary
 
 
+@app.route("/getProgress", methods=['GET'])
+def get_progress():
+    if 'x-access-tokens' not in request.headers:
+        abort(404)
+    run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_runs:
+        abort(404)
+    return ongoing_runs[run_id].request_progress()
+
+
 @app.route("/provideFeedback", methods=['POST'])
 def provide_feedback():
     if 'x-access-tokens' not in request.headers:
