@@ -7,7 +7,9 @@ $(window).resize(function () {
 });
 
 $("document").ready(function() {
-    retrieveModels();
+    if(!localStorage.getItem("over")){
+      retrieveModels();
+    }
 });
 
 $(".model-container").click(function() {
@@ -90,6 +92,7 @@ function updateProgressBar(progressPercentage){
 }
 
 function optimizationOver(){
+    localStorage.setItem("over", true);
     clearInterval(progressRetrievalInterval);
     $("#btn-proceed").attr("disabled", false);
     $("#div-loading-img").attr("hidden", true);
