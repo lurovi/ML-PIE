@@ -37,19 +37,29 @@ class MlPieRun:
             return {}
         # if the previous request was not answered I give it back again
         # might change it to -> sample again without incrementing the counter
+        iteration = self.optimization_thread.get_current_iteration()
+        total_generations = self.optimization_thread.termination[1]
         if len(self.feedback_requests) > len(self.feedback_responses):
-            return self.feedback_requests[self.feedback_counter]
+            last_request = self.feedback_requests[self.feedback_counter]
+            last_request['progress'] = 100 * iteration / total_generations
+            return last_request
         self.feedback_counter += 1
         requested_values = self.interpretability_estimate_updater.request_trees()
-        iteration = self.optimization_thread.get_current_iteration()
         self.feedback_requests_iterations.append(iteration)
         trees = (self.format_tree(requested_values["t1"]), self.format_tree(requested_values["t2"]))
-        total_generations = self.optimization_thread.termination[1]
         dictionary = {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
         self.feedback_request_time = time.time()
         self.feedback_requests.append(dictionary)
         self.encoded_requests.append(requested_values["encoding"])
         return dictionary
+
+    def request_progress(self) -> dict:
+        if not self.optimization_thread.is_alive():
+            self.flush()
+            return {'progress': 100}
+        iteration = self.optimization_thread.get_current_iteration()
+        total_generations = self.optimization_thread.termination[1]
+        return {'progress': 100 * iteration / total_generations}
 
     def provide_feedback(self, feedback: int) -> bool:
         if not self.optimization_thread.is_alive():

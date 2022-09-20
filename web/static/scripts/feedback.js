@@ -1,3 +1,7 @@
+const progressRetrievalInterval = setInterval(function(){
+    retrieveProgress();
+}, 2000);
+
 $(window).resize(function () {
     w = $("h4.mb-0").width()/4;
 });
@@ -65,6 +69,18 @@ function provideFeedback(feedback){
     );
 }
 
+function retrieveProgress(){
+    $.ajax({
+      url: "getProgress",
+      headers: { 'x-access-tokens': localStorage.getItem("token") }
+    }).done(data => {
+      updateProgressBar(data.progress);
+      if(data.progress >= 100){
+        optimizationOver();
+      }
+    });
+}
+
 function updateProgressBar(progressPercentage){
     progressBar = $("#evolution-progress-bar")
     progressBar.width(progressPercentage+"%")
@@ -73,6 +89,7 @@ function updateProgressBar(progressPercentage){
 }
 
 function optimizationOver(){
+    clearInterval(progressRetrievalInterval);
     $("#btn-proceed").attr("disabled", false);
     $("#div-loading-img").attr("hidden", true);
     $(".model-container").attr("hidden", true);
