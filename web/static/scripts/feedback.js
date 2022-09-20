@@ -78,7 +78,8 @@ function retrieveProgress(){
       if(data.progress >= 100){
         optimizationOver();
       }
-    });
+    }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
+    );
 }
 
 function updateProgressBar(progressPercentage){
