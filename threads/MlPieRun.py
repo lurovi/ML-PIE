@@ -100,7 +100,7 @@ class MlPieRun:
         generations, parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
             self.optimization_thread.result.history)
         best_data = pd.DataFrame(list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
-                                 columns=['generation', 'parable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+                                 columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
         best_data.to_csv(path_or_buf=self.path + "best-" + self.run_id + ".csv")
 
     def is_abandoned(self) -> bool:
