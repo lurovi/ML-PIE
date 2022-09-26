@@ -13,7 +13,9 @@ import pandas as pd
 
 
 class MlPieRun:
-    def __init__(self, run_id, optimization_thread, interpretability_estimate_updater, path: str = None):
+    def __init__(self, run_id: str, optimization_thread: OptimizationThread,
+                 interpretability_estimate_updater: InterpretabilityEstimateUpdater,
+                 path: str = None):
         self.timeout_time = 3 * 60
         self.run_id = run_id
         self.optimization_thread: OptimizationThread = optimization_thread
@@ -27,6 +29,8 @@ class MlPieRun:
         self.feedback_request_time: float = 0
         self.feedback_requests_iterations: list[int] = []
         self.feedback_responses_iterations: list[int] = []
+        self.t1: Node = None
+        self.t2: Node = None
 
     def start(self) -> None:
         self.optimization_thread.start()
@@ -46,7 +50,9 @@ class MlPieRun:
         self.feedback_counter += 1
         requested_values = self.interpretability_estimate_updater.request_trees()
         self.feedback_requests_iterations.append(iteration)
-        trees = (self.format_tree(requested_values["t1"]), self.format_tree(requested_values["t2"]))
+        self.t1 = requested_values["t1"]
+        self.t2 = requested_values["t2"]
+        trees = (self.format_tree(self.t1), self.format_tree(self.t2))
         dictionary = {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
         self.feedback_request_time = time.time()
         self.feedback_requests.append(dictionary)
