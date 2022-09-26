@@ -9,7 +9,7 @@ class GroundTruthCollector(FeedbackCollector):
         super().__init__()
         self.__ground_truth_computer = ground_truth_computer
 
-    def collect_feedback(self, pairs: List[Tuple[Node, Node]]) -> List[float]:
+    def collect_feedback(self, pairs: List[Tuple[Node, Node]]) -> List[int]:
         feedbacks = []
         for first_tree, second_tree in pairs:
             first_label = self.__ground_truth_computer.compute(first_tree)

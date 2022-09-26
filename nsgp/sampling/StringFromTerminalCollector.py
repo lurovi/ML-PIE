@@ -7,7 +7,7 @@ class StringFromTerminalCollector(FeedbackCollector):
     def __init__(self):
         super().__init__()
 
-    def collect_feedback(self, pairs: List[Tuple[Node, Node]]) -> List[float]:
+    def collect_feedback(self, pairs: List[Tuple[Node, Node]]) -> List[int]:
         feedbacks = []
         print("")
         for first_tree, second_tree in pairs:
