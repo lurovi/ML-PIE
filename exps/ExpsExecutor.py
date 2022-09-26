@@ -109,7 +109,7 @@ class ExpsExecutor:
                                              warmup=None):
         df = {"Amount of feedback": [], "Spearman footrule": [], "Encoding": [], "Ground-truth": [],
               "Sampling": [], "Warm-up": []}
-        verbose = True
+        verbose = False
         repr_plot = encoding_type[0].upper() + encoding_type[1:]
         repr_plot = repr_plot.replace("_", " ")
         ground_plot = ground_truth_type[0].upper() + ground_truth_type[1:]

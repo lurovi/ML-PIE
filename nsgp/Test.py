@@ -69,8 +69,8 @@ if __name__ == "__main__":
     wind_speed = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/windspeed/wind_dataset_split.pbz2")
 
     structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=partial(np.random.uniform, low=-5.0, high=5.0), normal_distribution_parameters=normal_distribution_parameters)
-    problem = MultiObjectiveMinimizationElementWiseProblem(evaluators=[MSEEvaluator(wind_speed["training"][0], wind_speed["training"][1]), GroundTruthEvaluator(NumNodesNegComputer(), True)])
-    gp = GPWithNSGA2(structure, problem, pop_size=300, num_gen=100, duplicates_elimination_data=duplicates_elimination_little_data)
-    res, timeInHours = gp.run_minimization(seed=1)
-    print(timeInHours)
-    Scatter().add(res.F).show()
+    evaluators = [MSEEvaluator(wind_speed["training"][0], wind_speed["training"][1]), GroundTruthEvaluator(NumNodesNegComputer(), True)]
+    gp = GPWithNSGA2(structure, evaluators, pop_size=20, num_gen=50, duplicates_elimination_data=duplicates_elimination_little_data)
+    res = gp.run_minimization(seed=1)
+    print(res["executionTimeInHours"])
+    Scatter().add(res["result"].F).show()

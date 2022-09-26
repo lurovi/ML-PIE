@@ -1,5 +1,6 @@
+import threading
 import time
-from typing import Tuple
+from typing import Tuple, List, Dict, Any
 import random
 import torch
 import numpy as np
@@ -13,23 +14,31 @@ from copy import deepcopy
 
 from pymoo.termination import get_termination
 
+from nsgp.evaluation.TreeEvaluator import TreeEvaluator
 from nsgp.operator.TreeSetting import TreeSetting
+from nsgp.problem.MultiObjectiveMinimizationElementWiseProblem import MultiObjectiveMinimizationElementWiseProblem
+from nsgp.problem.MultiObjectiveMinimizationProblem import MultiObjectiveMinimizationProblem
 
 from nsgp.structure.TreeStructure import TreeStructure
 
 
 class GPWithNSGA2:
     def __init__(self, structure: TreeStructure,
-                 problem: Problem,
+                 evaluators: List[TreeEvaluator],
                  pop_size: int,
                  num_gen: int,
+                 element_wise_eval: bool = False,
                  crossover_prob: float = 0.9,
                  mutation_prob: float = 0.6,
                  num_offsprings: int = None,
                  duplicates_elimination_data: np.ndarray = None,
-                 callback: Callback = None):
+                 callback: Callback = None,
+                 mutex: threading.Lock = None):
         self.__structure = structure
-        self.__problem = problem
+        self.__element_wise_eval = element_wise_eval
+        self.__evaluators = deepcopy(evaluators)
+        self.__number_of_evaluators = len(self.__evaluators)
+        self.__mutex = mutex
         self.__pop_size = pop_size
         self.__num_gen = num_gen
         self.__num_offsprings = num_offsprings
@@ -56,16 +65,20 @@ class GPWithNSGA2:
                                  eliminate_duplicates=self.__duplicates_elimination
                                  )
 
-    def run_minimization(self, seed: int = None, verbose: bool = True, save_history: bool = True) -> Tuple[Result, float]:
+    def run_minimization(self, seed: int = None, verbose: bool = True, save_history: bool = True) -> Dict[str, Any]:
         if seed is not None:
             random.seed(seed)
             np.random.seed(seed)
             torch.manual_seed(seed)
+        if self.__element_wise_eval:
+            problem: Problem = MultiObjectiveMinimizationElementWiseProblem(self.__evaluators, self.__mutex)
+        else:
+            problem: Problem = MultiObjectiveMinimizationProblem(self.__evaluators, self.__mutex)
         start = time.time()
-        res = minimize(problem=deepcopy(self.__problem), algorithm=deepcopy(self.__algorithm),
+        res = minimize(problem=problem, algorithm=deepcopy(self.__algorithm),
                        termination=deepcopy(self.__termination),
                        seed=seed, verbose=verbose, save_history=save_history,
                        callback=deepcopy(self.__callback),
                        return_least_infeasible=False)
         end = time.time()
-        return res, (end - start)*(1/3600)
+        return {"result": res, "executionTimeInHours": (end - start)*(1/3600), "seed": seed}
