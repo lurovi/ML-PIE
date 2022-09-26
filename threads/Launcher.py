@@ -1,35 +1,28 @@
 import random
 import threading
-import time
 
 import numpy as np
 import torch
 from pymoo.algorithms.moo.nsga2 import NSGA2
-from pymoo.core.individual import Individual
-from pymoo.visualization.scatter import Scatter
 from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from exps.groundtruth.InterpretabilityShapeComputer import InterpretabilityShapeComputer
 from genepro import node_impl
-from genepro.node import Node
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 from nsgp.encoder.CountsEncoder import CountsEncoder
-from nsgp.interpretability.AutomaticInterpretabilityEstimateUpdater import AutomaticInterpretabilityEstimateUpdater
+from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
 from nsgp.sampling.GroundTruthCollector import GroundTruthCollector
 from nsgp.sampling.RandomChooserOnline import RandomChooserOnline
-from nsgp.sampling.StringFromTerminalCollector import StringFromTerminalCollector
 from nsgp.structure.TreeStructure import TreeStructure
-from threads.FeedbackThread import FeedbackThread
+from threads.MlPieAutomaticRun import MlPieAutomaticRun
 from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
 
 if __name__ == '__main__':
-    print("Main thread starting")
-
     # settings
     seed = 1
     random.seed(seed)
@@ -86,34 +79,19 @@ if __name__ == '__main__':
 
     # feedback thread creation
     pair_chooser = RandomChooserOnline()
-    # feedback_collector = GroundTruthCollector(InterpretabilityShapeComputer())
-    feedback_collector = StringFromTerminalCollector()
-    interpretability_estimate_updater = AutomaticInterpretabilityEstimateUpdater(individuals=population_storage,
-                                                                                 mutex=mutex,
-                                                                                 interpretability_estimator=interpretability_estimator,
-                                                                                 encoder=tree_encoder,
-                                                                                 pair_chooser=pair_chooser,
-                                                                                 feedback_collector=feedback_collector)
-    feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater)
-    # feedback_thread = FeedbackThread(interpretability_estimate_updater=interpretability_estimate_updater, delay=0.3)
+    feedback_collector = GroundTruthCollector(InterpretabilityShapeComputer())
+    # feedback_collector = StringFromTerminalCollector()
+    interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage,
+                                                                        mutex=mutex,
+                                                                        interpretability_estimator=interpretability_estimator,
+                                                                        encoder=tree_encoder,
+                                                                        pair_chooser=pair_chooser)
 
     # thread execution
-    optimization_thread.start()
-    callback.population_non_empty.wait()
-    feedback_thread.start()
-
-    # thread termination
-    optimization_thread.join()
-    print("Optimization is over")
-    feedback_thread.stop()
-    feedback_thread.join()
-    print("Feedback collection is stopped")
-
-    history = optimization_thread.result.history
-    for generation in history:
-        for individual in generation.opt:
-            individual: Individual = individual
-            tree: Node = individual.X[0]
-            print(
-                f"Accuracy: {individual.F[0]}\t Interpretability: {individual.F[1]} \t Tree: {tree.get_readable_repr()}")
-        print()
+    automatic_run = MlPieAutomaticRun(
+        run_id="myexp", path="C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\",
+        optimization_thread=optimization_thread,
+        interpretability_estimate_updater=interpretability_estimate_updater,
+        feedback_collector=feedback_collector
+    )
+    automatic_run.run_automatically(delay=2)
