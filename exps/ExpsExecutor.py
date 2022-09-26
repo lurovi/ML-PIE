@@ -12,11 +12,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-import multiprocessing
+import torch.multiprocessing as mp
 import random
 
 from deeplearn.dataset.NumericalData import NumericalData
 from deeplearn.dataset.PairSampler import PairSampler
+from deeplearn.dataset.PairSamplerFactory import PairSamplerFactory
 from deeplearn.dataset.RandomSamplerWithReplacement import RandomSamplerWithReplacement
 
 from deeplearn.model.MLPNet import MLPNet
@@ -54,7 +55,7 @@ class ExpsExecutor:
 
         trees = self.__data_generator.get_X_y(encoding_type, ground_truth_type)
         training, validation, test = trees["training"], trees["validation"], trees["test"]
-        input_layer_size = self.__data_generator.get_structure().get_encoding_size(encoding_type)
+        input_layer_size = self.__data_generator.get_structure().get_encoder(encoding_type).size()
         output_layer_size = 1
         X_tr, y_tr = training.get_points_and_labels()
         X_va, y_va = validation.get_points_and_labels()
@@ -62,10 +63,11 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
         pairs_valloader = DataLoader(pairs_X_y_va, batch_size=1, shuffle=True)
 
-        pool = multiprocessing.Pool(multiprocessing.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, amount_of_feedback=amount_of_feedback, sampler=sampler, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
+        pool.join()
         for curr_acc, curr_ftrs in exec_res:
             accs.append(curr_acc)
             ftrs.append(curr_ftrs)
@@ -107,12 +109,12 @@ class ExpsExecutor:
                                              warmup=None):
         df = {"Amount of feedback": [], "Spearman footrule": [], "Encoding": [], "Ground-truth": [],
               "Sampling": [], "Warm-up": []}
-        verbose = False
+        verbose = True
         repr_plot = encoding_type[0].upper() + encoding_type[1:]
         repr_plot = repr_plot.replace("_", " ")
         ground_plot = ground_truth_type[0].upper() + ground_truth_type[1:]
         ground_plot = ground_plot.replace("_", " ")
-        sampl_plot = sampler.get_string_repr()
+        sampl_plot = sampler.create_sampler(1, None).get_string_repr()
         sampl_plot = sampl_plot[0].upper() + sampl_plot[1:]
         sampl_plot = sampl_plot.replace("_", " ")
 
@@ -123,7 +125,7 @@ class ExpsExecutor:
 
         trees = self.__data_generator.get_X_y(encoding_type, ground_truth_type)
         training, validation, test = trees["training"], trees["validation"], trees["test"]
-        input_layer_size = self.__data_generator.get_structure().get_encoding_size(encoding_type)
+        input_layer_size = self.__data_generator.get_structure().get_encoder(encoding_type).size()
         output_layer_size = 1
 
         X_tr, y_tr = training.get_points_and_labels()
@@ -140,7 +142,7 @@ class ExpsExecutor:
             warmup_data = None
             pretrainer_factory = None
 
-        pool = multiprocessing.Pool(multiprocessing.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_create_dict_experiment_nn_ranking_online,
                             activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size,
                                                                 output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
@@ -152,6 +154,7 @@ class ExpsExecutor:
                                                                 sampl_plot=sampl_plot, warmup_plot=warmup_plot)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
+        pool.join()
         for l in exec_res:
             for curr_train_index, curr_ftrs, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot in l:
                 df["Amount of feedback"].append(curr_train_index)
@@ -163,8 +166,7 @@ class ExpsExecutor:
         print("Executed: "+repr_plot+" - "+ground_plot+" - "+sampl_plot+" - "+warmup_plot+".")
         return df
 
-    @staticmethod
-    def perform_experiment_accuracy_feynman_pairs(folder, device):
+    def perform_experiment_accuracy_feynman_pairs(self, folder, device):
 
         counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
         verbose = False
@@ -183,7 +185,7 @@ class ExpsExecutor:
         print(data["counts_training"].count_labels())
         print(data["counts_test"].count_labels())
 
-        pool = multiprocessing.Pool(multiprocessing.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_perform_experiment_accuracy_feynman_pairs,
                             data=data, counts_input_layer_size=counts_input_layer_size,
                             onehot_input_layer_size=onehot_input_layer_size, output_layer_size=output_layer_size,
@@ -191,6 +193,7 @@ class ExpsExecutor:
 
         exec_res = pool.map(exec_func, list(range(10)))
         pool.close()
+        pool.join()
         for curr_acc_counts, curr_acc_onehot in exec_res:
             counts_accs.append(curr_acc_counts)
             onehot_accs.append(curr_acc_onehot)
@@ -227,8 +230,8 @@ def parallel_execution_perform_experiment_accuracy_feynman_pairs(exec_ind: int, 
 def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activation_func: Any,
                                                             final_activation_func: Any, input_layer_size: int,
                                                             output_layer_size: int, hidden_layer_sizes: List,
-                                                            amount_of_feedback: int, sampler: PairSampler, device: Any,
-                                                            X_tr: np.ndarray, y_tr: np.ndarray, verbose: bool,
+                                                            amount_of_feedback: int, sampler: PairSamplerFactory, device: Any,
+                                                            X_tr: torch.Tensor, y_tr: torch.Tensor, verbose: bool,
                                                             valloader: DataLoader, pairs_valloader: DataLoader) -> Tuple:
     curr_seed = exec_ind
     random.seed(curr_seed)
@@ -238,9 +241,9 @@ def parallel_execution_perform_experiment_nn_ranking_online(exec_ind: int, activ
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                  hidden_layer_sizes, dropout_prob=0.25)
     trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False)
-
+    samplerrr = sampler.create_sampler(1)
     for idx in range(amount_of_feedback):
-        pairs_train = sampler.sample(X_tr, y_tr, trainer)
+        pairs_train = samplerrr.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:
@@ -255,8 +258,8 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                                                 output_layer_size: int, hidden_layer_sizes: int,
                                                                 device: Any, pretrainer_factory: TrainerFactory,
                                                                 warmup_data: Dataset, amount_of_feedback: int,
-                                                                sampler: PairSampler, X_tr: np.ndarray,
-                                                                y_tr: np.ndarray, verbose: bool,
+                                                                sampler: PairSamplerFactory, X_tr: torch.Tensor,
+                                                                y_tr: torch.Tensor, verbose: bool,
                                                                 valloader: DataLoader, repr_plot: str, ground_plot: str,
                                                                 sampl_plot: str, warmup_plot: str) -> List:
     curr_seed = exec_ind
@@ -270,8 +273,9 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                             warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
 
     results = []
+    samplerrr = sampler.create_sampler(1)
     for idx in range(amount_of_feedback):
-        pairs_train = sampler.sample(X_tr, y_tr, trainer)
+        pairs_train = samplerrr.sample(X_tr, y_tr, trainer)
         trainer.change_data(pairs_train)
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:

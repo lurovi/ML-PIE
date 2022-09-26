@@ -43,7 +43,7 @@ class RegressionProblemWithNeuralEstimate(Problem):
             out["F"][i, 0] = mse
             # TODO this might be done in batch to speed up
             encoded_tree = self.__tree_encoder.encode(tree, True)
-            tensor_encoded_tree = torch.tensor(encoded_tree).float().reshape(1, -1)
+            tensor_encoded_tree = torch.from_numpy(encoded_tree).float().reshape(1, -1)
             out["F"][i, 1] = -1 * self.__interpretability_estimator.predict(tensor_encoded_tree)[0][0].item()
 
     def __getstate__(self):

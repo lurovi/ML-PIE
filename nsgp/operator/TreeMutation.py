@@ -5,8 +5,9 @@ from nsgp.structure.TreeStructure import TreeStructure
 
 class TreeMutation(Mutation):
 
-    def __init__(self, structure: TreeStructure):
-        super().__init__()
+    def __init__(self, structure: TreeStructure, prob: float = 0.6):
+        super().__init__(prob=prob)
+        self.__prob = prob
         self.__structure: TreeStructure = structure
 
     def _do(self, problem, x, **kwargs):

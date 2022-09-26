@@ -27,6 +27,17 @@ class PlotGenerator:
         return df
 
     @staticmethod
+    def concatenate_dataframe_rows(dataframes: List[pd.DataFrame]):
+        return pd.concat(dataframes).reset_index(inplace=False, drop=True)
+
+    @staticmethod
+    def filter_dataframe_rows_by_column_values(df: pd.DataFrame, filters: Dict[str, str]):
+        condition: List[bool] = [True] * df.shape[0]
+        for filter_k in filters.keys():
+            condition = condition & (df[filter_k] == filters[filter_k])
+        return df[condition].reset_index(inplace=False, drop=True)
+
+    @staticmethod
     def plot_line(df, x, y, hue, style, folder_path, img_name, pgfplot=False, figsize=(10, 6)):
         sns.set(rc={"figure.figsize": figsize})
         sns.set_style("white")
@@ -101,3 +112,14 @@ class PlotGenerator:
         g.set(yscale='log')
         plt.show()
         return g
+
+
+if __name__ == "__main__":
+    df = {"a": ["AS", "AS", "DEF", "DER", "AS"], "b": ["GT", "ER", "ER", "GT", "OL"], "c": ["WE", "WE", "QQ", "WW", "QQ"]}
+    df = pd.DataFrame(df)
+    print(df.head())
+
+    df_1 = PlotGenerator.filter_dataframe_rows_by_column_values(df, {"a":"AS", "c":"WE"})
+    print(df_1.head())
+
+    print(PlotGenerator.concatenate_dataframe_rows([df, df_1]).head(9))

@@ -165,6 +165,11 @@ class TreeStructure:
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")
         self.__encoding_func_dict.pop(encoding_type)
 
+    def get_encoder(self, encoding_type: str) -> TreeEncoder:
+        if encoding_type not in self.__encoding_func_dict.keys():
+            raise AttributeError(f"{encoding_type} is not a valid encoding type.")
+        return self.__encoding_func_dict[encoding_type]
+
     def generate_encoding(self, encoding_type: str, tree: Node, apply_scaler: bool = True) -> np.ndarray:
         if encoding_type not in self.__encoding_func_dict.keys():
             raise AttributeError(f"{encoding_type} is not a valid encoding type.")

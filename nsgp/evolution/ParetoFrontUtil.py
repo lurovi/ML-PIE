@@ -2,6 +2,9 @@ from typing import List
 
 from pymoo.core.result import Result
 import numpy as np
+from sklearn.metrics import r2_score
+
+from genepro.node import Node
 
 
 class ParetoFrontUtil:
@@ -29,3 +32,8 @@ class ParetoFrontUtil:
             if not dominated:
                 new_custom_front.append(new_pareto_front[i])
         return new_custom_front
+
+    @staticmethod
+    def apply_tree_to_test_set_for_r2_score(test_set: np.ndarray, test_labels: np.ndarray, tree: Node) -> float:
+        res_test = tree(test_set)
+        return r2_score(res_test, test_labels)

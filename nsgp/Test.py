@@ -1,6 +1,8 @@
 import collections
 import inspect
+from functools import partial
 
+from exps.groundtruth.NumNodesNegComputer import NumNodesNegComputer
 from genepro import node_impl
 from genepro.node import Node
 from genepro.node_impl import Constant, IfThenElse, Feature
@@ -12,8 +14,13 @@ import time
 import numpy as np
 import random
 import torch
+
+from nsgp.evaluation.GroundTruthEvaluator import GroundTruthEvaluator
+from nsgp.evaluation.MSEEvaluator import MSEEvaluator
+from nsgp.evolution.GPWithNSGA2 import GPWithNSGA2
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.BinaryClassificationProblem import BinaryClassificationProblem
+from nsgp.problem.MultiObjectiveMinimizationElementWiseProblem import MultiObjectiveMinimizationElementWiseProblem
 from nsgp.problem.RegressionProblem import RegressionProblem
 from nsgp.problem.SimpleFunctionProblem import SimpleFunctionProblem
 from nsgp.structure.TreeStructure import TreeStructure
@@ -45,17 +52,7 @@ if __name__ == "__main__":
     regression_y = np.array([example_of_difficult_target_for_regression(random_data_X[i]) for i in range(random_data_X.shape[0])])
     binary_classification_y = np.array([example_of_difficult_target_for_binary_classification(random_data_X[i]) for i in range(random_data_X.shape[0])])
     print(collections.Counter(binary_classification_y))
-    duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 7))
-    duplicates_elimination_little_data_0 = np.array([[0.23], [12], [0.45], [0.45], [1.23], [2.4], [1.8], [0.90]])
-
-    node_classes = [c[1] for c in inspect.getmembers(node_impl, inspect.isclass)]
-    internal_nodes = list()
-    for node_cls in node_classes:
-        # handle Features and Constants separately (also, avoid base class Node and IfThenElse)
-        if node_cls == Node or node_cls == Feature or node_cls == Constant or node_cls == IfThenElse:
-            continue
-        node_obj = node_cls()
-        internal_nodes.append(node_obj)
+    duplicates_elimination_little_data = np.random.uniform(-1.0, 1.0, size=(10, 7))
 
     internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                  node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
@@ -69,28 +66,11 @@ if __name__ == "__main__":
                                       (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8),
                                       (0, 0.8), (0, 0.8),
                                       (0, 0.5)]
-
-    structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0), normal_distribution_parameters=normal_distribution_parameters)
-    setting = TreeSetting(structure, duplicates_elimination_little_data)
-    tree_sampling = setting.get_sampling()
-    tree_crossover = setting.get_crossover()
-    tree_mutation = setting.get_mutation()
-    duplicates_elimination = setting.get_duplicates_elimination()
-
-    algorithm = NSGA2(pop_size=50,
-                      sampling=tree_sampling,
-                      crossover=tree_crossover,
-                      mutation=tree_mutation,
-                      eliminate_duplicates=duplicates_elimination
-                      )
     wind_speed = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/windspeed/wind_dataset_split.pbz2")
-    start = time.time()
-    res = minimize(RegressionProblem(wind_speed["training"][0], wind_speed["training"][1]),
-                   algorithm,
-                   ('n_gen', 30),
-                   seed=10,
-                   verbose=True,
-                   save_history=True)
-    end = time.time()
-    print((end - start))
+
+    structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=partial(np.random.uniform, low=-5.0, high=5.0), normal_distribution_parameters=normal_distribution_parameters)
+    problem = MultiObjectiveMinimizationElementWiseProblem(evaluators=[MSEEvaluator(wind_speed["training"][0], wind_speed["training"][1]), GroundTruthEvaluator(NumNodesNegComputer(), True)])
+    gp = GPWithNSGA2(structure, problem, pop_size=300, num_gen=100, duplicates_elimination_data=duplicates_elimination_little_data)
+    res, timeInHours = gp.run_minimization(seed=1)
+    print(timeInHours)
     Scatter().add(res.F).show()
