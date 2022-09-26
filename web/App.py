@@ -22,7 +22,7 @@ from util.PicklePersist import PicklePersist
 
 import numpy as np
 
-from web.MlPieRun import MlPieRun
+from threads.MlPieRun import MlPieRun
 
 RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
 
