@@ -55,7 +55,7 @@ class ExpsExecutor:
 
         trees = self.__data_generator.get_X_y(encoding_type, ground_truth_type)
         training, validation, test = trees["training"], trees["validation"], trees["test"]
-        input_layer_size = self.__data_generator.get_structure().get_encoding_size(encoding_type)
+        input_layer_size = self.__data_generator.get_structure().get_encoder(encoding_type).size()
         output_layer_size = 1
         X_tr, y_tr = training.get_points_and_labels()
         X_va, y_va = validation.get_points_and_labels()
@@ -63,7 +63,7 @@ class ExpsExecutor:
         valloader = DataLoader(validation, batch_size=1, shuffle=True)
         pairs_valloader = DataLoader(pairs_X_y_va, batch_size=1, shuffle=True)
 
-        pool = mp.Pool(mp.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_perform_experiment_nn_ranking_online, activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size, output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes, amount_of_feedback=amount_of_feedback, sampler=sampler, device=device, X_tr=X_tr, y_tr=y_tr, verbose=verbose, valloader=valloader, pairs_valloader=pairs_valloader)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
@@ -125,7 +125,7 @@ class ExpsExecutor:
 
         trees = self.__data_generator.get_X_y(encoding_type, ground_truth_type)
         training, validation, test = trees["training"], trees["validation"], trees["test"]
-        input_layer_size = self.__data_generator.get_structure().get_encoding_size(encoding_type)
+        input_layer_size = self.__data_generator.get_structure().get_encoder(encoding_type).size()
         output_layer_size = 1
 
         X_tr, y_tr = training.get_points_and_labels()
@@ -142,7 +142,7 @@ class ExpsExecutor:
             warmup_data = None
             pretrainer_factory = None
 
-        pool = mp.Pool(mp.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_create_dict_experiment_nn_ranking_online,
                             activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size,
                                                                 output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
@@ -166,8 +166,7 @@ class ExpsExecutor:
         print("Executed: "+repr_plot+" - "+ground_plot+" - "+sampl_plot+" - "+warmup_plot+".")
         return df
 
-    @staticmethod
-    def perform_experiment_accuracy_feynman_pairs(folder, device):
+    def perform_experiment_accuracy_feynman_pairs(self, folder, device):
 
         counts_accs, counts_ftrs, onehot_accs, onehot_ftrs = [], [], [], []
         verbose = False
@@ -186,7 +185,7 @@ class ExpsExecutor:
         print(data["counts_training"].count_labels())
         print(data["counts_test"].count_labels())
 
-        pool = mp.Pool(mp.cpu_count())
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
         exec_func = partial(parallel_execution_perform_experiment_accuracy_feynman_pairs,
                             data=data, counts_input_layer_size=counts_input_layer_size,
                             onehot_input_layer_size=onehot_input_layer_size, output_layer_size=output_layer_size,

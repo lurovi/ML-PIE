@@ -8,7 +8,7 @@ import numpy as np
 
 class TreeSetting:
     def __init__(self, structure: TreeStructure, little_data: np.ndarray = None, crossover_prob: float = 0.9, mutation_prob: float = 0.6):
-        if little_data.shape[1] != structure.get_number_of_features():
+        if little_data is not None and little_data.shape[1] != structure.get_number_of_features():
             raise AttributeError(f"The number of features declared is {structure.get_number_of_features()}. However, little_data parameter of TreeSetting constructor is filled with a numpy matrix whose number of columns is different: {little_data.shape[1]}.")
         self.__structure: TreeStructure = structure
         self.__little_data: np.ndarray = little_data

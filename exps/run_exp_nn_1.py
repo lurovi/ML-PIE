@@ -85,7 +85,7 @@ if __name__ == "__main__":
     folder_name = "tree_data_1"
     amount_of_feedback = 500
     train_size = amount_of_feedback * 2 + 250
-    validation_size = 400
+    validation_size = 370
     test_size = 250
     data_generator = DatasetGenerator(folder_name, structure, train_size, validation_size, test_size, 101)
 
