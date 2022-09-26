@@ -7,7 +7,7 @@ $(window).resize(function () {
 });
 
 $("document").ready(function() {
-    if(!localStorage.getItem("over")){
+    if(localStorage.getItem("over") === "false"){
       retrieveModels();
     }
 });
