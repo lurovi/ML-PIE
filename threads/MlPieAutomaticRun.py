@@ -1,5 +1,7 @@
 import time
 
+import numpy as np
+
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.sampling.FeedbackCollector import FeedbackCollector
 from threads.MlPieRun import MlPieRun
@@ -21,6 +23,6 @@ class MlPieAutomaticRun(MlPieRun):
             if not dictionary:
                 break
             feedback = self.feedback_collector.collect_feedback([(self.t1, self.t2)])[0]
-            time.sleep(delay)
+            time.sleep(np.random.uniform(1, delay + 1e-4))
             if not self.provide_feedback(feedback):
                 break

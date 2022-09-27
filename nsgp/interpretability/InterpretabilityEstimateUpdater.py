@@ -9,15 +9,15 @@ from deeplearn.trainer.blockingtrainer.BlockingBatchTrainer import BlockingBatch
 from deeplearn.trainer.blockingtrainer.BlockingOnlineTrainer import BlockingOnlineTrainer
 from deeplearn.trainer.blockingtrainer.BlockingTrainer import BlockingTrainer
 from nsgp.encoder.TreeEncoder import TreeEncoder
-from nsgp.sampling.PairChooser import PairChooser
+from nsgp.sampling.PairChooserFactory import PairChooserFactory
 
 
 class InterpretabilityEstimateUpdater:
     def __init__(self, individuals: set, mutex: threading.Lock, interpretability_estimator: Trainer,
-                 encoder: TreeEncoder, pair_chooser: PairChooser, batch_size: int = 1) -> None:
+                 encoder: TreeEncoder, pair_chooser: PairChooserFactory, batch_size: int = 1) -> None:
         self.nn_updater: BlockingTrainer = BlockingOnlineTrainer() if batch_size == 1 else BlockingBatchTrainer(
             batch_size)
-        self.pair_chooser = pair_chooser
+        self.pair_chooser = pair_chooser.create(1)
         self.individuals = individuals
         self.mutex = mutex
         self.interpretability_estimator = interpretability_estimator

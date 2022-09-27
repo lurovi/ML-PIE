@@ -73,9 +73,6 @@ if __name__ == "__main__":
 
     structure = TreeStructure(operators, 7, 5, ephemeral_func=partial(np.random.uniform, -5.0, 5.0), normal_distribution_parameters=normal_distribution_parameters)
     structure.register_encoders([CountsEncoder(structure, True, 100), LevelWiseCountsEncoder(structure, True, 100), OneHotEncoder(structure)])
-    #ground_truths = [NumNodesNegComputer(), InterpretabilityShapeComputer(), MathElasticModelComputer(),
-    #                 LispExprHashComputer(), WeightsSumNegComputer(structure, 100),
-    #                 LevelWiseWeightsSumNegComputer(structure, 100), NodeWiseWeightsSumNegComputer(structure, 100)]
     ground_truths = [NumNodesNegComputer(), MathElasticModelComputer(),
                      WeightsSumNegComputer(structure, 100),
                      LevelWiseWeightsSumNegComputer(structure, 100), NodeWiseWeightsSumNegComputer(structure, 100)]
