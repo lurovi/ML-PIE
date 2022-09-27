@@ -15,12 +15,13 @@ import pandas as pd
 class MlPieRun:
     def __init__(self, run_id: str, optimization_thread: OptimizationThread,
                  interpretability_estimate_updater: InterpretabilityEstimateUpdater,
-                 path: str = None):
+                 parameters: dict = None, path: str = None):
         self.timeout_time = 3 * 60
         self.run_id = run_id
         self.optimization_thread: OptimizationThread = optimization_thread
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
         self.path = path
+        self.parameters = parameters
         self.feedback_counter: int = -1
         self.feedback_duration: list[float] = []
         self.feedback_requests: list[dict] = []
@@ -85,22 +86,30 @@ class MlPieRun:
     def flush(self) -> None:
         self.optimization_thread.join()
 
-        # write feedback file
+        # prepare feedback file
         t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)
         feedback_data = pd.DataFrame(list(zip(
             self.feedback_duration, t1_latex, t1_parsable, t2_latex, t2_parsable, self.encoded_requests,
             self.feedback_responses, self.feedback_requests_iterations, self.feedback_responses_iterations)),
             columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable', 'encoding',
                      'feedback', 'req_iteration', 'resp_iteration'])
-        feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
-        # write nn file
+        # prepare nn file
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
-        torch.save(model, self.path + "nn-" + self.run_id + ".pth")
+
         # write optimization file
         generations, parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
             self.optimization_thread.result.history)
         best_data = pd.DataFrame(list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
                                  columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+
+        # update dataframes
+        for k in self.parameters.keys():
+            feedback_data[k] = self.parameters[k]
+            best_data[k] = self.parameters[k]
+
+        # save files
+        feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
+        torch.save(model, self.path + "nn-" + self.run_id + ".pth")
         best_data.to_csv(path_or_buf=self.path + "best-" + self.run_id + ".csv")
 
     def is_abandoned(self) -> bool:

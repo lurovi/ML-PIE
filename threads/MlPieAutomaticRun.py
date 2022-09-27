@@ -9,12 +9,11 @@ from threads.OptimizationThread import OptimizationThread
 class MlPieAutomaticRun(MlPieRun):
     def __init__(self, run_id: str, optimization_thread: OptimizationThread,
                  interpretability_estimate_updater: InterpretabilityEstimateUpdater,
-                 feedback_collector: FeedbackCollector,
-                 path: str = None):
-        super().__init__(run_id, optimization_thread, interpretability_estimate_updater, path)
+                 feedback_collector: FeedbackCollector, parameters: dict = None, path: str = None):
+        super().__init__(run_id, optimization_thread, interpretability_estimate_updater, parameters, path)
         self.feedback_collector: FeedbackCollector = feedback_collector
 
-    def run_automatically(self, delay: int):
+    def run_automatically(self, delay: float):
         self.start()
         self.optimization_thread.callback.population_non_empty.wait()
         while True:
