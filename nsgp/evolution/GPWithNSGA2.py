@@ -32,13 +32,12 @@ class GPWithNSGA2:
                  mutation_prob: float = 0.6,
                  num_offsprings: int = None,
                  duplicates_elimination_data: np.ndarray = None,
-                 callback: Callback = None,
-                 mutex: threading.Lock = None):
+                 callback: Callback = None
+                 ):
         self.__structure = structure
         self.__element_wise_eval = element_wise_eval
         self.__evaluators = deepcopy(evaluators)
         self.__number_of_evaluators = len(self.__evaluators)
-        self.__mutex = mutex
         self.__pop_size = pop_size
         self.__num_gen = num_gen
         self.__num_offsprings = num_offsprings
@@ -65,15 +64,15 @@ class GPWithNSGA2:
                                  eliminate_duplicates=self.__duplicates_elimination
                                  )
 
-    def run_minimization(self, seed: int = None, verbose: bool = True, save_history: bool = True) -> Dict[str, Any]:
+    def run_minimization(self, seed: int = None, verbose: bool = True, save_history: bool = True, mutex: threading.Lock = None) -> Dict[str, Any]:
         if seed is not None:
             random.seed(seed)
             np.random.seed(seed)
             torch.manual_seed(seed)
         if self.__element_wise_eval:
-            problem: Problem = MultiObjectiveMinimizationElementWiseProblem(self.__evaluators, self.__mutex)
+            problem: Problem = MultiObjectiveMinimizationElementWiseProblem(self.__evaluators, mutex)
         else:
-            problem: Problem = MultiObjectiveMinimizationProblem(self.__evaluators, self.__mutex)
+            problem: Problem = MultiObjectiveMinimizationProblem(self.__evaluators, mutex)
         start = time.time()
         res = minimize(problem=problem, algorithm=deepcopy(self.__algorithm),
                        termination=deepcopy(self.__termination),
@@ -81,4 +80,8 @@ class GPWithNSGA2:
                        callback=deepcopy(self.__callback),
                        return_least_infeasible=False)
         end = time.time()
+        if verbose:
+            print("")
+            print(f"Run with seed {seed} completed!")
+            print("")
         return {"result": res, "executionTimeInHours": (end - start)*(1/3600), "seed": seed}
