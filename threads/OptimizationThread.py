@@ -1,4 +1,5 @@
 import threading
+from copy import deepcopy
 from typing import Any
 
 from pymoo.algorithms.base.genetic import GeneticAlgorithm
@@ -26,7 +27,7 @@ class OptimizationThread(threading.Thread):
     def run(self) -> None:
         self.result = minimize(
             problem=self.problem,
-            algorithm=self.optimization_algorithm,
+            algorithm=deepcopy(self.optimization_algorithm),
             termination=self.termination,
             seed=self.seed,
             verbose=self.verbose,

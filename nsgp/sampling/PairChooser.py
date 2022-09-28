@@ -1,3 +1,4 @@
+import threading
 from typing import Tuple, Set, List
 
 from deeplearn.trainer.Trainer import Trainer
@@ -40,7 +41,7 @@ class PairChooser(ABC):
         self.__already_seen.remove(node)
 
     @abstractmethod
-    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
+    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None, mutex: threading.Lock = None) -> List[Tuple[Node, Node]]:
         pass
 
     @abstractmethod

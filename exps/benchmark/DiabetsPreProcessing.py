@@ -14,6 +14,15 @@ if __name__ == "__main__":
     np.random.seed(42)
     df = load_diabetes(as_frame=True).frame  # change to your local path in which the dataset is located
     print(df.head())
+    # Sex 1 is negative (< 0) while sex 2 is positive (> 0)
+    df["sex1"] = np.where(df["sex"] < 0, 1, 0)
+    df["sex2"] = np.where(df["sex"] >= 0, 1, 0)
+    df.drop(["sex"], axis=1, inplace=True)
+    print(df.shape)
+    df.dropna(inplace=True)
+    df.reset_index(drop=True, inplace=True)
+    print(df.shape)
+    print(df.head())
     train, test = train_test_split(df, test_size=0.1, random_state=42)
     train, val = train_test_split(train, test_size=0.2/0.9, random_state=42)
 

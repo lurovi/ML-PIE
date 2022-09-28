@@ -26,3 +26,4 @@ class MlPieAutomaticRun(MlPieRun):
             time.sleep(np.random.uniform(1, delay + 1e-4))
             if not self.provide_feedback(feedback):
                 break
+        self.join()

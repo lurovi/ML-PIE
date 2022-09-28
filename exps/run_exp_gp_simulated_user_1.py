@@ -19,9 +19,9 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 200
-    num_gen = 60
-    starting_seed = 200
+    pop_size = 20
+    num_gen = 20
+    starting_seed = 203
     num_repeats = 7
     idx = 1
     folder_name = "test_results_gp_simulated_user"
@@ -40,13 +40,15 @@ if __name__ == "__main__":
         for encoding_type_str in ["counts", "level_wise_counts"]:
             for ground_truth_str in ["elastic_model", "node_wise_weights_sum"+"_"+str(idx)]:
                 for sampler_factory in [UncertaintyChooserOnlineFactory(), UncertaintyChooserOnlineDistanceEmbeddingsFactory("max"), UncertaintyChooserOnlineDistanceEmbeddingsFactory("median")]:
-                    for warmup in ["elastic_model", "feynman"]:
+                    for warmup in ["feynman", "elastic_model"]:
                         pp = partial(runner.execute_gp_run, pop_size=pop_size, num_gen=num_gen,
                                                   encoding_type=encoding_type_str,
                                                   ground_truth_type=ground_truth_str,
                                                   sampler_factory=sampler_factory,
                                                   warmup=warmup)
-                        pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
-                        pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
-                        pool.close()
-                        pool.join()
+                        for seed in range(starting_seed, starting_seed + num_repeats):
+                            pp(seed)
+                        #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
+                        #_ = pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
+                        #pool.close()
+                        #pool.join()

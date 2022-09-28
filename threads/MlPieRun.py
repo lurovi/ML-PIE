@@ -36,6 +36,9 @@ class MlPieRun:
     def start(self) -> None:
         self.optimization_thread.start()
 
+    def join(self) -> None:
+        self.optimization_thread.join(5)
+
     def request_models(self) -> dict:
         if not self.optimization_thread.is_alive():
             self.flush()
@@ -84,7 +87,7 @@ class MlPieRun:
         return True
 
     def flush(self) -> None:
-        self.optimization_thread.join()
+        self.optimization_thread.join(5)
 
         # prepare feedback file
         t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)

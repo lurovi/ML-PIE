@@ -45,7 +45,7 @@ class GPSimulatedUserExpsExecutor:
         self.__duplicates_elimination_little_data = deepcopy(duplicates_elimination_little_data)
         self.__ground_truths_names = {k.get_name(): k for k in self.__ground_truths}
 
-    def execute_gp_run(self, optimization_seed: int, pop_size: int, num_gen: int, encoding_type: str, ground_truth_type: str, sampler_factory: PairChooserFactory, warmup: str = None) -> None:
+    def execute_gp_run(self, optimization_seed: int, pop_size: int, num_gen: int, encoding_type: str, ground_truth_type: str, sampler_factory: PairChooserFactory, warmup: str = None) -> bool:
         num_offsprings = pop_size
         termination = ("n_gen", num_gen)
         tournament_selection = TournamentSelection(func_comp=binary_tournament, pressure=2)
@@ -130,3 +130,4 @@ class GPSimulatedUserExpsExecutor:
         torch.manual_seed(optimization_seed)
         automatic_run.run_automatically(delay=5)
         print("\n"+run_id+"\n")
+        return True

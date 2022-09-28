@@ -1,4 +1,6 @@
 import random
+import threading
+
 import torch
 
 from typing import Set, Tuple, List
@@ -28,12 +30,16 @@ class UncertaintyChooserDistanceEmbeddings(PairChooser):
         elif normalization_func == "median":
             self.__normalization_func = np.median
 
-    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
+    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None, mutex: threading.Lock = None) -> List[Tuple[Node, Node]]:
         curr_queue = list(queue)
         curr_encodings = torch.from_numpy(np.array([encoder.encode(t, True) for t in curr_queue])).float()
         candidates = []
         already_seen_indexes = []
-        _, uncertainty, embeddings = trainer.predict(curr_encodings)
+        if mutex is not None:
+            with mutex:
+                _, uncertainty, embeddings = trainer.predict(curr_encodings)
+        else:
+            _, uncertainty, embeddings = trainer.predict(curr_encodings)
         _, ind_points = Sort.heapsort(uncertainty, lambda a, b: a < b, inplace=False, reverse=True)
         scaling_uncert = self.__normalization_func(uncertainty)
 
