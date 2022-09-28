@@ -19,9 +19,9 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 20
-    num_gen = 20
-    starting_seed = 203
+    pop_size = 216
+    num_gen = 64
+    starting_seed = 200
     num_repeats = 7
     idx = 1
     folder_name = "test_results_gp_simulated_user"
@@ -46,9 +46,9 @@ if __name__ == "__main__":
                                                   ground_truth_type=ground_truth_str,
                                                   sampler_factory=sampler_factory,
                                                   warmup=warmup)
-                        for seed in range(starting_seed, starting_seed + num_repeats):
-                            pp(seed)
-                        #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
-                        #_ = pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
-                        #pool.close()
-                        #pool.join()
+                        #for seed in range(starting_seed, starting_seed + num_repeats):
+                        #    pp(seed)
+                        pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
+                        _ = pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
+                        pool.close()
+                        pool.join()

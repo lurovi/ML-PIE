@@ -27,7 +27,7 @@ class OptimizationThread(threading.Thread):
     def run(self) -> None:
         self.result = minimize(
             problem=self.problem,
-            algorithm=deepcopy(self.optimization_algorithm),
+            algorithm=self.optimization_algorithm,
             termination=self.termination,
             seed=self.seed,
             verbose=self.verbose,

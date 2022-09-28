@@ -11,6 +11,7 @@ class MLPNet(nn.Module):
                  output_layer_size: int,
                  hidden_layer_sizes: List[int] = None,
                  dropout_prob: float = 0.0,
+                 dropout_prob_uncertainty: float = 0.25,
                  num_uncertainty_samples: int = 10):
         super().__init__()
         if hidden_layer_sizes is None:
@@ -20,6 +21,7 @@ class MLPNet(nn.Module):
         self.__input_layer_size: int = input_layer_size
         self.__output_layer_size: int = output_layer_size
         self.__dropout_prob: float = dropout_prob
+        self.__dropout_prob_uncertainty: float = dropout_prob_uncertainty
         self.__dropout: Any = nn.Dropout(self.__dropout_prob)
         self.__num_uncertainty_samples: int = num_uncertainty_samples
 
@@ -49,7 +51,7 @@ class MLPNet(nn.Module):
         else:
             z = x.detach().clone()
             x = self.__last_layer(x)
-            uncert: List = [self.__last_layer(nn.Dropout(self.__dropout_prob)(z)) for _ in range(self.__num_uncertainty_samples)]
+            uncert: List = [self.__last_layer(nn.Dropout(self.__dropout_prob_uncertainty)(z)) for _ in range(self.__num_uncertainty_samples)]
             for i in range(x.size(0)):
                 curr_uncert: List = []
                 for j in range(len(uncert)):
