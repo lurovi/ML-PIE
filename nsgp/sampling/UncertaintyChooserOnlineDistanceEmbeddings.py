@@ -49,6 +49,14 @@ class UncertaintyChooserOnlineDistanceEmbeddings(PairChooser):
                     candidates.append(curr_tree)
                     first_emb = embeddings[idx].repeat(len(ind_points), 1)
             i += 1
+        if count == 0:
+            idx = ind_points[0]
+            already_seen_indexes.append(idx)
+            curr_tree = curr_queue[idx]
+            self.add_node_to_already_seen(curr_tree)
+            count += 1
+            candidates.append(curr_tree)
+            first_emb = embeddings[idx].repeat(len(ind_points), 1)
         dist = ((first_emb - embeddings) ** 2).sum(axis=1).tolist()
         scaling_uncert, scaling_dist = self.__normalization_func(uncertainty), self.__normalization_func(dist)
         l2_uncertainty = [uncertainty[i] / float(scaling_uncert) + self.__lambda_coeff * (dist[i] / float(scaling_dist))
@@ -66,6 +74,13 @@ class UncertaintyChooserOnlineDistanceEmbeddings(PairChooser):
                     count += 1
                     candidates.append(curr_tree)
             i += 1
+        if count == 0:
+            idx = ind_points[len(ind_points) - 1]
+            already_seen_indexes.append(idx)
+            curr_tree = curr_queue[idx]
+            self.add_node_to_already_seen(curr_tree)
+            count += 1
+            candidates.append(curr_tree)
         for first_tree in candidates:
             queue.remove(first_tree)
         return [(candidates[0], candidates[1])]

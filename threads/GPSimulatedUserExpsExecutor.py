@@ -76,6 +76,9 @@ class GPSimulatedUserExpsExecutor:
 
         # shared parameters
         tree_encoder = self.__structure.get_encoder(encoding_type)
+        random.seed(optimization_seed)
+        np.random.seed(optimization_seed)
+        torch.manual_seed(optimization_seed)
         mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25], dropout_prob=0.25)
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
@@ -125,6 +128,5 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        torch.use_deterministic_algorithms(True)
         automatic_run.run_automatically(delay=5)
         print("\n"+run_id+"\n")

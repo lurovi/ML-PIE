@@ -25,7 +25,7 @@ if __name__ == "__main__":
     num_repeats = 7
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    for data_path_file in ["california", "keijzer", "vladislavleva"]:
+    for data_path_file in ["california", "diabets", "windspeed"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         for encoding_type_str in ["counts", "level_wise_counts"]:
             for ground_truth_str in ["elastic_model", "node_wise_weights_sum"+"_"+str(idx)]:
                 for sampler_factory in [UncertaintyChooserOnlineFactory(), UncertaintyChooserOnlineDistanceEmbeddingsFactory("max"), UncertaintyChooserOnlineDistanceEmbeddingsFactory("median")]:
-                    for warmup in ["elastic_model"]:
+                    for warmup in ["elastic_model", "feynman"]:
                         pp = partial(runner.execute_gp_run, pop_size=pop_size, num_gen=num_gen,
                                                   encoding_type=encoding_type_str,
                                                   ground_truth_type=ground_truth_str,

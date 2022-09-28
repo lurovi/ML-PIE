@@ -79,7 +79,7 @@ class ExpsUtil:
             for i in range(2):
                 data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i], 102)
 
-        # data_generator.create_dataset_warm_up_from_csv("tree_data_1" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
+        data_generator.create_dataset_warm_up_from_csv("tree_data_1" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
 
         data_generator.persist(data_name + "_datasets_generator")
         return data_generator

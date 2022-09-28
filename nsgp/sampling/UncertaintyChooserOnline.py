@@ -37,6 +37,16 @@ class UncertaintyChooserOnline(PairChooser):
                     candidates.append(curr_tree)
             i += 1
 
+        if count < 2:
+            if count == 0:
+                candidates.append(curr_queue[ind_points[len(ind_points) - 1]])
+                candidates.append(curr_queue[ind_points[0]])
+                self.add_node_to_already_seen(candidates[0])
+                self.add_node_to_already_seen(candidates[1])
+            elif count == 1:
+                candidates.append(curr_queue[ind_points[len(ind_points) - 1]])
+                self.add_node_to_already_seen(candidates[1])
+
         for first_tree in candidates:
             queue.remove(first_tree)
         return [(candidates[0], candidates[1])]
