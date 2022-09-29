@@ -63,13 +63,13 @@ class MlPieRun:
         self.encoded_requests.append(requested_values["encoding"])
         return dictionary
 
-    def request_progress(self) -> dict:
+    def request_progress(self) -> float:
         if not self.optimization_thread.is_alive():
             self.flush()
-            return {'progress': 100}
+            return 100
         iteration = self.optimization_thread.get_current_iteration()
         total_generations = self.optimization_thread.termination[1]
-        return {'progress': 100 * iteration / total_generations}
+        return 100 * iteration / total_generations
 
     def provide_feedback(self, feedback: int) -> bool:
         if not self.optimization_thread.is_alive():
@@ -117,6 +117,18 @@ class MlPieRun:
 
     def is_abandoned(self) -> bool:
         return time.time() - self.feedback_request_time > self.timeout_time
+
+    def get_pareto_front(self) -> pd.DataFrame:
+        if self.optimization_thread.is_alive():
+            return None
+        res = self.optimization_thread.result
+        accuracies = res.F[0]
+        interpretabilities = res.F[1]
+        trees = res.X[:, 0]
+        parsable_trees = list(map(lambda t: str(t.get_subtree()), trees))
+        latex_trees = list(map(lambda t: t.get_readable_repr().replace("u-", "-"), trees))
+        return pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
+                            columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
 
     @staticmethod
     def format_tree(tree: Node) -> dict:

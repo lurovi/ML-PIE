@@ -2,6 +2,10 @@ $("document").ready(function() {
     if(localStorage.getItem("token") === null){
         window.location = window.location.protocol + "//" + window.location.host + "/";
     }
+    $.ajax({
+      url: "getSurveyData",
+      headers: { 'x-access-tokens': localStorage.getItem("token") }
+    }).done(data => console.log(data));
 });
 
 $("#btn-undo").on("click", function(){

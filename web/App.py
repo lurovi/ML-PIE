@@ -1,5 +1,7 @@
 import random
+import statistics
 import threading
+import time
 
 import torch
 import uuid
@@ -21,6 +23,7 @@ from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
 
 import numpy as np
+import pandas as pd
 
 from threads.MlPieRun import MlPieRun
 
@@ -28,6 +31,10 @@ RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
 
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
+
+hardcoded_results_size = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv")
+hardcoded_results_phi = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv")
+hardcoded_results_feynman = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
 
 # TODO move this to a neater setup
 ongoing_runs = {}
@@ -137,10 +144,7 @@ def get_data():
         abort(404)
     dictionary = ongoing_runs[run_id].request_models()
     if not dictionary:
-        try:
-            del ongoing_runs[run_id]
-        except KeyError:
-            pass
+        run_completed(run_id)
         return {'over': 'true'}
     return dictionary
 
@@ -152,7 +156,10 @@ def get_progress():
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_runs:
         abort(404)
-    return ongoing_runs[run_id].request_progress()
+    progress = ongoing_runs[run_id].request_progress()
+    if progress >= 100:
+        run_completed(run_id)
+    return {'progress': progress}
 
 
 @app.route("/provideFeedback", methods=['POST'])
@@ -166,10 +173,7 @@ def provide_feedback():
     if feedback_outcome:
         return {'outcome': 'successful'}
     else:
-        try:
-            del ongoing_runs[run_id]
-        except KeyError:
-            pass
+        run_completed(run_id)
         return {
             'outcome': 'successful',
             'over': 'true'
@@ -197,16 +201,15 @@ def get_survey_data():
     run_id = request.headers['x-access-tokens']
     if run_id not in ongoing_surveys:
         abort(404)
-    return ongoing_surveys[run_id]
-
-
-def run_completed(run_id: int):
-    try:
-        del ongoing_runs[run_id]
-    except KeyError:
-        return
-
-    print(run_id)
+    comparisons = []
+    for idx, row in ongoing_surveys[run_id].iterrows():
+        dictionary = {
+            'type': row.other_type,
+            'pie_latex': row.latex_tree,
+            'other_latex': row.other_latex
+        }
+        comparisons.append(dictionary)
+    return {'comparisons': comparisons}
 
 
 @app.route("/answerSurvey", methods=['POST'])
@@ -217,8 +220,47 @@ def answer_survey():
     if run_id not in ongoing_surveys:
         abort(404)
     survey_data = ongoing_surveys[run_id]
-    survey_outcome_dictionary = request.json
-    # write to file
+    preferences = [request.json["size"], request.json["phi"], request.json["feynman"]]
+    survey_data['preference'] = preferences
+    survey_data.to_csv(path_or_buf=app.config['RESULTS_FOLDER'] + "survey-" + run_id + ".csv")
+
+
+def run_completed(run_id: str):
+    if run_id not in ongoing_runs or run_id in ongoing_surveys:
+        return
+    results = ongoing_runs[run_id].get_pareto_front()
+    try:
+        del ongoing_runs[run_id]
+    except KeyError:
+        return
+
+    accuracies = list(results['accuracy'])
+    median_accuracy = statistics.median(accuracies)
+    distances_from_median = list(map(lambda a: abs(median_accuracy - a), accuracies))
+    max_distance = max(distances_from_median)
+    sampling_weights = list(map(lambda d: (max_distance - d) + 1, distances_from_median))
+
+    chosen_indexes = random.choices(range(len(results)), sampling_weights, k=3)
+    chosen_models = results.loc[chosen_indexes, :].reset_index()
+
+    target_accuracies = chosen_models['accuracy'].tolist()
+
+    size_model = find_closest_model(target_accuracies[0], hardcoded_results_size)
+    phi_model = find_closest_model(target_accuracies[1], hardcoded_results_phi)
+    feynman_model = find_closest_model(target_accuracies[2], hardcoded_results_feynman)
+
+    static_models = pd.concat([size_model, phi_model, feynman_model], ignore_index=True).rename(lambda c: "other_" + c,
+                                                                                                axis='columns')
+    ongoing_surveys[run_id] = pd.concat([chosen_models, static_models], axis=1)
+
+
+def find_closest_model(target_accuracy, dataframe):
+    accuracies = dataframe['accuracy'].tolist()
+    accuracy_distances = list(map(lambda d: abs(d - target_accuracy), accuracies))
+
+    min_dist = min(accuracy_distances)
+    row_id = accuracy_distances.index(min_dist)
+    return dataframe.iloc[[row_id]]
 
 
 def runs_cleanup():
