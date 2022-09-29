@@ -17,6 +17,7 @@ class MlPieAutomaticRun(MlPieRun):
 
     def run_automatically(self, delay: float):
         self.start()
+        time.sleep(5)
         self.optimization_thread.callback.population_non_empty.wait()
         while True:
             dictionary = self.request_models()
@@ -26,3 +27,4 @@ class MlPieAutomaticRun(MlPieRun):
             time.sleep(np.random.uniform(1, delay + 1e-4))
             if not self.provide_feedback(feedback):
                 break
+        self.join()

@@ -1,4 +1,7 @@
 import random
+import threading
+from copy import deepcopy
+
 import torch
 
 from typing import Set, Tuple, List
@@ -28,12 +31,16 @@ class UncertaintyChooserOnlineDistanceEmbeddings(PairChooser):
         elif normalization_func == "median":
             self.__normalization_func = np.median
 
-    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
+    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None, mutex: threading.Lock = None) -> List[Tuple[Node, Node]]:
         curr_queue = list(queue)
         curr_encodings = torch.from_numpy(np.array([encoder.encode(t, True) for t in curr_queue])).float()
         candidates = []
         already_seen_indexes = []
-        _, uncertainty, embeddings = trainer.predict(curr_encodings)
+        if mutex is not None:
+            with mutex:
+                _, uncertainty, embeddings = trainer.predict(curr_encodings)
+        else:
+            _, uncertainty, embeddings = trainer.predict(curr_encodings)
         _, ind_points = Sort.heapsort(uncertainty, lambda a, b: a < b, inplace=False, reverse=True)
         count = 0
         i = 0
@@ -87,3 +94,13 @@ class UncertaintyChooserOnlineDistanceEmbeddings(PairChooser):
 
     def get_string_repr(self) -> str:
         return "Uncertainty Sampler Online L2 Distances " + (self.__normalization_func_name[0].upper() + self.__normalization_func_name[1:]) + " Norm"
+
+    @staticmethod
+    def __neural_net_prediction_with_deepcopy(trainer: Trainer, X: torch.tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
+        neuralnet = deepcopy(trainer.get_net())
+        neuralnet.eval()
+        with torch.no_grad():
+            X = X.to(trainer.get_device())
+            res = neuralnet(X)
+        neuralnet.train()
+        return res

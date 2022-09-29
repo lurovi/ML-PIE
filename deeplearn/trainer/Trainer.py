@@ -131,6 +131,9 @@ class Trainer(ABC):
         self.set_train_mode()
         return res
 
+    def is_in_train_mode(self) -> bool:
+        return self.__net.training
+
     @abstractmethod
     def fit(self) -> List[float]:
         pass

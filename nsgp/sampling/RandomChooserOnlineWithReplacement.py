@@ -1,4 +1,6 @@
 import random
+import threading
+
 import torch
 
 from typing import Set, Tuple, List
@@ -16,7 +18,7 @@ class RandomChooserOnlineWithReplacement(PairChooser):
     def __init__(self, n_pairs: int = 1, already_seen: Set[Node] = None):
         super().__init__(1, already_seen)
 
-    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None) -> List[Tuple[Node, Node]]:
+    def sample(self, queue: Set[Node], encoder: TreeEncoder = None, trainer: Trainer = None, mutex: threading.Lock = None) -> List[Tuple[Node, Node]]:
         curr_queue = list(queue)
         train_indexes = list(range(len(curr_queue)))
         candidates = []

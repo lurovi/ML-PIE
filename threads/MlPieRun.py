@@ -21,7 +21,7 @@ class MlPieRun:
         self.optimization_thread: OptimizationThread = optimization_thread
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
         self.path = path
-        self.parameters = parameters
+        self.parameters = dict() if parameters is None else parameters
         self.feedback_counter: int = -1
         self.feedback_duration: list[float] = []
         self.feedback_requests: list[dict] = []
@@ -35,6 +35,9 @@ class MlPieRun:
 
     def start(self) -> None:
         self.optimization_thread.start()
+
+    def join(self) -> None:
+        self.optimization_thread.join(5)
 
     def request_models(self) -> dict:
         if not self.optimization_thread.is_alive():
@@ -84,7 +87,7 @@ class MlPieRun:
         return True
 
     def flush(self) -> None:
-        self.optimization_thread.join()
+        self.optimization_thread.join(5)
 
         # prepare feedback file
         t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)
@@ -118,7 +121,7 @@ class MlPieRun:
     @staticmethod
     def format_tree(tree: Node) -> dict:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
-        latex_repr = latex(parse_expr(readable_repr, evaluate=False))
+        latex_repr = readable_repr  # latex(parse_expr(readable_repr, evaluate=False))
         parsable_repr = str(tree.get_subtree())
         return {"latex": latex_repr, "parsable": parsable_repr}
 
@@ -149,7 +152,8 @@ class MlPieRun:
                 generations.append(generation_count)
                 tree = individual.X[0]
                 parsable_trees.append(str(tree.get_subtree()))
-                latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
+                latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
+                # latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
                 accuracies.append(individual.F[0])
                 interpretabilities.append(individual.F[1])
             generation_count += 1

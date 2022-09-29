@@ -1,4 +1,5 @@
 import threading
+from copy import deepcopy
 from typing import Any
 
 from pymoo.algorithms.base.genetic import GeneticAlgorithm

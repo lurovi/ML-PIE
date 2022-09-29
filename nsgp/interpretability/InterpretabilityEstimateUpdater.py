@@ -27,7 +27,7 @@ class InterpretabilityEstimateUpdater:
         if len(self.individuals) < 2:
             return {}
         local_individuals = deepcopy(self.individuals)
-        t1, t2 = self.pair_chooser.sample(local_individuals, self.encoder, self.interpretability_estimator)[0]
+        t1, t2 = self.pair_chooser.sample(local_individuals, self.encoder, self.interpretability_estimator, self.mutex)[0]
         t1_encoded = self.encoder.encode(t1, True)
         t2_encoded = self.encoder.encode(t2, True)
         encoded_trees = np.concatenate((t1_encoded, t2_encoded), axis=None).reshape(1, -1)
