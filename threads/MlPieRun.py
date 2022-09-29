@@ -121,7 +121,7 @@ class MlPieRun:
     @staticmethod
     def format_tree(tree: Node) -> dict:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
-        latex_repr = latex(parse_expr(readable_repr, evaluate=False))
+        latex_repr = readable_repr  # latex(parse_expr(readable_repr, evaluate=False))
         parsable_repr = str(tree.get_subtree())
         return {"latex": latex_repr, "parsable": parsable_repr}
 
@@ -152,7 +152,8 @@ class MlPieRun:
                 generations.append(generation_count)
                 tree = individual.X[0]
                 parsable_trees.append(str(tree.get_subtree()))
-                latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
+                latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
+                # latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
                 accuracies.append(individual.F[0])
                 interpretabilities.append(individual.F[1])
             generation_count += 1
