@@ -21,7 +21,7 @@ class MlPieRun:
         self.optimization_thread: OptimizationThread = optimization_thread
         self.interpretability_estimate_updater: InterpretabilityEstimateUpdater = interpretability_estimate_updater
         self.path = path
-        self.parameters = parameters
+        self.parameters = dict() if parameters is None else parameters
         self.feedback_counter: int = -1
         self.feedback_duration: list[float] = []
         self.feedback_requests: list[dict] = []
