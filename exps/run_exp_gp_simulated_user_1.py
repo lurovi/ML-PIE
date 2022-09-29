@@ -19,10 +19,10 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 216
-    num_gen = 64
+    pop_size = 210
+    num_gen = 60
     starting_seed = 200
-    num_repeats = 7
+    num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
     for data_path_file in ["california", "diabets", "windspeed"]:
