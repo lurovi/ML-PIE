@@ -31,6 +31,7 @@ app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 # TODO move this to a neater setup
 ongoing_runs = {}
+ongoing_surveys = {}
 
 # settings
 seed = 1
@@ -184,6 +185,37 @@ def restart():
     except IOError:
         pass
     return start_run()
+
+
+@app.route("/getSurveyData")
+def get_survey_data():
+    if 'x-access-tokens' not in request.headers:
+        abort(404)
+    run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_surveys:
+        abort(404)
+    return ongoing_surveys[run_id]
+
+
+def run_completed(run_id: int):
+    try:
+        del ongoing_runs[run_id]
+    except KeyError:
+        return
+
+    print(run_id)
+
+
+@app.route("/answerSurvey", methods=['POST'])
+def answer_survey():
+    if 'x-access-tokens' not in request.headers:
+        abort(404)
+    run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_surveys:
+        abort(404)
+    survey_data = ongoing_surveys[run_id]
+    survey_outcome_dictionary = request.json
+    # write to file
 
 
 def runs_cleanup():
