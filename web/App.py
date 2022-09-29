@@ -15,7 +15,7 @@ from nsgp.encoder.CountsEncoder import CountsEncoder
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
-from nsgp.sampling.RandomChooserOnline import RandomChooserOnline
+from nsgp.sampling.RandomChooserOnlineFactory import RandomChooserOnlineFactory
 from nsgp.structure.TreeStructure import TreeStructure
 from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
@@ -39,7 +39,7 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 torch.use_deterministic_algorithms(True)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-dataset_path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\windspeed\\wind_dataset_split.pbz2"
+dataset_path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\windspeed.pbz2"
 
 # tree parameters
 duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 7))
@@ -113,12 +113,15 @@ def start_run():
     )
 
     # feedback thread creation
-    pair_chooser = RandomChooserOnline()
+    pair_chooser = RandomChooserOnlineFactory()
     interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser)
 
-    ml_pie_run = MlPieRun(run_id, optimization_thread, interpretability_estimate_updater, app.config['RESULTS_FOLDER'])
+    ml_pie_run = MlPieRun(run_id=run_id,
+                          optimization_thread=optimization_thread,
+                          interpretability_estimate_updater=interpretability_estimate_updater,
+                          path=app.config['RESULTS_FOLDER'])
     ongoing_runs[run_id] = ml_pie_run
     ml_pie_run.start()
     return {"id": run_id}
