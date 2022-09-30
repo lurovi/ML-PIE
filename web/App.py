@@ -223,6 +223,7 @@ def answer_survey():
     preferences = [request.json["size"], request.json["phi"], request.json["feynman"]]
     survey_data['preference'] = preferences
     survey_data.to_csv(path_or_buf=app.config['RESULTS_FOLDER'] + "survey-" + run_id + ".csv")
+    return {'outcome': 'successful'}
 
 
 def run_completed(run_id: str):
@@ -241,7 +242,7 @@ def run_completed(run_id: str):
     sampling_weights = list(map(lambda d: (max_distance - d) + 1, distances_from_median))
 
     chosen_indexes = random.choices(range(len(results)), sampling_weights, k=3)
-    chosen_models = results.loc[chosen_indexes, :].reset_index()
+    chosen_models = results.loc[chosen_indexes, :].reset_index().drop(columns=['index'])
 
     target_accuracies = chosen_models['accuracy'].tolist()
 
