@@ -25,7 +25,7 @@ if __name__ == "__main__":
     num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    for data_path_file in ["california", "diabets", "windspeed"]:
+    for data_path_file in ["california", "diabets", "windspeed", "friedman1"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)
