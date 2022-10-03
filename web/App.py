@@ -32,13 +32,29 @@ RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
-hardcoded_results_size = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv")
-hardcoded_results_phi = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv")
-hardcoded_results_feynman = pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
+hardcoded_results = {
+    "windspeed": {
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv"),
+        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
+    },
+    "boston": {
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv"),
+        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
+    }
+}
+
+available_problems = {
+    "windspeed": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\windspeed.pbz2",
+    "boston": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\boston.pbz2"
+}
 
 # TODO move this to a neater setup
 ongoing_runs = {}
 ongoing_surveys = {}
+
+run_problems_associations = {}
 
 # settings
 seed = 1
@@ -86,8 +102,8 @@ def thanks():
     return render_template("thanks.html")
 
 
-@app.route("/startRun")
-def start_run():
+@app.route("/startRun/<problem>")
+def start_run(problem):
     run_id = str(uuid.uuid1())
 
     # shared parameters
@@ -104,17 +120,21 @@ def start_run():
                       mutation=tree_mutation,
                       eliminate_duplicates=duplicates_elimination
                       )
-    dataset = PicklePersist.decompress_pickle(dataset_path)
-    problem = RegressionProblemWithNeuralEstimate(dataset["training"][0], dataset["training"][1], mutex=mutex,
-                                                  tree_encoder=tree_encoder,
-                                                  interpretability_estimator=interpretability_estimator
-                                                  )
+    # safe fallback
+    if problem not in available_problems:
+        problem = "boston"
+    dataset = PicklePersist.decompress_pickle(available_problems.get(problem))
+    regression_problem = RegressionProblemWithNeuralEstimate(dataset["training"][0], dataset["training"][1],
+                                                             mutex=mutex,
+                                                             tree_encoder=tree_encoder,
+                                                             interpretability_estimator=interpretability_estimator
+                                                             )
     termination = ('n_gen', 20)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
         optimization_algorithm=algorithm,
-        problem=problem,
+        problem=regression_problem,
         termination=termination,
         seed=optimization_seed,
         callback=callback
@@ -129,10 +149,12 @@ def start_run():
     ml_pie_run = MlPieRun(run_id=run_id,
                           optimization_thread=optimization_thread,
                           interpretability_estimate_updater=interpretability_estimate_updater,
-                          path=app.config['RESULTS_FOLDER'])
+                          path=app.config['RESULTS_FOLDER'],
+                          parameters={"problem": problem})
     ongoing_runs[run_id] = ml_pie_run
+    run_problems_associations[run_id] = problem
     ml_pie_run.start()
-    return {"id": run_id}
+    return {"id": run_id, "problem": problem}
 
 
 @app.route("/getData", methods=['GET'])
@@ -180,8 +202,8 @@ def provide_feedback():
         }
 
 
-@app.route("/restart")
-def restart():
+@app.route("/reset")
+def reset():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     old_run_id = request.headers['x-access-tokens']
@@ -191,7 +213,7 @@ def restart():
         file.close()
     except IOError:
         pass
-    return start_run()
+    return {}
 
 
 @app.route("/getSurveyData")
@@ -235,6 +257,12 @@ def run_completed(run_id: str):
     except KeyError:
         return
 
+    problem = run_problems_associations[run_id]
+    try:
+        del run_problems_associations[run_id]
+    except KeyError:
+        pass
+
     accuracies = list(results['accuracy'])
     median_accuracy = statistics.median(accuracies)
     distances_from_median = list(map(lambda a: abs(median_accuracy - a), accuracies))
@@ -246,9 +274,9 @@ def run_completed(run_id: str):
 
     target_accuracies = chosen_models['accuracy'].tolist()
 
-    size_model = find_closest_model(target_accuracies[0], hardcoded_results_size)
-    phi_model = find_closest_model(target_accuracies[1], hardcoded_results_phi)
-    feynman_model = find_closest_model(target_accuracies[2], hardcoded_results_feynman)
+    size_model = find_closest_model(target_accuracies[0], hardcoded_results[problem]["size"])
+    phi_model = find_closest_model(target_accuracies[1], hardcoded_results[problem]["phi"])
+    feynman_model = find_closest_model(target_accuracies[2], hardcoded_results[problem]["feynman"])
 
     static_models = pd.concat([size_model, phi_model, feynman_model], ignore_index=True).rename(lambda c: "other_" + c,
                                                                                                 axis='columns')

@@ -6,13 +6,11 @@ $("document").ready(function() {
 
 $("#btn-reset").on("click", function(){
     $.ajax({
-      url: "restart",
+      url: "reset",
       headers: { 'x-access-tokens': localStorage.getItem("token") }
-    }).done( data => {
-          localStorage.setItem("token", data.id);
-          localStorage.getItem("token")
-          window.location = window.location.protocol + "//" + window.location.host + "/feedback";
-        }
-    ).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
-    );
+    });
+    $.ajax({
+      url: "reset",
+      headers: { 'x-access-tokens': localStorage.getItem("oldToken") }
+    }).done(() => {window.location = window.location.protocol + "//" + window.location.host + "/";});
 })

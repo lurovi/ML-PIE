@@ -1,13 +1,23 @@
+const availableProblems = ["boston", "windspeed"];
+const availableProblemNames = ["Boston Housing", "Wind Speed"];
+
 $("document").ready(function() {
     if(localStorage.getItem("token") === null){
         window.location = window.location.protocol + "//" + window.location.host + "/";
+    }
+    if(localStorage.getItem("next") != null){
+        $('#put-submit-btn-text-here').text("Proceed with " + availableProblemNames[availableProblems.indexOf(localStorage.getItem("next"))]);
     }
     retrieveSurveyModels();
 });
 
 $("#btn-undo").on("click", function(){
     $.ajax({
-      url: "restart",
+      url: "reset",
+      headers: { 'x-access-tokens': localStorage.getItem("token") }
+    });
+    $.ajax({
+      url: "startRun/" + localStorage.getItem("problem"),
       headers: { 'x-access-tokens': localStorage.getItem("token") }
     }).done( data => {
           localStorage.setItem("token", data.id);
@@ -20,6 +30,22 @@ $("#btn-undo").on("click", function(){
 
 $("#btn-submit").on("click", function(){
     submitSurvey();
+    if(localStorage.getItem("next") != null){
+        localStorage.setItem("problem", localStorage.getItem("next"));
+        localStorage.removeItem("next");
+        localStorage.setItem("oldToken", localStorage.getItem("token"));
+        $.ajax({
+            url: "startRun/" + localStorage.getItem("problem")
+        }).done( data => {
+          localStorage.setItem("token", data.id);
+          localStorage.setItem("over", false);
+          localStorage.setItem("problem", data.problem);
+          window.location = window.location.protocol + "//" + window.location.host + "/feedback";
+        }
+    );
+    } else {
+        window.location = window.location.protocol + "//" + window.location.host + "/thanks";
+    }
 })
 
 function retrieveSurveyModels(){
@@ -101,7 +127,6 @@ function submitSurvey(){
       headers: { 'x-access-tokens': localStorage.getItem("token") },
       data: JSON.stringify(survey),
       contentType: "application/json"
-    }).done(() => {window.location = window.location.protocol + "//" + window.location.host + "/thanks";
     }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
     );
 }
