@@ -1,0 +1,606 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[exp, *, sin, x_1, exp, sin, +, x_2, x_0]",exp((sin(x_1)*exp(sin((x_2+x_0))))),143.75807189941406,0.11578813940286636,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+1,0,"[+, sqrt, x_3, **2, u-, 4.67]",(sqrt(abs(x_3))+(-(4.67))**2),87.53067016601562,0.1263030469417572,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+2,0,"[exp, /, x_5, **, *, x_4, x_5, *, 1.69, /, x_6, -1.28]",exp((x_5/((x_4*x_5)**(1.69*(x_6/-1.28))))),194.4484100341797,0.110232874751091,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+3,0,[x_0],x_0,215.3867950439453,0.08517593890428543,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+4,0,"[log, +, **, *, x_1, x_2, **2, **3, x_3, **3, /, -4.9, /, x_0, x_2]",log(abs((((x_1*x_2)**((x_3)**3)**2)+((-4.9/(x_0/x_2)))**3))),146.4005126953125,0.11521486937999725,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+5,0,[x_3],x_3,215.3643341064453,0.08741191774606705,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+6,0,"[cos, **, *, *, x_0, sin, x_3, /, x_2, x_5, **2, x_2]",cos((((x_0*sin(x_3))*(x_2/x_5))**(x_2)**2)),212.67002868652344,0.1053096130490303,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+7,0,"[**3, exp, sin, **2, **, x_5, x_0]",(exp(sin(((x_5**x_0))**2)))**3,120.89707946777344,0.12179139256477356,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+8,1,[x_0],x_0,215.3867950439453,0.08517593890428543,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+9,1,[x_3],x_3,215.3643341064453,0.08741191774606705,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+10,1,"[sqrt, **3, +, exp, +, x_2, x_3, -, exp, x_1, **, x_2, x_6]",sqrt(abs(((exp((x_2+x_3))+(exp(x_1)-(x_2**x_6))))**3)),56.37400436401367,0.13269853591918945,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+11,1,"[exp, x_0]",exp(x_0),182.3485107421875,0.10364624857902527,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+12,1,"[**2, /, **, **2, x_5, x_2, log, cos, -0.64]",((((x_5)**2**x_2)/log(abs(cos(-0.64)))))**2,101.9439468383789,0.11257195472717285,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+13,1,"[**3, exp, exp, log, cos, x_0]",(exp(exp(log(abs(cos(x_0))))))**3,68.96123504638672,0.12304868549108505,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+14,1,[x_4],x_4,215.82363891601562,0.08329840749502182,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+15,2,[x_0],x_0,215.3867950439453,0.08517593890428543,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+16,2,[x_3],x_3,215.3643341064453,0.08741191774606705,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+17,2,"[**2, /, **, **2, x_5, x_2, log, cos, -0.64]",((((x_5)**2**x_2)/log(abs(cos(-0.64)))))**2,101.9439468383789,0.11257195472717285,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+18,2,[x_4],x_4,215.82363891601562,0.08329840749502182,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+19,2,"[**3, exp, cos, -, x_4, +, x_6, x_4]",(exp(cos((x_4-(x_6+x_4)))))**3,45.595062255859375,0.13268744945526123,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+20,2,"[**3, exp, sqrt, **3, /, x_3, x_3]",(exp(sqrt(abs(((x_3/x_3))**3))))**3,56.164405822753906,0.12213395535945892,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+21,2,[-3.61],-3.61,347.7099609375,0.0690569281578064,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+22,2,"[log, /, x_3, **, sin, x_2, **, **3, -0.19, u-, 0.72]",log(abs((x_3/(sin(x_2)**((-0.19)**3**-(0.72)))))),56.23971176147461,0.11655379831790924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+23,2,"[**2, exp, sin, **, **3, x_2, *, x_3, x_6]",(exp(sin(((x_2)**3**(x_3*x_6)))))**2,145.54380798339844,0.10947005450725555,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+24,2,"[sqrt, 3.47]",sqrt(abs(3.47)),180.64437866210938,0.09990817308425903,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+25,3,"[**3, exp, cos, -, x_4, +, x_6, x_4]",(exp(cos((x_4-(x_6+x_4)))))**3,45.595062255859375,0.13268744945526123,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+26,3,[-3.61],-3.61,347.7099609375,0.0690569281578064,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+27,3,"[**3, exp, cos, x_5]",(exp(cos(x_5)))**3,49.43781280517578,0.1080731749534607,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+28,3,"[**2, exp, x_0]",(exp(x_0))**2,144.8721466064453,0.09353377670049667,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+29,3,"[exp, /, x_5, **, *, x_2, x_5, *, 1.69, /, x_1, -1.28]",exp((x_5/((x_2*x_5)**(1.69*(x_1/-1.28))))),195.22592163085938,0.09097471088171005,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+30,3,"[**2, exp, sin, **, -3.61, *, x_3, x_6]",(exp(sin((-3.61**(x_3*x_6)))))**2,94.80631256103516,0.09969776123762131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+31,3,"[*, x_2, exp, x_6]",(x_2*exp(x_6)),207.52357482910156,0.08439284563064575,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+32,3,"[**, x_3, x_1]",(x_3**x_1),211.16229248046875,0.08280705660581589,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+33,4,[-3.61],-3.61,347.7099609375,0.0690569281578064,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+34,4,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+35,4,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+36,5,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+37,5,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+38,5,"[**, x_6, x_1]",(x_6**x_1),212.09295654296875,0.07745933532714844,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+39,5,[x_2],x_2,216.83438110351562,0.04319819062948227,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+40,6,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+41,6,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+42,6,"[**, x_6, x_1]",(x_6**x_1),212.09295654296875,0.07745933532714844,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+43,6,[x_2],x_2,216.83438110351562,0.04319819062948227,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+44,6,[x_5],x_5,216.9898223876953,0.038002923130989075,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+45,6,[-3.11],-3.11,329.96026611328125,0.03478902578353882,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+46,7,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+47,7,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+48,7,[x_2],x_2,216.83438110351562,0.04319819062948227,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+49,7,[x_5],x_5,216.9898223876953,0.038002923130989075,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+50,7,[-3.11],-3.11,329.96026611328125,0.03478902578353882,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+51,7,"[+, x_2, x_0]",(x_2+x_0),201.94839477539062,0.06505643576383591,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+52,8,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+53,8,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+54,8,[x_2],x_2,216.83438110351562,0.04319819062948227,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+55,8,[x_5],x_5,216.9898223876953,0.038002923130989075,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+56,8,[-3.11],-3.11,329.96026611328125,0.03478902578353882,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+57,8,"[+, x_2, x_0]",(x_2+x_0),201.94839477539062,0.06505643576383591,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+58,9,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+59,9,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+60,9,[3.47],3.47,142.96092224121094,-0.009445197880268097,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+61,10,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+62,10,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+63,10,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+64,11,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+65,11,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+66,11,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+67,12,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+68,12,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+69,12,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+70,12,[x_6],x_6,217.03138732910156,-0.0501481294631958,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+71,13,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+72,13,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+73,13,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+74,13,[x_6],x_6,217.03138732910156,-0.0501481294631958,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+75,14,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+76,14,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+77,14,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+78,14,[x_6],x_6,217.03138732910156,-0.0501481294631958,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+79,14,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+80,14,[-0.19],-0.19,236.28855895996094,-0.10277539491653442,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+81,15,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+82,15,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+83,15,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+84,15,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+85,15,[x_0],x_0,215.3867950439453,-0.161517933011055,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+86,15,"[**, *, /, -0.41, 2.76, exp, -1.73, -0.58]",(((-0.41/2.76)*exp(-1.73))**-0.58),61.50358963012695,0.058085352182388306,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+87,16,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+88,16,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+89,16,[4.67],4.67,118.1937026977539,-0.019612260162830353,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+90,16,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+91,16,[x_0],x_0,215.3867950439453,-0.161517933011055,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+92,16,"[**, *, /, -0.41, 2.76, exp, -1.73, -0.58]",(((-0.41/2.76)*exp(-1.73))**-0.58),61.50358963012695,0.058085352182388306,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+93,16,"[+, /, *, **, x_5, x_6, *, x_2, x_0, x_2, **2, u-, 4.67]",((((x_5**x_6)*(x_2*x_0))/x_2)+(-(4.67))**2),83.2365493774414,0.05114632099866867,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+94,16,"[*, 2.05, x_2]",(2.05*x_2),202.90609741210938,-0.05341992527246475,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+95,17,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+96,17,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+97,17,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+98,17,"[+, **3, *, -2.13, x_6, **2, u-, 4.67]",(((-2.13*x_6))**3+(-(4.67))**2),55.47355651855469,0.05539243668317795,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+99,17,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+100,17,[2.76],2.76,158.97096252441406,-0.25803667306900024,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+101,18,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+102,18,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+103,18,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+104,18,"[+, **3, *, -2.13, x_6, **2, u-, 4.67]",(((-2.13*x_6))**3+(-(4.67))**2),55.47355651855469,0.05539243668317795,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+105,18,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+106,18,[2.76],2.76,158.97096252441406,-0.25803667306900024,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+107,18,[x_5],x_5,216.9898223876953,-0.2821292281150818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+108,18,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+109,18,"[+, x_5, **3, sqrt, 3.84]",(x_5+(sqrt(abs(3.84)))**3),64.35971069335938,0.03151699900627136,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+110,18,[-3.11],-3.11,329.96026611328125,-0.2894197702407837,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+111,19,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+112,19,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+113,19,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+114,19,"[+, **3, *, -2.13, x_6, **2, u-, 4.67]",(((-2.13*x_6))**3+(-(4.67))**2),55.47355651855469,0.05539243668317795,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+115,19,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+116,19,[2.76],2.76,158.97096252441406,-0.25803667306900024,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+117,19,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+118,19,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+119,19,[x_2],x_2,216.83438110351562,-0.306632936000824,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+120,19,[-0.41],-0.41,242.75201416015625,-0.30900222063064575,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+121,20,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+122,20,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+123,20,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+124,20,"[+, **3, *, -2.13, x_6, **2, u-, 4.67]",(((-2.13*x_6))**3+(-(4.67))**2),55.47355651855469,0.05539243668317795,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+125,20,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+126,20,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+127,20,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+128,20,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+129,20,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+130,21,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+131,21,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+132,21,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+133,21,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+134,21,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+135,21,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+136,21,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+137,21,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+138,21,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+139,21,[x_3],x_3,215.3643341064453,-0.37211310863494873,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+140,22,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+141,22,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+142,22,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+143,22,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+144,22,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+145,22,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+146,22,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+147,22,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+148,22,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+149,22,[x_3],x_3,215.3643341064453,-0.37211310863494873,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+150,23,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+151,23,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+152,23,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+153,23,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+154,23,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+155,23,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+156,23,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+157,23,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+158,23,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+159,23,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+160,24,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+161,24,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+162,24,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+163,24,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+164,24,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+165,24,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+166,24,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+167,24,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+168,24,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+169,24,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+170,24,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+171,25,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+172,25,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+173,25,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+174,25,"[exp, 2.05]",exp(2.05),67.56949615478516,-0.029888644814491272,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+175,25,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+176,25,"[**3, 2.05]",(2.05)**3,57.06703186035156,-0.024766497313976288,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+177,25,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+178,25,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+179,25,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+180,25,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+181,25,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+182,25,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+183,26,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+184,26,"[**2, -3.61]",(-3.61)**2,25.564598083496094,0.07977895438671112,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+185,26,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+186,26,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+187,26,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+188,26,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+189,26,"[exp, 2.76]",exp(2.76),25.71015167236328,0.01151643693447113,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+190,26,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+191,26,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+192,26,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+193,26,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+194,26,"[+, *, 2.05, 3.47, 2.05]",((2.05*3.47)+2.05),51.034507751464844,-0.03784433752298355,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+195,27,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+196,27,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+197,27,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+198,27,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+199,27,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+200,27,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+201,27,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+202,27,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+203,27,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+204,27,"[+, *, 2.05, 3.47, 2.05]",((2.05*3.47)+2.05),51.034507751464844,-0.03784433752298355,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+205,27,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+206,28,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+207,28,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+208,28,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+209,28,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+210,28,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+211,28,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+212,28,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+213,28,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+214,28,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+215,28,"[+, *, 2.05, 3.47, 2.05]",((2.05*3.47)+2.05),51.034507751464844,-0.03784433752298355,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+216,28,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+217,28,[x_1],x_1,215.71315002441406,-0.870024561882019,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+218,29,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+219,29,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+220,29,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+221,29,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+222,29,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+223,29,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+224,29,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+225,29,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+226,29,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+227,29,"[+, *, 2.05, 3.47, 2.05]",((2.05*3.47)+2.05),51.034507751464844,-0.03784433752298355,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+228,29,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+229,29,[x_1],x_1,215.71315002441406,-0.870024561882019,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+230,29,[-2.99],-2.99,325.7747497558594,-1.0128843784332275,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+231,30,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+232,30,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+233,30,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+234,30,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+235,30,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+236,30,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+237,30,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+238,30,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+239,30,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+240,30,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+241,30,[x_1],x_1,215.71315002441406,-0.870024561882019,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+242,30,[x_6],x_6,217.03138732910156,-1.1189489364624023,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+243,30,"[*, 2.76, 3.47]",(2.76*3.47),46.88151550292969,-0.22170835733413696,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+244,30,[-4.2],-4.2,369.29766845703125,-1.1301312446594238,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+245,31,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+246,31,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+247,31,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+248,31,[3.84],3.84,135.0172576904297,-0.33592402935028076,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+249,31,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+250,31,[2.05],2.05,175.9892120361328,-0.5241791009902954,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+251,31,[1.97],1.97,177.96995544433594,-0.5774651765823364,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+252,31,[0.72],0.72,210.58164978027344,-0.6819580793380737,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+253,31,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+254,31,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+255,31,[x_1],x_1,215.71315002441406,-0.870024561882019,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+256,31,[x_6],x_6,217.03138732910156,-1.1189489364624023,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+257,31,"[*, 2.76, 3.47]",(2.76*3.47),46.88151550292969,-0.22170835733413696,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+258,31,"[+, *, 2.05, x_2, +, x_0, +, u-, -4.58, -0.58]",((2.05*x_2)+(x_0+(-(-4.58)+-0.58))),101.64137268066406,-0.2805418074131012,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+259,31,[-2.13],-2.13,296.6213073730469,-1.2624027729034424,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+260,32,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+261,32,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+262,32,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+263,32,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+264,32,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+265,32,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+266,32,"[*, 2.76, 3.47]",(2.76*3.47),46.88151550292969,-0.22170835733413696,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+267,32,"[*, -2.13, +, x_6, -3.39]",(-2.13*(x_6+-3.39)),91.37753295898438,-0.3907076120376587,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+268,32,"[+, /, *, **, x_5, +, x_5, 2.05, *, x_2, x_0, x_2, **2, u-, 2.76]",((((x_5**(x_5+2.05))*(x_2*x_0))/x_2)+(-(2.76))**2),67.45882415771484,-0.29854094982147217,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+269,32,"[+, *, 2.05, x_2, +, x_0, +, u-, -4.58, +, 0.72, -3.39]",((2.05*x_2)+(x_0+(-(-4.58)+(0.72+-3.39)))),143.0630340576172,-0.4367883801460266,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+270,32,"[**, *, /, -0.41, exp, 2.05, exp, -1.73, -0.58]",(((-0.41/exp(2.05))*exp(-1.73))**-0.58),24.121625900268555,0.09123556315898895,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+271,32,[2.8],2.8,158.0421905517578,-1.4922722578048706,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+272,32,"[+, /, *, x_0, 3.47, -3.39, **2, 2.76]",(((x_0*3.47)/-3.39)+(2.76)**2),78.17998504638672,-0.3007670044898987,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+273,33,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+274,33,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+275,33,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+276,33,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+277,33,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+278,33,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+279,33,"[**, *, /, -0.41, exp, 2.05, exp, -1.73, -0.58]",(((-0.41/exp(2.05))*exp(-1.73))**-0.58),24.121625900268555,0.09123556315898895,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+280,33,[2.8],2.8,158.0421905517578,-1.4922722578048706,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+281,33,[x_0],x_0,215.3867950439453,-1.6636103391647339,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+282,33,"[+, *, +, x_0, +, u-, -1.73, -0.58, *, 2.05, x_2, **2, u-, 4.67]",(((x_0+(-(-1.73)+-0.58))*(2.05*x_2))+(-(4.67))**2),106.87091827392578,-0.5416479706764221,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+283,33,"[**, 2.05, +, x_5, 2.76]",(2.05**(x_5+2.76)),42.38031005859375,-0.48522159457206726,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+284,33,"[+, *, 2.05, x_2, +, x_0, +, +, 2.76, 2.76, +, 0.72, -3.39]",((2.05*x_2)+(x_0+((2.76+2.76)+(0.72+-3.39)))),123.3521957397461,-0.6767256259918213,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+285,33,"[+, /, *, **, x_5, +, x_2, x_0, *, x_2, -3.39, x_2, **2, u-, 2.76]",((((x_5**(x_2+x_0))*(x_2*-3.39))/x_2)+(-(2.76))**2),96.69114685058594,-0.5176653861999512,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+286,34,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+287,34,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+288,34,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+289,34,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+290,34,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+291,34,"[+, *, 3.84, 3.47, 2.05]",((3.84*3.47)+2.05),24.69205093383789,-0.01583792269229889,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+292,34,"[**, *, /, -0.41, exp, 2.05, exp, -1.73, -0.58]",(((-0.41/exp(2.05))*exp(-1.73))**-0.58),24.121625900268555,0.09123556315898895,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+293,34,[2.8],2.8,158.0421905517578,-1.4922722578048706,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+294,34,[x_0],x_0,215.3867950439453,-1.6636103391647339,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+295,34,"[+, x_6, 2.76]",(x_6+2.76),147.94873046875,-0.9394941329956055,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+296,34,"[+, *, 2.05, x_2, **2, u-, +, x_2, -4.2]",((2.05*x_2)+(-((x_2+-4.2)))**2),25.887372970581055,-0.7343001961708069,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+297,34,"[**, 2.05, +, x_2, 2.76]",(2.05**(x_2+2.76)),42.76573944091797,-0.7591737508773804,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+298,34,[x_2],x_2,216.83438110351562,-1.9604887962341309,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+299,34,"[+, +, 2.76, 2.76, x_2]",((2.76+2.76)+x_2),93.94071197509766,-0.8654805421829224,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+300,34,"[+, /, *, 1.99, x_2, -3.39, exp, exp, **, cos, -0.19, u-, x_3]",(((1.99*x_2)/-3.39)+exp(exp((cos(-0.19)**-(x_3))))),23.144285202026367,0.166985422372818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+301,34,"[+, /, *, **, x_5, +, x_2, 2.05, *, x_2, -0.41, x_2, **2, u-, 2.76]",((((x_5**(x_2+2.05))*(x_2*-0.41))/x_2)+(-(2.76))**2),71.12979888916016,-0.7726354598999023,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+302,35,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+303,35,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+304,35,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+305,35,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+306,35,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+307,35,[2.8],2.8,158.0421905517578,-1.4922722578048706,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+308,35,[x_0],x_0,215.3867950439453,-1.6636103391647339,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+309,35,"[+, *, 2.05, x_2, **2, u-, +, x_2, -4.2]",((2.05*x_2)+(-((x_2+-4.2)))**2),25.887372970581055,-0.7343001961708069,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+310,35,[x_2],x_2,216.83438110351562,-1.9604887962341309,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+311,35,"[+, /, *, 1.99, x_2, -3.39, exp, exp, **, cos, -0.19, u-, x_3]",(((1.99*x_2)/-3.39)+exp(exp((cos(-0.19)**-(x_3))))),23.144285202026367,0.166985422372818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+312,35,"[+, *, 4.67, x_2, +, x_0, +, u-, -4.58, -0.58]",((4.67*x_2)+(x_0+(-(-4.58)+-0.58))),81.8783187866211,-1.2135579586029053,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+313,35,"[**, 2.05, *, +, x_0, +, 2.05, -0.58, *, 2.05, x_2]",(2.05**((x_0+(2.05+-0.58))*(2.05*x_2))),113.55203247070312,-1.2780158519744873,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+314,35,"[+, *, -3.67, u-, *, -, 0.26, x_2, **, x_5, 3.74, **2, -3.61]",((-3.67*-(((0.26-x_2)*(x_5**3.74))))+(-3.61)**2),26.34688949584961,-0.9898486137390137,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+315,35,"[+, **2, u-, +, 0.72, -3.39, **2, u-, 2.76]",((-((0.72+-3.39)))**2+(-(2.76))**2),23.848905563354492,-0.21926051378250122,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+316,36,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+317,36,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+318,36,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+319,36,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+320,36,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+321,36,"[+, /, *, 1.99, x_2, -3.39, exp, exp, **, cos, -0.19, u-, x_3]",(((1.99*x_2)/-3.39)+exp(exp((cos(-0.19)**-(x_3))))),23.144285202026367,0.166985422372818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+322,36,"[**, 2.05, *, +, x_0, +, 2.05, -0.58, *, 2.05, x_2]",(2.05**((x_0+(2.05+-0.58))*(2.05*x_2))),113.55203247070312,-1.2780158519744873,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+323,36,"[+, *, -3.67, u-, *, -, 0.26, x_2, **, x_5, 3.74, **2, -3.61]",((-3.67*-(((0.26-x_2)*(x_5**3.74))))+(-3.61)**2),26.34688949584961,-0.9898486137390137,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+324,36,"[+, **2, u-, +, 0.72, -3.39, **2, u-, 2.76]",((-((0.72+-3.39)))**2+(-(2.76))**2),23.848905563354492,-0.21926051378250122,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+325,36,"[+, /, *, x_0, +, +, 2.76, 2.05, +, 0.72, -3.39, -3.39, **2, 2.76]",(((x_0*((2.76+2.05)+(0.72+-3.39)))/-3.39)+(2.76)**2),74.80097961425781,-1.229034423828125,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+326,36,"[+, *, -3.67, u-, *, **2, x_5, **, x_5, 2.76, **2, -3.61]",((-3.67*-(((x_5)**2*(x_5**2.76))))+(-3.61)**2),24.789018630981445,-0.7523464560508728,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+327,36,"[+, /, *, **, x_5, +, x_2, x_2, *, x_2, -0.41, x_2, **2, u-, 2.76]",((((x_5**(x_2+x_2))*(x_2*-0.41))/x_2)+(-(2.76))**2),72.78842163085938,-1.1426494121551514,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+328,36,"[**2, +, x_2, -4.2]",((x_2+-4.2))**2,28.22148323059082,-1.038757085800171,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+329,36,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+330,36,"[+, *, +, x_0, +, u-, x_5, -0.58, *, 2.05, x_2, **2, u-, 4.67]",(((x_0+(-(x_5)+-0.58))*(2.05*x_2))+(-(4.67))**2),69.79439544677734,-1.080832839012146,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+331,36,"[**, 2.05, +, cos, -, **, x_1, x_0, x_6, 2.76]",(2.05**(cos(((x_1**x_0)-x_6))+2.76)),24.320701599121094,-0.32225358486175537,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+332,37,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+333,37,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+334,37,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+335,37,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+336,37,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+337,37,"[+, /, *, 1.99, x_2, -3.39, exp, exp, **, cos, -0.19, u-, x_3]",(((1.99*x_2)/-3.39)+exp(exp((cos(-0.19)**-(x_3))))),23.144285202026367,0.166985422372818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+338,37,"[+, *, -3.67, u-, *, -, 0.26, x_2, **, x_5, 3.74, **2, -3.61]",((-3.67*-(((0.26-x_2)*(x_5**3.74))))+(-3.61)**2),26.34688949584961,-0.9898486137390137,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+339,37,"[+, **2, u-, +, 0.72, -3.39, **2, u-, 2.76]",((-((0.72+-3.39)))**2+(-(2.76))**2),23.848905563354492,-0.21926051378250122,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+340,37,"[+, *, -3.67, u-, *, **2, x_5, **, x_5, 2.76, **2, -3.61]",((-3.67*-(((x_5)**2*(x_5**2.76))))+(-3.61)**2),24.789018630981445,-0.7523464560508728,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+341,37,"[**2, +, x_2, -4.2]",((x_2+-4.2))**2,28.22148323059082,-1.038757085800171,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+342,37,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+343,37,"[**, 2.05, +, cos, -, **, x_1, x_0, x_6, 2.76]",(2.05**(cos(((x_1**x_0)-x_6))+2.76)),24.320701599121094,-0.32225358486175537,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+344,37,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, u-, +, 0.72, -3.39]",((((-0.41/2.76)*x_2)/-3.39)+(-((0.72+-3.39)))**2),76.12631225585938,-1.3434382677078247,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+345,37,"[+, /, *, **, x_5, +, -0.19, x_1, *, x_2, -3.39, x_2, **2, u-, -3.67]",((((x_5**(-0.19+x_1))*(x_2*-3.39))/x_2)+(-(-3.67))**2),35.66665267944336,-1.2060601711273193,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+346,37,[0.72],0.72,210.58164978027344,-2.904852867126465,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+347,37,"[+, *, 3.84, 3.47, exp, **, cos, +, x_2, x_2, x_6]",((3.84*3.47)+exp((cos((x_2+x_2))**x_6))),24.78297233581543,-0.6626197099685669,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+348,37,"[**, 2.05, +, +, 0.72, sin, *, x_2, x_2, 2.76]",(2.05**((0.72+sin((x_2*x_2)))+2.76)),32.46797180175781,-1.0614326000213623,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+349,37,"[+, *, 3.84, x_2, 2.05]",((3.84*x_2)+2.05),133.90567016601562,-1.7299681901931763,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+350,37,"[+, *, 2.05, x_2, **2, u-, 2.76]",((2.05*x_2)+(-(2.76))**2),57.2580680847168,-1.2820451259613037,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+351,37,"[+, *, +, 2.76, 2.76, x_2, +, x_0, +, u-, -4.58, -0.58]",(((2.76+2.76)*x_2)+(x_0+(-(-4.58)+-0.58))),76.45216369628906,-1.4840916395187378,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+352,38,"[**2, log, **2, /, -0.41, 2.76]",(log(abs(((-0.41/2.76))**2)))**2,23.745393753051758,0.0947909951210022,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+353,38,"[exp, exp, **, cos, sin, x_1, /, *, x_0, x_5, +, x_2, -4.2]",exp(exp((cos(sin(x_1))**((x_0*x_5)/(x_2+-4.2))))),23.290508270263672,0.16372929513454437,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+354,38,"[exp, exp, **, cos, *, x_0, x_4, /, **3, -0.58, cos, -0.08]",exp(exp((cos((x_0*x_4))**((-0.58)**3/cos(-0.08))))),22.999813079833984,0.18632107973098755,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+355,38,"[exp, exp, **, cos, -0.41, **2, +, -1.31, x_0]",exp(exp((cos(-0.41)**((-1.31+x_0))**2))),21.837587356567383,0.2355254888534546,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+356,38,"[**3, exp, exp, *, /, -0.41, 2.76, cos, x_0]",(exp(exp(((-0.41/2.76)*cos(x_0)))))**3,21.446542739868164,0.5253064632415771,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+357,38,"[+, /, *, 1.99, x_2, -3.39, exp, exp, **, cos, -0.19, u-, x_3]",(((1.99*x_2)/-3.39)+exp(exp((cos(-0.19)**-(x_3))))),23.144285202026367,0.166985422372818,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+358,38,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+359,38,"[+, /, *, **, x_5, +, -0.19, x_1, *, x_2, -3.39, x_2, **2, u-, -3.67]",((((x_5**(-0.19+x_1))*(x_2*-3.39))/x_2)+(-(-3.67))**2),35.66665267944336,-1.2060601711273193,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+360,38,[0.72],0.72,210.58164978027344,-2.904852867126465,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+361,38,[-2.13],-2.13,296.6213073730469,-3.085491895675659,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+362,38,"[+, /, *, **, x_5, +, x_2, x_2, *, x_2, -0.41, +, x_0, +, u-, -4.58, +, x_5, -3.39, **2, u-, 3.84]",((((x_5**(x_2+x_2))*(x_2*-0.41))/(x_0+(-(-4.58)+(x_5+-3.39))))+(-(3.84))**2),23.797565460205078,-1.1189910173416138,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+363,38,"[**, 2.05, 2.76]",(2.05**2.76),74.6720962524414,-1.9162626266479492,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+364,38,"[+, *, 2.05, 2.05, **2, u-, +, x_2, -4.2]",((2.05*2.05)+(-((x_2+-4.2)))**2),40.849727630615234,-1.517359733581543,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+365,39,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+366,39,[0.72],0.72,210.58164978027344,-2.904852867126465,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+367,39,"[**, 2.05, 2.76]",(2.05**2.76),74.6720962524414,-1.9162626266479492,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+368,39,[-0.41],-0.41,242.75201416015625,-3.199910879135132,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+369,39,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+370,39,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+371,40,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+372,40,[0.72],0.72,210.58164978027344,-2.904852867126465,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+373,40,"[**, 2.05, 2.76]",(2.05**2.76),74.6720962524414,-1.9162626266479492,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+374,40,[-0.41],-0.41,242.75201416015625,-3.199910879135132,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+375,40,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+376,40,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+377,40,[-4.58],-4.58,383.5702209472656,-3.310743570327759,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+378,41,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+379,41,"[**, 2.05, 2.76]",(2.05**2.76),74.6720962524414,-1.9162626266479492,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+380,41,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+381,41,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+382,41,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+383,41,"[**, 2.05, *, 4.67, x_2]",(2.05**(4.67*x_2)),108.86801147460938,-2.027076244354248,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+384,41,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+385,41,"[+, x_5, 3.84]",(x_5+3.84),124.95133972167969,-2.3003923892974854,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+386,42,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+387,42,"[**, 2.05, 2.76]",(2.05**2.76),74.6720962524414,-1.9162626266479492,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+388,42,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+389,42,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+390,42,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+391,42,"[**, 2.05, *, 4.67, x_2]",(2.05**(4.67*x_2)),108.86801147460938,-2.027076244354248,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+392,42,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+393,42,"[+, x_5, 3.84]",(x_5+3.84),124.95133972167969,-2.3003923892974854,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+394,42,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+395,42,"[+, *, 4.67, x_2, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05]",((4.67*x_2)+(2.05*(2.76*((4.5+x_0)/2.05)))),26.263357162475586,-1.829796552658081,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+396,42,[2.05],2.05,175.9892120361328,-3.4776182174682617,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+397,43,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+398,43,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+399,43,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+400,43,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+401,43,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+402,43,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+403,43,"[+, *, 4.67, x_2, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05]",((4.67*x_2)+(2.05*(2.76*((4.5+x_0)/2.05)))),26.263357162475586,-1.829796552658081,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+404,43,[2.05],2.05,175.9892120361328,-3.4776182174682617,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+405,43,[-0.19],-0.19,236.28855895996094,-3.5600883960723877,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+406,43,[x_3],x_3,215.3643341064453,-3.524230480194092,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+407,43,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+408,43,"[+, 2.76, 2.05]",(2.76+2.05),115.49179077148438,-2.5222978591918945,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+409,44,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+410,44,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+411,44,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+412,44,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+413,44,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+414,44,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+415,44,"[+, *, 4.67, x_2, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05]",((4.67*x_2)+(2.05*(2.76*((4.5+x_0)/2.05)))),26.263357162475586,-1.829796552658081,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+416,44,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+417,44,"[+, 2.76, 2.05]",(2.76+2.05),115.49179077148438,-2.5222978591918945,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+418,44,[2.35],2.35,168.67539978027344,-3.6311376094818115,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+419,45,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+420,45,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+421,45,"[+, *, 3.84, 3.47, *, 4.67, x_2]",((3.84*3.47)+(4.67*x_2)),27.414100646972656,-1.8879520893096924,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+422,45,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+423,45,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+424,45,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+425,45,"[+, *, 4.67, x_2, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05]",((4.67*x_2)+(2.05*(2.76*((4.5+x_0)/2.05)))),26.263357162475586,-1.829796552658081,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+426,45,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+427,45,"[+, 2.76, 2.05]",(2.76+2.05),115.49179077148438,-2.5222978591918945,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+428,45,[2.35],2.35,168.67539978027344,-3.6311376094818115,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+429,45,[1.22],1.22,197.16197204589844,-3.7211849689483643,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+430,45,"[*, 2.05, +, 4.5, x_4]",(2.05*(4.5+x_4)),39.44987106323242,-2.1990060806274414,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+431,46,[3.84],3.84,135.0172576904297,-2.6180686950683594,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+432,46,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+433,46,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+434,46,[2.76],2.76,158.97096252441406,-3.398571729660034,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+435,46,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+436,46,"[+, *, 4.67, x_2, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05]",((4.67*x_2)+(2.05*(2.76*((4.5+x_0)/2.05)))),26.263357162475586,-1.829796552658081,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+437,46,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+438,46,"[+, 2.76, 2.05]",(2.76+2.05),115.49179077148438,-2.5222978591918945,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+439,46,[2.35],2.35,168.67539978027344,-3.6311376094818115,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+440,46,[1.22],1.22,197.16197204589844,-3.7211849689483643,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+441,46,"[*, 2.05, +, 4.5, x_4]",(2.05*(4.5+x_4)),39.44987106323242,-2.1990060806274414,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+442,46,"[+, -0.41, **2, -3.61]",(-0.41+(-3.61)**2),26.845911026000977,-1.9548580646514893,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+443,47,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+444,47,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+445,47,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+446,47,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+447,47,"[*, 2.05, +, 4.5, x_4]",(2.05*(4.5+x_4)),39.44987106323242,-2.1990060806274414,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+448,47,[2.8],2.8,158.0421905517578,-3.9407684803009033,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+449,47,"[+, 4.67, 2.8]",(4.67+2.8),71.60350799560547,-2.616668701171875,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+450,47,"[*, 2.76, 2.05]",(2.76*2.05),99.96376037597656,-2.643038749694824,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+451,47,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+452,48,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+453,48,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+454,48,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+455,48,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+456,48,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+457,48,[4.5],4.5,121.52729034423828,-4.10344934463501,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+458,48,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+459,48,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+460,48,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+461,49,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+462,49,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+463,49,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+464,49,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+465,49,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+466,49,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+467,49,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+468,49,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+469,49,"[+, /, *, -1.97, *, 2.76, log, x_0, -3.39, exp, 2.76]",(((-1.97*(2.76*log(abs(x_0))))/-3.39)+exp(2.76)),19.799272537231445,-0.5147146582603455,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+470,49,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+471,49,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+472,50,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+473,50,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+474,50,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+475,50,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+476,50,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+477,50,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+478,50,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+479,50,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+480,50,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+481,50,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+482,50,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+483,50,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+484,51,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+485,51,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+486,51,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+487,51,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+488,51,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+489,51,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+490,51,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+491,51,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+492,51,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+493,51,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+494,51,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+495,51,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+496,51,[-3.67],-3.67,349.8735046386719,-4.624761581420898,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+497,52,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+498,52,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+499,52,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+500,52,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+501,52,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+502,52,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+503,52,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+504,52,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+505,52,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+506,52,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+507,52,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+508,52,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+509,52,[-3.67],-3.67,349.8735046386719,-4.624761581420898,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+510,53,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+511,53,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+512,53,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+513,53,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+514,53,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+515,53,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+516,53,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+517,53,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+518,53,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+519,53,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+520,53,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+521,53,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+522,53,[x_5],x_5,216.9898223876953,-4.712041854858398,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+523,54,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+524,54,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+525,54,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+526,54,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+527,54,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+528,54,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+529,54,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+530,54,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+531,54,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+532,54,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+533,54,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+534,54,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+535,54,[x_5],x_5,216.9898223876953,-4.712041854858398,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+536,55,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+537,55,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+538,55,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+539,55,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+540,55,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+541,55,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+542,55,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+543,55,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+544,55,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+545,55,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+546,55,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+547,55,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+548,55,[2.59],2.59,162.95394897460938,-5.166806697845459,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+549,56,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+550,56,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+551,56,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+552,56,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+553,56,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+554,56,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+555,56,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+556,56,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+557,56,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+558,56,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+559,56,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+560,56,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+561,56,[2.59],2.59,162.95394897460938,-5.166806697845459,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+562,56,[-4.58],-4.58,383.5702209472656,-5.484992027282715,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+563,57,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+564,57,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+565,57,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+566,57,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+567,57,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+568,57,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+569,57,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+570,57,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+571,57,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+572,57,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+573,57,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+574,57,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+575,57,[2.59],2.59,162.95394897460938,-5.166806697845459,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+576,57,[-4.58],-4.58,383.5702209472656,-5.484992027282715,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+577,58,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+578,58,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+579,58,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+580,58,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+581,58,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+582,58,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+583,58,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+584,58,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+585,58,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+586,58,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+587,58,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+588,58,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+589,58,[2.59],2.59,162.95394897460938,-5.166806697845459,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+590,58,[-4.58],-4.58,383.5702209472656,-5.484992027282715,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+591,59,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_0, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_0)/2.05)))+(x_5)**2),21.023712158203125,-1.55803644657135,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+592,59,"[+, /, *, /, -0.41, 2.76, x_2, -3.39, **2, -3.67]",((((-0.41/2.76)*x_2)/-3.39)+(-3.67)**2),24.53197479248047,-1.7866822481155396,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+593,59,"[+, /, *, *, x_2, -0.19, *, x_2, -0.41, x_2, **2, u-, -3.67]",((((x_2*-0.19)*(x_2*-0.41))/x_2)+(-(-3.67))**2),24.503746032714844,-1.6295115947723389,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+594,59,"[**, 2.05, +, x_1, 2.76]",(2.05**(x_1+2.76)),35.578304290771484,-2.112588405609131,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+595,59,"[**2, -3.61]",(-3.61)**2,25.564598083496094,-2.075937271118164,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+596,59,"[/, *, 2.05, -3.67, -0.41]",((2.05*-3.67)/-0.41),39.40574264526367,-2.322852849960327,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+597,59,"[*, 2.05, 3.84]",(2.05*3.84),66.20169067382812,-2.644251823425293,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+598,59,"[+, +, **2, x_5, **2, +, u-, 4.34, cos, x_3, 2.05]",(((x_5)**2+((-(4.34)+cos(x_3)))**2)+2.05),19.096527099609375,-0.13555580377578735,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+599,59,[4.67],4.67,118.1937026977539,-4.286981582641602,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+600,59,"[*, 2.05, 4.67]",(2.05*4.67),46.91714096069336,-2.4278950691223145,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+601,59,"[+, *, 2.05, *, 2.76, /, +, 4.5, x_3, 2.05, **2, x_5]",((2.05*(2.76*((4.5+x_3)/2.05)))+(x_5)**2),19.680011749267578,-0.9526442885398865,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+602,59,"[+, +, *, 2.05, **2, +, x_3, x_4, +, x_0, +, u-, -4.58, u-, -2.66, +, x_5, 3.84]",(((2.05*((x_3+x_4))**2)+(x_0+(-(-4.58)+-(-2.66))))+(x_5+3.84)),15.297054290771484,-0.07546007633209229,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+603,59,[2.59],2.59,162.95394897460938,-5.166806697845459,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1
+604,59,[-4.58],-4.58,383.5702209472656,-5.484992027282715,209,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Feynman,friedman1

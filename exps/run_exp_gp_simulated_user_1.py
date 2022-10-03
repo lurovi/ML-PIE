@@ -15,6 +15,7 @@ from threads.GPSimulatedUserExpsExecutor import GPSimulatedUserExpsExecutor
 
 
 if __name__ == "__main__":
+    exit(1)
     # Setting torch to use deterministic algorithms where possible
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
@@ -25,7 +26,7 @@ if __name__ == "__main__":
     num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    for data_path_file in ["california", "diabets", "windspeed", "friedman1"]:
+    for data_path_file in ["california", "diabets", "windspeed", "friedman1", "vladislavleva"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)

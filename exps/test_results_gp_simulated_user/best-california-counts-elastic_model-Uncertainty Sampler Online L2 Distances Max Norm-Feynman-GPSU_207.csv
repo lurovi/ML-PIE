@@ -1,0 +1,609 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[sqrt, sin, -, x_1, x_3]",sqrt(abs(sin((x_1-x_3)))),3.2104413509368896,-0.023881569504737854,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+1,0,"[cos, x_0]",cos(x_0),3.680777072906494,-0.03679843246936798,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+2,0,[x_0],x_0,4.403140544891357,-0.04639579355716705,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+3,0,"[exp, sin, **, x_1, cos, -1.21]",exp(sin((x_1**cos(-1.21)))),1.4233331680297852,-0.019336417317390442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+4,1,"[exp, sin, **, x_1, cos, -1.21]",exp(sin((x_1**cos(-1.21)))),1.4233331680297852,-0.019336417317390442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+5,1,"[sin, exp, sin, *, x_2, x_1]",sin(exp(sin((x_2*x_1)))),3.111347198486328,-0.0442708283662796,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+6,1,"[exp, sin, +, exp, *, x_6, 0.61, x_0]",exp(sin((exp((x_6*0.61))+x_0))),1.9369083642959595,-0.04027431458234787,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+7,1,"[cos, *, x_0, x_2]",cos((x_0*x_2)),3.4910268783569336,-0.05284404009580612,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+8,1,"[log, x_6]",log(abs(x_6)),18.07914161682129,-0.058388546109199524,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+9,1,"[sin, exp, *, x_5, x_6]",sin(exp((x_5*x_6))),3.1003732681274414,-0.04227518290281296,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+10,2,[x_7],x_7,7.22597074508667,-0.13215768337249756,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+11,2,"[exp, sin, +, exp, log, x_3, x_0]",exp(sin((exp(log(abs(x_3)))+x_0))),1.609911561012268,-0.05723206698894501,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+12,2,"[sqrt, cos, *, x_0, x_2]",sqrt(abs(cos((x_0*x_2)))),2.7744839191436768,-0.0741291418671608,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+13,2,"[exp, cos, cos, /, x_3, +, x_2, x_6]",exp(cos(cos((x_3/(x_2+x_6))))),1.5285060405731201,-0.041303686797618866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+14,2,"[exp, cos, cos, sin, sqrt, -1.16]",exp(cos(cos(sin(sqrt(abs(-1.16)))))),1.3738155364990234,-0.03233223408460617,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+15,2,"[exp, sin, exp, **, **, x_2, x_0, x_5]",exp(sin(exp(((x_2**x_0)**x_5)))),2.208012580871582,-0.07019657641649246,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+16,2,"[cos, x_7]",cos(x_7),2.933026075363159,-0.10184676200151443,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+17,2,[x_6],x_6,4.775267124176025,-0.12916526198387146,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+18,3,"[sin, x_4]",sin(x_4),5.877352237701416,-0.1449301838874817,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+19,3,"[exp, sin, sqrt, u-, x_0]",exp(sin(sqrt(abs(-(x_0))))),1.263837218284607,-0.08157700300216675,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+20,3,"[log, x_1]",log(abs(x_1)),21.30759620666504,-0.14562396705150604,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+21,3,"[sqrt, x_0]",sqrt(abs(x_0)),3.0052998065948486,-0.14457745850086212,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+22,3,[x_5],x_5,192.14974975585938,-0.1700739860534668,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+23,3,"[exp, sin, exp, **, **, x_2, x_0, -2.61]",exp(sin(exp(((x_2**x_0)**-2.61)))),2.554502487182617,-0.1030007153749466,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+24,4,"[exp, sin, sqrt, u-, x_0]",exp(sin(sqrt(abs(-(x_0))))),1.263837218284607,-0.08157700300216675,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+25,4,"[exp, x_6]",exp(x_6),3.0471317768096924,-0.1740720421075821,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+26,4,"[exp, sin, cos, sin, **, x_5, x_2]",exp(sin(cos(sin((x_5**x_2))))),1.2849739789962769,-0.08850811421871185,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+27,4,"[+, exp, *, x_6, 0.61, x_0]",(exp((x_6*0.61))+x_0),1.406891942024231,-0.14468233287334442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+28,4,"[u-, -4.15]",-(-4.15),5.662440776824951,-0.17606577277183533,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+29,4,"[sqrt, exp, sqrt, -, cos, 0.68, u-, x_0]",sqrt(abs(exp(sqrt(abs((cos(0.68)--(x_0))))))),1.1437808275222778,-0.06275790929794312,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+30,4,[-4.53],-4.53,44.94449234008789,-0.22322769463062286,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+31,5,"[exp, x_6]",exp(x_6),3.0471317768096924,-0.1740720421075821,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+32,5,"[+, exp, *, x_6, 0.61, x_0]",(exp((x_6*0.61))+x_0),1.406891942024231,-0.14468233287334442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+33,5,"[sqrt, exp, sqrt, -, cos, 0.68, u-, x_0]",sqrt(abs(exp(sqrt(abs((cos(0.68)--(x_0))))))),1.1437808275222778,-0.06275790929794312,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+34,5,"[sqrt, x_1]",sqrt(abs(x_1)),3.286005973815918,-0.19081316888332367,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+35,5,[-0.03],-0.03,5.769372940063477,-0.2560306489467621,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+36,5,"[exp, sqrt, u-, sin, x_0]",exp(sqrt(abs(-(sin(x_0))))),1.3765242099761963,-0.11151966452598572,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+37,5,"[cos, x_1]",cos(x_1),3.060373306274414,-0.18536198139190674,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+38,5,"[+, exp, sqrt, **3, sin, x_7, x_0]",(exp(sqrt(abs((sin(x_7))**3)))+x_0),1.1464587450027466,-0.10863210260868073,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+39,5,"[sqrt, exp, sqrt, -, cos, x_6, u-, x_0]",sqrt(abs(exp(sqrt(abs((cos(x_6)--(x_0))))))),1.1273728609085083,-0.05911492183804512,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+40,6,"[+, exp, *, x_6, 0.61, x_0]",(exp((x_6*0.61))+x_0),1.406891942024231,-0.14468233287334442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+41,6,"[sqrt, exp, sqrt, -, cos, 0.68, u-, x_0]",sqrt(abs(exp(sqrt(abs((cos(0.68)--(x_0))))))),1.1437808275222778,-0.06275790929794312,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+42,6,[-0.03],-0.03,5.769372940063477,-0.2560306489467621,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+43,6,"[+, exp, sqrt, **3, sin, x_7, x_0]",(exp(sqrt(abs((sin(x_7))**3)))+x_0),1.1464587450027466,-0.10863210260868073,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+44,6,"[sqrt, exp, sqrt, -, cos, x_6, u-, x_0]",sqrt(abs(exp(sqrt(abs((cos(x_6)--(x_0))))))),1.1273728609085083,-0.05911492183804512,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+45,6,[-4.15],-4.15,40.070770263671875,-0.29215145111083984,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+46,6,"[exp, sqrt, u-, *, x_0, sin, -4.59]",exp(sqrt(abs(-((x_0*sin(-4.59)))))),1.2412359714508057,-0.12421451508998871,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+47,6,"[exp, x_1]",exp(x_1),2.5021045207977295,-0.21249012649059296,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+48,6,"[exp, sqrt, u-, x_0]",exp(sqrt(abs(-(x_0)))),1.248327612876892,-0.1313217431306839,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+49,7,"[+, exp, *, x_6, 0.61, x_0]",(exp((x_6*0.61))+x_0),1.406891942024231,-0.14468233287334442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+50,7,[-0.03],-0.03,5.769372940063477,-0.2560306489467621,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+51,7,"[exp, x_1]",exp(x_1),2.5021045207977295,-0.21249012649059296,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+52,7,[x_4],x_4,6.160730838775635,-0.3493193984031677,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+53,7,"[+, exp, *, sin, **, x_2, x_5, 0.61, x_0]",(exp((sin((x_2**x_5))*0.61))+x_0),0.9277821779251099,-0.1426459550857544,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+54,7,"[+, exp, sqrt, -1.21, x_0]",(exp(sqrt(abs(-1.21)))+x_0),1.8736697435379028,-0.16067254543304443,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+55,7,"[exp, -1.2]",exp(-1.2),4.486198425292969,-0.2377401888370514,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+56,7,"[sqrt, x_7]",sqrt(abs(x_7)),3.6496949195861816,-0.2223983108997345,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+57,8,"[+, exp, *, x_6, 0.61, x_0]",(exp((x_6*0.61))+x_0),1.406891942024231,-0.14468233287334442,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+58,8,[x_4],x_4,6.160730838775635,-0.3493193984031677,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+59,8,"[+, exp, *, sin, **, x_2, x_5, 0.61, x_0]",(exp((sin((x_2**x_5))*0.61))+x_0),0.9277821779251099,-0.1426459550857544,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+60,8,"[exp, x_7]",exp(x_7),3.045417547225952,-0.2594241499900818,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+61,8,"[exp, exp, -1.2]",exp(exp(-1.2)),1.867944598197937,-0.1953819990158081,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+62,8,"[exp, -4.15]",exp(-4.15),5.579001426696777,-0.2655821442604065,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+63,8,"[sqrt, -1.21]",sqrt(abs(-1.21)),2.2939655780792236,-0.24821379780769348,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+64,8,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.15273529291152954,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+65,8,"[+, exp, cos, sin, **, x_0, x_4, x_0]",(exp(cos(sin((x_0**x_4))))+x_0),0.8666922450065613,-0.11853006482124329,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+66,8,[x_3],x_3,33.801536560058594,-0.4311148226261139,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+67,8,"[sqrt, exp, x_0]",sqrt(abs(exp(x_0))),1.7747942209243774,-0.18860818445682526,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+68,8,"[exp, cos, x_6]",exp(cos(x_6)),1.4485557079315186,-0.15119412541389465,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+69,9,"[+, exp, *, sin, **, x_2, x_5, 0.61, x_0]",(exp((sin((x_2**x_5))*0.61))+x_0),0.9277821779251099,-0.1426459550857544,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+70,9,"[exp, x_7]",exp(x_7),3.045417547225952,-0.2594241499900818,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+71,9,"[exp, exp, -1.2]",exp(exp(-1.2)),1.867944598197937,-0.1953819990158081,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+72,9,"[sqrt, -1.21]",sqrt(abs(-1.21)),2.2939655780792236,-0.24821379780769348,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+73,9,"[+, exp, cos, sin, **, x_0, x_4, x_0]",(exp(cos(sin((x_0**x_4))))+x_0),0.8666922450065613,-0.11853006482124329,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+74,9,"[sqrt, exp, x_0]",sqrt(abs(exp(x_0))),1.7747942209243774,-0.18860818445682526,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+75,9,"[+, exp, x_7, x_0]",(exp(x_7)+x_0),2.0438663959503174,-0.2274094521999359,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+76,9,"[+, exp, sin, sin, *, x_0, x_2, x_0]",(exp(sin(sin((x_0*x_2))))+x_0),1.2476149797439575,-0.161654531955719,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+77,9,"[+, exp, cos, +, /, x_0, x_0, -2.35, x_0]",(exp(cos(((x_0/x_0)+-2.35)))+x_0),1.1649216413497925,-0.14858418703079224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+78,9,[0.61],0.61,3.487400770187378,-0.48882874846458435,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+79,10,"[+, exp, *, sin, **, x_2, x_5, 0.61, x_0]",(exp((sin((x_2**x_5))*0.61))+x_0),0.9277821779251099,-0.1426459550857544,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+80,10,"[sqrt, -1.21]",sqrt(abs(-1.21)),2.2939655780792236,-0.24821379780769348,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+81,10,"[+, exp, cos, sin, **, x_0, x_4, x_0]",(exp(cos(sin((x_0**x_4))))+x_0),0.8666922450065613,-0.11853006482124329,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+82,10,"[+, exp, x_7, x_0]",(exp(x_7)+x_0),2.0438663959503174,-0.2274094521999359,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+83,10,[0.61],0.61,3.487400770187378,-0.48882874846458435,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+84,10,"[exp, cos, 0.61]",exp(cos(0.61)),1.3864167928695679,-0.20188575983047485,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+85,10,"[+, x_0, 0.61]",(x_0+0.61),2.429086685180664,-0.3307728171348572,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+86,10,[x_7],x_7,7.22597074508667,-0.5911188125610352,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+87,10,"[+, exp, *, sqrt, /, x_7, x_7, sqrt, sin, x_5, x_0]",(exp((sqrt(abs((x_7/x_7)))*sqrt(abs(sin(x_5)))))+x_0),0.8088146448135376,-0.08501767367124557,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+88,10,[x_6],x_6,4.775267124176025,-0.5863409638404846,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+89,10,"[+, exp, cos, -, x_1, x_0, x_0]",(exp(cos((x_1-x_0)))+x_0),1.1459507942199707,-0.1638062298297882,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+90,10,"[+, exp, cos, -, x_0, exp, -4.31, x_0]",(exp(cos((x_0-exp(-4.31))))+x_0),1.116339921951294,-0.15147468447685242,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+91,11,"[+, exp, cos, sin, **, x_0, x_4, x_0]",(exp(cos(sin((x_0**x_4))))+x_0),0.8666922450065613,-0.11853006482124329,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+92,11,[0.61],0.61,3.487400770187378,-0.48882874846458435,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+93,11,"[exp, cos, 0.61]",exp(cos(0.61)),1.3864167928695679,-0.20188575983047485,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+94,11,"[+, exp, cos, -, x_1, x_0, x_0]",(exp(cos((x_1-x_0)))+x_0),1.1459507942199707,-0.1638062298297882,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+95,11,"[+, exp, cos, -, x_0, exp, -4.31, x_0]",(exp(cos((x_0-exp(-4.31))))+x_0),1.116339921951294,-0.15147468447685242,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+96,11,"[+, exp, cos, exp, x_5, x_0]",(exp(cos(exp(x_5)))+x_0),0.9015887975692749,-0.14651089906692505,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+97,11,"[+, exp, cos, cos, *, x_0, x_2, x_0]",(exp(cos(cos((x_0*x_2))))+x_0),0.7460854649543762,-0.08997327834367752,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+98,11,"[log, -4.59]",log(abs(-4.59)),1.6489465236663818,-0.3618249297142029,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+99,11,[x_0],x_0,4.403140544891357,-0.727186918258667,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+100,12,[0.61],0.61,3.487400770187378,-0.48882874846458435,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+101,12,"[+, exp, cos, cos, *, x_0, x_2, x_0]",(exp(cos(cos((x_0*x_2))))+x_0),0.7460854649543762,-0.08997327834367752,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+102,12,"[log, -4.59]",log(abs(-4.59)),1.6489465236663818,-0.3618249297142029,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+103,12,[x_0],x_0,4.403140544891357,-0.727186918258667,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+104,12,"[sqrt, x_2]",sqrt(abs(x_2)),3.1365966796875,-0.46467897295951843,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+105,12,"[+, exp, cos, exp, *, x_2, x_6, x_0]",(exp(cos(exp((x_2*x_6))))+x_0),0.9252458214759827,-0.18506073951721191,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+106,12,"[+, exp, cos, x_6, x_0]",(exp(cos(x_6))+x_0),0.9735613465309143,-0.24944302439689636,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+107,12,"[*, exp, 0.61, 0.61]",(exp(0.61)*0.61),2.2503862380981445,-0.41949233412742615,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+108,12,"[+, exp, *, sin, /, x_0, x_0, sin, cos, x_3, x_0]",(exp((sin((x_0/x_0))*sin(cos(x_3))))+x_0),0.8651177287101746,-0.12582789361476898,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+109,12,"[+, exp, cos, u-, sqrt, x_7, x_0]",(exp(cos(-(sqrt(abs(x_7)))))+x_0),0.8858323097229004,-0.14680573344230652,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+110,12,"[cos, 0.61]",cos(0.61),2.9180104732513428,-0.44896695017814636,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+111,13,[x_0],x_0,4.403140544891357,-0.727186918258667,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+112,13,"[+, exp, cos, log, exp, x_0, x_0]",(exp(cos(log(abs(exp(x_0)))))+x_0),1.1191092729568481,-0.29250699281692505,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+113,13,"[+, exp, sqrt, **3, sin, x_5, x_0]",(exp(sqrt(abs((sin(x_5))**3)))+x_0),0.9790499806404114,-0.2889016270637512,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+114,13,"[exp, sin, -4.59]",exp(sin(-4.59)),1.7385601997375488,-0.4972946345806122,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+115,13,"[exp, sin, exp, **3, x_3]",exp(sin(exp((x_3)**3))),1.6098260879516602,-0.34303897619247437,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+116,13,"[sin, 0.61]",sin(0.61),3.5974137783050537,-0.6462060213088989,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+117,13,"[exp, sqrt, u-, *, x_0, sin, -1.2]",exp(sqrt(abs(-((x_0*sin(-1.2)))))),1.1920876502990723,-0.3306273818016052,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+118,13,"[+, exp, sin, x_0, x_0]",(exp(sin(x_0))+x_0),1.669763445854187,-0.462875634431839,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+119,13,[-4.15],-4.15,40.070770263671875,-1.068038821220398,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+120,13,"[+, exp, sin, sin, -, x_1, x_4, x_0]",(exp(sin(sin((x_1-x_4))))+x_0),1.4780148267745972,-0.33486223220825195,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+121,13,"[+, exp, cos, cos, x_2, x_0]",(exp(cos(cos(x_2)))+x_0),0.7403931617736816,-0.2378678172826767,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+122,13,"[exp, x_6]",exp(x_6),3.0471317768096924,-0.6378207802772522,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+123,13,"[+, sqrt, -, -, 1.6, x_4, u-, x_0, x_0]",(sqrt(abs(((1.6-x_4)--(x_0))))+x_0),1.3613255023956299,-0.33150479197502136,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+124,13,"[+, exp, **3, sin, *, x_0, x_3, x_0]",(exp((sin((x_0*x_3)))**3)+x_0),1.6468486785888672,-0.3752817213535309,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+125,13,"[+, exp, sin, exp, cos, x_5, x_0]",(exp(sin(exp(cos(x_5))))+x_0),0.7584677934646606,-0.26579317450523376,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+126,14,[-4.15],-4.15,40.070770263671875,-1.068038821220398,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+127,14,"[+, exp, cos, cos, x_2, x_0]",(exp(cos(cos(x_2)))+x_0),0.7403931617736816,-0.2378678172826767,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+128,14,"[+, exp, sin, exp, cos, x_5, x_0]",(exp(sin(exp(cos(x_5))))+x_0),0.7584677934646606,-0.26579317450523376,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+129,14,"[+, exp, cos, sqrt, cos, x_3, x_0]",(exp(cos(sqrt(abs(cos(x_3)))))+x_0),0.7784048914909363,-0.27751755714416504,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+130,14,"[+, exp, cos, x_0, x_0]",(exp(cos(x_0))+x_0),1.1191092729568481,-0.5490066409111023,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+131,14,"[exp, 0.61]",exp(0.61),1.4016342163085938,-0.8676513433456421,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+132,14,"[+, exp, *, sin, cos, x_6, 0.61, x_0]",(exp((sin(cos(x_6))*0.61))+x_0),0.8386383652687073,-0.388060599565506,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+133,14,"[+, exp, cos, cos, exp, x_6, x_0]",(exp(cos(cos(exp(x_6))))+x_0),0.8313614130020142,-0.28777045011520386,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+134,14,"[+, x_0, exp, sin, sqrt, -, x_0, x_3]",(x_0+exp(sin(sqrt(abs((x_0-x_3)))))),0.9761191010475159,-0.48226356506347656,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+135,15,[-4.15],-4.15,40.070770263671875,-1.068038821220398,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+136,15,"[+, exp, cos, cos, x_2, x_0]",(exp(cos(cos(x_2)))+x_0),0.7403931617736816,-0.2378678172826767,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+137,15,"[+, exp, sin, exp, cos, x_5, x_0]",(exp(sin(exp(cos(x_5))))+x_0),0.7584677934646606,-0.26579317450523376,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+138,15,"[exp, 0.61]",exp(0.61),1.4016342163085938,-0.8676513433456421,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+139,15,"[+, x_0, x_2]",(x_0+x_2),6.9397125244140625,-0.919269859790802,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+140,15,"[+, exp, cos, cos, u-, x_4, x_0]",(exp(cos(cos(-(x_4))))+x_0),0.7926374673843384,-0.36803796887397766,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+141,15,"[*, x_1, x_7]",(x_1*x_7),6.038039684295654,-0.9055244326591492,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+142,15,"[+, exp, cos, cos, cos, 0.61, x_0]",(exp(cos(cos(cos(0.61))))+x_0),0.7672723531723022,-0.29475077986717224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+143,15,"[+, exp, cos, 0.61, x_0]",(exp(cos(0.61))+x_0),0.8250640630722046,-0.6329377889633179,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+144,15,"[u-, x_0]",-(x_0),8.41468334197998,-0.9708488583564758,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+145,16,"[exp, 0.61]",exp(0.61),1.4016342163085938,-0.8676513433456421,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+146,16,"[/, x_0, x_0]",(x_0/x_0),2.498523712158203,-1.0098665952682495,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+147,16,"[+, exp, sqrt, 0.61, x_0]",(exp(sqrt(abs(0.61)))+x_0),0.7728452086448669,-0.740024745464325,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+148,16,"[+, exp, cos, sin, /, x_0, x_0, x_0]",(exp(cos(sin((x_0/x_0))))+x_0),0.7054954171180725,-0.5611135959625244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+149,16,[x_1],x_1,6.004754066467285,-1.4702919721603394,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+150,16,"[exp, x_7]",exp(x_7),3.045417547225952,-1.035462737083435,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+151,17,"[exp, 0.61]",exp(0.61),1.4016342163085938,-0.8676513433456421,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+152,17,"[+, exp, sqrt, 0.61, x_0]",(exp(sqrt(abs(0.61)))+x_0),0.7728452086448669,-0.740024745464325,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+153,17,"[+, exp, cos, sin, /, x_0, x_0, x_0]",(exp(cos(sin((x_0/x_0))))+x_0),0.7054954171180725,-0.5611135959625244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+154,17,[x_1],x_1,6.004754066467285,-1.4702919721603394,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+155,17,"[+, x_0, 0.68]",(x_0+0.68),2.2501559257507324,-1.0919727087020874,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+156,17,"[+, exp, *, sin, sqrt, -3.5, 0.61, x_0]",(exp((sin(sqrt(abs(-3.5)))*0.61))+x_0),0.7223718762397766,-0.6933483481407166,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+157,17,"[+, exp, x_6, x_0]",(exp(x_6)+x_0),2.1189332008361816,-0.9065933227539062,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+158,17,"[+, exp, sin, exp, x_0, x_0]",(exp(sin(exp(x_0)))+x_0),1.0691746473312378,-0.7942721247673035,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+159,18,"[+, exp, cos, sin, /, x_0, x_0, x_0]",(exp(cos(sin((x_0/x_0))))+x_0),0.7054954171180725,-0.5611135959625244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+160,18,"[+, x_0, 0.68]",(x_0+0.68),2.2501559257507324,-1.0919727087020874,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+161,18,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+162,18,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+163,18,"[cos, x_7]",cos(x_7),2.933026075363159,-1.1476339101791382,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+164,19,"[+, exp, cos, sin, /, x_0, x_0, x_0]",(exp(cos(sin((x_0/x_0))))+x_0),0.7054954171180725,-0.5611135959625244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+165,19,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+166,19,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+167,19,"[exp, sin, 0.61]",exp(sin(0.61)),1.4373112916946411,-1.136788010597229,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+168,19,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+169,19,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+170,19,"[cos, 0.61]",cos(0.61),2.9180104732513428,-1.287324070930481,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+171,19,"[+, exp, x_7, x_0]",(exp(x_7)+x_0),2.0438663959503174,-1.1696209907531738,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+172,20,"[+, exp, cos, sin, /, x_0, x_0, x_0]",(exp(cos(sin((x_0/x_0))))+x_0),0.7054954171180725,-0.5611135959625244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+173,20,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+174,20,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+175,20,"[exp, sin, 0.61]",exp(sin(0.61)),1.4373112916946411,-1.136788010597229,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+176,20,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+177,20,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+178,20,"[cos, 0.61]",cos(0.61),2.9180104732513428,-1.287324070930481,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+179,20,"[sqrt, x_2]",sqrt(abs(x_2)),3.1365966796875,-1.4556852579116821,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+180,20,[x_4],x_4,6.160730838775635,-2.0262949466705322,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+181,20,"[+, exp, cos, x_0, x_0]",(exp(cos(x_0))+x_0),1.1191092729568481,-1.051900029182434,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+182,20,"[sin, /, x_0, x_0]",sin((x_0/x_0)),2.8637921810150146,-1.2829256057739258,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+183,20,[x_7],x_7,7.22597074508667,-2.0515599250793457,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+184,20,"[+, exp, x_1, x_0]",(exp(x_1)+x_0),1.5028287172317505,-1.267818570137024,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+185,21,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+186,21,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+187,21,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+188,21,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+189,21,"[sqrt, x_2]",sqrt(abs(x_2)),3.1365966796875,-1.4556852579116821,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+190,21,"[sqrt, u-, 4.25]",sqrt(abs(-(4.25))),1.3477696180343628,-1.2913068532943726,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+191,21,"[exp, sin, x_0]",exp(sin(x_0)),1.6776583194732666,-1.3433334827423096,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+192,21,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+193,21,"[+, +, x_0, 0.68, x_0]",((x_0+0.68)+x_0),2.7424137592315674,-1.3535926342010498,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+194,21,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+195,21,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+196,21,[x_6],x_6,4.775267124176025,-2.121128559112549,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+197,22,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+198,22,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+199,22,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+200,22,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+201,22,"[sqrt, x_2]",sqrt(abs(x_2)),3.1365966796875,-1.4556852579116821,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+202,22,"[sqrt, u-, 4.25]",sqrt(abs(-(4.25))),1.3477696180343628,-1.2913068532943726,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+203,22,"[exp, sin, x_0]",exp(sin(x_0)),1.6776583194732666,-1.3433334827423096,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+204,22,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+205,22,"[+, +, x_0, 0.68, x_0]",((x_0+0.68)+x_0),2.7424137592315674,-1.3535926342010498,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+206,22,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+207,22,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+208,22,[x_6],x_6,4.775267124176025,-2.121128559112549,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+209,22,"[exp, sin, x_7]",exp(sin(x_7)),2.969040870666504,-1.3623782396316528,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+210,22,[-4.31],-4.31,42.08766555786133,-2.2483010292053223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+211,23,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+212,23,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+213,23,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+214,23,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+215,23,"[sqrt, u-, 4.25]",sqrt(abs(-(4.25))),1.3477696180343628,-1.2913068532943726,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+216,23,"[exp, sin, x_0]",exp(sin(x_0)),1.6776583194732666,-1.3433334827423096,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+217,23,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+218,23,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+219,23,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+220,23,[x_6],x_6,4.775267124176025,-2.121128559112549,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+221,23,[-4.31],-4.31,42.08766555786133,-2.2483010292053223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+222,23,"[exp, x_1]",exp(x_1),2.5021045207977295,-1.6736688613891602,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+223,24,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+224,24,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+225,24,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+226,24,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+227,24,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+228,24,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+229,24,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+230,24,[x_6],x_6,4.775267124176025,-2.121128559112549,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+231,24,[-4.31],-4.31,42.08766555786133,-2.2483010292053223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+232,24,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+233,24,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+234,24,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+235,25,[0.61],0.61,3.487400770187378,-1.732552170753479,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+236,25,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+237,25,[x_0],x_0,4.403140544891357,-1.8962358236312866,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+238,25,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+239,25,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+240,25,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+241,25,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+242,25,[x_6],x_6,4.775267124176025,-2.121128559112549,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+243,25,[-4.31],-4.31,42.08766555786133,-2.2483010292053223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+244,25,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+245,25,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+246,25,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+247,25,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+248,26,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+249,26,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+250,26,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+251,26,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+252,26,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+253,26,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+254,26,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+255,26,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+256,26,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+257,26,"[exp, x_7]",exp(x_7),3.045417547225952,-1.7441214323043823,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+258,26,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+259,27,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+260,27,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+261,27,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+262,27,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+263,27,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+264,27,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+265,27,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+266,27,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+267,27,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+268,27,"[exp, x_7]",exp(x_7),3.045417547225952,-1.7441214323043823,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+269,27,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+270,27,[-3.69],-3.69,34.557403564453125,-2.6767516136169434,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+271,27,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+272,28,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+273,28,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+274,28,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+275,28,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+276,28,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+277,28,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+278,28,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+279,28,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+280,28,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+281,28,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+282,28,[-3.69],-3.69,34.557403564453125,-2.6767516136169434,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+283,28,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+284,28,"[log, -4.6]",log(abs(-4.6)),1.646562099456787,-1.7713961601257324,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+285,29,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+286,29,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+287,29,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+288,29,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+289,29,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+290,29,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+291,29,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+292,29,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+293,29,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+294,29,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+295,29,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+296,29,"[log, -4.6]",log(abs(-4.6)),1.646562099456787,-1.7713961601257324,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+297,29,"[exp, sqrt, x_0]",exp(sqrt(abs(x_0))),1.248327612876892,-1.2812429666519165,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+298,29,"[-, 0.61, x_7]",(0.61-x_7),2.9694886207580566,-1.834884524345398,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+299,29,[-4.15],-4.15,40.070770263671875,-3.063615083694458,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+300,29,[x_1],x_1,6.004754066467285,-3.0239105224609375,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+301,30,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+302,30,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+303,30,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+304,30,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+305,30,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+306,30,"[exp, 0.61]",exp(0.61),1.4016342163085938,-1.7143073081970215,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+307,30,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+308,30,"[sqrt, u-, -4.15]",sqrt(abs(-(-4.15))),1.3489131927490234,-1.3670413494110107,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+309,30,"[sqrt, -3.69]",sqrt(abs(-3.69)),1.370702862739563,-1.6813945770263672,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+310,30,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+311,30,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+312,30,"[log, -4.6]",log(abs(-4.6)),1.646562099456787,-1.7713961601257324,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+313,30,"[exp, sqrt, x_0]",exp(sqrt(abs(x_0))),1.248327612876892,-1.2812429666519165,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+314,30,"[-, 0.61, x_7]",(0.61-x_7),2.9694886207580566,-1.834884524345398,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+315,30,[-4.15],-4.15,40.070770263671875,-3.063615083694458,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+316,30,[x_1],x_1,6.004754066467285,-3.0239105224609375,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+317,31,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+318,31,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+319,31,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+320,31,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+321,31,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+322,31,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+323,31,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+324,31,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+325,31,"[exp, sqrt, x_0]",exp(sqrt(abs(x_0))),1.248327612876892,-1.2812429666519165,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+326,31,[4.07],4.07,5.336487293243408,-3.622150421142578,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+327,31,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-2.0948917865753174,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+328,32,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+329,32,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+330,32,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+331,32,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+332,32,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+333,32,"[+, exp, /, x_0, x_0, x_0]",(exp((x_0/x_0))+x_0),1.3372669219970703,-1.3331084251403809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+334,32,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+335,32,"[+, exp, **3, 0.61, x_0]",(exp((0.61)**3)+x_0),1.1515017747879028,-1.211472988128662,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+336,32,"[exp, sqrt, x_0]",exp(sqrt(abs(x_0))),1.248327612876892,-1.2812429666519165,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+337,32,[4.07],4.07,5.336487293243408,-3.622150421142578,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+338,32,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-2.0948917865753174,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+339,32,"[sin, 1.67]",sin(1.67),2.509097099304199,-2.5232203006744385,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+340,32,"[+, -, x_7, -3.31, x_0]",((x_7--3.31)+x_0),2.2477312088012695,-2.104315757751465,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+341,33,"[+, exp, 0.61, x_0]",(exp(0.61)+x_0),0.7117461562156677,-1.0515245199203491,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+342,33,"[+, exp, sin, exp, sin, 3.44, x_0]",(exp(sin(exp(sin(3.44))))+x_0),0.7071440815925598,-0.8586941361427307,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+343,33,"[+, exp, sin, 0.61, x_0]",(exp(sin(0.61))+x_0),0.7273355722427368,-1.2093526124954224,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+344,33,"[+, exp, cos, sin, u-, -4.15, x_0]",(exp(cos(sin(-(-4.15))))+x_0),0.7052227854728699,-0.8557091951370239,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+345,33,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+346,33,[3.44],3.44,3.2169039249420166,-2.5614490509033203,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+347,33,[4.07],4.07,5.336487293243408,-3.622150421142578,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+348,33,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-2.0948917865753174,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+349,33,"[sin, 1.67]",sin(1.67),2.509097099304199,-2.5232203006744385,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+350,33,"[sin, 0.61]",sin(0.61),3.5974137783050537,-2.7293899059295654,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+351,33,"[log, u-, -3.69]",log(abs(-(-3.69))),1.9361846446990967,-2.1714446544647217,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+352,33,"[+, exp, sqrt, 0.61, x_0]",(exp(sqrt(abs(0.61)))+x_0),0.7728452086448669,-1.5556349754333496,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+353,34,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+354,34,[4.07],4.07,5.336487293243408,-3.622150421142578,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+355,34,"[sin, 1.67]",sin(1.67),2.509097099304199,-2.5232203006744385,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+356,34,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+357,34,"[sqrt, x_0]",sqrt(abs(x_0)),3.0052998065948486,-3.222701072692871,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+358,34,"[cos, x_6]",cos(x_6),2.926415205001831,-2.762664794921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+359,34,"[-, sqrt, u-, -3.69, x_7]",(sqrt(abs(-(-3.69)))-x_7),1.5904042720794678,-2.4229419231414795,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+360,34,"[sqrt, x_7]",sqrt(abs(x_7)),3.6496949195861816,-3.3897764682769775,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+361,34,"[+, -, x_1, -0.63, x_0]",((x_1--0.63)+x_0),2.5685741901397705,-2.558889865875244,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+362,35,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+363,35,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+364,35,[1.67],1.67,1.5098838806152344,-5.939039707183838,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+365,35,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+366,36,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+367,36,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+368,36,[1.67],1.67,1.5098838806152344,-5.939039707183838,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+369,36,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+370,36,[x_7],x_7,7.22597074508667,-6.699869155883789,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+371,36,"[u-, -2.23]",-(-2.23),1.372357964515686,-4.535837173461914,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+372,36,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+373,37,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+374,37,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+375,37,[1.67],1.67,1.5098838806152344,-5.939039707183838,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+376,37,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+377,37,"[u-, -2.23]",-(-2.23),1.372357964515686,-4.535837173461914,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+378,37,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+379,37,[x_0],x_0,4.403140544891357,-6.930462837219238,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+380,37,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+381,38,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+382,38,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+383,38,[1.67],1.67,1.5098838806152344,-5.939039707183838,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+384,38,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+385,38,"[u-, -2.23]",-(-2.23),1.372357964515686,-4.535837173461914,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+386,38,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+387,38,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+388,38,[1.28],1.28,1.9761607646942139,-7.3963398933410645,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+389,39,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+390,39,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+391,39,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+392,39,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+393,39,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+394,39,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+395,40,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+396,40,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+397,40,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+398,40,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+399,40,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+400,40,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+401,40,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+402,40,"[sqrt, -, x_0, -3.31]",sqrt(abs((x_0--3.31))),1.0945082902908325,-4.372990131378174,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+403,40,[-2.23],-2.23,19.86165428161621,-8.610030174255371,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+404,40,[x_4],x_4,6.160730838775635,-8.455840110778809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+405,41,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+406,41,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+407,41,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+408,41,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+409,41,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+410,41,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+411,41,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+412,41,"[sqrt, -, x_0, -3.31]",sqrt(abs((x_0--3.31))),1.0945082902908325,-4.372990131378174,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+413,41,[-2.23],-2.23,19.86165428161621,-8.610030174255371,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+414,41,[x_4],x_4,6.160730838775635,-8.455840110778809,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+415,42,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+416,42,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+417,42,"[+, 1.67, x_0]",(1.67+x_0),0.7689637541770935,-3.5560758113861084,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+418,42,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+419,42,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+420,42,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+421,42,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+422,42,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+423,42,[4.25],4.25,6.0878825187683105,-9.538431167602539,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+424,43,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+425,43,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+426,43,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+427,43,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+428,43,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+429,43,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+430,43,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+431,43,[4.25],4.25,6.0878825187683105,-9.538431167602539,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+432,43,[-2.13],-2.13,19.01109504699707,-10.081960678100586,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+433,43,"[+, exp, 0.53, x_0]",(exp(0.53)+x_0),0.7551566362380981,-4.460598468780518,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+434,44,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+435,44,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+436,44,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+437,44,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+438,44,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+439,44,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+440,44,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+441,44,[4.25],4.25,6.0878825187683105,-9.538431167602539,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+442,44,[-2.13],-2.13,19.01109504699707,-10.081960678100586,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+443,44,"[+, exp, 0.53, x_0]",(exp(0.53)+x_0),0.7551566362380981,-4.460598468780518,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+444,44,[-2.45],-2.45,21.803281784057617,-10.6654634475708,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+445,45,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+446,45,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+447,45,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+448,45,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+449,45,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+450,45,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+451,45,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+452,45,"[+, exp, 0.53, x_0]",(exp(0.53)+x_0),0.7551566362380981,-4.460598468780518,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+453,45,[0.53],0.53,3.7278473377227783,-11.829336166381836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+454,45,"[sqrt, -, -4.67, x_0]",sqrt(abs((-4.67-x_0))),1.0943886041641235,-4.788748741149902,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+455,46,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+456,46,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+457,46,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+458,46,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+459,46,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+460,46,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-5.590023517608643,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+461,46,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+462,46,"[+, exp, 0.53, x_0]",(exp(0.53)+x_0),0.7551566362380981,-4.460598468780518,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+463,46,"[sqrt, -, -4.67, x_0]",sqrt(abs((-4.67-x_0))),1.0943886041641235,-4.788748741149902,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+464,46,[0.79],0.79,2.9931960105895996,-11.829336166381836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+465,46,"[+, exp, /, -2.23, -3.99, x_0]",(exp((-2.23/-3.99))+x_0),0.7353081703186035,-3.8531665802001953,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+466,47,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+467,47,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+468,47,"[+, sqrt, -4.31, x_0]",(sqrt(abs(-4.31))+x_0),0.7283178567886353,-3.212371349334717,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+469,47,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+470,47,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+471,47,"[+, u-, -2.23, x_0]",(-(-2.23)+x_0),0.7991176843643188,-4.635141372680664,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+472,47,"[+, exp, 0.53, x_0]",(exp(0.53)+x_0),0.7551566362380981,-4.460598468780518,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+473,47,"[sqrt, -, -4.67, x_0]",sqrt(abs((-4.67-x_0))),1.0943886041641235,-4.788748741149902,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+474,47,[0.79],0.79,2.9931960105895996,-11.829336166381836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+475,47,"[+, exp, /, -2.23, -3.99, x_0]",(exp((-2.23/-3.99))+x_0),0.7353081703186035,-3.8531665802001953,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+476,47,[-3.5],-3.5,32.40364074707031,-13.149109840393066,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+477,47,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-6.839084625244141,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+478,48,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+479,48,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+480,48,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+481,48,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+482,48,"[sqrt, -, -4.67, x_0]",sqrt(abs((-4.67-x_0))),1.0943886041641235,-4.788748741149902,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+483,48,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-6.839084625244141,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+484,48,"[+, sqrt, 4.07, x_0]",(sqrt(abs(4.07))+x_0),0.713817298412323,-4.651384353637695,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+485,48,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+486,49,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+487,49,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+488,49,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+489,49,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+490,49,"[sqrt, -, -4.67, x_0]",sqrt(abs((-4.67-x_0))),1.0943886041641235,-4.788748741149902,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+491,49,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-6.839084625244141,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+492,49,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+493,49,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+494,49,[-0.63],-0.63,8.652722358703613,-14.969120025634766,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+495,50,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+496,50,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+497,50,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+498,50,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+499,50,"[sqrt, -4.31]",sqrt(abs(-4.31)),1.3476539850234985,-6.839084625244141,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+500,50,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+501,50,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+502,50,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+503,50,[4.07],4.07,5.336487293243408,-16.570152282714844,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+504,51,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+505,51,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+506,51,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+507,51,[2.06],2.06,1.3478069305419922,-8.201176643371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+508,51,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+509,51,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+510,51,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+511,51,[4.07],4.07,5.336487293243408,-16.570152282714844,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+512,51,[x_7],x_7,7.22597074508667,-17.52348518371582,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+513,51,"[+, 1.28, x_0]",(1.28+x_0),1.1184637546539307,-7.756843566894531,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+514,52,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+515,52,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+516,52,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+517,52,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+518,52,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+519,52,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+520,52,[1.04],1.04,2.4143004417419434,-19.95867919921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+521,52,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+522,53,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+523,53,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+524,53,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+525,53,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+526,53,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+527,53,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+528,53,[1.04],1.04,2.4143004417419434,-19.95867919921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+529,53,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+530,53,[0.39],0.39,4.179428577423096,-21.294021606445312,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+531,54,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+532,54,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+533,54,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+534,54,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+535,54,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+536,54,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+537,54,[1.04],1.04,2.4143004417419434,-19.95867919921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+538,54,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+539,54,"[sqrt, -, -4.31, x_7]",sqrt(abs((-4.31-x_7))),1.3841941356658936,-10.565927505493164,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+540,54,[0.61],0.61,3.487400770187378,-22.680618286132812,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+541,55,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+542,55,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+543,55,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+544,55,[2.39],2.39,1.4482648372650146,-14.300248146057129,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+545,55,"[+, sqrt, -3.55, x_0]",(sqrt(abs(-3.55))+x_0),0.7064316272735596,-4.695382118225098,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+546,55,"[+, sqrt, -3.31, x_0]",(sqrt(abs(-3.31))+x_0),0.7156770825386047,-4.966370105743408,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+547,55,[1.04],1.04,2.4143004417419434,-19.95867919921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+548,55,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+549,55,[0.61],0.61,3.487400770187378,-22.680618286132812,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+550,55,"[+, sqrt, -4.67, x_0]",(sqrt(abs(-4.67))+x_0),0.7615320086479187,-10.94814682006836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+551,55,[4.25],4.25,6.0878825187683105,-25.217687606811523,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+552,55,"[-, -0.63, -2.23]",(-0.63--2.23),1.5711746215820312,-15.578232765197754,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+553,55,"[sqrt, -, -4.31, x_0]",sqrt(abs((-4.31-x_0))),1.0736632347106934,-11.650647163391113,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+554,56,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+555,56,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+556,56,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+557,56,[1.04],1.04,2.4143004417419434,-19.95867919921875,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+558,56,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+559,56,[0.61],0.61,3.487400770187378,-22.680618286132812,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+560,56,"[+, sqrt, -4.67, x_0]",(sqrt(abs(-4.67))+x_0),0.7615320086479187,-10.94814682006836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+561,56,[4.25],4.25,6.0878825187683105,-25.217687606811523,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+562,56,"[sqrt, -, -4.31, x_0]",sqrt(abs((-4.31-x_0))),1.0736632347106934,-11.650647163391113,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+563,56,[x_3],x_3,33.801536560058594,-26.076318740844727,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+564,56,"[+, exp, cos, sin, sqrt, -0.99, x_0]",(exp(cos(sin(sqrt(abs(-0.99)))))+x_0),0.7057009935379028,-4.900911331176758,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+565,56,"[+, 2.06, +, 0.53, x_0]",(2.06+(0.53+x_0)),1.1497024297714233,-12.231917381286621,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+566,56,"[-, 1.67, x_7]",(1.67-x_7),1.5883926153182983,-16.723644256591797,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+567,56,"[+, exp, sin, **3, sqrt, 4.25, x_0]",(exp(sin((sqrt(abs(4.25)))**3))+x_0),0.7101380228996277,-6.267080783843994,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+568,56,"[sqrt, -3.99]",sqrt(abs(-3.99)),1.3533122539520264,-16.410451889038086,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+569,57,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+570,57,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+571,57,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+572,57,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+573,57,"[+, sqrt, -4.67, x_0]",(sqrt(abs(-4.67))+x_0),0.7615320086479187,-10.94814682006836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+574,57,"[sqrt, -, -4.31, x_0]",sqrt(abs((-4.31-x_0))),1.0736632347106934,-11.650647163391113,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+575,57,"[+, exp, cos, sin, sqrt, -0.99, x_0]",(exp(cos(sin(sqrt(abs(-0.99)))))+x_0),0.7057009935379028,-4.900911331176758,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+576,57,"[+, 2.06, +, 0.53, x_0]",(2.06+(0.53+x_0)),1.1497024297714233,-12.231917381286621,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+577,57,"[sqrt, -3.99]",sqrt(abs(-3.99)),1.3533122539520264,-16.410451889038086,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+578,57,"[sqrt, -3.31]",sqrt(abs(-3.31)),1.411880373954773,-18.776893615722656,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+579,57,[1.67],1.67,1.5098838806152344,-29.190290451049805,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+580,57,"[+, exp, cos, sin, 2.05, x_0]",(exp(cos(sin(2.05)))+x_0),0.706741213798523,-8.036659240722656,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+581,58,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+582,58,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+583,58,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+584,58,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+585,58,"[+, sqrt, -4.67, x_0]",(sqrt(abs(-4.67))+x_0),0.7615320086479187,-10.94814682006836,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+586,58,"[+, exp, cos, sin, sqrt, -0.99, x_0]",(exp(cos(sin(sqrt(abs(-0.99)))))+x_0),0.7057009935379028,-4.900911331176758,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+587,58,[1.67],1.67,1.5098838806152344,-29.190290451049805,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+588,58,"[+, exp, cos, sin, 2.05, x_0]",(exp(cos(sin(2.05)))+x_0),0.706741213798523,-8.036659240722656,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+589,58,"[+, sqrt, exp, 1.04, x_0]",(sqrt(abs(exp(1.04)))+x_0),0.7630205750465393,-12.938576698303223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+590,58,"[sqrt, -, -2.23, x_0]",sqrt(abs((-2.23-x_0))),1.3017791509628296,-16.711153030395508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+591,58,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-21.192047119140625,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+592,59,"[+, exp, cos, cos, sin, x_5, x_0]",(exp(cos(cos(sin(x_5))))+x_0),0.6936364769935608,-0.6770679950714111,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+593,59,"[+, sqrt, -3.69, x_0]",(sqrt(abs(-3.69))+x_0),0.7049204707145691,-2.392815589904785,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+594,59,"[+, sqrt, exp, 1.28, x_0]",(sqrt(abs(exp(1.28)))+x_0),0.705623209476471,-2.6786890029907227,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+595,59,"[+, 2.06, x_0]",(2.06+x_0),0.7236638069152832,-9.526094436645508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+596,59,"[+, exp, cos, sin, sqrt, -0.99, x_0]",(exp(cos(sin(sqrt(abs(-0.99)))))+x_0),0.7057009935379028,-4.900911331176758,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+597,59,[1.67],1.67,1.5098838806152344,-29.190290451049805,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+598,59,"[+, exp, cos, sin, 2.05, x_0]",(exp(cos(sin(2.05)))+x_0),0.706741213798523,-8.036659240722656,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+599,59,"[+, sqrt, exp, 1.04, x_0]",(sqrt(abs(exp(1.04)))+x_0),0.7630205750465393,-12.938576698303223,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+600,59,"[sqrt, -, -2.23, x_0]",sqrt(abs((-2.23-x_0))),1.3017791509628296,-16.711153030395508,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+601,59,"[sqrt, 4.25]",sqrt(abs(4.25)),1.3477696180343628,-21.192047119140625,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+602,59,"[/, -2.23, -0.99]",(-2.23/-0.99),1.3799476623535156,-22.28592300415039,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+603,59,"[-, -0.63, -2.45]",(-0.63--2.45),1.4115465879440308,-22.522266387939453,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+604,59,[-0.63],-0.63,8.652722358703613,-33.319557189941406,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+605,59,"[+, sqrt, exp, sqrt, -2.13, x_0]",(sqrt(abs(exp(sqrt(abs(-2.13)))))+x_0),0.7278485298156738,-11.339259147644043,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+606,59,[x_7],x_7,7.22597074508667,-33.1779670715332,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california
+607,59,"[+, -, sqrt, -, -4.31, -3.5, -0.63, x_0]",((sqrt(abs((-4.31--3.5)))--0.63)+x_0),0.8594253063201904,-14.828495979309082,207,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,california

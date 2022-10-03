@@ -46,6 +46,7 @@ def set_random_seed(seed: int = None) -> None:
 
 
 if __name__ == "__main__":
+    exit(1)
     # Setting torch to use deterministic algorithms where possible
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.

@@ -19,9 +19,9 @@ def target(x: np.ndarray):
 if __name__ == "__main__":
     random.seed(42)
     np.random.seed(42)
-    X_train = np.random.uniform(0.05, 6.05 + 1e-4, (1024, 5))
-    X_dev = np.random.uniform(-0.25, 6.35 + 1e-4, (50, 5))
-    X_test = np.random.uniform(-0.25, 6.35 + 1e-4, (30, 5))
+    X_train = np.random.uniform(0.05, 6.05 + 1e-4, (1024, 7))
+    X_dev = np.random.uniform(-0.25, 6.35 + 1e-4, (50, 7))
+    X_test = np.random.uniform(-0.25, 6.35 + 1e-4, (30, 7))
     print(X_train[0])
     print(X_train[1])
     y_train = np.array([target(X_train[i]) for i in range(X_train.shape[0])])
