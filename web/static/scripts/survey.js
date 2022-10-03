@@ -55,14 +55,24 @@ function retrieveSurveyModels(){
     }).done(data => {
         let finalDivContent = ''
         data.comparisons.forEach((model, i) => {
+          let first_model;
+          let second_model;
+          let first;
+          let second;
+          if(Math.floor(Math.random() * 2) === 0){
+              first_model = model.pie_latex;
+              second_model = model.other_latex;
+              first = "pie";
+              second = model.type;
+          } else {
+              first_model = model.other_latex;
+              second_model = model.pie_latex;
+              first = model.type;
+              second = "pie";
+          }
 
-
-
-          let first_model = "$$" + model.pie_latex + "$$";
-          let second_model = "$$" + model.other_latex + "$$";
-          let first = "pie";
-          let second = model.type;
-
+          first_model = "$$" + first_model + "$$";
+          second_model = "$$" + second_model + "$$";
 
           let label = model.type;
           let divContentTemplate = `<div class=div-models-container-template> \
@@ -126,6 +136,7 @@ function submitSurvey(){
     $(":radio").each(function () {
         if ($(this).is(':checked')) survey[this.name] = this.id.substring(this.id.indexOf('_') + 1);
     });
+    console.log(survey);
     $.ajax({
       type: "POST",
       url: "answerSurvey",
