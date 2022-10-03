@@ -17,11 +17,11 @@ $("#btn-undo").on("click", function(){
       headers: { 'x-access-tokens': localStorage.getItem("token") }
     });
     $.ajax({
-      url: "startRun/" + localStorage.getItem("problem"),
-      headers: { 'x-access-tokens': localStorage.getItem("token") }
+      url: "startRun/" + localStorage.getItem("problem")
     }).done( data => {
           localStorage.setItem("token", data.id);
-          localStorage.getItem("token")
+          localStorage.setItem("over", false);
+          localStorage.setItem("problem", data.problem);
           window.location = window.location.protocol + "//" + window.location.host + "/feedback";
         }
     ).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
