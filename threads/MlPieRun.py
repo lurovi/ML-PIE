@@ -126,14 +126,22 @@ class MlPieRun:
         interpretabilities = res.F[1]
         trees = res.X[:, 0]
         parsable_trees = list(map(lambda t: str(t.get_subtree()), trees))
-        latex_trees = list(map(lambda t: t.get_readable_repr().replace("u-", "-"), trees))
+        latex_trees = list(map(lambda t: self.safe_latex_format(t), trees))
         return pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
                             columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
 
     @staticmethod
-    def format_tree(tree: Node) -> dict:
+    def safe_latex_format(tree: Node) -> str:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
-        latex_repr = readable_repr  # latex(parse_expr(readable_repr, evaluate=False))
+        try:
+            latex_repr = latex(parse_expr(readable_repr, evaluate=False))
+        except TypeError:
+            latex_repr = readable_repr
+        return latex_repr
+
+    @staticmethod
+    def format_tree(tree: Node) -> dict:
+        latex_repr = MlPieRun.safe_latex_format(tree)
         parsable_repr = str(tree.get_subtree())
         return {"latex": latex_repr, "parsable": parsable_repr}
 
@@ -164,8 +172,7 @@ class MlPieRun:
                 generations.append(generation_count)
                 tree = individual.X[0]
                 parsable_trees.append(str(tree.get_subtree()))
-                latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
-                # latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
+                latex_trees.append(MlPieRun.safe_latex_format(tree))
                 accuracies.append(individual.F[0])
                 interpretabilities.append(individual.F[1])
             generation_count += 1

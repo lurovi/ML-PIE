@@ -55,8 +55,8 @@ function retrieveSurveyModels(){
     }).done(data => {
         let finalDivContent = ''
         data.comparisons.forEach((model, i) => {
-          let first_model = model.pie_latex;
-          let second_model = model.other_latex;
+          let first_model = "$$" + model.pie_latex + "$$";
+          let second_model = "$$" + model.other_latex + "$$";
           let first = "pie";
           let second = model.type;
           let label = model.type;
