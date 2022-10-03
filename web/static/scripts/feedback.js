@@ -37,16 +37,12 @@ function retrieveModels(){
         optimizationOver();
       } else {
         formula_latex = $("h4.mb-0");
-        formula_size = $("span.formula-size");
-        formula_uncer = $("span.unc");
         for (var i = 0; i < 2; i++) {
           let new_model = data.models[i]["latex"];
           formula_latex[i].innerHTML = "$$" + new_model + "$$";
           w = $("h4.mb-0").width()/5;
           f_size = Math.min(1.5, w / new_model.length);
           $(formula_latex[i]).attr("style", "font-size: " + f_size + "em;");
-          // formula_uncer[i].innerHTML = data.models[i].uncertainty;
-          // formula_size[i].innerHTML = data.models[i].n_components;
         }
         MathJax.typeset();
         updateProgressBar(data.progress);

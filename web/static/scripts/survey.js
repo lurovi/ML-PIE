@@ -53,7 +53,8 @@ function retrieveSurveyModels(){
       url: "getSurveyData",
       headers: { 'x-access-tokens': localStorage.getItem("token") }
     }).done(data => {
-        let finalDivContent = ''
+        let finalDivContent = '';
+
         data.comparisons.forEach((model, i) => {
           let first_model;
           let second_model;
@@ -82,7 +83,7 @@ function retrieveSurveyModels(){
                                               class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"> \
                                           <div class="col p-4 d-flex flex-column position-static"> \
                                               <strong class="d-inline-block mb-2 text-primary">Model 1</strong> \
-                                              <h4 class="mb-0 model0_online">${first_model}</h4> \
+                                              <h4 class="mb-0 model_cont">${first_model}</h4> \
                                               <input type="hidden" value="0"> \
                                           </div> \
                                           <div class="col-auto d-none d-lg-block"> \
@@ -95,7 +96,7 @@ function retrieveSurveyModels(){
                                               class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"> \
                                           <div class="col p-4 d-flex flex-column position-static"> \
                                               <strong class="d-inline-block mb-2 text-primary">Model 2</strong> \
-                                              <h4 class="mb-0 model0_size">${second_model}</h4> \
+                                              <h4 class="mb-0 model_cont">${second_model}</h4> \
                                               <input type="hidden" value="1"> \
                                           </div> \
                                           <div class="col-auto d-none d-lg-block"> \
@@ -126,6 +127,14 @@ function retrieveSurveyModels(){
           finalDivContent = finalDivContent + divContentTemplate;
         });
         $("#div-survey-container").html(finalDivContent);
+
+        $('.model_cont').each(function(i, obj) {
+            let formula = $(obj).text().replace("$$", "");
+            w = $(obj).width()/5;
+            fsize = Math.min(1.4, w / formula.length);
+            $(obj).attr("style", "font-size: " + fsize + "em;");
+        });
+
         MathJax.typeset();
         $("#div-loading-img").attr("hidden", true);
     });
