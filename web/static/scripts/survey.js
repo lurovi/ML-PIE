@@ -137,7 +137,8 @@ function retrieveSurveyModels(){
 
         MathJax.typeset();
         $("#div-loading-img").attr("hidden", true);
-    });
+    }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
+    );
 }
 
 function submitSurvey(){
