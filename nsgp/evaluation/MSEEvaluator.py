@@ -5,7 +5,7 @@ from nsgp.evaluation.TreeEvaluator import TreeEvaluator
 
 
 class MSEEvaluator(TreeEvaluator):
-    def __init__(self, X: np.ndarray, y: np.ndarray = None):
+    def __init__(self, X: np.ndarray, y: np.ndarray = None, linear_scaling: bool = True):
         super().__init__()
         if y is None:
             raise AttributeError("Labels must be set.")
@@ -20,6 +20,9 @@ class MSEEvaluator(TreeEvaluator):
 
     def evaluate(self, tree: Node) -> float:
         res: np.ndarray = tree(self.__X)
+        if self.linear_scaling:
+            slope, intercept = compute_linear_scaling(self.__y, res)
+            res = intercept + slope * res
         mse: float = np.square(np.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(len(self.__y))
         if mse > 1e+20:
             mse = 1e+20
