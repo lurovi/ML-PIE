@@ -14,6 +14,11 @@ if __name__ == "__main__":
     np.random.seed(42)
     df = fetch_california_housing(as_frame=True).frame  # change to your local path in which the dataset is located
     print(df.head())
+    print(df.shape)
+    df.dropna(inplace=True)
+    df.reset_index(drop=True, inplace=True)
+    print(df.shape)
+    print(df.head())
     train, test = train_test_split(df, test_size=0.1, random_state=42)
     train, val = train_test_split(train, test_size=0.2/0.9, random_state=42)
 

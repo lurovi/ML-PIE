@@ -48,12 +48,14 @@ if __name__ == "__main__":
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    random_data_X = np.random.uniform(0.0, 1.0, size=(5000, 10))
-    regression_y = np.array([example_of_difficult_target_for_regression(random_data_X[i]) for i in range(random_data_X.shape[0])])
-    binary_classification_y = np.array([example_of_difficult_target_for_binary_classification(random_data_X[i]) for i in range(random_data_X.shape[0])])
-    print(collections.Counter(binary_classification_y))
-    duplicates_elimination_little_data = np.random.uniform(-1.0, 1.0, size=(10, 7))
+    #random_data_X = np.random.uniform(0.0, 1.0, size=(5000, 10))
+    #regression_y = np.array([example_of_difficult_target_for_regression(random_data_X[i]) for i in range(random_data_X.shape[0])])
+    #binary_classification_y = np.array([example_of_difficult_target_for_binary_classification(random_data_X[i]) for i in range(random_data_X.shape[0])])
+    #print(collections.Counter(binary_classification_y))
 
+    dataset = PicklePersist.decompress_pickle("../exps/benchmark/windspeed.pbz2")
+    n_features = dataset["training"][0].shape[1]
+    duplicates_elimination_little_data = np.random.uniform(-5.0, 5.0, size=(10, n_features))
     internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                  node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
                  node_impl.Sqrt(), node_impl.Exp(),
@@ -62,15 +64,11 @@ if __name__ == "__main__":
 
     normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5),
                                       (0, 15), (0, 5), (0, 8), (0, 20), (0, 30),
-                                      (0, 30), (0, 23), (0, 23),
-                                      (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8),
-                                      (0, 0.8), (0, 0.8),
-                                      (0, 0.5)]
-    wind_speed = PicklePersist.decompress_pickle("D:/shared_folder/python_projects/ML-PIE/exps/windspeed/wind_dataset_split.pbz2")
+                                      (0, 30), (0, 23), (0, 23)] + [(0, 0.8)]*n_features + [(0, 0.5)]
 
-    structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=partial(np.random.uniform, low=-5.0, high=5.0), normal_distribution_parameters=normal_distribution_parameters)
-    evaluators = [MSEEvaluator(wind_speed["training"][0], wind_speed["training"][1]), GroundTruthEvaluator(NumNodesNegComputer(), True)]
-    gp = GPWithNSGA2(structure, evaluators, pop_size=20, num_gen=50, duplicates_elimination_data=duplicates_elimination_little_data)
-    res = gp.run_minimization(seed=1)
+    structure = TreeStructure(internal_nodes, n_features, 5, ephemeral_func=partial(np.random.uniform, low=-5.0, high=5.0), normal_distribution_parameters=normal_distribution_parameters)
+    evaluators = [MSEEvaluator(dataset["training"][0], dataset["training"][1]), GroundTruthEvaluator(NumNodesNegComputer(), True)]
+    gp = GPWithNSGA2(structure, evaluators, pop_size=70, num_gen=50, duplicates_elimination_data=duplicates_elimination_little_data)
+    res = gp.run_minimization(seed=1, verbose=True)
     print(res["executionTimeInHours"])
     Scatter().add(res["result"].F).show()

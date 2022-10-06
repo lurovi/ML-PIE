@@ -45,7 +45,7 @@ class GPWithNSGA2:
             self.__callback = Callback()
         else:
             self.__callback = callback
-        self.__termination = get_termination("n_gen", self.__num_gen)
+        self.__termination = ("n_gen", self.__num_gen)
         if self.__num_offsprings is None:
             self.__num_offsprings = self.__pop_size
         self.__tournament_selection = TournamentSelection(func_comp=binary_tournament, pressure=2)
@@ -64,7 +64,7 @@ class GPWithNSGA2:
                                  eliminate_duplicates=self.__duplicates_elimination
                                  )
 
-    def run_minimization(self, seed: int = None, verbose: bool = True, save_history: bool = True, mutex: threading.Lock = None) -> Dict[str, Any]:
+    def run_minimization(self, seed: int = None, verbose: bool = False, save_history: bool = True, mutex: threading.Lock = None) -> Dict[str, Any]:
         if seed is not None:
             random.seed(seed)
             np.random.seed(seed)

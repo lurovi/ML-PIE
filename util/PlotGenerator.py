@@ -53,8 +53,30 @@ class PlotGenerator:
             plt.savefig(folder_path+"/"+img_name+".pgf")
         else:
             #plt.savefig(folder_path+"/"+img_name+".png")
+            plt.ylim(0.0, 1.2)
             plt.show()
         return ax
+
+    @staticmethod
+    def plot_facet_grid(df, x, y, row, col, hue, style, figsize=(20, 60)):
+        sns.set(rc={"figure.figsize": figsize})
+        sns.set_style("white")
+        if not isinstance(df, pd.DataFrame):
+            df = pd.DataFrame(df)
+        g = sns.FacetGrid(df, row=row, col=col)
+        g.map_dataframe(sns.lineplot, x=x, y=y, hue=hue, style=style, estimator=np.mean, ci=90, palette="colorblind")
+        g.add_legend()
+        #if pgfplot:
+        #    matplotlib.use("pgf")
+        #    matplotlib.rcParams.update(
+        #        {"pgf.texsystem": "pdflatex", 'font.family': 'serif', 'font.size': 11, 'text.usetex': True,
+        #         'pgf.rcfonts': False, })
+        #    plt.savefig(folder_path + "/" + img_name + ".pgf")
+        #else:
+        # plt.savefig(folder_path+"/"+img_name+".png")
+        plt.ylim(0.0, 1.2)
+        plt.show()
+        return g
 
     @staticmethod
     def plot_random_ranking(device, dataloader):
@@ -121,8 +143,13 @@ if __name__ == "__main__":
     df = pd.DataFrame(df)
 
     res = PicklePersist.decompress_pickle("../exps/tree_data_1/dict_res.pbz2")
-    res_filtered = PlotGenerator.filter_dataframe_rows_by_column_values(res, {"Sampling": ["Random Sampler Online"],
-                                                                             "Warm-up": ["No Warm-up"]})
+    #res_filtered = PlotGenerator.filter_dataframe_rows_by_column_values(res, {
+    #                                                                         "Warm-up": ["No Warm-up"],
+    #                                                                          "Ground-truth": ["N nodes"]})
 
-    PlotGenerator.plot_line(df=res_filtered, x="Amount of feedback", y="Spearman footrule",
-                            hue="Encoding", style="Ground-truth")
+    #PlotGenerator.plot_line(df=res_filtered, x="Amount of feedback", y="Spearman footrule",
+    #                        hue="Encoding", style="Sampling")
+
+    PlotGenerator.plot_facet_grid(res, x="Amount of feedback", y="Spearman footrule",
+                                  row="Ground-truth", col="Warm-up",
+                                  hue="Encoding", style="Sampling")
