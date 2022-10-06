@@ -1,0 +1,647 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[sin, exp, **3, sin, **3, x_0]",sin(exp((sin((x_0)**3))**3)),0.11532874405384064,-0.28179731965065,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+1,0,"[sqrt, sin, sin, cos, **, x_5, x_3]",sqrt(abs(sin(sin(cos((x_5**x_3)))))),0.09176964312791824,-0.2775510549545288,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+2,0,"[exp, log, cos, *, x_1, x_0]",exp(log(abs(cos((x_1*x_0))))),0.1435590535402298,-0.2890700697898865,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+3,0,"[**3, sin, -, x_5, **3, x_0]",(sin((x_5-(x_0)**3)))**3,0.6646760702133179,-0.29335424304008484,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+4,0,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.3145454227924347,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+5,0,"[log, 3.82]",log(abs(3.82)),0.6723781228065491,-0.3041200041770935,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+6,0,"[sin, **2, sin, sqrt, x_0]",sin((sin(sqrt(abs(x_0))))**2),0.05468304455280304,-0.2747343182563782,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+7,1,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.3145454227924347,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+8,1,"[sin, **2, sin, sqrt, x_0]",sin((sin(sqrt(abs(x_0))))**2),0.05468304455280304,-0.2747343182563782,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+9,1,"[cos, cos, x_3]",cos(cos(x_3)),0.11374431103467941,-0.30098214745521545,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+10,1,"[sin, sqrt, sin, x_3]",sin(sqrt(abs(sin(x_3)))),0.0846797302365303,-0.2822011113166809,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+11,1,"[log, x_6]",log(abs(x_6)),0.9072839617729187,-0.30854088068008423,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+12,1,"[**3, cos, cos, log, -, -4.4, x_0]",(cos(cos(log(abs((-4.4-x_0))))))**3,0.1080620214343071,-0.2890772819519043,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+13,1,"[**2, cos, **2, sin, -1.97]",(cos((sin(-1.97))**2))**2,0.04495543986558914,-0.27434200048446655,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+14,1,"[sin, exp, **3, sin, x_0]",sin(exp((sin(x_0))**3)),0.10361983627080917,-0.2837074100971222,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+15,1,"[**3, sin, +, *, **3, x_2, x_2, 0.01]",(sin((((x_2)**3*x_2)+0.01)))**3,0.6065308451652527,-0.3044103980064392,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+16,2,"[sin, **2, sin, sqrt, x_0]",sin((sin(sqrt(abs(x_0))))**2),0.05468304455280304,-0.2747343182563782,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+17,2,"[**2, cos, **2, sin, -1.97]",(cos((sin(-1.97))**2))**2,0.04495543986558914,-0.27434200048446655,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+18,2,"[sin, cos, cos, x_0]",sin(cos(cos(x_0))),0.06861206144094467,-0.2972913384437561,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+19,2,"[cos, *, x_1, x_0]",cos((x_1*x_0)),0.774371862411499,-0.3151441216468811,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+20,2,"[cos, cos, *, x_1, x_0]",cos(cos((x_1*x_0))),0.11074408888816833,-0.3067249059677124,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+21,3,"[sin, cos, cos, x_0]",sin(cos(cos(x_0))),0.06861206144094467,-0.2972913384437561,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+22,3,"[cos, *, x_1, x_0]",cos((x_1*x_0)),0.774371862411499,-0.3151441216468811,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+23,3,"[cos, cos, *, x_1, x_0]",cos(cos((x_1*x_0))),0.11074408888816833,-0.3067249059677124,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+24,3,"[cos, x_2]",cos(x_2),0.9436193108558655,-0.32193174958229065,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+25,3,"[sqrt, sin, **3, **3, sin, -4.23]",sqrt(abs(sin(((sin(-4.23))**3)**3))),0.0350969061255455,-0.2772238254547119,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+26,3,"[cos, x_4]",cos(x_4),0.9369636178016663,-0.31645697355270386,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+27,3,"[cos, cos, *, 1.22, x_6]",cos(cos((1.22*x_6))),0.10469081997871399,-0.3034668266773224,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+28,3,"[cos, cos, sin, x_0]",cos(cos(sin(x_0))),0.07681474089622498,-0.2998301088809967,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+29,3,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.32270652055740356,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+30,4,"[cos, cos, *, x_1, x_0]",cos(cos((x_1*x_0))),0.11074408888816833,-0.3067249059677124,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+31,4,"[cos, x_2]",cos(x_2),0.9436193108558655,-0.32193174958229065,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+32,4,"[sqrt, sin, **3, **3, sin, -4.23]",sqrt(abs(sin(((sin(-4.23))**3)**3))),0.0350969061255455,-0.2772238254547119,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+33,4,"[cos, x_4]",cos(x_4),0.9369636178016663,-0.31645697355270386,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+34,4,"[cos, cos, *, 1.22, x_6]",cos(cos((1.22*x_6))),0.10469081997871399,-0.3034668266773224,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+35,4,"[cos, cos, sin, x_0]",cos(cos(sin(x_0))),0.07681474089622498,-0.2998301088809967,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+36,4,"[sin, cos, cos, -, -4.4, x_0]",sin(cos(cos((-4.4-x_0)))),0.06497295200824738,-0.29787909984588623,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+37,4,"[exp, log, sin, cos, sqrt, -4.86]",exp(log(abs(sin(cos(sqrt(abs(-4.86))))))),0.034294188022613525,-0.2660036087036133,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+38,4,"[cos, *, 1.22, x_6]",cos((1.22*x_6)),0.757512629032135,-0.3161715865135193,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+39,4,"[**3, x_0]",(x_0)**3,7245.740234375,-0.33105459809303284,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+40,4,"[cos, sin, sin, log, 0.15]",cos(sin(sin(log(abs(0.15))))),0.05559548735618591,-0.2840750813484192,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+41,4,[0.56],0.56,0.03435973450541496,-0.2754111886024475,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+42,4,"[**3, x_6]",(x_6)**3,6982.59423828125,-0.32633718848228455,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+43,4,"[cos, x_1]",cos(x_1),0.986618161201477,-0.3253847360610962,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+44,5,"[sin, cos, cos, -, -4.4, x_0]",sin(cos(cos((-4.4-x_0)))),0.06497295200824738,-0.29787909984588623,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+45,5,"[cos, sin, sqrt, log, 0.15]",cos(sin(sqrt(abs(log(abs(0.15)))))),0.03422300145030022,-0.28159114718437195,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+46,5,"[sqrt, sin, sin, cos, 1.21]",sqrt(abs(sin(sin(cos(1.21))))),0.03567919507622719,-0.2861514985561371,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+47,5,"[sin, x_0]",sin(x_0),0.8115662336349487,-0.3315717279911041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+48,5,"[u-, cos, -4.37]",-(cos(-4.37)),0.07625231891870499,-0.30917251110076904,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+49,5,"[**3, cos, cos, x_0]",(cos(cos(x_0)))**3,0.12144792824983597,-0.3149915039539337,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+50,5,"[**2, cos, cos, sin, -, x_0, x_3]",(cos(cos(sin((x_0-x_3)))))**2,0.0620788149535656,-0.29424434900283813,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+51,5,"[cos, **3, x_0]",cos((x_0)**3),0.712660551071167,-0.32251524925231934,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+52,5,"[cos, sin, x_1]",cos(sin(x_1)),0.10954029113054276,-0.31480348110198975,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+53,5,"[cos, cos, **3, cos, u-, x_5]",cos(cos((cos(-(x_5)))**3)),0.05704568699002266,-0.29269325733184814,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+54,6,"[cos, sin, sqrt, log, 0.15]",cos(sin(sqrt(abs(log(abs(0.15)))))),0.03422300145030022,-0.28159114718437195,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+55,6,"[sqrt, sin, sin, cos, 1.21]",sqrt(abs(sin(sin(cos(1.21))))),0.03567919507622719,-0.2861514985561371,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+56,6,"[sin, x_0]",sin(x_0),0.8115662336349487,-0.3315717279911041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+57,6,"[cos, **3, x_0]",cos((x_0)**3),0.712660551071167,-0.32251524925231934,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+58,6,"[cos, cos, **3, x_0]",cos(cos((x_0)**3)),0.10256773233413696,-0.3188393712043762,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+59,6,"[sin, **3, -3.33]",sin((-3.33)**3),0.05867963284254074,-0.3157275915145874,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+60,6,"[sin, x_2]",sin(x_2),0.8370786905288696,-0.3338225781917572,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+61,6,"[cos, *, **3, x_6, x_0]",cos(((x_6)**3*x_0)),0.7564629316329956,-0.3239365220069885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+62,6,"[**2, cos, sin, **3, -3.33]",(cos(sin((-3.33)**3)))**2,0.0360654853284359,-0.2972525358200073,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+63,6,"[sin, cos, cos, **3, **3, x_1]",sin(cos(cos(((x_1)**3)**3))),0.05751648545265198,-0.3068929612636566,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+64,7,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+65,7,"[cos, 1.02]",cos(1.02),0.034329500049352646,-0.33481159806251526,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+66,7,"[cos, cos, **3, sin, cos, -0.96]",cos(cos((sin(cos(-0.96)))**3)),0.03410305082798004,-0.30340632796287537,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+67,7,"[sin, sqrt, sin, sin, cos, 1.21]",sin(sqrt(abs(sin(sin(cos(1.21)))))),0.034081894904375076,-0.2863401174545288,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+68,8,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+69,8,"[cos, 1.02]",cos(1.02),0.034329500049352646,-0.33481159806251526,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+70,8,"[cos, cos, **3, sin, cos, -0.96]",cos(cos((sin(cos(-0.96)))**3)),0.03410305082798004,-0.30340632796287537,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+71,8,"[sin, sqrt, sin, sin, cos, 1.21]",sin(sqrt(abs(sin(sin(cos(1.21)))))),0.034081894904375076,-0.2863401174545288,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+72,8,"[cos, x_6]",cos(x_6),0.8503307700157166,-0.3412249982357025,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+73,8,"[**3, x_3]",(x_3)**3,7173.74658203125,-0.34368395805358887,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+74,9,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+75,9,"[cos, 1.02]",cos(1.02),0.034329500049352646,-0.33481159806251526,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+76,9,"[-, x_3, x_0]",(x_3-x_0),6.7536845207214355,-0.3474133610725403,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+77,9,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+78,9,"[cos, cos, x_0]",cos(cos(x_0)),0.1115107610821724,-0.3366829454898834,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+79,9,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.34657302498817444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+80,10,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+81,10,"[cos, 1.02]",cos(1.02),0.034329500049352646,-0.33481159806251526,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+82,10,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+83,10,"[cos, cos, x_0]",cos(cos(x_0)),0.1115107610821724,-0.3366829454898834,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+84,10,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.34657302498817444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+85,10,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.3596532940864563,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+86,11,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+87,11,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+88,11,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.34657302498817444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+89,11,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.3596532940864563,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+90,11,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+91,12,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+92,12,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+93,12,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.34657302498817444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+94,12,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+95,12,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+96,12,"[cos, 1.53]",cos(1.53),0.2844944894313812,-0.35986942052841187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+97,12,"[**3, x_6]",(x_6)**3,6982.59423828125,-0.36428993940353394,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+98,12,"[cos, cos, **3, x_3]",cos(cos((x_3)**3)),0.09617780148983002,-0.3406549096107483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+99,13,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+100,13,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+101,13,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.34657302498817444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+102,13,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+103,13,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+104,13,"[cos, 1.53]",cos(1.53),0.2844944894313812,-0.35986942052841187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+105,13,"[**3, x_6]",(x_6)**3,6982.59423828125,-0.36428993940353394,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+106,13,"[cos, x_1]",cos(x_1),0.986618161201477,-0.36351197957992554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+107,13,"[**3, x_0]",(x_0)**3,7245.740234375,-0.37127915024757385,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+108,13,"[cos, cos, **3, x_0]",cos(cos((x_0)**3)),0.10256773233413696,-0.34553053975105286,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+109,13,"[cos, cos, 0.56]",cos(cos(0.56)),0.04859493672847748,-0.34311312437057495,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+110,13,"[sin, cos, -0.96]",sin(cos(-0.96)),0.03401068225502968,-0.33892059326171875,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+111,14,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+112,14,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+113,14,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+114,14,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+115,14,"[cos, 1.53]",cos(1.53),0.2844944894313812,-0.35986942052841187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+116,14,"[cos, x_1]",cos(x_1),0.986618161201477,-0.36351197957992554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+117,14,"[sin, cos, -0.96]",sin(cos(-0.96)),0.03401068225502968,-0.33892059326171875,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+118,14,"[**3, sin, sqrt, sin, sqrt, x_4]",(sin(sqrt(abs(sin(sqrt(abs(x_4)))))))**3,0.03280715271830559,-0.30288034677505493,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+119,14,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.3750343322753906,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+120,14,"[**3, cos, 0.56]",(cos(0.56))**3,0.03848779946565628,-0.3510752320289612,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+121,15,"[**3, sin, sqrt, sin, sqrt, x_0]",(sin(sqrt(abs(sin(sqrt(abs(x_0)))))))**3,0.032187264412641525,-0.28584256768226624,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+122,15,"[cos, sin, sqrt, **3, 2.83]",cos(sin(sqrt(abs((2.83)**3)))),0.0340089350938797,-0.30500441789627075,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+123,15,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+124,15,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+125,15,"[sin, cos, -0.96]",sin(cos(-0.96)),0.03401068225502968,-0.33892059326171875,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+126,15,"[**3, sin, sqrt, sin, sqrt, x_4]",(sin(sqrt(abs(sin(sqrt(abs(x_4)))))))**3,0.03280715271830559,-0.30288034677505493,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+127,15,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.3750343322753906,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+128,15,"[cos, -0.96]",cos(-0.96),0.03504897654056549,-0.37073299288749695,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+129,15,"[**3, 1.53]",(1.53)**3,9.277473449707031,-0.37376198172569275,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+130,15,"[sin, x_1]",sin(x_1),0.834709882736206,-0.37130117416381836,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+131,16,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+132,16,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+133,16,"[sin, cos, -0.96]",sin(cos(-0.96)),0.03401068225502968,-0.33892059326171875,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+134,16,"[cos, -0.96]",cos(-0.96),0.03504897654056549,-0.37073299288749695,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+135,16,"[sin, x_1]",sin(x_1),0.834709882736206,-0.37130117416381836,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+136,16,"[**3, cos, **3, cos, 0.56]",(cos((cos(0.56))**3))**3,0.03414054960012436,-0.35040283203125,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+137,16,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.38542264699935913,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+138,16,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+139,16,"[sin, -1.02]",sin(-1.02),1.975512146949768,-0.37450844049453735,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+140,16,"[cos, -3.21]",cos(-3.21),2.4023189544677734,-0.37718665599823,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+141,17,"[cos, cos, 3.17]",cos(cos(3.17)),0.03400932997465134,-0.33886516094207764,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+142,17,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+143,17,"[cos, -0.96]",cos(-0.96),0.03504897654056549,-0.37073299288749695,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+144,17,"[**3, cos, **3, cos, 0.56]",(cos((cos(0.56))**3))**3,0.03414054960012436,-0.35040283203125,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+145,17,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+146,17,"[cos, cos, **3, sin, cos, 1.53]",cos(cos((sin(cos(1.53)))**3)),0.034009870141744614,-0.345564603805542,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+147,17,"[cos, -1.71]",cos(-1.71),0.4964427351951599,-0.38578513264656067,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+148,17,"[log, -3.01]",log(abs(-3.01)),0.34835952520370483,-0.3822026550769806,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+149,17,"[**3, -0.96]",(-0.96)**3,2.067502975463867,-0.3896288275718689,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+150,18,"[cos, cos, sin, **3, 0.37]",cos(cos(sin((0.37)**3))),0.034008946269750595,-0.3275863528251648,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+151,18,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+152,18,"[cos, cos, **3, sin, cos, 1.53]",cos(cos((sin(cos(1.53)))**3)),0.034009870141744614,-0.345564603805542,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+153,18,"[sin, x_0]",sin(x_0),0.8115662336349487,-0.4002397954463959,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+154,18,"[cos, sin, x_2]",cos(sin(x_2)),0.10368632525205612,-0.37861716747283936,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+155,18,"[cos, sin, x_0]",cos(sin(x_0)),0.10684210062026978,-0.38057005405426025,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+156,18,"[cos, cos, 3.95]",cos(cos(3.95)),0.0867072269320488,-0.3737751245498657,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+157,18,"[cos, sin, -4.86]",cos(sin(-4.86)),0.03407536819577217,-0.37099745869636536,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+158,18,"[**3, 0.56]",(0.56)**3,0.1677120178937912,-0.39757025241851807,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+159,18,"[exp, log, cos, sin, 1.53]",exp(log(abs(cos(sin(1.53))))),0.03400900587439537,-0.3426174521446228,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+160,19,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+161,19,"[cos, sin, -4.86]",cos(sin(-4.86)),0.03407536819577217,-0.37099745869636536,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+162,19,"[cos, -0.35]",cos(-0.35),0.1924944519996643,-0.4004031717777252,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+163,19,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.4108164310455322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+164,19,"[cos, cos, exp, -2.99]",cos(cos(exp(-2.99))),0.0340089425444603,-0.3654540777206421,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+165,19,"[sin, 2.45]",sin(2.45),0.043320100754499435,-0.3994683027267456,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+166,20,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+167,20,"[cos, sin, -4.86]",cos(sin(-4.86)),0.03407536819577217,-0.37099745869636536,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+168,20,"[cos, -0.35]",cos(-0.35),0.1924944519996643,-0.4004031717777252,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+169,20,"[cos, x_0]",cos(x_0),0.9726095795631409,-0.4108164310455322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+170,20,"[cos, cos, exp, -2.99]",cos(cos(exp(-2.99))),0.0340089425444603,-0.3654540777206421,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+171,20,"[sin, 2.45]",sin(2.45),0.043320100754499435,-0.3994683027267456,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+172,20,"[**3, cos, cos, sin, sqrt, x_0]",(cos(cos(sin(sqrt(abs(x_0))))))**3,0.032799676060676575,-0.3600429594516754,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+173,20,"[**3, -1.97]",(-1.97)**3,67.05513763427734,-0.4122776985168457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+174,20,"[log, x_1]",log(abs(x_1)),0.8706819415092468,-0.41004234552383423,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+175,20,"[**3, x_3]",(x_3)**3,7173.74658203125,-0.4129369854927063,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+176,21,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+177,21,"[cos, sin, -4.86]",cos(sin(-4.86)),0.03407536819577217,-0.37099745869636536,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+178,21,"[cos, cos, exp, -2.99]",cos(cos(exp(-2.99))),0.0340089425444603,-0.3654540777206421,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+179,21,"[sin, 2.45]",sin(2.45),0.043320100754499435,-0.3994683027267456,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+180,21,"[**3, cos, cos, sin, sqrt, x_0]",(cos(cos(sin(sqrt(abs(x_0))))))**3,0.032799676060676575,-0.3600429594516754,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+181,21,"[log, -1.98]",log(abs(-1.98)),0.05412369593977928,-0.412765771150589,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+182,21,"[cos, 0.37]",cos(0.37),0.18693453073501587,-0.4136790931224823,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+183,21,"[**3, -0.35]",(-0.35)**3,0.3752346932888031,-0.4193596839904785,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+184,21,"[sin, -4.86]",sin(-4.86),0.23458297550678253,-0.41408342123031616,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+185,22,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+186,22,"[cos, cos, exp, -2.99]",cos(cos(exp(-2.99))),0.0340089425444603,-0.3654540777206421,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+187,22,"[sin, 2.45]",sin(2.45),0.043320100754499435,-0.3994683027267456,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+188,22,"[**3, cos, cos, sin, sqrt, x_0]",(cos(cos(sin(sqrt(abs(x_0))))))**3,0.032799676060676575,-0.3600429594516754,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+189,22,"[log, -1.98]",log(abs(-1.98)),0.05412369593977928,-0.412765771150589,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+190,22,"[cos, 0.37]",cos(0.37),0.18693453073501587,-0.4136790931224823,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+191,22,"[**3, -0.35]",(-0.35)**3,0.3752346932888031,-0.4193596839904785,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+192,22,"[sin, -4.86]",sin(-4.86),0.23458297550678253,-0.41408342123031616,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+193,22,"[cos, 3.17]",cos(3.17),2.4082796573638916,-0.4202740788459778,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+194,22,"[cos, u-, sin, -4.65]",cos(-(sin(-4.65))),0.034009382128715515,-0.3781571686267853,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+195,22,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.43574059009552,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+196,22,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.4312441945075989,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+197,22,"[cos, cos, **3, **3, 0.15]",cos(cos(((0.15)**3)**3)),0.034009870141744614,-0.3786541521549225,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+198,22,"[u-, x_2]",-(x_2),15.77184009552002,-0.4241173267364502,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+199,23,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+200,23,"[cos, u-, sin, -4.65]",cos(-(sin(-4.65))),0.034009382128715515,-0.3781571686267853,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+201,23,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.43574059009552,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+202,23,"[cos, cos, **3, **3, 0.15]",cos(cos(((0.15)**3)**3)),0.034009870141744614,-0.3786541521549225,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+203,23,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+204,23,"[exp, x_0]",exp(x_0),15503.0,-0.43799543380737305,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+205,23,"[exp, -2.99]",exp(-2.99),0.2750731408596039,-0.429695188999176,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+206,23,"[**3, -0.96]",(-0.96)**3,2.067502975463867,-0.4343331456184387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+207,23,"[**3, cos, cos, sin, sqrt, x_1]",(cos(cos(sin(sqrt(abs(x_1))))))**3,0.03241471201181412,-0.3661630153656006,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+208,24,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+209,24,"[cos, u-, sin, -4.65]",cos(-(sin(-4.65))),0.034009382128715515,-0.3781571686267853,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+210,24,"[cos, cos, **3, **3, 0.15]",cos(cos(((0.15)**3)**3)),0.034009870141744614,-0.3786541521549225,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+211,24,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+212,24,"[**3, cos, cos, sin, sqrt, x_1]",(cos(cos(sin(sqrt(abs(x_1))))))**3,0.03241471201181412,-0.3661630153656006,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+213,24,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+214,24,"[**3, -3.21]",(-3.21)**3,1130.1656494140625,-0.441592276096344,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+215,24,"[sin, 0.91]",sin(0.91),0.0956287682056427,-0.43692880868911743,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+216,25,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+217,25,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+218,25,"[**3, cos, cos, sin, sqrt, x_1]",(cos(cos(sin(sqrt(abs(x_1))))))**3,0.03241471201181412,-0.3661630153656006,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+219,25,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+220,25,"[sin, 0.91]",sin(0.91),0.0956287682056427,-0.43692880868911743,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+221,25,"[sqrt, x_0]",sqrt(abs(x_0)),1.5960646867752075,-0.4417363703250885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+222,25,"[cos, sin, **3, -1.98]",cos(sin((-1.98)**3)),0.034015458077192307,-0.393160343170166,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+223,25,"[log, x_2]",log(abs(x_2)),0.913120448589325,-0.43762487173080444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+224,25,"[cos, cos, **3, sin, 2.83]",cos(cos((sin(2.83))**3)),0.03400931879878044,-0.3791351318359375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+225,26,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+226,26,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+227,26,"[**3, cos, cos, sin, sqrt, x_1]",(cos(cos(sin(sqrt(abs(x_1))))))**3,0.03241471201181412,-0.3661630153656006,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+228,26,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+229,26,"[sqrt, x_0]",sqrt(abs(x_0)),1.5960646867752075,-0.4417363703250885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+230,26,"[cos, sin, **3, -1.98]",cos(sin((-1.98)**3)),0.034015458077192307,-0.393160343170166,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+231,26,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+232,26,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+233,26,"[/, x_0, x_3]",(x_0/x_3),35.98493576049805,-0.44310206174850464,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+234,26,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+235,26,"[/, x_1, x_0]",(x_1/x_0),55.75300598144531,-0.44606781005859375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+236,27,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+237,27,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+238,27,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+239,27,"[cos, sin, **3, -1.98]",cos(sin((-1.98)**3)),0.034015458077192307,-0.393160343170166,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+240,27,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+241,27,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+242,27,"[/, x_0, x_3]",(x_0/x_3),35.98493576049805,-0.44310206174850464,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+243,27,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+244,27,"[/, x_1, x_0]",(x_1/x_0),55.75300598144531,-0.44606781005859375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+245,27,"[sin, -3.21]",sin(-3.21),0.25765877962112427,-0.44238561391830444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+246,27,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+247,28,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+248,28,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+249,28,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+250,28,"[cos, sin, **3, -1.98]",cos(sin((-1.98)**3)),0.034015458077192307,-0.393160343170166,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+251,28,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+252,28,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+253,28,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+254,28,"[/, x_1, x_0]",(x_1/x_0),55.75300598144531,-0.44606781005859375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+255,28,"[sin, -3.21]",sin(-3.21),0.25765877962112427,-0.44238561391830444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+256,28,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+257,28,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+258,28,"[/, 0.37, x_0]",(0.37/x_0),0.608076810836792,-0.44597941637039185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+259,28,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+260,29,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+261,29,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+262,29,"[cos, cos, -2.99]",cos(cos(-2.99)),0.03408369421958923,-0.40253564715385437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+263,29,"[cos, sin, **3, -1.98]",cos(sin((-1.98)**3)),0.034015458077192307,-0.393160343170166,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+264,29,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+265,29,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+266,29,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+267,29,"[/, x_1, x_0]",(x_1/x_0),55.75300598144531,-0.44606781005859375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+268,29,"[sin, -3.21]",sin(-3.21),0.25765877962112427,-0.44238561391830444,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+269,29,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+270,29,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+271,29,"[/, 0.37, x_0]",(0.37/x_0),0.608076810836792,-0.44597941637039185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+272,29,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+273,29,"[sin, 2.83]",sin(2.83),0.08909083157777786,-0.4417591094970703,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+274,30,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+275,30,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+276,30,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+277,30,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+278,30,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+279,30,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+280,30,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+281,30,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+282,30,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+283,30,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+284,30,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+285,31,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+286,31,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+287,31,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+288,31,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+289,31,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+290,31,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+291,31,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+292,31,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+293,31,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+294,31,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+295,31,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+296,31,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+297,32,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+298,32,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+299,32,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+300,32,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+301,32,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+302,32,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+303,32,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+304,32,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+305,32,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+306,32,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+307,32,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+308,32,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+309,33,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+310,33,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+311,33,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+312,33,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+313,33,"[**3, x_0]",(x_0)**3,7245.740234375,-0.45493024587631226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+314,33,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+315,33,"[**3, x_1]",(x_1)**3,7225.24169921875,-0.4494739770889282,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+316,33,"[**3, x_2]",(x_2)**3,6815.03857421875,-0.4484592080116272,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+317,33,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+318,33,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+319,33,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+320,33,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+321,34,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+322,34,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+323,34,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+324,34,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+325,34,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+326,34,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+327,34,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+328,34,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+329,34,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+330,34,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+331,34,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+332,35,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+333,35,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+334,35,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+335,35,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+336,35,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+337,35,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+338,35,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+339,35,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+340,35,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+341,35,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+342,35,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+343,36,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+344,36,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+345,36,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+346,36,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+347,36,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+348,36,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+349,36,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+350,36,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+351,36,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+352,36,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+353,36,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+354,37,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+355,37,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+356,37,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+357,37,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+358,37,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+359,37,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+360,37,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+361,37,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+362,37,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+363,37,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+364,37,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+365,38,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+366,38,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+367,38,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+368,38,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+369,38,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+370,38,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+371,38,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+372,38,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+373,38,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+374,38,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+375,38,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+376,39,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+377,39,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+378,39,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+379,39,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+380,39,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+381,39,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+382,39,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+383,39,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+384,39,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+385,39,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+386,39,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+387,40,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+388,40,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+389,40,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+390,40,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+391,40,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+392,40,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+393,40,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+394,40,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+395,40,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+396,40,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+397,40,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+398,40,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+399,41,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+400,41,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+401,41,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+402,41,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+403,41,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+404,41,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+405,41,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+406,41,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+407,41,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+408,41,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+409,41,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+410,41,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+411,41,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+412,42,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+413,42,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+414,42,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+415,42,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+416,42,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+417,42,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+418,42,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+419,42,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+420,42,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+421,42,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+422,42,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+423,42,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+424,42,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+425,43,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+426,43,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+427,43,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+428,43,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+429,43,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+430,43,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+431,43,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+432,43,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+433,43,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+434,43,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+435,43,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+436,43,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+437,43,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+438,44,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+439,44,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+440,44,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+441,44,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+442,44,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+443,44,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+444,44,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+445,44,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+446,44,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+447,44,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+448,44,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+449,44,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+450,44,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+451,45,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+452,45,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+453,45,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+454,45,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+455,45,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+456,45,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+457,45,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+458,45,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+459,45,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+460,45,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+461,45,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+462,45,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+463,45,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+464,46,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+465,46,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+466,46,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+467,46,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+468,46,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+469,46,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+470,46,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+471,46,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+472,46,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+473,46,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+474,46,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+475,46,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+476,46,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+477,47,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+478,47,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+479,47,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+480,47,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+481,47,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+482,47,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+483,47,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+484,47,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+485,47,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+486,47,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+487,47,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+488,47,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+489,47,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+490,48,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+491,48,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+492,48,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+493,48,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+494,48,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+495,48,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+496,48,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+497,48,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+498,48,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+499,48,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+500,48,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+501,48,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+502,48,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+503,49,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+504,49,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+505,49,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+506,49,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+507,49,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+508,49,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+509,49,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+510,49,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+511,49,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+512,49,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+513,49,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+514,49,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+515,49,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+516,50,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+517,50,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+518,50,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+519,50,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+520,50,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+521,50,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+522,50,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+523,50,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+524,50,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+525,50,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+526,50,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+527,50,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+528,50,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+529,51,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+530,51,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+531,51,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+532,51,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+533,51,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+534,51,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+535,51,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+536,51,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+537,51,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+538,51,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+539,51,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+540,51,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+541,51,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+542,52,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+543,52,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+544,52,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+545,52,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+546,52,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+547,52,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+548,52,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+549,52,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+550,52,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+551,52,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+552,52,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+553,52,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+554,52,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+555,53,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+556,53,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+557,53,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+558,53,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+559,53,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+560,53,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+561,53,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+562,53,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+563,53,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+564,53,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+565,53,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+566,53,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+567,53,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+568,54,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+569,54,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+570,54,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+571,54,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+572,54,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+573,54,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+574,54,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+575,54,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+576,54,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+577,54,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+578,54,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+579,54,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+580,54,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+581,55,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+582,55,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+583,55,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+584,55,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+585,55,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+586,55,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+587,55,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+588,55,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+589,55,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+590,55,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+591,55,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+592,55,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+593,55,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+594,56,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+595,56,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+596,56,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+597,56,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+598,56,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+599,56,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+600,56,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+601,56,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+602,56,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+603,56,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+604,56,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+605,56,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+606,56,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+607,57,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+608,57,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+609,57,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+610,57,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+611,57,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+612,57,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+613,57,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+614,57,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+615,57,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+616,57,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+617,57,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+618,57,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+619,57,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+620,58,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+621,58,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+622,58,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+623,58,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+624,58,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+625,58,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+626,58,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+627,58,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+628,58,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+629,58,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+630,58,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+631,58,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+632,58,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+633,59,"[**3, sin, sqrt, sin, sqrt, x_1]",(sin(sqrt(abs(sin(sqrt(abs(x_1)))))))**3,0.03166750445961952,-0.318362295627594,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+634,59,"[sin, 0.56]",sin(0.56),0.034110624343156815,-0.4295629858970642,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+635,59,"[sin, 0.53]",sin(0.53),0.0352860651910305,-0.44145235419273376,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+636,59,"[cos, sin, **3, **3, -3.21]",cos(sin(((-3.21)**3)**3)),0.03400897979736328,-0.3875497579574585,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+637,59,"[**3, cos, cos, sin, sqrt, x_2]",(cos(cos(sin(sqrt(abs(x_2))))))**3,0.032383993268013,-0.368604838848114,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+638,59,"[/, 3.95, x_0]",(3.95/x_0),62.43409729003906,-0.447907030582428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+639,59,"[cos, sin, 1.53]",cos(sin(1.53)),0.03400900587439537,-0.40476441383361816,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+640,59,"[**3, 0.91]",(0.91)**3,0.07908051460981369,-0.4465654492378235,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+641,59,"[cos, cos, **3, 0.37]",cos(cos((0.37)**3)),0.034008946269750595,-0.3793458342552185,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+642,59,"[*, x_0, x_0]",(x_0*x_0),264.124267578125,-0.45731431245803833,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+643,59,"[/, 1.53, x_0]",(1.53/x_0),8.907615661621094,-0.4466398358345032,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+644,59,"[*, x_1, x_0]",(x_1*x_0),147.5190887451172,-0.45065832138061523,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva
+645,59,"[sin, -3.74]",sin(-3.74),0.03449544310569763,-0.42965197563171387,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online L2 Distances Max Norm,Feynman,vladislavleva

@@ -16,6 +16,11 @@ if __name__ == "__main__":
     df = pd.DataFrame(data=data)
     df["target"] = target
     print(df.head())
+    print(df.shape)
+    df.dropna(inplace=True)
+    df.reset_index(drop=True, inplace=True)
+    print(df.shape)
+    print(df.head())
     train, test = train_test_split(df, test_size=0.1, random_state=42)
     train, val = train_test_split(train, test_size=0.2/0.9, random_state=42)
 

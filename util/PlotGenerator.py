@@ -13,6 +13,7 @@ import random
 from nsgp.encoder.TreeEncoder import TreeEncoder
 from nsgp.structure.TreeStructure import TreeStructure
 from util.EvaluationMetrics import EvaluationMetrics
+from util.PicklePersist import PicklePersist
 
 from util.Sort import Sort
 
@@ -38,12 +39,12 @@ class PlotGenerator:
         return df[condition].reset_index(inplace=False, drop=True)
 
     @staticmethod
-    def plot_line(df, x, y, hue, style, folder_path, img_name, pgfplot=False, figsize=(10, 6)):
+    def plot_line(df, x, y, hue, style, folder_path=None, img_name=None, pgfplot=False, figsize=(10, 6)):
         sns.set(rc={"figure.figsize": figsize})
         sns.set_style("white")
         if not isinstance(df, pd.DataFrame):
             df = pd.DataFrame(df)
-        ax = sns.lineplot(data=df, x=x, y=y, hue=hue, style=style, estimator=np.mean, ci=90)
+        ax = sns.lineplot(data=df, x=x, y=y, hue=hue, style=style, estimator=np.mean, ci=90, palette="colorblind")
         if pgfplot:
             matplotlib.use("pgf")
             matplotlib.rcParams.update(
@@ -51,8 +52,31 @@ class PlotGenerator:
                  'pgf.rcfonts': False, })
             plt.savefig(folder_path+"/"+img_name+".pgf")
         else:
-            plt.savefig(folder_path+"/"+img_name+".png")
+            #plt.savefig(folder_path+"/"+img_name+".png")
+            plt.ylim(0.0, 1.2)
+            plt.show()
         return ax
+
+    @staticmethod
+    def plot_facet_grid(df, x, y, row, col, hue, style, figsize=(20, 60)):
+        sns.set(rc={"figure.figsize": figsize})
+        sns.set_style("white")
+        if not isinstance(df, pd.DataFrame):
+            df = pd.DataFrame(df)
+        g = sns.FacetGrid(df, row=row, col=col)
+        g.map_dataframe(sns.lineplot, x=x, y=y, hue=hue, style=style, estimator=np.mean, ci=90, palette="colorblind")
+        g.add_legend()
+        #if pgfplot:
+        #    matplotlib.use("pgf")
+        #    matplotlib.rcParams.update(
+        #        {"pgf.texsystem": "pdflatex", 'font.family': 'serif', 'font.size': 11, 'text.usetex': True,
+        #         'pgf.rcfonts': False, })
+        #    plt.savefig(folder_path + "/" + img_name + ".pgf")
+        #else:
+        # plt.savefig(folder_path+"/"+img_name+".png")
+        plt.ylim(0.0, 1.2)
+        plt.show()
+        return g
 
     @staticmethod
     def plot_random_ranking(device, dataloader):
@@ -117,9 +141,15 @@ class PlotGenerator:
 if __name__ == "__main__":
     df = {"a": ["AS", "AS", "DEF", "DER", "AS"], "b": ["GT", "ER", "ER", "GT", "OL"], "c": ["WE", "WE", "QQ", "WW", "QQ"]}
     df = pd.DataFrame(df)
-    print(df.head())
 
-    df_1 = PlotGenerator.filter_dataframe_rows_by_column_values(df, {"a": ["AS"], "c": ["WE"]})
-    print(df_1.head())
+    res = PicklePersist.decompress_pickle("../exps/tree_data_1/dict_res.pbz2")
+    #res_filtered = PlotGenerator.filter_dataframe_rows_by_column_values(res, {
+    #                                                                         "Warm-up": ["No Warm-up"],
+    #                                                                          "Ground-truth": ["N nodes"]})
 
-    print(PlotGenerator.concatenate_dataframe_rows([df, df_1]).head(9))
+    #PlotGenerator.plot_line(df=res_filtered, x="Amount of feedback", y="Spearman footrule",
+    #                        hue="Encoding", style="Sampling")
+
+    PlotGenerator.plot_facet_grid(res, x="Amount of feedback", y="Spearman footrule",
+                                  row="Ground-truth", col="Warm-up",
+                                  hue="Encoding", style="Sampling")

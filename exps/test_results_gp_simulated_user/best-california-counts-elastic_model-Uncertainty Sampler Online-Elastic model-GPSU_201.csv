@@ -1,0 +1,565 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[sin, -4.53]",sin(-4.53),2.5343871116638184,-0.1320847123861313,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+1,0,"[sqrt, exp, cos, -0.05]",sqrt(abs(exp(cos(-0.05)))),1.528352975845337,-0.1304403394460678,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+2,0,"[u-, x_6]",-(x_6),7.414253234863281,-0.13961616158485413,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+3,0,"[**2, -0.83]",(-0.83)**2,3.2627975940704346,-0.13303497433662415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+4,1,"[sin, -4.53]",sin(-4.53),2.5343871116638184,-0.1320847123861313,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+5,1,"[sqrt, exp, cos, -0.05]",sqrt(abs(exp(cos(-0.05)))),1.528352975845337,-0.1304403394460678,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+6,1,"[u-, x_6]",-(x_6),7.414253234863281,-0.13961616158485413,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+7,1,"[cos, sin, exp, x_2]",cos(sin(exp(x_2))),3.1256535053253174,-0.1337793916463852,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+8,1,"[sin, **3, u-, x_6]",sin((-(x_6))**3),6.903652667999268,-0.13648486137390137,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+9,2,[2.15],2.15,1.3536045551300049,-0.07556230574846268,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+10,2,"[cos, u-, x_6]",cos(-(x_6)),2.926415205001831,-0.14893195033073425,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+11,2,"[u-, u-, exp, cos, x_6]",-(-(exp(cos(x_6)))),1.4485557079315186,-0.1471925973892212,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+12,3,"[u-, u-, exp, cos, x_6]",-(-(exp(cos(x_6)))),1.4485557079315186,-0.1471925973892212,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+13,3,"[exp, cos, +, x_6, cos, -, x_0, x_7]",exp(cos((x_6+cos((x_0-x_7))))),1.2702833414077759,-0.12918353080749512,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+14,3,"[sqrt, cos, sqrt, u-, **3, x_6]",sqrt(abs(cos(sqrt(abs(-((x_6)**3)))))),2.7030508518218994,-0.1493222862482071,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+15,3,"[sqrt, sqrt, exp, sqrt, x_6]",sqrt(abs(sqrt(abs(exp(sqrt(abs(x_6))))))),2.2174675464630127,-0.14785979688167572,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+16,3,"[exp, u-, x_5]",exp(-(x_5)),2.4149749279022217,-0.1484948843717575,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+17,3,"[sqrt, cos, u-, cos, x_6]",sqrt(abs(cos(-(cos(x_6))))),2.9670093059539795,-0.15015104413032532,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+18,3,"[cos, x_2]",cos(x_2),3.4552178382873535,-0.15108582377433777,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+19,4,"[exp, cos, +, x_6, cos, -, x_0, x_7]",exp(cos((x_6+cos((x_0-x_7))))),1.2702833414077759,-0.12918353080749512,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+20,4,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.15502648055553436,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+21,4,"[cos, u-, x_4]",cos(-(x_4)),3.3632051944732666,-0.15697592496871948,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+22,4,"[cos, u-, sin, **3, x_2]",cos(-(sin((x_2)**3))),2.7754364013671875,-0.15625885128974915,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+23,4,"[cos, u-, **3, x_4]",cos(-((x_4)**3)),3.2377116680145264,-0.15627190470695496,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+24,5,"[exp, u-, x_7]",exp(-(x_7)),2.255159378051758,-0.16680371761322021,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+25,5,"[sqrt, exp, sqrt, log, x_6]",sqrt(abs(exp(sqrt(abs(log(abs(x_6))))))),1.7921013832092285,-0.1631150245666504,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+26,5,"[u-, u-, exp, cos, u-, x_4]",-(-(exp(cos(-(x_4))))),1.7121038436889648,-0.16200578212738037,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+27,5,"[exp, cos, cos, **3, x_2]",exp(cos(cos((x_2)**3))),1.3435518741607666,-0.16097372770309448,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+28,5,"[**3, u-, sqrt, x_6]",(-(sqrt(abs(x_6))))**3,7.79185676574707,-0.1689562201499939,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+29,5,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+30,6,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+31,6,"[exp, sin, sin, sqrt, log, -4.01]",exp(sin(sin(sqrt(abs(log(abs(-4.01))))))),1.36965811252594,-0.16509075462818146,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+32,6,"[sqrt, sqrt, exp, sqrt, log, x_2]",sqrt(abs(sqrt(abs(exp(sqrt(abs(log(abs(x_2))))))))),2.0724384784698486,-0.17222332954406738,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+33,6,"[sqrt, **3, sqrt, exp, x_6]",sqrt(abs((sqrt(abs(exp(x_6))))**3)),2.4445629119873047,-0.17715534567832947,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+34,6,"[exp, cos, sqrt, **3, x_3]",exp(cos(sqrt(abs((x_3)**3)))),1.705413579940796,-0.1681385338306427,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+35,6,"[exp, sin, **3, x_2]",exp(sin((x_2)**3)),2.3255648612976074,-0.17523795366287231,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+36,6,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+37,6,"[exp, cos, u-, u-, **3, x_2]",exp(cos(-(-((x_2)**3)))),2.225748062133789,-0.1738320291042328,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+38,6,"[u-, **3, x_4]",-((x_4)**3),216636.234375,-0.1778588593006134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+39,6,"[exp, cos, **3, u-, sqrt, 1.21]",exp(cos((-(sqrt(abs(1.21))))**3)),1.9952013492584229,-0.17087459564208984,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+40,7,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+41,7,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+42,7,"[exp, cos, log, sqrt, 3.91]",exp(cos(log(abs(sqrt(abs(3.91)))))),1.35783851146698,-0.16759434342384338,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+43,7,"[exp, cos, x_2]",exp(cos(x_2)),2.0140695571899414,-0.18008631467819214,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+44,7,"[exp, sin, x_2]",exp(sin(x_2)),2.0547244548797607,-0.18201330304145813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+45,7,"[exp, cos, u-, sqrt, x_6]",exp(cos(-(sqrt(abs(x_6))))),1.3884344100952148,-0.17865636944770813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+46,8,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+47,8,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+48,8,"[exp, cos, x_2]",exp(cos(x_2)),2.0140695571899414,-0.18008631467819214,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+49,8,"[exp, sin, x_2]",exp(sin(x_2)),2.0547244548797607,-0.18201330304145813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+50,8,"[exp, cos, u-, sqrt, x_6]",exp(cos(-(sqrt(abs(x_6))))),1.3884344100952148,-0.17865636944770813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+51,8,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+52,8,"[exp, cos, u-, u-, **3, -0.89]",exp(cos(-(-((-0.89)**3)))),1.3524011373519897,-0.1698344349861145,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+53,8,"[exp, u-, x_6]",exp(-(x_6)),3.0119383335113525,-0.18650856614112854,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+54,8,"[u-, x_6]",-(x_6),7.414253234863281,-0.18970710039138794,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+55,9,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+56,9,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+57,9,"[exp, cos, x_2]",exp(cos(x_2)),2.0140695571899414,-0.18008631467819214,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+58,9,"[exp, sin, x_2]",exp(sin(x_2)),2.0547244548797607,-0.18201330304145813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+59,9,"[exp, cos, u-, sqrt, x_6]",exp(cos(-(sqrt(abs(x_6))))),1.3884344100952148,-0.17865636944770813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+60,9,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+61,9,"[exp, cos, u-, u-, **3, -0.89]",exp(cos(-(-((-0.89)**3)))),1.3524011373519897,-0.1698344349861145,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+62,9,"[exp, u-, x_6]",exp(-(x_6)),3.0119383335113525,-0.18650856614112854,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+63,9,"[u-, x_6]",-(x_6),7.414253234863281,-0.18970710039138794,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+64,9,"[sqrt, u-, x_0]",sqrt(abs(-(x_0))),3.0052998065948486,-0.184341698884964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+65,10,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+66,10,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+67,10,"[exp, cos, x_2]",exp(cos(x_2)),2.0140695571899414,-0.18008631467819214,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+68,10,"[exp, sin, x_2]",exp(sin(x_2)),2.0547244548797607,-0.18201330304145813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+69,10,"[exp, cos, u-, sqrt, x_6]",exp(cos(-(sqrt(abs(x_6))))),1.3884344100952148,-0.17865636944770813,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+70,10,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+71,10,"[exp, cos, u-, u-, **3, -0.89]",exp(cos(-(-((-0.89)**3)))),1.3524011373519897,-0.1698344349861145,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+72,10,"[exp, u-, x_6]",exp(-(x_6)),3.0119383335113525,-0.18650856614112854,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+73,10,"[u-, x_6]",-(x_6),7.414253234863281,-0.18970710039138794,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+74,10,"[sqrt, u-, x_0]",sqrt(abs(-(x_0))),3.0052998065948486,-0.184341698884964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+75,10,"[u-, log, x_2]",-(log(abs(x_2))),4.503266334533691,-0.1892181932926178,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+76,10,"[exp, cos, cos, -, u-, x_0, 3.53]",exp(cos(cos((-(x_0)-3.53)))),1.1206810474395752,-0.147466242313385,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+77,11,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+78,11,"[exp, cos, **3, u-, **, x_6, x_0]",exp(cos((-((x_6**x_0)))**3)),1.3131269216537476,-0.16456587612628937,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+79,11,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+80,11,"[exp, cos, cos, -, u-, x_0, 3.53]",exp(cos(cos((-(x_0)-3.53)))),1.1206810474395752,-0.147466242313385,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+81,11,"[exp, sqrt, sin, cos, x_6]",exp(sqrt(abs(sin(cos(x_6))))),1.34935462474823,-0.18544375896453857,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+82,11,"[**3, x_2]",(x_2)**3,44287104.0,-0.20943449437618256,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+83,11,"[exp, cos, u-, x_6]",exp(cos(-(x_6))),1.4485557079315186,-0.19900627434253693,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+84,11,"[exp, sin, x_6]",exp(sin(x_6)),2.36173415184021,-0.20096495747566223,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+85,11,"[exp, u-, sqrt, x_6]",exp(-(sqrt(abs(x_6)))),3.5425946712493896,-0.20166631042957306,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+86,11,"[exp, cos, sqrt, sqrt, u-, x_6]",exp(cos(sqrt(abs(sqrt(abs(-(x_6))))))),1.3306185007095337,-0.18388336896896362,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+87,11,"[u-, sqrt, x_4]",-(sqrt(abs(x_4))),9.42265510559082,-0.20332388579845428,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+88,12,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+89,12,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+90,12,"[exp, cos, cos, -, u-, x_0, 3.53]",exp(cos(cos((-(x_0)-3.53)))),1.1206810474395752,-0.147466242313385,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+91,12,"[exp, cos, u-, x_6]",exp(cos(-(x_6))),1.4485557079315186,-0.19900627434253693,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+92,12,"[exp, cos, cos, u-, sqrt, x_2]",exp(cos(cos(-(sqrt(abs(x_2)))))),1.2628774642944336,-0.18977421522140503,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+93,12,"[exp, sqrt, cos, x_2]",exp(sqrt(abs(cos(x_2)))),1.7973138093948364,-0.20266100764274597,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+94,12,"[log, u-, -, u-, x_0, 3.53]",log(abs(-((-(x_0)-3.53)))),1.6818445920944214,-0.19907918572425842,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+95,12,"[exp, cos, exp, u-, x_6]",exp(cos(exp(-(x_6)))),1.7341891527175903,-0.2022300660610199,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+96,12,"[u-, x_2]",-(x_2),9.404465675354004,-0.2324436902999878,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+97,12,"[sqrt, exp, u-, u-, x_6]",sqrt(abs(exp(-(-(x_6))))),2.305739164352417,-0.21544024348258972,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+98,12,"[exp, cos, cos, x_7]",exp(cos(cos(x_7))),1.4185463190078735,-0.1901487112045288,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+99,12,"[exp, sin, sin, **3, 4.87]",exp(sin(sin((4.87)**3))),1.3910471200942993,-0.18994984030723572,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+100,13,"[exp, cos, u-, cos, x_0]",exp(cos(-(cos(x_0)))),1.2570048570632935,-0.15902826189994812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+101,13,"[exp, cos, sin, sqrt, **, x_1, x_0]",exp(cos(sin(sqrt(abs((x_1**x_0)))))),1.167639136314392,-0.14895743131637573,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+102,13,"[exp, cos, cos, -, u-, x_0, 3.53]",exp(cos(cos((-(x_0)-3.53)))),1.1206810474395752,-0.147466242313385,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+103,13,"[exp, cos, cos, u-, sqrt, x_2]",exp(cos(cos(-(sqrt(abs(x_2)))))),1.2628774642944336,-0.18977421522140503,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+104,13,"[sqrt, exp, u-, u-, x_6]",sqrt(abs(exp(-(-(x_6))))),2.305739164352417,-0.21544024348258972,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+105,13,"[exp, cos, **3, u-, x_2]",exp(cos((-(x_2))**3)),2.225748062133789,-0.21307212114334106,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+106,13,"[exp, exp, u-, cos, 1.37]",exp(exp(-(cos(1.37)))),1.3860008716583252,-0.19918093085289001,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+107,13,"[exp, sin, sqrt, cos, u-, -3.7]",exp(sin(sqrt(abs(cos(-(-3.7)))))),1.368443250656128,-0.19128158688545227,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+108,13,"[exp, sqrt, cos, x_4]",exp(sqrt(abs(cos(x_4)))),1.5851958990097046,-0.20178627967834473,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+109,13,"[exp, cos, x_4]",exp(cos(x_4)),1.7121038436889648,-0.21198692917823792,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+110,13,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.20603397488594055,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+111,13,"[u-, u-, x_6]",-(-(x_6)),4.775267124176025,-0.23991701006889343,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+112,13,"[exp, sin, u-, x_6]",exp(sin(-(x_6))),2.9387192726135254,-0.2201736569404602,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+113,13,"[exp, cos, sin, u-, u-, x_4]",exp(cos(sin(-(-(x_4))))),1.5243362188339233,-0.20134231448173523,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+114,14,"[sqrt, exp, u-, u-, x_6]",sqrt(abs(exp(-(-(x_6))))),2.305739164352417,-0.21544024348258972,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+115,14,"[exp, cos, **3, u-, x_2]",exp(cos((-(x_2))**3)),2.225748062133789,-0.21307212114334106,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+116,14,"[exp, sqrt, cos, x_4]",exp(sqrt(abs(cos(x_4)))),1.5851958990097046,-0.20178627967834473,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+117,14,"[exp, cos, x_4]",exp(cos(x_4)),1.7121038436889648,-0.21198692917823792,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+118,14,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.20603397488594055,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+119,14,"[u-, u-, x_6]",-(-(x_6)),4.775267124176025,-0.23991701006889343,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+120,14,"[exp, sin, u-, x_6]",exp(sin(-(x_6))),2.9387192726135254,-0.2201736569404602,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+121,14,"[exp, cos, sin, u-, u-, x_4]",exp(cos(sin(-(-(x_4))))),1.5243362188339233,-0.20134231448173523,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+122,14,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+123,14,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+124,14,"[sqrt, u-, u-, **3, x_6]",sqrt(abs(-(-((x_6)**3)))),4.471126556396484,-0.22399690747261047,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+125,15,"[sqrt, exp, u-, u-, x_6]",sqrt(abs(exp(-(-(x_6))))),2.305739164352417,-0.21544024348258972,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+126,15,"[exp, cos, **3, u-, x_2]",exp(cos((-(x_2))**3)),2.225748062133789,-0.21307212114334106,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+127,15,"[exp, cos, x_4]",exp(cos(x_4)),1.7121038436889648,-0.21198692917823792,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+128,15,"[u-, u-, x_6]",-(-(x_6)),4.775267124176025,-0.23991701006889343,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+129,15,"[exp, sin, u-, x_6]",exp(sin(-(x_6))),2.9387192726135254,-0.2201736569404602,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+130,15,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+131,15,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+132,15,"[exp, sqrt, sqrt, x_2]",exp(sqrt(abs(sqrt(abs(x_2))))),1.5444554090499878,-0.206138014793396,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+133,15,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+134,15,"[sqrt, u-, x_2]",sqrt(abs(-(x_2))),3.1365966796875,-0.23290982842445374,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+135,15,"[exp, cos, sin, u-, x_6]",exp(cos(sin(-(x_6)))),1.4580223560333252,-0.20579767227172852,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+136,16,"[sqrt, exp, u-, u-, x_6]",sqrt(abs(exp(-(-(x_6))))),2.305739164352417,-0.21544024348258972,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+137,16,"[exp, cos, **3, u-, x_2]",exp(cos((-(x_2))**3)),2.225748062133789,-0.21307212114334106,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+138,16,"[exp, cos, x_4]",exp(cos(x_4)),1.7121038436889648,-0.21198692917823792,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+139,16,"[u-, u-, x_6]",-(-(x_6)),4.775267124176025,-0.23991701006889343,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+140,16,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+141,16,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+142,16,"[exp, sqrt, sqrt, x_2]",exp(sqrt(abs(sqrt(abs(x_2))))),1.5444554090499878,-0.206138014793396,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+143,16,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+144,16,"[sqrt, u-, x_2]",sqrt(abs(-(x_2))),3.1365966796875,-0.23290982842445374,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+145,16,"[exp, cos, sin, u-, x_6]",exp(cos(sin(-(x_6)))),1.4580223560333252,-0.20579767227172852,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+146,16,"[sqrt, u-, 0.66]",sqrt(abs(-(0.66))),2.9362189769744873,-0.22535440325737,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+147,16,"[sqrt, sqrt, x_2]",sqrt(abs(sqrt(abs(x_2)))),2.846025228500366,-0.22005528211593628,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+148,16,"[**3, x_6]",(x_6)**3,5.141818523406982,-0.24029219150543213,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+149,17,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+150,17,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+151,17,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+152,17,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+153,17,"[u-, x_0]",-(x_0),8.41468334197998,-0.2516717314720154,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+154,17,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+155,18,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+156,18,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+157,18,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+158,18,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+159,18,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+160,18,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+161,18,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+162,19,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+163,19,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+164,19,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+165,19,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+166,19,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+167,19,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+168,19,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+169,19,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+170,20,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+171,20,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+172,20,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+173,20,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+174,20,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+175,20,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+176,20,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+177,20,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+178,21,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+179,21,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+180,21,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+181,21,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+182,21,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+183,21,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+184,21,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+185,21,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+186,22,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+187,22,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+188,22,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+189,22,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+190,22,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+191,22,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+192,22,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+193,22,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+194,23,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+195,23,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+196,23,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+197,23,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+198,23,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+199,23,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+200,23,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+201,23,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+202,24,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+203,24,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+204,24,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+205,24,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+206,24,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+207,24,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+208,24,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+209,24,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+210,25,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+211,25,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+212,25,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+213,25,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+214,25,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+215,25,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+216,25,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+217,25,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+218,26,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+219,26,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+220,26,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+221,26,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+222,26,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+223,26,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+224,26,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+225,26,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+226,27,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+227,27,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+228,27,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+229,27,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+230,27,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+231,27,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+232,27,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+233,27,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+234,28,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+235,28,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+236,28,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+237,28,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+238,28,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+239,28,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+240,28,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+241,28,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+242,29,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+243,29,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+244,29,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+245,29,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+246,29,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+247,29,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+248,29,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+249,29,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+250,30,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+251,30,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+252,30,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+253,30,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+254,30,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+255,30,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+256,30,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+257,30,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+258,30,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+259,31,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+260,31,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+261,31,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+262,31,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+263,31,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+264,31,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+265,31,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+266,31,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+267,31,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+268,32,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+269,32,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+270,32,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+271,32,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+272,32,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+273,32,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+274,32,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+275,32,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+276,32,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+277,33,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+278,33,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+279,33,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+280,33,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+281,33,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+282,33,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+283,33,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+284,33,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+285,33,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+286,34,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+287,34,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+288,34,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+289,34,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+290,34,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+291,34,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+292,34,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+293,34,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+294,34,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+295,35,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+296,35,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+297,35,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+298,35,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+299,35,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+300,35,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+301,35,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+302,35,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+303,35,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+304,36,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+305,36,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+306,36,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+307,36,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+308,36,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+309,36,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+310,36,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+311,36,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+312,36,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+313,37,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+314,37,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+315,37,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+316,37,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+317,37,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+318,37,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+319,37,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+320,37,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+321,37,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+322,38,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+323,38,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+324,38,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+325,38,"[u-, -1.56]",-(-1.56),1.610597848892212,-0.24987003207206726,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+326,38,"[sqrt, 3.91]",sqrt(abs(3.91)),1.356748104095459,-0.2370223104953766,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+327,38,"[u-, x_7]",-(x_7),4.782969951629639,-0.2558142840862274,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+328,38,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+329,38,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+330,38,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+331,38,"[sin, x_2]",sin(x_2),5.580158233642578,-0.2864687144756317,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+332,38,"[cos, x_0]",cos(x_0),3.680777072906494,-0.2541995942592621,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+333,39,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+334,39,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+335,39,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+336,39,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+337,39,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+338,39,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+339,39,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+340,39,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+341,39,"[u-, 4.23]",-(4.23),41.072818756103516,-0.324826717376709,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+342,40,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+343,40,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+344,40,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+345,40,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+346,40,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+347,40,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+348,40,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+349,40,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+350,40,"[sin, 3.07]",sin(3.07),5.352682590484619,-0.32969629764556885,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+351,41,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+352,41,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+353,41,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+354,41,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+355,41,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+356,41,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+357,41,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+358,41,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+359,41,"[log, 1.82]",log(abs(1.82)),3.5201849937438965,-0.3334890604019165,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+360,41,"[**3, x_4]",(x_4)**3,216555.71875,-0.33544886112213135,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+361,42,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+362,42,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+363,42,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+364,42,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+365,42,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+366,42,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+367,42,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+368,42,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+369,42,"[log, 1.82]",log(abs(1.82)),3.5201849937438965,-0.3334890604019165,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+370,42,"[exp, x_4]",exp(x_4),1.0000000200408773e+20,-0.3550596237182617,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+371,42,"[cos, 1.84]",cos(1.84),6.817417621612549,-0.33354616165161133,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+372,42,"[sin, 3.91]",sin(3.91),9.008259773254395,-0.3522322475910187,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+373,42,"[exp, u-, x_6]",exp(-(x_6)),3.0119383335113525,-0.3041369318962097,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+374,43,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+375,43,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+376,43,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+377,43,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+378,43,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+379,43,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+380,43,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+381,43,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+382,43,"[exp, x_1]",exp(x_1),2.5021045207977295,-0.35640397667884827,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+383,43,"[log, -, x_2, 3.53]",log(abs((x_2-3.53))),2.381145715713501,-0.3120492398738861,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+384,43,"[log, x_0]",log(abs(x_0)),11.11337661743164,-0.35971155762672424,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+385,44,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+386,44,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+387,44,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+388,44,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+389,44,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+390,44,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+391,44,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+392,44,"[log, 3.19]",log(abs(3.19)),2.1807923316955566,-0.3036476969718933,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+393,44,"[exp, x_1]",exp(x_1),2.5021045207977295,-0.35640397667884827,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+394,44,"[exp, -1.56]",exp(-1.56),4.817126750946045,-0.4049778878688812,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+395,44,"[exp, sin, 3.07]",exp(sin(3.07)),2.3449230194091797,-0.32538270950317383,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+396,44,"[sin, x_6]",sin(x_6),4.861762523651123,-0.4095776677131653,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+397,44,"[u-, x_0]",-(x_0),8.41468334197998,-0.4185897707939148,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+398,44,"[log, 1.57]",log(abs(1.57)),3.9776039123535156,-0.40286746621131897,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+399,44,"[**, -0.6, x_0]",(-0.6**x_0),3.1627442836761475,-0.3720613121986389,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+400,45,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+401,45,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+402,45,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+403,45,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+404,45,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+405,45,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+406,45,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+407,45,"[exp, 0.66]",exp(0.66),1.3666869401931763,-0.4345855712890625,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+408,46,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+409,46,"[exp, sqrt, sqrt, x_0]",exp(sqrt(abs(sqrt(abs(x_0))))),1.2219418287277222,-0.2009764313697815,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+410,46,"[exp, cos, u-, cos, x_2]",exp(cos(-(cos(x_2)))),1.2734631299972534,-0.20293861627578735,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+411,46,"[exp, cos, sin, exp, u-, x_2]",exp(cos(sin(exp(-(x_2))))),1.24031662940979,-0.20098915696144104,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+412,46,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+413,46,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+414,46,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+415,46,"[exp, 0.66]",exp(0.66),1.3666869401931763,-0.4345855712890625,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+416,46,"[sin, 1.82]",sin(1.82),2.5657567977905273,-0.46947813034057617,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+417,47,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+418,47,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+419,47,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+420,47,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+421,47,"[exp, 0.66]",exp(0.66),1.3666869401931763,-0.4345855712890625,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+422,47,"[sin, 1.82]",sin(1.82),2.5657567977905273,-0.46947813034057617,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+423,47,"[sin, x_4]",sin(x_4),5.877352237701416,-0.5206936597824097,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+424,47,"[**3, 1.57]",(1.57)**3,4.577219009399414,-0.519299328327179,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+425,47,"[exp, cos, u-, 0.66]",exp(cos(-(0.66))),1.3646966218948364,-0.34406939148902893,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+426,47,"[u-, x_6]",-(x_6),7.414253234863281,-0.5446915626525879,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+427,47,"[cos, x_7]",cos(x_7),2.933026075363159,-0.49132561683654785,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+428,47,"[exp, cos, u-, **, x_5, x_0]",exp(cos(-((x_5**x_0)))),1.1477527618408203,-0.20848190784454346,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+429,48,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+430,48,"[exp, sin, cos, x_6]",exp(sin(cos(x_6))),1.3208563327789307,-0.2112831175327301,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+431,48,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+432,48,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+433,48,"[exp, cos, u-, **, x_5, x_0]",exp(cos(-((x_5**x_0)))),1.1477527618408203,-0.20848190784454346,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+434,48,"[exp, -3.21]",exp(-3.21),5.478432655334473,-0.5873435139656067,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+435,48,"[u-, 1.82]",-(1.82),16.50146484375,-0.6080371737480164,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+436,48,"[sin, 0.66]",sin(0.66),3.4782917499542236,-0.5819901823997498,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+437,48,"[sqrt, x_1]",sqrt(abs(x_1)),3.286005973815918,-0.5568748116493225,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+438,48,"[exp, sin, x_6]",exp(sin(x_6)),2.36173415184021,-0.4938172996044159,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+439,48,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+440,49,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+441,49,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+442,49,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+443,49,"[exp, cos, u-, **, x_5, x_0]",exp(cos(-((x_5**x_0)))),1.1477527618408203,-0.20848190784454346,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+444,49,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+445,49,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+446,49,"[exp, 2.0]",exp(2.0),29.610319137573242,-0.6323724985122681,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+447,49,"[exp, cos, u-, **, x_6, x_0]",exp(cos(-((x_6**x_0)))),1.2544150352478027,-0.29410821199417114,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+448,49,"[sin, 1.57]",sin(1.57),2.4985244274139404,-0.6257939338684082,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+449,50,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+450,50,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+451,50,"[sqrt, 4.23]",sqrt(abs(4.23)),1.3479022979736328,-0.2968921661376953,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+452,50,"[exp, cos, u-, **, x_5, x_0]",exp(cos(-((x_5**x_0)))),1.1477527618408203,-0.20848190784454346,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+453,50,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+454,50,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+455,50,"[exp, cos, u-, **, x_6, x_0]",exp(cos(-((x_6**x_0)))),1.2544150352478027,-0.29410821199417114,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+456,50,"[sin, 1.57]",sin(1.57),2.4985244274139404,-0.6257939338684082,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+457,50,"[sin, 2.0]",sin(2.0),2.7013604640960693,-0.6466166973114014,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+458,50,"[exp, cos, x_6]",exp(cos(x_6)),1.4485557079315186,-0.5111639499664307,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+459,50,"[u-, x_0]",-(x_0),8.41468334197998,-0.6627591848373413,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+460,50,"[exp, x_6]",exp(x_6),3.0471317768096924,-0.653872013092041,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+461,51,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+462,51,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+463,51,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+464,51,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+465,51,"[sin, 1.57]",sin(1.57),2.4985244274139404,-0.6257939338684082,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+466,51,"[sin, 2.0]",sin(2.0),2.7013604640960693,-0.6466166973114014,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+467,51,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+468,51,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+469,51,"[cos, x_6]",cos(x_6),2.926415205001831,-0.654739499092102,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+470,51,"[log, x_4]",log(abs(x_4)),11.992032051086426,-0.6853868365287781,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+471,51,"[**3, 0.66]",(0.66)**3,4.534921169281006,-0.6847171187400818,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+472,51,"[u-, 1.57]",-(1.57),14.617568969726562,-0.7148991823196411,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+473,52,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+474,52,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+475,52,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+476,52,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+477,52,"[sin, 1.57]",sin(1.57),2.4985244274139404,-0.6257939338684082,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+478,52,"[sin, 2.0]",sin(2.0),2.7013604640960693,-0.6466166973114014,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+479,52,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+480,52,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+481,52,"[cos, x_6]",cos(x_6),2.926415205001831,-0.654739499092102,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+482,52,"[**3, 0.66]",(0.66)**3,4.534921169281006,-0.6847171187400818,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+483,52,"[cos, x_2]",cos(x_2),3.4552178382873535,-0.6767213940620422,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+484,52,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+485,52,"[sin, 3.53]",sin(3.53),7.3575239181518555,-0.7258066534996033,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+486,52,"[u-, 2.0]",-(2.0),17.935270309448242,-0.7656546235084534,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+487,53,"[exp, cos, sqrt, exp, u-, x_0]",exp(cos(sqrt(abs(exp(-(x_0)))))),0.9753648042678833,-0.18935313820838928,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+488,53,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+489,53,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+490,53,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+491,53,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+492,53,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+493,53,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+494,53,"[exp, 3.53]",exp(3.53),1028.6256103515625,-0.8299065828323364,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+495,53,"[log, x_6]",log(abs(x_6)),18.07914161682129,-0.8236632347106934,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+496,53,"[sqrt, 2.0]",sqrt(abs(2.0)),1.7813674211502075,-0.8050196766853333,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+497,53,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.611840546131134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+498,54,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+499,54,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+500,54,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+501,54,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+502,54,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+503,54,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+504,54,"[sqrt, 2.0]",sqrt(abs(2.0)),1.7813674211502075,-0.8050196766853333,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+505,54,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.611840546131134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+506,54,"[u-, x_2]",-(x_2),9.404465675354004,-0.9548875093460083,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+507,54,"[log, 1.37]",log(abs(1.37)),4.438137531280518,-0.949580729007721,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+508,54,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+509,55,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+510,55,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+511,55,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+512,55,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+513,55,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+514,55,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+515,55,"[sqrt, 2.0]",sqrt(abs(2.0)),1.7813674211502075,-0.8050196766853333,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+516,55,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.611840546131134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+517,55,"[log, 1.37]",log(abs(1.37)),4.438137531280518,-0.949580729007721,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+518,55,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+519,55,"[sin, -2.97]",sin(-2.97),6.38112735748291,-1.0408841371536255,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+520,55,"[sin, x_3]",sin(x_3),6.125005722045898,-1.0201746225357056,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+521,56,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+522,56,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+523,56,"[sqrt, 2.15]",sqrt(abs(2.15)),1.715489387512207,-0.6167227029800415,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+524,56,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+525,56,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+526,56,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+527,56,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.611840546131134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+528,56,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+529,56,"[exp, u-, 0.66]",exp(-(0.66)),3.7685914039611816,-0.9755641222000122,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+530,56,"[exp, sin, 1.57]",exp(sin(1.57)),1.7643005847930908,-0.8320321440696716,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+531,56,"[exp, 1.37]",exp(1.37),4.816771984100342,-1.1723542213439941,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+532,56,"[sqrt, u-, 1.48]",sqrt(abs(-(1.48))),2.0807876586914062,-0.8988721966743469,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+533,57,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+534,57,"[exp, log, 2.0]",exp(log(abs(2.0))),1.3529417514801025,-0.48529526591300964,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+535,57,"[exp, sin, 0.66]",exp(sin(0.66)),1.3989973068237305,-0.5857745409011841,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+536,57,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+537,57,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+538,57,"[exp, cos, x_3]",exp(cos(x_3)),1.6246933937072754,-0.611840546131134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+539,57,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+540,57,"[exp, sin, 1.57]",exp(sin(1.57)),1.7643005847930908,-0.8320321440696716,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+541,57,"[exp, cos, sin, 0.66]",exp(cos(sin(0.66))),1.384835124015808,-0.5081396102905273,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+542,57,"[log, u-, -, u-, x_0, 3.53]",log(abs(-((-(x_0)-3.53)))),1.6818445920944214,-0.7439855337142944,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+543,57,"[u-, 0.66]",-(0.66),8.815790176391602,-1.3645063638687134,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+544,57,"[+, 1.48, x_6]",(1.48+x_6),1.9097076654434204,-1.0397502183914185,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+545,57,"[sqrt, x_6]",sqrt(abs(x_6)),3.761059522628784,-1.196506381034851,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+546,58,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+547,58,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+548,58,"[exp, sin, sqrt, x_0]",exp(sin(sqrt(abs(x_0)))),1.263837218284607,-0.41703876852989197,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+549,58,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+550,58,"[exp, sin, 2.0]",exp(sin(2.0)),1.515568494796753,-1.325685739517212,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+551,58,"[sin, 1.37]",sin(1.37),2.542036294937134,-1.6236926317214966,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+552,58,"[+, 1.48, sin, 0.66]",(1.48+sin(0.66)),1.348056435585022,-1.225260615348816,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+553,58,"[u-, x_0]",-(x_0),8.41468334197998,-1.6517300605773926,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+554,59,"[**3, log, u-, -, u-, x_0, 3.53]",(log(abs(-((-(x_0)-3.53)))))**3,0.9423897862434387,-0.11310021579265594,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+555,59,"[exp, cos, exp, u-, x_0]",exp(cos(exp(-(x_0)))),0.9938614964485168,-0.31559357047080994,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+556,59,"[exp, cos, exp, u-, **3, x_0]",exp(cos(exp(-((x_0)**3)))),0.9464565515518188,-0.19761624932289124,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+557,59,"[sin, 1.37]",sin(1.37),2.542036294937134,-1.6236926317214966,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+558,59,"[+, 1.48, sin, 0.66]",(1.48+sin(0.66)),1.348056435585022,-1.225260615348816,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+559,59,"[u-, x_3]",-(x_3),37.04387664794922,-1.9229958057403564,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+560,59,"[u-, x_7]",-(x_7),4.782969951629639,-1.888182520866394,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+561,59,"[sqrt, u-, -, u-, x_0, 3.53]",sqrt(abs(-((-(x_0)-3.53)))),1.0785328149795532,-1.0579562187194824,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+562,59,"[log, exp, 2.15]",log(abs(exp(2.15))),1.3536045551300049,-1.6221507787704468,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
+563,59,"[sin, 2.0]",sin(2.0),2.7013604640960693,-1.8641610145568848,201,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,california
