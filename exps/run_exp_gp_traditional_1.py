@@ -56,6 +56,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
 
 
 if __name__ == "__main__":
+    #exit(1)
     # Setting torch to use deterministic algorithms where possible
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_traditional"
-    pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
+    #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
     for data_path_file in ["california", "diabets", "windspeed", "friedman1", "vladislavleva", "boston"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
@@ -74,7 +75,7 @@ if __name__ == "__main__":
         second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
         warmups = ["feynman", "elastic_model"]
         second_fitnesses = [None] + list(second_fitness.keys())
-        encoders = {"counts": structure.get_encoder("counts"), "level_wise_counts": structure.get_encoder("level_wise_counts")}
+        encoders = {"counts": structure.get_encoder("counts")}
         for curr_second_fitness in second_fitnesses:
             if curr_second_fitness is not None:
                 evaluators = [MSEEvaluator(dataset["training"][0], dataset["training"][1]),
@@ -83,7 +84,7 @@ if __name__ == "__main__":
                                                   pop_size=pop_size, num_gen=num_gen,
                                                   duplicates_elimination_data=duplicates_elimination_little_data)
                 pp = partial(runner.run_minimization, verbose=False, save_history=True, mutex=None)
-                results = pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
+                results = map(pp, list(range(starting_seed, starting_seed + num_repeats)))
                 PicklePersist.compress_pickle(folder_name+"/"+data_path_file+"-"+curr_second_fitness, results)
                 print("Executed "+data_path_file+" "+curr_second_fitness)
             else:
@@ -94,9 +95,8 @@ if __name__ == "__main__":
                                      dataset=dataset, structure=structure, encoder=encoders[encoding_type],
                                      encoding_type=encoding_type, warmup=warmup,
                                      data_generator=data_generator, device=device)
-                        results = pool.map(pp, list(range(starting_seed, starting_seed + num_repeats)))
+                        results = map(pp, list(range(starting_seed, starting_seed + num_repeats)))
                         PicklePersist.compress_pickle(folder_name + "/" + data_path_file + "-" + "neuralnet"+"-"+encoding_type+"-"+warmup, results)
                         print("Executed " + data_path_file + " " + "neuralnet"+" "+encoding_type+" "+warmup)
-
-    pool.close()
-    pool.join()
+    #pool.close()
+    #pool.join()
