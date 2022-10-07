@@ -1,4 +1,5 @@
 import numpy as np
+from genepro.util import compute_linear_scaling
 
 from genepro.node import Node
 from nsgp.evaluation.TreeEvaluator import TreeEvaluator
@@ -17,12 +18,16 @@ class MSEEvaluator(TreeEvaluator):
                 f"y must be one-dimensional. The number of dimensions that have been detected in y are, on the contrary, {len(y.shape)}.")
         self.__X = X
         self.__y = y
+        self.__linear_scaling = linear_scaling
 
     def evaluate(self, tree: Node) -> float:
-        res: np.ndarray = tree(self.__X)
-        if self.linear_scaling:
+        res: np.ndarray = np.clip(tree(self.__X), -1e+10, 1e+10)
+        if self.__linear_scaling:
             slope, intercept = compute_linear_scaling(self.__y, res)
-            res = intercept + slope * res
+            slope = np.clip(slope, -1e+10, 1e+10)
+            intercept = np.clip(intercept, -1e+10, 1e+10)
+            res = intercept + np.clip(slope * res, -1e+10, 1e+10)
+            res = np.clip(res, -1e+10, 1e+10)
         mse: float = np.square(np.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(len(self.__y))
         if mse > 1e+20:
             mse = 1e+20
