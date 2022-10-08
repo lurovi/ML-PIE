@@ -1,0 +1,471 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[exp, *, x_3, *, -, x_4, x_3, +, x_0, x_3]",exp((x_3*((x_4-x_3)*(x_0+x_3)))),24.031139373779297,-66.69999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+1,0,"[log, sqrt, exp, +, -, 1.46, x_5, x_4]",log(abs(sqrt(abs(exp(((1.46-x_5)+x_4)))))),23.014705657958984,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+2,0,[x_3],x_3,24.339555740356445,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+3,0,"[u-, **2, x_4]",-((x_4)**2),24.260019302368164,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+4,0,"[**3, +, **, u-, +, x_6, x_5, **2, x_2, /, x_3, *, x_6, x_2]",(((-((x_6+x_5))**(x_2)**2)+(x_3/(x_6*x_2))))**3,22.800586700439453,-48.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+5,1,"[log, sqrt, exp, +, -, 1.46, x_5, x_4]",log(abs(sqrt(abs(exp(((1.46-x_5)+x_4)))))),23.014705657958984,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+6,1,[x_3],x_3,24.339555740356445,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+7,1,"[u-, **2, x_4]",-((x_4)**2),24.260019302368164,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+8,1,"[**3, +, **, u-, +, x_6, x_5, **2, x_2, /, x_3, *, x_6, x_2]",(((-((x_6+x_5))**(x_2)**2)+(x_3/(x_6*x_2))))**3,22.800586700439453,-48.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+9,1,"[u-, u-, **3, -, x_4, *, x_1, x_4]",-(-(((x_4-(x_1*x_4)))**3)),23.852720260620117,-67.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+10,1,"[sqrt, u-, u-, +, x_3, x_3]",sqrt(abs(-(-((x_3+x_3))))),24.13734245300293,-68.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+11,1,"[cos, exp, sin, u-, -, x_4, x_1]",cos(exp(sin(-((x_4-x_1))))),23.661787033081055,-51.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+12,2,[x_3],x_3,24.339555740356445,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+13,2,"[u-, **2, x_4]",-((x_4)**2),24.260019302368164,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+14,2,"[u-, /, +, *, -, -1.17, x_0, +, x_4, x_2, **, -1.13, x_6, /, x_0, **, x_5, +, x_0, x_1]",-(((((-1.17-x_0)*(x_4+x_2))+(-1.13**x_6))/(x_0/(x_5**(x_0+x_1))))),22.607711791992188,-58.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+15,2,"[**3, -, x_4, x_5]",((x_4-x_5))**3,23.83583641052246,-69.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+16,2,"[u-, u-, cos, +, log, x_0, x_4]",-(-(cos((log(abs(x_0))+x_4)))),23.487485885620117,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+17,3,[x_3],x_3,24.339555740356445,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+18,3,"[u-, /, +, *, -, -1.17, x_0, +, x_4, x_2, **, -1.13, x_6, /, x_0, **, x_5, +, x_0, x_1]",-(((((-1.17-x_0)*(x_4+x_2))+(-1.13**x_6))/(x_0/(x_5**(x_0+x_1))))),22.607711791992188,-58.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+19,3,"[**3, -, x_4, x_5]",((x_4-x_5))**3,23.83583641052246,-69.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+20,3,"[+, x_0, log, u-, **, **3, x_2, x_4]",(x_0+log(abs(-(((x_2)**3**x_4))))),22.591745376586914,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+21,3,"[cos, x_3]",cos(x_3),24.21845817565918,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+22,3,"[sqrt, exp, +, -, 1.46, x_3, x_4]",sqrt(abs(exp(((1.46-x_3)+x_4)))),22.647924423217773,-59.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+23,4,"[u-, /, +, *, -, -1.17, x_0, +, x_4, x_2, **, -1.13, x_6, /, x_0, **, x_5, +, x_0, x_1]",-(((((-1.17-x_0)*(x_4+x_2))+(-1.13**x_6))/(x_0/(x_5**(x_0+x_1))))),22.607711791992188,-58.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+24,4,"[+, x_0, log, u-, **, **3, x_2, x_4]",(x_0+log(abs(-(((x_2)**3**x_4))))),22.591745376586914,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+25,4,"[sqrt, exp, +, -, 1.46, x_3, x_4]",sqrt(abs(exp(((1.46-x_3)+x_4)))),22.647924423217773,-59.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+26,4,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+27,4,"[-, exp, **2, -3.5, -, /, **3, **, x_2, x_4, x_0, /, x_1, *, -, x_3, x_5, x_6]",(exp((-3.5)**2)-((((x_2**x_4))**3/x_0)-(x_1/((x_3-x_5)*x_6)))),22.57902717590332,-47.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+28,4,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+29,5,"[u-, /, +, *, -, -1.17, x_0, +, x_4, x_2, **, -1.13, x_6, /, x_0, **, x_5, +, x_0, x_1]",-(((((-1.17-x_0)*(x_4+x_2))+(-1.13**x_6))/(x_0/(x_5**(x_0+x_1))))),22.607711791992188,-58.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+30,5,"[sqrt, exp, +, -, 1.46, x_3, x_4]",sqrt(abs(exp(((1.46-x_3)+x_4)))),22.647924423217773,-59.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+31,5,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+32,5,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+33,5,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+34,5,"[+, x_3, log, u-, **, **3, x_2, x_4]",(x_3+log(abs(-(((x_2)**3**x_4))))),22.31389808654785,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+35,6,"[sqrt, exp, +, -, 1.46, x_3, x_4]",sqrt(abs(exp(((1.46-x_3)+x_4)))),22.647924423217773,-59.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+36,6,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+37,6,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+38,6,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+39,6,"[+, x_3, log, u-, **, **3, x_2, x_4]",(x_3+log(abs(-(((x_2)**3**x_4))))),22.31389808654785,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+40,6,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+41,7,"[sqrt, exp, +, -, 1.46, x_3, x_4]",sqrt(abs(exp(((1.46-x_3)+x_4)))),22.647924423217773,-59.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+42,7,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+43,7,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+44,7,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+45,7,"[+, x_3, log, u-, **, **3, x_2, x_4]",(x_3+log(abs(-(((x_2)**3**x_4))))),22.31389808654785,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+46,7,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+47,7,"[*, -2.52, sqrt, -, +, **, x_1, x_3, sin, x_1, x_0]",(-2.52*sqrt(abs((((x_1**x_3)+sin(x_1))-x_0)))),22.420806884765625,-54.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+48,8,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+49,8,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+50,8,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+51,8,"[+, x_3, log, u-, **, **3, x_2, x_4]",(x_3+log(abs(-(((x_2)**3**x_4))))),22.31389808654785,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+52,8,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+53,8,"[*, -2.52, sqrt, -, +, **, x_1, x_3, sin, x_1, x_0]",(-2.52*sqrt(abs((((x_1**x_3)+sin(x_1))-x_0)))),22.420806884765625,-54.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+54,8,"[sqrt, **, x_1, x_3]",sqrt(abs((x_1**x_3))),22.510107040405273,-61.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+55,8,"[**3, +, *, u-, x_4, x_5, /, x_3, *, x_0, x_2]",(((-(x_4)*x_5)+(x_3/(x_0*x_2))))**3,22.690656661987305,-66.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+56,9,"[exp, x_4]",exp(x_4),22.948822021484375,-70.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+57,9,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+58,9,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+59,9,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+60,9,"[sqrt, **, x_1, x_3]",sqrt(abs((x_1**x_3))),22.510107040405273,-61.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+61,9,"[**, x_0, x_3]",(x_0**x_3),22.66474723815918,-70.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+62,9,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+63,10,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+64,10,"[**, cos, cos, u-, **2, x_2, **3, **, cos, cos, 2.55, +, -, x_2, x_3, x_4]",(cos(cos(-((x_2)**2)))**((cos(cos(2.55))**((x_2-x_3)+x_4)))**3),22.16901397705078,-20.700000762939453,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+65,10,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+66,10,"[sqrt, **, x_1, x_3]",sqrt(abs((x_1**x_3))),22.510107040405273,-61.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+67,10,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+68,10,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+69,11,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+70,11,"[u-, *, u-, x_4, log, sin, x_2]",-((-(x_4)*log(abs(sin(x_2))))),22.467971801757812,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+71,11,"[sqrt, **, x_1, x_3]",sqrt(abs((x_1**x_3))),22.510107040405273,-61.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+72,11,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+73,11,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+74,11,"[u-, *, u-, x_4, **2, cos, sqrt, x_6]",-((-(x_4)*(cos(sqrt(abs(x_6))))**2)),22.085355758666992,-50.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+75,12,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+76,12,"[sqrt, **, x_1, x_3]",sqrt(abs((x_1**x_3))),22.510107040405273,-61.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+77,12,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+78,12,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+79,12,"[u-, *, u-, x_4, **2, cos, sqrt, x_6]",-((-(x_4)*(cos(sqrt(abs(x_6))))**2)),22.085355758666992,-50.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+80,12,"[sqrt, exp, -, x_4, u-, u-, x_6]",sqrt(abs(exp((x_4--(-(x_6)))))),22.197879791259766,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+81,12,"[exp, -, x_4, u-, u-, x_3]",exp((x_4--(-(x_3)))),22.516361236572266,-68.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+82,13,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+83,13,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+84,13,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+85,13,"[u-, *, u-, x_4, **2, cos, sqrt, x_6]",-((-(x_4)*(cos(sqrt(abs(x_6))))**2)),22.085355758666992,-50.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+86,13,"[sqrt, exp, -, x_4, u-, u-, x_6]",sqrt(abs(exp((x_4--(-(x_6)))))),22.197879791259766,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+87,13,"[u-, -, sin, x_1, +, **, x_0, x_3, x_4]",-((sin(x_1)-((x_0**x_3)+x_4))),22.214454650878906,-63.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+88,13,"[-, x_4, u-, u-, x_6]",(x_4--(-(x_6))),22.26861572265625,-76.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+89,14,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+90,14,"[sin, *, u-, x_4, cos, +, u-, x_5, x_2]",sin((-(x_4)*cos((-(x_5)+x_2)))),22.172992706298828,-58.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+91,14,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+92,14,"[u-, *, u-, x_4, **2, cos, sqrt, x_6]",-((-(x_4)*(cos(sqrt(abs(x_6))))**2)),22.085355758666992,-50.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+93,14,"[sqrt, exp, -, x_4, u-, u-, x_6]",sqrt(abs(exp((x_4--(-(x_6)))))),22.197879791259766,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+94,14,"[u-, -, sin, x_1, +, **, x_0, x_3, x_4]",-((sin(x_1)-((x_0**x_3)+x_4))),22.214454650878906,-63.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+95,14,"[-, x_4, u-, u-, x_6]",(x_4--(-(x_6))),22.26861572265625,-76.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+96,15,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+97,15,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+98,15,"[u-, *, u-, x_4, **2, cos, sqrt, x_6]",-((-(x_4)*(cos(sqrt(abs(x_6))))**2)),22.085355758666992,-50.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+99,15,"[sqrt, exp, -, x_4, u-, u-, x_6]",sqrt(abs(exp((x_4--(-(x_6)))))),22.197879791259766,-59.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+100,15,"[u-, -, sin, x_1, +, **, x_0, x_3, x_4]",-((sin(x_1)-((x_0**x_3)+x_4))),22.214454650878906,-63.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+101,15,"[-, x_4, u-, u-, x_6]",(x_4--(-(x_6))),22.26861572265625,-76.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+102,15,"[sin, *, x_4, cos, +, u-, x_5, x_2]",sin((x_4*cos((-(x_5)+x_2)))),22.172992706298828,-59.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+103,16,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+104,16,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+105,16,"[u-, +, -, x_4, u-, u-, x_6, x_4]",-(((x_4--(-(x_6)))+x_4)),21.78754425048828,-75.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+106,16,"[-, +, x_4, x_4, x_5]",((x_4+x_4)-x_5),22.267940521240234,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+107,17,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+108,17,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+109,17,"[u-, +, -, x_4, u-, u-, x_6, x_4]",-(((x_4--(-(x_6)))+x_4)),21.78754425048828,-75.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+110,17,"[-, +, x_4, x_4, x_5]",((x_4+x_4)-x_5),22.267940521240234,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+111,18,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+112,18,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+113,18,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+114,19,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+115,19,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+116,19,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+117,19,"[u-, +, x_4, sin, **, **3, x_2, x_3]",-((x_4+sin(((x_2)**3**x_3)))),21.453166961669922,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+118,20,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+119,20,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+120,20,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+121,20,"[u-, +, x_4, sin, **, **3, x_2, x_3]",-((x_4+sin(((x_2)**3**x_3)))),21.453166961669922,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+122,21,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+123,21,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+124,21,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+125,21,"[u-, +, x_4, sin, **, **3, x_2, x_3]",-((x_4+sin(((x_2)**3**x_3)))),21.453166961669922,-51.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+126,22,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+127,22,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+128,22,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+129,22,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+130,23,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+131,23,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+132,23,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+133,23,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+134,24,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+135,24,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+136,24,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+137,24,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+138,25,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+139,25,"[+, x_4, x_2]",(x_4+x_2),22.534421920776367,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+140,25,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+141,25,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+142,26,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+143,26,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+144,26,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+145,26,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+146,27,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+147,27,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+148,27,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+149,27,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+150,28,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+151,28,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+152,28,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+153,28,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+154,28,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, sin, x_1, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-(sin(x_1)-((x_0**x_3)+x_4))),21.317514419555664,-39.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+155,28,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+156,29,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+157,29,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+158,29,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+159,29,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+160,29,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, sin, x_1, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-(sin(x_1)-((x_0**x_3)+x_4))),21.317514419555664,-39.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+161,29,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+162,29,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+163,30,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+164,30,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+165,30,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+166,30,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+167,30,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, sin, x_1, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-(sin(x_1)-((x_0**x_3)+x_4))),21.317514419555664,-39.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+168,30,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+169,30,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+170,31,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+171,31,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+172,31,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+173,31,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+174,31,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, sin, x_1, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-(sin(x_1)-((x_0**x_3)+x_4))),21.317514419555664,-39.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+175,31,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+176,31,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+177,32,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+178,32,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+179,32,"[+, x_4, sin, **, **3, x_2, x_3]",(x_4+sin(((x_2)**3**x_3))),21.453166961669922,-52.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+180,32,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+181,32,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+182,32,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+183,32,"[-, +, -, cos, **2, x_1, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((cos((x_1)**2)--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.129621505737305,-49.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+184,33,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+185,33,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+186,33,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+187,33,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_1]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_1),21.59982681274414,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+188,33,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+189,33,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),21.013778686523438,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+190,33,"[-, +, **, x_0, x_3, -, +, x_4, x_4, *, u-, x_6, x_5, x_6]",(((x_0**x_3)+((x_4+x_4)-(-(x_6)*x_5)))-x_6),21.48821449279785,-64.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+191,34,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+192,34,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+193,34,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+194,34,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+195,34,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),21.013778686523438,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+196,34,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_6),21.426889419555664,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+197,35,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+198,35,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+199,35,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+200,35,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+201,35,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),21.013778686523438,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+202,35,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_6),21.426889419555664,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+203,36,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+204,36,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+205,36,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+206,36,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+207,36,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),21.013778686523438,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+208,36,"[-, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+((x_0**x_3)+(x_0+x_4)))-x_6),21.426889419555664,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+209,36,"[-, +, x_4, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((x_4+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),21.2650203704834,-60.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+210,37,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+211,37,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+212,37,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+213,37,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+214,37,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.9060001373291,-37.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+215,37,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+216,37,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+217,38,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+218,38,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+219,38,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+220,38,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+221,38,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.9060001373291,-37.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+222,38,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+223,38,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+224,38,"[-, +, x_4, -, +, u-, 4.02, x_4, *, u-, x_5, x_5, x_6]",((x_4+((-(4.02)+x_4)-(-(x_5)*x_5)))-x_6),21.655792236328125,-73.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+225,38,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+226,39,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+227,39,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+228,39,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+229,39,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+230,39,"[-, +, **, **3, sqrt, -4.1, -, x_5, x_6, +, x_0, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((sqrt(abs(-4.1)))**3**(x_5-x_6))+(x_0+x_4))-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.9060001373291,-37.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+231,39,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+232,39,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+233,39,"[-, +, x_4, -, +, u-, 4.02, x_4, *, u-, x_5, x_5, x_6]",((x_4+((-(4.02)+x_4)-(-(x_5)*x_5)))-x_6),21.655792236328125,-73.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+234,39,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+235,39,"[-, +, x_4, x_4, -, -, u-, u-, x_6, x_4, +, **, x_0, x_3, x_4]",((x_4+x_4)-((-(-(x_6))-x_4)-((x_0**x_3)+x_4))),21.31392478942871,-64.19999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+236,40,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+237,40,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+238,40,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+239,40,"[+, x_4, +, **, x_0, x_3, +, x_0, x_4]",(x_4+((x_0**x_3)+(x_0+x_4))),21.60879898071289,-67.4000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+240,40,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+241,40,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+242,40,"[-, +, x_4, -, +, u-, 4.02, x_4, *, u-, x_5, x_5, x_6]",((x_4+((-(4.02)+x_4)-(-(x_5)*x_5)))-x_6),21.655792236328125,-73.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+243,40,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+244,40,"[-, +, x_4, x_4, -, -, u-, u-, x_6, x_4, +, **, x_0, x_3, x_4]",((x_4+x_4)-((-(-(x_6))-x_4)-((x_0**x_3)+x_4))),21.31392478942871,-64.19999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+245,40,"[u-, -, +, -, +, x_4, x_4, u-, x_2, +, **, x_0, x_3, +, x_0, x_4, x_1]",-(((((x_4+x_4)--(x_2))+((x_0**x_3)+(x_0+x_4)))-x_1)),21.275907516479492,-63.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+246,40,"[-, +, -, +, x_4, x_4, *, u-, x_4, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_4)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.846202850341797,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+247,41,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+248,41,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+249,41,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+250,41,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+251,41,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+252,41,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+253,41,"[-, +, x_4, x_4, -, -, u-, u-, x_6, x_4, +, **, x_0, x_3, x_4]",((x_4+x_4)-((-(-(x_6))-x_4)-((x_0**x_3)+x_4))),21.31392478942871,-64.19999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+254,41,"[u-, -, +, -, +, x_4, x_4, u-, x_2, +, **, x_0, x_3, +, x_0, x_4, x_1]",-(((((x_4+x_4)--(x_2))+((x_0**x_3)+(x_0+x_4)))-x_1)),21.275907516479492,-63.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+255,41,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+256,41,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+257,41,"[+, +, +, u-, -4.25, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(-4.25)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),21.003267288208008,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+258,42,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+259,42,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+260,42,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+261,42,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+262,42,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+263,42,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+264,42,"[-, +, x_4, x_4, -, -, u-, u-, x_6, x_4, +, **, x_0, x_3, x_4]",((x_4+x_4)-((-(-(x_6))-x_4)-((x_0**x_3)+x_4))),21.31392478942871,-64.19999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+265,42,"[u-, -, +, -, +, x_4, x_4, u-, x_2, +, **, x_0, x_3, +, x_0, x_4, x_1]",-(((((x_4+x_4)--(x_2))+((x_0**x_3)+(x_0+x_4)))-x_1)),21.275907516479492,-63.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+266,42,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+267,42,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+268,42,"[+, +, +, u-, -4.25, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(-4.25)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),21.003267288208008,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+269,42,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+270,43,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+271,43,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+272,43,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+273,43,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+274,43,"[-, +, -, +, x_1, +, x_4, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",((((x_1+(x_4+x_4))--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),20.995399475097656,-60.79999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+275,43,"[-, +, x_4, +, **, x_0, x_3, +, +, x_0, x_4, x_4, x_5]",((x_4+((x_0**x_3)+((x_0+x_4)+x_4)))-x_5),21.31614875793457,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+276,43,"[-, +, x_4, x_4, -, -, u-, u-, x_6, x_4, +, **, x_0, x_3, x_4]",((x_4+x_4)-((-(-(x_6))-x_4)-((x_0**x_3)+x_4))),21.31392478942871,-64.19999694824219,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+277,43,"[u-, -, +, -, +, x_4, x_4, u-, x_2, +, **, x_0, x_3, +, x_0, x_4, x_1]",-(((((x_4+x_4)--(x_2))+((x_0**x_3)+(x_0+x_4)))-x_1)),21.275907516479492,-63.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+278,43,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+279,43,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+280,43,"[+, +, +, u-, -4.25, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(-4.25)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),21.003267288208008,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+281,43,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+282,44,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+283,44,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+284,44,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+285,44,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+286,44,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+287,44,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+288,44,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+289,44,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+290,44,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+291,45,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+292,45,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+293,45,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+294,45,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+295,45,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+296,45,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+297,45,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+298,45,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+299,45,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+300,45,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_0]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_0))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+301,45,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+302,45,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+303,46,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+304,46,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+305,46,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+306,46,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+307,46,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+308,46,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+309,46,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+310,46,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+311,46,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+312,46,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_0]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_0))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+313,46,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+314,46,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+315,47,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+316,47,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+317,47,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+318,47,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+319,47,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+320,47,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+321,47,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+322,47,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+323,47,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+324,47,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_0]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_0))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+325,47,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+326,47,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+327,47,"[-, +, -, +, x_4, x_4, *, u-, x_4, x_5, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_4)*x_5))+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.767982482910156,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+328,48,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+329,48,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+330,48,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+331,48,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+332,48,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+333,48,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+334,48,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+335,48,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+336,48,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+337,48,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_0]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_0))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+338,48,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+339,48,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+340,48,"[-, +, -, +, x_4, x_4, *, u-, x_4, x_5, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_4)*x_5))+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.767982482910156,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+341,48,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_0, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_0+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+342,49,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+343,49,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+344,49,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+345,49,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+346,49,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+347,49,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_0, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_0)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+348,49,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+349,49,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+350,49,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+351,49,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_0]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_0))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+352,49,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+353,49,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+354,49,"[-, +, -, +, x_4, x_4, *, u-, x_4, x_5, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_4)*x_5))+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.767982482910156,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+355,49,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, -, sin, x_6, +, x_0, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-((sin(x_6)-(x_0+x_2))-((x_0**x_3)+x_4))),20.724233627319336,-57.20000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+356,50,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+357,50,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+358,50,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+359,50,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+360,50,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+361,50,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+362,50,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+363,50,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+364,50,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+365,50,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+366,50,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+367,51,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+368,51,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+369,51,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+370,51,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+371,51,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+372,51,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, x_4, -, x_6, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+x_4)-(x_6-((x_0**x_3)+x_4))),21.07249641418457,-63.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+373,51,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+374,51,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+375,51,"[-, +, -, x_4, u-, u-, x_6, x_4, u-, +, x_4, +, **, x_0, x_3, +, x_0, x_4]",(((x_4--(-(x_6)))+x_4)--((x_4+((x_0**x_3)+(x_0+x_4))))),21.003267288208008,-62.599998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+376,51,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+377,51,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+378,51,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+379,52,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+380,52,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+381,52,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+382,52,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+383,52,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+384,52,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+385,52,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+386,52,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+387,52,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+388,52,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+389,52,"[+, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.779218673706055,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+390,52,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+391,53,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+392,53,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+393,53,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+394,53,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+395,53,"[+, +, -, x_4, u-, u-, x_6, x_4, x_2]",(((x_4--(-(x_6)))+x_4)+x_2),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+396,53,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+397,53,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+398,53,"[+, -, x_4, u-, u-, x_6, +, x_4, x_2]",((x_4--(-(x_6)))+(x_4+x_2)),21.513065338134766,-74.80000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+399,53,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+400,53,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+401,53,"[+, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.779218673706055,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+402,53,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+403,53,"[-, +, x_4, +, -, x_5, x_6, x_4, x_6]",((x_4+((x_5-x_6)+x_4))-x_6),21.756492614746094,-75.30000305175781,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+404,54,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+405,54,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+406,54,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+407,54,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+408,54,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+409,54,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+410,54,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+411,54,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+412,54,"[+, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.779218673706055,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+413,54,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+414,54,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+415,55,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+416,55,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+417,55,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+418,55,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+419,55,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+420,55,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+421,55,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+422,55,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+423,55,"[+, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.779218673706055,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+424,55,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+425,55,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+426,56,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+427,56,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+428,56,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+429,56,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+430,56,"[+, +, +, x_4, x_2, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((x_4+x_2)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.867734909057617,-62.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+431,56,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+432,56,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+433,56,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+434,56,"[+, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4, +, -, x_4, u-, u-, x_6, x_4]",(((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))+((x_4--(-(x_6)))+x_4)),20.779218673706055,-61.70000076293945,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+435,56,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+436,56,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+437,57,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+438,57,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+439,57,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+440,57,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+441,57,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+442,57,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+443,57,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+444,57,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+445,57,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+446,57,"[-, +, -, +, x_4, x_4, x_6, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-x_6)+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.677940368652344,-62.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+447,58,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+448,58,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+449,58,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+450,58,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+451,58,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+452,58,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+453,58,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+454,58,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+455,58,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+456,58,"[-, +, -, +, x_4, x_4, x_6, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-x_6)+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.677940368652344,-62.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+457,58,"[-, +, -, +, x_4, +, x_2, x_4, *, sqrt, x_6, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, *, u-, x_6, x_5]",((((x_4+(x_2+x_4))-(sqrt(abs(x_6))*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-(-(x_6)*x_5)))),20.52788734436035,-55.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+458,59,[x_4],x_4,23.15311622619629,-78.9000015258789,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+459,59,"[-, +, x_4, x_4, x_6]",((x_4+x_4)-x_6),21.78754425048828,-77.0999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+460,59,"[/, x_4, x_2]",(x_4/x_2),22.463680267333984,-78.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+461,59,"[+, +, x_4, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((x_0**x_3)+(x_0+x_4))),21.426631927490234,-66.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+462,59,"[-, +, x_4, +, x_4, +, **, x_0, x_3, +, x_0, x_4, x_6]",((x_4+(x_4+((x_0**x_3)+(x_0+x_4))))-x_6),21.137794494628906,-65.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+463,59,"[-, +, -, +, x_4, x_4, *, u-, x_5, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, x_6]",((((x_4+x_4)-(-(x_5)*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-x_6))),20.570363998413086,-61.29999923706055,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+464,59,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, 0.33, u-, u-, x_6, x_6]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+0.33))--(-(x_6))))-x_6),21.493324279785156,-69.5999984741211,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+465,59,"[+, +, x_4, x_4, +, +, u-, x_6, x_4, +, **, x_0, x_3, +, x_0, x_4]",((x_4+x_4)+((-(x_6)+x_4)+((x_0**x_3)+(x_0+x_4)))),21.003267288208008,-64.0,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+466,59,"[u-, +, -, +, x_4, x_2, x_6, x_4]",-((((x_4+x_2)-x_6)+x_4)),21.513065338134766,-75.5,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+467,59,"[-, +, -, +, x_4, x_4, x_6, x_0, -, -, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-x_6)+x_0)-((x_6-(x_4+x_2))-((x_0**x_3)+x_4))),20.677940368652344,-62.900001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+468,59,"[-, +, -, +, x_4, +, x_2, x_4, *, sqrt, x_6, x_5, x_4, -, x_6, -, +, **, x_0, x_3, +, x_0, x_4, *, u-, x_6, x_5]",((((x_4+(x_2+x_4))-(sqrt(abs(x_6))*x_5))+x_4)-(x_6-(((x_0**x_3)+(x_0+x_4))-(-(x_6)*x_5)))),20.52788734436035,-55.400001525878906,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed
+469,59,"[-, +, -, +, x_4, x_4, *, u-, x_6, x_5, -, +, x_1, +, x_4, x_0, u-, u-, x_6, -, -, sin, x_6, +, x_4, x_2, +, **, x_0, x_3, x_4]",((((x_4+x_4)-(-(x_6)*x_5))+((x_1+(x_4+x_0))--(-(x_6))))-((sin(x_6)-(x_4+x_2))-((x_0**x_3)+x_4))),20.434616088867188,-53.099998474121094,208,210,60,210,not_specified,elastic_model,not_specified,not_specified,windspeed

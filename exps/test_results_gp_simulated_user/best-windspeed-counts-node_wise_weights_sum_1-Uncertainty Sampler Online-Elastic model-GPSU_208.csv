@@ -1,0 +1,970 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+1,0,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+2,0,"[log, sqrt, exp, +, -, 1.46, x_5, x_4]",log(abs(sqrt(abs(exp(((1.46-x_5)+x_4)))))),23.014705657958984,-0.07483556121587753,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+3,0,"[cos, sin, sin, x_6]",cos(sin(sin(x_6))),24.250411987304688,-0.11063900589942932,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+4,0,"[log, sin, **2, **, x_5, x_4]",log(abs(sin(((x_5**x_4))**2))),24.12986946105957,-0.09398933500051498,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+5,0,"[cos, **2, cos, 0.25]",cos((cos(0.25))**2),24.615882873535156,-0.12335620820522308,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+6,0,"[log, **3, -, -4.59, sqrt, x_3]",log(abs(((-4.59-sqrt(abs(x_3))))**3)),24.083024978637695,-0.08806351572275162,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+7,0,"[u-, **2, x_4]",-((x_4)**2),24.260019302368164,-0.11252012848854065,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+8,0,"[**3, +, **, u-, +, x_6, x_5, **2, x_2, /, x_3, *, x_6, x_2]",(((-((x_6+x_5))**(x_2)**2)+(x_3/(x_6*x_2))))**3,22.800586700439453,-0.008739670738577843,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+9,1,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+10,1,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+11,1,"[log, sqrt, exp, +, -, 1.46, x_5, x_4]",log(abs(sqrt(abs(exp(((1.46-x_5)+x_4)))))),23.014705657958984,-0.07483556121587753,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+12,1,"[cos, sin, sin, x_6]",cos(sin(sin(x_6))),24.250411987304688,-0.11063900589942932,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+13,1,"[cos, **2, cos, 0.25]",cos((cos(0.25))**2),24.615882873535156,-0.12335620820522308,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+14,1,"[u-, **2, x_4]",-((x_4)**2),24.260019302368164,-0.11252012848854065,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+15,1,"[**3, +, **, u-, +, -4.06, x_5, **2, x_2, /, x_3, *, x_6, x_2]",(((-((-4.06+x_5))**(x_2)**2)+(x_3/(x_6*x_2))))**3,22.800127029418945,-0.009480919688940048,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+16,1,"[exp, sin, **2, cos, x_3]",exp(sin((cos(x_3))**2)),23.95378303527832,-0.10838306695222855,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+17,1,"[exp, sin, **2, cos, sqrt, x_3]",exp(sin((cos(sqrt(abs(x_3))))**2)),23.795440673828125,-0.10269703716039658,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+18,1,"[**3, sqrt, x_4]",(sqrt(abs(x_4)))**3,24.211286544799805,-0.11014512181282043,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+19,1,"[**3, u-, +, exp, x_4, sqrt, x_4]",(-((exp(x_4)+sqrt(abs(x_4)))))**3,23.55788803100586,-0.0758008286356926,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+20,2,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+21,2,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+22,2,"[log, sqrt, exp, +, -, 1.46, x_5, x_4]",log(abs(sqrt(abs(exp(((1.46-x_5)+x_4)))))),23.014705657958984,-0.07483556121587753,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+23,2,"[cos, **2, cos, 0.25]",cos((cos(0.25))**2),24.615882873535156,-0.12335620820522308,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+24,2,"[exp, sin, **2, cos, x_3]",exp(sin((cos(x_3))**2)),23.95378303527832,-0.10838306695222855,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+25,2,"[sin, x_4]",sin(x_4),23.103776931762695,-0.10703901946544647,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+26,2,"[exp, cos, x_4]",exp(cos(x_4)),24.210779190063477,-0.11364500224590302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+27,2,"[**3, sin, sin, **, /, x_5, x_2, u-, x_3]",(sin(sin(((x_5/x_2)**-(x_3)))))**3,22.791257858276367,-0.05191953480243683,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+28,3,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+29,3,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+30,3,"[exp, sin, **2, cos, x_3]",exp(sin((cos(x_3))**2)),23.95378303527832,-0.10838306695222855,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+31,3,"[sin, x_4]",sin(x_4),23.103776931762695,-0.10703901946544647,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+32,3,"[exp, cos, x_4]",exp(cos(x_4)),24.210779190063477,-0.11364500224590302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+33,3,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+34,3,"[log, exp, +, exp, -, x_4, x_3, *, u-, x_3, -0.1]",log(abs(exp((exp((x_4-x_3))+(-(x_3)*-0.1))))),22.552783966064453,-0.027641911059617996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+35,3,"[**2, u-, cos, u-, x_3]",(-(cos(-(x_3))))**2,23.966848373413086,-0.1097765639424324,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+36,3,"[**3, sin, sin, **, /, x_5, x_1, u-, x_3]",(sin(sin(((x_5/x_1)**-(x_3)))))**3,22.738079071044922,-0.05552767962217331,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+37,3,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+38,4,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+39,4,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+40,4,"[exp, sin, **2, cos, x_3]",exp(sin((cos(x_3))**2)),23.95378303527832,-0.10838306695222855,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+41,4,"[sin, x_4]",sin(x_4),23.103776931762695,-0.10703901946544647,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+42,4,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+43,4,"[log, exp, +, exp, -, x_4, x_3, *, u-, x_3, -0.1]",log(abs(exp((exp((x_4-x_3))+(-(x_3)*-0.1))))),22.552783966064453,-0.027641911059617996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+44,4,"[**2, u-, cos, u-, x_3]",(-(cos(-(x_3))))**2,23.966848373413086,-0.1097765639424324,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+45,4,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+46,4,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+47,4,"[**3, u-, sin, **, /, x_5, x_1, u-, x_3]",(-(sin(((x_5/x_1)**-(x_3)))))**3,22.67384910583496,-0.05873328074812889,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+48,5,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+49,5,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+50,5,"[sin, x_4]",sin(x_4),23.103776931762695,-0.10703901946544647,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+51,5,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+52,5,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+53,5,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+54,5,"[*, **3, exp, cos, **, 2.17, x_2, x_4]",((exp(cos((2.17**x_2))))**3*x_4),22.47339630126953,-0.07084771245718002,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+55,5,"[exp, x_4]",exp(x_4),22.948822021484375,-0.10701645165681839,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+56,5,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+57,5,"[log, sqrt, exp, +, -, x_4, x_5, x_4]",log(abs(sqrt(abs(exp(((x_4-x_5)+x_4)))))),22.267940521240234,-0.06423826515674591,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+58,6,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+59,6,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+60,6,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+61,6,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+62,6,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+63,6,"[*, **3, exp, cos, **, 2.17, x_2, x_4]",((exp(cos((2.17**x_2))))**3*x_4),22.47339630126953,-0.07084771245718002,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+64,6,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+65,6,"[cos, +, -, 1.46, x_6, x_4]",cos(((1.46-x_6)+x_4)),22.2083683013916,-0.0670085996389389,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+66,6,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+67,6,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+68,6,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+69,7,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+70,7,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+71,7,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+72,7,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+73,7,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+74,7,"[*, **3, exp, cos, **, 2.17, x_2, x_4]",((exp(cos((2.17**x_2))))**3*x_4),22.47339630126953,-0.07084771245718002,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+75,7,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+76,7,"[cos, +, -, 1.46, x_6, x_4]",cos(((1.46-x_6)+x_4)),22.2083683013916,-0.0670085996389389,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+77,7,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+78,7,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+79,7,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+80,7,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+81,7,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+82,8,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+83,8,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+84,8,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+85,8,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+86,8,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+87,8,"[*, **3, exp, cos, **, 2.17, x_2, x_4]",((exp(cos((2.17**x_2))))**3*x_4),22.47339630126953,-0.07084771245718002,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+88,8,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+89,8,"[cos, +, -, 1.46, x_6, x_4]",cos(((1.46-x_6)+x_4)),22.2083683013916,-0.0670085996389389,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+90,8,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+91,8,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+92,8,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+93,8,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+94,8,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+95,9,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+96,9,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+97,9,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+98,9,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+99,9,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+100,9,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+101,9,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+102,9,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+103,9,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+104,9,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+105,9,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+106,9,"[sqrt, exp, +, -, x_4, x_5, x_4]",sqrt(abs(exp(((x_4-x_5)+x_4)))),22.08585548400879,-0.07044052332639694,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+107,9,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+108,10,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+109,10,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+110,10,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+111,10,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+112,10,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+113,10,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+114,10,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+115,10,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+116,10,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+117,10,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+118,10,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+119,10,"[sqrt, exp, +, -, x_4, x_5, x_4]",sqrt(abs(exp(((x_4-x_5)+x_4)))),22.08585548400879,-0.07044052332639694,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+120,10,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+121,11,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+122,11,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+123,11,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+124,11,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+125,11,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+126,11,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+127,11,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+128,11,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+129,11,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+130,11,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+131,11,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+132,11,"[sqrt, exp, +, -, x_4, x_5, x_4]",sqrt(abs(exp(((x_4-x_5)+x_4)))),22.08585548400879,-0.07044052332639694,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+133,11,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+134,11,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+135,11,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+136,12,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+137,12,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+138,12,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+139,12,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+140,12,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+141,12,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+142,12,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+143,12,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+144,12,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+145,12,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+146,12,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+147,12,"[sqrt, exp, +, -, x_4, x_5, x_4]",sqrt(abs(exp(((x_4-x_5)+x_4)))),22.08585548400879,-0.07044052332639694,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+148,12,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+149,12,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+150,12,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+151,12,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+152,13,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+153,13,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+154,13,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+155,13,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+156,13,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+157,13,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+158,13,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+159,13,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+160,13,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+161,13,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+162,13,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+163,13,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+164,13,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+165,13,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+166,13,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+167,13,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+168,14,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+169,14,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+170,14,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+171,14,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+172,14,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+173,14,"[u-, cos, **2, **2, cos, x_3]",-(cos(((cos(x_3))**2)**2)),23.627769470214844,-0.11126085370779037,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+174,14,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+175,14,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+176,14,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+177,14,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+178,14,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+179,14,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+180,14,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+181,14,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+182,14,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+183,14,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+184,14,"[*, **3, exp, cos, x_5, sin, x_4]",((exp(cos(x_5)))**3*sin(x_4)),22.31604766845703,-0.07375172525644302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+185,14,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+186,15,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+187,15,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+188,15,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+189,15,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+190,15,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+191,15,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+192,15,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+193,15,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+194,15,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+195,15,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+196,15,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+197,15,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+198,15,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+199,15,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+200,15,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+201,15,"[*, **3, exp, cos, x_5, sin, x_4]",((exp(cos(x_5)))**3*sin(x_4)),22.31604766845703,-0.07375172525644302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+202,15,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+203,15,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+204,15,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+205,16,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+206,16,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+207,16,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+208,16,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+209,16,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+210,16,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+211,16,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+212,16,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+213,16,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+214,16,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+215,16,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+216,16,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+217,16,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+218,16,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+219,16,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+220,16,"[*, **3, exp, cos, x_5, sin, x_4]",((exp(cos(x_5)))**3*sin(x_4)),22.31604766845703,-0.07375172525644302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+221,16,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+222,16,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+223,16,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+224,16,"[+, +, -, 1.46, x_6, x_4, x_4]",(((1.46-x_6)+x_4)+x_4),21.78754425048828,-0.056915756314992905,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+225,17,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+226,17,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+227,17,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+228,17,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+229,17,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+230,17,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+231,17,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+232,17,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+233,17,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+234,17,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+235,17,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+236,17,"[**3, +, cos, cos, cos, x_5, x_4]",((cos(cos(cos(x_5)))+x_4))**3,22.809785842895508,-0.09580080956220627,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+237,17,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+238,17,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+239,17,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+240,17,"[*, **3, exp, cos, x_5, sin, x_4]",((exp(cos(x_5)))**3*sin(x_4)),22.31604766845703,-0.07375172525644302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+241,17,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+242,17,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+243,17,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+244,17,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+245,17,"[u-, sqrt, +, +, -, -1.68, x_6, x_4, x_4]",-(sqrt(abs((((-1.68-x_6)+x_4)+x_4)))),21.76326560974121,-0.05613669380545616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+246,18,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+247,18,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+248,18,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+249,18,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+250,18,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+251,18,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+252,18,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+253,18,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+254,18,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+255,18,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+256,18,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+257,18,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+258,18,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+259,18,"[cos, sqrt, exp, +, -, x_4, x_5, x_4]",cos(sqrt(abs(exp(((x_4-x_5)+x_4))))),22.048803329467773,-0.07099264115095139,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+260,18,"[*, **3, exp, cos, x_5, sin, x_4]",((exp(cos(x_5)))**3*sin(x_4)),22.31604766845703,-0.07375172525644302,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+261,18,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+262,18,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+263,18,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+264,18,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+265,18,"[u-, sqrt, +, +, -, -1.68, x_6, x_4, x_4]",-(sqrt(abs((((-1.68-x_6)+x_4)+x_4)))),21.76326560974121,-0.05613669380545616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+266,18,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+267,19,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+268,19,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+269,19,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+270,19,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+271,19,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+272,19,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+273,19,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+274,19,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+275,19,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+276,19,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+277,19,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+278,19,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+279,19,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+280,19,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+281,19,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+282,19,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+283,19,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+284,19,"[u-, sqrt, +, +, -, -1.68, x_6, x_4, x_4]",-(sqrt(abs((((-1.68-x_6)+x_4)+x_4)))),21.76326560974121,-0.05613669380545616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+285,19,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+286,19,"[*, **3, exp, cos, -, x_1, x_6, x_4]",((exp(cos((x_1-x_6))))**3*x_4),22.02446746826172,-0.07705283164978027,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+287,20,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+288,20,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+289,20,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+290,20,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+291,20,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+292,20,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+293,20,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+294,20,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+295,20,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+296,20,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+297,20,"[cos, u-, exp, -, x_4, x_3]",cos(-(exp((x_4-x_3)))),22.44131088256836,-0.08638311177492142,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+298,20,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+299,20,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+300,20,"[exp, cos, u-, exp, -, x_4, x_3]",exp(cos(-(exp((x_4-x_3))))),22.421510696411133,-0.08461293578147888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+301,20,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+302,20,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+303,20,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+304,20,"[u-, sqrt, +, +, -, -1.68, x_6, x_4, x_4]",-(sqrt(abs((((-1.68-x_6)+x_4)+x_4)))),21.76326560974121,-0.05613669380545616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+305,20,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+306,20,"[*, **3, exp, cos, -, x_1, x_6, x_4]",((exp(cos((x_1-x_6))))**3*x_4),22.02446746826172,-0.07705283164978027,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+307,21,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+308,21,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+309,21,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+310,21,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+311,21,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+312,21,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+313,21,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+314,21,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+315,21,"[exp, sqrt, +, +, -, 1.46, x_6, x_4, x_4]",exp(sqrt(abs((((1.46-x_6)+x_4)+x_4)))),21.757354736328125,-0.05009637027978897,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+316,21,"[*, **3, exp, cos, **2, x_2, x_4]",((exp(cos((x_2)**2)))**3*x_4),22.60613250732422,-0.08915320783853531,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+317,21,"[+, exp, x_4, +, -, 1.46, x_6, x_4]",(exp(x_4)+((1.46-x_6)+x_4)),21.690778732299805,-0.032519806176424026,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+318,21,"[**3, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**3,22.62763214111328,-0.09290462732315063,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+319,21,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+320,21,"[cos, +, cos, cos, cos, x_5, x_4]",cos((cos(cos(cos(x_5)))+x_4)),22.705432891845703,-0.0955786406993866,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+321,21,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+322,21,"[u-, sqrt, +, +, -, -1.68, x_6, x_4, x_4]",-(sqrt(abs((((-1.68-x_6)+x_4)+x_4)))),21.76326560974121,-0.05613669380545616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+323,21,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+324,21,"[*, **3, exp, cos, -, x_1, x_6, x_4]",((exp(cos((x_1-x_6))))**3*x_4),22.02446746826172,-0.07705283164978027,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+325,21,"[cos, +, -, exp, x_4, x_6, x_4]",cos(((exp(x_4)-x_6)+x_4)),21.801485061645508,-0.0720919668674469,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+326,21,"[**3, cos, u-, exp, -, x_6, x_4]",(cos(-(exp((x_6-x_4)))))**3,22.30484962463379,-0.08681205660104752,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+327,22,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+328,22,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+329,22,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+330,22,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+331,22,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+332,22,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+333,22,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+334,22,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+335,22,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+336,22,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+337,22,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+338,22,"[*, **3, exp, cos, -, x_1, x_6, x_4]",((exp(cos((x_1-x_6))))**3*x_4),22.02446746826172,-0.07705283164978027,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+339,22,"[cos, +, -, exp, x_4, x_6, x_4]",cos(((exp(x_4)-x_6)+x_4)),21.801485061645508,-0.0720919668674469,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+340,22,"[**3, cos, u-, exp, -, x_6, x_4]",(cos(-(exp((x_6-x_4)))))**3,22.30484962463379,-0.08681205660104752,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+341,22,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+342,22,"[+, +, -, exp, log, x_6, x_6, x_4, x_4]",(((exp(log(abs(x_6)))-x_6)+x_4)+x_4),21.59925651550293,-0.05778069049119949,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+343,23,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+344,23,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+345,23,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+346,23,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+347,23,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+348,23,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+349,23,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+350,23,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+351,23,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+352,23,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+353,23,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+354,23,"[cos, +, -, exp, x_4, x_6, x_4]",cos(((exp(x_4)-x_6)+x_4)),21.801485061645508,-0.0720919668674469,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+355,23,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+356,23,"[+, +, -, exp, log, x_6, x_6, x_4, x_4]",(((exp(log(abs(x_6)))-x_6)+x_4)+x_4),21.59925651550293,-0.05778069049119949,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+357,23,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+358,24,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+359,24,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+360,24,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+361,24,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+362,24,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+363,24,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+364,24,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+365,24,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+366,24,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+367,24,"[u-, +, +, -, -1.68, x_6, x_4, x_4]",-((((-1.68-x_6)+x_4)+x_4)),21.78754425048828,-0.06042664498090744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+368,24,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+369,24,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+370,24,"[+, +, -, exp, log, x_6, x_6, x_4, x_4]",(((exp(log(abs(x_6)))-x_6)+x_4)+x_4),21.59925651550293,-0.05778069049119949,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+371,24,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+372,24,"[u-, cos, +, -, exp, x_4, x_6, x_4]",-(cos(((exp(x_4)-x_6)+x_4))),21.801485061645508,-0.08067845553159714,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+373,24,"[+, +, -, exp, log, x_1, x_6, x_4, exp, -, x_4, x_3]",(((exp(log(abs(x_1)))-x_6)+x_4)+exp((x_4-x_3))),21.424144744873047,-0.020475102588534355,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+374,25,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+375,25,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+376,25,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+377,25,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+378,25,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+379,25,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+380,25,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+381,25,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+382,25,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+383,25,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+384,25,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+385,25,"[+, +, -, exp, log, x_6, x_6, x_4, x_4]",(((exp(log(abs(x_6)))-x_6)+x_4)+x_4),21.59925651550293,-0.05778069049119949,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+386,25,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+387,25,"[u-, cos, +, -, exp, x_4, x_6, x_4]",-(cos(((exp(x_4)-x_6)+x_4))),21.801485061645508,-0.08067845553159714,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+388,25,"[+, +, -, exp, log, x_1, x_6, x_4, exp, -, x_4, x_3]",(((exp(log(abs(x_1)))-x_6)+x_4)+exp((x_4-x_3))),21.424144744873047,-0.020475102588534355,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+389,25,"[u-, +, -, 1.46, -, x_6, x_4, x_4]",-(((1.46-(x_6-x_4))+x_4)),21.78754425048828,-0.06900739669799805,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+390,25,"[cos, +, cos, **3, x_6, x_4]",cos((cos((x_6)**3)+x_4)),22.46874237060547,-0.08874628692865372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+391,26,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+392,26,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+393,26,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+394,26,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+395,26,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+396,26,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+397,26,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+398,26,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+399,26,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+400,26,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+401,26,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+402,26,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+403,26,"[cos, +, cos, **3, x_6, x_4]",cos((cos((x_6)**3)+x_4)),22.46874237060547,-0.08874628692865372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+404,26,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+405,26,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+406,27,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+407,27,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+408,27,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+409,27,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+410,27,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+411,27,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+412,27,"[u-, cos, cos, **3, cos, x_0]",-(cos(cos((cos(x_0))**3))),24.580324172973633,-0.12255900353193283,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+413,27,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+414,27,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+415,27,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+416,27,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+417,27,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+418,27,"[cos, +, cos, **3, x_6, x_4]",cos((cos((x_6)**3)+x_4)),22.46874237060547,-0.08874628692865372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+419,27,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+420,27,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+421,27,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+422,28,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+423,28,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+424,28,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+425,28,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+426,28,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+427,28,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+428,28,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+429,28,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+430,28,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+431,28,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+432,28,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+433,28,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+434,28,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+435,28,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+436,28,"[log, x_4]",log(abs(x_4)),24.469167709350586,-0.12432447820901871,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+437,28,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+438,28,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+439,29,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+440,29,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+441,29,"[cos, **2, cos, **3, cos, x_0]",cos((cos((cos(x_0))**3))**2),24.58085823059082,-0.12589333951473236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+442,29,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+443,29,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+444,29,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+445,29,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+446,29,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+447,29,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+448,29,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+449,29,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+450,29,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+451,29,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+452,29,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+453,29,"[log, x_4]",log(abs(x_4)),24.469167709350586,-0.12432447820901871,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+454,29,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+455,29,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+456,29,"[u-, +, +, -, **2, x_4, x_6, x_4, x_4]",-(((((x_4)**2-x_6)+x_4)+x_4)),21.565380096435547,-0.0732366293668747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+457,29,"[u-, x_6]",-(x_6),24.612863540649414,-0.12924577295780182,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+458,29,"[u-, **2, x_5]",-((x_5)**2),24.274019241333008,-0.12224806100130081,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+459,30,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+460,30,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+461,30,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+462,30,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+463,30,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+464,30,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+465,30,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+466,30,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+467,30,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+468,30,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+469,30,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+470,30,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+471,30,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+472,30,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+473,30,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+474,30,"[u-, +, +, -, **2, x_4, x_6, x_4, x_4]",-(((((x_4)**2-x_6)+x_4)+x_4)),21.565380096435547,-0.0732366293668747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+475,30,"[**2, x_5]",(x_5)**2,24.274019241333008,-0.13048617541790009,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+476,31,"[**3, sin, sin, cos, x_5]",(sin(sin(cos(x_5))))**3,24.262128829956055,-0.11734958738088608,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+477,31,"[**2, u-, cos, x_5]",(-(cos(x_5)))**2,24.266138076782227,-0.11906000226736069,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+478,31,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,-0.10200397670269012,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+479,31,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+480,31,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+481,31,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+482,31,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+483,31,"[u-, cos, **2, exp, u-, x_3]",-(cos((exp(-(x_3)))**2)),22.7901554107666,-0.09947993606328964,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+484,31,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+485,31,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+486,31,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+487,31,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+488,31,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+489,31,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+490,31,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+491,31,"[u-, +, +, -, **2, x_4, x_6, x_4, x_4]",-(((((x_4)**2-x_6)+x_4)+x_4)),21.565380096435547,-0.0732366293668747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+492,31,"[**2, x_5]",(x_5)**2,24.274019241333008,-0.13048617541790009,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+493,31,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+494,32,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+495,32,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+496,32,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+497,32,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+498,32,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+499,32,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+500,32,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+501,32,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+502,32,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+503,32,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+504,32,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+505,32,"[u-, +, +, -, **2, x_4, x_6, x_4, x_4]",-(((((x_4)**2-x_6)+x_4)+x_4)),21.565380096435547,-0.0732366293668747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+506,32,"[**2, x_5]",(x_5)**2,24.274019241333008,-0.13048617541790009,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+507,32,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+508,32,"[exp, x_6]",exp(x_6),24.59322166442871,-0.132364884018898,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+509,32,"[cos, u-, x_6]",cos(-(x_6)),24.238168716430664,-0.12065140157938004,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+510,32,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+511,32,"[+, -, exp, x_4, x_6, x_4]",((exp(x_4)-x_6)+x_4),21.690778732299805,-0.07899975031614304,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+512,33,"[u-, cos, **2, **2, cos, x_4]",-(cos(((cos(x_4))**2)**2)),24.151103973388672,-0.1155136227607727,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+513,33,"[cos, **2, cos, x_4]",cos((cos(x_4))**2),24.169126510620117,-0.11553309857845306,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+514,33,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+515,33,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+516,33,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+517,33,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+518,33,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+519,33,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+520,33,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+521,33,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+522,33,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+523,33,"[**2, x_5]",(x_5)**2,24.274019241333008,-0.13048617541790009,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+524,33,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+525,33,"[cos, u-, x_6]",cos(-(x_6)),24.238168716430664,-0.12065140157938004,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+526,33,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+527,33,"[*, **3, exp, cos, u-, x_5, x_4]",((exp(cos(-(x_5))))**3*x_4),22.27825355529785,-0.09623843431472778,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+528,33,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+529,33,"[**3, x_0]",(x_0)**3,24.568723678588867,-0.1396913230419159,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+530,34,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+531,34,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+532,34,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+533,34,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+534,34,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+535,34,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+536,34,"[**2, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**2,22.75587272644043,-0.09946373850107193,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+537,34,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+538,34,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+539,34,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+540,34,"[cos, u-, x_6]",cos(-(x_6)),24.238168716430664,-0.12065140157938004,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+541,34,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+542,34,"[*, **3, exp, cos, u-, x_5, x_4]",((exp(cos(-(x_5))))**3*x_4),22.27825355529785,-0.09623843431472778,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+543,34,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+544,34,"[**3, x_0]",(x_0)**3,24.568723678588867,-0.1396913230419159,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+545,34,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+546,34,"[sin, u-, x_3]",sin(-(x_3)),23.60201644897461,-0.11657793819904327,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+547,34,"[**2, u-, x_6]",(-(x_6))**2,24.25178337097168,-0.13239066302776337,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+548,35,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+549,35,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+550,35,"[cos, **3, **2, exp, u-, x_3]",cos(((exp(-(x_3)))**2)**3),22.53980827331543,-0.09726716578006744,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+551,35,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+552,35,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+553,35,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+554,35,"[u-, u-, u-, +, -, x_4, x_5, x_4]",-(-(-(((x_4-x_5)+x_4)))),22.267940521240234,-0.09594518691301346,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+555,35,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+556,35,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+557,35,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+558,35,"[*, **3, exp, cos, u-, x_5, x_4]",((exp(cos(-(x_5))))**3*x_4),22.27825355529785,-0.09623843431472778,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+559,35,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+560,35,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+561,35,"[**2, u-, x_6]",(-(x_6))**2,24.25178337097168,-0.13239066302776337,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+562,35,"[**3, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**3,22.627269744873047,-0.10024852305650711,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+563,35,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+564,35,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+565,36,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+566,36,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+567,36,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+568,36,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+569,36,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+570,36,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+571,36,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+572,36,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+573,36,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+574,36,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+575,36,"[**2, u-, x_6]",(-(x_6))**2,24.25178337097168,-0.13239066302776337,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+576,36,"[**3, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**3,22.627269744873047,-0.10024852305650711,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+577,36,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+578,36,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+579,36,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+580,36,"[**2, u-, x_4]",(-(x_4))**2,24.260019302368164,-0.13346123695373535,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+581,37,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+582,37,"[u-, x_4]",-(x_4),23.15311622619629,-0.11216501891613007,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+583,37,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+584,37,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+585,37,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+586,37,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, x_1, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-x_1))-x_6)+x_4)),20.907102584838867,-0.006875517778098583,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+587,37,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+588,37,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+589,37,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+590,37,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+591,37,"[**2, u-, x_6]",(-(x_6))**2,24.25178337097168,-0.13239066302776337,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+592,37,"[**3, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**3,22.627269744873047,-0.10024852305650711,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+593,37,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+594,37,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+595,37,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+596,37,"[**2, u-, x_4]",(-(x_4))**2,24.260019302368164,-0.13346123695373535,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+597,37,"[-, exp, x_5, x_6]",(exp(x_5)-x_6),23.318403244018555,-0.11307603120803833,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+598,37,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+599,37,"[cos, u-, exp, -, x_4, sin, x_6]",cos(-(exp((x_4-sin(x_6))))),21.89142608642578,-0.08719338476657867,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+600,37,"[u-, x_6]",-(x_6),24.612863540649414,-0.14856667816638947,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+601,38,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+602,38,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+603,38,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+604,38,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+605,38,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+606,38,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+607,38,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+608,38,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+609,38,"[**3, **2, exp, exp, u-, x_3]",((exp(exp(-(x_3))))**2)**3,22.627269744873047,-0.10024852305650711,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+610,38,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+611,38,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+612,38,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+613,38,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+614,38,"[cos, u-, exp, -, x_4, sin, x_6]",cos(-(exp((x_4-sin(x_6))))),21.89142608642578,-0.08719338476657867,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+615,38,"[u-, x_6]",-(x_6),24.612863540649414,-0.14856667816638947,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+616,38,"[**3, -, x_4, x_6]",((x_4-x_6))**3,23.408292770385742,-0.11546842753887177,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+617,38,"[exp, -, x_4, x_1]",exp((x_4-x_1)),22.954021453857422,-0.11393062770366669,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+618,38,"[cos, x_4]",cos(x_4),24.24361228942871,-0.1397324800491333,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+619,38,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+620,39,"[cos, u-, exp, x_4]",cos(-(exp(x_4))),22.876310348510742,-0.10920765995979309,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+621,39,"[*, **3, exp, cos, u-, x_6, x_4]",((exp(cos(-(x_6))))**3*x_4),21.992998123168945,-0.08782488852739334,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+622,39,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+623,39,"[u-, +, -, x_4, x_6, x_4]",-(((x_4-x_6)+x_4)),21.78754425048828,-0.08338618278503418,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+624,39,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+625,39,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+626,39,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+627,39,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+628,39,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+629,39,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+630,39,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+631,39,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+632,39,"[cos, u-, exp, -, x_4, sin, x_6]",cos(-(exp((x_4-sin(x_6))))),21.89142608642578,-0.08719338476657867,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+633,39,"[u-, x_6]",-(x_6),24.612863540649414,-0.14856667816638947,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+634,39,"[**3, -, x_4, x_6]",((x_4-x_6))**3,23.408292770385742,-0.11546842753887177,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+635,39,"[exp, -, x_4, x_1]",exp((x_4-x_1)),22.954021453857422,-0.11393062770366669,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+636,39,"[cos, x_4]",cos(x_4),24.24361228942871,-0.1397324800491333,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+637,39,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+638,39,"[+, **2, **2, exp, u-, x_3, +, -, exp, x_4, x_6, u-, cos, *, x_4, -0.77]",(((exp(-(x_3)))**2)**2+((exp(x_4)-x_6)+-(cos((x_4*-0.77))))),20.831262588500977,0.007380388211458921,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+639,39,"[u-, **3, x_4]",-((x_4)**3),23.836563110351562,-0.13040901720523834,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+640,39,"[log, exp, exp, x_4]",log(abs(exp(exp(x_4)))),22.948822021484375,-0.11148569732904434,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+641,39,"[exp, -, x_4, x_3]",exp((x_4-x_3)),22.516361236572266,-0.10359568148851395,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+642,39,"[**2, x_1]",(x_1)**2,24.611242294311523,-0.14841438829898834,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+643,39,"[exp, u-, x_4]",exp(-(x_4)),23.745729446411133,-0.12951859831809998,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+644,40,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+645,40,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+646,40,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+647,40,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+648,40,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+649,40,"[**3, x_6]",(x_6)**3,24.55042839050293,-0.14457586407661438,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+650,40,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+651,40,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+652,40,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+653,40,"[u-, x_6]",-(x_6),24.612863540649414,-0.14856667816638947,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+654,40,"[exp, -, x_4, x_1]",exp((x_4-x_1)),22.954021453857422,-0.11393062770366669,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+655,40,"[cos, x_4]",cos(x_4),24.24361228942871,-0.1397324800491333,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+656,40,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+657,40,"[+, **2, **2, exp, u-, x_3, +, -, exp, x_4, x_6, u-, cos, *, x_4, -0.77]",(((exp(-(x_3)))**2)**2+((exp(x_4)-x_6)+-(cos((x_4*-0.77))))),20.831262588500977,0.007380388211458921,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+658,40,"[u-, **3, x_4]",-((x_4)**3),23.836563110351562,-0.13040901720523834,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+659,40,"[exp, -, x_4, x_3]",exp((x_4-x_3)),22.516361236572266,-0.10359568148851395,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+660,40,"[**2, x_1]",(x_1)**2,24.611242294311523,-0.14841438829898834,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+661,40,"[exp, u-, x_4]",exp(-(x_4)),23.745729446411133,-0.12951859831809998,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+662,40,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+663,40,"[-, x_4, x_1]",(x_4-x_1),23.222270965576172,-0.11941347271203995,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+664,40,"[exp, -, x_6, x_4]",exp((x_6-x_4)),22.809341430664062,-0.11217687278985977,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+665,40,"[u-, -, x_4, 4.8]",-((x_4-4.8)),23.15311622619629,-0.11471179872751236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+666,41,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+667,41,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+668,41,"[**2, **2, exp, u-, x_3]",((exp(-(x_3)))**2)**2,22.756040573120117,-0.10383341461420059,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+669,41,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+670,41,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+671,41,"[exp, u-, x_3]",exp(-(x_3)),23.456363677978516,-0.12468735128641129,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+672,41,"[cos, u-, exp, -, x_4, x_6]",cos(-(exp((x_4-x_6)))),22.108423233032227,-0.09890418499708176,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+673,41,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+674,41,"[exp, -, x_4, x_1]",exp((x_4-x_1)),22.954021453857422,-0.11393062770366669,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+675,41,"[cos, x_4]",cos(x_4),24.24361228942871,-0.1397324800491333,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+676,41,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+677,41,"[exp, -, x_4, x_3]",exp((x_4-x_3)),22.516361236572266,-0.10359568148851395,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+678,41,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+679,41,"[-, x_4, x_1]",(x_4-x_1),23.222270965576172,-0.11941347271203995,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+680,41,"[exp, -, x_6, x_4]",exp((x_6-x_4)),22.809341430664062,-0.11217687278985977,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+681,41,"[u-, -, x_4, 4.8]",-((x_4-4.8)),23.15311622619629,-0.11471179872751236,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+682,41,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+683,41,"[sin, x_3]",sin(x_3),23.60201644897461,-0.13244664669036865,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+684,41,"[u-, x_5]",-(x_5),24.471277236938477,-0.14974360167980194,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+685,42,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+686,42,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+687,42,"[+, -, exp, u-, x_3, x_6, x_4]",((exp(-(x_3))-x_6)+x_4),21.448957443237305,-0.07911019027233124,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+688,42,"[u-, +, -, exp, *, -1.03, x_3, x_6, x_4]",-(((exp((-1.03*x_3))-x_6)+x_4)),21.4368953704834,-0.06863640993833542,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+689,42,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+690,42,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+691,42,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+692,42,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+693,42,"[u-, x_5]",-(x_5),24.471277236938477,-0.14974360167980194,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+694,42,"[-, x_6, x_4]",(x_6-x_4),22.26861572265625,-0.12209142744541168,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+695,42,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+696,42,"[u-, -, exp, x_4, x_6]",-((exp(x_4)-x_6)),21.813167572021484,-0.11217400431632996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+697,43,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+698,43,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+699,43,"[u-, x_3]",-(x_3),24.339555740356445,-0.14247074723243713,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+700,43,"[+, cos, exp, /, x_3, x_1, +, -, exp, x_4, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp(x_4)-x_6)+x_4)),20.887935638427734,-0.010493582114577293,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+701,43,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+702,43,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+703,43,"[u-, x_5]",-(x_5),24.471277236938477,-0.14974360167980194,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+704,43,"[-, x_6, x_4]",(x_6-x_4),22.26861572265625,-0.12209142744541168,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+705,43,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+706,43,"[u-, -, exp, x_4, x_6]",-((exp(x_4)-x_6)),21.813167572021484,-0.11217400431632996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+707,43,"[sin, x_5]",sin(x_5),24.408477783203125,-0.14458899199962616,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+708,43,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+709,44,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+710,44,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+711,44,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+712,44,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+713,44,"[-, x_6, x_4]",(x_6-x_4),22.26861572265625,-0.12209142744541168,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+714,44,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+715,44,"[u-, -, exp, x_4, x_6]",-((exp(x_4)-x_6)),21.813167572021484,-0.11217400431632996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+716,44,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+717,44,[x_1],x_1,24.611242294311523,-0.15498647093772888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+718,44,"[sin, u-, x_4]",sin(-(x_4)),23.103776931762695,-0.12842194736003876,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+719,44,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+720,44,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+721,45,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+722,45,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+723,45,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+724,45,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+725,45,"[-, x_6, x_4]",(x_6-x_4),22.26861572265625,-0.12209142744541168,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+726,45,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+727,45,"[u-, -, exp, x_4, x_6]",-((exp(x_4)-x_6)),21.813167572021484,-0.11217400431632996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+728,45,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+729,45,[x_1],x_1,24.611242294311523,-0.15498647093772888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+730,45,"[sin, u-, x_4]",sin(-(x_4)),23.103776931762695,-0.12842194736003876,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+731,45,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+732,45,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+733,45,[x_6],x_6,24.612863540649414,-0.1615273654460907,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+734,45,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+735,46,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+736,46,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+737,46,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+738,46,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+739,46,"[-, x_6, x_4]",(x_6-x_4),22.26861572265625,-0.12209142744541168,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+740,46,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+741,46,"[u-, -, exp, x_4, x_6]",-((exp(x_4)-x_6)),21.813167572021484,-0.11217400431632996,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+742,46,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+743,46,[x_1],x_1,24.611242294311523,-0.15498647093772888,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+744,46,"[sin, u-, x_4]",sin(-(x_4)),23.103776931762695,-0.12842194736003876,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+745,46,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+746,46,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+747,46,[x_6],x_6,24.612863540649414,-0.1615273654460907,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+748,46,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+749,47,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+750,47,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+751,47,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+752,47,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+753,47,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+754,47,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+755,47,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+756,47,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+757,47,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+758,47,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+759,47,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+760,47,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+761,47,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+762,47,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+763,48,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+764,48,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+765,48,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+766,48,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+767,48,[x_4],x_4,23.15311622619629,-0.14172039926052094,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+768,48,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+769,48,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+770,48,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+771,48,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+772,48,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+773,48,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+774,48,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+775,48,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+776,48,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+777,48,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+778,49,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+779,49,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+780,49,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+781,49,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+782,49,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+783,49,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+784,49,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+785,49,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+786,49,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+787,49,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+788,49,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+789,49,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+790,49,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+791,49,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+792,49,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+793,49,[1.46],1.46,24.615882873535156,-0.18781951069831848,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+794,50,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+795,50,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+796,50,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+797,50,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+798,50,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+799,50,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+800,50,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+801,50,"[+, -, exp, -, x_4, exp, x_1, x_6, x_4]",((exp((x_4-exp(x_1)))-x_6)+x_4),21.503726959228516,-0.07935339212417603,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+802,50,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+803,50,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+804,50,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+805,50,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+806,50,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+807,50,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+808,50,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+809,50,[1.46],1.46,24.615882873535156,-0.18781951069831848,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+810,50,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+811,51,"[+, +, -, exp, u-, x_3, x_6, x_4, x_4]",(((exp(-(x_3))-x_6)+x_4)+x_4),21.01975440979004,-0.06561821699142456,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+812,51,"[+, +, -, exp, u-, x_3, x_6, x_4, exp, x_4]",(((exp(-(x_3))-x_6)+x_4)+exp(x_4)),21.013797760009766,-0.037238266319036484,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+813,51,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+814,51,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+815,51,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+816,51,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+817,51,"[**3, x_4]",(x_4)**3,23.836563110351562,-0.15132290124893188,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+818,51,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+819,51,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+820,51,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+821,51,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+822,51,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+823,51,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+824,51,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+825,51,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+826,51,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+827,51,[-0.68],-0.68,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+828,51,[2.22],2.22,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+829,52,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+830,52,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+831,52,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+832,52,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+833,52,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+834,52,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+835,52,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+836,52,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+837,52,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+838,52,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+839,52,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+840,52,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+841,52,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+842,52,[-0.68],-0.68,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+843,52,[2.22],2.22,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+844,52,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+845,52,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+846,53,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+847,53,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+848,53,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+849,53,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+850,53,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+851,53,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+852,53,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+853,53,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+854,53,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+855,53,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+856,53,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+857,53,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+858,53,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+859,53,[-0.68],-0.68,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+860,53,[2.22],2.22,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+861,53,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+862,53,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+863,53,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+864,54,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+865,54,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+866,54,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+867,54,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+868,54,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+869,54,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+870,54,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+871,54,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+872,54,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+873,54,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+874,54,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+875,54,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+876,54,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+877,54,[-0.68],-0.68,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+878,54,[2.22],2.22,24.615882873535156,-0.2039782553911209,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+879,54,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+880,54,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+881,54,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+882,55,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+883,55,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+884,55,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+885,55,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+886,55,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+887,55,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+888,55,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+889,55,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+890,55,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+891,55,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+892,55,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+893,55,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+894,55,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+895,55,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+896,55,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+897,55,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+898,55,[x_0],x_0,24.570709228515625,-0.2358589768409729,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+899,56,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+900,56,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+901,56,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+902,56,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+903,56,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+904,56,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+905,56,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+906,56,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+907,56,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+908,56,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+909,56,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+910,56,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+911,56,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+912,56,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+913,56,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+914,56,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+915,56,[x_0],x_0,24.570709228515625,-0.2358589768409729,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+916,57,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+917,57,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+918,57,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+919,57,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+920,57,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+921,57,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+922,57,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+923,57,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+924,57,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+925,57,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+926,57,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+927,57,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+928,57,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+929,57,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+930,57,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+931,57,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+932,57,[x_2],x_2,24.545021057128906,-0.24434469640254974,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+933,58,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+934,58,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+935,58,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+936,58,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+937,58,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+938,58,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+939,58,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+940,58,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+941,58,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+942,58,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+943,58,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+944,58,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+945,58,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+946,58,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+947,58,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+948,58,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+949,58,[x_2],x_2,24.545021057128906,-0.24434469640254974,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+950,58,[4.8],4.8,24.615882873535156,-0.2635752260684967,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+951,59,"[cos, u-, -, exp, x_4, x_6]",cos(-((exp(x_4)-x_6))),21.57663345336914,-0.09601964056491852,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+952,59,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_4, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_4-1.46))-x_6)+x_4)),20.48541259765625,-0.0010267335455864668,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+953,59,"[exp, +, -, exp, u-, x_3, x_6, x_4]",exp(((exp(-(x_3))-x_6)+x_4)),21.419822692871094,-0.07917404919862747,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+954,59,"[+, **2, exp, u-, x_3, +, -, exp, -, x_4, 1.46, x_6, x_4]",((exp(-(x_3)))**2+((exp((x_4-1.46))-x_6)+x_4)),20.666000366210938,-0.01676042005419731,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+955,59,"[-, exp, x_4, x_6]",(exp(x_4)-x_6),21.813167572021484,-0.12181442975997925,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+956,59,[x_3],x_3,24.339555740356445,-0.17440758645534515,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+957,59,"[-, x_4, x_6]",(x_4-x_6),22.26861572265625,-0.13340891897678375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+958,59,"[u-, exp, x_4]",-(exp(x_4)),22.948822021484375,-0.1340039223432541,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+959,59,"[exp, x_5]",exp(x_5),24.319332122802734,-0.1579447239637375,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+960,59,"[+, cos, exp, /, x_3, x_1, -, exp, x_4, x_6]",(cos(exp((x_3/x_1)))+(exp(x_4)-x_6)),20.755430221557617,-0.022668957710266113,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+961,59,"[sin, x_4]",sin(x_4),23.103776931762695,-0.1498074233531952,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+962,59,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_5, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_5-1.46))-x_6)+x_4)),20.344913482666016,-0.0003064707270823419,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+963,59,"[u-, +, -, exp, u-, x_3, x_6, x_4]",-(((exp(-(x_3))-x_6)+x_4)),21.448957443237305,-0.08280923962593079,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+964,59,"[u-, x_4]",-(x_4),23.15311622619629,-0.15645825862884521,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+965,59,"[cos, u-, -, exp, -, x_4, x_3, x_6]",cos(-((exp((x_4-x_3))-x_6))),20.98939323425293,-0.07209564745426178,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+966,59,"[+, cos, exp, /, x_3, x_1, +, -, exp, -, x_6, 1.46, x_6, x_4]",(cos(exp((x_3/x_1)))+((exp((x_6-1.46))-x_6)+x_4)),20.257028579711914,0.010469474829733372,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+967,59,[x_2],x_2,24.545021057128906,-0.24434469640254974,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed
+968,59,[4.8],4.8,24.615882873535156,-0.2635752260684967,208,210,60,210,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,windspeed

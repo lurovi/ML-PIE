@@ -1,0 +1,393 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[exp, sin, /, x_12, 2.86]",exp(sin((x_12/2.86))),44.447147369384766,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+1,0,[x_11],x_11,76.66217803955078,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+2,0,"[u-, x_10]",-(x_10),61.76319122314453,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+3,1,"[exp, sin, /, x_12, 2.86]",exp(sin((x_12/2.86))),44.447147369384766,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+4,1,[x_10],x_10,61.76319122314453,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+5,2,"[exp, sin, /, x_12, 2.86]",exp(sin((x_12/2.86))),44.447147369384766,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+6,2,[x_10],x_10,61.76319122314453,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+7,2,"[+, exp, log, *, x_5, x_10, **2, -, sin, u-, x_5, cos, x_9]",(exp(log(abs((x_5*x_10))))+((sin(-(x_5))-cos(x_9)))**2),39.33328628540039,13.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+8,3,[x_10],x_10,61.76319122314453,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+9,3,"[+, exp, log, *, x_5, x_10, **2, -, sin, u-, x_5, cos, x_9]",(exp(log(abs((x_5*x_10))))+((sin(-(x_5))-cos(x_9)))**2),39.33328628540039,13.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+10,3,"[exp, x_5]",exp(x_5),55.59759521484375,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+11,3,"[exp, sin, x_12]",exp(sin(x_12)),41.137996673583984,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+12,4,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+13,4,"[exp, u-, exp, sin, u-, x_12]",exp(-(exp(sin(-(x_12))))),34.84440612792969,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+14,5,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+15,5,"[exp, u-, exp, sin, u-, x_12]",exp(-(exp(sin(-(x_12))))),34.84440612792969,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+16,5,"[exp, **, sqrt, exp, -0.54, +, sin, x_12, sin, exp, x_9]",exp((sqrt(abs(exp(-0.54)))**(sin(x_12)+sin(exp(x_9))))),33.30533218383789,11.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+17,6,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+18,6,"[exp, u-, exp, sin, u-, x_12]",exp(-(exp(sin(-(x_12))))),34.84440612792969,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+19,6,"[exp, **, sqrt, exp, -0.54, +, sin, x_12, sin, exp, x_9]",exp((sqrt(abs(exp(-0.54)))**(sin(x_12)+sin(exp(x_9))))),33.30533218383789,11.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+20,6,"[sin, *, **, cos, x_8, **2, **2, x_3, x_12]",sin(((cos(x_8)**((x_3)**2)**2)*x_12)),34.55498504638672,9.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+21,6,"[+, u-, sin, **, u-, x_6, sqrt, x_0, +, u-, x_5, sin, x_12]",(-(sin((-(x_6)**sqrt(abs(x_0)))))+(-(x_5)+sin(x_12))),31.485851287841797,13.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+22,7,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+23,7,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+24,7,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+25,8,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+26,8,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+27,8,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+28,9,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+29,9,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+30,9,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+31,10,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+32,10,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+33,10,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+34,11,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+35,11,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+36,11,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+37,12,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+38,12,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+39,12,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+40,12,"[-, u-, x_12, u-, sqrt, x_5]",(-(x_12)--(sqrt(abs(x_5)))),26.95122528076172,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+41,13,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+42,13,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+43,13,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+44,13,"[-, u-, x_12, u-, sqrt, x_5]",(-(x_12)--(sqrt(abs(x_5)))),26.95122528076172,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+45,14,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+46,14,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+47,14,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+48,14,"[-, u-, x_12, u-, sqrt, x_5]",(-(x_12)--(sqrt(abs(x_5)))),26.95122528076172,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+49,15,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+50,15,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+51,15,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+52,15,"[-, u-, x_12, u-, sqrt, x_5]",(-(x_12)--(sqrt(abs(x_5)))),26.95122528076172,6.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+53,16,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+54,16,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+55,16,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+56,16,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+57,17,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+58,17,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+59,17,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+60,17,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+61,18,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+62,18,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+63,18,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+64,18,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+65,19,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+66,19,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+67,19,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+68,19,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+69,20,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+70,20,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+71,20,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+72,20,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+73,20,"[+, **, sqrt, exp, -0.54, sin, exp, log, x_4, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin(exp(log(abs(x_4)))))+(-(x_12)-cos(x_5))),24.091705322265625,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+74,21,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+75,21,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+76,21,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+77,21,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+78,21,"[+, **, sqrt, exp, -0.54, sin, exp, log, x_4, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin(exp(log(abs(x_4)))))+(-(x_12)-cos(x_5))),24.091705322265625,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+79,22,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+80,22,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+81,22,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+82,22,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+83,22,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+84,23,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+85,23,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+86,23,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+87,23,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+88,23,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+89,23,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+90,24,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+91,24,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+92,24,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+93,24,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+94,24,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+95,24,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+96,25,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+97,25,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+98,25,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+99,25,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+100,25,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+101,25,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+102,26,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+103,26,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+104,26,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+105,26,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+106,26,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+107,26,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+108,26,"[+, **, sqrt, exp, -0.54, sin, +, sin, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(x_3)+x_10)))+(-(x_12)-cos(x_5))),22.457998275756836,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+109,27,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+110,27,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+111,27,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+112,27,"[-, u-, x_12, cos, x_5]",(-(x_12)-cos(x_5)),24.221834182739258,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+113,27,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+114,27,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+115,27,"[+, **, sqrt, exp, -0.54, sin, +, sin, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(x_3)+x_10)))+(-(x_12)-cos(x_5))),22.457998275756836,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+116,28,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+117,28,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+118,28,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+119,28,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+120,28,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+121,28,"[+, **, sqrt, exp, -0.54, sin, +, sin, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(x_3)+x_10)))+(-(x_12)-cos(x_5))),22.457998275756836,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+122,28,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+123,29,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+124,29,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+125,29,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+126,29,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+127,29,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+128,29,"[+, **, sqrt, exp, -0.54, sin, +, sin, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(x_3)+x_10)))+(-(x_12)-cos(x_5))),22.457998275756836,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+129,29,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+130,30,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+131,30,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+132,30,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+133,30,"[+, **, sqrt, exp, -0.54, sin, +, x_12, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_12+x_10)))+(-(x_12)-cos(x_5))),23.1668701171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+134,30,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+135,30,"[+, **, sqrt, exp, -0.54, sin, +, sin, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(x_3)+x_10)))+(-(x_12)-cos(x_5))),22.457998275756836,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+136,30,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+137,31,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+138,31,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+139,31,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+140,31,"[+, **, sqrt, exp, -0.54, exp, x_2, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**exp(x_2))+(-(x_12)-cos(x_5))),24.214412689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+141,31,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+142,31,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+143,31,"[+, **, sqrt, exp, -0.54, sin, +, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_3+x_10)))+(-(x_12)-cos(x_5))),22.53740882873535,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+144,32,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+145,32,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+146,32,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+147,32,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+148,32,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+149,32,"[+, **, sqrt, exp, -0.54, sin, +, x_3, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((x_3+x_10)))+(-(x_12)-cos(x_5))),22.53740882873535,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+150,32,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+151,32,"[+, **, sqrt, exp, -0.54, sin, x_9, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin(x_9))+(-(x_12)-cos(x_5))),23.25851821899414,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+152,33,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+153,33,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+154,33,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+155,33,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+156,33,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+157,33,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+158,33,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+159,33,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+160,34,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+161,34,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+162,34,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+163,34,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+164,34,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+165,34,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+166,34,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+167,34,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+168,35,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+169,35,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+170,35,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+171,35,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+172,35,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+173,35,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+174,35,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+175,35,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+176,36,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+177,36,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+178,36,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+179,36,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+180,36,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+181,36,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+182,36,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+183,36,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+184,37,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+185,37,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+186,37,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+187,37,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+188,37,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+189,37,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+190,37,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+191,37,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+192,37,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+193,38,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+194,38,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+195,38,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+196,38,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+197,38,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+198,38,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+199,38,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+200,38,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+201,38,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+202,39,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+203,39,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+204,39,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+205,39,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+206,39,"[+, **, sqrt, exp, -0.54, +, exp, u-, x_5, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(exp(-(x_5))+x_12))+(-(x_12)-cos(x_5))),21.969331741333008,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+207,39,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+208,39,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+209,39,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+210,39,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+211,40,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+212,40,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+213,40,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+214,40,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+215,40,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+216,40,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+217,40,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+218,40,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+219,40,"[+, **, sqrt, exp, -0.54, sin, +, sin, 1.1, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(1.1)+x_10)))+(-(x_12)-cos(x_5))),21.90485382080078,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+220,41,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+221,41,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+222,41,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+223,41,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+224,41,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+225,41,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+226,41,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+227,41,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+228,41,"[+, **, sqrt, exp, -0.54, sin, +, sin, 1.1, x_10, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**sin((sin(1.1)+x_10)))+(-(x_12)-cos(x_5))),21.90485382080078,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+229,42,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+230,42,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+231,42,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+232,42,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+233,42,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+234,42,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+235,42,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+236,42,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+237,42,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+238,43,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+239,43,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+240,43,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+241,43,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+242,43,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+243,43,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+244,43,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+245,43,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+246,43,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+247,44,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+248,44,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+249,44,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+250,44,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+251,44,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+252,44,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+253,44,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+254,44,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+255,44,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+256,45,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+257,45,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+258,45,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+259,45,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+260,45,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+261,45,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+262,45,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+263,45,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+264,45,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+265,46,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+266,46,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+267,46,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+268,46,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+269,46,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+270,46,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+271,46,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+272,46,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+273,46,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+274,47,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+275,47,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+276,47,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+277,47,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+278,47,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+279,47,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+280,47,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+281,47,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+282,47,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+283,48,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+284,48,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+285,48,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+286,48,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+287,48,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+288,48,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+289,48,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+290,48,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+291,48,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+292,49,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+293,49,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+294,49,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+295,49,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+296,49,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+297,49,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+298,49,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+299,49,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+300,49,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+301,50,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+302,50,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+303,50,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+304,50,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+305,50,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+306,50,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+307,50,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+308,50,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+309,50,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+310,51,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+311,51,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+312,51,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+313,51,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+314,51,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+315,51,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+316,51,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+317,51,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+318,51,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+319,52,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+320,52,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+321,52,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+322,52,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+323,52,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+324,52,"[+, **, sqrt, exp, -0.54, u-, x_5, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**-(x_5))+(-(x_12)-cos(x_5))),22.105037689208984,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+325,52,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+326,52,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+327,52,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+328,53,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+329,53,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+330,53,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+331,53,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+332,53,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+333,53,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+334,53,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+335,53,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+336,53,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+337,54,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+338,54,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+339,54,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+340,54,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+341,54,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+342,54,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+343,54,"[+, +, *, exp, sin, x_8, sin, x_12, +, u-, x_5, sin, x_12, sin, cos, x_5]",(((exp(sin(x_8))*sin(x_12))+(-(x_5)+sin(x_12)))+sin(cos(x_5))),21.319108963012695,16.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+344,54,"[+, **, sqrt, exp, -0.54, +, u-, x_5, sin, x_12, -, u-, x_12, cos, x_5]",((sqrt(abs(exp(-0.54)))**(-(x_5)+sin(x_12)))+(-(x_12)-cos(x_5))),21.497583389282227,15.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+345,54,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+346,54,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+347,55,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+348,55,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+349,55,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+350,55,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+351,55,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+352,55,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+353,55,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+354,55,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+355,55,"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+356,56,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+357,56,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+358,56,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+359,56,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+360,56,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+361,56,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+362,56,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+363,56,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+364,56,"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+365,57,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+366,57,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+367,57,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+368,57,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+369,57,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+370,57,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+371,57,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+372,57,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+373,57,"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+374,58,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+375,58,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+376,58,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+377,58,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+378,58,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+379,58,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+380,58,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+381,58,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+382,58,"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+383,59,[x_12],x_12,39.54974365234375,1.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+384,59,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+385,59,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+386,59,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+387,59,"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+388,59,"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+389,59,"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+390,59,"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston
+391,59,"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,210,60,210,not_specified,size,not_specified,not_specified,boston

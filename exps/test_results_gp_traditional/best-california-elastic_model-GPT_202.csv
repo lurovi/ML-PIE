@@ -1,0 +1,258 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[exp, x_0]",exp(x_0),1.2220845222473145,-70.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+1,0,[x_1],x_1,1.330268144607544,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+2,0,"[log, exp, x_0]",log(abs(exp(x_0))),0.701570987701416,-61.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+3,1,"[exp, x_0]",exp(x_0),1.2220845222473145,-70.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+4,1,[x_1],x_1,1.330268144607544,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+5,1,"[log, exp, x_0]",log(abs(exp(x_0))),0.701570987701416,-61.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+6,2,"[exp, x_0]",exp(x_0),1.2220845222473145,-70.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+7,2,"[log, exp, x_0]",log(abs(exp(x_0))),0.701570987701416,-61.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+8,2,[x_6],x_6,1.3185135126113892,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+9,3,[x_6],x_6,1.3185135126113892,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+10,3,"[u-, x_0]",-(x_0),0.701570987701416,-78.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+11,4,[x_6],x_6,1.3185135126113892,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+12,4,"[u-, x_0]",-(x_0),0.701570987701416,-78.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+13,5,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+14,6,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+15,6,"[**, sqrt, **2, exp, -0.03, x_0]",(sqrt(abs((exp(-0.03))**2))**x_0),0.6989776492118835,-44.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+16,7,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+17,7,"[-, x_0, **, exp, 0.07, exp, sin, u-, x_0]",(x_0-(exp(0.07)**exp(sin(-(x_0))))),0.6989666223526001,-47.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+18,8,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+19,8,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, /, x_5, u-, x_3]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs((x_5/-(x_3)))))),0.6980409622192383,-60.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+20,9,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+21,9,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, /, x_5, u-, x_3]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs((x_5/-(x_3)))))),0.6980409622192383,-60.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+22,9,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, x_5]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs(x_5)))),0.699738621711731,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+23,9,"[-, x_0, u-, exp, -, sin, x_5, x_5]",(x_0--(exp((sin(x_5)-x_5)))),0.6609414219856262,-59.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+24,10,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+25,10,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, /, x_5, u-, x_3]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs((x_5/-(x_3)))))),0.6980409622192383,-60.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+26,10,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, x_5]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs(x_5)))),0.699738621711731,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+27,10,"[-, x_0, u-, exp, -, sin, x_5, x_5]",(x_0--(exp((sin(x_5)-x_5)))),0.6609414219856262,-59.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+28,11,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+29,11,"[u-, -, *, x_0, -, -, x_4, -1.39, **2, -3.88, log, x_5]",-(((x_0*((x_4--1.39)-(-3.88)**2))-log(abs(x_5)))),0.699738621711731,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+30,11,"[-, x_0, u-, exp, -, sin, x_5, x_5]",(x_0--(exp((sin(x_5)-x_5)))),0.6609414219856262,-59.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+31,11,"[u-, -, *, x_0, -, -, x_4, x_1, **2, -3.88, log, /, x_5, u-, x_3]",-(((x_0*((x_4-x_1)-(-3.88)**2))-log(abs((x_5/-(x_3)))))),0.6934177279472351,-60.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+32,12,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+33,12,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+34,13,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+35,13,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+36,14,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+37,14,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+38,15,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+39,15,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+40,16,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+41,16,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+42,17,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+43,17,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+44,18,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+45,18,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+46,18,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+47,18,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+48,19,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+49,19,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+50,19,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+51,19,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+52,20,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+53,20,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+54,20,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+55,20,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+56,21,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+57,21,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+58,21,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+59,21,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+60,22,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+61,22,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+62,22,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+63,22,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+64,23,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+65,23,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+66,23,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+67,23,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+68,24,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+69,24,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+70,24,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+71,24,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+72,25,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+73,25,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+74,25,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+75,25,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+76,25,"[u-, -, -, x_0, sin, x_5, 1.6]",-(((x_0-sin(x_5))-1.6)),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+77,25,"[-, -, x_0, exp, -, cos, x_0, exp, x_1, u-, exp, -, -, -1.86, -0.34, x_5]",((x_0-exp((cos(x_0)-exp(x_1))))--(exp(((-1.86--0.34)-x_5)))),0.610397219657898,-48.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+78,26,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+79,26,"[-, x_0, u-, exp, -, -, -1.86, -0.34, x_5]",(x_0--(exp(((-1.86--0.34)-x_5)))),0.6127737164497375,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+80,26,"[-, x_0, u-, -, -3.36, sin, x_5]",(x_0--((-3.36-sin(x_5)))),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+81,26,"[-, x_0, u-, -, -3.36, u-, +, x_1, x_0]",(x_0--((-3.36--((x_1+x_0))))),0.6577156782150269,-74.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+82,26,"[u-, -, -, x_0, sin, x_5, 1.6]",-(((x_0-sin(x_5))-1.6)),0.6507494449615479,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+83,26,"[-, -, x_0, exp, -, cos, x_0, exp, x_1, u-, exp, -, -, -1.86, -0.34, x_5]",((x_0-exp((cos(x_0)-exp(x_1))))--(exp(((-1.86--0.34)-x_5)))),0.610397219657898,-48.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+84,27,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+85,27,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+86,28,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+87,28,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+88,28,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-x_0),0.5816448926925659,-53.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+89,29,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+90,29,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+91,29,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-x_0),0.5816448926925659,-53.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+92,29,"[-, x_0, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6]",(x_0--(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))),0.5816448926925659,-53.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+93,30,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+94,30,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+95,30,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+96,31,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+97,31,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+98,31,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+99,32,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+100,32,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+101,32,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+102,32,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+103,33,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+104,33,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+105,33,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+106,33,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+107,34,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+108,34,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+109,34,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+110,34,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+111,34,"[-, u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0, -, x_0, u-, -, -3.36, -1.39]",(-(((x_0-sin(x_5))-sin((x_2-x_0))))-(x_0--((-3.36--1.39)))),0.5571170449256897,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+112,34,"[u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0]",-(((x_0-sin(x_5))-sin((x_2-x_0)))),0.5766186714172363,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+113,34,"[-, u-, -, -, x_0, sin, x_5, 1.6, -, -3.36, u-, +, x_1, x_0]",(-(((x_0-sin(x_5))-1.6))-(-3.36--((x_1+x_0)))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+114,35,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+115,35,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+116,35,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+117,35,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+118,35,"[-, u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0, -, x_0, u-, -, -3.36, -1.39]",(-(((x_0-sin(x_5))-sin((x_2-x_0))))-(x_0--((-3.36--1.39)))),0.5571170449256897,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+119,35,"[-, u-, -, -, x_0, sin, x_5, 1.6, -, -3.36, u-, +, x_1, x_0]",(-(((x_0-sin(x_5))-1.6))-(-3.36--((x_1+x_0)))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+120,35,"[-, -, x_0, sin, x_5, sin, -, x_2, x_0]",((x_0-sin(x_5))-sin((x_2-x_0))),0.5766186714172363,-63.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+121,36,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+122,36,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+123,36,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+124,36,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+125,36,"[-, u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0, -, x_0, u-, -, -3.36, -1.39]",(-(((x_0-sin(x_5))-sin((x_2-x_0))))-(x_0--((-3.36--1.39)))),0.5571170449256897,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+126,36,"[-, u-, -, -, x_0, sin, x_5, 1.6, -, -3.36, u-, +, x_1, x_0]",(-(((x_0-sin(x_5))-1.6))-(-3.36--((x_1+x_0)))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+127,36,"[-, -, x_0, sin, x_5, sin, -, x_2, x_0]",((x_0-sin(x_5))-sin((x_2-x_0))),0.5766186714172363,-63.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+128,37,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+129,37,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+130,37,"[-, -, -, x_0, sin, x_5, 1.6, u-, -, -3.36, u-, +, x_1, x_0]",(((x_0-sin(x_5))-1.6)--((-3.36--((x_1+x_0))))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+131,37,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+132,37,"[-, u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0, -, x_0, u-, -, -3.36, -1.39]",(-(((x_0-sin(x_5))-sin((x_2-x_0))))-(x_0--((-3.36--1.39)))),0.5571170449256897,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+133,37,"[-, u-, -, -, x_0, sin, x_5, 1.6, -, -3.36, u-, +, x_1, x_0]",(-(((x_0-sin(x_5))-1.6))-(-3.36--((x_1+x_0)))),0.5766317844390869,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+134,37,"[-, -, x_0, sin, x_5, sin, -, x_2, x_0]",((x_0-sin(x_5))-sin((x_2-x_0))),0.5766186714172363,-63.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+135,38,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+136,38,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+137,38,"[-, u-, -, -, x_0, sin, x_5, **, -, -1.86, -0.34, **2, x_6, +, x_1, x_0]",(-(((x_0-sin(x_5))-((-1.86--0.34)**(x_6)**2)))-(x_1+x_0)),0.5498523712158203,-52.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+138,38,"[-, -, x_0, sin, x_5, sin, -, x_2, x_0]",((x_0-sin(x_5))-sin((x_2-x_0))),0.5766186714172363,-63.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+139,38,"[-, u-, -, -, x_0, sin, x_5, sin, -, x_2, x_0, -, x_0, 1.6]",(-(((x_0-sin(x_5))-sin((x_2-x_0))))-(x_0-1.6)),0.5571170449256897,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+140,38,"[-, -, x_0, sin, x_5, u-, +, x_1, x_0]",((x_0-sin(x_5))--((x_1+x_0))),0.5766317844390869,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+141,39,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+142,39,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+143,39,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+144,40,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+145,40,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+146,40,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+147,40,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, sin, cos, x_0, -, x_0, **2, -3.88]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(sin(cos(x_0))+(x_0-(-3.88)**2)))),0.5254467129707336,-45.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+148,41,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+149,41,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+150,41,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+151,41,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, sin, cos, x_0, -, x_0, **2, -3.88]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(sin(cos(x_0))+(x_0-(-3.88)**2)))),0.5254467129707336,-45.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+152,42,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+153,42,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+154,42,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+155,42,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, sin, cos, x_0, -, x_0, **2, -3.88]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(sin(cos(x_0))+(x_0-(-3.88)**2)))),0.5254467129707336,-45.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+156,43,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+157,43,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+158,43,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+159,43,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+160,44,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+161,44,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+162,44,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+163,44,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+164,45,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+165,45,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+166,45,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+167,45,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+168,45,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+169,46,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+170,46,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+171,46,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+172,46,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+173,46,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+174,47,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+175,47,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+176,47,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+177,47,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+178,47,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+179,48,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+180,48,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+181,48,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+182,48,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+183,48,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+184,49,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+185,49,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+186,49,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+187,49,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+188,49,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+189,50,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+190,50,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+191,50,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+192,50,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+193,50,"[-, u-, -, -, x_0, x_0, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-x_0)-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.5545043349266052,-71.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+194,50,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+195,51,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+196,51,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+197,51,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+198,51,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+199,51,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+200,51,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+201,52,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+202,52,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+203,52,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+204,52,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+205,52,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+206,52,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+207,52,"[-, u-, -, -, x_0, sin, x_2, -, x_7, u-, x_6, -, -, -, x_0, sin, x_5, -, x_7, u-, x_6, 1.6]",(-(((x_0-sin(x_2))-(x_7--(x_6))))-(((x_0-sin(x_5))-(x_7--(x_6)))-1.6)),0.5028401613235474,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+208,53,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+209,53,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+210,53,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+211,53,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+212,53,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+213,53,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+214,53,"[-, u-, -, -, x_0, sin, x_2, -, x_7, u-, x_6, -, -, -, x_0, sin, x_5, -, x_7, u-, x_6, 1.6]",(-(((x_0-sin(x_2))-(x_7--(x_6))))-(((x_0-sin(x_5))-(x_7--(x_6)))-1.6)),0.5028401613235474,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+215,54,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+216,54,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+217,54,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+218,54,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+219,54,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+220,54,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+221,54,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, -, x_7, u-, x_6, sin, -, x_2, x_0]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-((x_7--(x_6))+sin((x_2-x_0))))),0.48230329155921936,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+222,55,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+223,55,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+224,55,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+225,55,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+226,55,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+227,55,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+228,55,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, -, x_7, u-, x_6, sin, -, x_2, x_0]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-((x_7--(x_6))+sin((x_2-x_0))))),0.48230329155921936,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+229,56,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+230,56,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+231,56,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+232,56,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+233,56,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+234,56,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+235,56,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, -, x_7, u-, x_6, sin, -, x_2, x_0]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-((x_7--(x_6))+sin((x_2-x_0))))),0.48230329155921936,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+236,57,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+237,57,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+238,57,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+239,57,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+240,57,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+241,57,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+242,57,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, +, -, x_7, u-, x_6, sin, -, x_2, x_0]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-((x_7--(x_6))+sin((x_2-x_0))))),0.48230329155921936,-56.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+243,58,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+244,58,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+245,58,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+246,58,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+247,58,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+248,58,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+249,58,"[-, u-, -, -, x_0, 1.6, -, x_7, u-, x_6, -, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_7, u-, x_6]",(-(((x_0-1.6)-(x_7--(x_6))))-(((x_0-sin(x_5))-(x_7--(x_6)))-(x_7--(x_6)))),0.47815045714378357,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+250,59,[x_0],x_0,0.701570987701416,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+251,59,"[-, x_7, -, x_0, x_6]",(x_7-(x_0-x_6)),0.5919253826141357,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+252,59,"[-, -, x_0, sin, x_5, -, x_7, u-, x_6]",((x_0-sin(x_5))-(x_7--(x_6))),0.5411871075630188,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+253,59,"[-, u-, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_0, -, x_7, u-, x_6]",(-(((x_0-sin(x_5))-(x_7--(x_6))))-(x_0-(x_7--(x_6)))),0.504120409488678,-62.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+254,59,"[-, u-, -, -, x_0, sin, x_5, -, -, x_7, x_0, u-, x_6, x_1]",(-(((x_0-sin(x_5))-((x_7-x_0)--(x_6))))-x_1),0.5263108611106873,-64.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+255,59,"[-, u-, -, u-, x_6, -, x_7, u-, x_7, -, x_0, x_6]",(-((-(x_6)-(x_7--(x_7))))-(x_0-x_6)),0.5545043349266052,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california
+256,59,"[-, u-, -, -, x_0, 1.6, -, x_7, u-, x_6, -, -, -, x_0, sin, x_5, -, x_7, u-, x_6, -, x_7, u-, x_6]",(-(((x_0-1.6)-(x_7--(x_6))))-(((x_0-sin(x_5))-(x_7--(x_6)))-(x_7--(x_6)))),0.47815045714378357,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,california

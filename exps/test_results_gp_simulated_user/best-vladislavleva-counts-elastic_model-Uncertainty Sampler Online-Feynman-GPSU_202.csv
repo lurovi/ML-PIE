@@ -1,0 +1,826 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[**2, -, x_1, x_2]",((x_1-x_2))**2,0.031184637919068336,0.15067815780639648,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+1,0,"[u-, -, u-, x_4, **2, **2, -, x_3, x_2]",-((-(x_4)-(((x_3-x_2))**2)**2)),0.031061092391610146,0.16788730025291443,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+2,0,"[sqrt, exp, **3, cos, x_2]",sqrt(abs(exp((cos(x_2))**3))),0.028938053175807,0.17162679135799408,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+3,1,"[**2, -, x_1, x_2]",((x_1-x_2))**2,0.031184637919068336,0.15067815780639648,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+4,1,"[u-, -, u-, x_4, **2, **2, -, x_3, x_2]",-((-(x_4)-(((x_3-x_2))**2)**2)),0.031061092391610146,0.16788730025291443,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+5,1,"[sqrt, exp, **3, cos, x_2]",sqrt(abs(exp((cos(x_2))**3))),0.028938053175807,0.17162679135799408,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+6,1,"[**3, sqrt, exp, cos, x_1]",(sqrt(abs(exp(cos(x_1)))))**3,0.02839818224310875,0.17403031885623932,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+7,1,"[sin, **, x_5, x_0]",sin((x_5**x_0)),0.033748120069503784,0.14806130528450012,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+8,1,"[sin, sin, cos, x_4]",sin(sin(cos(x_4))),0.029371224343776703,0.1713225245475769,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+9,2,"[**2, -, x_1, x_2]",((x_1-x_2))**2,0.031184637919068336,0.15067815780639648,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+10,2,"[sqrt, exp, **3, cos, x_2]",sqrt(abs(exp((cos(x_2))**3))),0.028938053175807,0.17162679135799408,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+11,2,"[sin, **, x_5, x_0]",sin((x_5**x_0)),0.033748120069503784,0.14806130528450012,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+12,2,"[sin, sin, cos, x_4]",sin(sin(cos(x_4))),0.029371224343776703,0.1713225245475769,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+13,2,"[sin, **3, cos, x_4]",sin((cos(x_4))**3),0.029668739065527916,0.16434824466705322,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+14,2,"[**, sin, log, **3, sqrt, -2.6, **3, sqrt, exp, cos, x_1]",(sin(log(abs((sqrt(abs(-2.6)))**3)))**(sqrt(abs(exp(cos(x_1)))))**3),0.02839156985282898,0.17164170742034912,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+15,2,"[sin, x_2]",sin(x_2),0.0338471494615078,0.1465553343296051,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+16,2,"[cos, **, x_6, x_1]",cos((x_6**x_1)),0.03397392854094505,0.14546512067317963,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+17,3,"[**, sin, log, **3, sqrt, -2.6, **3, sqrt, exp, cos, x_1]",(sin(log(abs((sqrt(abs(-2.6)))**3)))**(sqrt(abs(exp(cos(x_1)))))**3),0.02839156985282898,0.17164170742034912,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+18,3,"[sin, **3, cos, x_1]",sin((cos(x_1))**3),0.028915993869304657,0.14949442446231842,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+19,3,"[**, x_0, sin, cos, x_4]",(x_0**sin(cos(x_4))),0.030933724716305733,0.14580151438713074,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+20,3,"[**, x_0, x_4]",(x_0**x_4),0.03304925933480263,0.13041938841342926,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+21,3,"[-, *, exp, x_0, x_1, x_5]",((exp(x_0)*x_1)-x_5),0.03289389610290527,0.13847897946834564,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+22,3,"[sin, cos, -, -, u-, x_0, sqrt, 3.2, 0.55]",sin(cos(((-(x_0)-sqrt(abs(3.2)))-0.55))),0.03230787813663483,0.14549905061721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+23,4,"[**, x_0, x_1]",(x_0**x_1),0.03298671171069145,0.11952022463083267,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+24,4,"[sqrt, exp, cos, x_1]",sqrt(abs(exp(cos(x_1)))),0.028310485184192657,0.1532837599515915,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+25,4,"[cos, x_1]",cos(x_1),0.02848554402589798,0.1267983764410019,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+26,5,"[**, x_0, x_1]",(x_0**x_1),0.03298671171069145,0.11952022463083267,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+27,5,"[cos, x_1]",cos(x_1),0.02848554402589798,0.1267983764410019,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+28,5,"[exp, x_1]",exp(x_1),0.032682355493307114,0.12470467388629913,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+29,5,"[sin, x_0]",sin(x_0),0.0338517501950264,0.1151694804430008,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+30,5,"[u-, -, cos, x_4, sin, log, x_1]",-((cos(x_4)-sin(log(abs(x_1))))),0.02790835127234459,0.1458885371685028,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+31,5,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,0.11464846134185791,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+32,6,"[cos, x_1]",cos(x_1),0.02848554402589798,0.1267983764410019,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+33,6,"[u-, -, cos, x_4, sin, log, x_1]",-((cos(x_4)-sin(log(abs(x_1))))),0.02790835127234459,0.1458885371685028,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+34,6,"[**3, x_0]",(x_0)**3,0.03293412923812866,0.11256362497806549,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+35,6,"[**3, x_1]",(x_1)**3,0.03328750655055046,0.11253930628299713,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+36,6,"[-, x_3, x_2]",(x_3-x_2),0.03400704637169838,0.11181297153234482,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+37,6,"[sin, cos, -, x_0, 0.55]",sin(cos((x_0-0.55))),0.030948728322982788,0.123664990067482,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+38,6,"[exp, x_0]",exp(x_0),0.032427504658699036,0.1210394948720932,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+39,7,"[u-, -, cos, x_4, sin, log, x_1]",-((cos(x_4)-sin(log(abs(x_1))))),0.02790835127234459,0.1458885371685028,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+40,7,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+41,7,"[cos, x_0]",cos(x_0),0.02881552465260029,0.10867644101381302,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+42,8,"[u-, -, cos, x_4, sin, log, x_1]",-((cos(x_4)-sin(log(abs(x_1))))),0.02790835127234459,0.1458885371685028,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+43,8,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+44,8,"[-, sin, sqrt, -, /, -4.11, x_0, cos, x_5, cos, u-, x_2]",(sin(sqrt(abs(((-4.11/x_0)-cos(x_5)))))-cos(-(x_2))),0.026928750798106194,0.14750276505947113,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+45,8,[x_3],x_3,0.033963561058044434,0.09784060716629028,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+46,8,"[u-, x_0]",-(x_0),0.03398371860384941,0.09544188529253006,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+47,8,"[cos, x_2]",cos(x_2),0.02851366437971592,0.10112511366605759,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+48,9,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+49,9,"[cos, x_2]",cos(x_2),0.02851366437971592,0.10112511366605759,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+50,9,"[log, x_1]",log(abs(x_1)),0.03316773101687431,0.09497074037790298,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+51,9,"[u-, -, u-, cos, x_0, cos, x_4]",-((-(cos(x_0))-cos(x_4))),0.023747768253087997,0.1373234987258911,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+52,9,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,0.09037383645772934,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+53,9,[x_6],x_6,0.03398318588733673,0.08759443461894989,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+54,10,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+55,10,"[cos, x_2]",cos(x_2),0.02851366437971592,0.10112511366605759,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+56,10,"[u-, -, u-, cos, x_0, cos, x_4]",-((-(cos(x_0))-cos(x_4))),0.023747768253087997,0.1373234987258911,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+57,10,[x_6],x_6,0.03398318588733673,0.08759443461894989,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+58,10,[x_4],x_4,0.03398425504565239,0.08435581624507904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+59,10,"[/, -4.11, x_0]",(-4.11/x_0),0.0330561101436615,0.08872424066066742,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+60,10,"[u-, -, u-, cos, x_1, cos, x_4]",-((-(cos(x_1))-cos(x_4))),0.02371957339346409,0.13945937156677246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+61,10,"[cos, x_4]",cos(x_4),0.02933245338499546,0.09263590723276138,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+62,11,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+63,11,"[cos, x_2]",cos(x_2),0.02851366437971592,0.10112511366605759,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+64,11,"[u-, -, u-, cos, x_0, cos, x_4]",-((-(cos(x_0))-cos(x_4))),0.023747768253087997,0.1373234987258911,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+65,11,[x_4],x_4,0.03398425504565239,0.08435581624507904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+66,11,"[/, -4.11, x_0]",(-4.11/x_0),0.0330561101436615,0.08872424066066742,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+67,11,"[u-, -, u-, cos, x_1, cos, x_4]",-((-(cos(x_1))-cos(x_4))),0.02371957339346409,0.13945937156677246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+68,11,"[cos, x_4]",cos(x_4),0.02933245338499546,0.09263590723276138,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+69,11,"[-, cos, x_4, sin, log, x_1]",(cos(x_4)-sin(log(abs(x_1)))),0.02790835127234459,0.12540771067142487,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+70,11,[x_1],x_1,0.033998042345047,0.07725438475608826,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+71,11,"[log, x_2]",log(abs(x_2)),0.03356284275650978,0.087403304874897,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+72,12,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.12410220503807068,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+73,12,"[cos, x_2]",cos(x_2),0.02851366437971592,0.10112511366605759,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+74,12,"[u-, -, u-, cos, x_0, cos, x_4]",-((-(cos(x_0))-cos(x_4))),0.023747768253087997,0.1373234987258911,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+75,12,"[u-, -, u-, cos, x_1, cos, x_4]",-((-(cos(x_1))-cos(x_4))),0.02371957339346409,0.13945937156677246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+76,12,"[cos, x_4]",cos(x_4),0.02933245338499546,0.09263590723276138,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+77,12,"[-, cos, x_4, sin, log, x_1]",(cos(x_4)-sin(log(abs(x_1)))),0.02790835127234459,0.12540771067142487,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+78,12,"[-, exp, cos, exp, cos, x_1, exp, cos, x_2]",(exp(cos(exp(cos(x_1))))-exp(cos(x_2))),0.023333072662353516,0.18293799459934235,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+79,12,"[cos, -, x_3, 3.4]",cos((x_3-3.4)),0.030466822907328606,0.09213437139987946,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+80,12,"[**2, x_1]",(x_1)**2,0.033764198422431946,0.07234589755535126,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+81,12,"[**, x_0, x_2]",(x_0**x_2),0.03270888328552246,0.07473289966583252,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+82,12,"[**2, **3, x_0]",((x_0)**3)**2,0.03220341354608536,0.0893760621547699,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+83,12,"[sin, x_5]",sin(x_5),0.03400286287069321,0.06569216400384903,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+84,12,"[sin, sin, cos, x_2]",sin(sin(cos(x_2))),0.028582878410816193,0.09861579537391663,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+85,13,"[u-, -, u-, cos, x_0, cos, x_4]",-((-(cos(x_0))-cos(x_4))),0.023747768253087997,0.1373234987258911,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+86,13,"[u-, -, u-, cos, x_1, cos, x_4]",-((-(cos(x_1))-cos(x_4))),0.02371957339346409,0.13945937156677246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+87,13,"[-, cos, x_4, sin, log, x_1]",(cos(x_4)-sin(log(abs(x_1)))),0.02790835127234459,0.12540771067142487,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+88,13,"[-, exp, cos, exp, cos, x_1, exp, cos, x_2]",(exp(cos(exp(cos(x_1))))-exp(cos(x_2))),0.023333072662353516,0.18293799459934235,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+89,13,"[**, x_0, x_2]",(x_0**x_2),0.03270888328552246,0.07473289966583252,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+90,13,"[sin, x_3]",sin(x_3),0.03383104130625725,0.06528398394584656,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+91,13,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,0.07904990017414093,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+92,13,"[log, x_0]",log(abs(x_0)),0.03350996598601341,0.06791800260543823,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+93,13,"[-, sin, sqrt, -, -1.2, u-, -4.45, cos, x_1]",(sin(sqrt(abs((-1.2--(-4.45)))))-cos(x_1)),0.02848554402589798,0.11849316209554672,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+94,13,"[**, x_4, x_2]",(x_4**x_2),0.032678358256816864,0.07526061683893204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+95,13,"[cos, sqrt, exp, cos, x_1]",cos(sqrt(abs(exp(cos(x_1))))),0.028284067288041115,0.12245843559503555,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+96,14,"[**, x_0, x_2]",(x_0**x_2),0.03270888328552246,0.07473289966583252,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+97,14,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,0.07904990017414093,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+98,14,"[-, sin, sqrt, -, -1.2, u-, -4.45, cos, x_1]",(sin(sqrt(abs((-1.2--(-4.45)))))-cos(x_1)),0.02848554402589798,0.11849316209554672,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+99,14,"[**, x_4, x_2]",(x_4**x_2),0.032678358256816864,0.07526061683893204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+100,14,"[cos, sqrt, exp, cos, x_1]",cos(sqrt(abs(exp(cos(x_1))))),0.028284067288041115,0.12245843559503555,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+101,14,"[u-, -, u-, cos, x_1, cos, x_2]",-((-(cos(x_1))-cos(x_2))),0.023318476974964142,0.12511572241783142,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+102,14,"[**2, x_2]",(x_2)**2,0.03346296772360802,0.06179690361022949,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+103,14,"[sin, x_0]",sin(x_0),0.0338517501950264,0.05201277136802673,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+104,15,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,0.07904990017414093,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+105,15,"[cos, sqrt, exp, cos, x_1]",cos(sqrt(abs(exp(cos(x_1))))),0.028284067288041115,0.12245843559503555,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+106,15,"[u-, -, u-, cos, x_1, cos, x_2]",-((-(cos(x_1))-cos(x_2))),0.023318476974964142,0.12511572241783142,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+107,15,"[sin, x_0]",sin(x_0),0.0338517501950264,0.05201277136802673,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+108,15,"[**, x_0, x_0]",(x_0**x_0),0.032576460391283035,0.055600374937057495,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+109,15,"[-, sin, sqrt, x_1, cos, x_1]",(sin(sqrt(abs(x_1)))-cos(x_1)),0.02837306074798107,0.1027383953332901,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+110,15,"[**3, cos, x_1]",(cos(x_1))**3,0.029015952721238136,0.06956745684146881,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+111,15,"[**2, x_5]",(x_5)**2,0.034001801162958145,0.05064588040113449,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+112,16,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,0.07904990017414093,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+113,16,"[u-, -, u-, cos, x_1, cos, x_2]",-((-(cos(x_1))-cos(x_2))),0.023318476974964142,0.12511572241783142,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+114,16,"[**, x_0, x_0]",(x_0**x_0),0.032576460391283035,0.055600374937057495,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+115,16,"[-, sin, sqrt, x_1, cos, x_1]",(sin(sqrt(abs(x_1)))-cos(x_1)),0.02837306074798107,0.1027383953332901,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+116,16,"[sin, -, cos, x_4, sin, log, x_1]",sin((cos(x_4)-sin(log(abs(x_1))))),0.02805476076900959,0.11731167137622833,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+117,16,"[u-, cos, x_4]",-(cos(x_4)),0.02933245338499546,0.06740877032279968,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+118,16,"[**2, x_0]",(x_0)**2,0.033485233783721924,0.04030276834964752,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+119,16,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,0.06757885217666626,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+120,16,"[**, x_2, x_0]",(x_2**x_0),0.032654158771038055,0.04880114644765854,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+121,16,"[sin, -, u-, cos, x_1, cos, x_2]",sin((-(cos(x_1))-cos(x_2))),0.023843098431825638,0.11757752299308777,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+122,16,"[**3, **, x_0, x_2]",((x_0**x_2))**3,0.03235408663749695,0.06534695625305176,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+123,16,[x_2],x_2,0.03398410230875015,0.034662164747714996,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+124,17,"[**, x_0, x_0]",(x_0**x_0),0.032576460391283035,0.055600374937057495,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+125,17,"[u-, cos, x_4]",-(cos(x_4)),0.02933245338499546,0.06740877032279968,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+126,17,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,0.06757885217666626,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+127,17,"[**, x_2, x_0]",(x_2**x_0),0.032654158771038055,0.04880114644765854,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+128,17,"[**3, **, x_0, x_2]",((x_0**x_2))**3,0.03235408663749695,0.06534695625305176,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+129,17,[x_0],x_0,0.03398371860384941,0.022854194045066833,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+130,17,"[exp, cos, x_1]",exp(cos(x_1)),0.02829163521528244,0.0689648762345314,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+131,17,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+132,17,"[**3, x_3]",(x_3)**3,0.03297225758433342,0.035005927085876465,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+133,17,[x_3],x_3,0.033963561058044434,0.02930125594139099,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+134,18,"[u-, cos, x_4]",-(cos(x_4)),0.02933245338499546,0.06740877032279968,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+135,18,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,0.06757885217666626,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+136,18,"[**, x_2, x_0]",(x_2**x_0),0.032654158771038055,0.04880114644765854,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+137,18,"[exp, cos, x_1]",exp(cos(x_1)),0.02829163521528244,0.0689648762345314,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+138,18,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+139,18,"[**3, x_3]",(x_3)**3,0.03297225758433342,0.035005927085876465,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+140,18,"[sqrt, x_2]",sqrt(abs(x_2)),0.03394745662808418,0.027362436056137085,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+141,18,"[-, u-, cos, x_1, cos, x_4]",(-(cos(x_1))-cos(x_4)),0.02371957339346409,0.1090453639626503,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+142,18,"[u-, x_0]",-(x_0),0.03398371860384941,0.019871562719345093,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+143,18,"[-, sin, sqrt, x_2, cos, x_1]",(sin(sqrt(abs(x_2)))-cos(x_1)),0.02662978693842888,0.09771575033664703,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+144,18,"[sin, sqrt, x_2]",sin(sqrt(abs(x_2))),0.02934170328080654,0.049627333879470825,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+145,19,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,0.06757885217666626,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+146,19,"[exp, cos, x_1]",exp(cos(x_1)),0.02829163521528244,0.0689648762345314,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+147,19,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+148,19,"[-, u-, cos, x_1, cos, x_4]",(-(cos(x_1))-cos(x_4)),0.02371957339346409,0.1090453639626503,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+149,19,"[-, sin, sqrt, x_2, cos, x_1]",(sin(sqrt(abs(x_2)))-cos(x_1)),0.02662978693842888,0.09771575033664703,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+150,19,"[**3, **, x_0, x_0]",((x_0**x_0))**3,0.032103925943374634,0.03422950208187103,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+151,19,"[sin, x_2]",sin(x_2),0.0338471494615078,0.004513442516326904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+152,19,"[**3, x_0]",(x_0)**3,0.03293412923812866,0.004846692085266113,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+153,19,"[sin, x_5]",sin(x_5),0.03400286287069321,-0.000561639666557312,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+154,19,"[exp, x_4]",exp(x_4),0.032331764698028564,0.018479064106941223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+155,19,"[sin, **3, cos, x_1]",sin((cos(x_1))**3),0.028915993869304657,0.048109665513038635,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+156,20,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,0.06757885217666626,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+157,20,"[exp, cos, x_1]",exp(cos(x_1)),0.02829163521528244,0.0689648762345314,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+158,20,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+159,20,"[-, u-, cos, x_1, cos, x_4]",(-(cos(x_1))-cos(x_4)),0.02371957339346409,0.1090453639626503,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+160,20,"[sin, x_2]",sin(x_2),0.0338471494615078,0.004513442516326904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+161,20,"[**3, x_0]",(x_0)**3,0.03293412923812866,0.004846692085266113,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+162,20,"[sin, x_5]",sin(x_5),0.03400286287069321,-0.000561639666557312,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+163,20,"[exp, x_4]",exp(x_4),0.032331764698028564,0.018479064106941223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+164,20,[-0.99],-0.99,0.0340089350938797,-0.004565522074699402,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+165,20,"[exp, cos, x_0]",exp(cos(x_0)),0.028867119923233986,0.033129021525382996,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+166,20,[1.98],1.98,0.0340089350938797,-0.004565522074699402,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+167,20,"[**3, u-, -, u-, cos, x_0, cos, x_4]",(-((-(cos(x_0))-cos(x_4))))**3,0.026159163564443588,0.09728273749351501,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+168,20,"[sin, sqrt, x_3]",sin(sqrt(abs(x_3))),0.029998283833265305,0.023107409477233887,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+169,20,"[+, exp, cos, x_1, cos, x_2]",(exp(cos(x_1))+cos(x_2)),0.023204907774925232,0.11217844486236572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+170,21,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+171,21,"[-, u-, cos, x_1, cos, x_4]",(-(cos(x_1))-cos(x_4)),0.02371957339346409,0.1090453639626503,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+172,21,"[exp, cos, x_0]",exp(cos(x_0)),0.028867119923233986,0.033129021525382996,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+173,21,"[+, exp, cos, x_1, cos, x_2]",(exp(cos(x_1))+cos(x_2)),0.023204907774925232,0.11217844486236572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+174,21,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.007445394992828369,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+175,21,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.012423783540725708,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+176,21,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,0.06248284876346588,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+177,21,"[sin, u-, -, u-, cos, x_1, cos, x_2]",sin(-((-(cos(x_1))-cos(x_2)))),0.023843098431825638,0.08909612894058228,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+178,22,"[-, u-, cos, x_1, cos, x_2]",(-(cos(x_1))-cos(x_2)),0.023318476974964142,0.11015498638153076,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+179,22,"[-, u-, cos, x_1, cos, x_4]",(-(cos(x_1))-cos(x_4)),0.02371957339346409,0.1090453639626503,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+180,22,"[+, exp, cos, x_1, cos, x_2]",(exp(cos(x_1))+cos(x_2)),0.023204907774925232,0.11217844486236572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+181,22,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.007445394992828369,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+182,22,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,0.06248284876346588,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+183,22,"[sin, u-, -, u-, cos, x_1, cos, x_2]",sin(-((-(cos(x_1))-cos(x_2)))),0.023843098431825638,0.08909612894058228,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+184,22,[x_2],x_2,0.03398410230875015,-0.03148265182971954,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+185,22,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.012832090258598328,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+186,22,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+187,22,"[**3, x_2]",(x_2)**3,0.032856326550245285,-0.019547849893569946,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+188,22,"[u-, cos, x_1]",-(cos(x_1)),0.02848554402589798,0.0002307295799255371,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+189,23,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,0.06248284876346588,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+190,23,[x_2],x_2,0.03398410230875015,-0.03148265182971954,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+191,23,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+192,23,"[u-, -, u-, cos, x_0, cos, x_1]",-((-(cos(x_0))-cos(x_1))),0.02309730090200901,0.06646254658699036,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+193,23,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+194,23,"[-, u-, cos, x_0, cos, x_4]",(-(cos(x_0))-cos(x_4)),0.023747768253087997,0.06336735188961029,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+195,23,[x_4],x_4,0.03398425504565239,-0.03994224965572357,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+196,24,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,0.06248284876346588,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+197,24,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+198,24,"[u-, -, u-, cos, x_0, cos, x_1]",-((-(cos(x_0))-cos(x_1))),0.02309730090200901,0.06646254658699036,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+199,24,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+200,24,"[-, u-, cos, x_0, cos, x_4]",(-(cos(x_0))-cos(x_4)),0.023747768253087997,0.06336735188961029,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+201,24,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.043055787682533264,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+202,24,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, -, sin, sqrt, x_0, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos((sin(sqrt(abs(x_0)))-cos(x_1)))),0.018570490181446075,0.20672398805618286,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+203,24,"[**3, x_1]",(x_1)**3,0.03328750655055046,-0.03291745483875275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+204,24,"[**3, x_4]",(x_4)**3,0.0329882986843586,-0.0291021466255188,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+205,24,[x_0],x_0,0.03398371860384941,-0.056187137961387634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+206,25,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+207,25,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+208,25,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.043055787682533264,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+209,25,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, -, sin, sqrt, x_0, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos((sin(sqrt(abs(x_0)))-cos(x_1)))),0.018570490181446075,0.20672398805618286,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+210,25,[x_0],x_0,0.03398371860384941,-0.056187137961387634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+211,25,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,-0.04647660255432129,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+212,25,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+213,25,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.03789220750331879,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+214,26,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+215,26,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+216,26,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+217,26,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+218,26,"[**2, x_0]",(x_0)**2,0.033485233783721924,-0.04946474730968475,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+219,26,[x_3],x_3,0.033963561058044434,-0.07679320871829987,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+220,26,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+221,27,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+222,27,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+223,27,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+224,27,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+225,27,[x_3],x_3,0.033963561058044434,-0.07679320871829987,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+226,27,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+227,27,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.05442793667316437,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+228,27,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.05911755561828613,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+229,27,[4.09],4.09,0.0340089350938797,-0.08877071738243103,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+230,27,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+231,27,"[sin, -, sin, sqrt, x_0, cos, x_2]",sin((sin(sqrt(abs(x_0)))-cos(x_2))),0.027327310293912888,0.05211292952299118,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+232,28,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+233,28,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+234,28,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+235,28,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+236,28,[x_3],x_3,0.033963561058044434,-0.07679320871829987,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+237,28,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+238,28,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.05442793667316437,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+239,28,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.05911755561828613,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+240,28,[4.09],4.09,0.0340089350938797,-0.08877071738243103,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+241,28,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+242,28,"[-, u-, cos, x_0, cos, x_2]",(-(cos(x_0))-cos(x_2)),0.02346782013773918,0.05153194069862366,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+243,29,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+244,29,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+245,29,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+246,29,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+247,29,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+248,29,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.05911755561828613,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+249,29,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+250,29,"[-, u-, cos, x_0, cos, x_2]",(-(cos(x_0))-cos(x_2)),0.02346782013773918,0.05153194069862366,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+251,29,"[u-, cos, x_0]",-(cos(x_0)),0.02881552465260029,-0.05796189606189728,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+252,29,"[u-, x_3]",-(x_3),0.033963561058044434,-0.09118618071079254,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+253,30,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+254,30,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+255,30,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+256,30,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+257,30,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+258,30,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+259,30,"[u-, cos, x_0]",-(cos(x_0)),0.02881552465260029,-0.05796189606189728,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+260,30,"[-, sin, sqrt, x_1, cos, x_2]",(sin(sqrt(abs(x_1)))-cos(x_2)),0.02641737088561058,0.046976238489151,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+261,30,[x_6],x_6,0.03398318588733673,-0.14520227909088135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+262,30,"[**3, x_0]",(x_0)**3,0.03293412923812866,-0.09846599400043488,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+263,30,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+264,31,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+265,31,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+266,31,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+267,31,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+268,31,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.049321725964546204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+269,31,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+270,31,"[u-, cos, x_0]",-(cos(x_0)),0.02881552465260029,-0.05796189606189728,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+271,31,"[-, sin, sqrt, x_1, cos, x_2]",(sin(sqrt(abs(x_1)))-cos(x_2)),0.02641737088561058,0.046976238489151,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+272,31,[x_6],x_6,0.03398318588733673,-0.14520227909088135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+273,31,"[**3, x_0]",(x_0)**3,0.03293412923812866,-0.09846599400043488,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+274,31,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+275,31,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.07738451659679413,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+276,31,[-0.99],-0.99,0.0340089350938797,-0.1568658947944641,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+277,32,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+278,32,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+279,32,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+280,32,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+281,32,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+282,32,"[-, sin, sqrt, x_1, cos, x_2]",(sin(sqrt(abs(x_1)))-cos(x_2)),0.02641737088561058,0.046976238489151,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+283,32,[x_6],x_6,0.03398318588733673,-0.14520227909088135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+284,32,"[**3, x_0]",(x_0)**3,0.03293412923812866,-0.09846599400043488,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+285,32,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+286,32,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.07738451659679413,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+287,32,[x_2],x_2,0.03398410230875015,-0.18387719988822937,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+288,32,"[-, sin, sqrt, x_0, cos, x_3]",(sin(sqrt(abs(x_0)))-cos(x_3)),0.027441317215561867,0.03378632664680481,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+289,32,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.0744418054819107,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+290,33,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+291,33,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.028828546404838562,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+292,33,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+293,33,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+294,33,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+295,33,"[**3, x_0]",(x_0)**3,0.03293412923812866,-0.09846599400043488,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+296,33,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+297,33,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.07738451659679413,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+298,33,[x_2],x_2,0.03398410230875015,-0.18387719988822937,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+299,33,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.0744418054819107,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+300,33,"[sin, -, u-, cos, x_0, cos, x_4]",sin((-(cos(x_0))-cos(x_4))),0.024054957553744316,0.045828066766262054,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+301,33,[1.96],1.96,0.0340089350938797,-0.19910044968128204,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+302,33,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.1508316546678543,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+303,33,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+304,33,"[**3, x_1]",(x_1)**3,0.03328750655055046,-0.14237169921398163,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+305,33,"[-, sin, sqrt, x_1, cos, x_0]",(sin(sqrt(abs(x_1)))-cos(x_0)),0.026678839698433876,0.022605881094932556,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+306,34,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+307,34,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+308,34,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+309,34,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+310,34,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+311,34,"[sin, -, u-, cos, x_0, cos, x_4]",sin((-(cos(x_0))-cos(x_4))),0.024054957553744316,0.045828066766262054,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+312,34,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.1508316546678543,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+313,34,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+314,34,"[-, sin, sqrt, x_1, cos, x_0]",(sin(sqrt(abs(x_1)))-cos(x_0)),0.026678839698433876,0.022605881094932556,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+315,34,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.18405382335186005,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+316,34,[x_1],x_1,0.033998042345047,-0.2239547222852707,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+317,34,"[exp, x_4]",exp(x_4),0.032331764698028564,-0.1426815241575241,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+318,34,"[-, 1.98, cos, x_1]",(1.98-cos(x_1)),0.02848554402589798,-0.07602803409099579,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+319,34,"[sin, sqrt, x_1]",sin(sqrt(abs(x_1))),0.029142266139388084,-0.11685122549533844,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+320,34,"[cos, sin, sqrt, x_0]",cos(sin(sqrt(abs(x_0)))),0.029101263731718063,-0.07651741802692413,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+321,35,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+322,35,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+323,35,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+324,35,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,0.01674555242061615,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+325,35,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+326,35,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.1508316546678543,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+327,35,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+328,35,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.18405382335186005,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+329,35,"[exp, x_4]",exp(x_4),0.032331764698028564,-0.1426815241575241,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+330,35,"[-, 1.98, cos, x_1]",(1.98-cos(x_1)),0.02848554402589798,-0.07602803409099579,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+331,35,"[sin, sqrt, x_1]",sin(sqrt(abs(x_1))),0.029142266139388084,-0.11685122549533844,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+332,35,"[cos, sin, sqrt, x_0]",cos(sin(sqrt(abs(x_0)))),0.029101263731718063,-0.07651741802692413,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+333,35,"[sin, sqrt, x_2]",sin(sqrt(abs(x_2))),0.02934170328080654,-0.1364150047302246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+334,35,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+335,35,[x_0],x_0,0.03398371860384941,-0.25988250970840454,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+336,36,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+337,36,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+338,36,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+339,36,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+340,36,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+341,36,"[-, 1.98, cos, x_1]",(1.98-cos(x_1)),0.02848554402589798,-0.07602803409099579,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+342,36,"[sin, sqrt, x_1]",sin(sqrt(abs(x_1))),0.029142266139388084,-0.11685122549533844,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+343,36,"[sin, sqrt, x_2]",sin(sqrt(abs(x_2))),0.02934170328080654,-0.1364150047302246,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+344,36,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+345,36,[x_0],x_0,0.03398371860384941,-0.25988250970840454,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+346,36,"[-, 1.96, cos, x_2]",(1.96-cos(x_2)),0.02851366437971592,-0.11613166332244873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+347,36,"[-, sin, sqrt, x_3, cos, x_2]",(sin(sqrt(abs(x_3)))-cos(x_2)),0.026560520753264427,0.010895013809204102,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+348,36,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.2164521962404251,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+349,36,"[u-, sin, -, sin, sqrt, x_0, cos, x_1]",-(sin((sin(sqrt(abs(x_0)))-cos(x_1)))),0.02732074074447155,0.008614405989646912,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+350,37,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+351,37,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+352,37,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+353,37,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+354,37,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+355,37,"[-, 1.98, cos, x_1]",(1.98-cos(x_1)),0.02848554402589798,-0.07602803409099579,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+356,37,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+357,37,"[-, 1.96, cos, x_2]",(1.96-cos(x_2)),0.02851366437971592,-0.11613166332244873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+358,37,"[-, sin, sqrt, x_3, cos, x_2]",(sin(sqrt(abs(x_3)))-cos(x_2)),0.026560520753264427,0.010895013809204102,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+359,37,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.2164521962404251,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+360,37,"[u-, sin, -, sin, sqrt, x_0, cos, x_1]",-(sin((sin(sqrt(abs(x_0)))-cos(x_1)))),0.02732074074447155,0.008614405989646912,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+361,37,"[sqrt, x_2]",sqrt(abs(x_2)),0.03394745662808418,-0.2503446340560913,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+362,37,"[sin, cos, x_2]",sin(cos(x_2)),0.028549719601869583,-0.18319348990917206,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+363,37,"[log, x_1]",log(abs(x_1)),0.03316773101687431,-0.23348112404346466,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+364,37,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.24830780923366547,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+365,37,[x_3],x_3,0.033963561058044434,-0.3050205111503601,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+366,38,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+367,38,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+368,38,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+369,38,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+370,38,"[sqrt, u-, exp, cos, x_1]",sqrt(abs(-(exp(cos(x_1))))),0.028310485184192657,0.002146705985069275,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+371,38,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+372,38,"[-, sin, sqrt, x_3, cos, x_2]",(sin(sqrt(abs(x_3)))-cos(x_2)),0.026560520753264427,0.010895013809204102,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+373,38,"[u-, sin, -, sin, sqrt, x_0, cos, x_1]",-(sin((sin(sqrt(abs(x_0)))-cos(x_1)))),0.02732074074447155,0.008614405989646912,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+374,38,[x_3],x_3,0.033963561058044434,-0.3050205111503601,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+375,38,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,-0.23143410682678223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+376,38,[-0.6],-0.6,0.0340089350938797,-0.32619673013687134,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+377,38,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.27135851979255676,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+378,38,"[-, 3.2, cos, x_1]",(3.2-cos(x_1)),0.02848554402589798,-0.16160324215888977,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+379,38,"[**3, -, sin, sqrt, x_0, cos, x_1]",((sin(sqrt(abs(x_0)))-cos(x_1)))**3,0.027325358241796494,0.00508880615234375,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+380,38,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+381,39,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+382,39,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+383,39,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+384,39,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+385,39,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+386,39,[x_3],x_3,0.033963561058044434,-0.3050205111503601,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+387,39,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,-0.23143410682678223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+388,39,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.27135851979255676,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+389,39,"[-, 3.2, cos, x_1]",(3.2-cos(x_1)),0.02848554402589798,-0.16160324215888977,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+390,39,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+391,39,"[sin, -, u-, cos, x_2, cos, x_4]",sin((-(cos(x_2))-cos(x_4))),0.023971816524863243,-0.006284445524215698,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+392,39,"[u-, sin, x_0]",-(sin(x_0)),0.0338517501950264,-0.28795912861824036,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+393,39,"[u-, cos, x_3]",-(cos(x_3)),0.02961312234401703,-0.2556733191013336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+394,39,[x_4],x_4,0.03398425504565239,-0.360927939414978,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+395,40,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+396,40,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+397,40,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+398,40,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+399,40,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+400,40,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,-0.23143410682678223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+401,40,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+402,40,"[**3, x_4]",(x_4)**3,0.0329882986843586,-0.3252891004085541,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+403,40,[x_6],x_6,0.03398318588733673,-0.3869442045688629,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+404,40,"[sin, u-, cos, x_0]",sin(-(cos(x_0))),0.028850175440311432,-0.2571084201335907,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+405,40,[x_2],x_2,0.03398410230875015,-0.3909468352794647,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+406,40,"[sqrt, x_6]",sqrt(abs(x_6)),0.03397587686777115,-0.3349795639514923,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+407,40,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+408,40,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.28925397992134094,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+409,40,"[sin, u-, -, u-, cos, x_0, cos, x_2]",sin(-((-(cos(x_0))-cos(x_2)))),0.023645222187042236,-0.04258468747138977,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+410,41,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+411,41,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+412,41,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+413,41,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+414,41,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+415,41,"[u-, cos, x_2]",-(cos(x_2)),0.02851366437971592,-0.23143410682678223,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+416,41,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+417,41,"[**3, x_4]",(x_4)**3,0.0329882986843586,-0.3252891004085541,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+418,41,[x_6],x_6,0.03398318588733673,-0.3869442045688629,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+419,41,"[sin, u-, cos, x_0]",sin(-(cos(x_0))),0.028850175440311432,-0.2571084201335907,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+420,41,[x_2],x_2,0.03398410230875015,-0.3909468352794647,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+421,41,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+422,41,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.28925397992134094,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+423,41,[x_1],x_1,0.033998042345047,-0.40519747138023376,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+424,41,"[**3, cos, x_2]",(cos(x_2))**3,0.02894783578813076,-0.2761078476905823,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+425,41,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.3732861578464508,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+426,41,"[sin, cos, x_3]",sin(cos(x_3)),0.029684605076909065,-0.2934364974498749,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+427,41,"[sin, -, u-, cos, x_0, cos, x_2]",sin((-(cos(x_0))-cos(x_2))),0.023645222187042236,-0.05978378653526306,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+428,41,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+429,41,"[u-, sin, -, u-, cos, x_1, cos, x_0]",-(sin((-(cos(x_1))-cos(x_0)))),0.023471208289265633,-0.058597177267074585,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+430,42,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+431,42,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+432,42,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+433,42,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+434,42,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+435,42,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+436,42,[x_6],x_6,0.03398318588733673,-0.3869442045688629,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+437,42,[x_2],x_2,0.03398410230875015,-0.3909468352794647,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+438,42,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+439,42,[x_1],x_1,0.033998042345047,-0.40519747138023376,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+440,42,"[sin, cos, x_3]",sin(cos(x_3)),0.029684605076909065,-0.2934364974498749,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+441,42,"[sin, -, u-, cos, x_0, cos, x_2]",sin((-(cos(x_0))-cos(x_2))),0.023645222187042236,-0.05978378653526306,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+442,42,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+443,42,"[u-, sin, -, u-, cos, x_1, cos, x_0]",-(sin((-(cos(x_1))-cos(x_0)))),0.023471208289265633,-0.058597177267074585,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+444,42,"[**3, x_2]",(x_2)**3,0.032856326550245285,-0.3848635256290436,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+445,42,"[sin, u-, cos, x_1]",sin(-(cos(x_1))),0.02849709428846836,-0.2922777235507965,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+446,43,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+447,43,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+448,43,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+449,43,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+450,43,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+451,43,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+452,43,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+453,43,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+454,43,"[sin, u-, cos, x_1]",sin(-(cos(x_1))),0.02849709428846836,-0.2922777235507965,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+455,43,[x_0],x_0,0.03398371860384941,-0.4826403856277466,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+456,43,"[cos, x_0]",cos(x_0),0.02881552465260029,-0.4187626838684082,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+457,43,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+458,43,"[sin, x_2]",sin(x_2),0.0338471494615078,-0.42177748680114746,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+459,44,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+460,44,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+461,44,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+462,44,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+463,44,"[u-, -, u-, cos, x_0, cos, x_2]",-((-(cos(x_0))-cos(x_2))),0.02346782013773918,0.019475698471069336,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+464,44,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+465,44,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+466,44,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+467,44,[x_0],x_0,0.03398371860384941,-0.4826403856277466,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+468,44,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+469,44,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+470,44,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+471,45,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+472,45,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+473,45,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+474,45,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+475,45,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+476,45,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+477,45,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+478,45,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+479,45,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+480,45,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+481,45,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+482,45,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,-0.4726196527481079,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+483,45,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+484,45,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+485,45,"[u-, x_3]",-(x_3),0.033963561058044434,-0.4872148036956787,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+486,45,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+487,45,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+488,45,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,-0.09535941481590271,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+489,46,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+490,46,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+491,46,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+492,46,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+493,46,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+494,46,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+495,46,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+496,46,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+497,46,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+498,46,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+499,46,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+500,46,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+501,46,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+502,46,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+503,46,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+504,46,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,-0.09535941481590271,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+505,46,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.5022448301315308,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+506,46,[x_3],x_3,0.033963561058044434,-0.5813586711883545,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+507,47,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+508,47,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+509,47,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+510,47,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+511,47,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+512,47,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+513,47,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+514,47,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+515,47,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+516,47,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+517,47,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+518,47,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+519,47,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+520,47,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+521,47,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+522,47,"[-, sin, sqrt, x_0, cos, x_1]",(sin(sqrt(abs(x_0)))-cos(x_1)),0.026314876973628998,-0.09535941481590271,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+523,47,"[cos, x_3]",cos(x_3),0.02961312234401703,-0.5022448301315308,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+524,47,[x_3],x_3,0.033963561058044434,-0.5813586711883545,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+525,48,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+526,48,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+527,48,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+528,48,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+529,48,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+530,48,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+531,48,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+532,48,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+533,48,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+534,48,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+535,48,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+536,48,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+537,48,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+538,48,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+539,48,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+540,48,[x_3],x_3,0.033963561058044434,-0.5813586711883545,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+541,48,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+542,48,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+543,48,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.5382928848266602,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+544,49,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+545,49,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+546,49,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+547,49,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+548,49,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+549,49,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+550,49,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+551,49,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+552,49,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+553,49,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+554,49,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+555,49,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+556,49,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+557,49,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+558,49,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+559,49,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+560,49,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+561,49,"[sqrt, x_1]",sqrt(abs(x_1)),0.03374876454472542,-0.5382928848266602,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+562,49,"[u-, x_0]",-(x_0),0.03398371860384941,-0.6206478476524353,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+563,49,"[sin, -, 3.2, cos, x_1]",sin((3.2-cos(x_1))),0.02846815250813961,-0.25412970781326294,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+564,49,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+565,49,[x_1],x_1,0.033998042345047,-0.6666355133056641,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+566,49,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.6072344779968262,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+567,50,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+568,50,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+569,50,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+570,50,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+571,50,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+572,50,"[u-, u-, exp, cos, x_1]",-(-(exp(cos(x_1)))),0.02829163521528244,-0.17828673124313354,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+573,50,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+574,50,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+575,50,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+576,50,"[u-, sqrt, u-, exp, cos, x_1]",-(sqrt(abs(-(exp(cos(x_1)))))),0.028310485184192657,-0.2001214474439621,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+577,50,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+578,50,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+579,50,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+580,50,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+581,50,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+582,50,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+583,50,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+584,50,"[u-, x_0]",-(x_0),0.03398371860384941,-0.6206478476524353,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+585,50,"[sin, -, 3.2, cos, x_1]",sin((3.2-cos(x_1))),0.02846815250813961,-0.25412970781326294,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+586,50,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+587,50,"[sin, x_0]",sin(x_0),0.0338517501950264,-0.6072344779968262,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+588,50,[x_2],x_2,0.03398410230875015,-0.728066086769104,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+589,50,"[log, x_4]",log(abs(x_4)),0.03368692845106125,-0.5913200378417969,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+590,50,"[u-, cos, x_3]",-(cos(x_3)),0.02961312234401703,-0.5439426302909851,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+591,51,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+592,51,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+593,51,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+594,51,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+595,51,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+596,51,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+597,51,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+598,51,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+599,51,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+600,51,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+601,51,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+602,51,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+603,51,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+604,51,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+605,51,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+606,51,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+607,51,[x_2],x_2,0.03398410230875015,-0.728066086769104,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+608,51,"[u-, cos, x_3]",-(cos(x_3)),0.02961312234401703,-0.5439426302909851,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+609,51,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+610,51,"[sin, x_4]",sin(x_4),0.033984050154685974,-0.6276023983955383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+611,51,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+612,51,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+613,52,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+614,52,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+615,52,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+616,52,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+617,52,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+618,52,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+619,52,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+620,52,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+621,52,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+622,52,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+623,52,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+624,52,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+625,52,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+626,52,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+627,52,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+628,52,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+629,52,[x_2],x_2,0.03398410230875015,-0.728066086769104,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+630,52,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+631,52,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+632,52,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+633,52,"[**3, x_2]",(x_2)**3,0.032856326550245285,-0.656162440776825,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+634,52,"[-, sin, sqrt, x_0, cos, x_3]",(sin(sqrt(abs(x_0)))-cos(x_3)),0.027441317215561867,-0.12769414484500885,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+635,52,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.5752562284469604,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+636,53,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+637,53,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+638,53,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+639,53,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+640,53,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+641,53,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+642,53,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+643,53,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+644,53,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+645,53,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+646,53,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+647,53,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+648,53,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+649,53,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+650,53,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+651,53,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+652,53,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+653,53,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+654,53,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+655,53,"[-, sin, sqrt, x_0, cos, x_3]",(sin(sqrt(abs(x_0)))-cos(x_3)),0.027441317215561867,-0.12769414484500885,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+656,53,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.5752562284469604,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+657,53,[x_0],x_0,0.03398371860384941,-0.8348504304885864,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+658,53,"[exp, x_3]",exp(x_3),0.03249521926045418,-0.7178019285202026,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+659,53,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.7375511527061462,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+660,54,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+661,54,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+662,54,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+663,54,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+664,54,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+665,54,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+666,54,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+667,54,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+668,54,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+669,54,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+670,54,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+671,54,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+672,54,"[cos, x_2]",cos(x_2),0.02851366437971592,-0.4692399501800537,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+673,54,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+674,54,"[cos, x_4]",cos(x_4),0.02933245338499546,-0.5260512828826904,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+675,54,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+676,54,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+677,54,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+678,54,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+679,54,"[sin, sqrt, x_0]",sin(sqrt(abs(x_0))),0.029342221096158028,-0.5752562284469604,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+680,54,[x_0],x_0,0.03398371860384941,-0.8348504304885864,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+681,54,"[exp, x_3]",exp(x_3),0.03249521926045418,-0.7178019285202026,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+682,54,"[sin, x_3]",sin(x_3),0.03383104130625725,-0.7375511527061462,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+683,54,"[sin, sqrt, x_4]",sin(sqrt(abs(x_4))),0.03014432080090046,-0.6110124588012695,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+684,54,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+685,54,"[cos, sin, sqrt, x_0]",cos(sin(sqrt(abs(x_0)))),0.029101263731718063,-0.4897138774394989,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+686,54,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+687,55,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+688,55,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+689,55,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+690,55,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+691,55,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+692,55,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+693,55,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+694,55,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+695,55,"[u-, -, sin, sqrt, x_2, cos, x_0]",-((sin(sqrt(abs(x_2)))-cos(x_0))),0.026715150102972984,-0.12004680931568146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+696,55,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+697,55,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+698,55,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+699,55,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+700,55,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+701,55,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+702,55,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+703,55,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+704,55,[x_0],x_0,0.03398371860384941,-0.8348504304885864,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+705,55,"[sin, sqrt, x_4]",sin(sqrt(abs(x_4))),0.03014432080090046,-0.6110124588012695,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+706,55,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+707,55,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+708,55,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.5875701308250427,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+709,55,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.7706368565559387,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+710,56,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+711,56,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+712,56,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+713,56,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+714,56,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+715,56,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+716,56,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+717,56,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+718,56,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+719,56,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+720,56,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+721,56,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+722,56,"[-, sin, sqrt, x_0, cos, x_2]",(sin(sqrt(abs(x_0)))-cos(x_2)),0.026418354362249374,-0.10852590203285217,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+723,56,"[exp, x_2]",exp(x_2),0.032237038016319275,-0.6238966584205627,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+724,56,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+725,56,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+726,56,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+727,56,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+728,56,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.5875701308250427,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+729,56,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.7706368565559387,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+730,56,"[u-, u-, -, sin, sqrt, x_2, cos, x_0]",-(-((sin(sqrt(abs(x_2)))-cos(x_0)))),0.026715150102972984,-0.12943732738494873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+731,56,"[+, cos, x_0, exp, cos, x_1]",(cos(x_0)+exp(cos(x_1))),0.02293078415095806,0.06461316347122192,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+732,56,"[exp, cos, x_2]",exp(cos(x_2)),0.028529223054647446,-0.6127403378486633,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+733,56,[x_3],x_3,0.033963561058044434,-0.9378641843795776,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+734,56,"[u-, exp, u-, x_1]",-(exp(-(x_1))),0.032285258173942566,-0.6380335688591003,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+735,57,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+736,57,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+737,57,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+738,57,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+739,57,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+740,57,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+741,57,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+742,57,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+743,57,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+744,57,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+745,57,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+746,57,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+747,57,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+748,57,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+749,57,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+750,57,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+751,57,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.5875701308250427,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+752,57,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.7706368565559387,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+753,57,"[u-, u-, -, sin, sqrt, x_2, cos, x_0]",-(-((sin(sqrt(abs(x_2)))-cos(x_0)))),0.026715150102972984,-0.12943732738494873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+754,57,"[+, cos, x_0, exp, cos, x_1]",(cos(x_0)+exp(cos(x_1))),0.02293078415095806,0.06461316347122192,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+755,57,"[exp, cos, x_2]",exp(cos(x_2)),0.028529223054647446,-0.6127403378486633,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+756,57,[x_3],x_3,0.033963561058044434,-0.9378641843795776,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+757,57,"[-, -, -, u-, cos, x_4, cos, x_0, exp, cos, x_1, cos, x_3]",(((-(cos(x_4))-cos(x_0))-exp(cos(x_1)))-cos(x_3)),0.01186366006731987,0.9652101993560791,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+758,57,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,-0.8363632559776306,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+759,57,"[u-, -, sin, sqrt, x_0, cos, x_2]",-((sin(sqrt(abs(x_0)))-cos(x_2))),0.026418354362249374,-0.12524594366550446,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+760,57,"[log, x_2]",log(abs(x_2)),0.03356284275650978,-0.7895286083221436,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+761,57,"[sin, sqrt, x_3]",sin(sqrt(abs(x_3))),0.029998283833265305,-0.695858359336853,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+762,58,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+763,58,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+764,58,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+765,58,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+766,58,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+767,58,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+768,58,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+769,58,"[cos, x_1]",cos(x_1),0.02848554402589798,-0.43476176261901855,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+770,58,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+771,58,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+772,58,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+773,58,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+774,58,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+775,58,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+776,58,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+777,58,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+778,58,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.5875701308250427,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+779,58,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.7706368565559387,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+780,58,"[u-, u-, -, sin, sqrt, x_2, cos, x_0]",-(-((sin(sqrt(abs(x_2)))-cos(x_0)))),0.026715150102972984,-0.12943732738494873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+781,58,"[+, cos, x_0, exp, cos, x_1]",(cos(x_0)+exp(cos(x_1))),0.02293078415095806,0.06461316347122192,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+782,58,"[exp, cos, x_2]",exp(cos(x_2)),0.028529223054647446,-0.6127403378486633,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+783,58,[x_3],x_3,0.033963561058044434,-0.9378641843795776,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+784,58,"[-, -, -, u-, cos, x_4, cos, x_0, exp, cos, x_1, cos, x_3]",(((-(cos(x_4))-cos(x_0))-exp(cos(x_1)))-cos(x_3)),0.01186366006731987,0.9652101993560791,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+785,58,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,-0.8363632559776306,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+786,58,"[u-, -, sin, sqrt, x_0, cos, x_2]",-((sin(sqrt(abs(x_0)))-cos(x_2))),0.026418354362249374,-0.12524594366550446,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+787,58,"[log, x_2]",log(abs(x_2)),0.03356284275650978,-0.7895286083221436,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+788,58,"[sin, sqrt, x_3]",sin(sqrt(abs(x_3))),0.029998283833265305,-0.695858359336853,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+789,58,"[sin, cos, x_2]",sin(cos(x_2)),0.028549719601869583,-0.6726722717285156,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+790,58,"[sin, u-, x_0]",sin(-(x_0)),0.0338517501950264,-0.8037546873092651,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+791,58,"[u-, -, -, u-, cos, x_0, cos, x_3, cos, x_1]",-(((-(cos(x_0))-cos(x_3))-cos(x_1))),0.017595326527953148,0.3561771512031555,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+792,58,[x_5],x_5,0.03399047255516052,-1.0137877464294434,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+793,59,"[-, sin, -, u-, cos, x_0, cos, x_4, cos, x_1]",(sin((-(cos(x_0))-cos(x_4)))-cos(x_1)),0.0187225341796875,0.11889540404081345,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+794,59,"[-, u-, cos, x_0, cos, x_1]",(-(cos(x_0))-cos(x_1)),0.02309730090200901,0.057425521314144135,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+795,59,"[-, -, u-, cos, x_0, cos, x_4, cos, x_1]",((-(cos(x_0))-cos(x_4))-cos(x_1)),0.017918935045599937,0.133323073387146,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+796,59,"[-, sin, u-, cos, x_0, cos, x_1]",(sin(-(cos(x_0)))-cos(x_1)),0.02313208393752575,0.05101484805345535,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+797,59,"[-, sin, -, u-, cos, x_2, cos, x_0, cos, x_1]",(sin((-(cos(x_2))-cos(x_0)))-cos(x_1)),0.018631555140018463,0.1309569776058197,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+798,59,"[-, -, -, sin, sqrt, x_0, cos, x_4, exp, cos, x_1, cos, x_3]",(((sin(sqrt(abs(x_0)))-cos(x_4))-exp(cos(x_1)))-cos(x_3)),0.016128292307257652,0.4197186529636383,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+799,59,"[sin, -, u-, cos, x_1, cos, x_0]",sin((-(cos(x_1))-cos(x_0))),0.023471208289265633,-0.062394917011260986,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+800,59,"[-, -, -, sin, sqrt, x_0, cos, x_2, cos, x_4, cos, x_1]",(((sin(sqrt(abs(x_0)))-cos(x_2))-cos(x_4))-cos(x_1)),0.016482140868902206,0.4043976068496704,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+801,59,"[exp, sin, -, u-, cos, x_0, cos, x_2]",exp(sin((-(cos(x_0))-cos(x_2)))),0.023392055183649063,-0.0046923160552978516,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+802,59,"[-, u-, cos, x_3, cos, x_1]",(-(cos(x_3))-cos(x_1)),0.023671913892030716,-0.07759258151054382,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+803,59,"[-, u-, cos, x_0, cos, x_3]",(-(cos(x_0))-cos(x_3)),0.023807816207408905,-0.09837996959686279,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+804,59,"[-, -, -, u-, cos, x_3, cos, x_4, cos, x_0, cos, x_1]",(((-(cos(x_3))-cos(x_4))-cos(x_0))-cos(x_1)),0.011884690262377262,0.5978155136108398,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+805,59,"[u-, exp, cos, x_1]",-(exp(cos(x_1))),0.02829163521528244,-0.4188576936721802,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+806,59,"[u-, -, sin, sqrt, u-, x_0, cos, x_3]",-((sin(sqrt(abs(-(x_0))))-cos(x_3))),0.027441317215561867,-0.14038929343223572,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+807,59,"[-, u-, exp, cos, x_1, cos, x_2]",(-(exp(cos(x_1)))-cos(x_2)),0.023204907774925232,0.03958144038915634,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+808,59,"[sin, cos, x_1]",sin(cos(x_1)),0.02849709428846836,-0.5875701308250427,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+809,59,"[exp, x_0]",exp(x_0),0.032427504658699036,-0.7706368565559387,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+810,59,"[u-, u-, -, sin, sqrt, x_2, cos, x_0]",-(-((sin(sqrt(abs(x_2)))-cos(x_0)))),0.026715150102972984,-0.12943732738494873,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+811,59,"[+, cos, x_0, exp, cos, x_1]",(cos(x_0)+exp(cos(x_1))),0.02293078415095806,0.06461316347122192,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+812,59,"[exp, cos, x_2]",exp(cos(x_2)),0.028529223054647446,-0.6127403378486633,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+813,59,[x_3],x_3,0.033963561058044434,-0.9378641843795776,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+814,59,"[-, -, -, u-, cos, x_4, cos, x_0, exp, cos, x_1, cos, x_3]",(((-(cos(x_4))-cos(x_0))-exp(cos(x_1)))-cos(x_3)),0.01186366006731987,0.9652101993560791,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+815,59,"[sqrt, x_0]",sqrt(abs(x_0)),0.033944591879844666,-0.8363632559776306,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+816,59,"[u-, -, sin, sqrt, x_0, cos, x_2]",-((sin(sqrt(abs(x_0)))-cos(x_2))),0.026418354362249374,-0.12524594366550446,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+817,59,"[log, x_2]",log(abs(x_2)),0.03356284275650978,-0.7895286083221436,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+818,59,"[sin, sqrt, x_3]",sin(sqrt(abs(x_3))),0.029998283833265305,-0.695858359336853,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+819,59,"[sin, cos, x_2]",sin(cos(x_2)),0.028549719601869583,-0.6726722717285156,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+820,59,"[sin, u-, x_0]",sin(-(x_0)),0.0338517501950264,-0.8037546873092651,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+821,59,"[u-, -, -, u-, cos, x_0, cos, x_3, cos, x_1]",-(((-(cos(x_0))-cos(x_3))-cos(x_1))),0.017595326527953148,0.3561771512031555,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+822,59,[x_5],x_5,0.03399047255516052,-1.0137877464294434,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+823,59,"[u-, exp, cos, x_0]",-(exp(cos(x_0))),0.028867119923233986,-0.6742393374443054,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva
+824,59,"[-, 3.2, cos, x_1]",(3.2-cos(x_1)),0.02848554402589798,-0.48620620369911194,202,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Feynman,vladislavleva

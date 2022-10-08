@@ -1,0 +1,672 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+1,1,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+2,1,"[log, exp, **2, exp, +, x_7, x_1]",log(abs(exp((exp((x_7+x_1)))**2))),3307.34326171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+3,1,"[cos, **3, sin, exp, x_1]",cos((sin(exp(x_1)))**3),4027.08642578125,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+4,2,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+5,2,"[log, exp, **2, exp, +, x_7, x_1]",log(abs(exp((exp((x_7+x_1)))**2))),3307.34326171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+6,2,"[cos, **3, sin, exp, x_1]",cos((sin(exp(x_1)))**3),4027.08642578125,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+7,2,"[+, +, +, exp, cos, x_10, 0.12, *, +, +, x_1, x_2, **3, x_10, exp, *, x_1, x_9, exp, **2, exp, +, x_7, x_1]",(((exp(cos(x_10))+0.12)+(((x_1+x_2)+(x_10)**3)*exp((x_1*x_9))))+exp((exp((x_7+x_1)))**2)),3262.8779296875,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+8,3,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+9,3,"[log, exp, **2, exp, +, x_7, x_1]",log(abs(exp((exp((x_7+x_1)))**2))),3307.34326171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+10,3,"[cos, **3, sin, exp, x_1]",cos((sin(exp(x_1)))**3),4027.08642578125,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+11,3,"[+, +, +, exp, cos, x_10, 0.12, *, +, +, x_1, x_2, **3, x_10, exp, *, x_1, x_9, exp, **2, exp, +, x_7, x_1]",(((exp(cos(x_10))+0.12)+(((x_1+x_2)+(x_10)**3)*exp((x_1*x_9))))+exp((exp((x_7+x_1)))**2)),3262.8779296875,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+12,4,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+13,4,"[log, exp, **2, exp, +, x_7, x_1]",log(abs(exp((exp((x_7+x_1)))**2))),3307.34326171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+14,4,"[+, +, +, exp, cos, x_10, 0.12, *, +, +, x_1, x_2, **3, x_10, exp, *, x_1, x_9, exp, **2, exp, +, x_7, x_1]",(((exp(cos(x_10))+0.12)+(((x_1+x_2)+(x_10)**3)*exp((x_1*x_9))))+exp((exp((x_7+x_1)))**2)),3262.8779296875,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+15,4,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+16,4,"[cos, +, exp, x_1, exp, x_8]",cos((exp(x_1)+exp(x_8))),4010.211669921875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+17,5,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+18,5,"[+, +, +, exp, cos, x_10, 0.12, *, +, +, x_1, x_2, **3, x_10, exp, *, x_1, x_9, exp, **2, exp, +, x_7, x_1]",(((exp(cos(x_10))+0.12)+(((x_1+x_2)+(x_10)**3)*exp((x_1*x_9))))+exp((exp((x_7+x_1)))**2)),3262.8779296875,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+19,5,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+20,5,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+21,6,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+22,6,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+23,6,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+24,6,"[-, +, x_3, sin, u-, +, x_2, x_4, -, sin, sin, x_7, u-, x_1]",((x_3+sin(-((x_2+x_4))))-(sin(sin(x_7))--(x_1))),3277.708740234375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+25,6,"[+, +, +, exp, *, x_3, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_3*x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3217.641845703125,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+26,7,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+27,7,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+28,7,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+29,7,"[-, +, x_3, sin, u-, +, x_2, x_4, -, sin, sin, x_7, u-, x_1]",((x_3+sin(-((x_2+x_4))))-(sin(sin(x_7))--(x_1))),3277.708740234375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+30,7,"[+, +, +, exp, *, x_3, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_3*x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3217.641845703125,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+31,8,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+32,8,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+33,8,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+34,8,"[-, +, x_3, sin, u-, +, x_2, x_4, -, sin, sin, x_7, u-, x_1]",((x_3+sin(-((x_2+x_4))))-(sin(sin(x_7))--(x_1))),3277.708740234375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+35,8,"[+, +, +, exp, *, x_3, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_3*x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3217.641845703125,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+36,8,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+37,9,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+38,9,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+39,9,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+40,9,"[-, +, x_3, sin, u-, +, x_2, x_4, -, sin, sin, x_7, u-, x_1]",((x_3+sin(-((x_2+x_4))))-(sin(sin(x_7))--(x_1))),3277.708740234375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+41,9,"[+, +, +, exp, *, x_3, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_3*x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3217.641845703125,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+42,9,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+43,10,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+44,10,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+45,10,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+46,10,"[-, +, x_3, sin, u-, +, x_2, x_4, -, sin, sin, x_7, u-, x_1]",((x_3+sin(-((x_2+x_4))))-(sin(sin(x_7))--(x_1))),3277.708740234375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+47,10,"[+, +, +, exp, *, x_3, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_3*x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3217.641845703125,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+48,10,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+49,10,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, u-, cos, x_1, sin, **2, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((-(cos(x_1))+sin((x_7)**2)))**2),3168.633056640625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+50,11,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+51,11,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+52,11,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+53,11,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+54,11,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, u-, cos, x_1, sin, **2, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((-(cos(x_1))+sin((x_7)**2)))**2),3168.633056640625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+55,11,"[+, exp, **2, exp, +, x_2, x_1, exp, **2, exp, +, x_7, x_1]",(exp((exp((x_2+x_1)))**2)+exp((exp((x_7+x_1)))**2)),3208.4091796875,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+56,11,"[+, *, x_2, x_7, **2, exp, +, sin, x_7, x_1]",((x_2*x_7)+(exp((sin(x_7)+x_1)))**2),3297.158935546875,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+57,12,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+58,12,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+59,12,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+60,12,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, u-, cos, x_1, sin, **2, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((-(cos(x_1))+sin((x_7)**2)))**2),3168.633056640625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+61,12,"[+, exp, **2, exp, +, x_2, x_1, exp, **2, exp, +, x_7, x_1]",(exp((exp((x_2+x_1)))**2)+exp((exp((x_7+x_1)))**2)),3208.4091796875,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+62,12,"[+, *, x_2, x_7, **2, exp, +, sin, x_7, x_1]",((x_2*x_7)+(exp((sin(x_7)+x_1)))**2),3297.158935546875,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+63,12,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+64,13,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+65,13,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+66,13,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+67,13,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, u-, cos, x_1, sin, **2, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((-(cos(x_1))+sin((x_7)**2)))**2),3168.633056640625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+68,13,"[+, exp, **2, exp, +, x_2, x_1, exp, **2, exp, +, x_7, x_1]",(exp((exp((x_2+x_1)))**2)+exp((exp((x_7+x_1)))**2)),3208.4091796875,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+69,13,"[+, *, x_2, x_7, **2, exp, +, sin, x_7, x_1]",((x_2*x_7)+(exp((sin(x_7)+x_1)))**2),3297.158935546875,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+70,13,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+71,13,"[+, *, x_0, x_7, **2, exp, +, x_7, x_1]",((x_0*x_7)+(exp((x_7+x_1)))**2),3298.19482421875,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+72,14,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+73,14,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+74,14,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+75,14,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, u-, cos, x_1, sin, **2, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((-(cos(x_1))+sin((x_7)**2)))**2),3168.633056640625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+76,14,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+77,14,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+78,14,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+79,15,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+80,15,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+81,15,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+82,15,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+83,15,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+84,15,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+85,15,"[+, +, **2, exp, +, x_2, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_2+x_1)))**2+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3146.65283203125,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+86,15,"[+, +, **2, exp, +, x_7, x_1, exp, x_2, exp, *, log, -, x_5, x_10, **2, x_10]",(((exp((x_7+x_1)))**2+exp(x_2))+exp((log(abs((x_5-x_10)))*(x_10)**2))),3167.279541015625,17.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+87,16,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+88,16,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+89,16,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+90,16,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+91,16,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+92,16,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+93,16,"[+, +, **2, exp, +, x_2, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, **2, exp, +, x_7, x_1]",(((exp((x_2+x_1)))**2+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+exp((exp((x_7+x_1)))**2)),3146.65283203125,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+94,16,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+95,16,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+96,16,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+97,17,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+98,17,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+99,17,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+100,17,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+101,17,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+102,17,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+103,17,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+104,17,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+105,17,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+106,17,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_1, x_6]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_1+x_6))))**2),3125.7373046875,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+107,17,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, exp, x_5, exp, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(exp(x_5)))))+exp(x_7)),3133.373291015625,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+108,18,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+109,18,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+110,18,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+111,18,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+112,18,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+113,18,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+114,18,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+115,18,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+116,18,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+117,18,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_1, x_6]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_1+x_6))))**2),3125.7373046875,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+118,18,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, exp, x_5, exp, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(exp(x_5)))))+exp(x_7)),3133.373291015625,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+119,19,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+120,19,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+121,19,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+122,19,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+123,19,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+124,19,"[+, exp, +, x_7, x_1, +, x_2, x_1]",(exp((x_7+x_1))+(x_2+x_1)),3255.15576171875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+125,19,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+126,19,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+127,19,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+128,19,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_1, x_6]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_1+x_6))))**2),3125.7373046875,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+129,19,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, exp, x_5, exp, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(exp(x_5)))))+exp(x_7)),3133.373291015625,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+130,20,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+131,20,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+132,20,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+133,20,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+134,20,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+135,20,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+136,20,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+137,20,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+138,20,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_1, x_6]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_1+x_6))))**2),3125.7373046875,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+139,20,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, exp, x_5, exp, x_7]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(exp(x_5)))))+exp(x_7)),3133.373291015625,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+140,20,"[+, exp, +, x_2, x_1, +, x_7, x_1]",(exp((x_2+x_1))+(x_7+x_1)),3241.850830078125,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+141,21,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+142,21,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+143,21,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+144,21,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+145,21,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+146,21,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+147,21,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+148,21,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+149,21,"[+, exp, +, x_2, x_1, +, x_7, x_1]",(exp((x_2+x_1))+(x_7+x_1)),3241.850830078125,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+150,21,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3111.14453125,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+151,21,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+152,22,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+153,22,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+154,22,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+155,22,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+156,22,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+157,22,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+158,22,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+159,22,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+160,22,"[+, exp, +, x_2, x_1, +, x_7, x_1]",(exp((x_2+x_1))+(x_7+x_1)),3241.850830078125,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+161,22,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3111.14453125,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+162,22,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+163,23,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+164,23,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+165,23,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+166,23,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+167,23,"[+, +, x_2, x_1, **2, exp, +, x_7, x_1]",((x_2+x_1)+(exp((x_7+x_1)))**2),3191.177001953125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+168,23,"[+, exp, +, x_7, x_1, **2, x_2]",(exp((x_7+x_1))+(x_2)**2),3275.12451171875,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+169,23,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+170,23,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+171,23,"[+, exp, +, x_2, x_1, +, x_7, x_1]",(exp((x_2+x_1))+(x_7+x_1)),3241.850830078125,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+172,23,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3111.14453125,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+173,23,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+174,23,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+175,24,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+176,24,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+177,24,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+178,24,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+179,24,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+180,24,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+181,24,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+182,24,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+183,24,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+184,24,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_4, x_0, u-, x_4, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_4-x_0)*-(x_4))+exp((x_7+x_1))))**2),3089.771728515625,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+185,25,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+186,25,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+187,25,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+188,25,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+189,25,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+190,25,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+191,25,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+192,25,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+193,25,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+194,25,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_4, x_0, u-, x_1, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_4-x_0)*-(x_1))+exp((x_7+x_1))))**2),3088.6787109375,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+195,25,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+196,26,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+197,26,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+198,26,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+199,26,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+200,26,"[-, cos, **2, exp, +, x_2, x_1, -, sin, +, x_7, x_7, u-, x_1]",(cos((exp((x_2+x_1)))**2)-(sin((x_7+x_7))--(x_1))),3157.695068359375,14.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+201,26,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+202,26,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+203,26,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+204,26,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+205,26,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_4, x_0, u-, x_1, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_4-x_0)*-(x_1))+exp((x_7+x_1))))**2),3088.6787109375,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+206,26,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+207,26,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3072.300537109375,29.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+208,26,"[*, +, **2, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, *, x_1, x_8]",(((exp((x_7+x_1)))**2+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))*exp((x_1*x_8))),3113.088623046875,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+209,27,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+210,27,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+211,27,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+212,27,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+213,27,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+214,27,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+215,27,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+216,27,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+217,27,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_4, x_0, u-, x_1, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_4-x_0)*-(x_1))+exp((x_7+x_1))))**2),3088.6787109375,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+218,27,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+219,27,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3072.300537109375,29.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+220,27,"[*, +, **2, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, *, x_1, x_8]",(((exp((x_7+x_1)))**2+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))*exp((x_1*x_8))),3113.088623046875,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+221,27,"[+, exp, exp, +, x_7, x_1, **2, exp, +, x_7, +, x_1, x_2]",(exp(exp((x_7+x_1)))+(exp((x_7+(x_1+x_2))))**2),3141.352783203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+222,27,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_5, **2, +, *, x_6, u-, x_4, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_5)))))+(((x_6*-(x_4))+exp((x_7+x_1))))**2),3095.197509765625,22.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+223,28,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+224,28,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+225,28,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+226,28,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+227,28,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+228,28,"[+, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, exp, +, x_7, x_1]",((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4))))+(exp((x_7+x_1)))**2),3117.9931640625,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+229,28,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+230,28,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+231,28,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, +, *, -, x_4, x_0, u-, x_1, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+((((x_4-x_0)*-(x_1))+exp((x_7+x_1))))**2),3088.6787109375,24.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+232,28,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+233,28,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3072.300537109375,29.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+234,28,"[*, +, **2, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, exp, *, x_1, x_8]",(((exp((x_7+x_1)))**2+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))*exp((x_1*x_8))),3113.088623046875,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+235,28,"[+, exp, exp, +, x_7, x_1, **2, exp, +, x_7, +, x_1, x_2]",(exp(exp((x_7+x_1)))+(exp((x_7+(x_1+x_2))))**2),3141.352783203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+236,28,"[+, exp, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_5, **2, +, *, x_6, u-, x_4, exp, +, x_7, x_1]",(exp((((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_5)))))+(((x_6*-(x_4))+exp((x_7+x_1))))**2),3095.197509765625,22.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+237,29,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+238,29,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+239,29,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+240,29,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+241,29,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+242,29,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+243,29,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+244,29,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+245,29,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3072.300537109375,29.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+246,29,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+247,29,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, -, x_6, x_0, u-, x_4, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((((x_6-x_0)*-(x_4))+sin((x_2+x_1))))**2),3072.96728515625,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+248,29,"[+, exp, +, x_7, x_1, **2, +, x_0, +, x_2, x_1]",(exp((x_7+x_1))+((x_0+(x_2+x_1)))**2),3150.665771484375,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+249,30,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+250,30,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+251,30,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+252,30,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+253,30,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+254,30,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+255,30,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+256,30,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+257,30,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+258,30,"[+, exp, +, x_7, x_1, **2, +, x_0, +, x_2, x_1]",(exp((x_7+x_1))+((x_0+(x_2+x_1)))**2),3150.665771484375,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+259,30,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+260,31,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+261,31,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+262,31,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+263,31,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+264,31,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+265,31,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+266,31,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+267,31,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+268,31,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+269,31,"[+, exp, +, x_7, x_1, **2, +, x_0, +, x_2, x_1]",(exp((x_7+x_1))+((x_0+(x_2+x_1)))**2),3150.665771484375,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+270,31,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+271,31,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+272,32,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+273,32,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+274,32,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+275,32,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+276,32,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+277,32,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+278,32,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+279,32,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+280,32,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+281,32,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+282,32,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+283,32,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+284,33,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+285,33,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+286,33,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+287,33,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+288,33,"[exp, +, sin, x_7, x_1]",exp((sin(x_7)+x_1)),3304.87841796875,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+289,33,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+290,33,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+291,33,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+292,33,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+293,33,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+294,33,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+295,33,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+296,34,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+297,34,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+298,34,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+299,34,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+300,34,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+301,34,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+302,34,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+303,34,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+304,34,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+305,34,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+306,34,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+307,34,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+308,35,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+309,35,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+310,35,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+311,35,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+312,35,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+313,35,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+314,35,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+315,35,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+316,35,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+317,35,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+318,35,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+319,35,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+320,36,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+321,36,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+322,36,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+323,36,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+324,36,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+325,36,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+326,36,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+327,36,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+328,36,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+329,36,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+330,36,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+331,36,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+332,37,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+333,37,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+334,37,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+335,37,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+336,37,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+337,37,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+338,37,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+339,37,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+340,37,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+341,37,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+342,37,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+343,37,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+344,38,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+345,38,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+346,38,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+347,38,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+348,38,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+349,38,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+350,38,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+351,38,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+352,38,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+353,38,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+354,38,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+355,38,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+356,39,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+357,39,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+358,39,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+359,39,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+360,39,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+361,39,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+362,39,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+363,39,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+364,39,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+365,39,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+366,39,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+367,39,"[exp, sin, +, x_7, x_1]",exp(sin((x_7+x_1))),3304.797119140625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+368,40,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+369,40,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+370,40,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+371,40,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+372,40,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+373,40,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+374,40,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+375,40,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+376,40,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+377,40,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+378,40,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+379,40,"[+, x_7, exp, sin, x_1]",(x_7+exp(sin(x_1))),3303.831787109375,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+380,41,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+381,41,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+382,41,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+383,41,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+384,41,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+385,41,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+386,41,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+387,41,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+388,41,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+389,41,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+390,41,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+391,41,"[+, x_7, exp, sin, x_1]",(x_7+exp(sin(x_1))),3303.831787109375,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+392,41,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+393,41,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_6]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_6)))),3072.26904296875,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+394,42,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+395,42,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+396,42,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+397,42,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+398,42,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+399,42,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+400,42,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+401,42,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+402,42,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+403,42,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+404,42,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+405,42,"[+, x_7, exp, sin, x_1]",(x_7+exp(sin(x_1))),3303.831787109375,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+406,42,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+407,42,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_6]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_6)))),3072.26904296875,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+408,43,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+409,43,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+410,43,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+411,43,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+412,43,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+413,43,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+414,43,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+415,43,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+416,43,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+417,43,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+418,43,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+419,43,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+420,43,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_6]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_6)))),3072.26904296875,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+421,43,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+422,44,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+423,44,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+424,44,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+425,44,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+426,44,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+427,44,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+428,44,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+429,44,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+430,44,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))),3071.195068359375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+431,44,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+432,44,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+433,44,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+434,44,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_6]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_6)))),3072.26904296875,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+435,44,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+436,44,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_4, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*exp((x_7+x_4))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3057.318115234375,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+437,45,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+438,45,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+439,45,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+440,45,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+441,45,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+442,45,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+443,45,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+444,45,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+445,45,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+446,45,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+447,45,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+448,45,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+449,45,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_4, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*exp((x_7+x_4))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3057.318115234375,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+450,45,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+451,46,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+452,46,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+453,46,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+454,46,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+455,46,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+456,46,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+457,46,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+458,46,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+459,46,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+460,46,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+461,46,"[+, +, +, exp, +, x_7, x_1, x_7, *, +, +, x_1, x_2, u-, x_5, sqrt, cos, x_4, **2, sqrt, sqrt, **2, x_2]",(((exp((x_7+x_1))+x_7)+(((x_1+x_2)+-(x_5))*sqrt(abs(cos(x_4)))))+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3060.93505859375,23.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+462,46,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+463,46,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_4, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*exp((x_7+x_4))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3057.318115234375,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+464,46,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+465,46,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_4, **2, +, +, +, x_1, x_2, u-, x_5, sin, x_2]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*exp((x_7+x_4))))+((((x_1+x_2)+-(x_5))+sin(x_2)))**2),3059.500732421875,29.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+466,47,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+467,47,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+468,47,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+469,47,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+470,47,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+471,47,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+472,47,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+473,47,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+474,47,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+475,47,"[+, +, x_6, x_1, **2, exp, +, x_7, +, x_1, x_2]",((x_6+x_1)+(exp((x_7+(x_1+x_2))))**2),3128.50341796875,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+476,47,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+477,47,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+478,47,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+479,48,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+480,48,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+481,48,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+482,48,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+483,48,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+484,48,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+485,48,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+486,48,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+487,48,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+488,48,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+489,48,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+490,48,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+491,48,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+492,48,"[+, +, +, x_7, sin, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, *, u-, x_2, u-, x_4, sin, +, x_2, x_1]",(((x_7+sin((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+(((-(x_2)*-(x_4))+sin((x_2+x_1))))**2),3048.557861328125,30.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+493,49,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+494,49,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+495,49,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+496,49,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+497,49,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+498,49,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+499,49,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+500,49,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+501,49,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+502,49,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+503,49,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+504,49,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+505,49,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+506,49,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+507,49,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+508,50,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+509,50,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+510,50,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+511,50,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+512,50,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+513,50,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+514,50,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+515,50,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+516,50,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+517,50,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+518,50,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+519,50,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+520,50,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+521,50,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+522,50,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+523,50,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+524,51,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+525,51,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+526,51,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+527,51,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+528,51,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+529,51,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+530,51,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+531,51,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+532,51,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+533,51,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+534,51,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+535,51,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+536,51,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+537,51,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+538,51,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+539,51,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+540,52,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+541,52,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+542,52,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+543,52,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+544,52,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+545,52,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+546,52,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+547,52,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+548,52,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+549,52,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+550,52,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+551,52,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+552,52,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+553,52,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+554,52,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+555,52,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+556,53,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+557,53,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+558,53,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+559,53,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+560,53,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+561,53,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+562,53,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+563,53,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+564,53,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+565,53,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+566,53,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+567,53,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+568,53,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+569,53,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+570,53,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+571,53,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+572,54,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+573,54,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+574,54,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+575,54,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+576,54,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+577,54,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+578,54,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+579,54,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+580,54,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+581,54,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+582,54,"[+, exp, +, x_7, x_1, +, sin, x_7, *, +, +, x_1, x_2, u-, x_5, exp, +, x_2, x_1]",(exp((x_7+x_1))+(sin(x_7)+(((x_1+x_2)+-(x_5))*exp((x_2+x_1))))),3069.75244140625,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+583,54,"[+, +, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, x_1, sin, +, x_2, x_1]",(((x_7+x_1)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+((x_1+sin((x_2+x_1))))**2),3050.781494140625,21.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+584,54,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+585,54,"[+, +, **2, exp, +, x_7, x_1, exp, +, +, x_1, x_2, u-, x_5, **2, +, +, +, x_1, x_2, u-, x_5, sin, +, x_2, x_1]",(((exp((x_7+x_1)))**2+exp(((x_1+x_2)+-(x_5))))+((((x_1+x_2)+-(x_5))+sin((x_2+x_1))))**2),3039.37451171875,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+586,54,"[+, +, *, +, x_2, u-, x_5, sqrt, cos, x_1, **2, exp, +, x_7, x_1, **2, sqrt, sqrt, **2, x_2]",((((x_2+-(x_5))*sqrt(abs(cos(x_1))))+(exp((x_7+x_1)))**2)+(sqrt(abs(sqrt(abs((x_2)**2)))))**2),3052.5771484375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+587,54,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+588,54,"[+, +, +, exp, +, x_7, x_1, 0.12, *, +, +, x_1, x_2, u-, x_5, sqrt, x_2, **2, +, *, u-, x_2, u-, x_9, sin, +, x_2, x_1]",(((exp((x_7+x_1))+0.12)+(((x_1+x_2)+-(x_5))*sqrt(abs(x_2))))+(((-(x_2)*-(x_9))+sin((x_2+x_1))))**2),3033.085693359375,28.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+589,55,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+590,55,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+591,55,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+592,55,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+593,55,"[+, exp, x_6, **2, exp, +, x_7, +, x_1, x_2]",(exp(x_6)+(exp((x_7+(x_1+x_2))))**2),3172.595458984375,10.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+594,55,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+595,55,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+596,55,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+597,55,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+598,55,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+599,55,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+600,55,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+601,55,"[+, +, **2, exp, +, x_7, x_1, sqrt, *, x_9, *, x_6, x_2, exp, +, +, 0.12, x_2, u-, x_5]",(((exp((x_7+x_1)))**2+sqrt(abs((x_9*(x_6*x_2)))))+exp(((0.12+x_2)+-(x_5)))),3029.19287109375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+602,55,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_5]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_5)))),3069.624755859375,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+603,55,"[+, +, x_6, sin, u-, x_3, **2, exp, +, x_7, +, x_1, x_2]",((x_6+sin(-(x_3)))+(exp((x_7+(x_1+x_2))))**2),3076.48095703125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+604,56,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+605,56,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+606,56,"[exp, +, x_7, x_1]",exp((x_7+x_1)),3305.404541015625,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+607,56,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+608,56,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+609,56,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+610,56,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+611,56,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+612,56,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+613,56,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+614,56,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+615,56,"[+, +, **2, exp, +, x_7, x_1, sqrt, *, x_9, *, x_6, x_2, exp, +, +, 0.12, x_2, u-, x_5]",(((exp((x_7+x_1)))**2+sqrt(abs((x_9*(x_6*x_2)))))+exp(((0.12+x_2)+-(x_5)))),3029.19287109375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+616,56,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_5]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_5)))),3069.624755859375,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+617,56,"[+, +, +, exp, x_7, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, +, sin, x_1, u-, x_5, sin, +, x_2, x_1]",(((exp(x_7)+exp((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+(((sin(x_1)+-(x_5))+sin((x_2+x_1))))**2),3012.892822265625,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+618,56,"[**2, +, **2, exp, +, x_7, x_1, exp, x_2]",(((exp((x_7+x_1)))**2+exp(x_2)))**2,3162.69970703125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+619,56,"[+, +, u-, x_5, exp, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+exp(x_1))+(exp((x_7+(x_1+x_2))))**2),3074.384033203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+620,57,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+621,57,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+622,57,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+623,57,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+624,57,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+625,57,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+626,57,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+627,57,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+628,57,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+629,57,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+630,57,"[+, +, **2, exp, +, x_7, x_1, sqrt, *, x_9, *, x_6, x_2, exp, +, +, 0.12, x_2, u-, x_5]",(((exp((x_7+x_1)))**2+sqrt(abs((x_9*(x_6*x_2)))))+exp(((0.12+x_2)+-(x_5)))),3029.19287109375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+631,57,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_5]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_5)))),3069.624755859375,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+632,57,"[+, +, +, exp, x_7, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, +, sin, x_1, u-, x_5, sin, +, x_2, x_1]",(((exp(x_7)+exp((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+(((sin(x_1)+-(x_5))+sin((x_2+x_1))))**2),3012.892822265625,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+633,57,"[**2, +, **2, exp, +, x_7, x_1, exp, x_2]",(((exp((x_7+x_1)))**2+exp(x_2)))**2,3162.69970703125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+634,57,"[+, +, u-, x_5, exp, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+exp(x_1))+(exp((x_7+(x_1+x_2))))**2),3074.384033203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+635,57,"[+, x_7, exp, x_1]",(x_7+exp(x_1)),3303.342529296875,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+636,57,"[+, +, +, x_7, sin, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, x_1, sin, +, x_2, x_2]",(((x_7+sin((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+((x_1+sin((x_2+x_2))))**2),3014.779052734375,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+637,58,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+638,58,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+639,58,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+640,58,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+641,58,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+642,58,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+643,58,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+644,58,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+645,58,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+646,58,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+647,58,"[+, +, **2, exp, +, x_7, x_1, sqrt, *, x_9, *, x_6, x_2, exp, +, +, 0.12, x_2, u-, x_5]",(((exp((x_7+x_1)))**2+sqrt(abs((x_9*(x_6*x_2)))))+exp(((0.12+x_2)+-(x_5)))),3029.19287109375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+648,58,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_5]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_5)))),3069.624755859375,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+649,58,"[+, +, +, exp, x_7, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, +, sin, x_1, u-, x_5, sin, +, x_2, x_1]",(((exp(x_7)+exp((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+(((sin(x_1)+-(x_5))+sin((x_2+x_1))))**2),3012.892822265625,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+650,58,"[**2, +, **2, exp, +, x_7, x_1, exp, x_2]",(((exp((x_7+x_1)))**2+exp(x_2)))**2,3162.69970703125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+651,58,"[+, +, u-, x_5, exp, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+exp(x_1))+(exp((x_7+(x_1+x_2))))**2),3074.384033203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+652,58,"[+, x_7, exp, x_1]",(x_7+exp(x_1)),3303.342529296875,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+653,58,"[+, +, +, x_7, sin, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, x_1, sin, +, x_2, x_2]",(((x_7+sin((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+((x_1+sin((x_2+x_2))))**2),3014.779052734375,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+654,59,[x_1],x_1,4031.79248046875,1.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+655,59,"[exp, x_1]",exp(x_1),4026.849609375,2.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+656,59,"[+, x_7, x_1]",(x_7+x_1),3316.92431640625,3.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+657,59,"[+, x_2, **2, exp, +, x_7, x_1]",(x_2+(exp((x_7+x_1)))**2),3178.484619140625,7.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+658,59,"[+, **2, exp, +, x_7, x_1, exp, x_2]",((exp((x_7+x_1)))**2+exp(x_2)),3173.850341796875,8.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+659,59,"[+, +, u-, x_5, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+x_1)+(exp((x_7+(x_1+x_2))))**2),3077.092529296875,12.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+660,59,"[exp, +, x_7, +, x_2, x_1]",exp((x_7+(x_2+x_1))),3261.067138671875,6.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+661,59,"[exp, +, x_7, exp, x_1]",exp((x_7+exp(x_1))),3294.353515625,5.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+662,59,"[exp, +, exp, +, x_7, x_1, +, exp, u-, x_5, x_2]",exp((exp((x_7+x_1))+(exp(-(x_5))+x_2))),3127.398681640625,11.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+663,59,"[+, *, +, x_2, u-, x_5, **2, exp, +, x_7, x_1, **2, exp, +, x_7, x_1]",(((x_2+-(x_5))*(exp((x_7+x_1)))**2)+(exp((x_7+x_1)))**2),3069.786865234375,16.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+664,59,"[+, +, **2, exp, +, x_7, x_1, sqrt, *, x_9, *, x_6, x_2, exp, +, +, 0.12, x_2, u-, x_5]",(((exp((x_7+x_1)))**2+sqrt(abs((x_9*(x_6*x_2)))))+exp(((0.12+x_2)+-(x_5)))),3029.19287109375,20.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+665,59,"[sin, +, +, exp, +, x_7, x_1, sqrt, cos, x_4, *, +, +, x_1, x_2, u-, x_5, exp, x_5]",sin(((exp((x_7+x_1))+sqrt(abs(cos(x_4))))+(((x_1+x_2)+-(x_5))*exp(x_5)))),3069.624755859375,19.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+666,59,"[+, +, +, exp, x_7, exp, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, +, sin, x_1, u-, x_5, sin, +, x_2, x_1]",(((exp(x_7)+exp((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+(((sin(x_1)+-(x_5))+sin((x_2+x_1))))**2),3012.892822265625,31.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+667,59,"[**2, +, **2, exp, +, x_7, x_1, exp, x_2]",(((exp((x_7+x_1)))**2+exp(x_2)))**2,3162.69970703125,9.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+668,59,"[+, +, u-, x_5, exp, x_1, **2, exp, +, x_7, +, x_1, x_2]",((-(x_5)+exp(x_1))+(exp((x_7+(x_1+x_2))))**2),3074.384033203125,13.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+669,59,"[+, x_7, exp, x_1]",(x_7+exp(x_1)),3303.342529296875,4.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
+670,59,"[+, +, +, x_7, sin, +, x_7, x_1, *, +, +, x_1, x_2, u-, x_5, exp, +, x_7, x_1, **2, +, x_1, sin, +, x_2, x_2]",(((x_7+sin((x_7+x_1)))+(((x_1+x_2)+-(x_5))*exp((x_7+x_1))))+((x_1+sin((x_2+x_2))))**2),3014.779052734375,26.0,205,210,60,210,not_specified,size,not_specified,not_specified,diabets
