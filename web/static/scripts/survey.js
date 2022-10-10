@@ -146,7 +146,6 @@ function submitSurvey(){
     $(":radio").each(function () {
         if ($(this).is(':checked')) survey[this.name] = this.id.substring(this.id.indexOf('_') + 1);
     });
-    console.log(survey);
     $.ajax({
       type: "POST",
       url: "answerSurvey",
