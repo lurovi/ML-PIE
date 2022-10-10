@@ -114,7 +114,7 @@ def start_run(problem):
     population_storage = set()
 
     # optimization thread creation
-    algorithm = NSGA2(pop_size=20,
+    algorithm = NSGA2(pop_size=210,
                       sampling=tree_sampling,
                       crossover=tree_crossover,
                       mutation=tree_mutation,
@@ -129,7 +129,7 @@ def start_run(problem):
                                                              tree_encoder=tree_encoder,
                                                              interpretability_estimator=interpretability_estimator
                                                              )
-    termination = ('n_gen', 20)
+    termination = ('n_gen', 60)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
