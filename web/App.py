@@ -1,7 +1,6 @@
 import random
 import statistics
 import threading
-import time
 
 import torch
 import uuid
@@ -34,14 +33,14 @@ app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 hardcoded_results = {
     "windspeed": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv"),
-        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\phi.csv"),
+        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\feynman.csv")
     },
     "boston": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\phi.csv"),
-        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\static\\feynman.csv")
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\phi.csv"),
+        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\feynman.csv")
     }
 }
 
@@ -63,7 +62,6 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 torch.use_deterministic_algorithms(True)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-dataset_path = "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\windspeed.pbz2"
 
 # tree parameters
 duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 7))
