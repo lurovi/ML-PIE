@@ -1,0 +1,547 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[log, exp, +, cos, *, x_2, x_7, x_2]",log(abs(exp((cos((x_2*x_7))+x_2)))),68.48147583007812,-51.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+1,0,"[**3, sqrt, x_5]",(sqrt(abs(x_5)))**3,69.3840103149414,-61.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+2,0,[x_8],x_8,72.52814483642578,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+3,0,"[-, **2, exp, x_6, -, **, x_8, **3, x_8, cos, x_5]",((exp(x_6))**2-((x_8**(x_8)**3)-cos(x_5))),56.775848388671875,-47.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+4,1,[x_8],x_8,72.52814483642578,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+5,1,"[exp, x_5]",exp(x_5),55.59759521484375,-70.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+6,1,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+7,2,[x_8],x_8,72.52814483642578,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+8,2,"[exp, x_5]",exp(x_5),55.59759521484375,-70.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+9,2,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+10,3,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+11,3,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+12,4,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+13,4,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+14,5,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+15,5,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+16,6,"[sin, u-, u-, u-, x_12]",sin(-(-(-(x_12)))),34.47508239746094,-68.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+17,6,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+18,7,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+19,7,"[sin, u-, u-, x_12]",sin(-(-(x_12))),34.47508239746094,-68.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+20,7,"[u-, -, **, exp, sin, x_10, sqrt, u-, x_5, u-, x_12]",-(((exp(sin(x_10))**sqrt(abs(-(x_5))))--(x_12))),32.44562530517578,-45.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+21,8,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+22,8,"[sin, u-, u-, x_12]",sin(-(-(x_12))),34.47508239746094,-68.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+23,8,"[u-, -, **, exp, sin, x_10, sqrt, u-, x_5, u-, x_12]",-(((exp(sin(x_10))**sqrt(abs(-(x_5))))--(x_12))),32.44562530517578,-45.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+24,9,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+25,9,"[sin, u-, u-, x_12]",sin(-(-(x_12))),34.47508239746094,-68.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+26,9,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+27,10,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+28,10,"[sin, u-, u-, x_12]",sin(-(-(x_12))),34.47508239746094,-68.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+29,10,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+30,11,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+31,11,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+32,11,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+33,12,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+34,12,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+35,12,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+36,13,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+37,13,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+38,13,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+39,13,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+40,14,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+41,14,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+42,14,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+43,14,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+44,14,"[*, x_12, exp, exp, u-, sin, x_12]",(x_12*exp(exp(-(sin(x_12))))),30.68193817138672,-51.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+45,15,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+46,15,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+47,15,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+48,15,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+49,15,"[*, x_12, exp, exp, u-, sin, x_12]",(x_12*exp(exp(-(sin(x_12))))),30.68193817138672,-51.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+50,15,"[+, +, x_5, sin, x_3, u-, x_12]",((x_5+sin(x_3))+-(x_12)),33.6273307800293,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+51,16,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+52,16,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+53,16,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+54,16,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+55,16,"[*, x_12, exp, exp, u-, sin, x_12]",(x_12*exp(exp(-(sin(x_12))))),30.68193817138672,-51.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+56,16,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+57,17,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+58,17,"[exp, u-, sin, x_12]",exp(-(sin(x_12))),31.276845932006836,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+59,17,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+60,17,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+61,17,"[*, x_12, exp, exp, u-, sin, x_12]",(x_12*exp(exp(-(sin(x_12))))),30.68193817138672,-51.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+62,17,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+63,17,"[u-, u-, u-, +, -, x_5, x_9, u-, x_12]",-(-(-(((x_5-x_9)+-(x_12))))),32.46488952636719,-74.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+64,18,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+65,18,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+66,18,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+67,18,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+68,18,"[u-, u-, u-, +, -, x_5, x_9, u-, x_12]",-(-(-(((x_5-x_9)+-(x_12))))),32.46488952636719,-74.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+69,18,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+70,19,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+71,19,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+72,19,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+73,19,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+74,19,"[u-, u-, u-, +, -, x_5, x_9, u-, x_12]",-(-(-(((x_5-x_9)+-(x_12))))),32.46488952636719,-74.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+75,19,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+76,19,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+77,19,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+78,20,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+79,20,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+80,20,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+81,20,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+82,20,"[u-, u-, u-, +, -, x_5, x_9, u-, x_12]",-(-(-(((x_5-x_9)+-(x_12))))),32.46488952636719,-74.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+83,20,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+84,20,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+85,20,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+86,21,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+87,21,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+88,21,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+89,21,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+90,21,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+91,21,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+92,21,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+93,21,"[+, +, x_5, u-, x_10, u-, x_12]",((x_5+-(x_10))+-(x_12)),29.503374099731445,-75.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+94,22,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+95,22,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+96,22,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+97,22,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+98,22,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+99,22,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+100,22,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+101,22,"[+, +, x_5, u-, x_10, u-, x_12]",((x_5+-(x_10))+-(x_12)),29.503374099731445,-75.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+102,23,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+103,23,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+104,23,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+105,23,"[u-, +, x_12, -, x_8, x_5]",-((x_12+(x_8-x_5))),33.21704864501953,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+106,23,"[+, -, cos, x_5, u-, x_12, 1.79]",((cos(x_5)--(x_12))+1.79),24.221834182739258,-67.80000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+107,23,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+108,23,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+109,23,"[+, +, x_5, u-, x_10, u-, x_12]",((x_5+-(x_10))+-(x_12)),29.503374099731445,-75.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+110,23,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+111,24,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+112,24,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+113,24,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+114,24,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+115,24,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+116,24,"[+, +, x_5, u-, x_10, u-, x_12]",((x_5+-(x_10))+-(x_12)),29.503374099731445,-75.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+117,24,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+118,24,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+119,24,"[+, x_12, -, x_8, x_5]",(x_12+(x_8-x_5)),33.21704864501953,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+120,25,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+121,25,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+122,25,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+123,25,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+124,25,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+125,25,"[+, +, x_5, u-, x_10, u-, x_12]",((x_5+-(x_10))+-(x_12)),29.503374099731445,-75.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+126,25,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+127,25,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+128,25,"[+, x_12, -, x_8, x_5]",(x_12+(x_8-x_5)),33.21704864501953,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+129,26,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+130,26,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+131,26,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+132,26,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+133,26,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+134,26,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+135,26,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+136,26,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+137,26,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+138,27,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+139,27,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+140,27,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+141,27,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+142,27,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+143,27,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+144,27,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+145,27,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+146,27,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+147,28,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+148,28,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+149,28,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+150,28,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+151,28,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+152,28,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+153,28,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+154,28,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+155,28,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+156,29,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+157,29,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+158,29,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+159,29,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+160,29,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+161,29,"[+, x_12, -, cos, x_5, x_5]",(x_12+(cos(x_5)-x_5)),25.9488468170166,-68.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+162,29,"[u-, -, cos, x_5, u-, x_12]",-((cos(x_5)--(x_12))),24.221834182739258,-68.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+163,29,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+164,29,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+165,30,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+166,30,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+167,30,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+168,30,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+169,30,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+170,30,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+171,30,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+172,30,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+173,30,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+174,31,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+175,31,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+176,31,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+177,31,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+178,31,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+179,31,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+180,31,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+181,31,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+182,31,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+183,32,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+184,32,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+185,32,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+186,32,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+187,32,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+188,32,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+189,32,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+190,32,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+191,32,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+192,33,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+193,33,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+194,33,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+195,33,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+196,33,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+197,33,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+198,33,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+199,33,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+200,33,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+201,33,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+202,34,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+203,34,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+204,34,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+205,34,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+206,34,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+207,34,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+208,34,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+209,34,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+210,34,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+211,34,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+212,35,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+213,35,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+214,35,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+215,35,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+216,35,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+217,35,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+218,35,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+219,35,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+220,35,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+221,35,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+222,36,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+223,36,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+224,36,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+225,36,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+226,36,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+227,36,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+228,36,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+229,36,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+230,36,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+231,36,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+232,37,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+233,37,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+234,37,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+235,37,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+236,37,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+237,37,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+238,37,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+239,37,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+240,37,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+241,37,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+242,38,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+243,38,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+244,38,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+245,38,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+246,38,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+247,38,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+248,38,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+249,38,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+250,38,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+251,38,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+252,38,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+253,39,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+254,39,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+255,39,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+256,39,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+257,39,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+258,39,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+259,39,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+260,39,"[+, u-, -, -, x_8, -, x_5, x_10, u-, x_12, u-, x_12]",(-(((x_8-(x_5-x_10))--(x_12)))+-(x_12)),29.112674713134766,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+261,39,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+262,39,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+263,39,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+264,39,"[-, **, cos, sin, x_5, **2, sin, *, x_3, x_0, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(sin(x_5))**(sin((x_3*x_0)))**2)-((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))),23.417177200317383,-32.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+265,40,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+266,40,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+267,40,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+268,40,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+269,40,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+270,40,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+271,40,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+272,40,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+273,40,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+274,40,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+275,40,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+276,40,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+277,41,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+278,41,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+279,41,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+280,41,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+281,41,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+282,41,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+283,41,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+284,41,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+285,41,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+286,41,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+287,41,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+288,41,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+289,42,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+290,42,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+291,42,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+292,42,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+293,42,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+294,42,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+295,42,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+296,42,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+297,42,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+298,42,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+299,42,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+300,42,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+301,42,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+302,43,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+303,43,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+304,43,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+305,43,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+306,43,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+307,43,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+308,43,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+309,43,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+310,43,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+311,43,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+312,43,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+313,43,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+314,43,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+315,44,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+316,44,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+317,44,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+318,44,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+319,44,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+320,44,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+321,44,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+322,44,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+323,44,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+324,44,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+325,44,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+326,44,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+327,44,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+328,45,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+329,45,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+330,45,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+331,45,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+332,45,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+333,45,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+334,45,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+335,45,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+336,45,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+337,45,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+338,45,"[u-, +, -, -, x_5, x_10, -, x_12, u-, x_12, u-, x_12]",-((((x_5-x_10)-(x_12--(x_12)))+-(x_12))),28.695903778076172,-73.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+339,45,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+340,45,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+341,45,"[-, +, x_3, u-, sin, -, x_3, x_9, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((x_3+-(sin((x_3-x_9))))-((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))),22.919124603271484,-56.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+342,46,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+343,46,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+344,46,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+345,46,"[+, +, u-, -, cos, x_5, x_5, sin, u-, x_10, u-, x_12]",((-((cos(x_5)-x_5))+sin(-(x_10)))+-(x_12)),23.47065544128418,-61.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+346,46,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+347,46,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+348,46,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+349,46,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+350,46,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+351,46,"[-, -, cos, x_5, u-, +, sin, x_12, +, x_12, x_8, x_5]",((cos(x_5)--((sin(x_12)+(x_12+x_8))))-x_5),23.493806838989258,-61.900001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+352,46,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+353,46,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+354,46,"[-, +, x_3, u-, sin, -, x_3, x_9, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((x_3+-(sin((x_3-x_9))))-((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))),22.919124603271484,-56.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+355,46,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+356,46,"[+, -, cos, x_5, u-, sin, sin, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin(sin(x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.41514015197754,-47.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+357,47,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+358,47,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+359,47,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+360,47,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+361,47,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+362,47,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+363,47,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+364,47,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+365,47,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+((x_8-(x_5-cos(x_5)))--(x_12))),21.590408325195312,-55.29999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+366,47,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+367,47,"[-, +, x_3, u-, sin, -, x_3, x_9, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((x_3+-(sin((x_3-x_9))))-((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))),22.919124603271484,-56.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+368,47,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+369,47,"[-, u-, -, -, x_8, -, x_5, x_10, u-, x_12, +, -, cos, u-, x_5, u-, x_12, 1.79]",(-(((x_8-(x_5-x_10))--(x_12)))-((cos(-(x_5))--(x_12))+1.79)),23.361894607543945,-62.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+370,47,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.277297973632812,-54.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+371,48,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+372,48,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+373,48,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+374,48,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+375,48,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+376,48,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+377,48,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+378,48,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+379,48,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+380,48,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+381,48,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.277297973632812,-54.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+382,48,"[+, +, -, cos, x_5, u-, x_12, 1.79, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",(((cos(x_5)--(x_12))+1.79)+((x_8-(x_5-cos(x_5)))--(x_12))),21.587623596191406,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+383,48,"[+, x_10, +, -, cos, x_5, u-, x_12, x_12]",(x_10+((cos(x_5)--(x_12))+x_12)),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+384,48,"[+, +, x_10, -, cos, x_5, u-, x_12, x_12]",((x_10+(cos(x_5)--(x_12)))+x_12),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+385,48,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+386,49,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+387,49,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+388,49,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+389,49,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+390,49,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+391,49,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+392,49,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+393,49,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+394,49,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+395,49,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+396,49,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.277297973632812,-54.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+397,49,"[+, +, -, cos, x_5, u-, x_12, 1.79, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",(((cos(x_5)--(x_12))+1.79)+((x_8-(x_5-cos(x_5)))--(x_12))),21.587623596191406,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+398,49,"[+, x_10, +, -, cos, x_5, u-, x_12, x_12]",(x_10+((cos(x_5)--(x_12))+x_12)),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+399,49,"[+, +, x_10, -, cos, x_5, u-, x_12, x_12]",((x_10+(cos(x_5)--(x_12)))+x_12),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+400,49,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+401,49,"[+, -, cos, x_5, u-, sin, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin(x_12)))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.579618453979492,-55.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+402,50,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+403,50,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+404,50,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+405,50,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+406,50,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+407,50,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+408,50,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+409,50,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+410,50,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+411,50,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+412,50,"[+, -, cos, x_5, u-, sin, -, 2.76, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin((2.76-x_12))))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.277297973632812,-54.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+413,50,"[+, +, -, cos, x_5, u-, x_12, 1.79, -, -, x_8, -, x_5, cos, x_5, u-, x_12]",(((cos(x_5)--(x_12))+1.79)+((x_8-(x_5-cos(x_5)))--(x_12))),21.587623596191406,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+414,50,"[+, x_10, +, -, cos, x_5, u-, x_12, x_12]",(x_10+((cos(x_5)--(x_12))+x_12)),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+415,50,"[+, +, x_10, -, cos, x_5, u-, x_12, x_12]",((x_10+(cos(x_5)--(x_12)))+x_12),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+416,50,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+417,50,"[+, -, cos, x_5, u-, sin, x_12, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",((cos(x_5)--(sin(x_12)))+(((cos(x_5)--(x_12))-x_5)--(x_12))),21.579618453979492,-55.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+418,51,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+419,51,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+420,51,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+421,51,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+422,51,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+423,51,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+424,51,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+425,51,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+426,51,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+427,51,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+428,51,"[+, x_10, +, -, cos, x_5, u-, x_12, x_12]",(x_10+((cos(x_5)--(x_12))+x_12)),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+429,51,"[+, +, x_10, -, cos, x_5, u-, x_12, x_12]",((x_10+(cos(x_5)--(x_12)))+x_12),24.018354415893555,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+430,51,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+431,51,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+432,52,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+433,52,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+434,52,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+435,52,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+436,52,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+437,52,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+438,52,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+439,52,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+440,52,"[-, -, cos, -, x_5, x_9, u-, +, cos, x_5, +, x_12, x_8, x_5]",((cos((x_5-x_9))--((cos(x_5)+(x_12+x_8))))-x_5),23.292821884155273,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+441,52,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+442,52,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+443,52,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+444,52,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+445,53,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+446,53,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+447,53,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+448,53,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+449,53,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+450,53,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+451,53,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+452,53,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+453,53,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+454,53,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+455,53,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+456,53,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+457,53,"[-, +, -, cos, u-, x_5, u-, x_12, -, -, u-, 2.76, -, x_5, x_10, u-, x_12, u-, -, -, cos, x_5, u-, x_12, sin, *, x_0, x_4]",(((cos(-(x_5))--(x_12))+((-(2.76)-(x_5-x_10))--(x_12)))--(((cos(x_5)--(x_12))-sin((x_0*x_4))))),20.88395881652832,-49.79999923706055,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+458,53,"[+, sin, x_10, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",(sin(x_10)+(((cos(x_5)--(x_12))-x_5)--(x_12))),22.666994094848633,-61.20000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+459,54,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+460,54,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+461,54,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+462,54,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+463,54,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+464,54,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+465,54,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+466,54,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+467,54,"[-, +, -, +, x_12, x_10, u-, x_12, 1.79, x_5]",((((x_12+x_10)--(x_12))+1.79)-x_5),28.021913528442383,-74.5999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+468,54,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+469,54,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+470,54,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+471,54,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+472,54,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+473,55,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+474,55,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+475,55,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+476,55,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+477,55,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+478,55,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+479,55,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+480,55,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+481,55,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+482,55,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+483,55,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+484,55,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+485,55,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+486,55,"[+, x_12, +, x_10, +, u-, x_5, x_12]",(x_12+(x_10+(-(x_5)+x_12))),28.021913528442383,-75.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+487,56,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+488,56,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+489,56,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+490,56,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+491,56,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+492,56,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+493,56,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+494,56,"[-, -, cos, -, x_8, x_5, u-, +, +, x_12, 1.79, +, x_12, x_8, x_5]",((cos((x_8-x_5))--(((x_12+1.79)+(x_12+x_8))))-x_5),23.867982864379883,-64.19999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+495,56,"[+, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12]",((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12))),23.361894607543945,-63.70000076293945,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+496,56,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+497,56,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+498,56,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+499,56,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+500,56,"[+, x_12, +, x_10, +, u-, x_5, x_12]",(x_12+(x_10+(-(x_5)+x_12))),28.021913528442383,-75.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+501,56,"[+, -, cos, u-, -, x_5, x_9, -, x_5, x_9, -, -, x_8, x_8, u-, x_12]",((cos(-((x_5-x_9)))-(x_5-x_9))+((x_8-x_8)--(x_12))),23.267778396606445,-63.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+502,57,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+503,57,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+504,57,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+505,57,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+506,57,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+507,57,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+508,57,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+509,57,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+510,57,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+511,57,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+512,57,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+513,57,"[+, x_12, +, x_10, +, u-, x_5, x_12]",(x_12+(x_10+(-(x_5)+x_12))),28.021913528442383,-75.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+514,57,"[+, x_10, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",(x_10+(((cos(x_5)--(x_12))-x_5)--(x_12))),22.286954879760742,-65.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+515,58,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+516,58,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+517,58,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+518,58,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+519,58,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+520,58,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+521,58,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+522,58,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+523,58,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+524,58,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+525,58,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+526,58,"[+, x_12, +, x_10, +, u-, x_5, x_12]",(x_12+(x_10+(-(x_5)+x_12))),28.021913528442383,-75.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+527,58,"[+, x_10, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",(x_10+(((cos(x_5)--(x_12))-x_5)--(x_12))),22.286954879760742,-65.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+528,58,"[+, x_10, -, -, cos, x_5, u-, x_12, x_5]",(x_10+((cos(x_5)--(x_12))-x_5)),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+529,58,"[-, -, x_10, -, x_5, cos, x_5, u-, x_12]",((x_10-(x_5-cos(x_5)))--(x_12)),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+530,59,[x_12],x_12,39.54974365234375,-78.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+531,59,"[u-, -, x_5, x_12]",-((x_5-x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+532,59,"[+, x_5, u-, x_12]",(x_5+-(x_12)),34.15042495727539,-77.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+533,59,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,-78.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+534,59,"[+, x_10, +, u-, x_5, x_12]",(x_10+(-(x_5)+x_12)),29.503374099731445,-76.4000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+535,59,"[+, x_10, +, x_12, x_12]",(x_10+(x_12+x_12)),32.52458572387695,-77.0999984741211,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+536,59,"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739258,-68.69999694824219,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+537,59,"[+, -, cos, x_5, -, x_5, x_9, -, -, cos, -, x_5, x_10, u-, x_12, u-, x_12]",((cos(x_5)-(x_5-x_9))+((cos((x_5-x_10))--(x_12))--(x_12))),21.044504165649414,-59.400001525878906,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+538,59,"[-, x_5, +, x_10, -, cos, x_5, u-, x_12]",(x_5-(x_10+(cos(x_5)--(x_12)))),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+539,59,"[+, +, -, cos, u-, x_5, u-, x_12, -, -, x_8, -, x_5, x_10, u-, x_12, -, cos, x_5, u-, sin, -, 2.76, x_12]",(((cos(-(x_5))--(x_12))+((x_8-(x_5-x_10))--(x_12)))+(cos(x_5)--(sin((2.76-x_12))))),20.222610473632812,-52.099998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+540,59,"[+, -, -, x_8, x_8, +, x_3, u-, x_12, -, -, x_10, -, x_5, cos, x_5, u-, x_12]",(((x_8-x_8)-(x_3+-(x_12)))+((x_10-(x_5-cos(x_5)))--(x_12))),22.156383514404297,-62.599998474121094,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+541,59,"[+, x_12, +, x_10, +, u-, x_5, x_12]",(x_12+(x_10+(-(x_5)+x_12))),28.021913528442383,-75.5,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+542,59,"[+, x_10, -, -, -, cos, x_5, u-, x_12, x_5, u-, x_12]",(x_10+(((cos(x_5)--(x_12))-x_5)--(x_12))),22.286954879760742,-65.30000305175781,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+543,59,"[+, x_10, -, -, cos, x_5, u-, x_12, x_5]",(x_10+((cos(x_5)--(x_12))-x_5)),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+544,59,"[-, -, x_10, -, x_5, cos, x_5, u-, x_12]",((x_10-(x_5-cos(x_5)))--(x_12)),23.870925903320312,-66.9000015258789,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston
+545,59,"[+, -, cos, x_5, u-, sin, -, -3.45, x_12, +, x_12, -, x_10, x_5]",((cos(x_5)--(sin((-3.45-x_12))))+(x_12+(x_10-x_5))),21.58641815185547,-61.0,202,210,60,210,not_specified,elastic_model,not_specified,not_specified,boston

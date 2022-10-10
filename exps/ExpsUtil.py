@@ -2,6 +2,7 @@ import random
 from functools import partial
 from typing import List
 
+import pandas as pd
 import torch
 import numpy as np
 import torch.multiprocessing as mp
@@ -18,6 +19,7 @@ from nsgp.encoder.CountsEncoder import CountsEncoder
 from nsgp.encoder.LevelWiseCountsEncoder import LevelWiseCountsEncoder
 from nsgp.encoder.OneHotEncoder import OneHotEncoder
 from nsgp.structure.TreeStructure import TreeStructure
+from threads.MlPieRun import MlPieRun
 from util.PicklePersist import PicklePersist
 
 
@@ -83,3 +85,43 @@ class ExpsUtil:
 
         data_generator.persist(data_name + "_datasets_generator")
         return data_generator
+
+    @staticmethod
+    def from_pbz2_to_csv_for_gp_results(folder_name: str, dataset_names: List[str],
+                                        groundtruth_names: List[str],
+                                        pop_size: int,
+                                        num_gen: int,
+                                        num_offsprings: int) -> None:
+
+        for dataset in dataset_names:
+            for groundtruth in groundtruth_names:
+                d = PicklePersist.decompress_pickle(folder_name+"/"+dataset+"-"+groundtruth+".pbz2")
+                for dd in d:
+                    result, seed = dd["result"], dd["seed"]
+                    parameters = {"seed": seed,
+                                  "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
+                                  "encoder_type": "not_specified", "ground_truth_type": groundtruth,
+                                  "sampling": "not_specified", "warm-up": "not_specified",
+                                  "data": dataset}
+                    run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
+                    # write optimization file
+                    generations, parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(result.history)
+                    best_data = pd.DataFrame(
+                        list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
+                        columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+
+                    # update dataframes
+                    for k in parameters.keys():
+                        best_data[k] = parameters[k]
+
+                    # save files
+                    best_data.to_csv(path_or_buf=folder_name+"/" + "best-" + run_id + ".csv")
+
+
+if __name__ == "__main__":
+    ExpsUtil.from_pbz2_to_csv_for_gp_results("test_results_gp_traditional",
+                                             ["boston", "california", "windspeed", "diabets", "vladislavleva",
+                                              "friedman1"],
+                                             ["elastic_model", "size", "neuralnet-counts-feynman",
+                                              "neuralnet-counts-elastic_model"],
+                                             210, 60, 210)

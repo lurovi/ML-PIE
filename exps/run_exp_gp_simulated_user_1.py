@@ -26,7 +26,7 @@ if __name__ == "__main__":
     num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1))
+    pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
     for data_path_file in ["california", "diabets", "windspeed", "friedman1", "vladislavleva", "boston"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,

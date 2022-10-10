@@ -27,7 +27,7 @@ class Trainer(ABC):
         self.__net: nn.Module = net.to(self.__device)
         self.__data: Dataset = data
         if self.__data is not None:
-            self.__dataloader: DataLoader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True)
+            self.__dataloader: DataLoader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True, num_workers=0)
         self.__learning_rate: float = learning_rate
         self.__weight_decay: float = weight_decay
         self.__momentum: float = momentum
@@ -112,7 +112,7 @@ class Trainer(ABC):
     def change_data(self, data: Dataset) -> None:
         self.__data = data
         if self.__data is not None:
-            self.__dataloader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True)
+            self.__dataloader = DataLoader(self.__data, batch_size=self.__batch_size, shuffle=True, num_workers=0)
 
     def get_batch_size(self) -> int:
         return self.__batch_size

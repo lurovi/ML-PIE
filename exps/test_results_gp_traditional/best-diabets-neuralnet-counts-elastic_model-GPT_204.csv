@@ -1,0 +1,962 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[+, -, x_7, **2, **3, **3, x_8, sin, x_0]",((x_7-(((x_8)**3)**3)**2)+sin(x_0)),4758.37890625,-0.015501639805734158,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+1,0,"[exp, **3, x_4]",exp((x_4)**3),6112.9970703125,-0.03723737597465515,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+2,0,"[exp, exp, **3, x_8]",exp(exp((x_8)**3)),5442.79541015625,-0.031179029494524002,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+3,0,"[sqrt, sin, exp, exp, x_6]",sqrt(abs(sin(exp(exp(x_6))))),4968.3046875,-0.024920569732785225,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+4,0,"[**2, x_5]",(x_5)**2,6097.8798828125,-0.03400544449687004,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+5,0,"[**2, x_10]",(x_10)**2,6123.3125,-0.04078774154186249,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+6,0,"[+, **3, sin, sqrt, **2, x_0, log, +, **, exp, x_2, **2, x_7, **, x_3, x_1]",((sin(sqrt(abs((x_0)**2))))**3+log(abs(((exp(x_2)**(x_7)**2)+(x_3**x_1))))),4284.14453125,-0.0065314918756484985,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+7,1,"[exp, exp, **3, x_8]",exp(exp((x_8)**3)),5442.79541015625,-0.031179029494524002,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+8,1,"[sqrt, sin, exp, exp, x_6]",sqrt(abs(sin(exp(exp(x_6))))),4968.3046875,-0.024920569732785225,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+9,1,"[sqrt, exp, x_5]",sqrt(abs(exp(x_5))),5171.40380859375,-0.0290250051766634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+10,1,"[sqrt, **2, +, u-, x_7, cos, **2, x_4]",sqrt(abs(((-(x_7)+cos((x_4)**2)))**2)),4206.03125,-0.017497209832072258,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+11,1,"[u-, exp, exp, x_4]",-(exp(exp(x_4))),5964.33740234375,-0.038954704999923706,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+12,1,"[sqrt, u-, exp, cos, exp, x_6]",sqrt(abs(-(exp(cos(exp(x_6)))))),5002.8212890625,-0.025677386671304703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+13,1,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+14,1,"[exp, log, exp, sin, sin, x_1]",exp(log(abs(exp(sin(sin(x_1)))))),4027.202392578125,-0.01251242309808731,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+15,1,"[**2, sqrt, **, sin, x_6, x_7]",(sqrt(abs((sin(x_6)**x_7))))**2,4517.06689453125,-0.019360754638910294,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+16,1,"[+, sin, exp, -, x_7, sqrt, x_7, u-, **, -4.05, **, sqrt, x_7, x_7]",(sin(exp((x_7-sqrt(abs(x_7)))))+-((-4.05**(sqrt(abs(x_7))**x_7)))),4110.4541015625,-0.013933047652244568,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+17,2,"[sqrt, sin, exp, exp, x_6]",sqrt(abs(sin(exp(exp(x_6))))),4968.3046875,-0.024920569732785225,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+18,2,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+19,2,"[exp, u-, u-, u-, sin, x_7]",exp(-(-(-(sin(x_7))))),4194.2099609375,-0.02409123256802559,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+20,2,"[exp, x_2]",exp(x_2),4976.50927734375,-0.04272392392158508,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+21,2,[x_8],x_8,5173.40966796875,-0.051210664212703705,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+22,2,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+23,2,"[exp, sin, exp, -, **2, x_2, x_7]",exp(sin(exp(((x_2)**2-x_7)))),4263.0537109375,-0.0247940793633461,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+24,3,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+25,3,"[exp, u-, u-, u-, sin, x_7]",exp(-(-(-(sin(x_7))))),4194.2099609375,-0.02409123256802559,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+26,3,"[exp, x_2]",exp(x_2),4976.50927734375,-0.04272392392158508,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+27,3,[x_8],x_8,5173.40966796875,-0.051210664212703705,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+28,3,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+29,3,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+30,3,"[u-, exp, +, **3, *, x_2, x_3, x_7]",-(exp((((x_2*x_3))**3+x_7))),4221.37890625,-0.028607213869690895,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+31,3,"[exp, sin, exp, -, **2, x_5, x_7]",exp(sin(exp(((x_5)**2-x_7)))),4188.55615234375,-0.020966578274965286,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+32,3,"[exp, sin, sin, x_1]",exp(sin(sin(x_1))),4027.202392578125,-0.020098641514778137,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+33,3,"[exp, sin, exp, -, **2, x_2, +, x_1, x_7]",exp(sin(exp(((x_2)**2-(x_1+x_7))))),3353.414794921875,-0.018760886043310165,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+34,4,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+35,4,[x_8],x_8,5173.40966796875,-0.051210664212703705,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+36,4,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+37,4,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+38,4,"[exp, sin, exp, -, **2, x_2, +, x_1, x_7]",exp(sin(exp(((x_2)**2-(x_1+x_7))))),3353.414794921875,-0.018760886043310165,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+39,4,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+40,4,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+41,4,"[**2, exp, exp, sin, +, x_1, x_7]",(exp(exp(sin((x_1+x_7)))))**2,3324.5302734375,-0.016999438405036926,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+42,5,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+43,5,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+44,5,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+45,5,"[exp, sin, exp, -, **2, x_2, +, x_1, x_7]",exp(sin(exp(((x_2)**2-(x_1+x_7))))),3353.414794921875,-0.018760886043310165,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+46,5,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+47,5,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+48,5,"[**2, exp, exp, sin, +, x_1, x_7]",(exp(exp(sin((x_1+x_7)))))**2,3324.5302734375,-0.016999438405036926,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+49,5,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+50,6,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+51,6,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+52,6,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+53,6,"[exp, sin, exp, -, **2, x_2, +, x_1, x_7]",exp(sin(exp(((x_2)**2-(x_1+x_7))))),3353.414794921875,-0.018760886043310165,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+54,6,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+55,6,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+56,6,"[**2, exp, exp, sin, +, x_1, x_7]",(exp(exp(sin((x_1+x_7)))))**2,3324.5302734375,-0.016999438405036926,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+57,6,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+58,6,"[exp, exp, u-, sin, +, x_1, x_7]",exp(exp(-(sin((x_1+x_7))))),3377.4287109375,-0.019180096685886383,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+59,6,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+60,7,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+61,7,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+62,7,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+63,7,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+64,7,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+65,7,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+66,7,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+67,7,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+68,7,"[u-, exp, exp, sin, +, x_1, x_7]",-(exp(exp(sin((x_1+x_7))))),3307.28125,-0.019180096685886383,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+69,7,"[sin, +, x_1, x_7]",sin((x_1+x_7)),3316.595947265625,-0.025997037068009377,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+70,8,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+71,8,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+72,8,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+73,8,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+74,8,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+75,8,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+76,8,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+77,8,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+78,8,"[sin, +, x_1, x_7]",sin((x_1+x_7)),3316.595947265625,-0.025997037068009377,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+79,8,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+80,8,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))))),3244.375732421875,-0.011603745631873608,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+81,8,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+82,8,"[exp, exp, sin, +, x_1, x_7]",exp(exp(sin((x_1+x_7)))),3307.28125,-0.0222641509026289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+83,9,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+84,9,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+85,9,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+86,9,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+87,9,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+88,9,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+89,9,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+90,9,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+91,9,"[sin, +, x_1, x_7]",sin((x_1+x_7)),3316.595947265625,-0.025997037068009377,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+92,9,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+93,9,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))))),3244.375732421875,-0.011603745631873608,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+94,9,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+95,9,"[exp, exp, sin, +, x_1, x_7]",exp(exp(sin((x_1+x_7)))),3307.28125,-0.0222641509026289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+96,10,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+97,10,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+98,10,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+99,10,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+100,10,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+101,10,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+102,10,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+103,10,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+104,10,"[sin, +, x_1, x_7]",sin((x_1+x_7)),3316.595947265625,-0.025997037068009377,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+105,10,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+106,10,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+107,10,"[exp, exp, sin, +, x_1, x_7]",exp(exp(sin((x_1+x_7)))),3307.28125,-0.0222641509026289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+108,10,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+109,11,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+110,11,"[log, exp, exp, sin, +, x_1, x_7]",log(abs(exp(exp(sin((x_1+x_7)))))),3304.797119140625,-0.01578202098608017,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+111,11,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+112,11,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+113,11,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+114,11,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+115,11,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+116,11,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+117,11,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+118,11,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+119,11,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+120,11,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+121,12,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+122,12,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+123,12,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+124,12,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+125,12,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+126,12,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+127,12,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+128,12,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+129,12,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+130,12,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+131,12,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+132,12,"[u-, exp, sin, +, x_1, x_7]",-(exp(sin((x_1+x_7)))),3304.797119140625,-0.020642295479774475,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+133,12,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+134,13,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+135,13,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+136,13,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+137,13,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+138,13,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+139,13,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+140,13,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+141,13,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+142,13,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+143,13,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+144,13,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+145,13,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+146,13,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+147,14,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+148,14,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+149,14,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+150,14,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+151,14,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+152,14,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+153,14,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+154,14,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+155,14,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+156,14,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+157,14,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+158,14,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+159,14,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+160,15,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+161,15,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+162,15,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+163,15,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+164,15,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+165,15,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+166,15,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+167,15,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+168,15,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+169,15,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+170,15,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+171,15,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+172,15,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+173,15,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+174,16,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+175,16,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+176,16,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+177,16,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+178,16,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+179,16,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+180,16,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+181,16,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+182,16,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+183,16,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+184,16,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+185,16,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+186,16,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+187,16,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+188,17,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+189,17,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+190,17,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+191,17,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+192,17,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+193,17,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+194,17,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+195,17,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+196,17,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+197,17,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+198,17,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+199,17,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+200,17,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+201,17,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+202,17,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+203,18,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+204,18,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+205,18,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+206,18,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+207,18,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+208,18,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+209,18,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+210,18,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+211,18,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+212,18,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+213,18,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+214,18,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+215,18,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+216,18,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+217,18,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+218,19,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+219,19,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+220,19,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+221,19,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+222,19,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+223,19,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+224,19,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+225,19,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+226,19,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+227,19,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+228,19,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+229,19,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+230,19,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+231,19,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+232,19,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+233,19,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+234,19,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+235,20,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+236,20,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+237,20,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+238,20,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+239,20,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+240,20,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+241,20,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+242,20,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+243,20,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+244,20,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+245,20,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+246,20,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+247,20,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+248,20,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+249,20,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+250,20,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+251,20,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+252,21,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+253,21,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+254,21,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+255,21,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+256,21,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+257,21,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+258,21,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+259,21,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+260,21,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+261,21,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+262,21,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+263,21,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+264,21,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+265,21,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+266,21,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+267,21,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+268,21,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+269,22,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+270,22,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+271,22,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+272,22,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+273,22,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+274,22,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+275,22,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+276,22,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+277,22,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+278,22,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+279,22,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+280,22,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+281,22,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+282,22,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+283,22,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+284,22,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+285,22,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+286,23,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+287,23,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+288,23,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+289,23,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+290,23,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+291,23,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+292,23,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+293,23,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+294,23,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+295,23,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+296,23,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+297,23,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+298,23,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+299,23,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+300,23,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+301,23,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+302,23,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+303,24,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+304,24,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+305,24,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+306,24,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+307,24,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+308,24,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+309,24,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+310,24,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+311,24,"[exp, x_1]",exp(x_1),4026.849609375,-0.035480327904224396,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+312,24,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+313,24,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+314,24,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+315,24,"[exp, sin, +, x_1, x_7]",exp(sin((x_1+x_7))),3304.797119140625,-0.024392498657107353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+316,24,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+317,24,"[sin, +, exp, -, -, 1.39, x_1, x_7, x_7]",sin((exp(((1.39-x_1)-x_7))+x_7)),3294.254638671875,-0.019037649035453796,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+318,24,"[exp, -, x_7, exp, u-, +, x_1, x_2]",exp((x_7-exp(-((x_1+x_2))))),3297.163330078125,-0.022849008440971375,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+319,24,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+320,24,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+321,25,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+322,25,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+323,25,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+324,25,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+325,25,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+326,25,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+327,25,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+328,25,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+329,25,"[sqrt, -, exp, -, -, 1.39, x_1, x_7, sin, /, x_2, exp, x_3]",sqrt(abs((exp(((1.39-x_1)-x_7))-sin((x_2/exp(x_3)))))),3221.87890625,-0.013703204691410065,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+330,25,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+331,25,"[-, cos, u-, exp, x_2, **2, -, u-, exp, x_7, x_1]",(cos(-(exp(x_2)))-((-(exp(x_7))-x_1))**2),3184.77880859375,-0.01336244959384203,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+332,25,"[-, exp, -, -, 1.39, x_1, x_7, sin, sqrt, x_2]",(exp(((1.39-x_1)-x_7))-sin(sqrt(abs(x_2)))),3258.10205078125,-0.015426097437739372,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+333,25,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+334,25,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+335,25,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+336,25,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+337,26,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+338,26,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+339,26,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+340,26,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+341,26,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+342,26,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+343,26,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+344,26,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+345,26,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+346,26,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+347,26,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+348,26,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+349,26,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+350,26,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+351,26,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+352,26,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+353,27,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+354,27,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+355,27,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+356,27,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+357,27,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+358,27,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+359,27,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+360,27,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+361,27,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+362,27,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+363,27,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+364,27,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+365,27,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+366,27,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+367,27,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+368,27,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+369,27,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+370,28,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+371,28,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+372,28,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+373,28,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+374,28,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+375,28,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+376,28,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+377,28,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+378,28,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+379,28,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+380,28,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+381,28,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+382,28,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+383,28,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+384,28,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+385,28,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+386,28,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+387,29,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+388,29,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+389,29,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+390,29,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+391,29,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+392,29,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+393,29,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+394,29,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+395,29,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+396,29,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+397,29,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+398,29,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+399,29,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+400,29,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+401,29,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+402,29,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+403,29,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+404,29,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+405,30,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+406,30,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+407,30,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+408,30,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+409,30,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+410,30,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+411,30,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+412,30,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+413,30,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+414,30,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+415,30,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+416,30,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+417,30,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+418,30,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+419,30,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+420,30,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+421,30,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+422,30,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+423,31,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+424,31,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+425,31,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+426,31,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+427,31,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+428,31,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+429,31,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+430,31,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+431,31,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+432,31,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+433,31,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+434,31,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+435,31,"[+, exp, +, x_1, x_2, x_7]",(exp((x_1+x_2))+x_7),3277.1142578125,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+436,31,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+437,31,"[**, -, **, sqrt, x_7, x_7, x_1, sqrt, exp, x_2]",(((sqrt(abs(x_7))**x_7)-x_1)**sqrt(abs(exp(x_2)))),3268.7265625,-0.015925003215670586,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+438,31,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+439,31,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+440,31,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+441,32,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+442,32,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+443,32,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+444,32,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+445,32,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+446,32,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+447,32,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+448,32,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+449,32,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+450,32,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+451,32,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+452,32,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+453,32,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+454,32,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+455,32,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+456,32,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+457,32,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+458,32,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+459,32,"[-, 1.39, exp, sin, +, x_1, +, x_2, x_7]",(1.39-exp(sin((x_1+(x_2+x_7))))),3261.015380859375,-0.019545819610357285,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+460,32,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+461,33,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+462,33,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+463,33,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+464,33,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+465,33,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+466,33,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+467,33,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+468,33,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+469,33,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+470,33,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+471,33,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+472,33,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+473,33,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+474,33,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+475,33,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+476,33,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+477,33,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+478,33,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+479,33,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+480,33,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+481,34,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+482,34,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+483,34,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+484,34,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+485,34,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+486,34,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+487,34,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+488,34,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+489,34,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+490,34,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+491,34,"[exp, +, +, x_2, x_6, x_7]",exp(((x_2+x_6)+x_7)),3841.074951171875,-0.03395736217498779,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+492,34,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+493,34,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+494,34,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+495,34,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+496,34,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+497,34,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+498,34,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+499,34,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+500,34,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+501,35,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+502,35,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+503,35,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+504,35,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+505,35,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+506,35,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+507,35,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+508,35,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+509,35,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+510,35,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+511,35,"[exp, exp, +, x_2, x_7]",exp(exp((x_2+x_7))),3949.58740234375,-0.035711053758859634,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+512,35,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+513,35,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+514,35,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+515,35,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+516,35,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+517,35,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+518,35,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+519,35,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+520,35,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+521,36,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+522,36,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+523,36,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+524,36,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+525,36,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+526,36,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+527,36,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+528,36,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+529,36,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+530,36,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+531,36,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+532,36,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+533,36,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+534,36,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+535,36,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+536,36,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+537,36,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+538,36,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+539,36,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+540,36,"[+, +, x_2, x_7, x_7]",((x_2+x_7)+x_7),3874.89404296875,-0.036569200456142426,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+541,37,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+542,37,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+543,37,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+544,37,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+545,37,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+546,37,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+547,37,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+548,37,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+549,37,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+550,37,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+551,37,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+552,37,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+553,37,"[+, *, x_4, x_3, -, -, 1.39, x_1, x_7]",((x_4*x_3)+((1.39-x_1)-x_7)),3308.038330078125,-0.030434370040893555,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+554,37,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+555,37,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+556,37,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+557,37,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+558,37,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+559,37,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+560,37,"[+, +, x_2, x_7, x_7]",((x_2+x_7)+x_7),3874.89404296875,-0.036569200456142426,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+561,38,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+562,38,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+563,38,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+564,38,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+565,38,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+566,38,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+567,38,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+568,38,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+569,38,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+570,38,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+571,38,"[exp, +, x_7, x_2]",exp((x_7+x_2)),3950.62890625,-0.038585223257541656,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+572,38,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+573,38,"[+, x_2, x_7]",(x_2+x_7),3963.15380859375,-0.04168996214866638,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+574,38,"[+, *, x_10, x_2, x_7]",((x_10*x_2)+x_7),3951.9619140625,-0.04085753113031387,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+575,38,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+576,38,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+577,38,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+578,38,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+579,38,"[+, +, x_2, x_7, x_7]",((x_2+x_7)+x_7),3874.89404296875,-0.036569200456142426,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+580,38,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+581,39,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+582,39,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+583,39,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+584,39,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+585,39,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+586,39,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+587,39,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+588,39,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+589,39,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+590,39,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+591,39,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+592,39,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+593,39,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+594,39,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+595,39,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+596,39,"[+, +, x_2, x_7, x_7]",((x_2+x_7)+x_7),3874.89404296875,-0.036569200456142426,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+597,39,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+598,39,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+599,39,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+600,40,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+601,40,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+602,40,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+603,40,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+604,40,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+605,40,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+606,40,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+607,40,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+608,40,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+609,40,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+610,40,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+611,40,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+612,40,"[-, *, x_4, x_3, +, x_1, x_2]",((x_4*x_3)-(x_1+x_2)),3857.003173828125,-0.03563373535871506,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+613,40,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+614,40,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+615,40,"[+, +, x_2, x_7, x_7]",((x_2+x_7)+x_7),3874.89404296875,-0.036569200456142426,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+616,40,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+617,40,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+618,40,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+619,40,"[-, x_7, -, *, -, **2, x_0, +, x_2, x_5, x_3, x_1]",(x_7-((((x_0)**2-(x_2+x_5))*x_3)-x_1)),3303.253662109375,-0.02792181260883808,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+620,41,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+621,41,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+622,41,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+623,41,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+624,41,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+625,41,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+626,41,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+627,41,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+628,41,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+629,41,"[-, cos, u-, exp, +, x_2, x_1, **2, -, u-, exp, x_7, x_1]",(cos(-(exp((x_2+x_1))))-((-(exp(x_7))-x_1))**2),3173.395751953125,-0.006031468510627747,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+630,41,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+631,41,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+632,41,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+633,41,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+634,41,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+635,41,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+636,41,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+637,41,"[-, x_7, -, *, -, **2, x_0, +, x_2, x_5, x_3, x_1]",(x_7-((((x_0)**2-(x_2+x_5))*x_3)-x_1)),3303.253662109375,-0.02792181260883808,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+638,41,"[-, -, *, -, *, x_4, x_3, x_4, x_3, x_2, x_1]",(((((x_4*x_3)-x_4)*x_3)-x_2)-x_1),3850.822998046875,-0.04071161150932312,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+639,42,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+640,42,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+641,42,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+642,42,"[+, x_2, x_1]",(x_2+x_1),3849.873291015625,-0.035005826503038406,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+643,42,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+644,42,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+645,42,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-0.032973386347293854,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+646,42,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+647,42,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+648,42,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+649,42,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+650,42,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+651,42,"[-, -, -, x_3, x_1, x_7, x_2]",(((x_3-x_1)-x_7)-x_2),3536.26025390625,-0.03415293246507645,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+652,42,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+653,42,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+654,42,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+655,42,"[-, x_7, -, *, -, **2, x_0, +, x_2, x_5, x_3, x_1]",(x_7-((((x_0)**2-(x_2+x_5))*x_3)-x_1)),3303.253662109375,-0.02792181260883808,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+656,42,"[-, -, *, -, *, x_4, x_3, x_4, x_3, x_2, x_1]",(((((x_4*x_3)-x_4)*x_3)-x_2)-x_1),3850.822998046875,-0.04071161150932312,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+657,42,"[exp, +, x_1, -, x_7, /, x_2, log, x_1]",exp((x_1+(x_7-(x_2/log(abs(x_1)))))),3164.55615234375,-0.010993054136633873,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+658,42,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+659,43,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+660,43,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+661,43,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+662,43,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+663,43,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+664,43,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+665,43,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+666,43,"[-, u-, x_2, exp, exp, sin, +, x_1, x_7]",(-(x_2)-exp(exp(sin((x_1+x_7))))),3181.350341796875,-0.015819299966096878,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+667,43,"[exp, +, x_1, +, x_2, x_7]",exp((x_1+(x_2+x_7))),3261.067138671875,-0.02792114019393921,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+668,43,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+669,43,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+670,43,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+671,43,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+672,43,"[-, x_7, -, *, -, **2, x_0, +, x_2, x_5, x_3, x_1]",(x_7-((((x_0)**2-(x_2+x_5))*x_3)-x_1)),3303.253662109375,-0.02792181260883808,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+673,43,"[exp, +, x_1, -, x_7, /, x_2, log, x_1]",exp((x_1+(x_7-(x_2/log(abs(x_1)))))),3164.55615234375,-0.010993054136633873,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+674,43,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+675,43,"[-, -, -, x_3, x_4, +, *, x_10, x_2, x_7, x_7]",(((x_3-x_4)-((x_10*x_2)+x_7))-x_7),3758.548828125,-0.041578881442546844,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+676,43,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+677,44,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+678,44,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+679,44,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+680,44,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+681,44,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+682,44,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+683,44,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+684,44,"[-, u-, x_2, -, *, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-((x_4*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3243.191650390625,-0.023731091991066933,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+685,44,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+686,44,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+687,44,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+688,44,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+689,44,"[-, -, -, x_3, x_4, +, *, x_10, x_2, x_7, x_7]",(((x_3-x_4)-((x_10*x_2)+x_7))-x_7),3758.548828125,-0.041578881442546844,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+690,44,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+691,44,"[exp, +, +, +, x_1, x_2, *, *, x_7, x_4, x_3, x_7]",exp((((x_1+x_2)+((x_7*x_4)*x_3))+x_7)),3260.906494140625,-0.029147081077098846,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+692,44,"[-, **, sqrt, x_3, x_7, +, x_1, *, -, *, x_4, x_3, x_4, x_3]",((sqrt(abs(x_3))**x_7)-(x_1+(((x_4*x_3)-x_4)*x_3))),3403.54345703125,-0.03598397225141525,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+693,44,"[-, -, *, -, cos, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((cos(x_4)-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3159.68701171875,-0.019185418263077736,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+694,45,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+695,45,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+696,45,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+697,45,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+698,45,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+699,45,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+700,45,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+701,45,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+702,45,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+703,45,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+704,45,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+705,45,"[-, -, -, x_3, x_4, +, *, x_10, x_2, x_7, x_7]",(((x_3-x_4)-((x_10*x_2)+x_7))-x_7),3758.548828125,-0.041578881442546844,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+706,45,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+707,45,"[exp, +, +, +, x_1, x_2, *, *, x_7, x_4, x_3, x_7]",exp((((x_1+x_2)+((x_7*x_4)*x_3))+x_7)),3260.906494140625,-0.029147081077098846,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+708,45,"[-, **, sqrt, x_3, x_7, +, x_1, *, -, *, x_4, x_3, x_4, x_3]",((sqrt(abs(x_3))**x_7)-(x_1+(((x_4*x_3)-x_4)*x_3))),3403.54345703125,-0.03598397225141525,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+709,45,"[-, x_7, u-, exp, +, x_1, *, x_2, x_10]",(x_7--(exp((x_1+(x_2*x_10))))),3208.907470703125,-0.026299500837922096,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+710,45,"[-, u-, x_2, -, *, -, x_3, **, x_0, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-(((x_3-(x_0**x_4))*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3254.017822265625,-0.028193827718496323,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+711,45,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+712,46,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+713,46,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+714,46,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+715,46,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+716,46,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+717,46,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+718,46,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+719,46,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+720,46,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+721,46,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+722,46,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+723,46,"[-, -, -, x_3, x_4, +, *, x_10, x_2, x_7, x_7]",(((x_3-x_4)-((x_10*x_2)+x_7))-x_7),3758.548828125,-0.041578881442546844,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+724,46,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+725,46,"[exp, +, +, +, x_1, x_2, *, *, x_7, x_4, x_3, x_7]",exp((((x_1+x_2)+((x_7*x_4)*x_3))+x_7)),3260.906494140625,-0.029147081077098846,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+726,46,"[-, **, sqrt, x_3, x_7, +, x_1, *, -, *, x_4, x_3, x_4, x_3]",((sqrt(abs(x_3))**x_7)-(x_1+(((x_4*x_3)-x_4)*x_3))),3403.54345703125,-0.03598397225141525,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+727,46,"[-, x_7, u-, exp, +, x_1, *, x_2, x_10]",(x_7--(exp((x_1+(x_2*x_10))))),3208.907470703125,-0.026299500837922096,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+728,46,"[-, u-, x_2, -, *, -, x_3, **, x_0, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-(((x_3-(x_0**x_4))*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3254.017822265625,-0.028193827718496323,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+729,46,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+730,46,"[exp, +, exp, *, *, x_10, x_2, x_10, +, x_1, x_7]",exp((exp(((x_10*x_2)*x_10))+(x_1+x_7))),3216.57373046875,-0.028142808005213737,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+731,46,"[-, -, *, x_4, x_4, x_7, x_2]",(((x_4*x_4)-x_7)-x_2),3955.19970703125,-0.04219452291727066,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+732,47,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+733,47,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+734,47,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+735,47,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+736,47,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+737,47,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+738,47,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+739,47,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+740,47,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+741,47,"[-, **, x_0, x_7, x_2]",((x_0**x_7)-x_2),3913.341552734375,-0.04177011549472809,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+742,47,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+743,47,"[-, -, -, x_3, x_4, +, *, x_10, x_2, x_7, x_7]",(((x_3-x_4)-((x_10*x_2)+x_7))-x_7),3758.548828125,-0.041578881442546844,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+744,47,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+745,47,"[exp, +, +, +, x_1, x_2, *, *, x_7, x_4, x_3, x_7]",exp((((x_1+x_2)+((x_7*x_4)*x_3))+x_7)),3260.906494140625,-0.029147081077098846,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+746,47,"[-, **, sqrt, x_3, x_7, +, x_1, *, -, *, x_4, x_3, x_4, x_3]",((sqrt(abs(x_3))**x_7)-(x_1+(((x_4*x_3)-x_4)*x_3))),3403.54345703125,-0.03598397225141525,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+747,47,"[-, x_7, u-, exp, +, x_1, *, x_2, x_10]",(x_7--(exp((x_1+(x_2*x_10))))),3208.907470703125,-0.026299500837922096,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+748,47,"[-, u-, x_2, -, *, -, x_3, **, x_0, x_4, -, x_0, x_2, exp, -, -, 1.39, x_1, x_7]",(-(x_2)-(((x_3-(x_0**x_4))*(x_0-x_2))-exp(((1.39-x_1)-x_7)))),3254.017822265625,-0.028193827718496323,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+749,47,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+750,47,"[exp, +, exp, *, *, x_10, x_2, x_10, +, x_1, x_7]",exp((exp(((x_10*x_2)*x_10))+(x_1+x_7))),3216.57373046875,-0.028142808005213737,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+751,47,"[-, -, *, x_4, x_4, x_7, x_2]",(((x_4*x_4)-x_7)-x_2),3955.19970703125,-0.04219452291727066,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+752,47,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*x_3)*(x_4**x_3))-x_7)-x_1),3501.890869140625,-0.04151532053947449,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+753,48,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+754,48,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+755,48,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+756,48,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+757,48,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+758,48,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+759,48,"[exp, +, x_1, x_7]",exp((x_1+x_7)),3305.404541015625,-0.030229318886995316,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+760,48,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+761,48,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+762,48,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+763,48,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+764,48,"[-, x_7, u-, exp, +, x_1, *, x_2, x_10]",(x_7--(exp((x_1+(x_2*x_10))))),3208.907470703125,-0.026299500837922096,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+765,48,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+766,48,"[-, -, *, x_4, x_4, x_7, x_2]",(((x_4*x_4)-x_7)-x_2),3955.19970703125,-0.04219452291727066,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+767,48,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+768,48,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+769,49,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+770,49,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+771,49,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+772,49,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+773,49,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+774,49,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+775,49,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+776,49,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+777,49,"[-, -, *, -, x_4, x_7, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_4-x_7)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.161376953125,-0.023139802739024162,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+778,49,"[-, -, -, x_3, x_1, x_7, x_3]",(((x_3-x_1)-x_7)-x_3),3316.92431640625,-0.034741513431072235,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+779,49,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+780,49,"[-, -, *, x_4, x_4, x_7, x_2]",(((x_4*x_4)-x_7)-x_2),3955.19970703125,-0.04219452291727066,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+781,49,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+782,49,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+783,49,"[-, x_7, -, *, -, **2, x_0, +, x_2, x_2, x_3, x_1]",(x_7-((((x_0)**2-(x_2+x_2))*x_3)-x_1)),3304.53369140625,-0.030612334609031677,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+784,49,"[-, x_7, -, *, -, **2, x_4, x_2, x_3, x_1]",(x_7-((((x_4)**2-x_2)*x_3)-x_1)),3304.971435546875,-0.031516361981630325,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+785,49,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+786,49,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+787,49,"[-, x_7, -, *, x_0, x_3, x_1]",(x_7-((x_0*x_3)-x_1)),3318.71337890625,-0.03514840453863144,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+788,50,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+789,50,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+790,50,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+791,50,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+792,50,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+793,50,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+794,50,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+795,50,"[-, -, *, x_4, -, *, x_3, x_3, x_2, x_7, x_2]",(((x_4*((x_3*x_3)-x_2))-x_7)-x_2),3977.77587890625,-0.04286080598831177,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+796,50,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+797,50,"[-, -, *, x_4, x_4, x_7, x_2]",(((x_4*x_4)-x_7)-x_2),3955.19970703125,-0.04219452291727066,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+798,50,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+799,50,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+800,50,"[-, x_7, -, *, -, **2, x_4, x_2, x_3, x_1]",(x_7-((((x_4)**2-x_2)*x_3)-x_1)),3304.971435546875,-0.031516361981630325,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+801,50,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+802,50,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+803,50,"[-, -, -, -, x_3, x_1, x_7, x_7, x_2]",((((x_3-x_1)-x_7)-x_7)-x_2),3290.997802734375,-0.03150395303964615,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+804,50,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3316.56640625,-0.039086662232875824,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+805,50,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+806,51,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+807,51,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+808,51,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+809,51,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+810,51,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+811,51,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+812,51,"[-, x_7, -, *, -, **2, x_0, x_2, x_3, x_1]",(x_7-((((x_0)**2-x_2)*x_3)-x_1)),3307.809326171875,-0.03162693977355957,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+813,51,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+814,51,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+815,51,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+816,51,"[-, x_7, -, *, -, **2, x_4, x_2, x_3, x_1]",(x_7-((((x_4)**2-x_2)*x_3)-x_1)),3304.971435546875,-0.031516361981630325,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+817,51,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+818,51,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+819,51,"[-, -, -, -, x_3, x_1, x_7, x_7, x_2]",((((x_3-x_1)-x_7)-x_7)-x_2),3290.997802734375,-0.03150395303964615,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+820,51,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3316.56640625,-0.039086662232875824,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+821,51,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+822,51,"[-, -, *, *, +, x_2, x_2, x_3, x_0, x_7, x_1]",(((((x_2+x_2)*x_3)*x_0)-x_7)-x_1),3316.025146484375,-0.03293559327721596,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+823,51,"[-, x_7, -, *, x_0, x_3, x_2]",(x_7-((x_0*x_3)-x_2)),3952.562744140625,-0.0435822457075119,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+824,52,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+825,52,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+826,52,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+827,52,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+828,52,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+829,52,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+830,52,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+831,52,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+832,52,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+833,52,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+834,52,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+835,52,"[-, -, -, -, x_3, x_1, x_7, x_7, x_2]",((((x_3-x_1)-x_7)-x_7)-x_2),3290.997802734375,-0.03150395303964615,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+836,52,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3316.56640625,-0.039086662232875824,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+837,52,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+838,52,"[-, x_7, -, *, x_0, x_3, x_2]",(x_7-((x_0*x_3)-x_2)),3952.562744140625,-0.0435822457075119,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+839,52,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+840,52,"[+, x_1, +, *, x_10, x_2, x_7]",(x_1+((x_10*x_2)+x_7)),3224.65673828125,-0.0308174230158329,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+841,52,"[-, -, *, cos, +, x_2, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_2+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3129.03125,-0.019362010061740875,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+842,53,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+843,53,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+844,53,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+845,53,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+846,53,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+847,53,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+848,53,"[-, -, u-, cos, x_4, +, x_2, *, x_10, -, x_0, x_4, **2, -, u-, exp, x_7, x_1]",((-(cos(x_4))-(x_2+(x_10*(x_0-x_4))))-((-(exp(x_7))-x_1))**2),3130.2197265625,-0.01955588534474373,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+849,53,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+850,53,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+851,53,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+852,53,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+853,53,"[-, -, -, -, x_3, x_1, x_7, x_7, x_2]",((((x_3-x_1)-x_7)-x_7)-x_2),3290.997802734375,-0.03150395303964615,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+854,53,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+855,53,"[-, x_7, -, *, x_0, x_3, x_2]",(x_7-((x_0*x_3)-x_2)),3952.562744140625,-0.0435822457075119,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+856,53,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+857,53,"[+, x_1, +, *, x_10, x_2, x_7]",(x_1+((x_10*x_2)+x_7)),3224.65673828125,-0.0308174230158329,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+858,53,"[-, -, *, cos, +, x_2, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_2+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3129.03125,-0.019362010061740875,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+859,53,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_3, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_3*x_3)-x_2))-x_7)-x_1),3316.27490234375,-0.03965190798044205,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+860,53,"[-, *, x_10, x_2, -, *, x_4, -, x_3, *, x_6, x_0, x_7]",((x_10*x_2)-((x_4*(x_3-(x_6*x_0)))-x_7)),3945.58984375,-0.04223871976137161,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+861,54,[x_10],x_10,6123.3125,-0.05600016564130783,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+862,54,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+863,54,[x_1],x_1,4031.79248046875,-0.04982287436723709,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+864,54,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+865,54,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+866,54,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+867,54,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+868,54,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+869,54,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+870,54,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+871,54,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+872,54,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+873,54,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_3, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_3*x_3)-x_2))-x_7)-x_1),3316.27490234375,-0.03965190798044205,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+874,54,"[-, -, *, cos, +, x_4, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_4+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3127.458740234375,-0.02009931206703186,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+875,54,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_10, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_10))-x_7)),4188.431640625,-0.04993721842765808,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+876,54,"[-, *, x_10, x_2, -, *, x_4, -, x_3, *, x_9, x_10, x_7]",((x_10*x_2)-((x_4*(x_3-(x_9*x_10)))-x_7)),3945.16796875,-0.04499955475330353,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+877,54,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+878,55,[x_4],x_4,5951.62939453125,-0.055137887597084045,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+879,55,[x_6],x_6,4981.89306640625,-0.052367374300956726,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+880,55,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+881,55,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+882,55,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+883,55,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+884,55,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+885,55,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+886,55,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+887,55,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+888,55,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_3, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_3*x_3)-x_2))-x_7)-x_1),3316.27490234375,-0.03965190798044205,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+889,55,"[-, -, *, cos, +, x_4, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_4+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3127.458740234375,-0.02009931206703186,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+890,55,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+891,55,"[-, -, -, x_3, x_4, +, *, +, x_3, x_10, x_2, x_7, x_7]",(((x_3-x_4)-(((x_3+x_10)*x_2)+x_7))-x_7),3764.30908203125,-0.0434834361076355,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+892,55,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-((x_10*x_2)+x_7))),3921.657470703125,-0.05044863373041153,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+893,55,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, u-, x_8, x_3, x_10, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((-(x_8)*x_3)*x_10))-(((x_4*x_3)*x_10)-((x_3+x_10)*x_3))),6046.7021484375,-0.05633231997489929,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+894,55,"[-, -, *, cos, +, x_0, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_0+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3130.041259765625,-0.020577695220708847,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+895,55,"[-, -, *, -, cos, x_4, **, x_4, x_3, *, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((cos(x_4)-(x_4**x_3))*(x_3*x_3))-x_2)-((-(exp(x_7))-x_1))**2),3190.506591796875,-0.02796701155602932,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+896,56,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+897,56,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+898,56,"[exp, +, x_1, +, *, x_10, x_2, x_7]",exp((x_1+((x_10*x_2)+x_7))),3211.073486328125,-0.029168132692575455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+899,56,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+900,56,"[-, -, *, *, +, x_3, x_10, x_3, -, *, x_0, x_3, x_2, x_7, x_1]",(((((x_3+x_10)*x_3)*((x_0*x_3)-x_2))-x_7)-x_1),3320.625,-0.04101458936929703,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+901,56,"[-, -, *, *, x_3, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((x_3*x_3)*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3192.29443359375,-0.028528975322842598,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+902,56,"[-, -, *, x_10, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((x_10*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3147.936279296875,-0.025254014879465103,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+903,56,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+904,56,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_3, x_3, x_2, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_3*x_3)-x_2))-x_7)-x_1),3316.27490234375,-0.03965190798044205,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+905,56,"[-, -, *, cos, +, x_4, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_4+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3127.458740234375,-0.02009931206703186,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+906,56,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+907,56,"[-, -, -, x_3, x_4, +, *, +, x_3, x_10, x_2, x_7, x_7]",(((x_3-x_4)-(((x_3+x_10)*x_2)+x_7))-x_7),3764.30908203125,-0.0434834361076355,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+908,56,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-((x_10*x_2)+x_7))),3921.657470703125,-0.05044863373041153,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+909,56,"[-, -, *, cos, +, x_0, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_0+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3130.041259765625,-0.020577695220708847,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+910,56,"[-, -, *, -, cos, x_4, **, x_4, x_3, *, x_3, x_3, x_2, **2, -, u-, exp, x_7, x_1]",((((cos(x_4)-(x_4**x_3))*(x_3*x_3))-x_2)-((-(exp(x_7))-x_1))**2),3190.506591796875,-0.02796701155602932,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+911,56,"[-, -, *, cos, +, x_10, x_9, x_3, x_2, **2, -, u-, exp, x_7, x_1]",(((cos((x_10+x_9))*x_3)-x_2)-((-(exp(x_7))-x_1))**2),3132.999267578125,-0.02138245664536953,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+912,56,"[-, -, *, *, +, x_7, x_10, -, x_3, x_0, **, x_4, x_3, x_3, *, *, +, x_3, x_10, x_3, **, x_4, x_3]",(((((x_7+x_10)*(x_3-x_0))*(x_4**x_3))-x_3)-(((x_3+x_10)*x_3)*(x_4**x_3))),5647.5,-0.05600254237651825,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+913,56,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),6046.66650390625,-0.05694121867418289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+914,56,"[-, -, *, *, x_0, x_10, x_3, +, x_1, +, x_2, x_7, **2, *, *, x_3, -, x_5, x_3, x_3]",((((x_0*x_10)*x_3)-(x_1+(x_2+x_7)))-(((x_3*(x_5-x_3))*x_3))**2),3309.4990234375,-0.03620027005672455,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+915,56,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, x_7, *, *, +, x_3, x_10, x_3, **, x_4, x_3]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-x_7)-(((x_3+x_10)*x_3)*(x_4**x_3))),4383.73828125,-0.05353064835071564,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+916,56,"[-, -, x_3, x_4, +, x_1, +, *, *, x_3, x_3, x_3, x_7]",((x_3-x_4)-(x_1+(((x_3*x_3)*x_3)+x_7))),3342.790283203125,-0.04138407111167908,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+917,57,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+918,57,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+919,57,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+920,57,"[-, x_7, -, *, x_0, -, *, x_4, x_3, x_7, x_1]",(x_7-((x_0*((x_4*x_3)-x_7))-x_1)),3294.927734375,-0.03572337329387665,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+921,57,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+922,57,"[-, -, -, x_3, x_4, +, *, +, x_3, x_10, x_2, x_7, x_7]",(((x_3-x_4)-(((x_3+x_10)*x_2)+x_7))-x_7),3764.30908203125,-0.0434834361076355,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+923,57,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-((x_10*x_2)+x_7))),3921.657470703125,-0.05044863373041153,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+924,57,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),6046.66650390625,-0.05694121867418289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+925,57,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, x_7, *, *, +, x_3, x_10, x_3, **, x_4, x_3]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-x_7)-(((x_3+x_10)*x_3)*(x_4**x_3))),4383.73828125,-0.05353064835071564,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+926,57,"[-, *, -, x_3, *, x_0, -, x_3, x_4, x_3, +, x_1, x_7]",(((x_3-(x_0*(x_3-x_4)))*x_3)-(x_1+x_7)),3308.669677734375,-0.041620053350925446,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+927,57,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, u-, x_2, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(-(x_2)**x_3))-((x_10*x_2)+x_7))),3916.857421875,-0.047755271196365356,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+928,57,"[-, -, *, *, +, x_3, x_10, x_2, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_2)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),5640.51806640625,-0.05647958070039749,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+929,57,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, *, x_10, x_2, **2, -, u-, exp, x_7, x_1]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-(x_10*x_2))-((-(exp(x_7))-x_1))**2),3123.0439453125,-0.03290238976478577,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+930,58,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+931,58,[x_7],x_7,4205.56591796875,-0.05144953727722168,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+932,58,"[-, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-x_7)-x_1),3397.210693359375,-0.04183477163314819,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+933,58,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+934,58,"[-, -, -, x_3, x_4, +, *, +, x_3, x_10, x_2, x_7, x_7]",(((x_3-x_4)-(((x_3+x_10)*x_2)+x_7))-x_7),3764.30908203125,-0.0434834361076355,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+935,58,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-((x_10*x_2)+x_7))),3921.657470703125,-0.05044863373041153,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+936,58,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),6046.66650390625,-0.05694121867418289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+937,58,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, x_7, *, *, +, x_3, x_10, x_3, **, x_4, x_3]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-x_7)-(((x_3+x_10)*x_3)*(x_4**x_3))),4383.73828125,-0.05353064835071564,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+938,58,"[-, *, -, x_3, *, x_0, -, x_3, x_4, x_3, +, x_1, x_7]",(((x_3-(x_0*(x_3-x_4)))*x_3)-(x_1+x_7)),3308.669677734375,-0.041620053350925446,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+939,58,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, u-, x_2, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(-(x_2)**x_3))-((x_10*x_2)+x_7))),3916.857421875,-0.047755271196365356,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+940,58,"[-, -, *, *, +, x_3, x_10, x_2, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_2)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),5640.51806640625,-0.05647958070039749,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+941,58,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, *, x_10, x_2, **2, -, u-, exp, x_7, x_1]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-(x_10*x_2))-((-(exp(x_7))-x_1))**2),3123.0439453125,-0.03290238976478577,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+942,58,"[-, -, *, *, +, x_3, x_10, -, x_3, x_2, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_2))*(x_4**x_3))-x_7)-x_1),3284.08154296875,-0.04071944206953049,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+943,58,"[-, -, x_3, +, *, x_10, x_2, x_7, *, -, **, x_0, x_0, -, *, x_4, x_3, -, x_3, x_4, x_3]",((x_3-((x_10*x_2)+x_7))-(((x_0**x_0)-((x_4*x_3)-(x_3-x_4)))*x_3)),3923.419677734375,-0.05046650022268295,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+944,58,"[-, -, x_3, x_4, -, *, x_10, x_2, -, -, -, x_3, x_4, x_7, x_7]",((x_3-x_4)-((x_10*x_2)-(((x_3-x_4)-x_7)-x_7))),3755.9423828125,-0.042130693793296814,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+945,58,"[-, -, -, x_3, *, x_3, x_3, +, x_2, x_7, x_4]",(((x_3-(x_3*x_3))-(x_2+x_7))-x_4),3849.01318359375,-0.04483824968338013,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+946,59,[x_2],x_2,4984.6103515625,-0.05475277453660965,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+947,59,"[-, -, x_3, x_4, +, x_1, +, *, x_10, x_2, x_7]",((x_3-x_4)-(x_1+((x_10*x_2)+x_7))),3211.98974609375,-0.035449229180812836,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+948,59,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, x_4, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(x_4**x_3))-((x_10*x_2)+x_7))),3921.657470703125,-0.05044863373041153,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+949,59,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),6046.66650390625,-0.05694121867418289,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+950,59,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, x_7, *, *, +, x_3, x_10, x_3, **, x_4, x_3]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-x_7)-(((x_3+x_10)*x_3)*(x_4**x_3))),4383.73828125,-0.05353064835071564,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+951,59,"[-, *, -, x_3, *, x_0, -, x_3, x_4, x_3, +, x_1, x_7]",(((x_3-(x_0*(x_3-x_4)))*x_3)-(x_1+x_7)),3308.669677734375,-0.041620053350925446,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+952,59,"[-, *, x_4, -, *, x_3, x_3, x_2, -, *, *, +, x_3, x_10, -, x_3, x_4, **, u-, x_2, x_3, +, *, x_10, x_2, x_7]",((x_4*((x_3*x_3)-x_2))-((((x_3+x_10)*(x_3-x_4))*(-(x_2)**x_3))-((x_10*x_2)+x_7))),3916.857421875,-0.047755271196365356,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+953,59,"[-, -, *, *, +, x_3, x_10, x_2, **, x_4, -, x_0, x_3, *, *, sin, x_8, x_3, x_10, -, -, *, *, x_4, x_3, x_10, *, +, x_3, x_10, x_3, *, *, x_3, x_10, x_3]",(((((x_3+x_10)*x_2)*(x_4**(x_0-x_3)))-((sin(x_8)*x_3)*x_10))-((((x_4*x_3)*x_10)-((x_3+x_10)*x_3))-((x_3*x_10)*x_3))),5640.51806640625,-0.05647958070039749,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+954,59,"[-, -, *, *, +, x_2, x_10, -, x_3, x_0, **, x_4, x_3, *, x_10, x_2, **2, -, u-, exp, x_7, x_1]",(((((x_2+x_10)*(x_3-x_0))*(x_4**x_3))-(x_10*x_2))-((-(exp(x_7))-x_1))**2),3123.0439453125,-0.03290238976478577,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+955,59,"[-, -, *, *, +, x_3, x_10, -, x_3, x_2, **, x_4, x_3, x_7, x_1]",(((((x_3+x_10)*(x_3-x_2))*(x_4**x_3))-x_7)-x_1),3284.08154296875,-0.04071944206953049,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+956,59,"[-, -, -, x_3, *, x_3, x_3, +, x_2, x_7, x_4]",(((x_3-(x_3*x_3))-(x_2+x_7))-x_4),3849.01318359375,-0.04483824968338013,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+957,59,"[-, -, x_3, +, *, x_10, x_2, x_7, *, -, **, x_0, x_0, -, *, x_4, x_3, -, x_3, x_3, x_3]",((x_3-((x_10*x_2)+x_7))-(((x_0**x_0)-((x_4*x_3)-(x_3-x_3)))*x_3)),3922.067626953125,-0.052115298807621,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+958,59,"[-, -, *, *, +, x_3, x_2, x_3, -, *, x_0, x_3, -, x_10, x_10, x_7, x_1]",(((((x_3+x_2)*x_3)*((x_0*x_3)-(x_10-x_10)))-x_7)-x_1),3316.949951171875,-0.04169416427612305,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+959,59,"[-, -, *, *, +, x_3, x_10, x_3, **, x_4, -, x_0, x_3, *, *, u-, x_8, x_3, x_10, -, *, *, x_4, x_3, x_10, -, u-, exp, x_7, x_1]",(((((x_3+x_10)*x_3)*(x_4**(x_0-x_3)))-((-(x_8)*x_3)*x_10))-(((x_4*x_3)*x_10)-(-(exp(x_7))-x_1))),3613.817138671875,-0.044215671718120575,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets
+960,59,"[-, *, -, x_3, *, +, x_3, x_10, -, x_3, x_2, x_3, +, x_1, x_7]",(((x_3-((x_3+x_10)*(x_3-x_2)))*x_3)-(x_1+x_7)),3327.69873046875,-0.042785704135894775,204,210,60,210,not_specified,neuralnet-counts-elastic_model,not_specified,not_specified,diabets

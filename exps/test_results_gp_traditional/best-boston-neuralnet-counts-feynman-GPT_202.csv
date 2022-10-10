@@ -1,0 +1,957 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[log, exp, +, cos, *, x_2, x_7, x_2]",log(abs(exp((cos((x_2*x_7))+x_2)))),68.48147583007812,0.03457966446876526,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+1,0,"[cos, x_10]",cos(x_10),72.7190170288086,0.021167699247598648,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+2,0,"[-, log, *, **3, **, x_10, x_8, **3, **3, x_0, **2, **, u-, +, x_12, x_8, **2, x_7]",(log(abs((((x_10**x_8))**3*((x_0)**3)**3)))-((-((x_12+x_8))**(x_7)**2))**2),67.3017349243164,0.061567991971969604,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+3,0,"[-, **2, exp, x_6, -, **, x_8, **3, x_8, cos, x_5]",((exp(x_6))**2-((x_8**(x_8)**3)-cos(x_5))),56.775848388671875,0.0661526694893837,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+4,1,"[cos, x_10]",cos(x_10),72.7190170288086,0.021167699247598648,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+5,1,"[*, x_10, x_4]",(x_10*x_4),87.8463363647461,0.01868884265422821,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+6,1,"[+, x_12, exp, +, **3, sin, x_8, sin, u-, x_4]",(x_12+exp(((sin(x_8))**3+sin(-(x_4))))),51.586639404296875,0.043443240225315094,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+7,1,"[**3, u-, sqrt, +, -0.49, x_2]",(-(sqrt(abs((-0.49+x_2)))))**3,65.8572769165039,0.032425954937934875,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+8,1,"[sin, x_2]",sin(x_2),66.36491394042969,0.023244477808475494,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+9,2,"[cos, x_10]",cos(x_10),72.7190170288086,0.021167699247598648,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+10,2,"[*, x_10, x_4]",(x_10*x_4),87.8463363647461,0.01868884265422821,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+11,2,"[-, x_5, x_8]",(x_5-x_8),42.546016693115234,0.02166537195444107,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+12,3,"[*, x_10, x_4]",(x_10*x_4),87.8463363647461,0.01868884265422821,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+13,3,"[-, x_5, x_8]",(x_5-x_8),42.546016693115234,0.02166537195444107,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+14,3,"[+, x_12, sin, cos, sin, exp, x_7]",(x_12+sin(cos(sin(exp(x_7))))),41.09200668334961,0.0395401269197464,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+15,3,"[u-, x_8]",-(x_8),72.52814483642578,0.020615622401237488,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+16,3,"[**3, x_9]",(x_9)**3,69.09856414794922,0.021386094391345978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+17,3,"[+, x_12, cos, **3, sqrt, sin, x_0]",(x_12+cos((sqrt(abs(sin(x_0))))**3)),41.52566146850586,0.037347763776779175,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+18,4,"[*, x_10, x_4]",(x_10*x_4),87.8463363647461,0.01868884265422821,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+19,4,"[-, x_5, x_8]",(x_5-x_8),42.546016693115234,0.02166537195444107,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+20,4,"[u-, x_8]",-(x_8),72.52814483642578,0.020615622401237488,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+21,4,"[+, x_12, cos, **3, sqrt, sin, x_0]",(x_12+cos((sqrt(abs(sin(x_0))))**3)),41.52566146850586,0.037347763776779175,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+22,4,"[+, x_12, sin, cos, sqrt, -, x_3, x_1]",(x_12+sin(cos(sqrt(abs((x_3-x_1)))))),42.4045295715332,0.036763995885849,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+23,4,"[u-, *, sqrt, *, log, x_2, sin, x_2, u-, x_12]",-((sqrt(abs((log(abs(x_2))*sin(x_2))))*-(x_12))),38.813289642333984,0.03824417293071747,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+24,4,"[-, x_5, 1.96]",(x_5-1.96),48.859561920166016,0.020637862384319305,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+25,5,"[-, x_5, x_8]",(x_5-x_8),42.546016693115234,0.02166537195444107,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+26,5,"[u-, x_8]",-(x_8),72.52814483642578,0.020615622401237488,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+27,5,"[-, x_5, 1.96]",(x_5-1.96),48.859561920166016,0.020637862384319305,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+28,5,"[+, x_12, sin, cos, x_12]",(x_12+sin(cos(x_12))),31.322729110717773,0.02901364117860794,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+29,5,"[*, x_0, x_2]",(x_0*x_2),75.17111206054688,0.014779269695281982,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+30,5,"[+, sin, -3.51, x_12]",(sin(-3.51)+x_12),39.54974365234375,0.022488169372081757,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+31,6,"[+, x_12, sin, cos, x_12]",(x_12+sin(cos(x_12))),31.322729110717773,0.02901364117860794,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+32,6,"[*, x_0, x_2]",(x_0*x_2),75.17111206054688,0.014779269695281982,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+33,6,"[+, x_12, x_12]",(x_12+x_12),39.54974365234375,0.017715230584144592,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+34,6,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+35,7,"[+, x_12, sin, cos, x_12]",(x_12+sin(cos(x_12))),31.322729110717773,0.02901364117860794,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+36,7,"[*, x_0, x_2]",(x_0*x_2),75.17111206054688,0.014779269695281982,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+37,7,"[+, x_12, x_12]",(x_12+x_12),39.54974365234375,0.017715230584144592,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+38,7,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+39,7,"[+, x_12, sin, x_12]",(x_12+sin(x_12)),36.11896896362305,0.02385014295578003,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+40,7,"[+, x_12, sin, cos, *, x_10, cos, x_8]",(x_12+sin(cos((x_10*cos(x_8))))),32.65232849121094,0.027629733085632324,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+41,8,"[*, x_0, x_2]",(x_0*x_2),75.17111206054688,0.014779269695281982,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+42,8,"[+, x_12, x_12]",(x_12+x_12),39.54974365234375,0.017715230584144592,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+43,8,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+44,8,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+45,8,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+46,9,"[+, x_12, x_12]",(x_12+x_12),39.54974365234375,0.017715230584144592,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+47,9,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+48,9,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+49,9,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+50,9,"[*, x_0, x_8]",(x_0*x_8),75.10034942626953,0.013382486999034882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+51,10,"[+, x_12, x_12]",(x_12+x_12),39.54974365234375,0.017715230584144592,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+52,10,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+53,10,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+54,10,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+55,10,"[*, x_0, x_8]",(x_0*x_8),75.10034942626953,0.013382486999034882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+56,10,"[+, x_12, x_0]",(x_12+x_0),62.55094528198242,0.0161762535572052,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+57,11,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+58,11,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+59,11,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+60,11,"[*, x_0, x_8]",(x_0*x_8),75.10034942626953,0.013382486999034882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+61,11,"[+, x_12, x_0]",(x_12+x_0),62.55094528198242,0.0161762535572052,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+62,11,"[*, x_0, 1.96]",(x_0*1.96),74.72451782226562,0.014623865485191345,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+63,11,"[+, 1.96, x_12]",(1.96+x_12),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+64,11,"[+, x_12, -3.51]",(x_12+-3.51),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+65,11,"[*, 0.71, u-, +, x_12, x_10]",(0.71*-((x_12+x_10))),34.929664611816406,0.021536119282245636,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+66,11,"[+, x_12, *, x_10, x_8]",(x_12+(x_10*x_8)),40.043365478515625,0.016917936503887177,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+67,11,"[+, x_12, cos, *, x_5, x_12]",(x_12+cos((x_5*x_12))),28.961755752563477,0.025158949196338654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+68,11,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+69,12,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+70,12,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+71,12,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+72,12,"[*, x_0, x_8]",(x_0*x_8),75.10034942626953,0.013382486999034882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+73,12,"[+, x_12, x_0]",(x_12+x_0),62.55094528198242,0.0161762535572052,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+74,12,"[*, x_0, 1.96]",(x_0*1.96),74.72451782226562,0.014623865485191345,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+75,12,"[+, 1.96, x_12]",(1.96+x_12),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+76,12,"[+, x_12, -3.51]",(x_12+-3.51),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+77,12,"[*, 0.71, u-, +, x_12, x_10]",(0.71*-((x_12+x_10))),34.929664611816406,0.021536119282245636,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+78,12,"[+, x_12, *, x_10, x_8]",(x_12+(x_10*x_8)),40.043365478515625,0.016917936503887177,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+79,12,"[+, x_12, cos, *, x_5, x_12]",(x_12+cos((x_5*x_12))),28.961755752563477,0.025158949196338654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+80,12,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+81,12,"[*, x_12, x_2]",(x_12*x_2),71.81256866455078,0.016000568866729736,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+82,13,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+83,13,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+84,13,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+85,13,"[*, x_0, x_8]",(x_0*x_8),75.10034942626953,0.013382486999034882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+86,13,"[+, x_12, x_0]",(x_12+x_0),62.55094528198242,0.0161762535572052,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+87,13,"[*, x_0, 1.96]",(x_0*1.96),74.72451782226562,0.014623865485191345,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+88,13,"[+, 1.96, x_12]",(1.96+x_12),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+89,13,"[+, x_12, -3.51]",(x_12+-3.51),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+90,13,"[*, 0.71, u-, +, x_12, x_10]",(0.71*-((x_12+x_10))),34.929664611816406,0.021536119282245636,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+91,13,"[+, x_12, *, x_10, x_8]",(x_12+(x_10*x_8)),40.043365478515625,0.016917936503887177,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+92,13,"[+, x_12, cos, *, x_5, x_12]",(x_12+cos((x_5*x_12))),28.961755752563477,0.025158949196338654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+93,13,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+94,13,"[*, x_12, x_2]",(x_12*x_2),71.81256866455078,0.016000568866729736,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+95,13,"[u-, +, x_12, +, x_12, x_10]",-((x_12+(x_12+x_10))),32.52458572387695,0.024301450699567795,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+96,14,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+97,14,"[+, x_12, cos, x_10]",(x_12+cos(x_10)),32.968570709228516,0.022148843854665756,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+98,14,"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,0.02472624182701111,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+99,14,"[+, x_12, x_0]",(x_12+x_0),62.55094528198242,0.0161762535572052,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+100,14,"[+, 1.96, x_12]",(1.96+x_12),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+101,14,"[+, x_12, -3.51]",(x_12+-3.51),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+102,14,"[*, 0.71, u-, +, x_12, x_10]",(0.71*-((x_12+x_10))),34.929664611816406,0.021536119282245636,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+103,14,"[+, x_12, *, x_10, x_8]",(x_12+(x_10*x_8)),40.043365478515625,0.016917936503887177,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+104,14,"[+, x_12, cos, *, x_5, x_12]",(x_12+cos((x_5*x_12))),28.961755752563477,0.025158949196338654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+105,14,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+106,14,"[*, x_12, x_2]",(x_12*x_2),71.81256866455078,0.016000568866729736,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+107,14,"[u-, +, x_12, +, x_12, x_10]",-((x_12+(x_12+x_10))),32.52458572387695,0.024301450699567795,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+108,14,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+109,14,"[+, x_12, x_2]",(x_12+x_2),44.05766677856445,0.016812525689601898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+110,14,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+111,15,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+112,15,"[+, 1.96, x_12]",(1.96+x_12),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+113,15,"[+, x_12, -3.51]",(x_12+-3.51),39.54974365234375,0.016942664980888367,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+114,15,"[+, x_12, *, x_10, x_8]",(x_12+(x_10*x_8)),40.043365478515625,0.016917936503887177,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+115,15,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+116,15,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+117,15,"[+, x_12, x_2]",(x_12+x_2),44.05766677856445,0.016812525689601898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+118,15,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+119,15,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+120,15,"[+, 1.96, x_10]",(1.96+x_10),61.76319122314453,0.015574485063552856,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+121,16,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+122,16,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+123,16,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+124,16,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+125,16,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+126,16,"[+, 1.96, x_10]",(1.96+x_10),61.76319122314453,0.015574485063552856,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+127,16,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+128,16,"[*, x_8, x_12]",(x_8*x_12),64.87340545654297,0.014643758535385132,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+129,16,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+130,17,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+131,17,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+132,17,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+133,17,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+134,17,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+135,17,"[+, 1.96, x_10]",(1.96+x_10),61.76319122314453,0.015574485063552856,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+136,17,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+137,17,"[*, x_8, x_12]",(x_8*x_12),64.87340545654297,0.014643758535385132,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+138,17,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+139,17,"[*, -3.51, x_9]",(-3.51*x_9),66.91973114013672,0.013846822082996368,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+140,18,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+141,18,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+142,18,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+143,18,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+144,18,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+145,18,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+146,18,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+147,18,"[*, -3.51, x_9]",(-3.51*x_9),66.91973114013672,0.013846822082996368,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+148,18,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+149,19,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+150,19,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+151,19,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+152,19,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+153,19,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+154,19,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+155,19,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+156,19,"[*, -3.51, x_9]",(-3.51*x_9),66.91973114013672,0.013846822082996368,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+157,19,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+158,19,"[*, x_8, *, x_10, x_8]",(x_8*(x_10*x_8)),70.53997802734375,0.013662628829479218,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+159,19,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+160,20,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+161,20,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+162,20,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+163,20,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+164,20,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+165,20,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+166,20,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+167,20,"[*, -3.51, x_9]",(-3.51*x_9),66.91973114013672,0.013846822082996368,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+168,20,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+169,20,"[*, x_8, *, x_10, x_8]",(x_8*(x_10*x_8)),70.53997802734375,0.013662628829479218,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+170,20,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+171,21,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+172,21,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+173,21,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+174,21,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+175,21,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+176,21,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+177,21,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+178,21,"[*, -3.51, x_9]",(-3.51*x_9),66.91973114013672,0.013846822082996368,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+179,21,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+180,21,"[*, x_8, *, x_10, x_8]",(x_8*(x_10*x_8)),70.53997802734375,0.013662628829479218,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+181,21,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+182,21,"[+, +, x_10, x_6, x_9]",((x_10+x_6)+x_9),55.56159210205078,0.01565074920654297,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+183,22,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+184,22,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+185,22,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+186,22,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+187,22,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+188,22,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+189,22,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+190,22,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+191,22,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+192,22,"[+, +, x_10, x_6, x_9]",((x_10+x_6)+x_9),55.56159210205078,0.01565074920654297,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+193,22,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+194,22,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+195,22,"[+, x_12, +, *, cos, x_5, cos, x_12, x_12]",(x_12+((cos(x_5)*cos(x_12))+x_12)),27.453388214111328,0.031212784349918365,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+196,23,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+197,23,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+198,23,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+199,23,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+200,23,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+201,23,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+202,23,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+203,23,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+204,23,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+205,23,"[+, +, x_10, x_6, x_9]",((x_10+x_6)+x_9),55.56159210205078,0.01565074920654297,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+206,23,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+207,23,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+208,23,"[+, x_12, +, *, cos, x_5, cos, x_12, x_12]",(x_12+((cos(x_5)*cos(x_12))+x_12)),27.453388214111328,0.031212784349918365,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+209,23,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+210,24,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+211,24,"[+, x_12, cos, sqrt, x_5]",(x_12+cos(sqrt(abs(x_5)))),26.90809440612793,0.03232941776514053,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+212,24,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+213,24,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+214,24,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+215,24,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+216,24,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+217,24,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+218,24,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+219,24,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+220,24,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+221,24,"[+, x_12, +, *, cos, x_5, cos, x_12, x_12]",(x_12+((cos(x_5)*cos(x_12))+x_12)),27.453388214111328,0.031212784349918365,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+222,24,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+223,24,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+224,25,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+225,25,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+226,25,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+227,25,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+228,25,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+229,25,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+230,25,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+231,25,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+232,25,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+233,25,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+234,25,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+235,25,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+236,25,"[+, *, cos, x_5, cos, x_12, x_12]",((cos(x_5)*cos(x_12))+x_12),25.3544921875,0.030012007802724838,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+237,26,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+238,26,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+239,26,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+240,26,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+241,26,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+242,26,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+243,26,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+244,26,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+245,26,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+246,26,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+247,26,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+248,26,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+249,26,"[+, *, cos, x_5, cos, x_12, x_12]",((cos(x_5)*cos(x_12))+x_12),25.3544921875,0.030012007802724838,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+250,26,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+251,27,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+252,27,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+253,27,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+254,27,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+255,27,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+256,27,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+257,27,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+258,27,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+259,27,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+260,27,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+261,27,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+262,27,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+263,27,"[+, *, cos, x_5, cos, x_12, x_12]",((cos(x_5)*cos(x_12))+x_12),25.3544921875,0.030012007802724838,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+264,27,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+265,27,"[+, +, *, cos, x_5, exp, exp, -1.73, x_12, cos, cos, /, -, x_9, -3.67, x_8]",(((cos(x_5)*exp(exp(-1.73)))+x_12)+cos(cos(((x_9--3.67)/x_8)))),24.596881866455078,0.06418520212173462,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+266,27,"[+, x_12, sin, +, cos, *, x_5, x_10, x_9]",(x_12+sin((cos((x_5*x_10))+x_9))),27.575733184814453,0.024618010967969894,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+267,28,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+268,28,"[+, x_12, u-, u-, *, cos, x_5, cos, x_8]",(x_12+-(-((cos(x_5)*cos(x_8))))),24.866750717163086,0.03443405032157898,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+269,28,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+270,28,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+271,28,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+272,28,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+273,28,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+274,28,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+275,28,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+276,28,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+277,28,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+278,28,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+279,28,"[+, *, cos, x_5, cos, x_12, x_12]",((cos(x_5)*cos(x_12))+x_12),25.3544921875,0.030012007802724838,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+280,28,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+281,28,"[+, x_12, sin, +, cos, *, x_5, x_10, x_9]",(x_12+sin((cos((x_5*x_10))+x_9))),27.575733184814453,0.024618010967969894,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+282,28,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+283,28,"[+, x_12, sin, *, *, cos, x_5, cos, x_8, **, *, x_6, x_12, **2, x_3]",(x_12+sin(((cos(x_5)*cos(x_8))*((x_6*x_12)**(x_3)**2)))),24.55817985534668,0.051618486642837524,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+284,28,"[+, x_12, +, *, cos, x_5, cos, x_12, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos(x_5)*cos(x_12))+((cos(x_5)*cos(x_4))+x_12))),24.425247192382812,0.05373378470540047,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+285,29,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+286,29,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+287,29,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+288,29,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+289,29,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+290,29,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+291,29,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+292,29,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+293,29,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+294,29,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+295,29,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+296,29,"[+, *, cos, x_5, cos, x_12, x_12]",((cos(x_5)*cos(x_12))+x_12),25.3544921875,0.030012007802724838,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+297,29,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+298,29,"[+, x_12, sin, +, cos, *, x_5, x_10, x_9]",(x_12+sin((cos((x_5*x_10))+x_9))),27.575733184814453,0.024618010967969894,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+299,29,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+300,29,"[+, x_12, +, x_10, +, x_12, cos, *, x_5, x_12]",(x_12+(x_10+(x_12+cos((x_5*x_12))))),26.1951961517334,0.026090819388628006,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+301,29,"[+, x_12, +, *, cos, x_5, cos, x_12, +, *, x_10, cos, 0.46, x_12]",(x_12+((cos(x_5)*cos(x_12))+((x_10*cos(0.46))+x_12))),24.56011199951172,0.04311187192797661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+302,29,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+303,29,"[+, +, *, cos, x_5, cos, *, x_2, x_4, x_12, 1.96]",(((cos(x_5)*cos((x_2*x_4)))+x_12)+1.96),24.604644775390625,0.031210869550704956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+304,29,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+305,30,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+306,30,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+307,30,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+308,30,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+309,30,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+310,30,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+311,30,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+312,30,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+313,30,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+314,30,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+315,30,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+316,30,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+317,30,"[+, x_12, sin, +, cos, *, x_5, x_10, x_9]",(x_12+sin((cos((x_5*x_10))+x_9))),27.575733184814453,0.024618010967969894,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+318,30,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+319,30,"[+, x_12, +, x_10, +, x_12, cos, *, x_5, x_12]",(x_12+(x_10+(x_12+cos((x_5*x_12))))),26.1951961517334,0.026090819388628006,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+320,30,"[+, x_12, +, *, cos, x_5, cos, x_12, +, *, x_10, cos, 0.46, x_12]",(x_12+((cos(x_5)*cos(x_12))+((x_10*cos(0.46))+x_12))),24.56011199951172,0.04311187192797661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+321,30,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+322,30,"[+, +, *, cos, x_5, cos, *, x_2, x_4, x_12, 1.96]",(((cos(x_5)*cos((x_2*x_4)))+x_12)+1.96),24.604644775390625,0.031210869550704956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+323,30,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+324,30,"[+, x_12, cos, *, x_5, cos, x_3]",(x_12+cos((x_5*cos(x_3)))),25.264698028564453,0.028462432324886322,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+325,30,"[+, +, *, cos, x_5, cos, *, x_2, x_4, x_12, -3.67]",(((cos(x_5)*cos((x_2*x_4)))+x_12)+-3.67),24.604644775390625,0.031210869550704956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+326,31,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+327,31,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+328,31,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+329,31,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+330,31,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+331,31,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+332,31,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+333,31,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+334,31,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+335,31,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+336,31,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+337,31,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+338,31,"[+, x_12, sin, +, cos, *, x_5, x_10, x_9]",(x_12+sin((cos((x_5*x_10))+x_9))),27.575733184814453,0.024618010967969894,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+339,31,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+340,31,"[+, x_12, +, x_10, +, x_12, cos, *, x_5, x_12]",(x_12+(x_10+(x_12+cos((x_5*x_12))))),26.1951961517334,0.026090819388628006,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+341,31,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+342,31,"[+, +, *, cos, x_5, cos, *, x_2, x_4, x_12, 1.96]",(((cos(x_5)*cos((x_2*x_4)))+x_12)+1.96),24.604644775390625,0.031210869550704956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+343,31,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+344,31,"[+, x_12, cos, *, x_5, cos, x_3]",(x_12+cos((x_5*cos(x_3)))),25.264698028564453,0.028462432324886322,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+345,31,"[+, +, *, cos, x_5, cos, *, x_2, x_4, x_12, -3.67]",(((cos(x_5)*cos((x_2*x_4)))+x_12)+-3.67),24.604644775390625,0.031210869550704956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+346,31,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+347,31,"[+, +, *, x_10, cos, x_10, x_12, *, x_5, x_10]",(((x_10*cos(x_10))+x_12)+(x_5*x_10)),24.096235275268555,0.03288905695080757,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+348,32,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+349,32,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+350,32,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+351,32,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+352,32,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+353,32,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+354,32,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+355,32,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+356,32,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+357,32,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+358,32,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+359,32,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+360,32,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+361,32,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+362,32,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+363,32,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+364,32,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+365,32,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+366,32,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+367,33,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+368,33,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+369,33,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+370,33,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+371,33,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+372,33,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+373,33,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+374,33,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+375,33,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+376,33,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+377,33,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+378,33,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+379,33,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+380,33,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+381,33,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+382,33,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+383,33,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+384,33,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+385,33,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+386,34,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+387,34,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+388,34,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+389,34,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+390,34,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+391,34,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+392,34,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+393,34,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+394,34,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+395,34,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+396,34,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+397,34,"[*, x_5, x_10]",(x_5*x_10),54.836753845214844,0.015387952327728271,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+398,34,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+399,34,"[+, +, x_12, cos, *, x_10, cos, x_5, u-, u-, *, cos, x_5, cos, x_8]",((x_12+cos((x_10*cos(x_5))))+-(-((cos(x_5)*cos(x_8))))),23.81745719909668,0.05210386961698532,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+400,34,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+401,34,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+402,34,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+403,34,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+404,34,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+405,34,"[+, *, cos, x_5, cos, sin, sin, x_9, x_12]",((cos(x_5)*cos(sin(sin(x_9))))+x_12),23.960172653198242,0.030703604221343994,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+406,35,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+407,35,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+408,35,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+409,35,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+410,35,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+411,35,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+412,35,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+413,35,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+414,35,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+415,35,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+416,35,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+417,35,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+418,35,"[+, x_12, +, +, cos, *, x_5, x_10, x_9, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+x_9)+((cos(x_5)*cos(x_4))+x_12))),23.817899703979492,0.04613165557384491,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+419,35,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+420,35,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+421,35,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+422,35,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+423,35,"[+, *, cos, x_5, cos, sin, sin, x_9, x_12]",((cos(x_5)*cos(sin(sin(x_9))))+x_12),23.960172653198242,0.030703604221343994,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+424,35,"[+, x_12, sin, *, *, cos, x_5, cos, x_8, **, x_10, **2, x_3]",(x_12+sin(((cos(x_5)*cos(x_8))*(x_10**(x_3)**2)))),23.6297607421875,0.04727664217352867,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+425,35,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+426,36,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+427,36,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+428,36,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+429,36,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+430,36,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+431,36,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+432,36,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+433,36,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+434,36,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+435,36,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+436,36,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+437,36,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, /, **, x_9, x_12, cos, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos(((x_9**x_12)/cos(x_8))))),22.338788986206055,0.061069563031196594,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+438,36,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+439,36,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+440,36,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+441,36,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+442,36,"[+, *, cos, x_5, cos, sin, sin, x_9, x_12]",((cos(x_5)*cos(sin(sin(x_9))))+x_12),23.960172653198242,0.030703604221343994,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+443,36,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+444,36,"[+, x_12, +, *, cos, x_5, cos, x_12, +, x_12, cos, *, x_5, x_10]",(x_12+((cos(x_5)*cos(x_12))+(x_12+cos((x_5*x_10))))),22.82907485961914,0.045514825731515884,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+445,36,"[+, *, cos, x_5, cos, sin, u-, x_11, x_12]",((cos(x_5)*cos(sin(-(x_11))))+x_12),23.913516998291016,0.03396868333220482,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+446,37,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+447,37,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+448,37,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+449,37,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+450,37,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+451,37,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+452,37,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+453,37,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+454,37,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+455,37,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+456,37,"[+, x_12, x_6]",(x_12+x_6),50.518531799316406,0.01563449203968048,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+457,37,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+458,37,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+459,37,"[*, x_9, x_9]",(x_9*x_9),70.69109344482422,0.013399742543697357,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+460,37,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+461,37,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+462,37,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+463,37,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+464,38,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+465,38,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+466,38,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+467,38,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+468,38,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+469,38,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+470,38,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+471,38,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+472,38,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+473,38,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+474,38,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+475,38,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+476,38,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+477,38,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+478,38,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+479,38,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+480,38,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+481,38,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+482,38,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+483,38,"[+, *, cos, x_5, cos, *, *, x_5, x_10, x_9, x_12]",((cos(x_5)*cos(((x_5*x_10)*x_9)))+x_12),24.16719627380371,0.025296032428741455,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+484,39,"[*, x_10, x_8]",(x_10*x_8),77.01984405517578,0.012691259384155273,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+485,39,"[*, x_9, x_8]",(x_9*x_8),71.92935180664062,0.01272236555814743,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+486,39,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+487,39,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+488,39,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+489,39,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+490,39,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+491,39,"[*, x_8, x_8]",(x_8*x_8),71.80653381347656,0.012830913066864014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+492,39,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+493,39,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+494,39,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+495,39,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+496,39,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+497,39,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+498,39,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+499,39,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+500,39,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+501,39,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+502,39,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+503,39,"[+, *, cos, x_5, cos, *, *, x_5, x_10, x_9, x_12]",((cos(x_5)*cos(((x_5*x_10)*x_9)))+x_12),24.16719627380371,0.025296032428741455,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+504,39,"[+, x_10, +, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_10+(x_9+((x_8*(x_9*x_8))*x_8))),57.48427963256836,0.014316804707050323,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+505,40,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+506,40,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+507,40,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+508,40,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+509,40,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+510,40,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+511,40,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+512,40,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+513,40,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+514,40,"[+, *, cos, x_5, cos, *, sin, x_9, x_9, x_12]",((cos(x_5)*cos((sin(x_9)*x_9)))+x_12),24.054616928100586,0.02639443427324295,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+515,40,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+516,40,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+517,40,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+518,40,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+519,40,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+520,40,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+521,40,"[+, x_10, +, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_10+(x_9+((x_8*(x_9*x_8))*x_8))),57.48427963256836,0.014316804707050323,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+522,40,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+523,40,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+524,40,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+525,41,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+526,41,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+527,41,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+528,41,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+529,41,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+530,41,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+531,41,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+532,41,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+533,41,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+534,41,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+535,41,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+536,41,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+537,41,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+538,41,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+539,41,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+540,41,"[+, x_10, +, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_10+(x_9+((x_8*(x_9*x_8))*x_8))),57.48427963256836,0.014316804707050323,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+541,41,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+542,41,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+543,41,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+544,41,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+545,41,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+546,42,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+547,42,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+548,42,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+549,42,"[+, x_9, x_10]",(x_9+x_10),55.95867919921875,0.014334112405776978,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+550,42,"[+, x_12, cos, *, x_5, x_10]",(x_12+cos((x_5*x_10))),27.808977127075195,0.02278297021985054,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+551,42,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+552,42,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+553,42,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+554,42,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+555,42,"[+, x_5, *, *, x_8, x_10, x_8]",(x_5+((x_8*x_10)*x_8)),54.457645416259766,0.014967784285545349,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+556,42,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+557,42,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+558,42,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+559,42,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+560,42,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+561,42,"[+, x_10, +, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_10+(x_9+((x_8*(x_9*x_8))*x_8))),57.48427963256836,0.014316804707050323,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+562,42,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+563,42,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+564,42,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+565,42,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+566,42,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+567,43,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+568,43,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+569,43,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+570,43,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+571,43,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+572,43,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+573,43,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+574,43,"[+, *, cos, x_5, cos, *, *, x_8, x_2, x_9, x_12]",((cos(x_5)*cos(((x_8*x_2)*x_9)))+x_12),23.973888397216797,0.02653263509273529,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+575,43,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+576,43,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+577,43,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+578,43,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+579,43,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+580,43,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+581,43,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+582,43,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+583,43,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+584,43,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+585,43,"[*, +, x_12, cos, *, x_5, x_10, 1.96]",((x_12+cos((x_5*x_10)))*1.96),27.808977127075195,0.022341109812259674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+586,43,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, *, x_12, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos((x_12*x_8)))),22.098628997802734,0.049249179661273956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+587,44,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+588,44,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+589,44,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+590,44,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+591,44,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+592,44,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+593,44,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+594,44,"[+, *, cos, x_5, cos, *, sin, x_9, x_5, x_12]",((cos(x_5)*cos((sin(x_9)*x_5)))+x_12),22.098901748657227,0.02795843780040741,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+595,44,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+596,44,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+597,44,"[+, *, cos, x_5, cos, *, x_5, x_9, x_12]",((cos(x_5)*cos((x_5*x_9)))+x_12),22.3551082611084,0.02738424390554428,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+598,44,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+599,44,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+600,44,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+601,44,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+602,44,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+603,44,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+604,44,"[*, +, x_12, cos, *, x_5, x_10, 1.96]",((x_12+cos((x_5*x_10)))*1.96),27.808977127075195,0.022341109812259674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+605,44,"[+, +, *, cos, x_5, cos, *, x_5, x_9, x_12, cos, cos, *, x_12, x_8]",(((cos(x_5)*cos((x_5*x_9)))+x_12)+cos(cos((x_12*x_8)))),22.098628997802734,0.049249179661273956,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+606,44,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+607,45,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+608,45,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+609,45,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+610,45,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+611,45,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+612,45,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+613,45,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,0.024454616010189056,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+614,45,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+615,45,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+616,45,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+617,45,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+618,45,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+619,45,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+620,45,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+621,45,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+622,45,"[*, +, x_12, cos, *, x_5, x_10, 1.96]",((x_12+cos((x_5*x_10)))*1.96),27.808977127075195,0.022341109812259674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+623,45,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+624,45,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+625,45,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+626,46,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+627,46,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+628,46,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+629,46,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+630,46,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+631,46,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+632,46,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+633,46,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+634,46,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+635,46,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+636,46,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+637,46,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+638,46,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+639,46,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+640,46,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+641,46,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+642,46,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+643,46,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+644,46,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+645,47,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+646,47,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+647,47,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+648,47,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+649,47,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+650,47,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+651,47,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+652,47,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+653,47,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+654,47,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+655,47,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+656,47,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+657,47,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+658,47,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+659,47,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+660,47,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+661,47,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+662,47,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+663,47,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+664,47,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+665,47,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+666,48,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+667,48,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+668,48,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+669,48,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+670,48,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+671,48,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+672,48,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+673,48,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+674,48,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+675,48,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+676,48,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+677,48,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+678,48,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+679,48,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+680,48,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+681,48,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+682,48,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+683,48,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+684,48,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+685,48,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+686,48,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+687,48,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+688,49,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+689,49,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+690,49,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+691,49,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+692,49,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+693,49,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+694,49,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+695,49,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+696,49,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+697,49,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+698,49,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+699,49,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+700,49,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+701,49,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+702,49,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+703,49,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+704,49,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+705,49,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+706,49,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+707,49,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+708,49,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+709,49,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+710,49,"[*, -3.51, x_5]",(-3.51*x_5),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+711,49,"[*, x_8, *, x_9, x_8]",(x_8*(x_9*x_8)),71.45950317382812,0.01281372457742691,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+712,50,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+713,50,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+714,50,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+715,50,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+716,50,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+717,50,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+718,50,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+719,50,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+720,50,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+721,50,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+722,50,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+723,50,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+724,50,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+725,50,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+726,50,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+727,50,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+728,50,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+729,50,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+730,50,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+731,50,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+732,50,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+733,50,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+734,50,"[*, -3.51, x_5]",(-3.51*x_5),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+735,50,"[*, x_8, *, x_9, x_8]",(x_8*(x_9*x_8)),71.45950317382812,0.01281372457742691,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+736,51,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+737,51,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+738,51,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+739,51,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+740,51,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+741,51,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+742,51,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+743,51,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+744,51,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+745,51,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+746,51,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+747,51,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+748,51,"[+, x_12, +, +, cos, *, x_5, x_10, *, x_5, x_10, +, *, cos, x_5, cos, x_4, x_12]",(x_12+((cos((x_5*x_10))+(x_5*x_10))+((cos(x_5)*cos(x_4))+x_12))),21.831207275390625,0.05212685465812683,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+749,51,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+750,51,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+751,51,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+752,51,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+753,51,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+754,51,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+755,51,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+756,51,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+757,51,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+758,51,"[*, -3.51, x_5]",(-3.51*x_5),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+759,51,"[*, x_8, *, x_9, x_8]",(x_8*(x_9*x_8)),71.45950317382812,0.01281372457742691,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+760,52,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+761,52,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+762,52,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+763,52,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+764,52,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+765,52,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+766,52,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+767,52,"[*, x_5, 0.46]",(x_5*0.46),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+768,52,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+769,52,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+770,52,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+771,52,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+772,52,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+773,52,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+774,52,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+775,52,"[*, x_5, 2.45]",(x_5*2.45),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+776,52,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+777,52,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+778,52,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+779,52,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+780,52,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+781,52,"[*, -3.51, x_5]",(-3.51*x_5),48.859561920166016,0.015427269041538239,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+782,52,"[*, x_8, *, x_9, x_8]",(x_8*(x_9*x_8)),71.45950317382812,0.01281372457742691,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+783,52,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+784,53,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+785,53,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+786,53,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+787,53,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+788,53,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+789,53,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+790,53,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+791,53,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+792,53,"[*, *, x_8, *, x_9, x_8, x_8]",((x_8*(x_9*x_8))*x_8),71.54618072509766,0.012530416250228882,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+793,53,"[+, *, cos, x_5, cos, *, *, x_8, x_8, x_9, x_12]",((cos(x_5)*cos(((x_8*x_8)*x_9)))+x_12),24.138263702392578,0.02454375848174095,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+794,53,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+795,53,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+796,53,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+797,53,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+798,53,"[*, +, x_12, cos, x_5, 1.96]",((x_12+cos(x_5))*1.96),24.221834182739258,0.02304481342434883,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+799,53,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+800,53,"[+, *, cos, x_5, cos, *, *, x_8, x_10, x_8, x_12]",((cos(x_5)*cos(((x_8*x_10)*x_8)))+x_12),24.091718673706055,0.02476947009563446,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+801,53,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+802,53,"[*, +, *, cos, x_5, cos, *, x_9, x_10, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_10)))+x_12)*1.96),24.166439056396484,0.024092532694339752,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+803,53,"[*, x_8, *, x_9, x_8]",(x_8*(x_9*x_8)),71.45950317382812,0.01281372457742691,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+804,53,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+805,53,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+806,53,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+807,54,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+808,54,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+809,54,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+810,54,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+811,54,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+812,54,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+813,54,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+814,54,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+815,54,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+816,54,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+817,54,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+818,54,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+819,54,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+820,54,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_8, x_8]",(x_12+(((x_8*(x_9*x_5))*x_8)+x_8)),45.134517669677734,0.015491694211959839,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+821,54,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+822,54,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+823,54,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+824,54,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+825,54,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+826,54,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+827,55,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+828,55,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+829,55,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+830,55,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+831,55,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+832,55,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+833,55,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+834,55,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+835,55,"[+, x_12, +, x_10, +, x_12, cos, x_5]",(x_12+(x_10+(x_12+cos(x_5)))),24.018354415893555,0.024885542690753937,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+836,55,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+837,55,"[+, *, cos, x_5, cos, *, *, x_8, x_3, x_9, x_12]",((cos(x_5)*cos(((x_8*x_3)*x_9)))+x_12),23.605981826782227,0.02494674175977707,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+838,55,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+839,55,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+840,55,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+841,55,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+842,55,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+843,55,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+844,55,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+845,55,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+846,55,"[+, *, *, x_8, *, x_9, x_8, x_8, x_12]",(((x_8*(x_9*x_8))*x_8)+x_12),41.24198913574219,0.015122562646865845,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+847,55,"[*, x_12, 0.46]",(x_12*0.46),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+848,55,"[*, x_8, *, x_8, *, *, x_9, x_8, x_10]",(x_8*(x_8*((x_9*x_8)*x_10))),71.5034408569336,0.012435726821422577,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+849,55,"[*, +, *, cos, x_5, cos, *, x_9, x_5, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_5)))+x_12)*1.96),22.3551082611084,0.02513071522116661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+850,56,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+851,56,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+852,56,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+853,56,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+854,56,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+855,56,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+856,56,"[+, x_9, *, *, x_8, *, x_9, x_8, x_8]",(x_9+((x_8*(x_9*x_8))*x_8)),68.08949279785156,0.01310056447982788,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+857,56,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+858,56,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+859,56,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+860,56,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+861,56,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+862,56,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+863,56,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+864,56,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+865,56,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+866,56,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+867,56,"[+, *, *, x_8, *, x_9, x_8, x_8, x_12]",(((x_8*(x_9*x_8))*x_8)+x_12),41.24198913574219,0.015122562646865845,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+868,56,"[*, x_12, 0.46]",(x_12*0.46),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+869,56,"[*, x_8, *, x_8, *, *, x_9, x_8, x_10]",(x_8*(x_8*((x_9*x_8)*x_10))),71.5034408569336,0.012435726821422577,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+870,56,"[*, +, *, cos, x_5, cos, *, x_9, x_5, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_5)))+x_12)*1.96),22.3551082611084,0.02513071522116661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+871,56,"[+, x_10, +, x_12, *, x_8, *, x_9, *, x_10, x_5]",(x_10+(x_12+(x_8*(x_9*(x_10*x_5))))),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+872,56,"[+, *, cos, x_5, cos, *, *, x_3, -2.17, x_9, x_12]",((cos(x_5)*cos(((x_3*-2.17)*x_9)))+x_12),22.854219436645508,0.024823937565088272,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+873,57,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+874,57,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+875,57,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+876,57,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+877,57,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+878,57,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+879,57,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+880,57,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+881,57,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+882,57,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+883,57,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+884,57,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+885,57,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+886,57,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+887,57,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+888,57,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+889,57,"[+, *, *, x_8, *, x_9, x_8, x_8, x_12]",(((x_8*(x_9*x_8))*x_8)+x_12),41.24198913574219,0.015122562646865845,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+890,57,"[*, x_12, 0.46]",(x_12*0.46),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+891,57,"[*, x_8, *, x_8, *, *, x_9, x_8, x_10]",(x_8*(x_8*((x_9*x_8)*x_10))),71.5034408569336,0.012435726821422577,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+892,57,"[*, +, *, cos, x_5, cos, *, x_9, x_5, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_5)))+x_12)*1.96),22.3551082611084,0.02513071522116661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+893,57,"[+, x_10, +, x_12, *, x_8, *, x_9, *, x_10, x_5]",(x_10+(x_12+(x_8*(x_9*(x_10*x_5))))),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+894,57,"[+, *, cos, x_5, cos, *, *, x_3, -2.17, x_9, x_12]",((cos(x_5)*cos(((x_3*-2.17)*x_9)))+x_12),22.854219436645508,0.024823937565088272,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+895,57,"[*, x_8, *, x_8, *, *, x_9, x_8, x_9]",(x_8*(x_8*((x_9*x_8)*x_9))),71.53711700439453,0.011520959436893463,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+896,57,"[*, +, x_9, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_9+((x_8*(x_1*x_9))*x_8))*1.96),66.80518341064453,0.01274067908525467,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+897,58,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+898,58,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+899,58,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+900,58,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+901,58,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+902,58,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+903,58,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+904,58,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+905,58,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+906,58,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+907,58,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+908,58,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+909,58,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+910,58,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+911,58,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+912,58,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+913,58,"[+, *, *, x_8, *, x_9, x_8, x_8, x_12]",(((x_8*(x_9*x_8))*x_8)+x_12),41.24198913574219,0.015122562646865845,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+914,58,"[*, x_12, 0.46]",(x_12*0.46),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+915,58,"[*, x_8, *, x_8, *, *, x_9, x_8, x_10]",(x_8*(x_8*((x_9*x_8)*x_10))),71.5034408569336,0.012435726821422577,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+916,58,"[*, +, *, cos, x_5, cos, *, x_9, x_5, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_5)))+x_12)*1.96),22.3551082611084,0.02513071522116661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+917,58,"[+, x_10, +, x_12, *, x_8, *, x_9, *, x_10, x_5]",(x_10+(x_12+(x_8*(x_9*(x_10*x_5))))),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+918,58,"[+, *, cos, x_5, cos, *, *, x_3, -2.17, x_9, x_12]",((cos(x_5)*cos(((x_3*-2.17)*x_9)))+x_12),22.854219436645508,0.024823937565088272,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+919,58,"[*, x_8, *, x_8, *, *, x_9, x_8, x_9]",(x_8*(x_8*((x_9*x_8)*x_9))),71.53711700439453,0.011520959436893463,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+920,58,"[*, +, x_9, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_9+((x_8*(x_1*x_9))*x_8))*1.96),66.80518341064453,0.01274067908525467,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+921,58,"[+, +, *, cos, x_5, cos, *, x_12, x_7, x_12, +, +, x_12, +, x_12, x_10, *, x_5, x_10]",(((cos(x_5)*cos((x_12*x_7)))+x_12)+((x_12+(x_12+x_10))+(x_5*x_10))),21.232982635498047,0.05010506510734558,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+922,58,"[+, +, *, cos, x_5, cos, *, x_8, x_7, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_8*x_7)))+x_12)+(x_12+(x_5*x_10))),21.811235427856445,0.039310306310653687,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+923,58,"[*, +, x_12, *, x_8, *, *, x_9, x_8, x_9, 1.96]",((x_12+(x_8*((x_9*x_8)*x_9)))*1.96),40.69400405883789,0.015182964503765106,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+924,58,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_10, x_10]",(x_12+(((x_8*(x_9*x_5))*x_10)+x_10)),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+925,58,"[+, *, cos, x_5, cos, *, *, x_8, x_9, x_9, x_12]",((cos(x_5)*cos(((x_8*x_9)*x_9)))+x_12),24.0097713470459,0.02350790798664093,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+926,59,"[+, x_12, *, x_5, x_10]",(x_12+(x_5*x_10)),28.573686599731445,0.018629953265190125,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+927,59,"[**, 0.37, x_12]",(0.37**x_12),30.243772506713867,0.01733219623565674,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+928,59,"[+, x_12, x_10]",(x_12+x_10),34.929664611816406,0.015811234712600708,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+929,59,"[+, x_6, x_10]",(x_6+x_10),57.974143981933594,0.013504713773727417,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+930,59,"[*, x_12, 2.45]",(x_12*2.45),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+931,59,"[+, x_12, *, *, x_8, *, x_9, x_10, x_8]",(x_12+((x_8*(x_9*x_10))*x_8)),39.21222686767578,0.015712372958660126,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+932,59,"[*, x_12, 1.96]",(x_12*1.96),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+933,59,"[+, x_5, *, *, *, x_8, *, x_9, x_6, x_10, x_8]",(x_5+(((x_8*(x_9*x_6))*x_10)*x_8)),50.0217170715332,0.013904839754104614,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+934,59,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_9, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_9)))+x_12),21.864112854003906,0.02523289993405342,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+935,59,"[*, +, x_12, +, x_12, *, x_5, x_10, 1.96]",((x_12+(x_12+(x_5*x_10)))*1.96),26.333646774291992,0.021162357181310654,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+936,59,"[+, +, *, cos, x_5, cos, *, x_5, x_8, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_5*x_8)))+x_12)+(x_12+(x_5*x_10))),21.505168914794922,0.041061051189899445,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+937,59,"[*, +, x_10, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_10+((x_8*(x_1*x_9))*x_8))*1.96),61.700462341308594,0.013190962374210358,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+938,59,"[+, x_12, *, *, x_8, *, x_9, x_5, x_8]",(x_12+((x_8*(x_9*x_5))*x_8)),46.86753845214844,0.015120059251785278,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+939,59,"[+, x_9, *, *, x_8, *, *, x_5, x_10, x_8, x_8]",(x_9+((x_8*((x_5*x_10)*x_8))*x_8)),68.99188232421875,0.012503281235694885,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+940,59,"[+, *, cos, x_5, cos, *, *, x_9, x_5, x_8, x_12]",((cos(x_5)*cos(((x_9*x_5)*x_8)))+x_12),21.84015464782715,0.02549346536397934,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+941,59,"[+, x_10, +, x_12, +, x_12, *, x_5, x_10]",(x_10+(x_12+(x_12+(x_5*x_10)))),24.089439392089844,0.021923940628767014,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+942,59,"[+, *, *, x_8, *, x_9, x_8, x_8, x_12]",(((x_8*(x_9*x_8))*x_8)+x_12),41.24198913574219,0.015122562646865845,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+943,59,"[*, x_12, 0.46]",(x_12*0.46),39.54974365234375,0.015705004334449768,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+944,59,"[*, x_8, *, x_8, *, *, x_9, x_8, x_10]",(x_8*(x_8*((x_9*x_8)*x_10))),71.5034408569336,0.012435726821422577,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+945,59,"[*, +, *, cos, x_5, cos, *, x_9, x_5, x_12, 1.96]",(((cos(x_5)*cos((x_9*x_5)))+x_12)*1.96),22.3551082611084,0.02513071522116661,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+946,59,"[+, x_10, +, x_12, *, x_8, *, x_9, *, x_10, x_5]",(x_10+(x_12+(x_8*(x_9*(x_10*x_5))))),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+947,59,"[+, *, cos, x_5, cos, *, *, x_3, -2.17, x_9, x_12]",((cos(x_5)*cos(((x_3*-2.17)*x_9)))+x_12),22.854219436645508,0.024823937565088272,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+948,59,"[*, x_8, *, x_8, *, *, x_9, x_8, x_9]",(x_8*(x_8*((x_9*x_8)*x_9))),71.53711700439453,0.011520959436893463,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+949,59,"[*, +, x_9, *, *, x_8, *, x_1, x_9, x_8, 1.96]",((x_9+((x_8*(x_1*x_9))*x_8))*1.96),66.80518341064453,0.01274067908525467,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+950,59,"[+, +, *, cos, x_5, cos, *, x_12, x_7, x_12, +, +, x_12, +, x_12, x_10, *, x_5, x_10]",(((cos(x_5)*cos((x_12*x_7)))+x_12)+((x_12+(x_12+x_10))+(x_5*x_10))),21.232982635498047,0.05010506510734558,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+951,59,"[+, +, *, cos, x_5, cos, *, x_8, x_7, x_12, +, x_12, *, x_5, x_10]",(((cos(x_5)*cos((x_8*x_7)))+x_12)+(x_12+(x_5*x_10))),21.811235427856445,0.039310306310653687,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+952,59,"[*, +, x_12, *, x_8, *, *, x_9, x_8, x_9, 1.96]",((x_12+(x_8*((x_9*x_8)*x_9)))*1.96),40.69400405883789,0.015182964503765106,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+953,59,"[+, x_12, +, *, *, x_8, *, x_9, x_5, x_10, x_10]",(x_12+(((x_8*(x_9*x_5))*x_10)+x_10)),34.3735466003418,0.01732005923986435,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+954,59,"[+, *, cos, x_5, cos, *, *, x_8, x_9, x_9, x_12]",((cos(x_5)*cos(((x_8*x_9)*x_9)))+x_12),24.0097713470459,0.02350790798664093,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston
+955,59,"[*, *, x_8, *, *, x_8, *, x_9, x_5, x_9, x_8]",((x_8*((x_8*(x_9*x_5))*x_9))*x_8),86.96144104003906,0.01124146580696106,202,210,60,210,not_specified,neuralnet-counts-feynman,not_specified,not_specified,boston

@@ -1,0 +1,485 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,[x_2],x_2,4984.6103515625,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+1,0,"[*, exp, **2, *, x_0, x_2, +, x_1, x_6]",(exp(((x_0*x_2))**2)*(x_1+x_6)),3867.55517578125,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+2,1,"[*, exp, **2, *, x_0, x_2, +, x_1, x_6]",(exp(((x_0*x_2))**2)*(x_1+x_6)),3867.55517578125,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+3,1,[x_6],x_6,4981.89306640625,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+4,2,"[*, exp, **2, *, x_0, x_2, +, x_1, x_6]",(exp(((x_0*x_2))**2)*(x_1+x_6)),3867.55517578125,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+5,2,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+6,2,"[-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7, sqrt, **3, cos, sin, x_2]",(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)-sqrt(abs((cos(sin(x_2)))**3))),3555.330322265625,-30.899999618530273,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+7,2,"[*, exp, **2, *, x_0, x_2, +, x_1, /, u-, x_2, u-, cos, x_1]",(exp(((x_0*x_2))**2)*(x_1+(-(x_2)/-(cos(x_1))))),3850.028076171875,-52.599998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+8,3,"[*, exp, **2, *, x_0, x_2, +, x_1, x_6]",(exp(((x_0*x_2))**2)*(x_1+x_6)),3867.55517578125,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+9,3,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+10,3,"[*, exp, **2, *, x_0, x_2, +, x_1, /, u-, x_2, u-, cos, x_1]",(exp(((x_0*x_2))**2)*(x_1+(-(x_2)/-(cos(x_1))))),3850.028076171875,-52.599998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+11,3,"[-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7, cos, cos, cos, **2, x_10]",(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)-cos(cos(cos((x_10)**2)))),3539.919677734375,-30.899999618530273,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+12,4,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+13,4,"[-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7, cos, cos, cos, **2, x_10]",(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)-cos(cos(cos((x_10)**2)))),3539.919677734375,-30.899999618530273,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+14,4,"[sqrt, -, u-, u-, x_1, cos, sin, exp, x_8]",sqrt(abs((-(-(x_1))-cos(sin(exp(x_8)))))),3804.47705078125,-42.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+15,4,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, x_1, /, **2, x_2, log, x_2]",-((((-(-0.15)/(x_6-0.74))+-(x_1))-((x_2)**2/log(abs(x_2))))),3806.353759765625,-59.599998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+16,5,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+17,5,"[-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7, cos, cos, cos, **2, x_10]",(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)-cos(cos(cos((x_10)**2)))),3539.919677734375,-30.899999618530273,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+18,5,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+19,5,"[u-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7]",-(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)),3554.84521484375,-61.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+20,6,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+21,6,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+22,6,"[u-, /, **, u-, x_1, x_5, **3, +, -, -0.2, 0.36, +, x_1, x_7]",-(((-(x_1)**x_5)/(((-0.2-0.36)+(x_1+x_7)))**3)),3554.84521484375,-61.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+23,6,"[*, exp, *, x_2, x_9, +, x_1, /, u-, x_2, u-, cos, x_1]",(exp((x_2*x_9))*(x_1+(-(x_2)/-(cos(x_1))))),3836.290771484375,-61.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+24,6,"[cos, -, cos, **2, **3, -3.93, +, +, x_8, x_1, x_7]",cos((cos(((-3.93)**3)**2)-((x_8+x_1)+x_7))),3506.3056640625,-41.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+25,7,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+26,7,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+27,7,"[u-, -, +, /, u-, -0.15, -, x_7, 0.74, u-, x_1, x_7]",-((((-(-0.15)/(x_7-0.74))+-(x_1))-x_7)),3357.693603515625,-73.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+28,8,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+29,8,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+30,8,"[u-, -, +, /, u-, -0.15, -, x_7, 0.74, u-, x_1, x_7]",-((((-(-0.15)/(x_7-0.74))+-(x_1))-x_7)),3357.693603515625,-73.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+31,8,"[+, sin, log, exp, x_2, +, log, exp, +, x_1, x_6, x_7]",(sin(log(abs(exp(x_2))))+(log(abs(exp((x_1+x_6))))+x_7)),3336.17138671875,-42.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+32,9,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+33,9,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+34,9,"[u-, -, +, /, u-, -0.15, -, x_7, 0.74, u-, x_1, x_7]",-((((-(-0.15)/(x_7-0.74))+-(x_1))-x_7)),3357.693603515625,-73.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+35,9,"[+, sin, log, exp, x_2, +, log, exp, +, x_1, x_6, x_7]",(sin(log(abs(exp(x_2))))+(log(abs(exp((x_1+x_6))))+x_7)),3336.17138671875,-42.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+36,9,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, x_1, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-(x_1))-((-0.2-0.36)+(x_1+x_7)))),3354.925537109375,-70.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+37,10,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+38,10,"[+, x_1, x_6]",(x_1+x_6),3867.55517578125,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+39,10,"[u-, -, +, /, u-, -0.15, -, x_7, 0.74, u-, x_1, x_7]",-((((-(-0.15)/(x_7-0.74))+-(x_1))-x_7)),3357.693603515625,-73.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+40,10,"[+, sin, log, exp, x_2, +, log, exp, +, x_1, x_6, x_7]",(sin(log(abs(exp(x_2))))+(log(abs(exp((x_1+x_6))))+x_7)),3336.17138671875,-42.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+41,10,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, x_1, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-(x_1))-((-0.2-0.36)+(x_1+x_7)))),3354.925537109375,-70.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+42,11,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+43,11,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+44,11,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, **2, x_0, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-((x_0)**2))-((-0.2-0.36)+(x_1+x_7)))),3313.3408203125,-61.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+45,12,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+46,12,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+47,12,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, **2, x_0, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-((x_0)**2))-((-0.2-0.36)+(x_1+x_7)))),3313.3408203125,-61.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+48,13,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+49,13,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+50,13,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, **2, x_0, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-((x_0)**2))-((-0.2-0.36)+(x_1+x_7)))),3313.3408203125,-61.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+51,14,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+52,14,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+53,14,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, **2, x_0, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-((x_0)**2))-((-0.2-0.36)+(x_1+x_7)))),3313.3408203125,-61.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+54,14,"[-, +, /, u-, -0.15, -, x_6, 0.74, u-, x_1, +, **2, u-, sqrt, x_8, +, x_1, x_7]",(((-(-0.15)/(x_6-0.74))+-(x_1))-((-(sqrt(abs(x_8))))**2+(x_1+x_7))),3311.870849609375,-54.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+55,14,"[+, sin, log, exp, x_2, +, log, exp, +, x_1, x_6, **3, +, -, -0.2, 0.36, +, x_1, x_7]",(sin(log(abs(exp(x_2))))+(log(abs(exp((x_1+x_6))))+(((-0.2-0.36)+(x_1+x_7)))**3)),3300.36572265625,-35.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+56,15,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+57,15,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+58,15,"[u-, -, +, /, u-, -0.15, -, x_6, 0.74, u-, **2, x_0, +, -, -0.2, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_6-0.74))+-((x_0)**2))-((-0.2-0.36)+(x_1+x_7)))),3313.3408203125,-61.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+59,15,"[-, +, /, u-, -0.15, -, x_6, 0.74, u-, x_1, +, **2, u-, sqrt, x_8, +, x_1, x_7]",(((-(-0.15)/(x_6-0.74))+-(x_1))-((-(sqrt(abs(x_8))))**2+(x_1+x_7))),3311.870849609375,-54.20000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+60,15,"[+, sin, log, exp, x_2, +, log, exp, +, x_1, x_6, **3, +, -, -0.2, 0.36, +, x_1, x_7]",(sin(log(abs(exp(x_2))))+(log(abs(exp((x_1+x_6))))+(((-0.2-0.36)+(x_1+x_7)))**3)),3300.36572265625,-35.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+61,16,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+62,16,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+63,16,"[*, exp, *, x_2, x_9, +, x_1, x_7]",(exp((x_2*x_9))*(x_1+x_7)),3294.796142578125,-67.5999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+64,17,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+65,17,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+66,17,"[*, exp, *, x_2, x_9, +, x_1, x_7]",(exp((x_2*x_9))*(x_1+x_7)),3294.796142578125,-67.5999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+67,18,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+68,18,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+69,18,"[-, +, /, u-, -0.15, -, 4.53, x_6, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-(-0.15)/(4.53-x_6))+-(x_1))-((x_7+x_2)--(x_1))),3269.62646484375,-71.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+70,18,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-x_7)),3290.3984375,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+71,19,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+72,19,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+73,19,"[u-, -, +, /, +, x_1, x_7, -, x_2, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_2-0.74))+-(x_1))-x_7)),3269.588134765625,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+74,19,"[-, +, /, u-, -0.15, -, 4.53, u-, x_1, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-(-0.15)/(4.53--(x_1)))+-(x_1))-((x_7+x_2)--(x_1))),3268.355224609375,-70.69999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+75,20,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+76,20,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+77,20,"[u-, -, +, /, +, x_1, x_7, -, x_2, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_2-0.74))+-(x_1))-x_7)),3269.588134765625,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+78,20,"[-, +, /, u-, -0.15, -, 4.53, u-, x_1, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-(-0.15)/(4.53--(x_1)))+-(x_1))-((x_7+x_2)--(x_1))),3268.355224609375,-70.69999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+79,20,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, +, u-, exp, x_5, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-(-(exp(x_5))+x_7))),3254.779052734375,-62.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+80,20,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+81,21,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+82,21,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+83,21,"[u-, -, +, /, +, x_1, x_7, -, x_2, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_2-0.74))+-(x_1))-x_7)),3269.588134765625,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+84,21,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+85,21,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, -, x_1, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-((x_1-0.36)+(x_1+x_7)))),3200.662841796875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+86,22,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+87,22,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+88,22,"[u-, -, +, /, +, x_1, x_7, -, x_2, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_2-0.74))+-(x_1))-x_7)),3269.588134765625,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+89,22,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+90,22,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, -, x_1, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-((x_1-0.36)+(x_1+x_7)))),3200.662841796875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+91,23,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+92,23,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+93,23,"[u-, -, +, /, +, x_1, x_7, -, x_2, 0.74, u-, x_1, x_7]",-(((((x_1+x_7)/(x_2-0.74))+-(x_1))-x_7)),3269.588134765625,-73.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+94,23,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+95,23,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, -, x_1, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-((x_1-0.36)+(x_1+x_7)))),3200.662841796875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+96,24,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+97,24,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+98,24,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+99,24,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, -, x_1, 0.36, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-((x_1-0.36)+(x_1+x_7)))),3200.662841796875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+100,24,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+101,24,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+102,25,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+103,25,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+104,25,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+105,25,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+106,25,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+107,25,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, x_1, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-(x_1+(x_1+x_7)))),3200.662841796875,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+108,26,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+109,26,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+110,26,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+111,26,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+112,26,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+113,26,"[u-, -, +, /, u-, -0.15, -, x_2, 0.74, x_1, +, x_1, +, x_1, x_7]",-((((-(-0.15)/(x_2-0.74))+x_1)-(x_1+(x_1+x_7)))),3200.662841796875,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+114,27,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+115,27,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+116,27,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+117,27,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+118,27,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+119,27,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3169.61962890625,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+120,28,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+121,28,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+122,28,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+123,28,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+124,28,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+125,28,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3169.61962890625,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+126,29,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+127,29,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+128,29,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+129,29,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+130,29,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+131,29,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3169.61962890625,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+132,29,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.36, u-, x_1, u-, sin, -, x_1, x_2]",-(((((x_1+x_7)/(x_1-0.36))+-(x_1))--(sin((x_1-x_2))))),3147.884521484375,-62.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+133,30,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+134,30,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+135,30,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+136,30,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+137,30,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+138,30,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",-(((((x_1+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3169.61962890625,-72.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+139,30,"[u-, -, +, /, +, x_1, x_7, -, x_1, 0.36, u-, x_1, u-, sin, -, x_1, x_2]",-(((((x_1+x_7)/(x_1-0.36))+-(x_1))--(sin((x_1-x_2))))),3147.884521484375,-62.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+140,31,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+141,31,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+142,31,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+143,31,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+144,31,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+145,31,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+146,31,"[-, +, /, +, x_1, x_7, -, x_1, 0.36, u-, x_1, u-, sin, -, x_1, x_2]",((((x_1+x_7)/(x_1-0.36))+-(x_1))--(sin((x_1-x_2)))),3147.884521484375,-63.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+147,31,"[-, +, /, u-, -0.15, -, x_6, 0.74, u-, -, +, x_7, x_2, u-, x_1, +, **2, u-, *, 2.54, x_2, +, u-, -0.15, +, x_1, x_7]",(((-(-0.15)/(x_6-0.74))+-(((x_7+x_2)--(x_1))))-((-((2.54*x_2)))**2+(-(-0.15)+(x_1+x_7)))),3145.173095703125,-57.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+148,32,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+149,32,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+150,32,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+151,32,"[+, -, +, x_7, x_2, u-, x_1, x_1]",(((x_7+x_2)--(x_1))+x_1),3267.9873046875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+152,32,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+153,32,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+154,32,"[-, +, /, +, x_1, x_7, -, x_1, 0.36, u-, x_1, u-, sin, -, x_1, x_2]",((((x_1+x_7)/(x_1-0.36))+-(x_1))--(sin((x_1-x_2)))),3147.884521484375,-63.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+155,32,"[-, +, /, u-, -0.15, -, x_6, 0.74, u-, -, +, x_7, x_2, u-, x_1, +, **2, u-, *, 2.54, x_2, +, u-, -0.15, +, x_1, x_7]",(((-(-0.15)/(x_6-0.74))+-(((x_7+x_2)--(x_1))))-((-((2.54*x_2)))**2+(-(-0.15)+(x_1+x_7)))),3145.173095703125,-57.79999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+156,33,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+157,33,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+158,33,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+159,33,"[/, +, x_1, x_7, -, x_1, 0.74]",((x_1+x_7)/(x_1-0.74)),3278.88232421875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+160,33,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+161,33,"[+, +, x_1, x_7, -, +, x_7, x_2, u-, x_1]",((x_1+x_7)+((x_7+x_2)--(x_1))),3202.734375,-74.5999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+162,33,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+163,33,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+164,34,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+165,34,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+166,34,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+167,34,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+168,34,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+169,34,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+170,34,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+171,34,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+172,34,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+173,35,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+174,35,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+175,35,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+176,35,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+177,35,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+178,35,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+179,35,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+180,35,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+181,35,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+182,35,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+183,36,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+184,36,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+185,36,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+186,36,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+187,36,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+188,36,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+189,36,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+190,36,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+191,36,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+192,36,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+193,37,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+194,37,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+195,37,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+196,37,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+197,37,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+198,37,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+199,37,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+200,37,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+201,37,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+202,37,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+203,37,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_7, u-, +, +, 1.26, x_7, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_7)**3))+-(((1.26+x_7)+x_1)))-((x_7+x_2)--(x_1))),3097.43017578125,-56.70000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+204,38,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+205,38,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+206,38,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+207,38,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+208,38,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+209,38,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+210,38,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+211,38,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+212,38,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+213,38,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+214,38,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_7, u-, +, +, 1.26, x_7, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_7)**3))+-(((1.26+x_7)+x_1)))-((x_7+x_2)--(x_1))),3097.43017578125,-56.70000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+215,38,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+216,39,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+217,39,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+218,39,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+219,39,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+220,39,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+221,39,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+222,39,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+223,39,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+224,39,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+225,39,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+226,39,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_7, u-, +, +, 1.26, x_7, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_7)**3))+-(((1.26+x_7)+x_1)))-((x_7+x_2)--(x_1))),3097.43017578125,-56.70000076293945,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+227,39,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+228,39,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+229,39,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+230,40,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+231,40,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+232,40,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+233,40,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+234,40,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+235,40,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+236,40,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+237,40,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+238,40,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+239,40,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+240,40,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+241,40,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+242,40,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+243,40,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+244,41,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+245,41,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+246,41,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+247,41,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+248,41,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+249,41,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+250,41,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+251,41,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+252,41,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+253,41,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+254,41,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+255,41,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+256,41,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+257,41,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+258,42,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+259,42,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+260,42,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+261,42,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+262,42,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+263,42,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+264,42,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+265,42,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+266,42,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+267,42,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+268,42,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+269,42,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+270,42,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+271,42,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+272,43,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+273,43,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+274,43,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+275,43,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+276,43,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+277,43,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+278,43,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+279,43,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+280,43,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+281,43,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+282,43,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+283,43,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+284,43,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+285,43,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+286,44,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+287,44,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+288,44,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+289,44,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+290,44,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+291,44,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+292,44,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+293,44,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+294,44,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+295,44,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+296,44,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+297,44,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+298,44,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+299,44,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+300,45,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+301,45,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+302,45,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+303,45,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, x_1, x_1]",(((((-2.53-x_5)+x_7)+x_2)+x_1)+x_1),3169.378662109375,-74.4000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+304,45,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+305,45,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+306,45,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+307,45,"[+, +, +, x_1, x_7, x_2, +, x_1, x_7]",(((x_1+x_7)+x_2)+(x_1+x_7)),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+308,45,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+309,45,"[+, +, +, x_1, +, x_1, x_7, x_7, x_2]",(((x_1+(x_1+x_7))+x_7)+x_2),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+310,45,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+311,45,"[+, +, +, +, x_7, x_7, x_2, x_1, x_1]",((((x_7+x_7)+x_2)+x_1)+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+312,45,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+313,45,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+314,45,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+315,45,"[+, +, +, x_7, x_2, +, x_1, x_7, x_1]",(((x_7+x_2)+(x_1+x_7))+x_1),3202.734375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+316,45,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+317,46,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+318,46,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+319,46,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+320,46,"[-, x_5, -, +, x_7, x_2, u-, x_1]",(x_5-((x_7+x_2)--(x_1))),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+321,46,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+322,46,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+323,46,"[/, +, x_1, x_7, -, x_2, 0.74]",((x_1+x_7)/(x_2-0.74)),3240.337158203125,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+324,46,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+325,46,"[-, -, +, x_7, x_2, u-, x_1, x_5]",(((x_7+x_2)--(x_1))-x_5),3216.955810546875,-75.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+326,46,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+327,46,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+328,46,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+329,46,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+330,47,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+331,47,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+332,47,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+333,47,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+334,47,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+335,47,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+336,47,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+337,47,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+338,47,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+339,47,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+340,47,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+341,48,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+342,48,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+343,48,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+344,48,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+345,48,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+346,48,"[-, -, +, /, +, x_1, x_7, -, x_0, 0.74, u-, x_1, u-, x_3, +, x_7, x_2]",(((((x_1+x_7)/(x_0-0.74))+-(x_1))--(x_3))-(x_7+x_2)),3125.10546875,-71.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+347,48,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+348,48,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+349,48,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+350,48,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+351,48,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+352,49,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+353,49,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+354,49,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+355,49,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+356,49,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+357,49,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+358,49,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+359,49,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+360,49,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+361,49,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+362,49,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+363,50,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+364,50,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+365,50,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+366,50,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+367,50,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+368,50,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+369,50,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+370,50,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+371,50,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+372,50,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+373,50,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+374,50,"[-, +, /, u-, **, x_7, x_5, -, 4.53, u-, x_2, u-, x_1, -, +, x_7, x_2, /, +, x_1, x_7, -, x_7, 0.74]",(((-((x_7**x_5))/(4.53--(x_2)))+-(x_1))-((x_7+x_2)-((x_1+x_7)/(x_7-0.74)))),3106.68408203125,-59.900001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+375,51,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+376,51,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+377,51,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+378,51,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+379,51,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+380,51,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+381,51,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+382,51,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, **3, x_6]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)-(x_6)**3)),3034.620361328125,-55.099998474121094,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+383,51,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+384,51,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+385,51,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+386,51,"[-, +, /, u-, **, x_7, x_5, -, 4.53, x_1, u-, x_1, +, +, x_7, -0.15, +, x_1, +, x_7, x_2]",(((-((x_7**x_5))/(4.53-x_1))+-(x_1))-((x_7+-0.15)+(x_1+(x_7+x_2)))),3095.099609375,-61.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+387,52,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+388,52,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+389,52,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+390,52,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+391,52,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+392,52,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+393,52,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+394,52,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+395,52,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+396,52,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+397,52,"[-, +, /, u-, **, x_7, x_5, -, 4.53, x_1, u-, x_1, +, +, x_7, -0.15, +, x_1, +, x_7, x_2]",(((-((x_7**x_5))/(4.53-x_1))+-(x_1))-((x_7+-0.15)+(x_1+(x_7+x_2)))),3095.099609375,-61.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+398,52,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+399,53,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+400,53,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+401,53,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+402,53,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+403,53,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+404,53,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, x_1, -, +, x_7, x_2, u-, x_1]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+x_2)--(x_1))),3063.3388671875,-58.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+405,53,"[-, +, /, u-, **, x_1, x_5, -, 4.53, **3, x_9, u-, x_1, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_1**x_5))/(4.53-(x_9)**3))+-(x_1))-((x_7+-0.15)+(x_1+x_2))),3036.76708984375,-58.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+406,53,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+407,53,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+408,53,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+409,53,"[-, +, /, u-, **, x_7, x_5, -, 4.53, x_1, u-, x_1, +, +, x_7, -0.15, +, x_1, +, x_7, x_2]",(((-((x_7**x_5))/(4.53-x_1))+-(x_1))-((x_7+-0.15)+(x_1+(x_7+x_2)))),3095.099609375,-61.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+410,53,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+411,54,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+412,54,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+413,54,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+414,54,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+415,54,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+416,54,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+417,54,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+418,54,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+419,54,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+420,54,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+421,54,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+422,55,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+423,55,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+424,55,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+425,55,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+426,55,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+427,55,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+428,55,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+429,55,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+430,55,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+431,55,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+432,55,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+433,55,"[+, +, +, -, x_1, x_5, x_2, x_7, x_1]",((((x_1-x_5)+x_2)+x_7)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+434,56,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+435,56,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+436,56,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+437,56,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+438,56,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+439,56,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+440,56,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+441,56,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+442,56,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+443,56,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+444,56,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+445,56,"[+, +, +, -, x_1, x_5, x_2, x_7, x_1]",((((x_1-x_5)+x_2)+x_7)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+446,57,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+447,57,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+448,57,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+449,57,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+450,57,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+451,57,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+452,57,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+453,57,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+454,57,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+455,57,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+456,57,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+457,57,"[+, +, +, -, x_1, x_5, x_2, x_7, x_1]",((((x_1-x_5)+x_2)+x_7)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+458,58,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+459,58,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+460,58,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+461,58,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+462,58,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+463,58,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+464,58,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+465,58,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+466,58,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+467,58,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+468,58,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+469,58,"[+, +, +, -, x_1, x_5, x_2, x_7, x_1]",((((x_1-x_5)+x_2)+x_7)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+470,59,[x_1],x_1,4031.79248046875,-78.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+471,59,"[+, x_1, x_7]",(x_1+x_7),3316.92431640625,-78.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+472,59,"[+, +, x_1, x_7, x_2]",((x_1+x_7)+x_2),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+473,59,"[+, +, +, +, -, -2.53, x_5, x_7, x_2, +, x_1, x_7, x_1]",(((((-2.53-x_5)+x_7)+x_2)+(x_1+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+474,59,"[+, x_7, +, x_1, x_2]",(x_7+(x_1+x_2)),3316.5966796875,-77.0999984741211,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+475,59,"[+, +, +, -, x_1, x_5, x_7, x_2, x_1]",((((x_1-x_5)+x_7)+x_2)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+476,59,"[+, +, -, x_1, x_5, x_7, x_2]",(((x_1-x_5)+x_7)+x_2),3216.955810546875,-76.19999694824219,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+477,59,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, x_1, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-(x_1))-(x_2+x_7))),3110.0029296875,-71.9000015258789,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+478,59,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, u-, +, x_1, x_7, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+-((x_1+x_7)))-((x_7+-0.15)+(x_1+x_2))),3018.010009765625,-57.400001525878906,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+479,59,"[+, x_5, -, +, /, +, 1.26, x_7, -, x_1, 0.74, u-, **3, x_3, +, x_2, x_7]",(x_5+((((1.26+x_7)/(x_1-0.74))+-((x_3)**3))-(x_2+x_7))),3092.15625,-63.29999923706055,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+480,59,"[-, +, /, u-, **, x_7, x_5, -, 4.53, **3, x_9, 0.74, +, +, x_7, -0.15, +, x_1, x_2]",(((-((x_7**x_5))/(4.53-(x_9)**3))+0.74)-((x_7+-0.15)+(x_1+x_2))),3034.75341796875,-59.0,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+481,59,"[+, +, +, -, x_1, x_5, x_2, x_7, x_1]",((((x_1-x_5)+x_2)+x_7)+x_1),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+482,59,"[+, +, +, x_1, -, x_1, x_5, x_7, x_2]",(((x_1+(x_1-x_5))+x_7)+x_2),3169.378662109375,-75.30000305175781,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets
+483,59,"[+, +, +, +, -, -2.53, x_5, x_1, x_2, +, x_7, x_7, x_1]",(((((-2.53-x_5)+x_1)+x_2)+(x_7+x_7))+x_1),3131.677734375,-73.5,203,210,60,210,not_specified,elastic_model,not_specified,not_specified,diabets

@@ -1,0 +1,726 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,"[exp, log, sin, cos, sqrt, x_3]",exp(log(abs(sin(cos(sqrt(abs(x_3))))))),15.39406681060791,-0.30735790729522705,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+1,0,"[**3, u-, sqrt, **2, +, x_0, x_3]",(-(sqrt(abs(((x_0+x_3))**2))))**3,14.122248649597168,-0.2977503538131714,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+2,0,"[**3, cos, **2, x_3]",(cos((x_3)**2))**3,16.6402587890625,-0.32010191679000854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+3,0,"[cos, x_0]",cos(x_0),20.140743255615234,-0.329791396856308,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+4,1,"[cos, x_0]",cos(x_0),20.140743255615234,-0.329791396856308,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+5,1,"[**3, 1.95]",(1.95)**3,23.72158432006836,-0.3346978425979614,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+6,1,"[**3, sin, x_3]",(sin(x_3))**3,16.130992889404297,-0.327903151512146,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+7,1,"[*, exp, x_3, sqrt, exp, x_0]",(exp(x_3)*sqrt(abs(exp(x_0)))),11.990633964538574,-0.29996418952941895,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+8,1,"[**3, **3, cos, **2, x_3]",((cos((x_3)**2))**3)**3,15.898329734802246,-0.32771560549736023,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+9,1,"[**3, x_4]",(x_4)**3,21.92487907409668,-0.3321469724178314,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+10,1,"[/, x_3, exp, exp, sin, -1.41]",(x_3/exp(exp(sin(-1.41)))),15.392029762268066,-0.3132319450378418,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+11,2,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+12,2,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+13,2,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+14,2,"[sqrt, log, *, exp, x_3, sqrt, exp, x_0]",sqrt(abs(log(abs((exp(x_3)*sqrt(abs(exp(x_0)))))))),11.360286712646484,-0.28524330258369446,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+15,2,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+16,3,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+17,3,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+18,3,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+19,3,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+20,3,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+21,3,"[-, sqrt, u-, sqrt, sin, x_1, /, exp, sqrt, cos, x_0, exp, sqrt, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))-(exp(sqrt(abs(cos(x_0))))/exp(sqrt(abs(x_3))))),10.233268737792969,-0.2212357521057129,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+22,4,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+23,4,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+24,4,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+25,4,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+26,4,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+27,4,"[-, sqrt, u-, sqrt, sin, x_1, /, exp, sqrt, cos, x_0, exp, sqrt, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))-(exp(sqrt(abs(cos(x_0))))/exp(sqrt(abs(x_3))))),10.233268737792969,-0.2212357521057129,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+28,4,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+29,5,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+30,5,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+31,5,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+32,5,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+33,5,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+34,5,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+35,5,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+36,6,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+37,6,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+38,6,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+39,6,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+40,6,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+41,6,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+42,6,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+43,7,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+44,7,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+45,7,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+46,7,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+47,7,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+48,7,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+49,7,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+50,7,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+51,8,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+52,8,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+53,8,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+54,8,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+55,8,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+56,8,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+57,8,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+58,8,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+59,9,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+60,9,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+61,9,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+62,9,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+63,9,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+64,9,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+65,9,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+66,9,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+67,10,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+68,10,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+69,10,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+70,10,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+71,10,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+72,10,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+73,10,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+74,10,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+75,10,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+76,10,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+77,11,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+78,11,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+79,11,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+80,11,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+81,11,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+82,11,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+83,11,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+84,11,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+85,11,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+86,11,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+87,12,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+88,12,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+89,12,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+90,12,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+91,12,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+92,12,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+93,12,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+94,12,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+95,12,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+96,12,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+97,12,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+98,12,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+99,12,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+100,13,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+101,13,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+102,13,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+103,13,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+104,13,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+105,13,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+106,13,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+107,13,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+108,13,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+109,13,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+110,13,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+111,13,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+112,13,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+113,13,"[+, exp, **, 3.09, +, x_4, -1.69, +, x_0, x_3]",(exp((3.09**(x_4+-1.69)))+(x_0+x_3)),9.389472007751465,-0.2588091194629669,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+114,14,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+115,14,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+116,14,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+117,14,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+118,14,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+119,14,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+120,14,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+121,14,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+122,14,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+123,14,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+124,14,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+125,14,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+126,14,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+127,14,"[+, exp, **, 3.09, +, x_4, -1.69, +, x_0, x_3]",(exp((3.09**(x_4+-1.69)))+(x_0+x_3)),9.389472007751465,-0.2588091194629669,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+128,14,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+129,15,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+130,15,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+131,15,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+132,15,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+133,15,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+134,15,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+135,15,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+136,15,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+137,15,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+138,15,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+139,15,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+140,15,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+141,15,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+142,15,"[+, exp, **, 3.09, +, x_4, -1.69, +, x_0, x_3]",(exp((3.09**(x_4+-1.69)))+(x_0+x_3)),9.389472007751465,-0.2588091194629669,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+143,15,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+144,16,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+145,16,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+146,16,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+147,16,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+148,16,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+149,16,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+150,16,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+151,16,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+152,16,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+153,16,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+154,16,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+155,16,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+156,16,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+157,16,"[+, exp, **, 3.09, +, x_4, -1.69, +, x_0, x_3]",(exp((3.09**(x_4+-1.69)))+(x_0+x_3)),9.389472007751465,-0.2588091194629669,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+158,16,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+159,17,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+160,17,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+161,17,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+162,17,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+163,17,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+164,17,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+165,17,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+166,17,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+167,17,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+168,17,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+169,17,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+170,17,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+171,17,"[-, sin, x_1, u-, sin, +, x_0, x_3]",(sin(x_1)--(sin((x_0+x_3)))),10.394512176513672,-0.2702050507068634,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+172,17,"[+, exp, **, 3.09, +, x_4, -1.69, +, x_0, x_3]",(exp((3.09**(x_4+-1.69)))+(x_0+x_3)),9.389472007751465,-0.2588091194629669,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+173,17,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+174,18,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+175,18,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+176,18,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+177,18,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+178,18,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+179,18,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+180,18,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+181,18,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+182,18,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+183,18,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+184,18,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+185,18,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+186,18,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+187,18,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.31594282388687134,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+188,18,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+189,19,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+190,19,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+191,19,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+192,19,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+193,19,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+194,19,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+195,19,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+196,19,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+197,19,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+198,19,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+199,19,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+200,19,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+201,19,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+202,19,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.31594282388687134,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+203,19,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+204,20,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+205,20,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+206,20,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+207,20,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+208,20,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+209,20,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+210,20,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+211,20,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+212,20,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+213,20,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+214,20,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+215,20,"[u-, 3.09]",-(3.09),23.72158432006836,-0.3374673128128052,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+216,20,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+217,20,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.31594282388687134,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+218,20,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+219,21,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+220,21,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+221,21,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+222,21,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+223,21,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+224,21,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+225,21,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+226,21,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+227,21,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+228,21,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+229,21,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+230,21,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+231,21,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+232,21,"[+, x_1, x_3]",(x_1+x_3),12.488262176513672,-0.31926965713500977,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+233,21,"[**3, 1.36]",(1.36)**3,23.72158432006836,-0.3391674757003784,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+234,22,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+235,22,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+236,22,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+237,22,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+238,22,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+239,22,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+240,22,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+241,22,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+242,22,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+243,22,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+244,22,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+245,22,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+246,22,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+247,22,"[+, x_1, x_3]",(x_1+x_3),12.488262176513672,-0.31926965713500977,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+248,22,"[**3, 0.29]",(0.29)**3,23.72158432006836,-0.34419605135917664,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+249,23,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+250,23,"[sin, x_0]",sin(x_0),19.07608985900879,-0.33228492736816406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+251,23,"[**3, x_0]",(x_0)**3,20.970470428466797,-0.33579790592193604,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+252,23,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+253,23,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+254,23,"[sin, x_3]",sin(x_3),15.450118064880371,-0.3252462148666382,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+255,23,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+256,23,"[u-, x_3]",-(x_3),15.392029762268066,-0.3251110911369324,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+257,23,"[u-, x_1]",-(x_1),20.664138793945312,-0.3328154981136322,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+258,23,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+259,23,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+260,23,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+261,23,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+262,23,"[+, x_1, x_3]",(x_1+x_3),12.488262176513672,-0.31926965713500977,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+263,23,"[+, x_2, 1.95]",(x_2+1.95),23.71486473083496,-0.34316912293434143,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+264,23,"[*, -4.29, -1.69]",(-4.29*-1.69),23.72158432006836,-0.3488837480545044,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+265,24,"[exp, x_3]",exp(x_3),15.493168830871582,-0.3301171660423279,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+266,24,"[cos, +, x_0, x_3]",cos((x_0+x_3)),11.982096672058105,-0.3154010474681854,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+267,24,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+268,24,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+269,24,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+270,24,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+271,24,"[sqrt, +, x_0, x_3]",sqrt(abs((x_0+x_3))),11.090133666992188,-0.2993331551551819,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+272,24,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+273,24,"[+, x_1, x_3]",(x_1+x_3),12.488262176513672,-0.31926965713500977,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+274,24,"[+, +, x_4, -1.69, x_3]",((x_4+-1.69)+x_3),14.360074996948242,-0.32580918073654175,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+275,24,"[cos, +, +, x_0, x_3, -1.69]",cos(((x_0+x_3)+-1.69)),11.486760139465332,-0.311040997505188,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+276,24,"[*, -4.29, x_0]",(-4.29*x_0),19.265331268310547,-0.3478180468082428,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+277,24,"[*, x_1, x_0]",(x_1*x_0),17.469552993774414,-0.33548885583877563,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+278,24,"[u-, 1.36]",-(1.36),23.72158432006836,-0.35519737005233765,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+279,24,"[u-, -3.26]",-(-3.26),23.72158432006836,-0.35519737005233765,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+280,25,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.308925986289978,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+281,25,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+282,25,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+283,25,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+284,25,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+285,25,"[+, x_1, x_3]",(x_1+x_3),12.488262176513672,-0.31926965713500977,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+286,25,"[+, +, x_4, -1.69, x_3]",((x_4+-1.69)+x_3),14.360074996948242,-0.32580918073654175,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+287,25,"[u-, 1.36]",-(1.36),23.72158432006836,-0.35519737005233765,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+288,25,"[u-, -3.26]",-(-3.26),23.72158432006836,-0.35519737005233765,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+289,25,"[/, x_3, 4.41]",(x_3/4.41),15.392029762268066,-0.3529919385910034,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+290,25,"[+, x_0, exp, x_3]",(x_0+exp(x_3)),11.303905487060547,-0.317019522190094,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+291,25,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+292,26,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+293,26,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+294,26,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+295,26,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+296,26,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+297,26,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+298,26,"[+, +, x_0, x_3, -1.69]",((x_0+x_3)+-1.69),11.248950004577637,-0.3424806296825409,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+299,26,"[u-, 1.95]",-(1.95),23.72158432006836,-0.363962322473526,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+300,26,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.3597874641418457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+301,26,"[+, -4.29, +, x_0, x_3]",(-4.29+(x_0+x_3)),11.248950004577637,-0.3424806296825409,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+302,27,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+303,27,"[-, +, /, u-, sqrt, x_0, -, 1.36, x_3, u-, x_1, sqrt, x_4]",(((-(sqrt(abs(x_0)))/(1.36-x_3))+-(x_1))-sqrt(abs(x_4))),6.93013334274292,-0.22324812412261963,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+304,27,"[+, sqrt, u-, sqrt, sin, x_1, +, x_0, x_3]",(sqrt(abs(-(sqrt(abs(sin(x_1))))))+(x_0+x_3)),7.868267059326172,-0.23122569918632507,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+305,27,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+306,27,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+307,27,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+308,27,"[+, +, x_0, x_3, -1.69]",((x_0+x_3)+-1.69),11.248950004577637,-0.3424806296825409,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+309,27,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.3597874641418457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+310,27,"[+, -4.29, +, x_0, x_3]",(-4.29+(x_0+x_3)),11.248950004577637,-0.3424806296825409,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+311,27,"[+, -3.45, x_2]",(-3.45+x_2),23.71486473083496,-0.36607909202575684,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+312,28,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+313,28,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+314,28,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+315,28,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+316,28,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.3597874641418457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+317,28,"[u-, +, 1.95, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1]",-((1.95+(((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1)))),6.563409805297852,-0.2431461215019226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+318,28,"[+, -4.29, x_1]",(-4.29+x_1),20.664138793945312,-0.3661380112171173,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+319,28,"[+, 1.95, +, x_0, x_3]",(1.95+(x_0+x_3)),11.248950004577637,-0.34845781326293945,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+320,29,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+321,29,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+322,29,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+323,29,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+324,29,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.3597874641418457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+325,29,"[u-, +, 1.95, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1]",-((1.95+(((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1)))),6.563409805297852,-0.2431461215019226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+326,29,"[+, -4.29, x_1]",(-4.29+x_1),20.664138793945312,-0.3661380112171173,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+327,29,"[+, 1.95, +, x_0, x_3]",(1.95+(x_0+x_3)),11.248950004577637,-0.34845781326293945,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+328,29,"[-, +, u-, exp, x_3, **3, *, x_3, x_0, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*x_0))**3)-(x_1+(x_0+(x_4+-1.69)))),6.375413417816162,-0.2082391083240509,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+329,30,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+330,30,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+331,30,"[+, x_1, +, x_0, sin, x_3]",(x_1+(x_0+sin(x_3))),8.98663330078125,-0.30108603835105896,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+332,30,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+333,30,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.3597874641418457,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+334,30,"[u-, +, 1.95, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1]",-((1.95+(((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1)))),6.563409805297852,-0.2431461215019226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+335,30,"[+, 1.95, +, x_0, x_3]",(1.95+(x_0+x_3)),11.248950004577637,-0.34845781326293945,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+336,30,"[-, +, u-, exp, x_3, **3, *, x_3, x_0, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*x_0))**3)-(x_1+(x_0+(x_4+-1.69)))),6.375413417816162,-0.2082391083240509,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+337,30,"[+, x_1, 1.36]",(x_1+1.36),20.664138793945312,-0.3670470416545868,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+338,30,"[sqrt, u-, +, +, x_0, x_1, x_3]",sqrt(abs(-(((x_0+x_1)+x_3)))),8.314363479614258,-0.2950594425201416,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+339,30,"[+, x_1, +, x_0, +, x_1, +, x_4, x_3]",(x_1+(x_0+(x_1+(x_4+x_3)))),9.48073673248291,-0.30940091609954834,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+340,30,"[+, 1.95, x_4]",(1.95+x_4),21.60578727722168,-0.3676353693008423,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+341,31,"[+, exp, **, exp, **, x_2, x_1, +, x_4, -1.69, +, x_0, x_3]",(exp((exp((x_2**x_1))**(x_4+-1.69)))+(x_0+x_3)),8.189743995666504,-0.25324150919914246,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+342,31,"[+, x_1, +, x_0, x_3]",(x_1+(x_0+x_3)),8.435291290283203,-0.2975904941558838,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+343,31,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+344,31,"[u-, +, 1.95, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1]",-((1.95+(((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1)))),6.563409805297852,-0.2431461215019226,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+345,31,"[+, 1.95, +, x_0, x_3]",(1.95+(x_0+x_3)),11.248950004577637,-0.34845781326293945,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+346,31,"[-, +, u-, exp, x_3, **3, *, x_3, x_0, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*x_0))**3)-(x_1+(x_0+(x_4+-1.69)))),6.375413417816162,-0.2082391083240509,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+347,31,"[sqrt, u-, +, +, x_0, x_1, x_3]",sqrt(abs(-(((x_0+x_1)+x_3)))),8.314363479614258,-0.2950594425201416,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+348,31,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+349,31,"[+, x_0, +, x_0, +, x_1, +, x_4, x_3]",(x_0+(x_0+(x_1+(x_4+x_3)))),8.485637664794922,-0.311270534992218,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+350,31,"[+, -4.29, x_0]",(-4.29+x_0),19.265331268310547,-0.3718014657497406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+351,31,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+352,32,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+353,32,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+354,32,"[+, -4.29, x_0]",(-4.29+x_0),19.265331268310547,-0.3718014657497406,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+355,32,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+356,32,"[+, x_3, +, x_0, +, +, x_1, +, x_4, x_3, 1.95]",(x_3+(x_0+((x_1+(x_4+x_3))+1.95))),6.236557960510254,-0.31256696581840515,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+357,32,"[u-, +, +, x_0, x_1, x_3]",-(((x_0+x_1)+x_3)),8.435291290283203,-0.32003527879714966,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+358,32,"[+, +, -4.73, x_0, x_3]",((-4.73+x_0)+x_3),11.248950004577637,-0.35007262229919434,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+359,33,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+360,33,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+361,33,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+362,33,"[+, x_3, +, x_0, +, +, x_1, +, x_4, x_3, 1.95]",(x_3+(x_0+((x_1+(x_4+x_3))+1.95))),6.236557960510254,-0.31256696581840515,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+363,33,"[u-, +, +, x_0, x_1, x_3]",-(((x_0+x_1)+x_3)),8.435291290283203,-0.32003527879714966,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+364,33,"[+, +, -4.73, x_0, x_3]",((-4.73+x_0)+x_3),11.248950004577637,-0.35007262229919434,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+365,33,"[+, x_0, -1.69]",(x_0+-1.69),19.265331268310547,-0.3763670325279236,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+366,34,"[+, +, x_4, x_0, x_3]",((x_4+x_0)+x_3),9.746606826782227,-0.3323926329612732,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+367,34,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+368,34,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+369,34,"[+, x_3, +, x_0, +, +, x_1, +, x_4, x_3, 1.95]",(x_3+(x_0+((x_1+(x_4+x_3))+1.95))),6.236557960510254,-0.31256696581840515,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+370,34,"[u-, +, +, x_0, x_1, x_3]",-(((x_0+x_1)+x_3)),8.435291290283203,-0.32003527879714966,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+371,34,"[+, +, -4.73, x_0, x_3]",((-4.73+x_0)+x_3),11.248950004577637,-0.35007262229919434,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+372,34,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+373,34,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.358545184135437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+374,34,"[+, -4.29, -1.69]",(-4.29+-1.69),23.72158432006836,-0.38478708267211914,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+375,34,"[*, x_3, x_0]",(x_3*x_0),13.220602035522461,-0.35405275225639343,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+376,35,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+377,35,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+378,35,"[+, x_3, +, x_0, +, +, x_1, +, x_4, x_3, 1.95]",(x_3+(x_0+((x_1+(x_4+x_3))+1.95))),6.236557960510254,-0.31256696581840515,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+379,35,"[+, +, -4.73, x_0, x_3]",((-4.73+x_0)+x_3),11.248950004577637,-0.35007262229919434,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+380,35,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+381,35,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.358545184135437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+382,35,"[+, -4.29, -1.69]",(-4.29+-1.69),23.72158432006836,-0.38478708267211914,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+383,35,"[*, x_3, x_0]",(x_3*x_0),13.220602035522461,-0.35405275225639343,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+384,35,"[+, +, x_1, +, x_0, x_3, 0.98]",((x_1+(x_0+x_3))+0.98),8.435291290283203,-0.3372701108455658,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+385,36,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+386,36,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+387,36,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+388,36,"[+, x_4, x_3]",(x_4+x_3),14.360074996948242,-0.358545184135437,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+389,36,"[+, -4.29, -1.69]",(-4.29+-1.69),23.72158432006836,-0.38478708267211914,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+390,36,"[*, x_3, x_0]",(x_3*x_0),13.220602035522461,-0.35405275225639343,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+391,36,"[+, +, x_1, +, x_0, x_3, 0.98]",((x_1+(x_0+x_3))+0.98),8.435291290283203,-0.3372701108455658,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+392,36,"[u-, +, 1.95, +, +, +, x_1, x_3, x_0, x_4]",-((1.95+(((x_1+x_3)+x_0)+x_4))),6.859220027923584,-0.3188704252243042,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+393,36,"[+, 1.95, +, +, +, x_0, x_3, -1.69, -1.69]",(1.95+(((x_0+x_3)+-1.69)+-1.69)),11.248950004577637,-0.35390639305114746,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+394,36,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+395,37,"[+, 1.95, x_3]",(1.95+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+396,37,"[+, 3.09, x_3]",(3.09+x_3),15.392029762268066,-0.36477476358413696,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+397,37,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+398,37,"[+, +, x_1, +, x_0, x_3, 0.98]",((x_1+(x_0+x_3))+0.98),8.435291290283203,-0.3372701108455658,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+399,37,"[u-, +, 1.95, +, +, +, x_1, x_3, x_0, x_4]",-((1.95+(((x_1+x_3)+x_0)+x_4))),6.859220027923584,-0.3188704252243042,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+400,37,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+401,37,"[+, +, +, x_0, +, x_1, +, x_0, x_3, -1.69, x_3]",(((x_0+(x_1+(x_0+x_3)))+-1.69)+x_3),8.394481658935547,-0.31988394260406494,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+402,37,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+403,37,"[+, -4.29, 1.36]",(-4.29+1.36),23.72158432006836,-0.3890756368637085,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+404,38,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+405,38,"[u-, +, 1.95, +, +, +, x_1, x_3, x_0, x_4]",-((1.95+(((x_1+x_3)+x_0)+x_4))),6.859220027923584,-0.3188704252243042,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+406,38,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+407,38,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+408,38,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+409,38,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+410,38,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+411,38,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+412,38,"[+, 1.95, -1.69]",(1.95+-1.69),23.72158432006836,-0.3917151689529419,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+413,39,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+414,39,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+415,39,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+416,39,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+417,39,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+418,39,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+419,39,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+420,39,"[+, -1.69, -1.69]",(-1.69+-1.69),23.72158432006836,-0.39239710569381714,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+421,39,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+422,39,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+423,39,"[-, +, u-, exp, x_3, **3, *, x_3, **2, x_4, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*(x_4)**2))**3)-(x_1+(x_0+(x_4+-1.69)))),6.188600540161133,-0.1888561248779297,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+424,40,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+425,40,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+426,40,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+427,40,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+428,40,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+429,40,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+430,40,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+431,40,"[+, -1.69, -1.69]",(-1.69+-1.69),23.72158432006836,-0.39239710569381714,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+432,40,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+433,40,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+434,40,"[-, +, u-, exp, x_3, **3, *, x_3, **2, x_4, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*(x_4)**2))**3)-(x_1+(x_0+(x_4+-1.69)))),6.188600540161133,-0.1888561248779297,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+435,40,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+436,41,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+437,41,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+438,41,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+439,41,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+440,41,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+441,41,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+442,41,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+443,41,"[+, -1.69, -1.69]",(-1.69+-1.69),23.72158432006836,-0.39239710569381714,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+444,41,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+445,41,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+446,41,"[-, +, u-, exp, x_3, **3, *, x_3, **2, x_4, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*(x_4)**2))**3)-(x_1+(x_0+(x_4+-1.69)))),6.188600540161133,-0.1888561248779297,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+447,41,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+448,42,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+449,42,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+450,42,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+451,42,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+452,42,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+453,42,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+454,42,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+455,42,"[+, -1.69, -1.69]",(-1.69+-1.69),23.72158432006836,-0.39239710569381714,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+456,42,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+457,42,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+458,42,"[-, +, u-, exp, x_3, **3, *, x_3, **2, x_4, +, x_1, +, x_0, +, x_4, -1.69]",((-(exp(x_3))+((x_3*(x_4)**2))**3)-(x_1+(x_0+(x_4+-1.69)))),6.188600540161133,-0.1888561248779297,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+459,42,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+460,42,"[+, -4.29, x_2]",(-4.29+x_2),23.71486473083496,-0.38091424107551575,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+461,42,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+462,43,"[+, x_0, 0.98]",(x_0+0.98),19.265331268310547,-0.3772212564945221,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+463,43,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+464,43,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+465,43,"[+, -4.73, x_3]",(-4.73+x_3),15.392029762268066,-0.375872403383255,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+466,43,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+467,43,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+468,43,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+469,43,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+470,43,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+471,43,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+472,43,"[+, -4.29, x_2]",(-4.29+x_2),23.71486473083496,-0.38091424107551575,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+473,43,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+474,43,"[+, -3.45, -1.69]",(-3.45+-1.69),23.72158432006836,-0.39469480514526367,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+475,43,"[+, x_3, +, +, +, x_1, 1.95, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(x_3+(((x_1+1.95)+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),6.042896270751953,-0.20964691042900085,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+476,43,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+477,44,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+478,44,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+479,44,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+480,44,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+481,44,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+482,44,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+483,44,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+484,44,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+485,44,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+486,44,"[+, -3.45, -1.69]",(-3.45+-1.69),23.72158432006836,-0.39469480514526367,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+487,44,"[+, x_3, +, +, +, x_1, 1.95, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(x_3+(((x_1+1.95)+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),6.042896270751953,-0.20964691042900085,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+488,44,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+489,44,"[+, -1.69, x_3]",(-1.69+x_3),15.392029762268066,-0.3802984952926636,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+490,44,"[+, 1.95, x_0]",(1.95+x_0),19.265331268310547,-0.3853619396686554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+491,45,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+492,45,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+493,45,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+494,45,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+495,45,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+496,45,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+497,45,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+498,45,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+499,45,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+500,45,"[+, -3.45, -1.69]",(-3.45+-1.69),23.72158432006836,-0.39469480514526367,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+501,45,"[+, x_3, +, +, +, x_1, 1.95, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(x_3+(((x_1+1.95)+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),6.042896270751953,-0.20964691042900085,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+502,45,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+503,45,"[+, -1.69, x_3]",(-1.69+x_3),15.392029762268066,-0.3802984952926636,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+504,45,"[+, 1.95, x_0]",(1.95+x_0),19.265331268310547,-0.3853619396686554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+505,45,"[+, 1.95, x_2]",(1.95+x_2),23.71486473083496,-0.38755637407302856,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+506,46,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+507,46,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+508,46,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+509,46,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+510,46,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+511,46,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+512,46,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+513,46,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+514,46,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+515,46,"[+, -3.45, -1.69]",(-3.45+-1.69),23.72158432006836,-0.39469480514526367,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+516,46,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+517,46,"[+, -1.69, x_3]",(-1.69+x_3),15.392029762268066,-0.3802984952926636,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+518,46,"[+, x_0, -3.45]",(x_0+-3.45),19.265331268310547,-0.39284616708755493,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+519,46,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+520,47,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+521,47,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+522,47,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+523,47,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+524,47,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+525,47,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+526,47,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+527,47,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+528,47,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+529,47,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+530,47,"[+, -1.69, x_3]",(-1.69+x_3),15.392029762268066,-0.3802984952926636,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+531,47,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+532,47,"[+, x_0, 1.36]",(x_0+1.36),19.265331268310547,-0.39786580204963684,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+533,47,"[+, -3.45, 1.36]",(-3.45+1.36),23.72158432006836,-0.4098914861679077,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+534,48,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+535,48,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+536,48,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+537,48,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+538,48,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+539,48,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+540,48,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+541,48,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+542,48,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+543,48,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+544,48,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+545,48,"[+, x_0, 1.36]",(x_0+1.36),19.265331268310547,-0.39786580204963684,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+546,48,"[+, -3.45, 1.36]",(-3.45+1.36),23.72158432006836,-0.4098914861679077,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+547,48,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+548,48,"[+, x_3, 1.36]",(x_3+1.36),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+549,49,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+550,49,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+551,49,"[+, +, x_0, x_1, x_3]",((x_0+x_1)+x_3),8.435291290283203,-0.3383650779724121,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+552,49,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+553,49,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+554,49,"[+, +, x_4, x_3, x_0]",((x_4+x_3)+x_0),9.746606826782227,-0.34122687578201294,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+555,49,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+556,49,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+557,49,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+558,49,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+559,49,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+560,49,"[+, x_0, 1.36]",(x_0+1.36),19.265331268310547,-0.39786580204963684,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+561,49,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+562,49,"[+, x_3, 1.36]",(x_3+1.36),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+563,49,"[+, 2.74, 1.95]",(2.74+1.95),23.72158432006836,-0.41742756962776184,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+564,49,"[+, 1.95, 1.95]",(1.95+1.95),23.72158432006836,-0.41742756962776184,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+565,50,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+566,50,"[+, x_0, x_3]",(x_0+x_3),11.248950004577637,-0.3641769587993622,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+567,50,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+568,50,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+569,50,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+570,50,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+571,50,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+572,50,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+573,50,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+574,50,"[+, x_0, 1.36]",(x_0+1.36),19.265331268310547,-0.39786580204963684,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+575,50,"[+, -3.45, x_3]",(-3.45+x_3),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+576,50,"[+, x_3, 1.36]",(x_3+1.36),15.392029762268066,-0.39430761337280273,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+577,50,"[+, 2.74, 1.95]",(2.74+1.95),23.72158432006836,-0.41742756962776184,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+578,50,"[+, 1.95, 1.95]",(1.95+1.95),23.72158432006836,-0.41742756962776184,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+579,50,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+580,50,"[+, 2.74, x_4]",(2.74+x_4),21.60578727722168,-0.40344053506851196,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+581,51,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+582,51,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+583,51,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+584,51,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+585,51,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+586,51,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+587,51,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+588,51,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+589,51,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+590,51,"[+, +, 1.95, x_0, x_3]",((1.95+x_0)+x_3),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+591,51,"[+, x_3, -4.49]",(x_3+-4.49),15.392029762268066,-0.4044855237007141,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+592,51,"[+, x_4, 1.95]",(x_4+1.95),21.60578727722168,-0.40780240297317505,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+593,51,"[+, -4.73, +, x_0, x_3]",(-4.73+(x_0+x_3)),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+594,51,"[+, 1.36, 0.98]",(1.36+0.98),23.72158432006836,-0.42655807733535767,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+595,51,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+596,52,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+597,52,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+598,52,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+599,52,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+600,52,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+601,52,"[-, +, /, u-, +, x_3, x_4, -, 2.52, sqrt, 1.02, u-, x_1, sqrt, **2, +, x_0, x_3]",(((-((x_3+x_4))/(2.52-sqrt(abs(1.02))))+-(x_1))-sqrt(abs(((x_0+x_3))**2))),5.9499077796936035,-0.14474813640117645,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+602,52,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+603,52,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+604,52,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+605,52,"[+, +, 1.95, x_0, x_3]",((1.95+x_0)+x_3),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+606,52,"[+, -4.73, +, x_0, x_3]",(-4.73+(x_0+x_3)),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+607,52,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+608,52,"[*, -1.69, -1.69]",(-1.69*-1.69),23.72158432006836,-0.42918577790260315,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+609,52,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1, +, x_0, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1))+(x_0+x_3))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.9191155433654785,-0.13848276436328888,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+610,52,"[*, x_3, -1.69]",(x_3*-1.69),15.392029762268066,-0.40972232818603516,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+611,53,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+612,53,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+613,53,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+614,53,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+615,53,"[-, +, /, u-, x_3, 1.36, **3, *, x_3, *, x_1, x_3, +, sqrt, x_4, +, x_0, +, x_1, +, 1.36, x_3]",(((-(x_3)/1.36)+((x_3*(x_1*x_3)))**3)-(sqrt(abs(x_4))+(x_0+(x_1+(1.36+x_3))))),6.036763668060303,-0.1620447039604187,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+616,53,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+617,53,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+618,53,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+619,53,"[+, +, 1.95, x_0, x_3]",((1.95+x_0)+x_3),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+620,53,"[+, -4.73, +, x_0, x_3]",(-4.73+(x_0+x_3)),11.248950004577637,-0.3673398494720459,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+621,53,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+622,53,"[*, -1.69, -1.69]",(-1.69*-1.69),23.72158432006836,-0.42918577790260315,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+623,53,"[*, x_3, -1.69]",(x_3*-1.69),15.392029762268066,-0.40972232818603516,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+624,53,"[*, x_3, x_1]",(x_3*x_1),14.696464538574219,-0.38909757137298584,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+625,53,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1, 2.74, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1))+2.74)+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.899055004119873,-0.14815840125083923,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+626,54,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+627,54,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+628,54,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+629,54,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+630,54,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+631,54,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+632,54,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+633,54,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+634,54,"[*, -1.69, -1.69]",(-1.69*-1.69),23.72158432006836,-0.42918577790260315,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+635,54,"[*, x_3, x_1]",(x_3*x_1),14.696464538574219,-0.38909757137298584,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+636,54,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1, 2.74, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1))+2.74)+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.899055004119873,-0.14815840125083923,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+637,54,"[+, x_3, 1.95]",(x_3+1.95),15.392029762268066,-0.41322553157806396,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+638,54,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+639,54,"[+, +, x_0, +, +, x_1, +, x_4, x_3, 1.95, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",((x_0+((x_1+(x_4+x_3))+1.95))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),6.016818523406982,-0.1704370081424713,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+640,54,"[+, x_0, +, -3.45, x_3]",(x_0+(-3.45+x_3)),11.248950004577637,-0.37333863973617554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+641,55,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+642,55,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+643,55,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+644,55,"[+, +, x_1, +, x_0, x_3, x_4]",((x_1+(x_0+x_3))+x_4),6.859220027923584,-0.32305780053138733,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+645,55,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+646,55,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+647,55,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+648,55,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+649,55,"[*, x_3, x_1]",(x_3*x_1),14.696464538574219,-0.38909757137298584,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+650,55,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_4, x_1, 2.74, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_4))+x_1))+2.74)+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.899055004119873,-0.14815840125083923,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+651,55,"[+, x_3, 1.95]",(x_3+1.95),15.392029762268066,-0.41322553157806396,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+652,55,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+653,55,"[+, +, x_0, +, +, x_1, +, x_4, x_3, 1.95, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",((x_0+((x_1+(x_4+x_3))+1.95))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),6.016818523406982,-0.1704370081424713,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+654,55,"[+, x_0, +, -3.45, x_3]",(x_0+(-3.45+x_3)),11.248950004577637,-0.37333863973617554,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+655,55,"[*, 1.95, -1.69]",(1.95*-1.69),23.72158432006836,-0.4392778277397156,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+656,55,"[+, x_0, 0.63]",(x_0+0.63),19.265331268310547,-0.4256652593612671,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+657,55,"[+, +, +, +, +, x_0, 0.98, -1.69, +, sqrt, x_0, x_1, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, +, x_4, x_3, -1.69]",(((((x_0+0.98)+-1.69)+(sqrt(abs(x_0))+x_1))+x_3)+(((x_1+(x_4+x_3))+(x_0+(x_4+x_3)))+-1.69)),5.794046401977539,-0.13846835494041443,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+658,56,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+659,56,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+660,56,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+661,56,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+662,56,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+663,56,"[+, x_0, +, x_1, x_3]",(x_0+(x_1+x_3)),8.435291290283203,-0.34127944707870483,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+664,56,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+665,56,"[*, x_3, x_1]",(x_3*x_1),14.696464538574219,-0.38909757137298584,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+666,56,"[+, x_3, 1.95]",(x_3+1.95),15.392029762268066,-0.41322553157806396,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+667,56,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+668,56,"[+, +, x_0, +, +, x_1, +, x_4, x_3, 1.95, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",((x_0+((x_1+(x_4+x_3))+1.95))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),6.016818523406982,-0.1704370081424713,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+669,56,"[+, x_0, 0.63]",(x_0+0.63),19.265331268310547,-0.4256652593612671,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+670,56,"[+, x_0, +, -4.29, x_3]",(x_0+(-4.29+x_3)),11.248950004577637,-0.37461456656455994,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+671,56,"[+, 1.95, 0.98]",(1.95+0.98),23.72158432006836,-0.44039666652679443,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+672,56,"[+, -1.69, +, +, +, x_1, **, x_2, x_2, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(-1.69+(((x_1+(x_2**x_2))+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),5.7830424308776855,-0.16472581028938293,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+673,56,"[+, x_0, +, x_1, +, x_4, x_3]",(x_0+(x_1+(x_4+x_3))),6.859220027923584,-0.32361769676208496,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+674,57,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+675,57,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+676,57,"[+, x_1, +, x_0, +, x_3, +, -4.29, x_3]",(x_1+(x_0+(x_3+(-4.29+x_3)))),8.185469627380371,-0.32496950030326843,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+677,57,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+678,57,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+679,57,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+680,57,"[*, x_3, x_1]",(x_3*x_1),14.696464538574219,-0.38909757137298584,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+681,57,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+682,57,"[+, +, x_0, +, +, x_1, +, x_4, x_3, 1.95, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",((x_0+((x_1+(x_4+x_3))+1.95))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),6.016818523406982,-0.1704370081424713,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+683,57,"[+, x_0, 0.63]",(x_0+0.63),19.265331268310547,-0.4256652593612671,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+684,57,"[+, x_0, +, -4.29, x_3]",(x_0+(-4.29+x_3)),11.248950004577637,-0.37461456656455994,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+685,57,"[+, 1.95, 0.98]",(1.95+0.98),23.72158432006836,-0.44039666652679443,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+686,57,"[+, -1.69, +, +, +, x_1, **, x_2, x_2, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(-1.69+(((x_1+(x_2**x_2))+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),5.7830424308776855,-0.16472581028938293,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+687,57,"[+, x_0, +, x_1, +, x_4, x_3]",(x_0+(x_1+(x_4+x_3))),6.859220027923584,-0.32361769676208496,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+688,57,"[+, x_6, 0.98]",(x_6+0.98),23.647825241088867,-0.43013617396354675,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+689,57,"[+, +, +, x_0, x_3, 1.36, x_1]",(((x_0+x_3)+1.36)+x_1),8.435291290283203,-0.34368896484375,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+690,57,"[+, x_0, +, -3.45, +, x_4, x_3]",(x_0+(-3.45+(x_4+x_3))),9.746606826782227,-0.3443511128425598,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+691,57,"[+, -4.29, x_3]",(-4.29+x_3),15.392029762268066,-0.4212750196456909,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+692,58,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+693,58,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+694,58,"[+, x_1, +, +, -4.73, +, +, x_0, -3.51, sqrt, x_3, +, x_3, x_4]",(x_1+((-4.73+((x_0+-3.51)+sqrt(abs(x_3))))+(x_3+x_4))),6.179758548736572,-0.22300411760807037,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+695,58,"[+, +, x_3, +, x_0, +, x_1, +, x_4, x_3, +, +, x_0, x_1, x_3]",((x_3+(x_0+(x_1+(x_4+x_3))))+((x_0+x_1)+x_3)),6.042896270751953,-0.211604505777359,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+696,58,"[*, x_3, +, x_4, x_0]",(x_3*(x_4+x_0)),10.927734375,-0.3500640392303467,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+697,58,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+698,58,"[+, +, x_0, +, +, x_1, +, x_4, x_3, 1.95, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",((x_0+((x_1+(x_4+x_3))+1.95))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),6.016818523406982,-0.1704370081424713,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+699,58,"[+, x_0, 0.63]",(x_0+0.63),19.265331268310547,-0.4256652593612671,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+700,58,"[+, x_0, +, -4.29, x_3]",(x_0+(-4.29+x_3)),11.248950004577637,-0.37461456656455994,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+701,58,"[+, -1.69, +, +, +, x_1, **, x_2, x_2, +, +, x_4, x_0, x_3, +, +, x_1, +, x_0, x_3, 1.95]",(-1.69+(((x_1+(x_2**x_2))+((x_4+x_0)+x_3))+((x_1+(x_0+x_3))+1.95))),5.7830424308776855,-0.16472581028938293,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+702,58,"[+, x_0, +, x_1, +, x_4, x_3]",(x_0+(x_1+(x_4+x_3))),6.859220027923584,-0.32361769676208496,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+703,58,"[+, -4.29, x_3]",(-4.29+x_3),15.392029762268066,-0.4212750196456909,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+704,58,"[+, x_1, +, 2.74, x_3]",(x_1+(2.74+x_3)),12.488262176513672,-0.37895190715789795,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+705,58,"[+, x_1, 1.95]",(x_1+1.95),20.664138793945312,-0.4343891143798828,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+706,58,"[+, x_0, +, +, x_1, x_3, x_3]",(x_0+((x_1+x_3)+x_3)),8.185469627380371,-0.3286805748939514,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+707,58,"[*, -4.73, -1.69]",(-4.73*-1.69),23.72158432006836,-0.4566933810710907,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+708,58,"[*, -1.69, *, x_3, x_0]",(-1.69*(x_3*x_0)),13.220602035522461,-0.39678412675857544,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+709,58,"[+, +, x_1, +, x_0, x_3, 1.95]",((x_1+(x_0+x_3))+1.95),8.435291290283203,-0.34850436449050903,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+710,59,"[+, x_1, +, x_0, +, x_3, +, x_4, x_3]",(x_1+(x_0+(x_3+(x_4+x_3)))),6.236557960510254,-0.3164390027523041,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+711,59,"[+, +, x_0, +, +, x_4, sin, x_1, x_3, x_3]",((x_0+((x_4+sin(x_1))+x_3))+x_3),6.209935665130615,-0.29800644516944885,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+712,59,"[+, +, +, +, +, x_0, x_3, -1.69, +, sqrt, x_0, x_1, +, 1.95, +, +, x_4, -1.69, x_3, +, +, +, x_1, +, x_4, x_3, +, x_0, x_3, -1.69]",(((((x_0+x_3)+-1.69)+(sqrt(abs(x_0))+x_1))+(1.95+((x_4+-1.69)+x_3)))+(((x_1+(x_4+x_3))+(x_0+x_3))+-1.69)),5.711853981018066,-0.1377188265323639,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+713,59,"[+, x_0, +, -4.29, x_3]",(x_0+(-4.29+x_3)),11.248950004577637,-0.37461456656455994,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+714,59,"[+, x_0, +, x_1, +, x_4, x_3]",(x_0+(x_1+(x_4+x_3))),6.859220027923584,-0.32361769676208496,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+715,59,"[+, -4.29, x_3]",(-4.29+x_3),15.392029762268066,-0.4212750196456909,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+716,59,"[+, x_1, +, 2.74, x_3]",(x_1+(2.74+x_3)),12.488262176513672,-0.37895190715789795,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+717,59,"[+, x_1, 1.95]",(x_1+1.95),20.664138793945312,-0.4343891143798828,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+718,59,"[*, -1.69, *, x_3, x_0]",(-1.69*(x_3*x_0)),13.220602035522461,-0.39678412675857544,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+719,59,"[**2, +, +, +, x_0, x_1, x_3, -4.49]",((((x_0+x_1)+x_3)+-4.49))**2,8.182750701904297,-0.33036521077156067,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+720,59,"[+, +, +, x_0, x_1, x_3, 1.95]",(((x_0+x_1)+x_3)+1.95),8.435291290283203,-0.35333967208862305,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+721,59,"[+, +, x_1, **, x_2, x_2, +, +, x_4, x_0, x_3]",((x_1+(x_2**x_2))+((x_4+x_0)+x_3)),5.777438640594482,-0.22531718015670776,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+722,59,"[+, x_1, x_0]",(x_1+x_0),16.4779109954834,-0.4271436333656311,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+723,59,"[+, -1.69, -3.45]",(-1.69+-3.45),23.72158432006836,-0.46034643054008484,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1
+724,59,"[+, x_6, -1.69]",(x_6+-1.69),23.647825241088867,-0.44537463784217834,203,210,60,210,counts,elastic_model,Uncertainty Sampler Online,Elastic model,friedman1

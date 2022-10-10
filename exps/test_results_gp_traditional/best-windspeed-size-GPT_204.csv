@@ -1,0 +1,531 @@
+,generation,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,0,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+1,0,"[sqrt, u-, sin, -, cos, x_6, x_4]",sqrt(abs(-(sin((cos(x_6)-x_4))))),22.93711280822754,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+2,1,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+3,1,"[sqrt, u-, sin, -, cos, x_6, x_4]",sqrt(abs(-(sin((cos(x_6)-x_4))))),22.93711280822754,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+4,1,"[**, u-, x_1, -, u-, x_3, sqrt, **, sqrt, x_3, -, x_2, x_3]",(-(x_1)**(-(x_3)-sqrt(abs((sqrt(abs(x_3))**(x_2-x_3)))))),22.782108306884766,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+5,1,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+6,2,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+7,2,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+8,2,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+9,2,"[exp, +, exp, sin, x_4, cos, **2, *, x_3, 2.88]",exp((exp(sin(x_4))+cos(((x_3*2.88))**2))),22.536375045776367,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+10,2,"[exp, **2, cos, u-, **, x_2, x_3]",exp((cos(-((x_2**x_3))))**2),22.757150650024414,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+11,2,"[+, *, **, x_1, x_0, sin, /, u-, x_3, exp, x_5, +, exp, sin, x_4, cos, sqrt, sin, x_4]",(((x_1**x_0)*sin((-(x_3)/exp(x_5))))+(exp(sin(x_4))+cos(sqrt(abs(sin(x_4)))))),22.494598388671875,19.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+12,3,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+13,3,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+14,3,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+15,3,"[exp, +, exp, sin, x_4, cos, **2, *, x_3, 2.88]",exp((exp(sin(x_4))+cos(((x_3*2.88))**2))),22.536375045776367,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+16,3,"[exp, **2, cos, u-, **, x_2, x_3]",exp((cos(-((x_2**x_3))))**2),22.757150650024414,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+17,3,"[+, *, **, x_1, x_0, sin, /, u-, x_3, exp, x_5, +, exp, sin, x_4, cos, sqrt, sin, x_4]",(((x_1**x_0)*sin((-(x_3)/exp(x_5))))+(exp(sin(x_4))+cos(sqrt(abs(sin(x_4)))))),22.494598388671875,19.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+18,3,"[+, u-, **3, cos, x_4, x_4]",(-((cos(x_4))**3)+x_4),22.795440673828125,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+19,3,"[exp, sin, cos, -, **, -4.7, x_2, x_4]",exp(sin(cos(((-4.7**x_2)-x_4)))),22.568735122680664,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+20,4,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+21,4,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+22,4,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+23,4,"[exp, +, exp, sin, x_4, cos, **2, *, x_3, 2.88]",exp((exp(sin(x_4))+cos(((x_3*2.88))**2))),22.536375045776367,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+24,4,"[+, u-, **3, cos, x_4, x_4]",(-((cos(x_4))**3)+x_4),22.795440673828125,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+25,4,"[exp, sin, cos, -, **, -4.7, x_2, x_4]",exp(sin(cos(((-4.7**x_2)-x_4)))),22.568735122680664,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+26,4,"[exp, **2, cos, u-, **, x_1, x_3]",exp((cos(-((x_1**x_3))))**2),22.73952865600586,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+27,4,"[log, -, cos, /, **, x_2, x_3, -2.04, sin, cos, x_6]",log(abs((cos(((x_2**x_3)/-2.04))-sin(cos(x_6))))),22.445077896118164,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+28,5,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+29,5,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+30,5,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+31,5,"[exp, +, exp, sin, x_4, cos, **2, *, x_3, 2.88]",exp((exp(sin(x_4))+cos(((x_3*2.88))**2))),22.536375045776367,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+32,5,"[+, u-, **3, cos, x_4, x_4]",(-((cos(x_4))**3)+x_4),22.795440673828125,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+33,5,"[exp, sin, cos, -, **, -4.7, x_2, x_4]",exp(sin(cos(((-4.7**x_2)-x_4)))),22.568735122680664,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+34,5,"[exp, **2, cos, u-, **, x_1, x_3]",exp((cos(-((x_1**x_3))))**2),22.73952865600586,7.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+35,5,"[log, -, cos, /, **, x_2, x_3, -2.04, sin, cos, x_6]",log(abs((cos(((x_2**x_3)/-2.04))-sin(cos(x_6))))),22.445077896118164,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+36,6,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+37,6,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+38,6,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+39,6,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+40,7,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+41,7,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+42,7,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+43,7,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+44,8,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+45,8,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+46,8,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+47,8,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+48,9,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+49,9,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+50,9,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+51,9,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+52,10,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+53,10,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+54,10,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+55,10,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+56,10,"[+, exp, sin, x_4, x_2]",(exp(sin(x_4))+x_2),22.356176376342773,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+57,11,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+58,11,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+59,11,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+60,11,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+61,11,"[+, u-, x_6, x_4]",(-(x_6)+x_4),22.26861572265625,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+62,11,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+63,12,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+64,12,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+65,12,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+66,12,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+67,12,"[+, u-, x_6, x_4]",(-(x_6)+x_4),22.26861572265625,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+68,12,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+69,13,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+70,13,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+71,13,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+72,13,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+73,13,"[+, u-, x_6, x_4]",(-(x_6)+x_4),22.26861572265625,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+74,13,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+75,14,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+76,14,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+77,14,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+78,14,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+79,14,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+80,14,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+81,15,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+82,15,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+83,15,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+84,15,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+85,15,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+86,15,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+87,16,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+88,16,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+89,16,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+90,16,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+91,16,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+92,16,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+93,16,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+94,17,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+95,17,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+96,17,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+97,17,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+98,17,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+99,17,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+100,17,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+101,18,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+102,18,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+103,18,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+104,18,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+105,18,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+106,18,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+107,18,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+108,19,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+109,19,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+110,19,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+111,19,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+112,19,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+113,19,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+114,19,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+115,20,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+116,20,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+117,20,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+118,20,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+119,20,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+120,20,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+121,20,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+122,20,"[+, sqrt, exp, sqrt, x_5, +, exp, +, -, x_4, x_6, cos, x_3, sin, sin, x_4]",(sqrt(abs(exp(sqrt(abs(x_5)))))+(exp(((x_4-x_6)+cos(x_3)))+sin(sin(x_4)))),21.294818878173828,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+123,21,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+124,21,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+125,21,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+126,21,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+127,21,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+128,21,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+129,21,"[+, -, x_6, exp, x_4, cos, **2, sin, exp, x_4]",((x_6-exp(x_4))+cos((sin(exp(x_4)))**2)),21.430931091308594,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+130,21,"[+, sqrt, exp, sqrt, x_5, +, exp, +, -, x_4, x_6, cos, x_3, sin, sin, x_4]",(sqrt(abs(exp(sqrt(abs(x_5)))))+(exp(((x_4-x_6)+cos(x_3)))+sin(sin(x_4)))),21.294818878173828,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+131,21,"[+, x_4, +, exp, +, -, x_4, x_6, cos, x_3, cos, sqrt, -, x_6, x_4]",(x_4+(exp(((x_4-x_6)+cos(x_3)))+cos(sqrt(abs((x_6-x_4)))))),21.38456916809082,15.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+132,22,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+133,22,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+134,22,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+135,22,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+136,22,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+137,22,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+138,22,"[+, sqrt, exp, sqrt, x_5, +, exp, +, -, x_4, x_6, cos, x_3, sin, sin, x_4]",(sqrt(abs(exp(sqrt(abs(x_5)))))+(exp(((x_4-x_6)+cos(x_3)))+sin(sin(x_4)))),21.294818878173828,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+139,22,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+140,23,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+141,23,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+142,23,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+143,23,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+144,23,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+145,23,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+146,23,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+147,23,"[+, sqrt, exp, **, x_6, x_2, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(sqrt(abs(exp((x_6**x_2))))+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.201574325561523,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+148,24,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+149,24,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+150,24,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+151,24,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+152,24,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+153,24,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+154,24,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+155,24,"[+, sqrt, exp, **, x_6, x_2, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(sqrt(abs(exp((x_6**x_2))))+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.201574325561523,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+156,25,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+157,25,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+158,25,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+159,25,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+160,25,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+161,25,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+162,25,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+163,25,"[+, sqrt, exp, **, x_6, x_2, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(sqrt(abs(exp((x_6**x_2))))+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.201574325561523,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+164,25,"[+, x_1, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(x_1+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.25680160522461,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+165,25,"[+, exp, +, -, x_4, x_6, cos, x_3, x_4]",(exp(((x_4-x_6)+cos(x_3)))+x_4),21.3560733795166,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+166,26,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+167,26,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+168,26,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+169,26,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+170,26,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+171,26,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+172,26,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+173,26,"[+, sqrt, exp, **, x_6, x_2, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(sqrt(abs(exp((x_6**x_2))))+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.201574325561523,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+174,26,"[+, x_1, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(x_1+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.25680160522461,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+175,26,"[+, exp, +, -, x_4, x_6, cos, x_3, x_4]",(exp(((x_4-x_6)+cos(x_3)))+x_4),21.3560733795166,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+176,27,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+177,27,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+178,27,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+179,27,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+180,27,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+181,27,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+182,27,"[sin, -, cos, +, -, x_4, x_6, cos, x_3, x_4]",sin((cos(((x_4-x_6)+cos(x_3)))-x_4)),21.31389617919922,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+183,27,"[+, sqrt, exp, **, x_6, x_2, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(sqrt(abs(exp((x_6**x_2))))+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.201574325561523,16.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+184,27,"[+, x_1, +, exp, +, -, x_4, x_6, cos, x_3, exp, x_4]",(x_1+(exp(((x_4-x_6)+cos(x_3)))+exp(x_4))),21.25680160522461,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+185,27,"[sqrt, +, exp, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(x_4)+sin(((x_2)**3**x_3))))),21.346349716186523,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+186,28,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+187,28,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+188,28,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+189,28,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+190,28,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+191,28,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+192,28,"[sqrt, +, exp, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(x_4)+sin(((x_2)**3**x_3))))),21.346349716186523,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+193,28,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+194,29,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+195,29,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+196,29,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+197,29,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+198,29,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+199,29,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+200,29,"[sqrt, +, exp, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(x_4)+sin(((x_2)**3**x_3))))),21.346349716186523,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+201,29,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+202,30,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+203,30,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+204,30,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+205,30,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+206,30,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+207,30,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+208,30,"[sqrt, +, exp, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(x_4)+sin(((x_2)**3**x_3))))),21.346349716186523,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+209,30,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+210,31,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+211,31,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+212,31,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+213,31,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+214,31,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+215,31,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+216,31,"[sqrt, +, exp, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(x_4)+sin(((x_2)**3**x_3))))),21.346349716186523,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+217,31,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+218,31,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+219,32,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+220,32,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+221,32,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+222,32,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+223,32,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+224,32,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+225,32,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+226,32,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+227,32,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+228,33,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+229,33,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+230,33,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+231,33,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+232,33,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+233,33,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+234,33,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+235,33,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+236,33,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+237,34,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+238,34,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+239,34,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+240,34,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+241,34,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+242,34,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+243,34,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+244,34,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+245,34,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+246,35,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+247,35,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+248,35,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+249,35,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+250,35,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+251,35,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+252,35,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+253,35,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+254,35,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+255,36,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+256,36,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+257,36,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+258,36,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+259,36,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+260,36,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+261,36,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+262,36,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+263,36,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+264,37,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+265,37,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+266,37,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+267,37,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+268,37,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+269,37,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+270,37,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+271,37,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+272,37,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+273,38,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+274,38,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+275,38,"[exp, sin, x_4]",exp(sin(x_4)),22.8673152923584,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+276,38,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+277,38,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+278,38,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+279,38,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+280,38,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+281,38,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+282,39,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+283,39,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+284,39,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+285,39,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+286,39,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+287,39,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+288,39,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+289,39,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+290,39,"[+, -4.92, +, exp, +, -, x_4, x_6, u-, x_3, exp, sin, x_4]",(-4.92+(exp(((x_4-x_6)+-(x_3)))+exp(sin(x_4)))),20.81159210205078,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+291,39,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+292,40,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+293,40,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+294,40,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+295,40,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+296,40,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+297,40,"[-, cos, exp, +, -, x_4, x_6, u-, x_3, x_4]",(cos(exp(((x_4-x_6)+-(x_3))))-x_4),21.029460906982422,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+298,40,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+299,40,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+300,40,"[+, -4.92, +, exp, +, -, x_4, x_6, u-, x_3, exp, sin, x_4]",(-4.92+(exp(((x_4-x_6)+-(x_3)))+exp(sin(x_4)))),20.81159210205078,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+301,40,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+302,41,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+303,41,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+304,41,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+305,41,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+306,41,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+307,41,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+308,41,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+309,41,"[+, -4.92, +, exp, +, -, x_4, x_6, u-, x_3, exp, sin, x_4]",(-4.92+(exp(((x_4-x_6)+-(x_3)))+exp(sin(x_4)))),20.81159210205078,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+310,41,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+311,41,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+312,42,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+313,42,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+314,42,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+315,42,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+316,42,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+317,42,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+318,42,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+319,42,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+320,42,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+321,42,"[+, exp, +, -, x_4, x_6, u-, x_3, exp, sin, x_4]",(exp(((x_4-x_6)+-(x_3)))+exp(sin(x_4))),20.81159210205078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+322,43,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+323,43,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+324,43,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+325,43,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+326,43,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+327,43,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+328,43,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+329,43,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+330,43,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+331,43,"[+, exp, +, -, x_4, x_6, u-, x_3, exp, sin, x_4]",(exp(((x_4-x_6)+-(x_3)))+exp(sin(x_4))),20.81159210205078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+332,43,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+333,44,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+334,44,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+335,44,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+336,44,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+337,44,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+338,44,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+339,44,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+340,44,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+341,44,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+342,44,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+343,44,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+344,45,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+345,45,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+346,45,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+347,45,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+348,45,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+349,45,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+350,45,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+351,45,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+352,45,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+353,45,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+354,45,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+355,45,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+356,46,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+357,46,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+358,46,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+359,46,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+360,46,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+361,46,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+362,46,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+363,46,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+364,46,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+365,46,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+366,46,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+367,46,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+368,47,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+369,47,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+370,47,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+371,47,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+372,47,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+373,47,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+374,47,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+375,47,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+376,47,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+377,47,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+378,47,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+379,47,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+380,48,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+381,48,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+382,48,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+383,48,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+384,48,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+385,48,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+386,48,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+387,48,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+388,48,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+389,48,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+390,48,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+391,48,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+392,49,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+393,49,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+394,49,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+395,49,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+396,49,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+397,49,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+398,49,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+399,49,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+400,49,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+401,49,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+402,49,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+403,49,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+404,50,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+405,50,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+406,50,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+407,50,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+408,50,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+409,50,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+410,50,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+411,50,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+412,50,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+413,50,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+414,50,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+415,50,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+416,51,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+417,51,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+418,51,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+419,51,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+420,51,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+421,51,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+422,51,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+423,51,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+424,51,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+425,51,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+426,51,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+427,51,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+428,52,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+429,52,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+430,52,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+431,52,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+432,52,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+433,52,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+434,52,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+435,52,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+436,52,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+437,52,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+438,52,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+439,52,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+440,53,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+441,53,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+442,53,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+443,53,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+444,53,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+445,53,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+446,53,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+447,53,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+448,53,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+449,53,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+450,53,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+451,53,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+452,54,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+453,54,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+454,54,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+455,54,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+456,54,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+457,54,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+458,54,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+459,54,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+460,54,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+461,54,"[+, -, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((x_4-x_6)+sin((((x_0)**3)**3**x_3))),20.881427764892578,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+462,54,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+463,54,"[+, +, +, u-, x_6, x_4, exp, x_4, exp, **3, exp, u-, x_3]",(((-(x_6)+x_4)+exp(x_4))+exp((exp(-(x_3)))**3)),20.585039138793945,13.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+464,54,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+465,55,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+466,55,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+467,55,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+468,55,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+469,55,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+470,55,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+471,55,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+472,55,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+473,55,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+474,55,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+475,55,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+476,55,"[+, sin, **, x_0, x_3, +, /, exp, x_4, exp, x_6, x_4]",(sin((x_0**x_3))+((exp(x_4)/exp(x_6))+x_4)),20.563188552856445,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+477,55,"[-, -, x_6, sin, **, **3, x_1, x_3, exp, x_4]",((x_6-sin(((x_1)**3**x_3)))-exp(x_4)),20.65761947631836,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+478,56,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+479,56,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+480,56,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+481,56,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+482,56,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+483,56,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+484,56,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+485,56,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+486,56,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+487,56,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+488,56,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+489,56,"[+, sin, **, x_0, x_3, +, /, exp, x_4, exp, x_6, x_4]",(sin((x_0**x_3))+((exp(x_4)/exp(x_6))+x_4)),20.563188552856445,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+490,56,"[-, -, x_6, sin, **, **3, x_1, x_3, exp, x_4]",((x_6-sin(((x_1)**3**x_3)))-exp(x_4)),20.65761947631836,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+491,57,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+492,57,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+493,57,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+494,57,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+495,57,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+496,57,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+497,57,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+498,57,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+499,57,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+500,57,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+501,57,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+502,57,"[+, sin, **, x_0, x_3, +, /, exp, x_4, exp, x_6, x_4]",(sin((x_0**x_3))+((exp(x_4)/exp(x_6))+x_4)),20.563188552856445,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+503,57,"[-, -, x_6, sin, **, **3, x_1, x_3, exp, x_4]",((x_6-sin(((x_1)**3**x_3)))-exp(x_4)),20.65761947631836,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+504,58,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+505,58,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+506,58,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+507,58,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+508,58,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+509,58,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+510,58,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+511,58,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+512,58,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+513,58,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+514,58,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+515,58,"[+, sin, **, x_0, x_3, +, /, exp, x_4, exp, x_6, x_4]",(sin((x_0**x_3))+((exp(x_4)/exp(x_6))+x_4)),20.563188552856445,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+516,58,"[-, -, x_6, sin, **, **3, x_1, x_3, exp, x_4]",((x_6-sin(((x_1)**3**x_3)))-exp(x_4)),20.65761947631836,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+517,59,[x_4],x_4,23.15311622619629,1.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+518,59,"[exp, x_4]",exp(x_4),22.948822021484375,2.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+519,59,"[sin, cos, -, x_6, exp, x_4]",sin(cos((x_6-exp(x_4)))),21.50667953491211,6.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+520,59,"[cos, -, x_6, exp, x_4]",cos((x_6-exp(x_4))),21.57663345336914,5.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+521,59,"[-, x_6, exp, x_4]",(x_6-exp(x_4)),21.813167572021484,4.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+522,59,"[sqrt, +, exp, +, -, x_4, x_6, sin, x_4, sin, **, **3, x_2, x_3]",sqrt(abs((exp(((x_4-x_6)+sin(x_4)))+sin(((x_2)**3**x_3))))),20.451086044311523,14.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+523,59,"[+, sin, x_4, sin, **, **3, x_2, x_3]",(sin(x_4)+sin(((x_2)**3**x_3))),21.309993743896484,8.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+524,59,"[+, x_2, x_4]",(x_2+x_4),22.534421920776367,3.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+525,59,"[+, exp, +, -, x_4, x_6, u-, x_3, x_4]",(exp(((x_4-x_6)+-(x_3)))+x_4),21.01033592224121,9.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+526,59,"[+, -, exp, x_4, x_6, sin, **, **3, **3, x_0, x_3]",((exp(x_4)-x_6)+sin((((x_0)**3)**3**x_3))),20.650104522705078,11.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+527,59,"[+, *, exp, sin, sqrt, x_4, sin, **, x_1, x_3, +, /, exp, x_4, exp, x_6, x_4]",((exp(sin(sqrt(abs(x_4))))*sin((x_1**x_3)))+((exp(x_4)/exp(x_6))+x_4)),20.429851531982422,17.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+528,59,"[+, sin, **, x_0, x_3, +, /, exp, x_4, exp, x_6, x_4]",(sin((x_0**x_3))+((exp(x_4)/exp(x_6))+x_4)),20.563188552856445,12.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
+529,59,"[-, -, x_6, sin, **, **3, x_1, x_3, exp, x_4]",((x_6-sin(((x_1)**3**x_3)))-exp(x_4)),20.65761947631836,10.0,204,210,60,210,not_specified,size,not_specified,not_specified,windspeed
