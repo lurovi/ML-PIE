@@ -33,14 +33,16 @@ app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 hardcoded_results = {
     "windspeed": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\phi.csv"),
-        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\feynman.csv")
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_phi.csv"),
+        "feynman": pd.read_csv(
+            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_feynman.csv")
     },
     "boston": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\phi.csv"),
-        "feynman": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\feynman.csv")
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_phi.csv"),
+        "feynman": pd.read_csv(
+            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_feynman.csv")
     }
 }
 
@@ -224,9 +226,9 @@ def get_survey_data():
     comparisons = []
     for idx, row in ongoing_surveys[run_id].iterrows():
         dictionary = {
-            'type': row.other_type,
+            'type': row.other_ground_truth_type,
             'pie_latex': row.latex_tree,
-            'other_latex': row.other_latex
+            'other_latex': row.other_latex_tree
         }
         comparisons.append(dictionary)
     return {'comparisons': comparisons}

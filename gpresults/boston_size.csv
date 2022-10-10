@@ -1,0 +1,96 @@
+parsable_tree,readable_tree,accuracy,interpretability,seed,encoder_type,ground_truth_type,data,latex_tree
+[x_12],x_12,39.54974365234375,1.0,200,not_specified,size,boston,x_{12}
+"[u-, +, x_12, u-, sqrt, x_5]",-((x_12+-(sqrt(abs(x_5))))),26.95122528076172,6.0,200,not_specified,size,boston,- x_{12} + \sqrt{\left|{x_{5}}\right|}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,200,not_specified,size,boston,e^{- x_{12}}
+"[sin, *, x_12, sqrt, x_5]",sin((x_12*sqrt(abs(x_5)))),30.04776382446289,5.0,200,not_specified,size,boston,\sin{\left(x_{12} \sqrt{\left|{x_{5}}\right|} \right)}
+"[-, sin, u-, exp, sqrt, x_5, -, x_12, sin, sqrt, -1.51]",(sin(-(exp(sqrt(abs(x_5)))))-(x_12-sin(sqrt(abs(-1.51))))),23.471172332763672,11.0,200,not_specified,size,boston,- (x_{12} - \sin{\left(\sqrt{1.51} \right)}) + \sin{\left(- e^{\sqrt{\left|{x_{5}}\right|}} \right)}
+"[-, x_12, sqrt, exp, -, x_5, x_8]",(x_12-sqrt(abs(exp((x_5-x_8))))),23.962032318115234,7.0,200,not_specified,size,boston,x_{12} - \sqrt{e^{\operatorname{re}{\left(x_{5}\right)} - \operatorname{re}{\left(x_{8}\right)}}}
+"[-, sin, u-, exp, sqrt, x_5, -, x_12, sqrt, exp, -, x_5, x_9]",(sin(-(exp(sqrt(abs(x_5)))))-(x_12-sqrt(abs(exp((x_5-x_9)))))),20.945331573486328,13.0,200,not_specified,size,boston,- (x_{12} - \sqrt{e^{\operatorname{re}{\left(x_{5}\right)} - \operatorname{re}{\left(x_{9}\right)}}}) + \sin{\left(- e^{\sqrt{\left|{x_{5}}\right|}} \right)}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,201,not_specified,size,boston,\sin{\left(x_{12} \right)}
+[x_12],x_12,39.54974365234375,1.0,201,not_specified,size,boston,x_{12}
+"[-, cos, x_5, u-, x_12]",(cos(x_5)--(x_12)),24.221834182739254,5.0,201,not_specified,size,boston,- \left(-1\right) x_{12} + \cos{\left(x_{5} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,201,not_specified,size,boston,e^{- x_{12}}
+"[-, **, sqrt, exp, u-, x_12, sqrt, x_5, -, cos, **3, sqrt, x_5, u-, x_12]",((sqrt(abs(exp(-(x_12))))**sqrt(abs(x_5)))-(cos((sqrt(abs(x_5)))**3)--(x_12))),22.17801856994629,15.0,201,not_specified,size,boston,- (- \left(-1\right) x_{12} + \cos{\left(\left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \right)}) + \left(\sqrt{e^{- \operatorname{re}{\left(x_{12}\right)}}}\right)^{\sqrt{\left|{x_{5}}\right|}}
+"[-, -, cos, x_5, u-, x_12, -, x_5, sin, x_12]",((cos(x_5)--(x_12))-(x_5-sin(x_12))),23.39379501342773,10.0,201,not_specified,size,boston,- \left(-1\right) x_{12} - \left(x_{5} - \sin{\left(x_{12} \right)}\right) + \cos{\left(x_{5} \right)}
+"[-, -, x_5, sin, x_12, -, cos, **3, sqrt, x_5, u-, x_12]",((x_5-sin(x_12))-(cos((sqrt(abs(x_5)))**3)--(x_12))),23.30097198486328,12.0,201,not_specified,size,boston,x_{5} - \left(- \left(-1\right) x_{12} + \cos{\left(\left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \right)}\right) - \sin{\left(x_{12} \right)}
+"[-, u-, -, cos, x_5, u-, x_12, -, cos, **3, sqrt, x_5, u-, x_12]",(-((cos(x_5)--(x_12)))-(cos((sqrt(abs(x_5)))**3)--(x_12))),23.17668914794922,14.0,201,not_specified,size,boston,\left(- x_{12} - \cos{\left(x_{5} \right)}\right) - \left(- \left(-1\right) x_{12} + \cos{\left(\left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \right)}\right)
+"[-, -, cos, **3, sqrt, x_5, u-, x_12, -, -, x_5, sin, x_12, sin, sin, cos, x_5]",((cos((sqrt(abs(x_5)))**3)--(x_12))-((x_5-sin(x_12))-sin(sin(cos(x_5))))),21.523956298828125,17.0,201,not_specified,size,boston,- \left(-1\right) x_{12} - \left(x_{5} - \sin{\left(x_{12} \right)} - \sin{\left(\sin{\left(\cos{\left(x_{5} \right)} \right)} \right)}\right) + \cos{\left(\left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \right)}
+[x_12],x_12,39.54974365234375,1.0,202,not_specified,size,boston,x_{12}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,202,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739254,4.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,202,not_specified,size,boston,e^{- x_{12}}
+"[+, x_12, +, +, x_12, x_10, cos, x_5]",(x_12+((x_12+x_10)+cos(x_5))),24.018354415893555,8.0,202,not_specified,size,boston,x_{10} + x_{12} + x_{12} + \cos{\left(x_{5} \right)}
+"[+, x_12, exp, sin, cos, x_5]",(x_12+exp(sin(cos(x_5)))),24.184246063232425,6.0,202,not_specified,size,boston,x_{12} + e^{\sin{\left(\cos{\left(x_{5} \right)} \right)}}
+"[+, +, x_12, cos, x_5, cos, sqrt, exp, x_5]",((x_12+cos(x_5))+cos(sqrt(abs(exp(x_5))))),21.302610397338867,9.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)} + \cos{\left(\sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} \right)}
+"[+, x_12, +, cos, sqrt, exp, x_5, cos, x_5]",(x_12+(cos(sqrt(abs(exp(x_5))))+cos(x_5))),21.302610397338867,9.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)} + \cos{\left(\sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} \right)}
+"[+, +, x_12, x_10, +, x_12, cos, x_5]",((x_12+x_10)+(x_12+cos(x_5))),24.018354415893555,8.0,202,not_specified,size,boston,x_{10} + x_{12} + x_{12} + \cos{\left(x_{5} \right)}
+"[+, +, x_12, cos, x_5, **, cos, sqrt, sin, 4.28, exp, -, x_5, *, x_12, x_0]",((x_12+cos(x_5))+(cos(sqrt(abs(sin(4.28))))**exp((x_5-(x_12*x_0))))),20.48880386352539,16.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)} + \cos^{e^{- x_{0} x_{12} + x_{5}}}{\left(\sqrt{- \sin{\left(4.28 \right)}} \right)}
+"[+, +, x_12, cos, x_5, **, cos, sqrt, +, -1.26, x_9, exp, +, x_12, +, x_3, x_5]",((x_12+cos(x_5))+(cos(sqrt(abs((-1.26+x_9))))**exp((x_12+(x_3+x_5))))),20.438756942749023,17.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)} + \cos^{e^{x_{12} + x_{3} + x_{5}}}{\left(\sqrt{\left|{x_{9} - 1.26}\right|} \right)}
+"[+, +, +, x_12, cos, x_5, **, cos, x_3, cos, x_5, **, cos, sqrt, sqrt, x_10, exp, -, x_5, *, x_4, x_0]",(((x_12+cos(x_5))+(cos(x_3)**cos(x_5)))+(cos(sqrt(abs(sqrt(abs(x_10)))))**exp((x_5-(x_4*x_0))))),20.189430236816406,22.0,202,not_specified,size,boston,x_{12} + \cos^{\cos{\left(x_{5} \right)}}{\left(x_{3} \right)} + \cos{\left(x_{5} \right)} + \cos^{e^{- x_{0} x_{4} + x_{5}}}{\left(\sqrt{\sqrt{\left|{x_{10}}\right|}} \right)}
+"[+, +, +, x_12, cos, x_5, x_12, x_10]",(((x_12+cos(x_5))+x_12)+x_10),24.018354415893555,8.0,202,not_specified,size,boston,x_{10} + x_{12} + x_{12} + \cos{\left(x_{5} \right)}
+"[+, cos, x_10, +, +, x_12, cos, x_5, cos, sqrt, exp, x_5]",(cos(x_10)+((x_12+cos(x_5))+cos(sqrt(abs(exp(x_5)))))),20.79069709777832,12.0,202,not_specified,size,boston,x_{12} + \cos{\left(x_{10} \right)} + \cos{\left(x_{5} \right)} + \cos{\left(\sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} \right)}
+[x_12],x_12,39.54974365234375,1.0,203,not_specified,size,boston,x_{12}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,203,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[+, x_12, cos, u-, x_5]",(x_12+cos(-(x_5))),24.221834182739254,5.0,203,not_specified,size,boston,x_{12} + \cos{\left(- x_{5} \right)}
+"[u-, +, x_12, cos, x_5]",-((x_12+cos(x_5))),24.221834182739254,5.0,203,not_specified,size,boston,- x_{12} - \cos{\left(x_{5} \right)}
+"[+, x_12, cos, x_12]",(x_12+cos(x_12)),31.08751106262207,4.0,203,not_specified,size,boston,x_{12} + \cos{\left(x_{12} \right)}
+"[+, cos, u-, x_5, -, +, +, x_12, x_10, sin, x_12, sqrt, exp, x_5]",(cos(-(x_5))+(((x_12+x_10)+sin(x_12))-sqrt(abs(exp(x_5))))),20.40219116210937,14.0,203,not_specified,size,boston,x_{10} + x_{12} - \sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} + \sin{\left(x_{12} \right)} + \cos{\left(- x_{5} \right)}
+"[+, cos, u-, x_5, +, +, cos, x_5, x_12, -, +, +, x_12, x_10, sin, x_12, sqrt, exp, x_5]",(cos(-(x_5))+((cos(x_5)+x_12)+(((x_12+x_10)+sin(x_12))-sqrt(abs(exp(x_5)))))),19.695274353027344,19.0,203,not_specified,size,boston,x_{10} + x_{12} + x_{12} - \sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} + \sin{\left(x_{12} \right)} + \cos{\left(- x_{5} \right)} + \cos{\left(x_{5} \right)}
+"[+, +, cos, **2, sqrt, x_5, -, +, /, x_8, 4.24, +, x_12, x_6, x_6, +, cos, u-, x_5, -, +, +, x_12, x_10, sin, x_12, sqrt, exp, x_5]",((cos((sqrt(abs(x_5)))**2)+(((x_8/4.24)+(x_12+x_6))-x_6))+(cos(-(x_5))+(((x_12+x_10)+sin(x_12))-sqrt(abs(exp(x_5)))))),19.6942081451416,29.0,203,not_specified,size,boston,x_{10} + x_{12} + x_{12} - x_{6} + x_{6} + \frac{x_{8}}{4.24} - \sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}} + \sin{\left(x_{12} \right)} + \cos{\left(- x_{5} \right)} + \cos{\left(\left(\sqrt{\left|{x_{5}}\right|}\right)^{2} \right)}
+"[+, x_12, cos, *, **2, cos, x_8, x_5]",(x_12+cos(((cos(x_8))**2*x_5))),21.60767364501953,8.0,203,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \cos^{2}{\left(x_{8} \right)} \right)}
+[x_12],x_12,39.54974365234375,1.0,204,not_specified,size,boston,x_{12}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,204,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[+, cos, x_5, x_12]",(cos(x_5)+x_12),24.221834182739254,4.0,204,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,204,not_specified,size,boston,e^{- x_{12}}
+"[+, sin, cos, x_5, x_12]",(sin(cos(x_5))+x_12),24.176143646240234,5.0,204,not_specified,size,boston,x_{12} + \sin{\left(\cos{\left(x_{5} \right)} \right)}
+"[+, *, sin, +, -, x_10, x_0, +, x_12, x_0, **3, sqrt, x_5, +, cos, x_5, +, /, x_12, exp, x_12, x_12]",((sin(((x_10-x_0)+(x_12+x_0)))*(sqrt(abs(x_5)))**3)+(cos(x_5)+((x_12/exp(x_12))+x_12))),20.316404342651367,22.0,204,not_specified,size,boston,x_{12} + \frac{x_{12}}{e^{x_{12}}} + \left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \sin{\left(- x_{0} + x_{0} + x_{10} + x_{12} \right)} + \cos{\left(x_{5} \right)}
+"[+, cos, x_5, +, sqrt, cos, x_10, x_12]",(cos(x_5)+(sqrt(abs(cos(x_10)))+x_12)),22.596574783325195,8.0,204,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)} + \sqrt{\left|{\cos{\left(x_{10} \right)}}\right|}
+"[+, *, sin, +, -, x_10, x_0, +, x_12, x_0, **3, sqrt, x_5, +, cos, x_5, +, sin, x_12, x_12]",((sin(((x_10-x_0)+(x_12+x_0)))*(sqrt(abs(x_5)))**3)+(cos(x_5)+(sin(x_12)+x_12))),20.553773880004883,20.0,204,not_specified,size,boston,x_{12} + \sin{\left(x_{12} \right)} + \left(\sqrt{\left|{x_{5}}\right|}\right)^{3} \sin{\left(- x_{0} + x_{0} + x_{10} + x_{12} \right)} + \cos{\left(x_{5} \right)}
+"[+, sin, exp, x_10, +, cos, x_5, +, /, x_12, exp, x_12, x_12]",(sin(exp(x_10))+(cos(x_5)+((x_12/exp(x_12))+x_12))),21.30122375488281,13.0,204,not_specified,size,boston,x_{12} + \frac{x_{12}}{e^{x_{12}}} + \sin{\left(e^{x_{10}} \right)} + \cos{\left(x_{5} \right)}
+"[+, sin, cos, x_10, +, sin, cos, x_5, x_12]",(sin(cos(x_10))+(sin(cos(x_5))+x_12)),22.107336044311523,9.0,204,not_specified,size,boston,x_{12} + \sin{\left(\cos{\left(x_{10} \right)} \right)} + \sin{\left(\cos{\left(x_{5} \right)} \right)}
+"[+, +, cos, x_5, +, sin, x_10, x_12, +, cos, x_5, +, /, x_12, exp, x_12, x_12]",((cos(x_5)+(sin(x_10)+x_12))+(cos(x_5)+((x_12/exp(x_12))+x_12))),21.17657852172852,17.0,204,not_specified,size,boston,x_{12} + x_{12} + \frac{x_{12}}{e^{x_{12}}} + \sin{\left(x_{10} \right)} + \cos{\left(x_{5} \right)} + \cos{\left(x_{5} \right)}
+[x_12],x_12,39.54974365234375,1.0,205,not_specified,size,boston,x_{12}
+"[u-, exp, u-, x_12]",-(exp(-(x_12))),30.23102569580078,4.0,205,not_specified,size,boston,- e^{- x_{12}}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,205,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[-, x_5, x_12]",(x_5-x_12),34.15042495727539,3.0,205,not_specified,size,boston,- x_{12} + x_{5}
+"[+, sin, x_12, cos, x_5]",(sin(x_12)+cos(x_5)),28.20712280273437,5.0,205,not_specified,size,boston,\sin{\left(x_{12} \right)} + \cos{\left(x_{5} \right)}
+"[-, x_12, x_5]",(x_12-x_5),34.15042495727539,3.0,205,not_specified,size,boston,x_{12} - x_{5}
+"[-, +, sin, x_12, cos, x_5, x_5]",((sin(x_12)+cos(x_5))-x_5),26.836366653442383,7.0,205,not_specified,size,boston,- x_{5} + \sin{\left(x_{12} \right)} + \cos{\left(x_{5} \right)}
+"[-, -, sin, +, sin, x_8, cos, x_5, -3.91, u-, x_12]",((sin((sin(x_8)+cos(x_5)))--3.91)--(x_12)),23.4287166595459,11.0,205,not_specified,size,boston,- \left(-1\right) x_{12} + \sin{\left(\sin{\left(x_{8} \right)} + \cos{\left(x_{5} \right)} \right)} - -3.91
+"[-, **3, +, -3.91, x_12, exp, +, cos, +, x_9, x_8, +, cos, x_8, x_5]",(((-3.91+x_12))**3-exp((cos((x_9+x_8))+(cos(x_8)+x_5)))),21.682283401489254,15.0,205,not_specified,size,boston,\left(x_{12} - 3.91\right)^{3} - e^{x_{5} + \cos{\left(x_{8} \right)} + \cos{\left(x_{8} + x_{9} \right)}}
+"[-, -, sin, +, x_12, cos, x_5, -3.91, u-, x_12]",((sin((x_12+cos(x_5)))--3.91)--(x_12)),24.225261688232425,10.0,205,not_specified,size,boston,- \left(-1\right) x_{12} + \sin{\left(x_{12} + \cos{\left(x_{5} \right)} \right)} - -3.91
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,206,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,206,not_specified,size,boston,e^{- x_{12}}
+[x_12],x_12,39.54974365234375,1.0,206,not_specified,size,boston,x_{12}
+"[sqrt, exp, exp, u-, x_12]",sqrt(abs(exp(exp(-(x_12))))),29.972166061401367,5.0,206,not_specified,size,boston,\sqrt{e^{e^{- \operatorname{re}{\left(x_{12}\right)}} \cos{\left(\operatorname{im}{\left(x_{12}\right)} \right)}}}
+"[*, exp, u-, x_12, sqrt, exp, sqrt, x_5]",(exp(-(x_12))*sqrt(abs(exp(sqrt(abs(x_5)))))),22.37396049499512,8.0,206,not_specified,size,boston,e^{- x_{12}} \sqrt{e^{\sqrt{\left|{x_{5}}\right|}}}
+"[*, x_12, sqrt, u-, exp, x_5]",(x_12*sqrt(abs(-(exp(x_5))))),25.1182918548584,6.0,206,not_specified,size,boston,x_{12} \sqrt{e^{\operatorname{re}{\left(x_{5}\right)}}}
+"[+, exp, u-, x_12, +, sqrt, -, x_10, *, x_5, x_5, +, u-, x_12, x_5]",(exp(-(x_12))+(sqrt(abs((x_10-(x_5*x_5))))+(-(x_12)+x_5))),22.06475067138672,15.0,206,not_specified,size,boston,- x_{12} + x_{5} + \sqrt{\left|{x_{10} - x_{5} x_{5}}\right|} + e^{- x_{12}}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,207,not_specified,size,boston,\sin{\left(x_{12} \right)}
+[x_12],x_12,39.54974365234375,1.0,207,not_specified,size,boston,x_{12}
+"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739254,4.0,207,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,207,not_specified,size,boston,e^{- x_{12}}
+"[+, x_10, -, +, x_12, cos, x_5, -, x_5, sin, x_12]",(x_10+((x_12+cos(x_5))-(x_5-sin(x_12)))),21.521188735961918,11.0,207,not_specified,size,boston,x_{10} + x_{12} - \left(x_{5} - \sin{\left(x_{12} \right)}\right) + \cos{\left(x_{5} \right)}
+"[+, cos, *, -, x_5, *, x_9, x_5, **, *, x_5, x_10, *, x_9, x_0, *, cos, cos, +, x_10, x_12, x_12]",(cos(((x_5-(x_9*x_5))*((x_5*x_10)**(x_9*x_0))))+(cos(cos((x_10+x_12)))*x_12)),20.335262298583984,22.0,207,not_specified,size,boston,x_{12} \cos{\left(\cos{\left(x_{10} + x_{12} \right)} \right)} + \cos{\left(\left(x_{10} x_{5}\right)^{x_{0} x_{9}} \left(- x_{5} x_{9} + x_{5}\right) \right)}
+"[+, cos, *, x_5, **, x_6, *, x_9, x_0, *, cos, cos, +, x_10, x_12, x_12]",(cos((x_5*(x_6**(x_9*x_0))))+(cos(cos((x_10+x_12)))*x_12)),20.70688247680664,16.0,207,not_specified,size,boston,x_{12} \cos{\left(\cos{\left(x_{10} + x_{12} \right)} \right)} + \cos{\left(x_{5} x_{6}^{x_{0} x_{9}} \right)}
+"[+, cos, *, x_5, cos, x_8, x_12]",(cos((x_5*cos(x_8)))+x_12),22.004796981811523,7.0,207,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \cos{\left(x_{8} \right)} \right)}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,208,not_specified,size,boston,\sin{\left(x_{12} \right)}
+[x_12],x_12,39.54974365234375,1.0,208,not_specified,size,boston,x_{12}
+"[-, x_12, sqrt, x_5]",(x_12-sqrt(abs(x_5))),26.95122528076172,4.0,208,not_specified,size,boston,x_{12} - \sqrt{\left|{x_{5}}\right|}
+"[-, x_12, u-, cos, x_5]",(x_12--(cos(x_5))),24.221834182739254,5.0,208,not_specified,size,boston,x_{12} - - \cos{\left(x_{5} \right)}
+"[-, +, cos, x_10, cos, x_5, u-, x_12]",((cos(x_10)+cos(x_5))--(x_12)),23.02560043334961,8.0,208,not_specified,size,boston,- \left(-1\right) x_{12} + \cos{\left(x_{10} \right)} + \cos{\left(x_{5} \right)}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,208,not_specified,size,boston,e^{- x_{12}}
+"[-, u-, -, +, cos, x_10, cos, x_5, u-, x_12, sin, x_12]",(-(((cos(x_10)+cos(x_5))--(x_12)))-sin(x_12)),21.78153419494629,12.0,208,not_specified,size,boston,\left(- x_{12} - \cos{\left(x_{10} \right)} - \cos{\left(x_{5} \right)}\right) - \sin{\left(x_{12} \right)}
+"[-, +, -, sin, x_12, sqrt, x_5, cos, x_5, u-, -, +, x_12, x_10, x_5]",(((sin(x_12)-sqrt(abs(x_5)))+cos(x_5))--(((x_12+x_10)-x_5))),20.75819396972656,15.0,208,not_specified,size,boston,- (- x_{10} - x_{12} + x_{5}) + \sin{\left(x_{12} \right)} + \cos{\left(x_{5} \right)} - \sqrt{\left|{x_{5}}\right|}
+"[-, sqrt, sqrt, cos, exp, x_10, +, x_12, cos, x_5]",(sqrt(abs(sqrt(abs(cos(exp(x_10))))))-(x_12+cos(x_5))),22.35345268249512,10.0,208,not_specified,size,boston,- (x_{12} + \cos{\left(x_{5} \right)}) + \sqrt{\sqrt{\left|{\cos{\left(e^{x_{10}} \right)}}\right|}}
+"[-, +, sin, x_12, -, +, cos, x_10, cos, x_5, u-, x_12, u-, -, +, sin, x_12, cos, x_5, x_5]",((sin(x_12)+((cos(x_10)+cos(x_5))--(x_12)))--(((sin(x_12)+cos(x_5))-x_5))),19.8790340423584,20.0,208,not_specified,size,boston,- \left(-1\right) x_{12} - \left(x_{5} - \sin{\left(x_{12} \right)} - \cos{\left(x_{5} \right)}\right) + \sin{\left(x_{12} \right)} + \cos{\left(x_{10} \right)} + \cos{\left(x_{5} \right)}
+"[-, -, +, cos, x_10, cos, x_5, u-, x_12, sqrt, sqrt, exp, x_5]",(((cos(x_10)+cos(x_5))--(x_12))-sqrt(abs(sqrt(abs(exp(x_5)))))),21.25131225585937,13.0,208,not_specified,size,boston,- \left(-1\right) x_{12} - \sqrt{e^{\frac{\operatorname{re}{\left(x_{5}\right)}}{2}}} + \cos{\left(x_{10} \right)} + \cos{\left(x_{5} \right)}
+[x_12],x_12,39.54974365234375,1.0,209,not_specified,size,boston,x_{12}
+"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,209,not_specified,size,boston,e^{- x_{12}}
+"[sin, x_12]",sin(x_12),34.47508239746094,2.0,209,not_specified,size,boston,\sin{\left(x_{12} \right)}
+"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739254,4.0,209,not_specified,size,boston,x_{12} + \cos{\left(x_{5} \right)}
+"[+, x_12, sin, cos, x_5]",(x_12+sin(cos(x_5))),24.176143646240234,5.0,209,not_specified,size,boston,x_{12} + \sin{\left(\cos{\left(x_{5} \right)} \right)}
+"[exp, u-, exp, -, u-, x_12, cos, x_5]",exp(-(exp((-(x_12)-cos(x_5))))),23.18165397644043,8.0,209,not_specified,size,boston,e^{- e^{- x_{12} - \cos{\left(x_{5} \right)}}}
+"[+, **, sin, sin, -0.54, exp, x_10, -, u-, x_12, cos, x_5]",((sin(sin(-0.54))**exp(x_10))+(-(x_12)-cos(x_5))),21.82187271118164,12.0,209,not_specified,size,boston,- x_{12} + \sin^{e^{x_{10}}}{\left(\sin{\left(-0.54 \right)} \right)} - \cos{\left(x_{5} \right)}
+"[+, sin, +, *, sqrt, x_10, x_12, cos, x_5, x_12]",(sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))+x_12),23.00851821899414,10.0,209,not_specified,size,boston,x_{12} + \sin{\left(x_{12} \sqrt{\left|{x_{10}}\right|} + \cos{\left(x_{5} \right)} \right)}
+"[+, *, sqrt, sin, x_9, x_12, sin, +, *, sqrt, x_10, x_12, cos, x_5]",((sqrt(abs(sin(x_9)))*x_12)+sin(((sqrt(abs(x_10))*x_12)+cos(x_5)))),20.979949951171875,14.0,209,not_specified,size,boston,x_{12} \sqrt{\left|{\sin{\left(x_{9} \right)}}\right|} + \sin{\left(x_{12} \sqrt{\left|{x_{10}}\right|} + \cos{\left(x_{5} \right)} \right)}
