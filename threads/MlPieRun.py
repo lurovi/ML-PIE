@@ -51,8 +51,12 @@ class MlPieRun:
             last_request = self.feedback_requests[self.feedback_counter]
             last_request['progress'] = 100 * iteration / total_generations
             return last_request
-        self.feedback_counter += 1
+
         requested_values = self.interpretability_estimate_updater.request_trees()
+        if not requested_values:
+            return {"wait": True}
+
+        self.feedback_counter += 1
         self.feedback_requests_iterations.append(iteration)
         self.t1 = requested_values["t1"]
         self.t2 = requested_values["t2"]

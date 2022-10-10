@@ -28,11 +28,15 @@ $("#btn-proceed").on("click", function(){
 })
 
 function retrieveModels(){
-    $("#div-loading-img").attr("hidden", false)
+    $("#div-loading-img").attr("hidden", false);
     $.ajax({
       url: "getData",
       headers: { 'x-access-tokens': localStorage.getItem("token") }
     }).done(data => {
+      if("wait" in data){
+        setTimeout(function() { retrieveModels(); }, 1000);
+        return;
+      }
       if("over" in data){
         optimizationOver();
       } else {
@@ -46,10 +50,10 @@ function retrieveModels(){
         }
         MathJax.typeset();
         updateProgressBar(data.progress);
+        $("#div-loading-img").attr("hidden", true);
       }
     }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
     );
-    $("#div-loading-img").attr("hidden", true)
 }
 
 function provideFeedback(feedback){
