@@ -38,14 +38,15 @@ class RegressionProblemWithNeuralEstimate(Problem):
         out["F"] = np.empty((len(x), 2), dtype=np.float32)
         for i in range(len(x)):
             tree = x[i, 0]
-            prediction: np.ndarray = np.clip(tree(self.__X), -1e+10, 1e+10)
+            prediction: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
+            slope, intercept = 1.0, 0.0
             if self.__linear_scaling:
                 slope, intercept = compute_linear_scaling(self.__y, prediction)
-                slope = np.clip(slope, -1e+10, 1e+10)
-                intercept = np.clip(intercept, -1e+10, 1e+10)
-                prediction = intercept + np.clip(slope * prediction, -1e+10, 1e+10)
-                prediction = np.clip(prediction, -1e+10, 1e+10)
-            mse: float = np.square(np.clip(prediction - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
+                slope = np.core.umath.clip(slope, -1e+10, 1e+10)
+                intercept = np.core.umath.clip(intercept, -1e+10, 1e+10)
+                prediction = intercept + np.core.umath.clip(slope * prediction, -1e+10, 1e+10)
+                prediction = np.core.umath.clip(prediction, -1e+10, 1e+10)
+            mse: float = np.square(np.core.umath.clip(prediction - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
             if mse > 1e+20:
                 mse = 1e+20
             out["F"][i, 0] = mse

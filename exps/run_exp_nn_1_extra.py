@@ -28,6 +28,7 @@ from nsgp.encoder.OneHotEncoder import OneHotEncoder
 from nsgp.structure.TreeStructure import TreeStructure
 
 import torch.multiprocessing as mp
+mp.set_sharing_strategy('file_system')
 import pandas as pd
 import numpy as np
 
@@ -38,6 +39,10 @@ pd.options.display.float_format = '{:.3f}'.format
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 100)
 
+import resource
+rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
+resource.setrlimit(resource.RLIMIT_NOFILE, (4096, rlimit[1]))
+
 
 def set_random_seed(seed: int = None) -> None:
     random.seed(seed)
@@ -46,7 +51,7 @@ def set_random_seed(seed: int = None) -> None:
 
 
 if __name__ == "__main__":
-    exit(1)
+    #exit(1)
     # Setting torch to use deterministic algorithms where possible
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
@@ -81,7 +86,7 @@ if __name__ == "__main__":
 
     set_random_seed(101)
     folder_name = "tree_data_1"
-    amount_of_feedback = 500
+    amount_of_feedback = 150
     train_size = 1250
     validation_size = 370
     test_size = 250
@@ -102,16 +107,17 @@ if __name__ == "__main__":
 
     data_generator.persist("datasets")
     print("Starting...")
-    exp_exec = ExpsExecutor(data_generator, 200, 12)
+    exp_exec = ExpsExecutor(data_generator, 212, 8)
     df_list = []
+    # df_list = PicklePersist.decompress_pickle(folder_name+"/df_list_partial"+".pbz2")
     for enc in structure.get_encoding_type_strings():
         for gro in ground_truths_names:
-            for unc in [RandomSamplerOnlineFactory(), UncertaintySamplerOnlineFactory(), UncertaintySamplerOnlineDistanceEmbeddingsFactory(normalization_func="max"), UncertaintySamplerOnlineDistanceEmbeddingsFactory(normalization_func="median")]:
+            for unc in [RandomSamplerOnlineFactory(), UncertaintySamplerOnlineFactory()]:
                 for war in [None, "feynman", "elastic_model"]:
                     df_list.append(exp_exec.create_dict_experiment_nn_ranking_online(folder_name, enc, gro,
                                                  amount_of_feedback, nn.ReLU(),
                                              nn.Identity(), [220, 110, 25], device, sampler=unc,
                                              warmup=war))
-
+                    # PicklePersist.compress_pickle(folder_name+"/df_list_partial", df_list)
     df = PlotGenerator.merge_dictionaries_of_list(df_list)
-    PicklePersist.compress_pickle(folder_name+"/dict_res", pd.DataFrame(df))
+    PicklePersist.compress_pickle(folder_name+"/dict_res_2", pd.DataFrame(df))

@@ -6,6 +6,7 @@ import pandas as pd
 import torch
 import numpy as np
 import torch.multiprocessing as mp
+from pymoo.core.result import Result
 
 from exps.DatasetGenerator import DatasetGenerator
 from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
@@ -47,7 +48,7 @@ class ExpsUtil:
 
         dataset = PicklePersist.decompress_pickle(dataset_path)
         n_features: int = dataset["training"][0].shape[1]
-        duplicates_elimination_little_data_num_points: int = 14
+        duplicates_elimination_little_data_num_points: int = 5
         duplicates_elimination_little_data = np.random.uniform(-5.0, 5.0, size=(duplicates_elimination_little_data_num_points, n_features))
         internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                           node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
@@ -67,8 +68,7 @@ class ExpsUtil:
     @staticmethod
     def create_dataset_generator_with_warmup(folder_name: str, data_name: str, structure: TreeStructure,
                                              ground_truths: List[GroundTruthComputer]):
-        amount_of_feedback = 500
-        train_size = amount_of_feedback * 2 + 250
+        train_size = 1250
         validation_size = 370
         test_size = 250
         data_generator = DatasetGenerator(folder_name, structure, train_size, validation_size, test_size, 101)
@@ -87,41 +87,30 @@ class ExpsUtil:
         return data_generator
 
     @staticmethod
-    def from_pbz2_to_csv_for_gp_results(folder_name: str, dataset_names: List[str],
-                                        groundtruth_names: List[str],
-                                        pop_size: int,
-                                        num_gen: int,
-                                        num_offsprings: int) -> None:
+    def save_pareto_fronts_from_result_to_csv(folder_name: str,
+                                              result: Result, seed: int,
+                                              pop_size: int, num_gen: int, num_offsprings: int,
+                                              dataset: str, groundtruth: str,
+                                              encoder_type: str = "not_spcified",
+                                              sampling: str = "not_specified",
+                                              warmup: str = "not_specified"
+                                              ) -> None:
+        parameters = {"seed": seed,
+                      "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
+                      "encoder_type": encoder_type, "ground_truth_type": groundtruth,
+                      "sampling": sampling, "warm-up": warmup,
+                      "data": dataset}
+        run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
+        # write optimization file
+        generations, parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(
+            result.history)
+        best_data = pd.DataFrame(
+            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
+            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
 
-        for dataset in dataset_names:
-            for groundtruth in groundtruth_names:
-                d = PicklePersist.decompress_pickle(folder_name+"/"+dataset+"-"+groundtruth+".pbz2")
-                for dd in d:
-                    result, seed = dd["result"], dd["seed"]
-                    parameters = {"seed": seed,
-                                  "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
-                                  "encoder_type": "not_specified", "ground_truth_type": groundtruth,
-                                  "sampling": "not_specified", "warm-up": "not_specified",
-                                  "data": dataset}
-                    run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
-                    # write optimization file
-                    generations, parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(result.history)
-                    best_data = pd.DataFrame(
-                        list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
-                        columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+        # update dataframes
+        for k in parameters.keys():
+            best_data[k] = parameters[k]
 
-                    # update dataframes
-                    for k in parameters.keys():
-                        best_data[k] = parameters[k]
-
-                    # save files
-                    best_data.to_csv(path_or_buf=folder_name+"/" + "best-" + run_id + ".csv")
-
-
-if __name__ == "__main__":
-    ExpsUtil.from_pbz2_to_csv_for_gp_results("test_results_gp_traditional",
-                                             ["boston", "california", "windspeed", "diabets", "vladislavleva",
-                                              "friedman1"],
-                                             ["elastic_model", "size", "neuralnet-counts-feynman",
-                                              "neuralnet-counts-elastic_model"],
-                                             210, 60, 210)
+        # save files
+        best_data.to_csv(path_or_buf=folder_name + "/" + "best-" + run_id + ".csv")

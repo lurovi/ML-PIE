@@ -22,11 +22,7 @@ class MultiObjectiveMinimizationProblem(Problem):
             self._eval(x, out)
 
     def _eval(self, x, out, *args, **kwargs):
-        out["F"] = np.empty((len(x), self.__number_of_evaluators), dtype=np.float32)
-        for i in range(len(x)):
-            tree = x[i, 0]
-            for j in range(self.__number_of_evaluators):
-                out["F"][i, j] = self.__evaluators[j].evaluate(tree)
+        out["F"] = np.array([[self.__evaluators[j].evaluate(x[i, 0]) for j in range(self.__number_of_evaluators)] for i in range(len(x))], dtype=np.float32)
 
     def __getstate__(self):
         state = self.__dict__.copy()

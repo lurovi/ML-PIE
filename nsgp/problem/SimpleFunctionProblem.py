@@ -22,7 +22,7 @@ class SimpleFunctionProblem(ElementwiseProblem):
             target = self.__target_function(v)
             array = np.array([[v]])
             value = tree.get_output(array)[0]
-            square_error = np.clip(value - target, -1.340780792993396e+150, 1.340780792993396e+150) ** 2
+            square_error = np.core.umath.clip(value - target, -1.340780792993396e+150, 1.340780792993396e+150) ** 2
             if square_error > 1.3407e+150:
                 total_error = 1.3407e+150
                 total_evaluations = 1.0
