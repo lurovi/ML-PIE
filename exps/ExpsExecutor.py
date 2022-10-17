@@ -108,7 +108,7 @@ class ExpsExecutor:
                                              final_activation_func, hidden_layer_sizes, device, sampler,
                                              warmup=None):
         df = {"Amount of feedback": [], "Spearman footrule": [], "Encoding": [], "Ground-truth": [],
-              "Sampling": [], "Warm-up": []}
+              "Sampling": [], "Warm-up": [], "Seed": []}
         verbose = False
         repr_plot = encoding_type[0].upper() + encoding_type[1:]
         repr_plot = repr_plot.replace("_", " ")
@@ -142,7 +142,7 @@ class ExpsExecutor:
             warmup_data = None
             pretrainer_factory = None
 
-        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1))
+        pool = mp.Pool(self.__num_repeats if mp.cpu_count() > self.__num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
         exec_func = partial(parallel_execution_create_dict_experiment_nn_ranking_online,
                             activation_func=activation_func, final_activation_func=final_activation_func, input_layer_size=input_layer_size,
                                                                 output_layer_size=output_layer_size, hidden_layer_sizes=hidden_layer_sizes,
@@ -156,13 +156,14 @@ class ExpsExecutor:
         pool.close()
         pool.join()
         for l in exec_res:
-            for curr_train_index, curr_ftrs, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot in l:
+            for curr_train_index, curr_ftrs, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot, curr_seed_val in l:
                 df["Amount of feedback"].append(curr_train_index)
                 df["Spearman footrule"].append(curr_ftrs)
                 df["Encoding"].append(curr_repr_plot)
                 df["Ground-truth"].append(curr_ground_plot)
                 df["Sampling"].append(curr_sampl_plot)
                 df["Warm-up"].append(curr_warmup_plot)
+                df["Seed"].append(curr_seed_val)
         print("Executed: "+repr_plot+" - "+ground_plot+" - "+sampl_plot+" - "+warmup_plot+".")
         return df
 
@@ -281,5 +282,5 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
         if verbose and idx == amount_of_feedback - 1:
             print(f"Loss: {loss_epoch_array[0]}")
         this_ftrs = NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
-        results.append((idx + 1, this_ftrs, repr_plot, ground_plot, sampl_plot, warmup_plot))
+        results.append((idx + 1, this_ftrs, repr_plot, ground_plot, sampl_plot, warmup_plot, curr_seed))
     return results

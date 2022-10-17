@@ -12,8 +12,6 @@ from pymoo.operators.selection.tournament import TournamentSelection
 from pymoo.optimize import minimize
 from copy import deepcopy
 
-from pymoo.termination import get_termination
-
 from nsgp.evaluation.TreeEvaluator import TreeEvaluator
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.MultiObjectiveMinimizationElementWiseProblem import MultiObjectiveMinimizationElementWiseProblem
@@ -28,8 +26,8 @@ class GPWithNSGA2:
                  pop_size: int,
                  num_gen: int,
                  element_wise_eval: bool = False,
-                 crossover_prob: float = 0.9,
-                 mutation_prob: float = 0.6,
+                 crossover_prob: float = 0.8,
+                 mutation_prob: float = 0.5,
                  num_offsprings: int = None,
                  duplicates_elimination_data: np.ndarray = None,
                  callback: Callback = None

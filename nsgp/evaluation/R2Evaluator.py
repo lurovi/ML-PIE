@@ -1,12 +1,14 @@
 import numpy as np
+from sklearn.metrics import r2_score
+
 from genepro.util import compute_linear_scaling
 
 from genepro.node import Node
 from nsgp.evaluation.TreeEvaluator import TreeEvaluator
 
 
-class MSEEvaluator(TreeEvaluator):
-    def __init__(self, X: np.ndarray, y: np.ndarray = None, linear_scaling: bool = True):
+class R2Evaluator(TreeEvaluator):
+    def __init__(self, X: np.ndarray, y: np.ndarray = None, linear_scaling: bool = True, negate: bool = False):
         super().__init__()
         if y is None:
             raise AttributeError("Labels must be set.")
@@ -19,6 +21,7 @@ class MSEEvaluator(TreeEvaluator):
         self.__X = X
         self.__y = y
         self.__linear_scaling = linear_scaling
+        self.__sign = -1.0 if negate else 1.0
 
     def evaluate(self, tree: Node) -> float:
         res: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
@@ -29,7 +32,5 @@ class MSEEvaluator(TreeEvaluator):
             intercept = np.core.umath.clip(intercept, -1e+10, 1e+10)
             res = intercept + np.core.umath.clip(slope * res, -1e+10, 1e+10)
             res = np.core.umath.clip(res, -1e+10, 1e+10)
-        mse: float = np.square(np.core.umath.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(len(self.__y))
-        if mse > 1e+20:
-            mse = 1e+20
-        return mse
+        r2: float = self.__sign * r2_score(res, self.__y)
+        return r2

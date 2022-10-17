@@ -18,7 +18,7 @@ class RegressionElementWiseProblem(ElementwiseProblem):
     def _evaluate(self, x, out, *args, **kwargs):
         tree = x[0]
         res: np.ndarray = tree(self.__X)
-        mse: float = np.square(np.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
+        mse: float = np.square(np.core.umath.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
         if mse > 1e+20:
             mse = 1e+20
         out["F"] = np.array([mse, tree.get_n_nodes()], dtype=np.float32)
@@ -42,7 +42,7 @@ class RegressionProblem(Problem):
         for i in range(len(x)):
             tree = x[i, 0]
             res: np.ndarray = tree(self.__X)
-            mse: float = np.square(np.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
+            mse: float = np.square(np.core.umath.clip(res - self.__y, -1e+20, 1e+20)).sum() / float(self.__n_records)
             if mse > 1e+20:
                 mse = 1e+20
             out["F"][i, 0] = mse
