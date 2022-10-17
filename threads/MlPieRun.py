@@ -1,3 +1,4 @@
+import re
 import time
 
 import torch
@@ -145,7 +146,7 @@ class MlPieRun:
             latex_repr = latex(parse_expr(readable_repr, evaluate=False))
         except TypeError:
             latex_repr = readable_repr
-        return latex_repr
+        return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
 
     @staticmethod
     def format_tree(tree: Node) -> dict:
