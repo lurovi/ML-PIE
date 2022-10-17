@@ -102,10 +102,12 @@ class MlPieRun:
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
 
         # write optimization file
-        generations, parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
-            self.optimization_thread.result.history)
-        best_data = pd.DataFrame(list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
-                                 columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+        generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties = self.parse_optimization_history(
+            self.optimization_thread.result.history, self.optimization_thread.problem.get_uncertainties())
+        best_data = pd.DataFrame(
+            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties)),
+            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability',
+                     'uncertainties'])
 
         # update dataframes
         for k in self.parameters.keys():
@@ -142,12 +144,14 @@ class MlPieRun:
         return t1_latex, t1_parsable, t2_latex, t2_parsable
 
     @staticmethod
-    def parse_optimization_history(history) -> tuple[list[int], list[str], list[str], list[float], list[float]]:
+    def parse_optimization_history(history, uncertainties) -> tuple[
+        list[int], list[str], list[str], list[float], list[float], list[float]]:
         generations = []
         parsable_trees = []
         latex_trees = []
         accuracies = []
         interpretabilities = []
+        generations_uncertainties = []
         generation_count = 0
         for generation in history:
             for individual in generation.opt:
@@ -159,4 +163,8 @@ class MlPieRun:
                 accuracies.append(individual.F[0])
                 interpretabilities.append(individual.F[1])
             generation_count += 1
-        return generations, parsable_trees, latex_trees, accuracies, interpretabilities
+        initial_avg_uncertainty = sum(uncertainties[0]) / len(uncertainties[0])
+        for gen_uncertainties in uncertainties:
+            current_avg_uncertainty = sum(gen_uncertainties) / len(gen_uncertainties)
+            generations_uncertainties.append(current_avg_uncertainty / initial_avg_uncertainty)
+        return generations, parsable_trees, latex_trees, accuracies, interpretabilities, generations_uncertainties
