@@ -16,4 +16,4 @@ class NeuralNetTreeEvaluator(TreeEvaluator):
     def evaluate(self, tree: Node) -> float:
         encoded_tree = self.__encoder.encode(tree, True)
         tensor_encoded_tree = torch.from_numpy(encoded_tree).float().reshape(1, -1)
-        return self.__sign * self.__trainer.predict(tensor_encoded_tree)[0][0].item()
+        return self.__sign * self.__trainer.predict(tensor_encoded_tree)[0][0][0].item()

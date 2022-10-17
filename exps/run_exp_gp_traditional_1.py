@@ -83,8 +83,8 @@ if __name__ == "__main__":
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)
         second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
-        warmups = ["feynman", "elastic_model"]
-        second_fitnesses = list(second_fitness.keys()) + [None]
+        warmups = ["elastic_model", "feynman"]
+        second_fitnesses = [None] + list(second_fitness.keys())
         encoders = {"counts": structure.get_encoder("counts")}
         for curr_second_fitness in second_fitnesses:
             if curr_second_fitness is not None:

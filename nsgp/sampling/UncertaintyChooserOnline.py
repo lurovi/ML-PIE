@@ -58,13 +58,3 @@ class UncertaintyChooserOnline(PairChooser):
 
     def get_string_repr(self) -> str:
         return "Uncertainty Sampler Online"
-
-    @staticmethod
-    def __neural_net_prediction_with_deepcopy(trainer: Trainer, X: torch.tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
-        neuralnet = deepcopy(trainer.get_net())
-        neuralnet.eval()
-        with torch.no_grad():
-            X = X.to(trainer.get_device())
-            res = neuralnet(X)
-        neuralnet.train()
-        return res

@@ -34,7 +34,9 @@ class GPSimulatedUserExpsExecutor:
                  dataset: Dict,
                  duplicates_elimination_little_data: np.ndarray,
                  device: torch.device,
-                 data_generator: DatasetGenerator):
+                 data_generator: DatasetGenerator,
+                 verbose: bool = False):
+        self.__verbose = verbose
         self.__folder_name = folder_name
         self.__data_name = data_name
         self.__data_generator = deepcopy(data_generator)
@@ -109,7 +111,7 @@ class GPSimulatedUserExpsExecutor:
             termination=termination,
             seed=optimization_seed,
             callback=callback,
-            verbose=False
+            verbose=self.__verbose
         )
         parameters = {"seed": optimization_seed,
                       "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
