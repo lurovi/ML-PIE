@@ -26,6 +26,7 @@ class MlPieRun:
         self.feedback_duration: list[float] = []
         self.feedback_requests: list[dict] = []
         self.encoded_requests: list[np.ndarray] = []
+        self.feedback_predictions: list[int] = []
         self.feedback_responses: list[int] = []
         self.feedback_request_time: float = 0
         self.feedback_requests_iterations: list[int] = []
@@ -64,6 +65,7 @@ class MlPieRun:
         dictionary = {'models': list(trees), 'it': iteration, 'progress': 100 * iteration / total_generations}
         self.feedback_request_time = time.time()
         self.feedback_requests.append(dictionary)
+        self.feedback_predictions.append(requested_values["prediction"])
         self.encoded_requests.append(requested_values["encoding"])
         return dictionary
 
@@ -96,10 +98,10 @@ class MlPieRun:
         # prepare feedback file
         t1_latex, t1_parsable, t2_latex, t2_parsable = self.unwrap_requests(self.feedback_requests)
         feedback_data = pd.DataFrame(list(zip(
-            self.feedback_duration, t1_latex, t1_parsable, t2_latex, t2_parsable, self.encoded_requests,
+            self.feedback_duration, t1_latex, t1_parsable, t2_latex, t2_parsable, self.feedback_predictions,
             self.feedback_responses, self.feedback_requests_iterations, self.feedback_responses_iterations)),
-            columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable', 'encoding',
-                     'feedback', 'req_iteration', 'resp_iteration'])
+            columns=['duration', 'tree_1_latex', 'tree_1_parsable', 'tree_2_latex', 'tree_2_parsable',
+                     'prediction', 'feedback', 'req_iteration', 'resp_iteration'])
         # prepare nn file
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
 
