@@ -33,10 +33,11 @@ class InterpretabilityEstimateUpdater:
         t1_encoded = self.encoder.encode(t1, True)
         t2_encoded = self.encoder.encode(t2, True)
         encoded_trees = np.concatenate((t1_encoded, t2_encoded), axis=None).reshape(1, -1)
-        i1_prediction = \
-            self.interpretability_estimator.predict(torch.from_numpy(t1_encoded).float().reshape(1, -1))[0][0][0].item()
-        i2_prediction = \
-            self.interpretability_estimator.predict(torch.from_numpy(t2_encoded).float().reshape(1, -1))[0][0][0].item()
+        with self.mutex:
+            i1_prediction = \
+                self.interpretability_estimator.predict(torch.from_numpy(t1_encoded).float().reshape(1, -1))[0][0][0].item()
+            i2_prediction = \
+                self.interpretability_estimator.predict(torch.from_numpy(t2_encoded).float().reshape(1, -1))[0][0][0].item()
         prediction = -1 if i1_prediction >= i2_prediction else 1
         return {
             "t1": t1,
