@@ -1,7 +1,7 @@
 import random
 from functools import partial
 from typing import Dict
-import cProfile
+
 import os
 os.environ['NUMPY_EXPERIMENTAL_ARRAY_FUNCTION'] = '0'
 import numpy as np
@@ -23,17 +23,12 @@ from nsgp.evaluation.GroundTruthEvaluator import GroundTruthEvaluator
 from nsgp.evaluation.MSEEvaluator import MSEEvaluator
 from nsgp.evolution.GPWithNSGA2 import GPWithNSGA2
 
-from nsgp.sampling.UncertaintyChooserOnlineDistanceEmbeddingsFactory import \
-    UncertaintyChooserOnlineDistanceEmbeddingsFactory
-from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
 from nsgp.structure.TreeStructure import TreeStructure
 
-from threads.GPSimulatedUserExpsExecutor import GPSimulatedUserExpsExecutor
-from util.PicklePersist import PicklePersist
 
-#import resource
-#rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
-#resource.setrlimit(resource.RLIMIT_NOFILE, (2048, rlimit[1]))
+import resource
+rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
+resource.setrlimit(resource.RLIMIT_NOFILE, (2048, rlimit[1]))
 
 mp.set_sharing_strategy('file_system')
 
@@ -60,7 +55,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
     runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
                                       pop_size=pop_size, num_gen=num_gen,
                                       duplicates_elimination_data=duplicates_elimination_little_data)
-    return runner.run_minimization(seed, verbose=True)
+    return runner.run_minimization(seed, verbose=False)
 
 
 if __name__ == "__main__":
@@ -69,21 +64,19 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 200
-    num_gen = 20
+    pop_size = 256
+    num_gen = 50
     starting_seed = 200
-    num_repeats = 1
+    num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_traditional"
-    pr = cProfile.Profile()
-    pr.enable()
-    #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
-    for data_path_file in ["friedman1", "diabets", "windspeed", "friedman1", "vladislavleva", "boston"]:
+    pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
+    for data_path_file in ["boston", "aquatictoxicity", "synchronousmachine", "yachthydrodynamics", "friedman1", "keijzer"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)
         second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
-        warmups = ["elastic_model", "feynman"]
+        warmups = ["elastic_model"]
         second_fitnesses = [None] + list(second_fitness.keys())
         encoders = {"counts": structure.get_encoder("counts")}
         for curr_second_fitness in second_fitnesses:
@@ -93,23 +86,19 @@ if __name__ == "__main__":
                 runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
                                                   pop_size=pop_size, num_gen=num_gen,
                                                   duplicates_elimination_data=duplicates_elimination_little_data)
-                pp = partial(runner.run_minimization, verbose=True, save_history=True, mutex=None)
-                results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
-                print(results[0]["executionTimeInHours"]*60)
-                '''
+                pp = partial(runner.run_minimization, verbose=False, save_history=True, mutex=None)
+                results = list(pool.map(pp, list(range(starting_seed, starting_seed + num_repeats))))
+
                 for res in results:
-                    real_result, executionTimeInMinutes, curr_seed = res["results"], res["executionTimeInHours"]*60, res["seed"]
+                    real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
                     ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
                                                                    result=real_result, seed=curr_seed,
                                                                    pop_size=pop_size, num_gen=num_gen,
                                                                    num_offsprings=pop_size,
                                                                    dataset=data_path_file,
                                                                    groundtruth=curr_second_fitness)
-                '''
+
                 print("Executed "+data_path_file+" "+curr_second_fitness)
-                pr.disable()
-                pr.print_stats(sort="tottime")
-                exit(1)
             else:
                 for encoding_type in encoders.keys():
                     for warmup in warmups:
@@ -118,11 +107,10 @@ if __name__ == "__main__":
                                      dataset=dataset, structure=structure, encoder=encoders[encoding_type],
                                      encoding_type=encoding_type, warmup=warmup,
                                      data_generator=data_generator, device=device)
-                        results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
-                        print(results[0]["executionTimeInHours"]*60)
-                        '''
+                        results = list(pool.map(pp, list(range(starting_seed, starting_seed + num_repeats))))
+
                         for res in results:
-                            real_result, executionTimeInMinutes, curr_seed = res["results"], res["executionTimeInHours"]*60, res["seed"]
+                            real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
                             ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
                                                                            result=real_result, seed=curr_seed,
                                                                            pop_size=pop_size, num_gen=num_gen,
@@ -131,10 +119,7 @@ if __name__ == "__main__":
                                                                            groundtruth="neuralnet"+"_"+encoding_type+"_"+warmup,
                                                                            encoder_type=encoding_type,
                                                                            warmup=warmup)
-                        '''
+
                         print("Executed " + data_path_file + " " + "neuralnet"+" "+encoding_type+" "+warmup)
-                        pr.disable()
-                        pr.print_stats(sort="tottime")
-                        exit(1)
-    #pool.close()
-    #pool.join()
+    pool.close()
+    pool.join()

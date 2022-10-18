@@ -81,7 +81,7 @@ class ExpsUtil:
             for i in range(2):
                 data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i], 102)
 
-        data_generator.create_dataset_warm_up_from_csv("tree_data_1" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
+        #data_generator.create_dataset_warm_up_from_csv("tree_data_1" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
 
         data_generator.persist(data_name + "_datasets_generator")
         return data_generator
@@ -102,11 +102,11 @@ class ExpsUtil:
                       "data": dataset}
         run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
         # write optimization file
-        generations, parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(
-            result.history)
+        generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties = MlPieRun.parse_optimization_history(
+            result.history, [[1.0]*pop_size]*num_gen)
         best_data = pd.DataFrame(
-            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities)),
-            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties)),
+            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability', 'uncertainties'])
 
         # update dataframes
         for k in parameters.keys():

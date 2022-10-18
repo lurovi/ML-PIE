@@ -1,8 +1,7 @@
 from functools import partial
 
 import torch
-import time
-import cProfile
+
 import os
 os.environ['NUMPY_EXPERIMENTAL_ARRAY_FUNCTION'] = '0'
 import numpy as np
@@ -11,15 +10,13 @@ import torch.multiprocessing as mp
 from exps.DatasetGenerator import DatasetGenerator
 from exps.ExpsUtil import ExpsUtil
 
-from nsgp.sampling.UncertaintyChooserOnlineDistanceEmbeddingsFactory import \
-    UncertaintyChooserOnlineDistanceEmbeddingsFactory
 from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
 
 from threads.GPSimulatedUserExpsExecutor import GPSimulatedUserExpsExecutor
 
-#import resource
-#rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
-#resource.setrlimit(resource.RLIMIT_NOFILE, (2048, rlimit[1]))
+import resource
+rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
+resource.setrlimit(resource.RLIMIT_NOFILE, (2048, rlimit[1]))
 
 mp.set_sharing_strategy('file_system')
 
@@ -30,16 +27,14 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 200
-    num_gen = 20
+    pop_size = 256
+    num_gen = 50
     starting_seed = 200
-    num_repeats = 1
+    num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    pr = cProfile.Profile()
-    pr.enable()
-    #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
-    for data_path_file in ["friedman1", "diabets", "windspeed", "friedman1", "vladislavleva", "boston"]:
+    pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
+    for data_path_file in ["boston", "aquatictoxicity", "synchronousmachine", "yachthydrodynamics", "friedman1", "keijzer"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)
@@ -51,22 +46,16 @@ if __name__ == "__main__":
                                                                           duplicates_elimination_little_data=duplicates_elimination_little_data,
                                                                           device=device,
                                                                           data_generator=data_generator,
-                                                                          verbose=True)
+                                                                          verbose=False)
         for encoding_type_str in ["counts"]:
             for ground_truth_str in ["node_wise_weights_sum"+"_"+str(idx), "elastic_model"]:
                 for sampler_factory in [UncertaintyChooserOnlineFactory()]:
-                    for warmup in ["elastic_model", "feynman"]:
+                    for warmup in ["elastic_model"]:
                         pp = partial(runner.execute_gp_run, pop_size=pop_size, num_gen=num_gen,
                                                   encoding_type=encoding_type_str,
                                                   ground_truth_type=ground_truth_str,
                                                   sampler_factory=sampler_factory,
                                                   warmup=warmup)
-                        st = time.time()
-                        _ = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
-                        en = time.time()
-                        print((en - st)*(1/3600)*60)
-                        pr.disable()
-                        pr.print_stats(sort="tottime")
-                        exit(1)
-    #pool.close()
-    #pool.join()
+                        _ = list(pool.map(pp, list(range(starting_seed, starting_seed + num_repeats))))
+    pool.close()
+    pool.join()
