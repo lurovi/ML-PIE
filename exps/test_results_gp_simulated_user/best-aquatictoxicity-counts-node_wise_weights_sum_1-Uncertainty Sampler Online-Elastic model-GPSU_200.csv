@@ -1,0 +1,20 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[sin, x_4]",sin(x_4),2.2403006553649902,-0.053993210196495056,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+1,"[sqrt, exp, sin, x_4]",sqrt(abs(exp(sin(x_4)))),2.292325496673584,-0.05402611196041107,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+2,"[**3, log, exp, exp, u-, x_2]",(log(abs(exp(exp(-(x_2))))))**3,2.621342897415161,-0.055082499980926514,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+3,"[sqrt, exp, sqrt, exp, *, x_3, 0.09]",sqrt(abs(exp(sqrt(abs(exp((x_3*0.09))))))),2.0097403526306152,-0.05036524683237076,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+4,"[exp, sqrt, u-, exp, u-, x_2]",exp(sqrt(abs(-(exp(-(x_2)))))),2.627767562866211,-0.05782033130526543,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+5,"[sqrt, u-, exp, x_3]",sqrt(abs(-(exp(x_3)))),2.044424295425415,-0.051842521876096725,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+6,"[*, x_3, u-, sqrt, sqrt, x_5]",(x_3*-(sqrt(abs(sqrt(abs(x_5)))))),1.9948375225067139,-0.03806700557470322,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+7,"[sqrt, exp, sin, x_3]",sqrt(abs(exp(sin(x_3)))),2.0011472702026367,-0.04720304161310196,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+8,"[**2, exp, sqrt, exp, *, x_3, 0.09]",(exp(sqrt(abs(exp((x_3*0.09))))))**2,2.0007741451263428,-0.04414023458957672,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+9,"[sin, u-, u-, u-, x_3]",sin(-(-(-(x_3)))),2.03250789642334,-0.051392510533332825,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+10,"[sin, *, u-, exp, x_0, /, x_3, exp, exp, x_0]",sin((-(exp(x_0))*(x_3/exp(exp(x_0))))),1.8605808019638062,-0.03684841841459274,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+11,"[sqrt, sqrt, u-, exp, x_3]",sqrt(abs(sqrt(abs(-(exp(x_3)))))),1.9967073202133179,-0.03936298191547394,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+12,"[-, sin, x_0, -, u-, x_3, sin, x_3]",(sin(x_0)-(-(x_3)-sin(x_3))),1.7474793195724487,0.001247365027666092,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+13,"[u-, -, u-, x_3, sin, x_4]",-((-(x_3)-sin(x_4))),1.8268814086914062,-0.028688233345746994,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+14,"[+, -, -, sin, x_4, -, u-, x_0, -4.18, x_6, x_3]",(((sin(x_4)-(-(x_0)--4.18))-x_6)+x_3),1.796705961227417,-0.0014786794781684875,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+15,"[-, x_3, **, u-, sin, cos, -1.19, exp, x_0]",(x_3-(-(sin(cos(-1.19)))**exp(x_0))),1.812038779258728,-0.013911552727222443,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+16,"[log, exp, -, u-, x_4, x_3]",log(abs(exp((-(x_4)-x_3)))),1.899004340171814,-0.03735540062189102,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+17,"[-, x_3, **, cos, **, sin, x_4, x_2, x_4]",(x_3-(cos((sin(x_4)**x_2))**x_4)),1.7998403310775757,-0.003143463283777237,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity
+18,"[*, -, sin, x_4, -, u-, x_3, sqrt, u-, x_0, exp, u-, x_2]",((sin(x_4)-(-(x_3)-sqrt(abs(-(x_0)))))*exp(-(x_2))),1.697351098060608,0.03351506590843201,200,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,aquatictoxicity

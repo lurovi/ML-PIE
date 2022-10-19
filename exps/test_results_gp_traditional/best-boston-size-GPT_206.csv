@@ -1,0 +1,12 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_12],x_12,39.54974365234375,1.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+1,"[*, x_12, sqrt, +, exp, x_5, x_9]",(x_12*sqrt(abs((exp(x_5)+x_9)))),23.937341690063477,7.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+2,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+3,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+4,"[*, x_12, sqrt, exp, x_5]",(x_12*sqrt(abs(exp(x_5)))),25.1182918548584,5.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+5,"[+, x_12, cos, exp, log, x_5]",(x_12+cos(exp(log(abs(x_5))))),24.221834182739258,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+6,"[*, +, x_12, *, exp, u-, x_12, -3.46, sqrt, sqrt, exp, x_5]",((x_12+(exp(-(x_12))*-3.46))*sqrt(abs(sqrt(abs(exp(x_5)))))),23.22035789489746,12.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+7,"[-, sqrt, +, *, sqrt, x_10, *, x_5, x_5, exp, x_5, +, x_12, sin, x_12]",(sqrt(abs(((sqrt(abs(x_10))*(x_5*x_5))+exp(x_5))))-(x_12+sin(x_12))),21.89163589477539,15.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+8,"[*, -, -, x_10, u-, x_12, exp, u-, x_12, sqrt, -, x_5, -1.92]",(((x_10--(x_12))-exp(-(x_12)))*sqrt(abs((x_5--1.92)))),22.777921676635742,13.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+9,"[+, +, -, -, x_10, u-, x_12, exp, u-, x_12, sqrt, *, +, x_10, x_4, cos, x_5, -, sin, sqrt, **, -3.28, x_5, x_5]",((((x_10--(x_12))-exp(-(x_12)))+sqrt(abs(((x_10+x_4)*cos(x_5)))))+(sin(sqrt(abs((-3.28**x_5))))-x_5)),21.200525283813477,24.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston
+10,"[*, +, x_12, x_10, sqrt, +, exp, x_5, x_9]",((x_12+x_10)*sqrt(abs((exp(x_5)+x_9)))),23.88590431213379,9.0,206,256,50,256,not_spcified,size,not_specified,not_specified,boston

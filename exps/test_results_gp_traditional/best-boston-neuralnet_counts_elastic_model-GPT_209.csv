@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[exp, x_5]",exp(x_5),55.59759521484375,-0.26227831840515137,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+1,"[u-, x_5]",-(x_5),48.859561920166016,-0.2610902190208435,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+2,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,-0.25395750999450684,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+3,"[+, x_12, cos, u-, exp, log, x_5]",(x_12+cos(-(exp(log(abs(x_5)))))),24.221834182739258,-0.25157827138900757,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+4,"[cos, exp, u-, exp, u-, x_5]",cos(exp(-(exp(-(x_5))))),40.96715545654297,-0.26070868968963623,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+5,"[+, x_12, u-, cos, exp, cos, x_5]",(x_12+-(cos(exp(cos(x_5))))),24.783531188964844,-0.2538919150829315,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+6,"[+, x_12, +, cos, x_5, exp, u-, exp, x_5]",(x_12+(cos(x_5)+exp(-(exp(x_5))))),22.078994750976562,-0.2504478693008423,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+7,"[+, x_12, cos, u-, log, exp, x_5]",(x_12+cos(-(log(abs(exp(x_5)))))),24.221834182739258,-0.25157827138900757,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+8,"[u-, u-, u-, *, cos, x_5, x_5]",-(-(-((cos(x_5)*x_5)))),85.40927124023438,-0.2635641098022461,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+9,"[+, x_12, cos, u-, u-, *, x_5, x_5]",(x_12+cos(-(-((x_5*x_5))))),30.649246215820312,-0.25801151990890503,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+10,"[+, x_12, +, cos, x_5, cos, sqrt, exp, x_5]",(x_12+(cos(x_5)+cos(sqrt(abs(exp(x_5)))))),21.302610397338867,-0.24229618906974792,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+11,"[exp, exp, u-, *, cos, x_5, x_5]",exp(exp(-((cos(x_5)*x_5)))),85.2635726928711,-0.2628462314605713,209,256,50,256,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston

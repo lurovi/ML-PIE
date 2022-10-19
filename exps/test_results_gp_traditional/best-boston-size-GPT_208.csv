@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_12],x_12,39.54974365234375,1.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+1,"[exp, u-, x_12]",exp(-(x_12)),30.23102569580078,3.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+2,"[sin, x_12]",sin(x_12),34.47508239746094,2.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+3,"[+, **, cos, sin, x_10, **2, x_5, sin, x_12]",((cos(sin(x_10))**(x_5)**2)+sin(x_12)),23.525466918945312,9.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+4,"[+, **, cos, /, log, -1.8, exp, x_12, **2, x_5, sin, x_12]",((cos((log(abs(-1.8))/exp(x_12)))**(x_5)**2)+sin(x_12)),22.410465240478516,12.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+5,"[+, **, cos, cos, sqrt, x_8, **2, x_5, sin, x_12]",((cos(cos(sqrt(abs(x_8))))**(x_5)**2)+sin(x_12)),23.467615127563477,10.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+6,"[+, **, cos, cos, *, x_9, x_12, **2, x_5, sin, x_12]",((cos(cos((x_9*x_12)))**(x_5)**2)+sin(x_12)),23.070724487304688,11.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+7,"[+, x_12, cos, x_5]",(x_12+cos(x_5)),24.221834182739258,4.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+8,"[+, **, cos, cos, +, x_9, x_4, **2, x_5, -, sin, x_12, cos, cos, +, x_9, x_12]",((cos(cos((x_9+x_4)))**(x_5)**2)+(sin(x_12)-cos(cos((x_9+x_12))))),21.89801025390625,17.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston
+9,"[+, **, cos, cos, +, x_9, x_4, **2, x_5, -, sin, x_12, cos, cos, **2, -3.87]",((cos(cos((x_9+x_4)))**(x_5)**2)+(sin(x_12)-cos(cos((-3.87)**2)))),22.36348533630371,16.0,208,256,50,256,not_spcified,size,not_specified,not_specified,boston

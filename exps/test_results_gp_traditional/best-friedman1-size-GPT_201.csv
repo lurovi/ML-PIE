@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_3],x_3,15.352842330932617,1.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+1,"[+, x_0, x_3]",(x_0+x_3),12.122976303100586,3.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+2,"[+, x_3, sqrt, x_0]",(x_3+sqrt(abs(x_0))),11.084382057189941,4.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+3,"[+, sin, +, x_0, x_1, x_3]",(sin((x_0+x_1))+x_3),7.9573445320129395,6.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+4,"[+, x_3, *, x_1, x_0]",(x_3+(x_1*x_0)),8.80800724029541,5.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+5,"[+, x_1, +, x_3, +, x_0, x_4]",(x_1+(x_3+(x_0+x_4))),6.545844078063965,7.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+6,"[+, x_3, +, +, x_0, x_4, sqrt, x_1]",(x_3+((x_0+x_4)+sqrt(abs(x_1)))),6.047518730163574,8.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+7,"[+, x_4, +, x_3, +, x_0, sqrt, x_1]",(x_4+(x_3+(x_0+sqrt(abs(x_1))))),6.047518730163574,8.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+8,"[+, x_3, +, +, x_0, x_4, x_1]",(x_3+((x_0+x_4)+x_1)),6.545844078063965,7.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+9,"[-, +, x_4, +, sin, +, x_0, x_0, x_3, -, cos, sqrt, x_3, **2, sqrt, sin, x_1]",((x_4+(sin((x_0+x_0))+x_3))-(cos(sqrt(abs(x_3)))-(sqrt(abs(sin(x_1))))**2)),4.731513023376465,17.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+10,"[+, x_3, +, sqrt, +, x_0, **2, x_4, sqrt, x_1]",(x_3+(sqrt(abs((x_0+(x_4)**2)))+sqrt(abs(x_1)))),5.175185203552246,10.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1
+11,"[+, exp, x_3, +, +, x_0, x_4, sqrt, x_1]",(exp(x_3)+((x_0+x_4)+sqrt(abs(x_1)))),5.719607830047607,9.0,201,256,50,256,not_spcified,size,not_specified,not_specified,friedman1

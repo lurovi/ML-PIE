@@ -1,0 +1,17 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[u-, **3, **3, exp, **, 4.98, x_5]",-(((exp((4.98**x_5)))**3)**3),3.5914883613586426,-0.16229009628295898,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+1,"[*, **3, **3, exp, exp, x_5, *, sqrt, -, x_5, x_1, u-, u-, x_5]",(((exp(exp(x_5)))**3)**3*(sqrt(abs((x_5-x_1)))*-(-(x_5)))),2.604304075241089,-0.10155777633190155,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+2,"[*, x_5, **3, exp, **3, exp, x_5]",(x_5*(exp((exp(x_5))**3))**3),3.7447986602783203,-0.18453916907310486,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+3,"[exp, x_5]",exp(x_5),76.16352081298828,-0.3877505362033844,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+4,"[**2, exp, x_5]",(exp(x_5))**2,66.993408203125,-0.3120660185813904,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+5,"[**3, log, sin, +, x_5, 4.98]",(log(abs(sin((x_5+4.98)))))**3,4.10276985168457,-0.23156066238880157,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+6,"[**, -4.33, x_5]",(-4.33**x_5),71.84538269042969,-0.3801095485687256,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+7,"[**, *, x_5, x_1, **, x_1, x_5]",((x_5*x_1)**(x_1**x_5)),8.198850631713867,-0.27939847111701965,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+8,"[*, /, **2, exp, u-, x_1, **, exp, **2, 4.8, u-, **, 4.98, x_5, u-, **3, **3, exp, x_5]",(((exp(-(x_1)))**2/(exp((4.8)**2)**-((4.98**x_5))))*-(((exp(x_5))**3)**3)),1.9780030250549316,-0.025138596072793007,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+9,[x_5],x_5,85.6635513305664,-1.424870491027832,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+10,"[**, x_1, **, *, sin, x_1, x_1, -, x_5, x_1]",(x_1**((sin(x_1)*x_1)**(x_5-x_1))),22.912817001342773,-0.2911035418510437,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+11,"[**, 1.59, x_5]",(1.59**x_5),81.22540283203125,-0.40006229281425476,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+12,[x_2],x_2,259.326416015625,-1.5514498949050903,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+13,"[sin, +, x_5, 4.98]",sin((x_5+4.98)),53.881988525390625,-0.2981381416320801,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+14,"[**, x_1, **, *, *, x_3, x_1, x_3, -, x_5, x_1]",(x_1**(((x_3*x_1)*x_3)**(x_5-x_1))),64.81608581542969,-0.30331191420555115,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics
+15,[-2.65],-2.65,260.467529296875,-1.7179877758026123,205,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,yachthydrodynamics

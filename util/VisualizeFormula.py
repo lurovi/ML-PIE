@@ -18,7 +18,7 @@ class VisualizeFormula:
 
     @staticmethod
     def read_file(folder_results: str, folder_dataset: str,
-                  file_type: str, dataset_name: str, groundtruth: str, warmup: str, starting_seed: int, num_repeats: int, num_gen: int) -> List[pd.DataFrame]:
+                  file_type: str, dataset_name: str, groundtruth: str, warmup: str, starting_seed: int, num_repeats: int) -> List[pd.DataFrame]:
         base_path = folder_results+"/"+file_type+"-"+dataset_name+"-"+"counts"+"-"+groundtruth+"-"+"Uncertainty Sampler Online"+"-"+warmup+"-"+"GPSU"+"_"
         datasettt = PicklePersist.decompress_pickle(folder_dataset + "/" + dataset_name + ".pbz2")
         training, validation, test = datasettt["training"], datasettt["validation"], datasettt["test"]
@@ -31,7 +31,6 @@ class VisualizeFormula:
                 file += ".csv"
             df = pd.read_csv(file)
             df.drop("Unnamed: 0", axis=1, inplace=True)
-            df = df[df["generation"] == num_gen-1]
             df.rename(columns={"accuracy": "training_mse", "interpretability": "complexity"}, inplace=True)
             df = df.sort_values(by="training_mse", ascending=False)
             df.reset_index(inplace=True)
@@ -59,7 +58,7 @@ class VisualizeFormula:
                                             file_type: str, dataset_names: List[str],
                                             groundtruth: str, warmup: str,
                                             percentiles: List[int], index_list: List[int],
-                                            starting_seed: int, num_repeats: int, num_gen: int) -> str:
+                                            starting_seed: int, num_repeats: int) -> str:
         s = ""
         num_rows_data = str(len(percentiles) * len(index_list))
         num_rows_perc = str(len(index_list))
@@ -67,7 +66,7 @@ class VisualizeFormula:
             data = VisualizeFormula.read_file(folder_results, folder_dataset, file_type,
                                           dataset_name, groundtruth,
                                           warmup, starting_seed=starting_seed,
-                                          num_repeats=num_repeats, num_gen=num_gen)
+                                          num_repeats=num_repeats)
             s += "\n"
             s += "\\midrule"
             s += "\n"
@@ -123,19 +122,18 @@ class VisualizeFormula:
 
 
 if __name__ == "__main__":
-    starting_seed, num_repeats, num_gen = 200, 10, 60
-    data = VisualizeFormula.read_file("../exps/test_results_gp_simulated_user", "../exps/benchmark", "best",
-                                      "friedman1", "node_wise_weights_sum_1",
-                                      "Feynman", starting_seed=starting_seed,
-                                      num_repeats=num_repeats, num_gen=num_gen)
+    starting_seed, num_repeats = 200, 10
     percentiles = [90, 60, 30]
+    repeats_id = [4, 3, 6]
+
     print(VisualizeFormula.print_latex_table_with_tao_datasets("../exps/test_results_gp_simulated_user",
                                                                "../exps/benchmark", "best",
-                                                               ["california", "boston", "windspeed", "friedman1"],
+                                                               ["boston", "yachthydrodynamics", "friedman1"
+                                                                ],
                                                                "node_wise_weights_sum_1",
-                                                               "Feynman",
-                                                               [90, 60, 30],
-                                                               [0, 2, 3],
+                                                               "Elastic model",
+                                                               percentiles,
+                                                               repeats_id,
                                                                starting_seed=starting_seed,
-                                                               num_repeats=num_repeats, num_gen=num_gen
+                                                               num_repeats=num_repeats
                                                                ))

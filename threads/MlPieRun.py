@@ -101,13 +101,30 @@ class MlPieRun:
         # prepare nn file
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
 
+        # uncertainties
+        uncertainties_df = {"generation": [], "average_uncertainty": [], "all_uncertainties": []}
+        uncertainties = self.optimization_thread.problem.get_uncertainties()
+        initial_avg_uncertainty = sum(uncertainties[0]) / len(uncertainties[0])
+        for iii in range(len(uncertainties)):
+            gen_uncertainties = uncertainties[iii]
+            current_avg_uncertainty = sum(gen_uncertainties) / len(gen_uncertainties)
+            current_avg_uncertainty = current_avg_uncertainty / initial_avg_uncertainty
+            uncertainties_df["generation"].append(iii)
+            uncertainties_df["average_uncertainty"].append(current_avg_uncertainty)
+            sss = ""
+            for ggg in gen_uncertainties:
+                sss += str(ggg)
+                sss += "|"
+            sss = sss[:len(sss) - 1]
+            uncertainties_df["all_uncertainties"].append(sss)
+        uncertainties_df = pd.DataFrame(uncertainties_df)
+
         # write optimization file
-        generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties = self.parse_optimization_history(
-            self.optimization_thread.result.history, self.optimization_thread.problem.get_uncertainties())
+        parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
+            self.optimization_thread.result.opt)
         best_data = pd.DataFrame(
-            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties)),
-            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability',
-                     'uncertainties'])
+            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities)),
+            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
 
         # update dataframes
         for k in self.parameters.keys():
@@ -115,6 +132,7 @@ class MlPieRun:
             best_data[k] = self.parameters[k]
 
         # save files
+        uncertainties_df.to_csv(path_or_buf=self.path + "uncertainty-" + self.run_id + ".csv")
         feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
         torch.save(model, self.path + "nn-" + self.run_id + ".pth")
         best_data.to_csv(path_or_buf=self.path + "best-" + self.run_id + ".csv")
@@ -144,27 +162,17 @@ class MlPieRun:
         return t1_latex, t1_parsable, t2_latex, t2_parsable
 
     @staticmethod
-    def parse_optimization_history(history, uncertainties) -> tuple[
-        list[int], list[str], list[str], list[float], list[float], list[float]]:
-        generations = []
+    def parse_optimization_history(optimal) -> tuple[list[str], list[str], list[float], list[float]]:
         parsable_trees = []
         latex_trees = []
         accuracies = []
         interpretabilities = []
-        generations_uncertainties = []
-        generation_count = 0
-        for generation in history:
-            for individual in generation.opt:
-                generations.append(generation_count)
-                tree = individual.X[0]
-                parsable_trees.append(str(tree.get_subtree()))
-                latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
-                # latex_trees.append(latex(parse_expr(tree.get_readable_repr().replace("u-", "-"), evaluate=False)))
-                accuracies.append(individual.F[0])
-                interpretabilities.append(individual.F[1])
-            generation_count += 1
-        initial_avg_uncertainty = sum(uncertainties[0]) / len(uncertainties[0])
-        for gen_uncertainties in uncertainties:
-            current_avg_uncertainty = sum(gen_uncertainties) / len(gen_uncertainties)
-            generations_uncertainties.append(current_avg_uncertainty / initial_avg_uncertainty)
-        return generations, parsable_trees, latex_trees, accuracies, interpretabilities, generations_uncertainties
+
+        for individual in optimal:
+            tree = individual.X[0]
+            parsable_trees.append(str(tree.get_subtree()))
+            latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
+            accuracies.append(individual.F[0])
+            interpretabilities.append(individual.F[1])
+
+        return parsable_trees, latex_trees, accuracies, interpretabilities

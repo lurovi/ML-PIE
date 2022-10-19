@@ -55,7 +55,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
     runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
                                       pop_size=pop_size, num_gen=num_gen,
                                       duplicates_elimination_data=duplicates_elimination_little_data)
-    return runner.run_minimization(seed, verbose=False)
+    return runner.run_minimization(seed, verbose=False, save_history=False, mutex=None)
 
 
 if __name__ == "__main__":
@@ -86,7 +86,7 @@ if __name__ == "__main__":
                 runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
                                                   pop_size=pop_size, num_gen=num_gen,
                                                   duplicates_elimination_data=duplicates_elimination_little_data)
-                pp = partial(runner.run_minimization, verbose=False, save_history=True, mutex=None)
+                pp = partial(runner.run_minimization, verbose=False, save_history=False, mutex=None)
                 results = list(pool.map(pp, list(range(starting_seed, starting_seed + num_repeats))))
 
                 for res in results:

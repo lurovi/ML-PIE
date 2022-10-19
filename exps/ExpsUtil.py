@@ -102,11 +102,11 @@ class ExpsUtil:
                       "data": dataset}
         run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
         # write optimization file
-        generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties = MlPieRun.parse_optimization_history(
-            result.history, [[1.0]*pop_size]*num_gen)
+        parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(
+            result.opt)
         best_data = pd.DataFrame(
-            list(zip(generations, parsable_trees, latex_trees, accuracies, interpretabilities, uncertainties)),
-            columns=['generation', 'parsable_tree', 'latex_tree', 'accuracy', 'interpretability', 'uncertainties'])
+            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities)),
+            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
 
         # update dataframes
         for k in parameters.keys():
