@@ -1,0 +1,9 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_1],x_1,105.89533233642578,1.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+1,"[exp, u-, x_1]",exp(-(x_1)),87.82508087158203,3.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+2,"[-, **2, exp, u-, x_1, log, +, x_1, exp, -, x_0, x_3]",((exp(-(x_1)))**2-log(abs((x_1+exp((x_0-x_3)))))),73.01370239257812,12.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+3,"[exp, **3, exp, /, x_1, -4.03]",exp((exp((x_1/-4.03)))**3),87.49675750732422,6.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+4,"[exp, exp, -, -1.07, x_1]",exp(exp((-1.07-x_1))),87.56421661376953,5.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+5,"[+, exp, u-, x_1, sqrt, sqrt, exp, sin, x_3]",(exp(-(x_1))+sqrt(abs(sqrt(abs(exp(sin(x_3))))))),78.65299224853516,9.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+6,"[exp, u-, +, x_1, sin, cos, x_1]",exp(-((x_1+sin(cos(x_1))))),85.78536987304688,7.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate
+7,"[-, exp, u-, x_1, log, +, x_1, exp, -, x_0, x_3]",(exp(-(x_1))-log(abs((x_1+exp((x_0-x_3)))))),76.35222625732422,11.0,203,256,50,256,not_spcified,size,not_specified,not_specified,realestate

@@ -1,0 +1,21 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[cos, log, **2, x_3]",cos(log(abs((x_3)**2))),17.178611755371094,4.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+1,"[**2, x_3]",(x_3)**2,18.597734451293945,2.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+2,[x_4],x_4,18.64932632446289,1.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+3,"[sin, log, x_3]",sin(log(abs(x_3))),17.878246307373047,3.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+4,"[*, cos, x_1, log, x_4]",(cos(x_1)*log(abs(x_4))),16.66971206665039,5.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+5,"[-, *, cos, x_1, log, x_4, +, x_6, exp, x_6]",((cos(x_1)*log(abs(x_4)))-(x_6+exp(x_6))),13.92005729675293,10.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+6,"[+, *, exp, x_3, -2.72, x_6]",((exp(x_3)*-2.72)+x_6),15.917512893676758,6.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+7,"[**2, **2, +, log, x_4, u-, x_2]",(((log(abs(x_4))+-(x_2)))**2)**2,15.706106185913086,7.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+8,"[+, *, exp, **2, x_3, -2.72, sin, x_6]",((exp((x_3)**2)*-2.72)+sin(x_6)),14.036008834838867,8.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+9,"[+, -, *, sin, exp, x_1, log, x_4, +, u-, **3, x_3, +, x_6, exp, x_6, -, cos, x_1, +, u-, x_3, +, x_6, exp, x_4]",(((sin(exp(x_1))*log(abs(x_4)))-(-((x_3)**3)+(x_6+exp(x_6))))+(cos(x_1)-(-(x_3)+(x_6+exp(x_4))))),11.418210983276367,26.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+10,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, exp, x_6, x_3]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+exp(x_6))))+x_3),12.765049934387207,14.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+11,"[+, -, *, cos, x_1, log, x_4, +, u-, **3, x_1, +, x_6, exp, x_6, -, u-, x_6, +, x_2, +, x_6, exp, -1.59]",(((cos(x_1)*log(abs(x_4)))-(-((x_1)**3)+(x_6+exp(x_6))))+(-(x_6)-(x_2+(x_6+exp(-1.59))))),11.44139575958252,24.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+12,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, +, x_6, x_2, cos, x_0]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+(x_6+x_2))))+cos(x_0)),12.015213966369629,16.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+13,"[+, -, cos, x_1, +, u-, cos, x_5, +, x_6, x_6, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, x_2]",((cos(x_1)-(-(cos(x_5))+(x_6+x_6)))+((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+x_2)))),11.54062557220459,22.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+14,"[-, *, cos, x_1, log, x_4, +, x_6, +, x_6, x_6]",((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+x_6))),12.996424674987793,11.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+15,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, **2, x_3, -, cos, *, cos, x_1, log, x_4, +, u-, x_3, +, x_6, exp, x_6]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+(x_3)**2)))+(cos((cos(x_1)*log(abs(x_4))))-(-(x_3)+(x_6+exp(x_6))))),10.93721866607666,27.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+16,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, exp, x_6, u-, x_6]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+exp(x_6))))+-(x_6)),12.531628608703613,15.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+17,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, exp, x_6, cos, *, cos, x_1, log, x_4]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+exp(x_6))))+cos((cos(x_1)*log(abs(x_4))))),11.759831428527832,19.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+18,"[+, -, *, cos, x_1, log, x_4, +, x_6, +, x_6, exp, x_1, -, cos, *, cos, x_1, log, x_4, +, exp, **2, x_0, +, x_6, exp, x_3]",(((cos(x_1)*log(abs(x_4)))-(x_6+(x_6+exp(x_1))))+(cos((cos(x_1)*log(abs(x_4))))-(exp((x_0)**2)+(x_6+exp(x_3))))),10.437182426452637,28.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+19,"[*, cos, x_1, -, cos, *, cos, x_1, log, x_4, +, u-, **3, x_3, +, x_6, exp, x_4]",(cos(x_1)*(cos((cos(x_1)*log(abs(x_4))))-(-((x_3)**3)+(x_6+exp(x_4))))),11.879055976867676,18.0,203,256,50,256,not_spcified,size,not_specified,not_specified,cooling

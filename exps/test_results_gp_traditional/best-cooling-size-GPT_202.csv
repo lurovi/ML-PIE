@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_4],x_4,18.64932632446289,1.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+1,"[sin, log, x_3]",sin(log(abs(x_3))),17.878246307373047,3.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+2,"[cos, log, **2, x_3]",cos(log(abs((x_3)**2))),17.178611755371094,4.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+3,"[log, -, -, x_6, exp, exp, x_3, x_0]",log(abs(((x_6-exp(exp(x_3)))-x_0))),12.609793663024902,8.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+4,"[-, x_6, exp, exp, x_3]",(x_6-exp(exp(x_3))),16.66242218017578,5.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+5,"[**2, x_3]",(x_3)**2,18.597734451293945,2.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+6,"[log, -, -, x_6, exp, exp, x_3, exp, -, **2, x_1, x_2]",log(abs(((x_6-exp(exp(x_3)))-exp(((x_1)**2-x_2))))),11.875383377075195,12.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+7,"[exp, log, **, log, x_3, sqrt, **, x_3, x_0]",exp(log(abs((log(abs(x_3))**sqrt(abs((x_3**x_0))))))),12.420036315917969,9.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+8,"[log, -, -, x_6, exp, exp, x_3, -, -, x_0, sin, x_1, x_3]",log(abs(((x_6-exp(exp(x_3)))-((x_0-sin(x_1))-x_3)))),11.320189476013184,13.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+9,"[-, x_6, *, x_3, exp, x_3]",(x_6-(x_3*exp(x_3))),14.734492301940918,6.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+10,"[log, -, -, x_6, exp, exp, x_3, cos, log, x_1]",log(abs(((x_6-exp(exp(x_3)))-cos(log(abs(x_1)))))),12.045256614685059,10.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+11,"[**, log, x_3, sqrt, **, x_4, x_0]",(log(abs(x_3))**sqrt(abs((x_4**x_0)))),13.17324161529541,7.0,202,256,50,256,not_spcified,size,not_specified,not_specified,cooling

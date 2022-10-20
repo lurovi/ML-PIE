@@ -85,12 +85,12 @@ class VisualizeFormula:
                     df = data[index]
                     ind = int(np.percentile(df["tao"], perc))
                     formula = df.loc[ind]["latex_tree"]
-                    s += " & \\num{" + str(round(df.loc[ind]["training_r2"], 2)) + "}" + " & " + "\\num{" + str(
+                    s += " & \\num{" + str(round(df.loc[ind]["training_r2"], 2)) + "}" + " | " + "\\num{" + str(
                         round(df.loc[ind]["validation_r2"], 2)) + "}" + " & " + VisualizeFormula.to_latex_eq(formula,
                                                                                                               simplify=False) + " \\\\"
                     s += "\n"
                     if j == len(index_list) - 1 and i != len(percentiles) - 1:
-                        s += "\\cline{2-5}"
+                        s += "\\cline{2-4}"
                         s += "\n"
 
         return s
@@ -118,17 +118,18 @@ class VisualizeFormula:
         if simplify:
             return "$"+sympy.latex(sympy.simplify(eval(formula, d)))+"$"
         else:
+            #return "$"+sympy.latex(formula)+"$"
             return "$"+sympy.latex(eval(formula, d))+"$"
 
 
 if __name__ == "__main__":
     starting_seed, num_repeats = 200, 10
-    percentiles = [90, 60, 30]
-    repeats_id = [4, 3, 6]
+    percentiles = [90, 50, 10]
+    repeats_id = [2, 3, 4]
 
     print(VisualizeFormula.print_latex_table_with_tao_datasets("../exps/test_results_gp_simulated_user",
                                                                "../exps/benchmark", "best",
-                                                               ["boston", "yachthydrodynamics", "friedman1"
+                                                               ["boston", "heating", "cooling"
                                                                 ],
                                                                "node_wise_weights_sum_1",
                                                                "Elastic model",

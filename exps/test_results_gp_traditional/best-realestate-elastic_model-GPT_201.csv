@@ -1,0 +1,14 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_1],x_1,105.89533233642578,-78.9000015258789,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+1,"[-, x_1, x_3]",(x_1-x_3),100.45114135742188,-78.0,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+2,"[-, x_3, x_1]",(x_3-x_1),100.45114135742188,-78.0,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+3,"[/, x_1, +, 3.97, x_1]",(x_1/(3.97+x_1)),93.64678955078125,-77.0999984741211,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+4,"[+, +, exp, -, 0.26, x_0, exp, -, 0.26, x_1, +, x_3, **2, exp, -, 0.26, x_1]",((exp((0.26-x_0))+exp((0.26-x_1)))+(x_3+(exp((0.26-x_1)))**2)),68.14280700683594,-48.099998474121094,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+5,"[/, x_1, +, -, u-, u-, x_1, -3.74, x_1]",(x_1/((-(-(x_1))--3.74)+x_1)),88.53596496582031,-74.80000305175781,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+6,"[/, 1.29, +, -, u-, -, x_3, x_1, -3.74, x_1]",(1.29/((-((x_3-x_1))--3.74)+x_1)),84.94062042236328,-74.5999984741211,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+7,"[/, x_1, +, -, -1.6, -3.74, x_1]",(x_1/((-1.6--3.74)+x_1)),89.30918884277344,-76.19999694824219,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+8,"[+, +, exp, -, 0.26, x_0, exp, -, 0.26, x_1, +, +, 0.26, sin, x_3, **2, exp, -, 0.26, x_1]",((exp((0.26-x_0))+exp((0.26-x_1)))+((0.26+sin(x_3))+(exp((0.26-x_1)))**2)),67.55340576171875,-43.099998474121094,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+9,"[+, +, *, /, +, x_0, -4.03, -1.49, exp, -, 0.26, x_1, -2.23, +, 1.29, x_3]",(((((x_0+-4.03)/-1.49)*exp((0.26-x_1)))+-2.23)+(1.29+x_3)),72.50342559814453,-64.0,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+10,"[+, +, *, /, +, x_1, -4.03, -1.49, exp, -, 0.26, x_1, -2.23, +, exp, -, 0.26, x_0, x_3]",(((((x_1+-4.03)/-1.49)*exp((0.26-x_1)))+-2.23)+(exp((0.26-x_0))+x_3)),68.50531005859375,-59.0,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+11,"[+, x_2, -, u-, x_1, x_0]",(x_2+(-(x_1)-x_0)),93.32860565185547,-76.4000015258789,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
+12,"[/, -, x_1, /, +, x_0, -4.03, -1.49, +, -, u-, +, x_3, x_4, -3.74, x_1]",((x_1-((x_0+-4.03)/-1.49))/((-((x_3+x_4))--3.74)+x_1)),76.91421508789062,-71.9000015258789,201,256,50,256,not_spcified,elastic_model,not_specified,not_specified,realestate
