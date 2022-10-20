@@ -9,6 +9,7 @@ from sklearn.metrics import r2_score
 
 from genepro.util import tree_from_prefix_repr, replace_specified_operators_with_mean_value_constants
 from nsgp.evolution.ParetoFrontUtil import ParetoFrontUtil
+from threads.MlPieRun import MlPieRun
 
 from util.PicklePersist import PicklePersist
 pd.options.display.max_columns = 999
@@ -85,9 +86,10 @@ class VisualizeFormula:
                     df = data[index]
                     ind = int(np.percentile(df["tao"], perc))
                     formula = df.loc[ind]["latex_tree"]
+                    tree = tree_from_prefix_repr(df.loc[ind]["parsable_tree"])
+                    latex_formula = "$"+MlPieRun.safe_latex_format(tree)+"$"
                     s += " & \\num{" + str(round(df.loc[ind]["training_r2"], 2)) + "}" + " | " + "\\num{" + str(
-                        round(df.loc[ind]["validation_r2"], 2)) + "}" + " & " + VisualizeFormula.to_latex_eq(formula,
-                                                                                                              simplify=False) + " \\\\"
+                        round(df.loc[ind]["validation_r2"], 2)) + "}" + " & " + latex_formula + " \\\\"
                     s += "\n"
                     if j == len(index_list) - 1 and i != len(percentiles) - 1:
                         s += "\\cline{2-4}"
