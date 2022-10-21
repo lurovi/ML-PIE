@@ -1,6 +1,6 @@
 const progressRetrievalInterval = setInterval(function(){
     retrieveProgress();
-}, 2000);
+}, 3000);
 
 $(window).resize(function () {
     w = $("h4.mb-0").width()/4;
@@ -72,6 +72,9 @@ function provideFeedback(feedback){
 }
 
 function retrieveProgress(){
+    if(localStorage.getItem("over") === "true"){
+      return;
+    }
     $.ajax({
       url: "getProgress",
       headers: { 'x-access-tokens': localStorage.getItem("token") }

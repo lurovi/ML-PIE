@@ -1,5 +1,5 @@
-const availableProblems = ["boston", "windspeed"];
-const availableProblemNames = ["Boston Housing", "Wind Speed"];
+const availableProblems = ["boston", "heating"];
+const availableProblemNames = ["Boston Housing", "Heating Efficiency"];
 
 $("document").ready(function() {
     if(localStorage.getItem("token") === null){
