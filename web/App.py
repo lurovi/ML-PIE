@@ -32,22 +32,22 @@ app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 hardcoded_results = {
-    "windspeed": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_phi.csv"),
-        "feynman": pd.read_csv(
-            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\windspeed_feynman.csv")
+    "heating": {
+        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_size.csv"),
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_phi.csv"),
+        "wu_phi": pd.read_csv(
+            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_wu_phi.csv")
     },
     "boston": {
         "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_size.csv"),
         "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_phi.csv"),
-        "feynman": pd.read_csv(
-            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_feynman.csv")
+        "wu_phi": pd.read_csv(
+            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_wu_phi.csv")
     }
 }
 
 available_problems = {
-    "windspeed": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\windspeed.pbz2",
+    "heating": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\heating.pbz2",
     "boston": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\boston.pbz2"
 }
 
@@ -242,7 +242,7 @@ def answer_survey():
     if run_id not in ongoing_surveys:
         abort(404)
     survey_data = ongoing_surveys[run_id]
-    preferences = [request.json["size"], request.json["phi"], request.json["feynman"]]
+    preferences = [request.json["size"], request.json["phi"], request.json["wu_phi"]]
     survey_data['preference'] = preferences
     survey_data.to_csv(path_or_buf=app.config['RESULTS_FOLDER'] + "survey-" + run_id + ".csv")
     return {'outcome': 'successful'}
@@ -276,9 +276,9 @@ def run_completed(run_id: str):
 
     size_model = find_closest_model(target_accuracies[0], hardcoded_results[problem]["size"])
     phi_model = find_closest_model(target_accuracies[1], hardcoded_results[problem]["phi"])
-    feynman_model = find_closest_model(target_accuracies[2], hardcoded_results[problem]["feynman"])
+    wu_phi_model = find_closest_model(target_accuracies[2], hardcoded_results[problem]["wu_phi"])
 
-    static_models = pd.concat([size_model, phi_model, feynman_model], ignore_index=True).rename(lambda c: "other_" + c,
+    static_models = pd.concat([size_model, phi_model, wu_phi_model], ignore_index=True).rename(lambda c: "other_" + c,
                                                                                                 axis='columns')
     ongoing_surveys[run_id] = pd.concat([chosen_models, static_models], axis=1)
 
