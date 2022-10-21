@@ -16,7 +16,7 @@ from nsgp.encoder.CountsEncoder import CountsEncoder
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
-from nsgp.sampling.RandomChooserOnlineFactory import RandomChooserOnlineFactory
+from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
 from nsgp.structure.TreeStructure import TreeStructure
 from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
@@ -51,14 +51,13 @@ available_problems = {
     "boston": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\boston.pbz2"
 }
 
-# TODO move this to a neater setup
 ongoing_runs = {}
 ongoing_surveys = {}
 
 run_problems_associations = {}
 
 # settings
-seed = 1
+seed = 100
 random.seed(seed)
 np.random.seed(seed)
 torch.manual_seed(seed)
@@ -66,20 +65,42 @@ torch.use_deterministic_algorithms(True)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # tree parameters
-duplicates_elimination_little_data = np.random.uniform(0.0, 1.0, size=(10, 7))
+n_features_boston, n_features_heating = 13, 8
+duplicates_elimination_data_boston = np.random.uniform(-5.0, 5.0, size=(5, n_features_boston))
+duplicates_elimination_data_heating = np.random.uniform(-5.0, 5.0, size=(5, n_features_heating))
 internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                   node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
                   node_impl.Sqrt(), node_impl.Exp(), node_impl.Log(), node_impl.Sin(), node_impl.Cos()]
-normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
-                                  (0, 30), (0, 30), (0, 23), (0, 23), (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.8),
-                                  (0, 0.8), (0, 0.8), (0, 0.8), (0, 0.5)]
-structure = TreeStructure(internal_nodes, 7, 5, ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
-                          normal_distribution_parameters=normal_distribution_parameters)
-setting = TreeSetting(structure, duplicates_elimination_little_data)
-tree_sampling = setting.get_sampling()
-tree_crossover = setting.get_crossover()
-tree_mutation = setting.get_mutation()
-duplicates_elimination = setting.get_duplicates_elimination()
+normal_distribution_parameters_boston = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
+                                         (0, 30), (0, 30), (0, 23), (0, 23)] + [(0, 0.8)] * n_features_boston + \
+                                        [(0, 0.5)]
+normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
+                                          (0, 30), (0, 30), (0, 23), (0, 23)] + [(0, 0.8)] * n_features_heating + \
+                                         [(0, 0.5)]
+structure_boston = TreeStructure(internal_nodes, n_features_boston, 5,
+                                 ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
+                                 normal_distribution_parameters=normal_distribution_parameters_boston)
+structure_heating = TreeStructure(internal_nodes, n_features_heating, 5,
+                                  ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
+                                  normal_distribution_parameters=normal_distribution_parameters_heating)
+setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
+setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
+
+tree_sampling_boston = setting_boston.get_sampling()
+tree_crossover_boston = setting_boston.get_crossover()
+tree_mutation_boston = setting_boston.get_mutation()
+duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
+print("encoder boston init...")
+tree_encoder_boston = CountsEncoder(structure_boston)
+print("encoder boston ready")
+
+tree_sampling_heating = setting_heating.get_sampling()
+tree_crossover_heating = setting_heating.get_crossover()
+tree_mutation_heating = setting_heating.get_mutation()
+duplicates_elimination_heating = setting_heating.get_duplicates_elimination()
+print("encoder heating init...")
+tree_encoder_heating = CountsEncoder(structure_heating)
+print("encoder heating ready")
 
 
 @app.route("/")
@@ -105,16 +126,25 @@ def thanks():
 @app.route("/startRun/<problem>")
 def start_run(problem):
     run_id = str(uuid.uuid1())
+    rnd_seed = np.random.randint(1, 10000)
+    random.seed(rnd_seed)
+    np.random.seed(rnd_seed)
+    torch.manual_seed(rnd_seed)
+
+    tree_encoder = tree_encoder_boston if problem == 'boston' else tree_encoder_heating
+    tree_sampling = tree_sampling_boston if problem == 'boston' else tree_sampling_heating
+    tree_crossover = tree_crossover_boston if problem == 'boston' else tree_crossover_heating
+    tree_mutation = tree_mutation_boston if problem == 'boston' else tree_mutation_heating
+    duplicates_elimination = duplicates_elimination_boston if problem == 'boston' else duplicates_elimination_heating
 
     # shared parameters
-    tree_encoder = CountsEncoder(structure)
-    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25])
+    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25], dropout_prob=0.25)
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device)
     mutex = threading.Lock()
     population_storage = set()
 
     # optimization thread creation
-    algorithm = NSGA2(pop_size=210,
+    algorithm = NSGA2(pop_size=256,
                       sampling=tree_sampling,
                       crossover=tree_crossover,
                       mutation=tree_mutation,
@@ -129,7 +159,7 @@ def start_run(problem):
                                                              tree_encoder=tree_encoder,
                                                              interpretability_estimator=interpretability_estimator
                                                              )
-    termination = ('n_gen', 60)
+    termination = ('n_gen', 50)
     optimization_seed = seed
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
@@ -141,7 +171,7 @@ def start_run(problem):
     )
 
     # feedback thread creation
-    pair_chooser = RandomChooserOnlineFactory()
+    pair_chooser = UncertaintyChooserOnlineFactory()
     interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser)
@@ -279,7 +309,7 @@ def run_completed(run_id: str):
     wu_phi_model = find_closest_model(target_accuracies[2], hardcoded_results[problem]["wu_phi"])
 
     static_models = pd.concat([size_model, phi_model, wu_phi_model], ignore_index=True).rename(lambda c: "other_" + c,
-                                                                                                axis='columns')
+                                                                                               axis='columns')
     ongoing_surveys[run_id] = pd.concat([chosen_models, static_models], axis=1)
 
 
