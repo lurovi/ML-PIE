@@ -67,16 +67,20 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # tree parameters
 n_features_boston, n_features_heating = 13, 8
 duplicates_elimination_data_boston = np.random.uniform(-5.0, 5.0, size=(5, n_features_boston))
+seed = 100
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
 duplicates_elimination_data_heating = np.random.uniform(-5.0, 5.0, size=(5, n_features_heating))
 internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
-                  node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
-                  node_impl.Sqrt(), node_impl.Exp(), node_impl.Log(), node_impl.Sin(), node_impl.Cos()]
-normal_distribution_parameters_boston = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
-                                         (0, 30), (0, 30), (0, 23), (0, 23)] + [(0, 0.8)] * n_features_boston + \
-                                        [(0, 0.5)]
-normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
-                                          (0, 30), (0, 30), (0, 23), (0, 23)] + [(0, 0.8)] * n_features_heating + \
-                                         [(0, 0.5)]
+                  node_impl.Cube(),
+                  node_impl.Log(), node_impl.Max()]
+normal_distribution_parameters_boston = [(0, 1), (0, 1), (0, 3), (0, 8),
+                                         (0, 8),
+                                         (0, 30), (0, 15)] + [(0, 0.8)] * n_features_boston + [(0, 0.5)]
+normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8),
+                                          (0, 8),
+                                          (0, 30), (0, 15)] + [(0, 0.8)] * n_features_heating + [(0, 0.5)]
 structure_boston = TreeStructure(internal_nodes, n_features_boston, 5,
                                  ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
                                  normal_distribution_parameters=normal_distribution_parameters_boston)
@@ -91,7 +95,7 @@ tree_crossover_boston = setting_boston.get_crossover()
 tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
 print("encoder boston init...")
-tree_encoder_boston = CountsEncoder(structure_boston)
+tree_encoder_boston = CountsEncoder(structure_boston, True, 100)
 print("encoder boston ready")
 
 tree_sampling_heating = setting_heating.get_sampling()
@@ -99,7 +103,7 @@ tree_crossover_heating = setting_heating.get_crossover()
 tree_mutation_heating = setting_heating.get_mutation()
 duplicates_elimination_heating = setting_heating.get_duplicates_elimination()
 print("encoder heating init...")
-tree_encoder_heating = CountsEncoder(structure_heating)
+tree_encoder_heating = CountsEncoder(structure_heating, True, 100)
 print("encoder heating ready")
 
 
@@ -126,6 +130,7 @@ def thanks():
 @app.route("/startRun/<problem>")
 def start_run(problem):
     run_id = str(uuid.uuid1())
+    np.random.seed(None)
     rnd_seed = np.random.randint(1, 10000)
     random.seed(rnd_seed)
     np.random.seed(rnd_seed)
@@ -144,7 +149,7 @@ def start_run(problem):
     population_storage = set()
 
     # optimization thread creation
-    algorithm = NSGA2(pop_size=256,
+    algorithm = NSGA2(pop_size=200,
                       sampling=tree_sampling,
                       crossover=tree_crossover,
                       mutation=tree_mutation,

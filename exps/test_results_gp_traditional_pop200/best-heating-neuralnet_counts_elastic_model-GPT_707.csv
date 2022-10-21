@@ -1,0 +1,10 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[log, **3, **3, x_3]",log(abs(((x_3)**3)**3)),42.8138427734375,0.031446825712919235,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+1,"[log, **3, **3, x_6]",log(abs(((x_6)**3)**3)),99.67538452148438,0.030889427289366722,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+2,"[log, **3, **3, **3, x_3]",log(abs((((x_3)**3)**3)**3)),21.560138702392578,0.03181366249918938,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+3,"[**3, **3, **3, x_3]",(((x_3)**3)**3)**3,22.431339263916016,0.03166938200592995,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+4,"[**3, log, **3, **3, **3, x_3]",(log(abs((((x_3)**3)**3)**3)))**3,21.086383819580078,0.0328846238553524,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+5,"[-, **3, **3, x_3, **3, x_6]",(((x_3)**3)**3-(x_6)**3),13.289554595947266,0.04780803248286247,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+6,"[-, max, x_3, log, max, x_0, log, x_6, **3, x_6]","(max(x_3,log(abs(max(x_0,log(abs(x_6))))))-(x_6)**3)",10.965575218200684,0.06647404283285141,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+7,"[+, +, +, /, 3.8, *, x_4, x_0, /, max, x_1, x_2, x_4, /, x_6, *, x_4, -, x_1, x_1, /, x_6, *, x_4, +, 2.08, x_4]","((((3.8/(x_4*x_0))+(max(x_1,x_2)/x_4))+(x_6/(x_4*(x_1-x_1))))+(x_6/(x_4*(2.08+x_4))))",8.777253150939941,0.14439424872398376,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+8,"[-, max, x_3, log, **3, **3, x_1, **3, x_6]","(max(x_3,log(abs(((x_1)**3)**3)))-(x_6)**3)",11.991199493408203,0.05702247470617294,707,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
