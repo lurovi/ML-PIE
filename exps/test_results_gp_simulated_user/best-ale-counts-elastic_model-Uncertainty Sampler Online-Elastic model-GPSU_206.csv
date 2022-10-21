@@ -1,0 +1,20 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[u-, log, cos, x_2]",-(log(abs(cos(x_2)))),0.0927794873714447,-0.11972104012966156,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+1,"[sin, u-, sin, x_2]",sin(-(sin(x_2))),0.09545010328292847,-0.12502405047416687,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+2,"[sin, **3, sin, u-, cos, x_2]",sin((sin(-(cos(x_2))))**3),0.09268977493047714,-0.11584863811731339,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+3,"[**3, sin, **2, sin, u-, x_2]",(sin((sin(-(x_2)))**2))**3,0.09272996336221695,-0.11601097136735916,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+4,"[u-, **3, cos, **2, x_2]",-((cos((x_2)**2))**3),0.09265243262052536,-0.1111178994178772,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+5,"[+, **2, sin, +, u-, -3.34, sin, x_1, x_2]",((sin((-(-3.34)+sin(x_1))))**2+x_2),0.0918203741312027,-0.10923527181148529,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+6,"[exp, sin, +, sin, x_3, +, u-, x_2, +, x_2, x_2]",exp(sin((sin(x_3)+(-(x_2)+(x_2+x_2))))),0.06762673705816269,-0.08481144905090332,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+7,"[+, **2, sin, +, u-, x_2, sin, x_1, x_2]",((sin((-(x_2)+sin(x_1))))**2+x_2),0.08887410908937454,-0.10711315274238586,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+8,"[**2, sin, u-, +, sin, x_2, sqrt, x_1]",(sin(-((sin(x_2)+sqrt(abs(x_1))))))**2,0.07832205295562744,-0.10537376999855042,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+9,"[sqrt, +, x_2, sqrt, x_1]",sqrt(abs((x_2+sqrt(abs(x_1))))),0.07347429543733597,-0.09611989557743073,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+10,"[sin, sin, +, sin, x_3, +, u-, x_2, +, x_2, x_2]",sin(sin((sin(x_3)+(-(x_2)+(x_2+x_2))))),0.06700343638658524,-0.0843377634882927,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+11,"[sin, +, sin, x_3, +, u-, x_2, +, x_2, x_2]",sin((sin(x_3)+(-(x_2)+(x_2+x_2)))),0.06541567295789719,-0.08086581528186798,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+12,"[+, *, **, log, -3.05, u-, sin, x_1, +, x_3, /, *, x_1, x_1, **2, x_1, x_2]",(((log(abs(-3.05))**-(sin(x_1)))*(x_3+((x_1*x_1)/(x_1)**2)))+x_2),0.05552353337407112,-0.07354577630758286,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+13,"[+, sin, +, sin, x_3, +, u-, x_2, x_2, x_2]",(sin((sin(x_3)+(-(x_2)+x_2)))+x_2),0.0641356110572815,-0.0780838206410408,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+14,"[+, *, **, log, -, 1.83, x_0, sin, **3, x_3, +, x_3, **2, **3, x_0, sqrt, -, sin, x_1, *, x_2, +, x_1, 2.4]",(((log(abs((1.83-x_0)))**sin((x_3)**3))*(x_3+((x_0)**3)**2))+sqrt(abs((sin(x_1)-(x_2*(x_1+2.4)))))),0.03739145025610924,-0.02155531942844391,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+15,"[+, *, **, log, -3.05, x_1, +, x_3, /, *, x_1, x_1, **2, x_1, x_2]",(((log(abs(-3.05))**x_1)*(x_3+((x_1*x_1)/(x_1)**2)))+x_2),0.05185432732105255,-0.06431858241558075,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+16,"[sin, +, +, sin, **3, x_3, sin, x_2, sqrt, x_1]",sin(((sin((x_3)**3)+sin(x_2))+sqrt(abs(x_1)))),0.054366741329431534,-0.06872174143791199,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+17,"[log, +, +, x_2, sin, **3, x_3, 1.56]",log(abs(((x_2+sin((x_3)**3))+1.56))),0.05761655047535896,-0.07777467370033264,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale
+18,"[+, *, **, log, u-, x_1, x_0, +, x_3, **2, **3, x_0, x_2]",(((log(abs(-(x_1)))**x_0)*(x_3+((x_0)**3)**2))+x_2),0.045940060168504715,-0.03865133970975876,206,256,50,256,counts,elastic_model,Uncertainty Sampler Online,Elastic model,ale

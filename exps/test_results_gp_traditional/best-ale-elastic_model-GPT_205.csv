@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_2],x_2,0.09401333332061768,-78.9000015258789,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+1,"[+, x_2, x_3]",(x_2+x_3),0.06472239643335342,-78.0,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+2,"[+, *, x_3, 0.84, x_2]",((x_3*0.84)+x_2),0.06361635774374008,-77.0999984741211,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+3,"[/, 0.53, +, +, x_3, 0.98, x_2]",(0.53/((x_3+0.98)+x_2)),0.06326381117105484,-76.19999694824219,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+4,"[/, -0.19, +, +, x_3, 0.98, x_2]",(-0.19/((x_3+0.98)+x_2)),0.06326381117105484,-76.19999694824219,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+5,"[+, *, x_3, sqrt, +, log, x_1, x_3, x_2]",((x_3*sqrt(abs((log(abs(x_1))+x_3))))+x_2),0.04382491111755371,-59.0,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+6,"[+, *, x_3, sqrt, +, log, x_1, +, x_2, x_3, x_2]",((x_3*sqrt(abs((log(abs(x_1))+(x_2+x_3)))))+x_2),0.042953263968229294,-58.099998474121094,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+7,"[/, 0.53, +, +, x_3, +, x_2, 3.57, +, +, x_2, x_3, +, *, x_1, x_0, x_2]",(0.53/((x_3+(x_2+3.57))+((x_2+x_3)+((x_1*x_0)+x_2)))),0.05021030828356743,-71.69999694824219,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+8,"[+, x_2, /, x_3, +, +, x_3, 0.98, x_2]",(x_2+(x_3/((x_3+0.98)+x_2))),0.050647832453250885,-75.30000305175781,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale
+9,"[+, -, log, -, -1.01, x_3, u-, x_2, /, x_1, x_1]",((log(abs((-1.01-x_3)))--(x_2))+(x_1/x_1)),0.04427177831530571,-66.0,205,256,50,256,not_spcified,elastic_model,not_specified,not_specified,ale

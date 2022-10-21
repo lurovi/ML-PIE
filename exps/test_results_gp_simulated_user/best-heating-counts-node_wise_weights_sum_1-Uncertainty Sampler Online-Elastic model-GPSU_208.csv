@@ -1,0 +1,18 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[+, x_4, exp, /, **3, x_6, cos, cos, x_3]",(x_4+exp(((x_6)**3/cos(cos(x_3))))),12.680994987487793,-0.07214930653572083,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+1,"[-, *, exp, x_6, cos, sqrt, +, x_4, x_1, **, 3.04, x_3]",((exp(x_6)*cos(sqrt(abs((x_4+x_1)))))-(3.04**x_3)),11.785347938537598,0.019953571259975433,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+2,"[u-, +, x_4, exp, **3, x_6]",-((x_4+exp((x_6)**3))),13.149571418762207,-0.0740257203578949,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+3,"[u-, +, x_4, exp, /, **3, x_6, exp, x_1]",-((x_4+exp(((x_6)**3/exp(x_1))))),12.609420776367188,-0.03684774786233902,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+4,"[u-, +, x_4, exp, /, **3, x_6, exp, x_3]",-((x_4+exp(((x_6)**3/exp(x_3))))),12.670561790466309,-0.04065435379743576,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+5,"[+, x_4, exp, /, **3, x_6, exp, sin, x_3]",(x_4+exp(((x_6)**3/exp(sin(x_3))))),12.544222831726074,-0.028679735958576202,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+6,"[+, x_4, exp, /, **3, x_6, **2, u-, -1.01]",(x_4+exp(((x_6)**3/(-(-1.01))**2))),13.185049057006836,-0.14071092009544373,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+7,"[+, u-, sqrt, u-, x_4, exp, /, **3, x_6, sqrt, exp, x_1]",(-(sqrt(abs(-(x_4))))+exp(((x_6)**3/sqrt(abs(exp(x_1)))))),12.239352226257324,0.0019369050860404968,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+8,"[u-, +, x_4, exp, **3, **3, x_7]",-((x_4+exp(((x_7)**3)**3))),17.86581802368164,-0.2234649956226349,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+9,"[u-, /, u-, u-, exp, x_1, u-, u-, x_4]",-((-(-(exp(x_1)))/-(-(x_4)))),20.595129013061523,-0.4056512117385864,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+10,"[u-, +, x_4, exp, u-, -, x_3, x_1]",-((x_4+exp(-((x_3-x_1))))),19.942873001098633,-0.24936281144618988,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+11,"[+, x_4, u-, sin, u-, +, x_6, x_4]",(x_4+-(sin(-((x_6+x_4))))),13.79187297821045,-0.2094462513923645,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+12,"[u-, u-, cos, u-, u-, x_3]",-(-(cos(-(-(x_3))))),23.0580997467041,-0.4679521918296814,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+13,"[u-, u-, u-, u-, u-, x_3]",-(-(-(-(-(x_3))))),26.744340896606445,-0.49189069867134094,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+14,"[u-, u-, u-, u-, sqrt, x_4]",-(-(-(-(sqrt(abs(x_4)))))),22.431339263916016,-0.4609842300415039,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+15,"[u-, u-, u-, u-, u-, x_1]",-(-(-(-(-(x_1))))),57.04818344116211,-0.4953048527240753,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating
+16,"[u-, u-, u-, u-, u-, -1.01]",-(-(-(-(-(-1.01))))),100.53578186035156,-0.4971502721309662,208,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,heating

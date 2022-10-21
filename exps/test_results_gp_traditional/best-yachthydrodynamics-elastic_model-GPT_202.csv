@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_5],x_5,85.6635513305664,-78.9000015258789,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+1,"[**2, exp, *, +, 4.12, 4.72, x_5]",(exp(((4.12+4.72)*x_5)))**2,3.419750690460205,-59.900001525878906,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+2,"[exp, *, +, 4.12, 4.72, x_5]",exp(((4.12+4.72)*x_5)),20.286989212036133,-68.5,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+3,"[exp, *, +, 4.12, +, x_5, 4.72, +, x_5, x_5]",exp(((4.12+(x_5+4.72))*(x_5+x_5))),3.4665157794952393,-66.69999694824219,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+4,"[*, x_5, u-, -0.08]",(x_5*-(-0.08)),85.66354370117188,-77.30000305175781,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+5,"[*, x_5, exp, *, +, 4.12, 4.72, x_5]",(x_5*exp(((4.12+4.72)*x_5))),4.653556823730469,-67.5999984741211,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+6,"[*, **3, -, sin, exp, x_1, exp, +, x_5, x_5, 1.36]",(((sin(exp(x_1))-exp((x_5+x_5))))**3*1.36),1.8985346555709839,-46.29999923706055,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+7,"[*, x_5, -, 0.83, **, 4.12, x_5]",(x_5*(0.83-(4.12**x_5))),15.0586519241333,-68.30000305175781,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+8,"[*, x_5, -, 0.83, u-, *, +, 4.12, 4.72, x_5]",(x_5*(0.83--(((4.12+4.72)*x_5)))),31.818525314331055,-74.5999984741211,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics
+9,"[/, x_5, -, x_5, 0.83]",(x_5/(x_5-0.83)),62.76484680175781,-77.0999984741211,202,256,50,256,not_spcified,elastic_model,not_specified,not_specified,yachthydrodynamics

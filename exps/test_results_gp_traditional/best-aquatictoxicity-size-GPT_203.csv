@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_3],x_3,2.0249805450439453,1.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+1,"[+, x_3, exp, u-, **, x_2, x_4]",(x_3+exp(-((x_2**x_4)))),1.738515019416809,7.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+2,"[exp, sin, x_3]",exp(sin(x_3)),1.9931449890136719,3.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+3,"[+, **2, exp, u-, **, x_2, x_4, *, cos, cos, x_5, x_3]",((exp(-((x_2**x_4))))**2+(cos(cos(x_5))*x_3)),1.6298919916152954,12.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+4,"[-, -, x_5, x_4, x_3]",((x_5-x_4)-x_3),1.7978261709213257,5.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+5,"[+, sin, x_4, x_3]",(sin(x_4)+x_3),1.8268814086914062,4.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+6,"[-, x_3, -, x_5, x_4]",(x_3-(x_5-x_4)),1.7978261709213257,5.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+7,"[+, -, x_4, x_5, +, x_3, exp, u-, **, x_2, x_4]",((x_4-x_5)+(x_3+exp(-((x_2**x_4))))),1.6300091743469238,11.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+8,"[-, -, x_5, x_4, +, x_3, exp, u-, **, x_2, x_4]",((x_5-x_4)-(x_3+exp(-((x_2**x_4))))),1.6300091743469238,11.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+9,"[+, x_3, exp, exp, u-, **, x_2, x_4]",(x_3+exp(exp(-((x_2**x_4))))),1.6800130605697632,8.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+10,"[+, -, -, x_4, sqrt, x_6, x_5, +, x_3, exp, u-, **, x_2, x_4]",(((x_4-sqrt(abs(x_6)))-x_5)+(x_3+exp(-((x_2**x_4))))),1.5461636781692505,14.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity
+11,"[+, **2, exp, u-, **, x_2, x_4, sin, x_3]",((exp(-((x_2**x_4))))**2+sin(x_3)),1.672284483909607,9.0,203,256,50,256,not_spcified,size,not_specified,not_specified,aquatictoxicity

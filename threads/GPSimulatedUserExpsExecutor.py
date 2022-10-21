@@ -111,7 +111,8 @@ class GPSimulatedUserExpsExecutor:
             termination=termination,
             seed=optimization_seed,
             callback=callback,
-            verbose=self.__verbose
+            verbose=self.__verbose,
+            save_history=False
         )
         parameters = {"seed": optimization_seed,
                       "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
@@ -131,5 +132,5 @@ class GPSimulatedUserExpsExecutor:
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
         automatic_run.run_automatically(delay=5)
-        print("\n"+run_id+"\n")
+        print(run_id)
         return True

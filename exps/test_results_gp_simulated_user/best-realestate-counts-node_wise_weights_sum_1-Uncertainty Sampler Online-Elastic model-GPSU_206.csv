@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[sin, x_2]",sin(x_2),132.85934448242188,-0.2538817524909973,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+1,"[exp, u-, x_1]",exp(-(x_1)),87.82508087158203,-0.24448096752166748,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+2,"[/, cos, cos, **3, x_4, exp, x_1]",(cos(cos((x_4)**3))/exp(x_1)),87.02645874023438,-0.22631409764289856,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+3,"[sqrt, x_4]",sqrt(abs(x_4)),122.47774505615234,-0.253322571516037,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+4,"[log, cos, sqrt, exp, u-, x_1]",log(abs(cos(sqrt(abs(exp(-(x_1))))))),87.80740356445312,-0.23018679022789001,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+5,"[/, sin, sqrt, exp, u-, x_0, exp, x_1]",(sin(sqrt(abs(exp(-(x_0)))))/exp(x_1)),84.11283874511719,-0.21928401291370392,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+6,"[sin, exp, x_4]",sin(exp(x_4)),117.9307861328125,-0.2510548532009125,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+7,"[cos, x_4]",cos(x_4),115.7396011352539,-0.2506669759750366,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+8,"[/, sin, sqrt, exp, x_3, exp, x_1]",(sin(sqrt(abs(exp(x_3))))/exp(x_1)),79.93226623535156,-0.21495714783668518,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+9,"[/, sin, sqrt, exp, sin, x_3, exp, x_1]",(sin(sqrt(abs(exp(sin(x_3)))))/exp(x_1)),79.76383972167969,-0.18474212288856506,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+10,"[/, sin, sqrt, +, exp, x_3, **3, x_4, exp, x_1]",(sin(sqrt(abs((exp(x_3)+(x_4)**3))))/exp(x_1)),79.0049819946289,-0.17769552767276764,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate
+11,"[/, sin, sqrt, +, *, 0.13, x_2, exp, x_3, exp, x_1]",(sin(sqrt(abs(((0.13*x_2)+exp(x_3)))))/exp(x_1)),78.8343505859375,-0.12920533120632172,206,256,50,256,counts,node_wise_weights_sum_1,Uncertainty Sampler Online,Elastic model,realestate

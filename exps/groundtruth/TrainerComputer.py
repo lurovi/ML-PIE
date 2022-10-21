@@ -15,4 +15,4 @@ class TrainerComputer(GroundTruthComputer):
 
     def compute(self, tree: Node) -> float:
         encoding = torch.from_numpy(self.__encoder.encode(tree, True)).float().reshape(1, -1)
-        return self.__trainer.predict(encoding)[0][0].item()
+        return self.__trainer.predict(encoding)[0][0][0].item()

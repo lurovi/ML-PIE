@@ -1,0 +1,12 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_2],x_2,0.09401333332061768,1.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+1,"[sqrt, x_2]",sqrt(abs(x_2)),0.09280367940664291,2.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+2,"[-, sqrt, x_3, +, x_2, x_3]",(sqrt(abs(x_3))-(x_2+x_3)),0.060774065554142,6.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+3,"[+, x_2, x_3]",(x_2+x_3),0.06472239643335342,3.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+4,"[+, u-, u-, sqrt, +, x_0, x_1, +, x_2, x_3]",(-(-(sqrt(abs((x_0+x_1)))))+(x_2+x_3)),0.05294094234704971,10.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+5,"[exp, u-, +, x_3, x_2]",exp(-((x_3+x_2))),0.061834707856178284,5.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+6,"[-, u-, sqrt, x_1, +, x_2, x_3]",(-(sqrt(abs(x_1)))-(x_2+x_3)),0.05431896075606346,7.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+7,"[+, -, sqrt, u-, +, x_0, x_1, u-, +, x_3, x_2, sin, cos, u-, x_3]",((sqrt(abs(-((x_0+x_1))))--((x_3+x_2)))+sin(cos(-(x_3)))),0.04765933007001877,15.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+8,"[+, x_2, sin, x_3]",(x_2+sin(x_3)),0.0637819916009903,4.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+9,"[+, -, sqrt, u-, +, x_1, x_0, u-, +, x_3, x_2, sqrt, x_1]",((sqrt(abs(-((x_1+x_0))))--((x_3+x_2)))+sqrt(abs(x_1))),0.04877234995365143,13.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale
+10,"[+, -, sqrt, u-, +, x_1, x_1, u-, +, x_3, x_2, exp, sin, cos, sqrt, x_3]",((sqrt(abs(-((x_1+x_1))))--((x_3+x_2)))+exp(sin(cos(sqrt(abs(x_3)))))),0.04684518650174141,16.0,203,256,50,256,not_spcified,size,not_specified,not_specified,ale

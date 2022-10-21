@@ -1,0 +1,18 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_0],x_0,0.10093915462493896,1.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+1,"[log, x_0]",log(abs(x_0)),0.0014832525048404932,2.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+2,"[log, +, x_0, 0.7]",log(abs((x_0+0.7))),0.00035279308212921023,4.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+3,"[log, +, x_0, cos, cos, exp, -4.76]",log(abs((x_0+cos(cos(exp(-4.76)))))),0.0002822696405928582,7.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+4,"[log, *, 3.33, -, -0.52, x_0]",log(abs((3.33*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+5,"[log, +, x_0, cos, -1.07]",log(abs((x_0+cos(-1.07)))),0.0002907959569711238,5.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+6,"[log, *, -0.52, -, -0.52, x_0]",log(abs((-0.52*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+7,"[log, *, 1.99, -, -0.52, x_0]",log(abs((1.99*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+8,"[log, *, 4.88, -, -0.52, x_0]",log(abs((4.88*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+9,"[log, +, *, **3, -4.48, -, -0.52, x_0, **, x_0, -0.07]",log(abs((((-4.48)**3*(-0.52-x_0))+(x_0**-0.07)))),0.00028217010549269617,11.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+10,"[log, *, -1.13, -, -0.52, x_0]",log(abs((-1.13*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+11,"[log, +, *, **3, -4.48, -, -0.52, x_0, **, +, -0.29, x_0, -0.52]",log(abs((((-4.48)**3*(-0.52-x_0))+((-0.29+x_0)**-0.52)))),0.0002820467052515596,13.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+12,"[log, *, -, -0.52, x_0, 0.7]",log(abs(((-0.52-x_0)*0.7))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+13,"[log, +, x_0, /, u-, -1.97, exp, 1.3]",log(abs((x_0+(-(-1.97)/exp(1.3))))),0.0002821857633534819,8.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+14,"[log, exp, log, -, -0.52, x_0]",log(abs(exp(log(abs((-0.52-x_0)))))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+15,"[log, +, *, **3, -4.48, -, -0.52, x_0, -, log, u-, -2.76, sqrt, log, x_0]",log(abs((((-4.48)**3*(-0.52-x_0))+(log(abs(-(-2.76)))-sqrt(abs(log(abs(x_0)))))))),0.000282005756162107,15.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer
+16,"[log, *, 0.32, -, -0.52, x_0]",log(abs((0.32*(-0.52-x_0)))),0.0002827534335665405,6.0,206,256,50,256,not_spcified,size,not_specified,not_specified,keijzer

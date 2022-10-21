@@ -13,7 +13,7 @@ from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 class OptimizationThread(threading.Thread):
 
     def __init__(self, optimization_algorithm: GeneticAlgorithm, problem: Problem, termination: Any, seed: int,
-                 callback: PopulationAccumulator = None, verbose: bool = False, save_history: bool = True):
+                 callback: PopulationAccumulator = None, verbose: bool = False, save_history: bool = False):
         threading.Thread.__init__(self)
         self.optimization_algorithm = optimization_algorithm
         self.problem = problem

@@ -1,0 +1,12 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_4],x_4,22.431339263916016,1.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+1,"[cos, **2, x_3]",cos((x_3)**2),22.010400772094727,3.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+2,"[**3, -, log, x_4, x_6]",((log(abs(x_4))-x_6))**3,18.558515548706055,5.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+3,"[+, +, x_6, x_2, exp, log, sqrt, log, x_4]",((x_6+x_2)+exp(log(abs(sqrt(abs(log(abs(x_4)))))))),11.793776512145996,9.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+4,"[**2, **3, -, log, *, x_4, x_4, x_6]",(((log(abs((x_4*x_4)))-x_6))**3)**2,16.124366760253906,8.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+5,"[**3, -, log, x_4, exp, exp, x_6]",((log(abs(x_4))-exp(exp(x_6))))**3,16.363126754760742,7.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+6,"[**3, -, x_2, log, **2, x_4]",((x_2-log(abs((x_4)**2))))**3,18.15850067138672,6.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+7,"[+, exp, sin, -, **2, 0.29, exp, x_6, +, sqrt, exp, x_0, exp, x_3]",(exp(sin(((0.29)**2-exp(x_6))))+(sqrt(abs(exp(x_0)))+exp(x_3))),10.682950019836426,14.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+8,"[**3, u-, -, x_2, log, x_4]",(-((x_2-log(abs(x_4)))))**3,18.15850067138672,6.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+9,"[+, -, exp, -, **2, x_6, exp, x_6, exp, cos, **2, x_3, sin, sin, **2, **, x_4, x_2]",((exp(((x_6)**2-exp(x_6)))-exp(cos((x_3)**2)))+sin(sin(((x_4**x_2))**2))),6.455358982086182,18.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating
+10,"[-, x_2, log, x_4]",(x_2-log(abs(x_4))),19.91425132751465,4.0,204,256,50,256,not_spcified,size,not_specified,not_specified,heating

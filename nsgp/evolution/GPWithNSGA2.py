@@ -26,8 +26,8 @@ class GPWithNSGA2:
                  pop_size: int,
                  num_gen: int,
                  element_wise_eval: bool = False,
-                 crossover_prob: float = 0.8,
-                 mutation_prob: float = 0.5,
+                 crossover_prob: float = 0.9,
+                 mutation_prob: float = 0.6,
                  num_offsprings: int = None,
                  duplicates_elimination_data: np.ndarray = None,
                  callback: Callback = None
@@ -43,7 +43,6 @@ class GPWithNSGA2:
             self.__callback = Callback()
         else:
             self.__callback = callback
-        self.__termination = ("n_gen", self.__num_gen)
         if self.__num_offsprings is None:
             self.__num_offsprings = self.__pop_size
         self.__tournament_selection = TournamentSelection(func_comp=binary_tournament, pressure=2)
@@ -62,7 +61,7 @@ class GPWithNSGA2:
                                  eliminate_duplicates=self.__duplicates_elimination
                                  )
 
-    def run_minimization(self, seed: int = None, verbose: bool = False, save_history: bool = True, mutex: threading.Lock = None) -> Dict[str, Any]:
+    def run_minimization(self, seed: int = None, verbose: bool = False, save_history: bool = False, mutex: threading.Lock = None) -> Dict[str, Any]:
         if seed is not None:
             random.seed(seed)
             np.random.seed(seed)
@@ -73,7 +72,7 @@ class GPWithNSGA2:
             problem: Problem = MultiObjectiveMinimizationProblem(self.__evaluators, mutex)
         start = time.time()
         res = minimize(problem=problem, algorithm=deepcopy(self.__algorithm),
-                       termination=deepcopy(self.__termination),
+                       termination=("n_gen", self.__num_gen),
                        seed=seed, verbose=verbose, save_history=save_history,
                        callback=deepcopy(self.__callback),
                        return_least_infeasible=False)

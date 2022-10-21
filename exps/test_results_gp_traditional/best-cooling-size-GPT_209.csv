@@ -1,0 +1,10 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_4],x_4,18.64932632446289,1.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+1,"[cos, log, **2, x_3]",cos(log(abs((x_3)**2))),17.178611755371094,4.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+2,"[**2, x_3]",(x_3)**2,18.597734451293945,2.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+3,"[sin, log, x_3]",sin(log(abs(x_3))),17.878246307373047,3.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+4,"[+, exp, exp, cos, **2, x_3, x_2]",(exp(exp(cos((x_3)**2)))+x_2),15.276117324829102,7.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+5,"[+, cos, exp, cos, **, x_3, x_2, exp, x_3]",(cos(exp(cos((x_3**x_2))))+exp(x_3)),12.83861255645752,9.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+6,"[**2, -, x_2, log, x_4]",((x_2-log(abs(x_4))))**2,16.076618194580078,5.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+7,"[-, exp, x_3, +, x_4, -, x_6, x_0]",(exp(x_3)-(x_4+(x_6-x_0))),14.213704109191895,8.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
+8,"[-, cos, cos, exp, x_2, +, cos, log, **2, x_4, cos, cos, **, x_3, x_2]",(cos(cos(exp(x_2)))-(cos(log(abs((x_4)**2)))+cos(cos((x_3**x_2))))),10.903213500976562,15.0,209,256,50,256,not_spcified,size,not_specified,not_specified,cooling
