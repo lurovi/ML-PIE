@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_12],x_12,39.54974365234375,-78.9000015258789,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+1,"[-, x_5, x_12]",(x_5-x_12),34.15042495727539,-78.0,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+2,"[-, x_5, +, +, x_12, 2.28, x_10]",(x_5-((x_12+2.28)+x_10)),29.503374099731445,-76.19999694824219,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+3,"[-, -, x_5, x_9, x_12]",((x_5-x_9)-x_12),32.46488952636719,-77.0999984741211,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+4,"[+, +, x_12, 2.28, /, -, x_10, max, x_5, x_8, +, **3, x_12, 2.28]","((x_12+2.28)+((x_10-max(x_5,x_8))/((x_12)**3+2.28)))",22.59200668334961,-61.5,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+5,"[log, -, +, +, x_3, x_10, +, x_12, x_12, -, -, x_5, 2.28, 4.65]",log(abs((((x_3+x_10)+(x_12+x_12))-((x_5-2.28)-4.65)))),24.034753799438477,-64.9000015258789,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+6,"[-, x_5, +, +, +, x_12, x_9, +, *, x_12, x_5, x_10, x_12]",(x_5-(((x_12+x_9)+((x_12*x_5)+x_10))+x_12)),24.059329986572266,-73.5,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+7,"[+, +, x_12, 2.28, /, -, -, x_10, max, x_5, x_3, max, x_5, **3, x_12, +, **3, x_12, 2.28]","((x_12+2.28)+(((x_10-max(x_5,x_3))-max(x_5,(x_12)**3))/((x_12)**3+2.28)))",20.67182731628418,-47.70000076293945,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+8,"[-, x_5, -, +, x_10, +, x_12, x_12, x_3]",(x_5-((x_10+(x_12+x_12))-x_3)),27.612306594848633,-75.30000305175781,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston
+9,"[+, x_12, /, -, x_10, max, x_5, max, x_11, x_10, +, x_12, 2.28]","(x_12+((x_10-max(x_5,max(x_11,x_10)))/(x_12+2.28)))",21.17548179626465,-57.70000076293945,706,160,50,160,not_spcified,elastic_model,not_specified,not_specified,boston

@@ -1,0 +1,14 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[**3, x_5]",(x_5)**3,69.17915344238281,-0.20122158527374268,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+1,"[max, **3, **3, **3, **3, x_5, x_5]","max(((((x_5)**3)**3)**3)**3,x_5)",53.776023864746094,-0.19521775841712952,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+2,"[-, max, **3, **3, **3, x_6, x_5, x_12]","(max((((x_6)**3)**3)**3,x_5)-x_12)",24.5312557220459,-0.19037485122680664,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+3,"[**3, **3, **3, **3, **3, x_5]",(((((x_5)**3)**3)**3)**3)**3,55.46393966674805,-0.19932925701141357,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+4,"[-, max, **3, **3, **3, x_3, x_5, x_12]","(max((((x_3)**3)**3)**3,x_5)-x_12)",23.511693954467773,-0.18733802437782288,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+5,"[-, max, /, x_3, log, /, x_5, x_0, x_5, x_12]","(max((x_3/log(abs((x_5/x_0)))),x_5)-x_12)",24.382413864135742,-0.18898460268974304,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+6,"[-, max, **3, **3, **3, x_10, x_5, +, x_12, x_10]","(max((((x_10)**3)**3)**3,x_5)-(x_12+x_10))",22.93716812133789,-0.16283056139945984,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+7,"[-, max, **3, x_10, x_5, +, x_12, x_10]","(max((x_10)**3,x_5)-(x_12+x_10))",22.343673706054688,-0.15859177708625793,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+8,"[max, **3, **3, **3, **3, x_6, x_5]","max(((((x_6)**3)**3)**3)**3,x_5)",43.30575942993164,-0.19461721181869507,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+9,"[-, max, **3, **3, log, x_5, x_5, x_12]","(max(((log(abs(x_5)))**3)**3,x_5)-x_12)",29.838457107543945,-0.1915508508682251,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+10,"[**3, max, **3, **3, **3, x_5, x_5]","(max((((x_5)**3)**3)**3,x_5))**3",53.776023864746094,-0.19521775841712952,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+11,"[-, max, /, **3, x_3, log, -, x_10, 4.53, x_5, x_12]","(max(((x_3)**3/log(abs((x_10-4.53)))),x_5)-x_12)",23.190690994262695,-0.1783064305782318,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
+12,"[-, max, /, **3, x_3, **3, log, -2.72, x_5, x_12]","(max(((x_3)**3/(log(abs(-2.72)))**3),x_5)-x_12)",23.509090423583984,-0.17888297140598297,703,120,50,120,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,boston
