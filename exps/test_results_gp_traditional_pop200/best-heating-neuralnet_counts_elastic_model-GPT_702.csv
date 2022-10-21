@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[**3, x_6]",(x_6)**3,92.53141021728516,-0.032844990491867065,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+1,"[**3, x_3]",(x_3)**3,23.408382415771484,-0.03235751390457153,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+2,"[**3, x_4]",(x_4)**3,22.431339263916016,-0.03034117817878723,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+3,"[**3, x_0]",(x_0)**3,89.21625518798828,-0.03254026174545288,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+4,"[**3, log, **3, **3, **3, x_3]",(log(abs((((x_3)**3)**3)**3)))**3,21.086383819580078,-0.021196916699409485,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+5,"[+, **3, x_6, x_4]",((x_6)**3+x_4),13.271806716918945,-0.013541609048843384,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+6,"[+, **3, -, +, x_6, +, x_2, x_6, log, x_4, x_6]",((((x_6+(x_2+x_6))-log(abs(x_4))))**3+x_6),11.914499282836914,0.02915656566619873,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+7,"[+, **3, -, +, x_6, +, x_2, x_6, log, x_4, log, max, x_3, **3, max, x_2, x_6]","((((x_6+(x_2+x_6))-log(abs(x_4))))**3+log(abs(max(x_3,(max(x_2,x_6))**3))))",11.886253356933594,0.07050473988056183,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+8,"[+, **3, -, x_4, max, **3, x_3, x_4, +, +, x_6, +, x_2, x_6, max, x_2, x_6]","(((x_4-max((x_3)**3,x_4)))**3+((x_6+(x_2+x_6))+max(x_2,x_6)))",10.473472595214844,0.07462155818939209,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+9,"[**3, +, -, +, x_6, +, x_2, x_4, log, x_4, x_6]",((((x_6+(x_2+x_4))-log(abs(x_4)))+x_6))**3,11.892304420471191,0.032647475600242615,702,200,50,200,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating

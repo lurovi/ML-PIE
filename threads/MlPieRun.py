@@ -162,7 +162,7 @@ class MlPieRun:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
         try:
             latex_repr = latex(parse_expr(readable_repr, evaluate=False))
-        except TypeError:
+        except (RuntimeError, TypeError, ZeroDivisionError, Exception) as e:
             latex_repr = readable_repr
         return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
 

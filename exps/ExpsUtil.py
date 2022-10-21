@@ -51,10 +51,11 @@ class ExpsUtil:
         duplicates_elimination_little_data_num_points: int = 5
         duplicates_elimination_little_data = np.random.uniform(-5.0, 5.0, size=(duplicates_elimination_little_data_num_points, n_features))
         internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
-                          node_impl.UnaryMinus(), node_impl.Power(), node_impl.Square(), node_impl.Cube(),
-                          node_impl.Sqrt(), node_impl.Exp(), node_impl.Log(), node_impl.Sin(), node_impl.Cos()]
-        normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8), (0, 0.5), (0, 15), (0, 5), (0, 8), (0, 20),
-                                          (0, 30), (0, 30), (0, 23), (0, 23)] + [(0, 0.8)] * n_features + [(0, 0.5)]
+                          node_impl.Cube(),
+                          node_impl.Log(), node_impl.Max()]
+        normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8),
+                                          (0, 8),
+                                          (0, 30), (0, 15)] + [(0, 0.8)] * n_features + [(0, 0.5)]
         structure = TreeStructure(internal_nodes, n_features, 5, ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters)
         structure.register_encoders([CountsEncoder(structure, True, 100), LevelWiseCountsEncoder(structure, True, 100),

@@ -27,14 +27,14 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pop_size = 256
+    pop_size = 200
     num_gen = 50
-    starting_seed = 200
+    starting_seed = 700
     num_repeats = 10
     idx = 1
     folder_name = "test_results_gp_simulated_user"
     pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
-    for data_path_file in ["ale", "heating", "cooling", "realestate", "boston", "aquatictoxicity", "synchronousmachine", "yachthydrodynamics", "friedman1", "keijzer"]:
+    for data_path_file in ["heating", "boston"]:
         structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
         data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                 structure, ground_truths)

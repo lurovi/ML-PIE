@@ -1,0 +1,10 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_12],x_12,39.54974365234375,-78.9000015258789,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+1,"[-, x_12, x_5]",(x_12-x_5),34.15042495727539,-78.0,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+2,"[*, x_12, +, 2.31, x_5]",(x_12*(2.31+x_5)),29.437808990478516,-77.0999984741211,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+3,"[-, +, x_12, *, x_12, +, x_5, 1.18, x_5]",((x_12+(x_12*(x_5+1.18)))-x_5),24.576663970947266,-75.30000305175781,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+4,"[+, *, x_12, +, +, max, x_5, x_4, 2.31, x_5, x_10]","((x_12*((max(x_5,x_4)+2.31)+x_5))+x_10)",22.440776824951172,-66.5,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+5,"[+, -, -, *, x_12, +, 2.31, x_5, max, x_5, *, x_1, x_4, x_5, x_10]","((((x_12*(2.31+x_5))-max(x_5,(x_1*x_4)))-x_5)+x_10)",22.348848342895508,-64.69999694824219,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+6,"[-, *, +, x_10, *, x_12, +, 1.18, 1.18, +, 2.31, max, *, x_3, x_8, x_5, max, x_5, x_12]","(((x_10+(x_12*(1.18+1.18)))*(2.31+max((x_3*x_8),x_5)))-max(x_5,x_12))",20.558198928833008,-59.5,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+7,"[+, -, -, *, x_12, +, 2.31, x_5, max, x_5, *, x_12, x_7, x_5, +, 2.31, x_5]","((((x_12*(2.31+x_5))-max(x_5,(x_12*x_7)))-x_5)+(2.31+x_5))",21.06178092956543,-63.79999923706055,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
+8,"[+, -, -, *, x_12, +, 2.31, x_5, 2.31, x_5, x_10]",((((x_12*(2.31+x_5))-2.31)-x_5)+x_10),22.70597267150879,-74.4000015258789,700,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston
