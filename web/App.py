@@ -10,6 +10,9 @@ from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
+from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
+from exps.DatasetGenerator import DatasetGenerator
+from exps.groundtruth.MathElasticModelComputer import MathElasticModelComputer
 from genepro import node_impl
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 from nsgp.encoder.CountsEncoder import CountsEncoder
@@ -66,6 +69,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # tree parameters
 n_features_boston, n_features_heating = 13, 8
+phi = MathElasticModelComputer()
 duplicates_elimination_data_boston = np.random.uniform(-5.0, 5.0, size=(5, n_features_boston))
 seed = 100
 random.seed(seed)
@@ -87,24 +91,42 @@ structure_boston = TreeStructure(internal_nodes, n_features_boston, 5,
 structure_heating = TreeStructure(internal_nodes, n_features_heating, 5,
                                   ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
-setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
-setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 
+print("encoder boston init...")
+tree_encoder_boston = CountsEncoder(structure_boston, True, 100)
+structure_boston.register_encoder(tree_encoder_boston)
+print("encoder boston ready")
+setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
 tree_sampling_boston = setting_boston.get_sampling()
 tree_crossover_boston = setting_boston.get_crossover()
 tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
-print("encoder boston init...")
-tree_encoder_boston = CountsEncoder(structure_boston, True, 100)
-print("encoder boston ready")
 
+print("encoder heating init...")
+tree_encoder_heating = CountsEncoder(structure_heating, True, 100)
+structure_heating.register_encoder(tree_encoder_heating)
+print("encoder heating ready")
+setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 tree_sampling_heating = setting_heating.get_sampling()
 tree_crossover_heating = setting_heating.get_crossover()
 tree_mutation_heating = setting_heating.get_mutation()
 duplicates_elimination_heating = setting_heating.get_duplicates_elimination()
-print("encoder heating init...")
-tree_encoder_heating = CountsEncoder(structure_heating, True, 100)
-print("encoder heating ready")
+
+train_size = 1250
+validation_size = 370
+test_size = 250
+
+data_generator_boston = DatasetGenerator("boston_data_generator",
+                                         structure_boston, train_size, validation_size, test_size, 101)
+data_generator_boston.generate_tree_encodings(True)
+data_generator_boston.generate_ground_truth([phi])
+data_generator_boston.create_dataset_warm_up_from_encoding_ground_truth(20, tree_encoder_boston.get_name(), phi, 102)
+
+data_generator_heating = DatasetGenerator("heating_data_generator",
+                                          structure_heating, train_size, validation_size, test_size, 101)
+data_generator_heating.generate_tree_encodings(True)
+data_generator_heating.generate_ground_truth([phi])
+data_generator_heating.create_dataset_warm_up_from_encoding_ground_truth(20, tree_encoder_heating.get_name(), phi, 102)
 
 
 @app.route("/")
@@ -143,8 +165,12 @@ def start_run(problem):
     duplicates_elimination = duplicates_elimination_boston if problem == 'boston' else duplicates_elimination_heating
 
     # shared parameters
+    pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
+    warmup_data = data_generator_boston.get_warm_up_data(tree_encoder.get_name(), phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(tree_encoder.get_name(), phi.get_name())
     mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25], dropout_prob=0.25)
-    interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device)
+    interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
+                                                               warmup_trainer_factory=pretrainer_factory,
+                                                               warmup_dataset=warmup_data)
     mutex = threading.Lock()
     population_storage = set()
 
@@ -172,7 +198,9 @@ def start_run(problem):
         problem=regression_problem,
         termination=termination,
         seed=optimization_seed,
-        callback=callback
+        callback=callback,
+        verbose=False,
+        save_history=False
     )
 
     # feedback thread creation
