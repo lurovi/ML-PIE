@@ -75,7 +75,7 @@ function retrieveSurveyModels(){
           first_model = "$$" + first_model + "$$";
           second_model = "$$" + second_model + "$$";
 
-          let label = model.type;
+          let label = model.type + "_" + model.accuracy_level;
           let divContentTemplate = `<div class=div-models-container-template> \
                               <div class="row mb-2"> \
                                   <div class="col-md-6 sbox model-container"> \
@@ -144,7 +144,7 @@ function retrieveSurveyModels(){
 function submitSurvey(){
     let survey = {}
     $(":radio").each(function () {
-        if ($(this).is(':checked')) survey[this.name] = this.id.substring(this.id.indexOf('_') + 1);
+        if ($(this).is(':checked')) survey[this.name] = this.id.substring(this.id.lastIndexOf('_') + 1);
     });
     $.ajax({
       type: "POST",

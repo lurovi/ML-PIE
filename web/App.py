@@ -1,5 +1,4 @@
 import random
-import statistics
 import threading
 
 import torch
@@ -33,6 +32,9 @@ RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
 
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
+
+accuracy_percentiles = [95, 85, 75]
+accuracy_labels = ['H', 'M', 'L']
 
 hardcoded_results = {
     "heating": {
@@ -290,6 +292,7 @@ def get_survey_data():
     for idx, row in ongoing_surveys[run_id].iterrows():
         dictionary = {
             'type': row.other_ground_truth_type,
+            'accuracy_level': row.accuracy_level,
             'pie_latex': row.latex_tree,
             'other_latex': row.other_latex_tree
         }
@@ -305,7 +308,13 @@ def answer_survey():
     if run_id not in ongoing_surveys:
         abort(404)
     survey_data = ongoing_surveys[run_id]
-    preferences = [request.json["size"], request.json["phi"], request.json["wu_phi"]]
+    preferences = []
+    print(request)
+    for _, row in survey_data.iterrows():
+        accuracy_level = row.accuracy_level
+        model_type = row.other_ground_truth_type
+        preference = request.json[model_type + "_" + accuracy_level]
+        preferences.append(preference)
     survey_data['preference'] = preferences
     survey_data.to_csv(path_or_buf=app.config['RESULTS_FOLDER'] + "survey-" + run_id + ".csv")
     return {'outcome': 'successful'}
@@ -327,32 +336,44 @@ def run_completed(run_id: str):
         pass
 
     accuracies = list(results['accuracy'])
-    median_accuracy = statistics.median(accuracies)
-    distances_from_median = list(map(lambda a: abs(median_accuracy - a), accuracies))
-    max_distance = max(distances_from_median)
-    sampling_weights = list(map(lambda d: (max_distance - d) + 1, distances_from_median))
+    selected_accuracies: set = set()
+    for percentile in accuracy_percentiles:
+        selected_accuracies.add(np.percentile(accuracies, 100 - percentile, method='closest_observation'))
 
-    chosen_indexes = random.choices(range(len(results)), sampling_weights, k=3)
-    chosen_models = results.loc[chosen_indexes, :].reset_index().drop(columns=['index'])
+    ordered_accuracies = list(selected_accuracies)
+    ordered_accuracies.sort()
+    labels = []
+    models_indexes = []
+    for idx, accuracy in enumerate(ordered_accuracies):
+        labels.append(accuracy_labels[idx])
+        models_indexes.append(accuracies.index(accuracy))
 
-    target_accuracies = chosen_models['accuracy'].tolist()
+    chosen_models = results.loc[models_indexes, :].reset_index().drop(columns=['index'])
+    chosen_models['accuracy_level'] = labels
+    chosen_models.index = range(len(chosen_models.index))
 
-    size_model = find_closest_model(target_accuracies[0], hardcoded_results[problem]["size"])
-    phi_model = find_closest_model(target_accuracies[1], hardcoded_results[problem]["phi"])
-    wu_phi_model = find_closest_model(target_accuracies[2], hardcoded_results[problem]["wu_phi"])
+    size_models = find_closest_models(ordered_accuracies, hardcoded_results[problem]["size"]).rename(
+        lambda c: "other_" + c, axis='columns')
+    size_models.index = range(len(size_models.index))
+    phi_models = find_closest_models(ordered_accuracies, hardcoded_results[problem]["phi"]).rename(
+        lambda c: "other_" + c, axis='columns')
+    phi_models.index = range(len(phi_models.index))
 
-    static_models = pd.concat([size_model, phi_model, wu_phi_model], ignore_index=True).rename(lambda c: "other_" + c,
-                                                                                               axis='columns')
-    ongoing_surveys[run_id] = pd.concat([chosen_models, static_models], axis=1)
+    psi_size_models = chosen_models.join(size_models)
+    psi_phi_models = chosen_models.join(phi_models)
+
+    ongoing_surveys[run_id] = pd.concat([psi_size_models, psi_phi_models], ignore_index=True)
 
 
-def find_closest_model(target_accuracy, dataframe):
+def find_closest_models(target_accuracies: list, dataframe):
     accuracies = dataframe['accuracy'].tolist()
-    accuracy_distances = list(map(lambda d: abs(d - target_accuracy), accuracies))
-
-    min_dist = min(accuracy_distances)
-    row_id = accuracy_distances.index(min_dist)
-    return dataframe.iloc[[row_id]]
+    row_ids = []
+    for target_accuracy in target_accuracies:
+        accuracy_distances = list(map(lambda d: abs(d - target_accuracy), accuracies))
+        min_dist = min(accuracy_distances)
+        row_id = accuracy_distances.index(min_dist)
+        row_ids.append(row_id)
+    return dataframe.iloc[row_ids]
 
 
 def runs_cleanup():
