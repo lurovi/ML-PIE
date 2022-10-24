@@ -1,0 +1,6 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,[x_12],x_12,39.54974365234375,1.0,706,160,50,160,not_spcified,size,not_specified,not_specified,boston
+1,"[-, x_12, x_5]",(x_12-x_5),34.15042495727539,3.0,706,160,50,160,not_spcified,size,not_specified,not_specified,boston
+2,"[+, -, x_10, x_5, x_12]",((x_10-x_5)+x_12),29.503374099731445,5.0,706,160,50,160,not_spcified,size,not_specified,not_specified,boston
+3,"[-, max, *, x_8, x_5, +, *, x_9, x_12, *, x_9, x_5, x_5]","(max((x_8*x_5),((x_9*x_12)+(x_9*x_5)))-x_5)",23.986316680908203,13.0,706,160,50,160,not_spcified,size,not_specified,not_specified,boston
+4,"[-, +, *, x_9, x_5, x_12, x_5]",(((x_9*x_5)+x_12)-x_5),26.239274978637695,7.0,706,160,50,160,not_spcified,size,not_specified,not_specified,boston

@@ -1,0 +1,19 @@
+,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
+0,"[**3, x_4]",(x_4)**3,22.431339263916016,-0.01098792627453804,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+1,"[**3, x_5]",(x_5)**3,100.51994323730469,-0.0122913159430027,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+2,"[log, x_5]",log(abs(x_5)),100.51008605957031,-0.012072090059518814,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+3,"[**3, log, x_5]",(log(abs(x_5)))**3,100.50906372070312,-0.01146547868847847,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+4,"[-, log, x_4, -, max, **3, +, x_2, x_6, x_4, x_0]","(log(abs(x_4))-(max(((x_2+x_6))**3,x_4)-x_0))",17.391996383666992,0.013901207596063614,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+5,"[**3, -, log, x_4, -, -, x_2, x_4, x_0]",((log(abs(x_4))-((x_2-x_4)-x_0)))**3,17.7762451171875,0.012713145464658737,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+6,"[-, log, x_4, -, max, **3, +, x_2, x_6, x_2, x_0]","(log(abs(x_4))-(max(((x_2+x_6))**3,x_2)-x_0))",16.9544734954834,0.014142144471406937,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+7,"[**3, -, log, x_4, x_2]",((log(abs(x_4))-x_2))**3,18.15850067138672,-0.004124552011489868,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+8,"[**3, -, log, x_4, x_7]",((log(abs(x_4))-x_7))**3,21.549869537353516,-0.004830244928598404,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+9,"[**3, -, log, x_4, -, -, x_2, **3, x_5, x_0]",((log(abs(x_4))-((x_2-(x_5)**3)-x_0)))**3,18.08705711364746,0.010503344237804413,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+10,"[-, +, +, /, log, x_4, log, -4.54, x_0, -2.94, x_2]",((((log(abs(x_4))/log(abs(-4.54)))+x_0)+-2.94)-x_2),18.089345932006836,0.008224863559007645,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+11,"[**3, -, log, x_4, -, max, **3, x_4, x_2, x_0]","((log(abs(x_4))-(max((x_4)**3,x_2)-x_0)))**3",18.047077178955078,0.011632028967142105,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+12,"[-, *, +, x_6, -, x_0, -, -3.18, x_2, log, x_4, x_5]",(((x_6+(x_0-(-3.18-x_2)))*log(abs(x_4)))-x_5),13.362495422363281,0.014327481389045715,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+13,"[-, *, +, x_6, -, x_4, -, -3.18, x_2, +, -2.94, /, -1.99, x_4, x_5]",(((x_6+(x_4-(-3.18-x_2)))*(-2.94+(-1.99/x_4)))-x_5),12.023218154907227,0.023238521069288254,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+14,"[-, log, x_4, **3, -, log, x_4, x_2]",(log(abs(x_4))-((log(abs(x_4))-x_2))**3),18.154804229736328,0.002781342715024948,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+15,"[-, *, +, x_6, -, /, x_2, x_2, -, -3.18, x_2, +, -2.94, /, log, x_4, log, -4.54, log, x_0]",(((x_6+((x_2/x_2)-(-3.18-x_2)))*(-2.94+(log(abs(x_4))/log(abs(-4.54)))))-log(abs(x_0))),7.518059253692627,0.03824732080101967,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+16,"[-, *, +, x_6, -, x_6, -, -3.18, x_2, +, -2.94, /, -1.99, x_4, -, x_3, x_0]",(((x_6+(x_6-(-3.18-x_2)))*(-2.94+(-1.99/x_4)))-(x_3-x_0)),10.660787582397461,0.024376895278692245,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
+17,"[+, log, x_4, x_0]",(log(abs(x_4))+x_0),21.299962997436523,-0.00443476065993309,708,160,50,160,counts,neuralnet_counts_elastic_model,not_specified,elastic_model,heating
