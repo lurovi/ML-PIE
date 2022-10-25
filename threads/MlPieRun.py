@@ -148,12 +148,8 @@ class MlPieRun:
     def get_pareto_front(self) -> pd.DataFrame:
         if self.optimization_thread.is_alive():
             return None
-        res = self.optimization_thread.result
-        accuracies = res.F[0]
-        interpretabilities = res.F[1]
-        trees = res.X[:, 0]
-        parsable_trees = list(map(lambda t: str(t.get_subtree()), trees))
-        latex_trees = list(map(lambda t: self.safe_latex_format(t), trees))
+        front = self.optimization_thread.result.opt
+        parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_front(front)
         return pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
                             columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
 
@@ -197,6 +193,22 @@ class MlPieRun:
             tree = individual.X[0]
             parsable_trees.append(str(tree.get_subtree()))
             latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
+            accuracies.append(individual.F[0])
+            interpretabilities.append(individual.F[1])
+
+        return parsable_trees, latex_trees, accuracies, interpretabilities
+
+    @staticmethod
+    def parse_front(optimal) -> tuple[list[str], list[str], list[float], list[float]]:
+        parsable_trees = []
+        latex_trees = []
+        accuracies = []
+        interpretabilities = []
+
+        for individual in optimal:
+            tree = individual.X[0]
+            parsable_trees.append(str(tree.get_subtree()))
+            latex_trees.append(MlPieRun.safe_latex_format(tree))
             accuracies.append(individual.F[0])
             interpretabilities.append(individual.F[1])
 
