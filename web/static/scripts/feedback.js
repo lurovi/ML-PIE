@@ -2,6 +2,8 @@ const progressRetrievalInterval = setInterval(function(){
     retrieveProgress();
 }, 3000);
 
+let lastProgressPercentage = 0;
+
 $(window).resize(function () {
     w = $("h4.mb-0").width()/4;
 });
@@ -10,6 +12,7 @@ $("document").ready(function() {
     if(localStorage.getItem("over") === "false"){
       retrieveModels();
     }
+    lastProgressPercentage = 0;
 });
 
 $(".model-container").click(function() {
@@ -28,6 +31,7 @@ $("#btn-proceed").on("click", function(){
 })
 
 function retrieveModels(){
+    $("#div-models-container").attr("hidden", true);
     $("#div-loading-img").attr("hidden", false);
     $.ajax({
       url: "getData",
@@ -40,6 +44,8 @@ function retrieveModels(){
       if("over" in data){
         optimizationOver();
       } else {
+        $("#div-models-container").attr("hidden", false);
+        $("#div-loading-img").attr("hidden", true);
         formula_latex = $("h4.mb-0");
         for (var i = 0; i < 2; i++) {
           let new_model = data.models[i]["latex"];
@@ -50,7 +56,6 @@ function retrieveModels(){
         }
         MathJax.typeset();
         updateProgressBar(data.progress);
-        $("#div-loading-img").attr("hidden", true);
       }
     }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
     );
@@ -88,10 +93,11 @@ function retrieveProgress(){
 }
 
 function updateProgressBar(progressPercentage){
-    progressBar = $("#evolution-progress-bar")
-    progressBar.width(progressPercentage+"%")
-    progressBar.attr("aria-valuenow", progressPercentage)
-    progressBar.html(progressPercentage+"%")
+    lastProgressPercentage = Math.max(lastProgressPercentage, progressPercentage);
+    progressBar = $("#evolution-progress-bar");
+    progressBar.width(lastProgressPercentage+"%");
+    progressBar.attr("aria-valuenow", lastProgressPercentage);
+    progressBar.html(lastProgressPercentage+"%");
 }
 
 function optimizationOver(){
