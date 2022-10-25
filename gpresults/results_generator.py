@@ -14,15 +14,15 @@ def latex_format(readable_repr: str) -> str:
     return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
 
 
-folder = '../exps/test_results_gp_traditional'
+folder = '../exps/test_results_gp_traditional_pop200'
 dataset = 'heating'
-model = 'neuralnet_counts_elastic_model'
-target_model = 'wu_phi'
+model = 'size'
+target_model = 'size'
 
 dataframes = []
 
 for i in range(10):
-    seed = 200 + i
+    seed = 700 + i
     filename = folder + '/best-' + dataset + '-' + model + '-GPT_' + str(seed) + '.csv'
     dataframes.append(pd.read_csv(filename))
 
