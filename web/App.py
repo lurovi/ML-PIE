@@ -222,6 +222,8 @@ def get_data():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_runs and run_id in ongoing_surveys:
+        return {'over': 'true'}
     if run_id not in ongoing_runs:
         abort(404)
     dictionary = ongoing_runs[run_id].request_models()
@@ -236,6 +238,8 @@ def get_progress():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_runs and run_id in ongoing_surveys:
+        return {'progress': 100}
     if run_id not in ongoing_runs:
         abort(404)
     progress = ongoing_runs[run_id].request_progress()
@@ -249,6 +253,8 @@ def provide_feedback():
     if 'x-access-tokens' not in request.headers:
         abort(404)
     run_id = request.headers['x-access-tokens']
+    if run_id not in ongoing_runs and run_id in ongoing_surveys:
+        return {'over': 'true'}
     if run_id not in ongoing_runs:
         abort(404)
     feedback_outcome = ongoing_runs[run_id].provide_feedback(int(request.json["feedback"]))
@@ -303,7 +309,6 @@ def answer_survey():
         abort(404)
     survey_data = ongoing_surveys[run_id]
     preferences = []
-    print(request)
     for _, row in survey_data.iterrows():
         model_type = row.other_ground_truth_type
         preference = request.json[model_type]
