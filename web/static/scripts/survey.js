@@ -75,7 +75,7 @@ function retrieveSurveyModels(){
           first_model = "$$" + first_model + "$$";
           second_model = "$$" + second_model + "$$";
 
-          let label = model.type + "_" + model.accuracy_level;
+          let label = model.type;
           let divContentTemplate = `<div class=div-models-container-template> \
                               <div class="row mb-2"> \
                                   <div class="col-md-6 sbox model-container"> \

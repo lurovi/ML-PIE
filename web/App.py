@@ -33,8 +33,7 @@ RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
-accuracy_percentiles = [95, 85, 75]
-accuracy_labels = ['H', 'M', 'L']
+accuracy_percentiles = [95, 75]
 
 hardcoded_results = {
     "heating": {
@@ -288,7 +287,6 @@ def get_survey_data():
     for idx, row in ongoing_surveys[run_id].iterrows():
         dictionary = {
             'type': row.other_ground_truth_type,
-            'accuracy_level': row.accuracy_level,
             'pie_latex': row.latex_tree,
             'other_latex': row.other_latex_tree
         }
@@ -307,9 +305,8 @@ def answer_survey():
     preferences = []
     print(request)
     for _, row in survey_data.iterrows():
-        accuracy_level = row.accuracy_level
         model_type = row.other_ground_truth_type
-        preference = request.json[model_type + "_" + accuracy_level]
+        preference = request.json[model_type]
         preferences.append(preference)
     survey_data['preference'] = preferences
     survey_data.to_csv(path_or_buf=app.config['RESULTS_FOLDER'] + "survey-" + run_id + ".csv")
@@ -332,44 +329,39 @@ def run_completed(run_id: str):
         pass
 
     accuracies = list(results['accuracy'])
-    selected_accuracies: set = set()
+    # select accuracies according to percentile
+    selected_accuracies = []
     for percentile in accuracy_percentiles:
-        selected_accuracies.add(np.percentile(accuracies, 100 - percentile, method='closest_observation'))
+        selected_accuracies.append(np.percentile(accuracies, 100 - percentile, method='closest_observation'))
+    if selected_accuracies[0] == selected_accuracies[1]:
+        worse_accuracies = sorted(i for i in accuracies if i > selected_accuracies[0])
+        if len(worse_accuracies) > 0:
+            selected_accuracies[1] = worse_accuracies[0]
+    random.shuffle(selected_accuracies)
 
-    ordered_accuracies = list(selected_accuracies)
-    ordered_accuracies.sort()
-    labels = []
     models_indexes = []
-    for idx, accuracy in enumerate(ordered_accuracies):
-        labels.append(accuracy_labels[idx])
+    for accuracy in selected_accuracies:
         models_indexes.append(accuracies.index(accuracy))
 
     chosen_models = results.loc[models_indexes, :].reset_index().drop(columns=['index'])
-    chosen_models['accuracy_level'] = labels
     chosen_models.index = range(len(chosen_models.index))
 
-    size_models = find_closest_models(ordered_accuracies, hardcoded_results[problem]["size"]).rename(
+    size_model = find_closest_model(selected_accuracies[0], hardcoded_results[problem]["size"]).rename(
         lambda c: "other_" + c, axis='columns')
-    size_models.index = range(len(size_models.index))
-    phi_models = find_closest_models(ordered_accuracies, hardcoded_results[problem]["phi"]).rename(
+    phi_model = find_closest_model(selected_accuracies[1], hardcoded_results[problem]["phi"]).rename(
         lambda c: "other_" + c, axis='columns')
-    phi_models.index = range(len(phi_models.index))
+    static_models = pd.concat([size_model, phi_model], ignore_index=True)
+    static_models.index = range(len(static_models.index))
 
-    psi_size_models = chosen_models.join(size_models)
-    psi_phi_models = chosen_models.join(phi_models)
-
-    ongoing_surveys[run_id] = pd.concat([psi_size_models, psi_phi_models], ignore_index=True)
+    ongoing_surveys[run_id] = chosen_models.join(static_models)
 
 
-def find_closest_models(target_accuracies: list, dataframe):
+def find_closest_model(target_accuracy: float, dataframe):
     accuracies = dataframe['accuracy'].tolist()
-    row_ids = []
-    for target_accuracy in target_accuracies:
-        accuracy_distances = list(map(lambda d: abs(d - target_accuracy), accuracies))
-        min_dist = min(accuracy_distances)
-        row_id = accuracy_distances.index(min_dist)
-        row_ids.append(row_id)
-    return dataframe.iloc[row_ids]
+    accuracy_distances = list(map(lambda d: abs(d - target_accuracy), accuracies))
+    min_dist = min(accuracy_distances)
+    row_id = accuracy_distances.index(min_dist)
+    return dataframe.iloc[[row_id]]
 
 
 def runs_cleanup():
