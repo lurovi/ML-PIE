@@ -39,15 +39,11 @@ accuracy_labels = ['H', 'M', 'L']
 hardcoded_results = {
     "heating": {
         "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_phi.csv"),
-        "wu_phi": pd.read_csv(
-            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_wu_phi.csv")
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_phi.csv")
     },
     "boston": {
         "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_phi.csv"),
-        "wu_phi": pd.read_csv(
-            "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_wu_phi.csv")
+        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_phi.csv")
     }
 }
 
