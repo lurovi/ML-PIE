@@ -1,5 +1,6 @@
 import random
 import threading
+from functools import partial
 
 import torch
 import uuid
@@ -14,7 +15,6 @@ from exps.DatasetGenerator import DatasetGenerator
 from exps.groundtruth.MathElasticModelComputer import MathElasticModelComputer
 from genepro import node_impl
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
-from nsgp.encoder.CountsEncoder import CountsEncoder
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
@@ -88,26 +88,24 @@ normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8),
                                           (0, 8),
                                           (0, 30), (0, 15)] + [(0, 0.8)] * n_features_heating + [(0, 0.5)]
 structure_boston = TreeStructure(internal_nodes, n_features_boston, 5,
-                                 ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
+                                 ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                  normal_distribution_parameters=normal_distribution_parameters_boston)
 structure_heating = TreeStructure(internal_nodes, n_features_heating, 5,
-                                  ephemeral_func=lambda: np.random.uniform(-5.0, 5.0),
+                                  ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
 
-print("encoder boston init...")
-tree_encoder_boston = CountsEncoder(structure_boston, True, 100)
+tree_encoder_boston = PicklePersist.decompress_pickle(
+    "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\web\\encoders\\boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)
-print("encoder boston ready")
 setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
 tree_sampling_boston = setting_boston.get_sampling()
 tree_crossover_boston = setting_boston.get_crossover()
 tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
 
-print("encoder heating init...")
-tree_encoder_heating = CountsEncoder(structure_heating, True, 100)
+tree_encoder_heating = PicklePersist.decompress_pickle(
+    "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\web\\encoders\\heating_counts_encoder.pbz2")
 structure_heating.register_encoder(tree_encoder_heating)
-print("encoder heating ready")
 setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 tree_sampling_heating = setting_heating.get_sampling()
 tree_crossover_heating = setting_heating.get_crossover()
@@ -168,7 +166,9 @@ def start_run(problem):
 
     # shared parameters
     pretrainer_factory = TwoPointsCompareTrainerFactory(False, 1)
-    warmup_data = data_generator_boston.get_warm_up_data(tree_encoder.get_name(), phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(tree_encoder.get_name(), phi.get_name())
+    warmup_data = data_generator_boston.get_warm_up_data(tree_encoder.get_name(),
+                                                         phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(
+        tree_encoder.get_name(), phi.get_name())
     mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25], dropout_prob=0.25)
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=pretrainer_factory,
