@@ -1,9 +1,0 @@
-,parsable_tree,latex_tree,accuracy,interpretability,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data
-0,[x_2],x_2,0.09401333332061768,1.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-1,"[+, x_3, x_2]",(x_3+x_2),0.06472239643335342,3.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-2,"[+, sin, x_3, x_2]",(sin(x_3)+x_2),0.0637819916009903,4.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-3,"[sqrt, x_2]",sqrt(abs(x_2)),0.09280367940664291,2.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-4,"[+, x_3, +, sqrt, sqrt, x_1, sqrt, **2, x_2]",(x_3+(sqrt(abs(sqrt(abs(x_1))))+sqrt(abs((x_2)**2)))),0.05321667343378067,9.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-5,"[-, sqrt, /, log, *, x_2, 3.14, u-, +, x_1, x_0, +, +, x_3, x_2, *, u-, -2.12, x_3]",(sqrt(abs((log(abs((x_2*3.14)))/-((x_1+x_0)))))-((x_3+x_2)+(-(-2.12)*x_3))),0.04928317666053772,19.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-6,"[-, u-, sqrt, x_1, +, x_2, x_3]",(-(sqrt(abs(x_1)))-(x_2+x_3)),0.05431896075606346,7.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale
-7,"[+, cos, log, u-, sin, x_1, -, +, sin, log, x_2, *, u-, -2.12, x_3, -, +, cos, x_0, x_3, sin, +, x_2, x_1]",(cos(log(abs(-(sin(x_1)))))+((sin(log(abs(x_2)))+(-(-2.12)*x_3))-((cos(x_0)+x_3)-sin((x_2+x_1))))),0.046284597367048264,24.0,208,256,50,256,not_spcified,size,not_specified,not_specified,ale

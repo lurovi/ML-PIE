@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     set_random_seed(100)
     n_features = 6
-    max_depth = 3
+    max_depth = 4
     operators = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                           node_impl.Cube(),
                           node_impl.Log(), node_impl.Max()]
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     ground_truths_names = [g.get_name() for g in ground_truths]
 
     set_random_seed(101)
-    folder_name = "tree_data_2"
+    folder_name = "tree_data_3"
     amount_of_feedback = 150
     train_size = 500
     validation_size = 300
