@@ -29,6 +29,7 @@ from typing import List, Dict
 class GPSimulatedUserExpsExecutor:
     def __init__(self, folder_name: str,
                  data_name: str,
+                 split_seed: int,
                  structure: TreeStructure,
                  ground_truths: List[GroundTruthComputer],
                  dataset: Dict,
@@ -39,6 +40,7 @@ class GPSimulatedUserExpsExecutor:
         self.__verbose = verbose
         self.__folder_name = folder_name
         self.__data_name = data_name
+        self.__split_seed = split_seed
         self.__data_generator = deepcopy(data_generator)
         self.__device = device
         self.__structure = deepcopy(structure)
@@ -81,7 +83,7 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [220, 110, 25], dropout_prob=0.25)
+        mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [150, 50])
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
                                                                    warmup_dataset=warmup_data)
@@ -118,8 +120,8 @@ class GPSimulatedUserExpsExecutor:
                       "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
                       "encoder_type": encoding_type, "ground_truth_type": ground_truth_type,
                       "sampling": sampler_factory.create(1).get_string_repr(), "warm-up": warmup_plot,
-                      "data": self.__data_name}
-        run_id = parameters["data"]+"-"+parameters["encoder_type"]+"-"+parameters["ground_truth_type"]+"-"+parameters["sampling"]+"-"+parameters["warm-up"]+"-"+"GPSU"+"_"+str(optimization_seed)
+                      "data": self.__data_name, "split_seed": self.__split_seed}
+        run_id = parameters["data"]+"-"+parameters["encoder_type"]+"-"+parameters["ground_truth_type"]+"-"+parameters["sampling"]+"-"+parameters["warm-up"]+"-"+"GPSU"+"_"+str(optimization_seed)+"_"+str(self.__split_seed)
         # thread execution
         automatic_run = MlPieAutomaticRun(
             run_id=run_id, path=self.__folder_name+"/",

@@ -43,8 +43,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), encoder.size(), 1, [220, 110, 25],
-                     dropout_prob=0.25)
+    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), encoder.size(), 1, [150, 50])
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=TwoPointsCompareTrainerFactory(
                                                                    False, 1),
@@ -64,6 +63,7 @@ if __name__ == "__main__":
     torch.use_deterministic_algorithms(True)
     # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    path_dict = {"heating": "benchmark/energyefficiency.xlsx", "cooling": "benchmark/energyefficiency.xlsx"}
     pop_size = 200
     num_gen = 50
     starting_seed = 700
@@ -71,59 +71,60 @@ if __name__ == "__main__":
     idx = 1
     folder_name = "test_results_gp_traditional"
     #pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
-    for data_path_file in ["heating", "boston"]:
-        structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure("benchmark/"+data_path_file+".pbz2")
-        data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
-                                                                                structure, ground_truths)
-        second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
-        warmups = ["elastic_model"]
-        second_fitnesses = [None] + list(second_fitness.keys())
-        encoders = {"counts": structure.get_encoder("counts")}
-        for curr_second_fitness in second_fitnesses:
-            if curr_second_fitness is not None:
-                evaluators = [MSEEvaluator(dataset["training"][0], dataset["training"][1]),
-                              GroundTruthEvaluator(second_fitness[curr_second_fitness], True)]
-                runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
-                                                  pop_size=pop_size, num_gen=num_gen,
-                                                  duplicates_elimination_data=duplicates_elimination_little_data)
-                pp = partial(runner.run_minimization, verbose=True, save_history=False, mutex=None)
-                results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
+    for split_seed in [40, 41, 42, 43, 44]:
+        for data_path_file in ["heating", "boston"]:
+            structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure(data_path_file, split_seed=split_seed, path_dict=path_dict)
+            data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
+                                                                                    structure, ground_truths)
+            second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
+            warmups = ["elastic_model"]
+            second_fitnesses = list(second_fitness.keys())
+            encoders = {"counts": structure.get_encoder("counts")}
+            for curr_second_fitness in second_fitnesses:
+                if curr_second_fitness is not None:
+                    evaluators = [MSEEvaluator(dataset["training"][0], dataset["training"][1]),
+                                  GroundTruthEvaluator(second_fitness[curr_second_fitness], True)]
+                    runner: GPWithNSGA2 = GPWithNSGA2(structure, evaluators,
+                                                      pop_size=pop_size, num_gen=num_gen,
+                                                      duplicates_elimination_data=duplicates_elimination_little_data)
+                    pp = partial(runner.run_minimization, verbose=True, save_history=False, mutex=None)
+                    results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
 
-                for res in results:
-                    real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
-                    print(executionTimeInMinutes)
-                    #ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
-                    #                                               result=real_result, seed=curr_seed,
-                    #                                               pop_size=pop_size, num_gen=num_gen,
-                    #                                               num_offsprings=pop_size,
-                    #                                               dataset=data_path_file,
-                    #                                               groundtruth=curr_second_fitness)
+                    for res in results:
+                        real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
+                        print(executionTimeInMinutes)
+                        #ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
+                        #                                               result=real_result, seed=curr_seed, split_seed=split_seed,
+                        #                                               pop_size=pop_size, num_gen=num_gen,
+                        #                                               num_offsprings=pop_size,
+                        #                                               dataset=data_path_file,
+                        #                                               groundtruth=curr_second_fitness)
 
-                print("Executed "+data_path_file+" "+curr_second_fitness)
-                exit(1)
-            else:
-                for encoding_type in encoders.keys():
-                    for warmup in warmups:
-                        pp = partial(run_minimization_with_neural_net, pop_size=pop_size, num_gen=num_gen,
-                                     duplicates_elimination_little_data=duplicates_elimination_little_data,
-                                     dataset=dataset, structure=structure, encoder=encoders[encoding_type],
-                                     encoding_type=encoding_type, warmup=warmup,
-                                     data_generator=data_generator, device=device)
-                        results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
+                    print("Executed "+data_path_file+" "+curr_second_fitness+" "+str(split_seed))
+                    exit(1)
+                else:
+                    for encoding_type in encoders.keys():
+                        for warmup in warmups:
+                            pp = partial(run_minimization_with_neural_net, pop_size=pop_size, num_gen=num_gen,
+                                         duplicates_elimination_little_data=duplicates_elimination_little_data,
+                                         dataset=dataset, structure=structure, encoder=encoders[encoding_type],
+                                         encoding_type=encoding_type, warmup=warmup,
+                                         data_generator=data_generator, device=device)
+                            results = list(map(pp, list(range(starting_seed, starting_seed + num_repeats))))
 
-                        for res in results:
-                            real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
-                            print(executionTimeInMinutes)
-                            #ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
-                            #                                               result=real_result, seed=curr_seed,
-                            #                                               pop_size=pop_size, num_gen=num_gen,
-                            #                                               num_offsprings=pop_size,
-                            #                                               dataset=data_path_file,
-                            #                                               groundtruth="neuralnet"+"_"+encoding_type+"_"+warmup,
-                            #                                               encoder_type=encoding_type,
-                            #                                               warmup=warmup)
+                            for res in results:
+                                real_result, executionTimeInMinutes, curr_seed = res["result"], res["executionTimeInHours"]*60, res["seed"]
+                                print(executionTimeInMinutes)
+                                #ExpsUtil.save_pareto_fronts_from_result_to_csv(folder_name=folder_name,
+                                #                                               result=real_result, seed=curr_seed, split_seed=split_seed,
+                                #                                               pop_size=pop_size, num_gen=num_gen,
+                                #                                               num_offsprings=pop_size,
+                                #                                               dataset=data_path_file,
+                                #                                               groundtruth="neuralnet"+"_"+encoding_type+"_"+warmup,
+                                #                                               encoder_type=encoding_type,
+                                #                                               warmup=warmup)
 
-                        print("Executed " + data_path_file + " " + "neuralnet"+" "+encoding_type+" "+warmup)
-                        exit(1)
+                            print("Executed " + data_path_file + " " + "neuralnet"+" "+encoding_type+" "+warmup+" "+str(split_seed))
+                            exit(1)
     #pool.close()
     #pool.join()

@@ -269,7 +269,7 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
     torch.manual_seed(curr_seed)
 
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
-                 hidden_layer_sizes, dropout_prob=0.25)
+                 hidden_layer_sizes)
     trainer = OnlineTwoPointsCompareTrainer(net, device, data=None, verbose=False,
                                             warmup_trainer_factory=pretrainer_factory, warmup_dataset=warmup_data)
 

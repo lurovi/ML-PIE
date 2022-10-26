@@ -7,8 +7,9 @@ import torch
 import numpy as np
 import torch.multiprocessing as mp
 from pymoo.core.result import Result
-
+from typing import Dict
 from exps.DatasetGenerator import DatasetGenerator
+from exps.SklearnDatasetPreProcesser import SklearnDatasetPreProcessor
 from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 from exps.groundtruth.LevelWiseWeightsSumNegComputer import LevelWiseWeightsSumNegComputer
 from exps.groundtruth.MathElasticModelComputer import MathElasticModelComputer
@@ -33,7 +34,7 @@ class ExpsUtil:
         torch.manual_seed(seed)
 
     @staticmethod
-    def create_structure(dataset_path: str):
+    def create_structure(dataset_path: str, split_seed: int, path_dict: Dict[str, str]):
         # Setting torch to use deterministic algorithms where possible
         torch.use_deterministic_algorithms(True)
         # Setting the device in which data have to be loaded. It can be either CPU or GPU (cuda), if available.
@@ -46,8 +47,9 @@ class ExpsUtil:
 
         ExpsUtil.set_random_seed(100)
 
-        dataset = PicklePersist.decompress_pickle(dataset_path)
+        dataset = SklearnDatasetPreProcessor.load_data(dataset_path, rng_seed=split_seed, previous_seed=100, path_dict=path_dict)
         n_features: int = dataset["training"][0].shape[1]
+        max_depth: int = 3
         duplicates_elimination_little_data_num_points: int = 5
         duplicates_elimination_little_data = np.random.uniform(-5.0, 5.0, size=(duplicates_elimination_little_data_num_points, n_features))
         internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
@@ -56,7 +58,7 @@ class ExpsUtil:
         normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8),
                                           (0, 8),
                                           (0, 30), (0, 15)] + [(0, 0.8)] * n_features + [(0, 0.5)]
-        structure = TreeStructure(internal_nodes, n_features, 5, ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
+        structure = TreeStructure(internal_nodes, n_features, max_depth, ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters)
         structure.register_encoders([CountsEncoder(structure, True, 100), LevelWiseCountsEncoder(structure, True, 100),
                                      OneHotEncoder(structure)])
@@ -69,8 +71,8 @@ class ExpsUtil:
     @staticmethod
     def create_dataset_generator_with_warmup(folder_name: str, data_name: str, structure: TreeStructure,
                                              ground_truths: List[GroundTruthComputer]):
-        train_size = 1250
-        validation_size = 370
+        train_size = 500
+        validation_size = 300
         test_size = 250
         data_generator = DatasetGenerator(folder_name, structure, train_size, validation_size, test_size, 101)
 
@@ -89,7 +91,7 @@ class ExpsUtil:
 
     @staticmethod
     def save_pareto_fronts_from_result_to_csv(folder_name: str,
-                                              result: Result, seed: int,
+                                              result: Result, seed: int, split_seed: int,
                                               pop_size: int, num_gen: int, num_offsprings: int,
                                               dataset: str, groundtruth: str,
                                               encoder_type: str = "not_spcified",
@@ -100,8 +102,8 @@ class ExpsUtil:
                       "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
                       "encoder_type": encoder_type, "ground_truth_type": groundtruth,
                       "sampling": sampling, "warm-up": warmup,
-                      "data": dataset}
-        run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed)
+                      "data": dataset, "split_seed": split_seed}
+        run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed) + "_" + str(split_seed)
         # write optimization file
         parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(
             result.opt)
