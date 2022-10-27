@@ -28,7 +28,7 @@ import pandas as pd
 
 from threads.MlPieRun import MlPieRun
 
-RESULTS_FOLDER = 'C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\results\\'
+RESULTS_FOLDER = 'humanresults/'
 
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
@@ -37,18 +37,18 @@ accuracy_percentiles = [95, 75]
 
 hardcoded_results = {
     "heating": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\heating_phi.csv")
+        "size": pd.read_csv("gpresults/heating_size.csv"),
+        "phi": pd.read_csv("gpresults/heating_phi.csv")
     },
     "boston": {
-        "size": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_size.csv"),
-        "phi": pd.read_csv("C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\gpresults\\boston_phi.csv")
+        "size": pd.read_csv("gpresults/boston_size.csv"),
+        "phi": pd.read_csv("gpresults/boston_phi.csv")
     }
 }
 
 available_problems = {
-    "heating": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\heating.pbz2",
-    "boston": "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\exps\\benchmark\\boston.pbz2"
+    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating.pbz2"),
+    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston.pbz2")
 }
 
 ongoing_runs = {}
@@ -90,7 +90,7 @@ structure_heating = TreeStructure(internal_nodes, n_features_heating, 5,
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
 
 tree_encoder_boston = PicklePersist.decompress_pickle(
-    "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\web\\encoders\\boston_counts_encoder.pbz2")
+    "web/encoders/boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)
 setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
 tree_sampling_boston = setting_boston.get_sampling()
@@ -99,7 +99,7 @@ tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
 
 tree_encoder_heating = PicklePersist.decompress_pickle(
-    "C:\\Users\\giorg\\PycharmProjects\\ML-PIE\\web\\encoders\\heating_counts_encoder.pbz2")
+    "web/encoders/heating_counts_encoder.pbz2")
 structure_heating.register_encoder(tree_encoder_heating)
 setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 tree_sampling_heating = setting_heating.get_sampling()
@@ -181,7 +181,7 @@ def start_run(problem):
     # safe fallback
     if problem not in available_problems:
         problem = "boston"
-    dataset = PicklePersist.decompress_pickle(available_problems.get(problem))
+    dataset = available_problems.get(problem)
     regression_problem = RegressionProblemWithNeuralEstimate(dataset["training"][0], dataset["training"][1],
                                                              mutex=mutex,
                                                              tree_encoder=tree_encoder,
