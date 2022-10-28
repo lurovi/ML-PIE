@@ -83,7 +83,7 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [150, 50])
+        mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
                                                                    warmup_dataset=warmup_data)
@@ -99,7 +99,8 @@ class GPSimulatedUserExpsExecutor:
                                                       )
 
         # feedback thread creation
-        feedback_collector = GroundTruthCollector(self.__ground_truths_names[ground_truth_type])
+        ground_truth_computer = self.__ground_truths_names[ground_truth_type]
+        feedback_collector = GroundTruthCollector(ground_truth_computer)
         interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage,
                                                                             mutex=mutex,
                                                                             interpretability_estimator=interpretability_estimator,
@@ -128,7 +129,8 @@ class GPSimulatedUserExpsExecutor:
             optimization_thread=optimization_thread,
             interpretability_estimate_updater=interpretability_estimate_updater,
             feedback_collector=feedback_collector,
-            parameters=parameters
+            parameters=parameters,
+            ground_truth_computer=ground_truth_computer
         )
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)

@@ -43,6 +43,12 @@ class ExpsExecutor:
         self.__starting_seed = starting_seed
         self.__num_repeats = num_repeats
 
+    @staticmethod
+    def seed_worker(worker_id):
+        worker_seed = torch.initial_seed() % 2 ** 32
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
+
     def perform_experiment_nn_ranking_online(self, encoding_type, ground_truth_type,
                                              amount_of_feedback, activation_func,
                                              final_activation_func, hidden_layer_sizes, device, sampler):
@@ -130,8 +136,6 @@ class ExpsExecutor:
 
         X_tr, y_tr = training.get_points_and_labels()
 
-        valloader = DataLoader(validation, batch_size=1, shuffle=True)
-
         if warmup is not None:
             warmup_plot = warmup[0].upper() + warmup[1:]
             warmup_plot = warmup_plot.replace("_", " ")
@@ -150,7 +154,7 @@ class ExpsExecutor:
                                                                 warmup_data=warmup_data, amount_of_feedback=amount_of_feedback,
                                                                 sampler=sampler, X_tr=X_tr,
                                                                 y_tr=y_tr, verbose=verbose,
-                                                                valloader=valloader, repr_plot=repr_plot, ground_plot=ground_plot,
+                                                                valloader=validation, repr_plot=repr_plot, ground_plot=ground_plot,
                                                                 sampl_plot=sampl_plot, warmup_plot=warmup_plot)
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
@@ -261,12 +265,16 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                                                 warmup_data: Dataset, amount_of_feedback: int,
                                                                 sampler: PairSamplerFactory, X_tr: torch.Tensor,
                                                                 y_tr: torch.Tensor, verbose: bool,
-                                                                valloader: DataLoader, repr_plot: str, ground_plot: str,
+                                                                valloader: Dataset, repr_plot: str, ground_plot: str,
                                                                 sampl_plot: str, warmup_plot: str) -> List:
     curr_seed = exec_ind
     random.seed(curr_seed)
     np.random.seed(curr_seed)
     torch.manual_seed(curr_seed)
+
+    g_valloader = torch.Generator()
+    g_valloader.manual_seed(curr_seed)
+    valloader = DataLoader(valloader, batch_size=1, shuffle=True, num_workers=0, worker_init_fn=ExpsExecutor.seed_worker, generator=g_valloader)
 
     net = MLPNet(activation_func, final_activation_func, input_layer_size, output_layer_size,
                  hidden_layer_sizes)

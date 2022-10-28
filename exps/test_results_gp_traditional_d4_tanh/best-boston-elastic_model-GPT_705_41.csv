@@ -1,0 +1,14 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,[x_12],x_12,40.744754791259766,-78.9000015258789,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+1,"[-, x_12, x_5]",(x_12-x_5),31.643882751464844,-78.0,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+2,"[-, +, x_10, x_12, x_5]",((x_10+x_12)-x_5),27.90909194946289,-77.0999984741211,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+3,"[-, -, x_5, x_10, x_12]",((x_5-x_10)-x_12),27.90909194946289,-77.0999984741211,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+4,"[*, -, 3.88, x_12, max, *, x_9, -, x_6, x_12, -, x_5, x_12]","((3.88-x_12)*max((x_9*(x_6-x_12)),(x_5-x_12)))",16.16606330871582,-65.5999984741211,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+5,"[+, x_12, -, +, x_10, x_12, x_5]",(x_12+((x_10+x_12)-x_5)),27.588987350463867,-76.19999694824219,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+6,"[-, max, -, x_6, x_12, -, x_5, -, x_9, x_5, x_12]","(max((x_6-x_12),(x_5-(x_9-x_5)))-x_12)",19.413373947143555,-66.5,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+7,"[-, max, x_3, -, x_5, +, x_10, x_12, x_12]","(max(x_3,(x_5-(x_10+x_12)))-x_12)",19.468570709228516,-67.4000015258789,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+8,"[-, max, x_3, -, x_5, x_12, x_12]","(max(x_3,(x_5-x_12))-x_12)",20.254209518432617,-68.30000305175781,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+9,"[-, max, x_3, x_5, x_12]","(max(x_3,x_5)-x_12)",21.19835090637207,-69.19999694824219,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+10,"[-, +, +, -, x_7, x_12, *, x_5, x_12, +, x_12, *, 3.88, x_12, x_5]",((((x_7-x_12)+(x_5*x_12))+(x_12+(3.88*x_12)))-x_5),22.813819885253906,-72.5999984741211,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+11,"[-, +, x_12, +, x_12, *, x_5, x_12, x_5]",((x_12+(x_12+(x_5*x_12)))-x_5),23.305370330810547,-75.30000305175781,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41
+12,"[-, +, +, -, x_7, x_12, *, x_5, x_12, +, -, x_10, x_7, *, 3.88, x_12, x_5]",((((x_7-x_12)+(x_5*x_12))+((x_10-x_7)+(3.88*x_12)))-x_5),21.25160789489746,-71.69999694824219,1234.0,705,200,50,200,not_spcified,elastic_model,not_specified,not_specified,boston,41

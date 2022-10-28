@@ -1,5 +1,7 @@
+import random
 from typing import Tuple, List, Any, Iterator
 
+import numpy as np
 import torch
 import torch.nn as nn
 from abc import ABC, abstractmethod
@@ -45,6 +47,12 @@ class Trainer(ABC):
                 raise ValueError(f"{self.__optimizer_name} is not a valid value for argument optimizer.")
         self.__output_layer_size: int = net.number_of_output_neurons()
         self.__input_layer_size: int = net.number_of_input_neurons()
+
+    @staticmethod
+    def seed_worker(worker_id):
+        worker_seed = torch.initial_seed() % 2 ** 32
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
 
     def get_output_layer_size(self) -> int:
         return self.__output_layer_size

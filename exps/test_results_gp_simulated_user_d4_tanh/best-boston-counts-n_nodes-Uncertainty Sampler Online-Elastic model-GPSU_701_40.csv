@@ -1,0 +1,27 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[log, -, 3.92, log, -, 4.34, x_12]",log(abs((3.92-log(abs((4.34-x_12)))))),34.58006286621094,-0.28586313128471375,-7.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+1,"[log, -, x_1, -, x_8, -, 4.34, x_10]",log(abs((x_1-(x_8-(4.34-x_10))))),51.104164123535156,-0.2860802114009857,-8.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+2,"[log, -, x_5, 4.12]",log(abs((x_5-4.12))),33.53301239013672,-0.28291556239128113,-4.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+3,"[log, -, x_8, -, x_5, 4.12]",log(abs((x_8-(x_5-4.12)))),26.820425033569336,-0.27778053283691406,-6.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+4,"[log, max, x_8, -, x_12, -, x_5, 4.12]","log(abs(max(x_8,(x_12-(x_5-4.12)))))",22.853700637817383,-0.2651161849498749,-8.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+5,"[-, -, x_12, -, log, -3.46, 4.12, x_5]",((x_12-(log(abs(-3.46))-4.12))-x_5),25.76051902770996,-0.27771374583244324,-8.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+6,"[-, -, x_12, -, -0.35, x_12, x_5]",((x_12-(-0.35-x_12))-x_5),24.757944107055664,-0.26608067750930786,-7.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+7,"[**3, -, 4.34, x_12]",((4.34-x_12))**3,26.839635848999023,-0.2786109447479248,-4.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+8,"[log, log, **3, -, x_10, 4.12]",log(abs(log(abs(((x_10-4.12))**3)))),55.210655212402344,-0.29598212242126465,-6.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+9,"[-, log, log, 4.12, x_12]",(log(abs(log(abs(4.12))))-x_12),32.10724639892578,-0.2815973162651062,-5.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+10,"[log, log, log, -, -3.31, x_2]",log(abs(log(abs(log(abs((-3.31-x_2))))))),52.561527252197266,-0.2865257263183594,-6.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+11,"[log, -, -, x_12, -, -4.36, 4.12, x_5]",log(abs(((x_12-(-4.36-4.12))-x_5))),21.553377151489258,-0.2431473284959793,-8.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+12,"[log, **3, -, x_12, -, x_5, 4.34]",log(abs(((x_12-(x_5-4.34)))**3)),21.168624877929688,-0.24096794426441193,-7.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+13,"[log, **3, x_10]",log(abs((x_10)**3)),75.83365631103516,-0.34359073638916016,-3.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+14,"[log, **3, -, x_12, -, x_5, 4.73]",log(abs(((x_12-(x_5-4.73)))**3)),20.36685562133789,-0.2379390150308609,-7.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+15,"[log, **3, **3, x_10]",log(abs(((x_10)**3)**3)),73.44966125488281,-0.3352053463459015,-4.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+16,"[log, **3, x_0]",log(abs((x_0)**3)),65.85811614990234,-0.3331947922706604,-3.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+17,"[**3, x_8]",(x_8)**3,62.820255279541016,-0.33199867606163025,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+18,"[**3, x_9]",(x_9)**3,60.337318420410156,-0.32942813634872437,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+19,"[**3, x_10]",(x_10)**3,65.34162139892578,-0.3322755992412567,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+20,"[log, x_0]",log(abs(x_0)),68.65157318115234,-0.3337976932525635,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+21,"[-, x_12, -, max, x_5, x_3, max, -, x_1, x_1, x_10]","(x_12-(max(x_5,x_3)-max((x_1-x_1),x_10)))",15.42731761932373,-0.05789877474308014,-11.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+22,"[**3, x_0]",(x_0)**3,75.32051849365234,-0.33811718225479126,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+23,"[-, x_12, -, max, x_5, *, x_8, x_2, x_9]","(x_12-(max(x_5,(x_8*x_2))-x_9))",15.708547592163086,-0.19960114359855652,-9.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+24,"[**3, 4.34]",(4.34)**3,76.6628646850586,-0.35249513387680054,-2.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40
+25,"[-, x_12, -, max, x_5, x_8, x_9]","(x_12-(max(x_5,x_8)-x_9))",15.78249740600586,-0.23214168846607208,-7.0,701,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40

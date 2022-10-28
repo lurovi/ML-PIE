@@ -1,0 +1,20 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[+, -, 2.44, max, log, 1.13, x_5, x_12]","((2.44-max(log(abs(1.13)),x_5))+x_12)",16.437105178833008,-0.18767568469047546,59.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+1,"[log, +, x_12, log, 2.44]",log(abs((x_12+log(abs(2.44))))),24.55293846130371,-0.29522159695625305,60.8,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+2,"[+, x_12, -, 2.44, max, **3, x_3, x_5]","(x_12+(2.44-max((x_3)**3,x_5)))",15.75085163116455,-0.16377650201320648,59.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+3,"[log, +, x_12, log, **3, 2.44]",log(abs((x_12+log(abs((2.44)**3))))),27.915050506591797,-0.3017352521419525,52.19999999999999,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+4,"[+, x_12, -, x_12, max, max, x_5, x_3, x_12]","(x_12+(x_12-max(max(x_5,x_3),x_12)))",14.946856498718262,-0.09430655092000961,59.5,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+5,"[+, x_12, -, 4.33, max, max, 0.31, x_3, x_5]","(x_12+(4.33-max(max(0.31,x_3),x_5)))",15.290432929992676,-0.15513136982917786,59.5,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+6,"[-, x_5, +, x_9, +, x_12, **3, 4.71]",(x_5-(x_9+(x_12+(4.71)**3))),24.274131774902344,-0.26834872364997864,67.6,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+7,"[+, x_9, -, 2.44, max, **3, 0.31, x_5]","(x_9+(2.44-max((0.31)**3,x_5)))",24.213796615600586,-0.2526110112667084,59.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+8,"[+, -, x_9, max, log, x_4, x_5, x_12]","((x_9-max(log(abs(x_4)),x_5))+x_12)",19.985671997070312,-0.2510494291782379,59.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+9,"[log, log, x_9]",log(abs(log(abs(x_9)))),63.491458892822266,-0.39128434658050537,61.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+10,"[+, -, 4.33, max, log, -1.68, x_5, x_12]","((4.33-max(log(abs(-1.68)),x_5))+x_12)",16.955232620239258,-0.2423214167356491,59.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+11,"[+, x_9, log, log, -4.94]",(x_9+log(abs(log(abs(-4.94))))),56.602230072021484,-0.37215766310691833,60.8,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+12,"[log, x_12]",log(abs(x_12)),76.53875732421875,-0.3969053030014038,70.29999999999998,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+13,"[log, log, -4.94]",log(abs(log(abs(-4.94)))),76.6628646850586,-0.41289374232292175,61.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+14,"[+, log, log, 4.71, x_12]",(log(abs(log(abs(4.71))))+x_12),32.10724639892578,-0.3549369275569916,60.8,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+15,"[log, log, 1.87]",log(abs(log(abs(1.87)))),76.6628646850586,-0.41289374232292175,61.7,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+16,"[+, x_12, log, log, 0.38]",(x_12+log(abs(log(abs(0.38))))),32.10724639892578,-0.3549369275569916,60.8,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+17,"[log, +, x_12, log, **3, 4.98]",log(abs((x_12+log(abs((4.98)**3))))),29.568115234375,-0.3410094678401947,52.19999999999999,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40
+18,"[**3, x_8]",(x_8)**3,62.820255279541016,-0.3895403742790222,70.29999999999998,704,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,boston,40

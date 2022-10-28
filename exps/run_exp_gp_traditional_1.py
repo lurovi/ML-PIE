@@ -43,7 +43,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), encoder.size(), 1, [150, 50])
+    mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), encoder.size(), 1, [150, 50])
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=TwoPointsCompareTrainerFactory(
                                                                    False, 1),
@@ -71,12 +71,12 @@ if __name__ == "__main__":
     idx = 1
     folder_name = "test_results_gp_traditional"
     pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
-    for split_seed in [40, 41, 42, 43, 44]:
+    for split_seed in [40, 41, 42]:
         for data_path_file in ["heating", "boston"]:
             structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure(data_path_file, split_seed=split_seed, path_dict=path_dict)
             data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
                                                                                     structure, ground_truths)
-            second_fitness = {"elastic_model": MathElasticModelComputer(), "size": NumNodesNegComputer()}
+            second_fitness = {"elastic_model": MathElasticModelComputer(), "n_nodes": NumNodesNegComputer()}
             warmups = ["elastic_model"]
             second_fitnesses = list(second_fitness.keys())
             encoders = {"counts": structure.get_encoder("counts")}

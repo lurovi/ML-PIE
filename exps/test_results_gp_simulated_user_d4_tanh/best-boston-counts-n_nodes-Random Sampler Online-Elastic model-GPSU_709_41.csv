@@ -1,0 +1,12 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[+, x_12, -, *, x_10, log, 2.85, max, x_10, x_5]","(x_12+((x_10*log(abs(2.85)))-max(x_10,x_5)))",20.348121643066406,-0.10753802955150604,-10.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+1,"[+, max, x_12, log, max, x_10, x_11, -, *, x_10, log, 2.85, max, x_10, x_5]","(max(x_12,log(abs(max(x_10,x_11))))+((x_10*log(abs(2.85)))-max(x_10,x_5)))",20.22003936767578,0.008669870905578136,-15.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+2,"[-, x_12, max, **3, log, -1.99, x_5]","(x_12-max((log(abs(-1.99)))**3,x_5))",20.955810546875,-0.2795737683773041,-7.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+3,"[log, **3, max, log, -1.99, x_5]","log(abs((max(log(abs(-1.99)),x_5))**3))",36.082942962646484,-0.43157070875167847,-6.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+4,"[-, log, **3, log, 1.61, x_12]",(log(abs((log(abs(1.61)))**3))-x_12),40.744754791259766,-0.44164425134658813,-6.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+5,"[-, -, x_5, log, log, -0.77, x_12]",((x_5-log(abs(log(abs(-0.77)))))-x_12),31.643882751464844,-0.39368197321891785,-7.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+6,"[-, x_12, max, **3, log, 0.31, x_5]","(x_12-max((log(abs(0.31)))**3,x_5))",29.00094985961914,-0.38647007942199707,-7.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+7,"[-, x_5, log, **3, log, -4.67]",(x_5-log(abs((log(abs(-4.67)))**3))),43.41830825805664,-0.4552641808986664,-6.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+8,"[-, x_12, log, max, log, 1.45, x_5]","(x_12-log(abs(max(log(abs(1.45)),x_5))))",21.495710372924805,-0.37979254126548767,-7.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+9,"[log, **3, **3, **3, x_1]",log(abs((((x_1)**3)**3)**3)),74.04969787597656,-0.5270212292671204,-5.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41
+10,"[**3, **3, **3, x_5]",(((x_5)**3)**3)**3,67.10802459716797,-0.5092203617095947,-4.0,709,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,41

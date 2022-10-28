@@ -1,0 +1,9 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,[x_12],x_12,32.10724639892578,1.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+1,"[-, x_5, x_12]",(x_5-x_12),25.76051902770996,3.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+2,"[max, -, x_5, x_12, x_3]","max((x_5-x_12),x_3)",20.933971405029297,5.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+3,"[**3, +, x_12, -2.21]",((x_12+-2.21))**3,24.91194725036621,4.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+4,"[-, max, **3, x_9, x_5, x_12]","(max((x_9)**3,x_5)-x_12)",20.186481475830078,6.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+5,"[-, max, -, x_5, x_12, x_3, x_12]","(max((x_5-x_12),x_3)-x_12)",14.466769218444824,7.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+6,"[max, +, max, log, x_9, -, x_10, x_6, +, log, x_6, max, x_11, x_12, +, -, max, x_5, 2.09, x_12, max, -, x_5, x_8, x_3]","max((max(log(abs(x_9)),(x_10-x_6))+(log(abs(x_6))+max(x_11,x_12))),((max(x_5,2.09)-x_12)+max((x_5-x_8),x_3)))",14.099802017211914,25.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40
+7,"[max, +, x_10, -2.21, -, max, -, x_5, x_12, x_3, x_12]","max((x_10+-2.21),(max((x_5-x_12),x_3)-x_12))",14.314476013183594,11.0,1234.0,708,200,50,200,not_spcified,n_nodes,not_specified,not_specified,boston,40

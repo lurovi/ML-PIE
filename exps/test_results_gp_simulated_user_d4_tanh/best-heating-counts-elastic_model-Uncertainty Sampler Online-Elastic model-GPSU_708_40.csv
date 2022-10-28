@@ -1,0 +1,15 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[log, x_3]",log(abs(x_3)),19.847490310668945,-0.2317638248205185,70.29999999999998,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+1,"[log, -, log, -, x_2, x_1, log, x_3]",log(abs((log(abs((x_2-x_1)))-log(abs(x_3))))),14.09012222290039,-0.1550351232290268,55.8,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+2,"[log, +, log, x_3, x_1]",log(abs((log(abs(x_3))+x_1))),15.363794326782227,-0.1995558887720108,60.8,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+3,"[log, **3, +, log, x_3, x_1]",log(abs(((log(abs(x_3))+x_1))**3)),15.36379337310791,-0.1970454603433609,52.19999999999999,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+4,"[log, +, x_3, log, -3.39]",log(abs((x_3+log(abs(-3.39))))),18.799541473388672,-0.21334335207939148,60.8,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+5,"[log, x_4]",log(abs(x_4)),19.853561401367188,-0.24969588220119476,70.29999999999998,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+6,"[/, +, +, x_6, x_1, 4.93, log, x_4]",(((x_6+x_1)+4.93)/log(abs(x_4))),13.064750671386719,-0.09735557436943054,67.6,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+7,"[-, log, **3, /, x_4, x_0, max, +, x_3, -1.32, +, x_4, *, x_6, -4.7]","(log(abs(((x_4/x_0))**3))-max((x_3+-1.32),(x_4+(x_6*-4.7))))",10.549336433410645,0.00688312528654933,52.89999999999999,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+8,"[/, +, +, x_6, x_2, 4.93, log, x_4]",(((x_6+x_2)+4.93)/log(abs(x_4))),11.705303192138672,-0.0910552516579628,67.6,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+9,"[+, log, -2.86, /, +, +, x_6, 2.23, *, x_2, x_0, log, x_4]",(log(abs(-2.86))+(((x_6+2.23)+(x_2*x_0))/log(abs(x_4)))),10.968682289123535,-0.02565639279782772,61.7,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+10,"[/, +, +, x_6, +, x_2, x_3, 4.93, log, x_4]",(((x_6+(x_2+x_3))+4.93)/log(abs(x_4))),11.287701606750488,-0.08206695318222046,66.69999999999999,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+11,"[log, x_1]",log(abs(x_1)),89.87761688232422,-0.25604480504989624,70.29999999999998,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+12,"[-, log, **3, /, x_4, x_0, max, +, log, x_2, -4.7, +, +, x_0, x_3, *, x_6, -4.7]","(log(abs(((x_4/x_0))**3))-max((log(abs(x_2))+-4.7),((x_0+x_3)+(x_6*-4.7))))",10.129034042358398,0.06481823325157166,47.9,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40
+13,"[log, -2.86]",log(abs(-2.86)),100.25464630126953,-0.2941255271434784,70.29999999999998,708,200,50,200,counts,elastic_model,Uncertainty Sampler Online,Elastic model,heating,40

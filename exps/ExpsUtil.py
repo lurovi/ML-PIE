@@ -49,7 +49,7 @@ class ExpsUtil:
 
         dataset = SklearnDatasetPreProcessor.load_data(dataset_path, rng_seed=split_seed, previous_seed=100, path_dict=path_dict)
         n_features: int = dataset["training"][0].shape[1]
-        max_depth: int = 3
+        max_depth: int = 4
         duplicates_elimination_little_data_num_points: int = 5
         duplicates_elimination_little_data = np.random.uniform(-5.0, 5.0, size=(duplicates_elimination_little_data_num_points, n_features))
         internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
@@ -84,7 +84,7 @@ class ExpsUtil:
             for i in range(2):
                 data_generator.create_dataset_warm_up_from_encoding_ground_truth(20, e, ground_truths[i], 102)
 
-        #data_generator.create_dataset_warm_up_from_csv("tree_data_1" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
+        data_generator.create_dataset_warm_up_from_csv("tree_data_3" + "/FeynmanEquationsWarmUp.csv", "feynman", 20)
 
         data_generator.persist(data_name + "_datasets_generator")
         return data_generator
@@ -105,11 +105,11 @@ class ExpsUtil:
                       "data": dataset, "split_seed": split_seed}
         run_id = parameters["data"] + "-" + parameters["ground_truth_type"] + "-" + "GPT" + "_" + str(seed) + "_" + str(split_seed)
         # write optimization file
-        parsable_trees, latex_trees, accuracies, interpretabilities = MlPieRun.parse_optimization_history(
+        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = MlPieRun.parse_optimization_history(
             result.opt)
         best_data = pd.DataFrame(
-            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities)),
-            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values)),
+            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability', 'ground_truth_value'])
 
         # update dataframes
         for k in parameters.keys():

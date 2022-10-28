@@ -3,6 +3,7 @@ from functools import partial
 import torch
 
 import os
+
 os.environ['NUMPY_EXPERIMENTAL_ARRAY_FUNCTION'] = '0'
 import numpy as np
 import torch.multiprocessing as mp
@@ -11,6 +12,7 @@ from exps.DatasetGenerator import DatasetGenerator
 from exps.ExpsUtil import ExpsUtil
 
 from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
+from nsgp.sampling.RandomChooserOnlineFactory import RandomChooserOnlineFactory
 
 from threads.GPSimulatedUserExpsExecutor import GPSimulatedUserExpsExecutor
 
@@ -34,7 +36,7 @@ if __name__ == "__main__":
     num_repeats = 1
     idx = 1
     folder_name = "test_results_gp_simulated_user"
-    for split_seed in [40, 41, 42, 43, 44]:
+    for split_seed in [40, 41, 42]:
         for data_path_file in ["heating", "boston"]:
             structure, ground_truths, dataset, duplicates_elimination_little_data = ExpsUtil.create_structure(data_path_file, split_seed=split_seed, path_dict=path_dict)
             data_generator: DatasetGenerator = ExpsUtil.create_dataset_generator_with_warmup(folder_name, data_path_file,
@@ -50,8 +52,8 @@ if __name__ == "__main__":
                                                                               data_generator=data_generator,
                                                                               verbose=True)
             for encoding_type_str in ["counts"]:
-                for ground_truth_str in ["node_wise_weights_sum"+"_"+str(idx)]:
-                    for sampler_factory in [UncertaintyChooserOnlineFactory()]:
+                for ground_truth_str in ["node_wise_weights_sum"+"_"+str(idx), "elastic_model", "n_nodes"]:
+                    for sampler_factory in [RandomChooserOnlineFactory(), UncertaintyChooserOnlineFactory()]:
                         for warmup in ["elastic_model"]:
                             pp = partial(runner.execute_gp_run, pop_size=pop_size, num_gen=num_gen,
                                                       encoding_type=encoding_type_str,

@@ -4,6 +4,7 @@ import time
 import torch
 from sympy import latex, parse_expr
 
+from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 from genepro.node import Node
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from threads import OptimizationThread
@@ -16,7 +17,7 @@ import pandas as pd
 class MlPieRun:
     def __init__(self, run_id: str, optimization_thread: OptimizationThread,
                  interpretability_estimate_updater: InterpretabilityEstimateUpdater,
-                 parameters: dict = None, path: str = None):
+                 parameters: dict = None, path: str = None, ground_truth_computer: GroundTruthComputer = None):
         self.timeout_time = 3 * 60
         self.run_id = run_id
         self.optimization_thread: OptimizationThread = optimization_thread
@@ -34,6 +35,7 @@ class MlPieRun:
         self.feedback_responses_iterations: list[int] = []
         self.t1: Node = None
         self.t2: Node = None
+        self.ground_truth_computer = ground_truth_computer
 
     def start(self) -> None:
         self.optimization_thread.start()
@@ -125,11 +127,11 @@ class MlPieRun:
         uncertainties_df = pd.DataFrame(uncertainties_df)
 
         # write optimization file
-        parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_optimization_history(
-            self.optimization_thread.result.opt)
+        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = self.parse_optimization_history(
+            self.optimization_thread.result.opt, self.ground_truth_computer)
         best_data = pd.DataFrame(
-            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities)),
-            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability'])
+            list(zip(parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values)),
+            columns=['parsable_tree', 'latex_tree', 'accuracy', 'interpretability', 'ground_truth_value'])
 
         # update dataframes
         for k in self.parameters.keys():
@@ -149,9 +151,9 @@ class MlPieRun:
         if self.optimization_thread.is_alive():
             return None
         front = self.optimization_thread.result.opt
-        parsable_trees, latex_trees, accuracies, interpretabilities = self.parse_front(front)
-        return pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
-                            columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
+        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = self.parse_front(front, self.ground_truth_computer)
+        return pd.DataFrame(list(zip(accuracies, interpretabilities, ground_truth_values, parsable_trees, latex_trees)),
+                            columns=['accuracy', 'interpretability', 'ground_truth_value', 'parsable_tree', 'latex_tree'])
 
     @staticmethod
     def safe_latex_format(tree: Node) -> str:
@@ -183,11 +185,12 @@ class MlPieRun:
         return t1_latex, t1_parsable, t2_latex, t2_parsable
 
     @staticmethod
-    def parse_optimization_history(optimal) -> tuple[list[str], list[str], list[float], list[float]]:
+    def parse_optimization_history(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[list[str], list[str], list[float], list[float], list[float]]:
         parsable_trees = []
         latex_trees = []
         accuracies = []
         interpretabilities = []
+        ground_truth_values = []
 
         for individual in optimal:
             tree = individual.X[0]
@@ -195,15 +198,20 @@ class MlPieRun:
             latex_trees.append(tree.get_readable_repr().replace("u-", "-"))
             accuracies.append(individual.F[0])
             interpretabilities.append(individual.F[1])
+            if ground_truth_computer is not None:
+                ground_truth_values.append(ground_truth_computer.compute(tree))
+            else:
+                ground_truth_values.append(1234.0)
 
-        return parsable_trees, latex_trees, accuracies, interpretabilities
+        return parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values
 
     @staticmethod
-    def parse_front(optimal) -> tuple[list[str], list[str], list[float], list[float]]:
+    def parse_front(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[list[str], list[str], list[float], list[float], list[float]]:
         parsable_trees = []
         latex_trees = []
         accuracies = []
         interpretabilities = []
+        ground_truth_values = []
 
         for individual in optimal:
             tree = individual.X[0]
@@ -211,5 +219,9 @@ class MlPieRun:
             latex_trees.append(MlPieRun.safe_latex_format(tree))
             accuracies.append(individual.F[0])
             interpretabilities.append(individual.F[1])
+            if ground_truth_computer is not None:
+                ground_truth_values.append(ground_truth_computer.compute(tree))
+            else:
+                ground_truth_values.append(1234.0)
 
-        return parsable_trees, latex_trees, accuracies, interpretabilities
+        return parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values

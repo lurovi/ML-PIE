@@ -13,6 +13,7 @@ from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompa
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
 from exps.DatasetGenerator import DatasetGenerator
 from exps.groundtruth.MathElasticModelComputer import MathElasticModelComputer
+from exps.groundtruth.NumNodesNegComputer import NumNodesNegComputer
 from genepro import node_impl
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
@@ -66,7 +67,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # tree parameters
 n_features_boston, n_features_heating = 13, 8
+max_tree_depth = 4
 phi = MathElasticModelComputer()
+n_nodes_neg_computer = NumNodesNegComputer()
 duplicates_elimination_data_boston = np.random.uniform(-5.0, 5.0, size=(5, n_features_boston))
 seed = 100
 random.seed(seed)
@@ -82,10 +85,10 @@ normal_distribution_parameters_boston = [(0, 1), (0, 1), (0, 3), (0, 8),
 normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8),
                                           (0, 8),
                                           (0, 30), (0, 15)] + [(0, 0.8)] * n_features_heating + [(0, 0.5)]
-structure_boston = TreeStructure(internal_nodes, n_features_boston, 5,
+structure_boston = TreeStructure(internal_nodes, n_features_boston, max_tree_depth,
                                  ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                  normal_distribution_parameters=normal_distribution_parameters_boston)
-structure_heating = TreeStructure(internal_nodes, n_features_heating, 5,
+structure_heating = TreeStructure(internal_nodes, n_features_heating, max_tree_depth,
                                   ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
 
@@ -107,8 +110,8 @@ tree_crossover_heating = setting_heating.get_crossover()
 tree_mutation_heating = setting_heating.get_mutation()
 duplicates_elimination_heating = setting_heating.get_duplicates_elimination()
 
-train_size = 1250
-validation_size = 370
+train_size = 500
+validation_size = 300
 test_size = 250
 
 data_generator_boston = DatasetGenerator("boston_data_generator",
@@ -147,7 +150,9 @@ def thanks():
 @app.route("/startRun/<problem>")
 def start_run(problem):
     run_id = str(uuid.uuid1())
+    random.seed(None)
     np.random.seed(None)
+    torch.manual_seed(None)
     rnd_seed = np.random.randint(1, 10000)
     random.seed(rnd_seed)
     np.random.seed(rnd_seed)
@@ -164,7 +169,7 @@ def start_run(problem):
     warmup_data = data_generator_boston.get_warm_up_data(tree_encoder.get_name(),
                                                          phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(
         tree_encoder.get_name(), phi.get_name())
-    mlp_net = MLPNet(nn.ReLU(), nn.Identity(), tree_encoder.size(), 1, [150, 50])
+    mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=pretrainer_factory,
                                                                warmup_dataset=warmup_data)

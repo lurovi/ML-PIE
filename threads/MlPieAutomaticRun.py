@@ -2,6 +2,7 @@ import time
 
 import numpy as np
 
+from exps.groundtruth.GroundTruthComputer import GroundTruthComputer
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.sampling.FeedbackCollector import FeedbackCollector
 from threads.MlPieRun import MlPieRun
@@ -11,8 +12,9 @@ from threads.OptimizationThread import OptimizationThread
 class MlPieAutomaticRun(MlPieRun):
     def __init__(self, run_id: str, optimization_thread: OptimizationThread,
                  interpretability_estimate_updater: InterpretabilityEstimateUpdater,
-                 feedback_collector: FeedbackCollector, parameters: dict = None, path: str = None):
-        super().__init__(run_id, optimization_thread, interpretability_estimate_updater, parameters, path)
+                 feedback_collector: FeedbackCollector, parameters: dict = None,
+                 path: str = None, ground_truth_computer: GroundTruthComputer = None):
+        super().__init__(run_id, optimization_thread, interpretability_estimate_updater, parameters, path, ground_truth_computer=ground_truth_computer)
         self.feedback_collector: FeedbackCollector = feedback_collector
 
     def run_automatically(self, delay: float):

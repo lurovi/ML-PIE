@@ -1,0 +1,14 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[max, log, log, x_3, **3, log, x_0]","max(log(abs(log(abs(x_3)))),(log(abs(x_0)))**3)",13.476692199707031,-0.12153363972902298,-7.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+1,"[log, /, /, **3, x_3, **3, x_0, **3, x_1]",log(abs((((x_3)**3/(x_0)**3)/(x_1)**3))),15.80649185180664,-0.23345202207565308,-9.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+2,"[**3, log, /, x_3, **3, -4.71]",(log(abs((x_3/(-4.71)**3))))**3,19.85070037841797,-0.7485029101371765,-6.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+3,"[log, **3, /, x_3, **3, x_1]",log(abs(((x_3/(x_1)**3))**3)),16.01637077331543,-0.7289831638336182,-6.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+4,"[**3, +, log, **3, 1.72, x_3]",((log(abs((1.72)**3))+x_3))**3,19.757240295410156,-0.7433995604515076,-6.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+5,"[**3, log, /, x_3, **3, 3.25]",(log(abs((x_3/(3.25)**3))))**3,19.85177230834961,-0.7974979281425476,-6.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+6,"[*, **3, max, x_4, x_6, -, +, -, x_2, 0.02, **3, x_6, -, x_1, max, 3.22, 3.53]","((max(x_4,x_6))**3*(((x_2-0.02)+(x_6)**3)-(x_1-max(3.22,3.53))))",13.148066520690918,0.7797808051109314,-17.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+7,"[log, +, -, x_2, **3, x_4, log, x_4]",log(abs(((x_2-(x_4)**3)+log(abs(x_4))))),14.841197967529297,-0.17258773744106293,-8.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+8,"[+, max, max, -, x_6, x_3, x_6, -, -, x_7, x_5, +, 4.53, 0.54, -, *, x_4, max, 1.72, -1.43, x_0]","(max(max((x_6-x_3),x_6),((x_7-x_5)-(4.53+0.54)))+((x_4*max(1.72,-1.43))-x_0))",10.68305492401123,0.8780415058135986,-21.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+9,"[**3, **3, **3, **3, x_0]",((((x_0)**3)**3)**3)**3,97.32119750976562,-0.9204896688461304,-5.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+10,"[**3, **3, log, **3, x_2]",((log(abs((x_2)**3)))**3)**3,99.61456298828125,-0.924294114112854,-5.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+11,"[log, /, /, x_3, **3, x_0, **3, **3, -2.63]",log(abs(((x_3/(x_0)**3)/((-2.63)**3)**3))),15.955461502075195,-0.25798386335372925,-9.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
+12,"[**3, **3, **3, log, x_3]",(((log(abs(x_3)))**3)**3)**3,19.853561401367188,-0.9192939400672913,-5.0,705,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,40
