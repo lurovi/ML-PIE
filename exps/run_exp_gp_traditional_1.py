@@ -11,6 +11,7 @@ import torch.multiprocessing as mp
 from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
+from deeplearn.model.DropOutMLPNet import DropOutMLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
 from exps.DatasetGenerator import DatasetGenerator
@@ -44,6 +45,7 @@ def run_minimization_with_neural_net(seed: int, pop_size: int, num_gen: int,
     np.random.seed(seed)
     torch.manual_seed(seed)
     mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), encoder.size(), 1, [150, 50])
+    # mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), encoder.size(), 1)
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=TwoPointsCompareTrainerFactory(
                                                                    False, 1),

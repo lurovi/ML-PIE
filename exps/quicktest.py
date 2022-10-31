@@ -25,7 +25,8 @@ if __name__ == "__main__":
     b = torch.tensor([[1,2,3,4,5,6], [3,2,1,4,5,6], [5,4,3,6,2,1]]).float()
     l = ((a - b)**2).sum(axis=1).tolist()
     print(l, np.max(l))
-
+    print(torch.tensor(1))
+    print(torch.tensor([0.24, 0.25, 0.26], dtype=torch.float32).reshape(-1, 1))
     exit(1)
     a = np.array([0.50, 0.0, 0.0, 0.20, 0.05])
 

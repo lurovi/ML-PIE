@@ -8,6 +8,7 @@ from pymoo.algorithms.moo.nsga2 import NSGA2, binary_tournament
 from pymoo.operators.selection.tournament import TournamentSelection
 from torch import nn
 from deeplearn.model.MLPNet import MLPNet
+from deeplearn.model.DropOutMLPNet import DropOutMLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.Trainer import Trainer
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
@@ -93,6 +94,7 @@ class GPSimulatedUserExpsExecutor:
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
         mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
+        # mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
                                                                    warmup_dataset=warmup_data)

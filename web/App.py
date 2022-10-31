@@ -9,6 +9,7 @@ from pymoo.algorithms.moo.nsga2 import NSGA2
 from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
+from deeplearn.model.DropOutMLPNet import DropOutMLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
 from exps.DatasetGenerator import DatasetGenerator
@@ -126,6 +127,10 @@ data_generator_heating.generate_tree_encodings(True)
 data_generator_heating.generate_ground_truth([phi])
 data_generator_heating.create_dataset_warm_up_from_encoding_ground_truth(20, tree_encoder_heating.get_name(), phi, 102)
 
+random.seed(None)
+np.random.seed(None)
+torch.manual_seed(None)
+
 
 @app.route("/")
 def index():
@@ -150,13 +155,6 @@ def thanks():
 @app.route("/startRun/<problem>")
 def start_run(problem):
     run_id = str(uuid.uuid1())
-    random.seed(None)
-    np.random.seed(None)
-    torch.manual_seed(None)
-    rnd_seed = np.random.randint(1, 10000)
-    random.seed(rnd_seed)
-    np.random.seed(rnd_seed)
-    torch.manual_seed(rnd_seed)
 
     tree_encoder = tree_encoder_boston if problem == 'boston' else tree_encoder_heating
     tree_sampling = tree_sampling_boston if problem == 'boston' else tree_sampling_heating
@@ -170,6 +168,7 @@ def start_run(problem):
                                                          phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(
         tree_encoder.get_name(), phi.get_name())
     mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
+    # mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=pretrainer_factory,
                                                                warmup_dataset=warmup_data)
@@ -193,7 +192,7 @@ def start_run(problem):
                                                              interpretability_estimator=interpretability_estimator
                                                              )
     termination = ('n_gen', 50)
-    optimization_seed = seed
+    optimization_seed = None
     callback = PopulationAccumulator(population_storage=population_storage)
     optimization_thread = OptimizationThread(
         optimization_algorithm=algorithm,
