@@ -180,6 +180,7 @@ class GPSimulatedUserExpsExecutor:
         parsable_trees, latex_trees, accuracies, interpretabilities, _ = MlPieRun.parse_front(front)
         df = pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
                           columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
+        df['rerun'] = 'true'
         if filename:
             df.to_csv(filename)
         return df
