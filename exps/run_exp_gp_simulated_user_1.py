@@ -59,7 +59,7 @@ if __name__ == "__main__":
                                                       encoding_type=encoding_type_str,
                                                       ground_truth_type=ground_truth_str,
                                                       sampler_factory=sampler_factory,
-                                                      warmup=warmup)
+                                                      warmup=warmup, rerun=True)
                             pool = mp.Pool(num_repeats if mp.cpu_count() > num_repeats else (mp.cpu_count() - 1), maxtasksperchild=1)
                             _ = list(pool.map(pp, list(range(starting_seed, starting_seed + num_repeats))))
                             pool.close()
