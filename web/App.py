@@ -5,7 +5,6 @@ from functools import partial
 import torch
 import uuid
 from flask import Flask, request, render_template, abort
-from pymoo.algorithms.moo.nsga2 import NSGA2
 from torch import nn
 
 from deeplearn.model.MLPNet import MLPNet
@@ -17,6 +16,7 @@ from exps.groundtruth.MathElasticModelComputer import MathElasticModelComputer
 from exps.groundtruth.NumNodesNegComputer import NumNodesNegComputer
 from genepro import node_impl
 from nsgp.callback.PopulationAccumulator import PopulationAccumulator
+from nsgp.evolution.NSGP2 import NSGP2
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
@@ -176,7 +176,7 @@ def start_run(problem):
     population_storage = set()
 
     # optimization thread creation
-    algorithm = NSGA2(pop_size=200,
+    algorithm = NSGP2(pop_size=200,
                       sampling=tree_sampling,
                       crossover=tree_crossover,
                       mutation=tree_mutation,
