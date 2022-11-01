@@ -63,7 +63,6 @@ run_problems_associations = {}
 seed = 100
 random.seed(seed)
 np.random.seed(seed)
-torch.manual_seed(seed)
 torch.use_deterministic_algorithms(True)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -76,7 +75,6 @@ duplicates_elimination_data_boston = np.random.uniform(-5.0, 5.0, size=(5, n_fea
 seed = 100
 random.seed(seed)
 np.random.seed(seed)
-torch.manual_seed(seed)
 duplicates_elimination_data_heating = np.random.uniform(-5.0, 5.0, size=(5, n_features_heating))
 internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                   node_impl.Cube(),
@@ -130,7 +128,6 @@ data_generator_heating.create_dataset_warm_up_from_encoding_ground_truth(20, tre
 
 random.seed(None)
 np.random.seed(None)
-torch.manual_seed(None)
 
 
 @app.route("/")
