@@ -167,8 +167,8 @@ def start_run(problem):
     warmup_data = data_generator_boston.get_warm_up_data(tree_encoder.get_name(),
                                                          phi.get_name()) if problem == "boston" else data_generator_heating.get_warm_up_data(
         tree_encoder.get_name(), phi.get_name())
-    mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
-    # mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
+    # mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
+    mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
     interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, device,
                                                                warmup_trainer_factory=pretrainer_factory,
                                                                warmup_dataset=warmup_data)

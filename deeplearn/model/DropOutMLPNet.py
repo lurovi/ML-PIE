@@ -20,7 +20,6 @@ class DropOutMLPNet(nn.Module):
 
         self.__first_layer = nn.Linear(self.__input_layer_size, 100)
         self.__second_layer = nn.Linear(100, 100)
-        self.__third_layer = nn.Linear(100, 100)
         self.__output_layer = nn.Linear(100, 1)
 
     def __apply_layers(self, x: torch.Tensor) -> torch.Tensor:
@@ -29,10 +28,6 @@ class DropOutMLPNet(nn.Module):
         x = self.__activation_func(x)
 
         x = self.__second_layer(x)
-        x = nn.Dropout(self.__dropout_prob_uncertainty)(x)
-        x = self.__activation_func(x)
-
-        x = self.__third_layer(x)
         x = nn.Dropout(self.__dropout_prob_uncertainty)(x)
         x = self.__activation_func(x)
 
@@ -52,8 +47,9 @@ class DropOutMLPNet(nn.Module):
                 curr_uncert: List = []
                 for j in range(len(uncert)):
                     curr_uncert.append(uncert[j][i][0].item())
-                uncertainty.append(statistics.pstdev(curr_uncert))
-                predictions.append(statistics.mean(curr_uncert))
+                mu = statistics.mean(curr_uncert)
+                uncertainty.append(statistics.pstdev(curr_uncert, mu))
+                predictions.append(mu)
             out: torch.Tensor = torch.tensor(predictions, dtype=torch.float32).reshape(-1, 1)
         return out, uncertainty, torch.tensor(1, dtype=torch.float32)
 

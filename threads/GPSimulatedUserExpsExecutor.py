@@ -93,8 +93,8 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
-        # mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
+        # mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
+        mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
                                                                    warmup_dataset=warmup_data)
@@ -152,22 +152,23 @@ class GPSimulatedUserExpsExecutor:
         print(run_id)
 
         if rerun:
-            self.execute_rerun(
+            _ = self.execute_rerun(
                 optimization_seed=optimization_seed,
                 pop_size=pop_size,
                 num_gen=num_gen,
                 encoder=tree_encoder,
                 trainer=interpretability_estimator,
-                filename=run_id + '_rerun'
+                filename=run_id + '_rerun',
+                path=self.__folder_name + "/"
             )
 
         return True
 
     def execute_rerun(self, optimization_seed: int, pop_size: int, num_gen: int, encoder: TreeEncoder, trainer: Trainer,
-                      filename: str = None):
+                      filename: str = None, path: str = None):
         mse_evaluator = MSEEvaluator(X=self.__dataset["training"][0], y=self.__dataset["training"][1],
                                      linear_scaling=True)
-        net_evaluator = NeuralNetTreeEvaluator(encoder=encoder, trainer=trainer)
+        net_evaluator = NeuralNetTreeEvaluator(encoder=encoder, trainer=trainer, negate=True)
         num_offsprings = pop_size
         gp = GPWithNSGA2(
             structure=self.__structure,
@@ -184,5 +185,6 @@ class GPSimulatedUserExpsExecutor:
                           columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
         df['rerun'] = 'true'
         if filename:
-            df.to_csv(filename)
+            df.to_csv(path+"bestrerun-"+filename+".csv")
+        print(filename)
         return df
