@@ -11,6 +11,7 @@ from pymoo.util.display.multi import MultiObjectiveOutput
 # =========================================================================================================
 # Implementation
 # =========================================================================================================
+from nsgp.evaluation.CachingEvaluator import CachingEvaluator
 
 
 class NSGP2(NSGA2):
@@ -36,6 +37,7 @@ class NSGP2(NSGA2):
             **kwargs)
 
         self.re_evaluate = re_evaluate
+        self.evaluator = CachingEvaluator()
 
     def next(self):
 
