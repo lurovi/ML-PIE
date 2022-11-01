@@ -24,7 +24,6 @@ class NSGP2(NSGA2):
                  survival=RankAndCrowdingSurvival(),
                  output=MultiObjectiveOutput(),
                  re_evaluate=True,
-                 penalize_duplicates=True,
                  **kwargs):
         super().__init__(
             pop_size=pop_size,
@@ -37,7 +36,6 @@ class NSGP2(NSGA2):
             **kwargs)
 
         self.re_evaluate = re_evaluate
-        self.penalize_duplicates = penalize_duplicates
 
     def next(self):
 
@@ -66,12 +64,7 @@ class NSGP2(NSGA2):
                 self.evaluator.eval(self.problem, pop, algorithm=self, skip_already_evaluated=False)
 
         # execute the survival to find the fittest solutions
-        if self.penalize_duplicates:
-            pars = {'eliminate_duplicates': self.eliminate_duplicates}
-            self.pop = self.survival.do(self.problem, pop, n_survive=self.pop_size, algorithm=self,
-                                        **pars)
-        else:
-            self.pop = self.survival.do(self.problem, pop, n_survive=self.pop_size, algorithm=self, **kwargs)
+        self.pop = self.survival.do(self.problem, pop, n_survive=self.pop_size, algorithm=self, **kwargs)
 
 
 parse_doc_string(NSGP2.__init__)
