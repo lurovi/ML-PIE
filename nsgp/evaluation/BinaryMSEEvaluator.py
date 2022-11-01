@@ -20,7 +20,7 @@ class BinaryMSEEvaluator(TreeEvaluator):
         self.__X = X
         self.__y = y
 
-    def evaluate(self, tree: Node) -> float:
+    def evaluate(self, tree: Node, **kwargs) -> float:
         res: np.ndarray = np.where(tree(self.__X) > 0, 1, 0)
         mse: float = np.square(res - self.__y).sum() / float(len(self.__y))
         return mse

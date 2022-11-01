@@ -4,7 +4,7 @@ from copy import deepcopy
 import numpy as np
 import pandas as pd
 import torch
-from pymoo.algorithms.moo.nsga2 import NSGA2, binary_tournament
+from pymoo.algorithms.moo.nsga2 import binary_tournament
 from pymoo.operators.selection.tournament import TournamentSelection
 from torch import nn
 from deeplearn.model.MLPNet import MLPNet
@@ -19,6 +19,7 @@ from nsgp.encoder.TreeEncoder import TreeEncoder
 from nsgp.evaluation.MSEEvaluator import MSEEvaluator
 from nsgp.evaluation.NeuralNetTreeEvaluator import NeuralNetTreeEvaluator
 from nsgp.evolution.GPWithNSGA2 import GPWithNSGA2
+from nsgp.evolution.NSGP2 import NSGP2
 
 from nsgp.interpretability.InterpretabilityEstimateUpdater import InterpretabilityEstimateUpdater
 from nsgp.operator.TreeSetting import TreeSetting
@@ -69,7 +70,7 @@ class GPSimulatedUserExpsExecutor:
         tree_crossover = setting.get_crossover()
         tree_mutation = setting.get_mutation()
         duplicates_elimination = setting.get_duplicates_elimination()
-        algorithm = NSGA2(pop_size=pop_size,
+        algorithm = NSGP2(pop_size=pop_size,
                           n_offsprings=num_offsprings,
                           selection=tournament_selection,
                           sampling=tree_sampling,

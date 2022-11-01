@@ -23,7 +23,7 @@ class R2Evaluator(TreeEvaluator):
         self.__linear_scaling = linear_scaling
         self.__sign = -1.0 if negate else 1.0
 
-    def evaluate(self, tree: Node) -> float:
+    def evaluate(self, tree: Node, **kwargs) -> float:
         res: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
         slope, intercept = 1.0, 0.0
         if self.__linear_scaling:

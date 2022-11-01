@@ -13,7 +13,7 @@ class NeuralNetTreeEvaluator(TreeEvaluator):
         self.__trainer = trainer
         self.__sign = -1.0 if negate else 1.0
 
-    def evaluate(self, tree: Node) -> float:
+    def evaluate(self, tree: Node, **kwargs) -> float:
         encoded_tree = self.__encoder.encode(tree, True)
         tensor_encoded_tree = torch.from_numpy(encoded_tree).float().reshape(1, -1)
         return self.__sign * self.__trainer.predict(tensor_encoded_tree)[0][0][0].item()

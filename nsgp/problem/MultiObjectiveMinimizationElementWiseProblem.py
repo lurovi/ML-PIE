@@ -21,10 +21,11 @@ class MultiObjectiveMinimizationElementWiseProblem(ElementwiseProblem):
             self._eval(x, out)
 
     def _eval(self, x, out, *args, **kwargs):
+        cached_fitness = kwargs.get("fitness")
         tree = x[0]
         fitne = []
         for j in range(self.__number_of_evaluators):
-            fitne.append(self.__evaluators[j].evaluate(tree))
+            fitne.append(self.__evaluators[j].evaluate(tree, cached_fitness=cached_fitness, tree_index=0))
         out["F"] = np.array(fitne, dtype=np.float32)
 
     def __getstate__(self):

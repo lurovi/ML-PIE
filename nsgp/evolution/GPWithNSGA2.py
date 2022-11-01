@@ -4,15 +4,19 @@ from typing import Tuple, List, Dict, Any
 import random
 import torch
 import numpy as np
-from pymoo.algorithms.moo.nsga2 import binary_tournament, NSGA2
+import warnings
+
+from numpy import VisibleDeprecationWarning
+from pymoo.algorithms.moo.nsga2 import binary_tournament
 from pymoo.core.callback import Callback
 from pymoo.core.problem import Problem
-from pymoo.core.result import Result
+
 from pymoo.operators.selection.tournament import TournamentSelection
 from pymoo.optimize import minimize
 from copy import deepcopy
 
 from nsgp.evaluation.TreeEvaluator import TreeEvaluator
+from nsgp.evolution.NSGP2 import NSGP2
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.MultiObjectiveMinimizationElementWiseProblem import MultiObjectiveMinimizationElementWiseProblem
 from nsgp.problem.MultiObjectiveMinimizationProblem import MultiObjectiveMinimizationProblem
@@ -52,7 +56,7 @@ class GPWithNSGA2:
         self.__tree_crossover = self.__setting.get_crossover()
         self.__tree_mutation = self.__setting.get_mutation()
         self.__duplicates_elimination = self.__setting.get_duplicates_elimination()
-        self.__algorithm = NSGA2(pop_size=self.__pop_size,
+        self.__algorithm = NSGP2(pop_size=self.__pop_size,
                                  n_offsprings=self.__num_offsprings,
                                  selection=self.__tournament_selection,
                                  sampling=self.__tree_sampling,
@@ -71,11 +75,13 @@ class GPWithNSGA2:
         else:
             problem: Problem = MultiObjectiveMinimizationProblem(self.__evaluators, mutex)
         start = time.time()
-        res = minimize(problem=problem, algorithm=deepcopy(self.__algorithm),
-                       termination=("n_gen", self.__num_gen),
-                       seed=seed, verbose=verbose, save_history=save_history,
-                       callback=deepcopy(self.__callback),
-                       return_least_infeasible=False)
+        with warnings.catch_warnings():
+            warnings.simplefilter(action='ignore', category=VisibleDeprecationWarning)
+            res = minimize(problem=problem, algorithm=deepcopy(self.__algorithm),
+                           termination=("n_gen", self.__num_gen),
+                           seed=seed, verbose=verbose, save_history=save_history,
+                           callback=deepcopy(self.__callback),
+                           return_least_infeasible=False)
         end = time.time()
         if verbose:
             print("")

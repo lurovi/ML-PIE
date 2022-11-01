@@ -1,7 +1,9 @@
 import threading
+import warnings
 from copy import deepcopy
 from typing import Any
 
+from numpy import VisibleDeprecationWarning
 from pymoo.algorithms.base.genetic import GeneticAlgorithm
 from pymoo.core.problem import Problem
 
@@ -25,15 +27,17 @@ class OptimizationThread(threading.Thread):
         self.result = None
 
     def run(self) -> None:
-        self.result = minimize(
-            problem=self.problem,
-            algorithm=self.optimization_algorithm,
-            termination=self.termination,
-            seed=self.seed,
-            verbose=self.verbose,
-            callback=self.callback,
-            save_history=self.save_history
-        )
+        with warnings.catch_warnings():
+            warnings.simplefilter(action='ignore', category=VisibleDeprecationWarning)
+            self.result = minimize(
+                problem=self.problem,
+                algorithm=self.optimization_algorithm,
+                termination=self.termination,
+                seed=self.seed,
+                verbose=self.verbose,
+                callback=self.callback,
+                save_history=self.save_history
+            )
 
     def get_current_iteration(self) -> int:
         if self.callback is not None:

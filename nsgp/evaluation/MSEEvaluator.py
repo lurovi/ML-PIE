@@ -20,9 +20,13 @@ class MSEEvaluator(TreeEvaluator):
         self.__y = y
         self.__linear_scaling = linear_scaling
 
-    def evaluate(self, tree: Node) -> float:
+    def evaluate(self, tree: Node, **kwargs) -> float:
+        cached_fitness = kwargs.get("cached_fitness")
+        i = kwargs.get("tree_index")
+        if cached_fitness is not None and i < len(cached_fitness) and cached_fitness[i].size > 0:
+            mse = cached_fitness[i][0]
+            return mse
         res: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
-        slope, intercept = 1.0, 0.0
         if self.__linear_scaling:
             slope, intercept = compute_linear_scaling(self.__y, res)
             slope = np.core.umath.clip(slope, -1e+10, 1e+10)

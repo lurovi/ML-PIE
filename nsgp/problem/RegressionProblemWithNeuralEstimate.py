@@ -42,7 +42,7 @@ class RegressionProblemWithNeuralEstimate(Problem):
         current_uncertainties = []
         for i in range(len(x)):
             tree = x[i, 0]
-            if cached_fitness and cached_fitness[i].size > 0:
+            if cached_fitness is not None and i < len(cached_fitness) and cached_fitness[i].size > 0:
                 mse = cached_fitness[i][0]
             else:
                 prediction: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
