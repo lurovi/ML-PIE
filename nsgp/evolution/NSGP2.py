@@ -165,7 +165,7 @@ class NSGP2(NSGA2):
         if infills is not None:
             pop = Population.merge(self.pop, infills)
             if self.re_evaluate:
-                self.evaluator.eval(self.problem, pop, algorithm=self)
+                self.evaluator.eval(self.problem, pop, algorithm=self, skip_already_evaluated=False)
 
         # execute the survival to find the fittest solutions
         self.pop = self.survival.do(self.problem, pop, n_survive=self.pop_size, algorithm=self, **kwargs)
