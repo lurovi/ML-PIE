@@ -16,9 +16,9 @@ class MultiObjectiveMinimizationElementWiseProblem(ElementwiseProblem):
     def _evaluate(self, x, out, *args, **kwargs):
         if self.__mutex is not None:
             with self.__mutex:
-                self._eval(x, out)
+                self._eval(x, out, *args, **kwargs)
         else:
-            self._eval(x, out)
+            self._eval(x, out, *args, **kwargs)
 
     def _eval(self, x, out, *args, **kwargs):
         cached_fitness = kwargs.get("fitness")
