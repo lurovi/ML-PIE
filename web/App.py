@@ -29,6 +29,8 @@ import pandas as pd
 
 from threads.MlPieRun import MlPieRun
 
+dataset_split_seed = 40
+
 RESULTS_FOLDER = 'humanresults/'
 
 app = Flask(__name__)
@@ -38,8 +40,8 @@ accuracy_percentiles = [95, 75]
 
 hardcoded_results = {
     "heating": {
-        "size": pd.read_csv("gpresults/heating_size.csv"),
-        "phi": pd.read_csv("gpresults/heating_phi.csv")
+        "size": pd.read_csv("gpresults/heating_size_" + str(dataset_split_seed) + ".csv"),
+        "phi": pd.read_csv("gpresults/heating_phi_" + str(dataset_split_seed) + ".csv")
     },
     "boston": {
         "size": pd.read_csv("gpresults/boston_size.csv"),
@@ -48,8 +50,8 @@ hardcoded_results = {
 }
 
 available_problems = {
-    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating.pbz2"),
-    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston.pbz2")
+    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating" + str(dataset_split_seed) + ".pbz2"),
+    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston" + str(dataset_split_seed) + ".pbz2")
 }
 
 ongoing_runs = {}
