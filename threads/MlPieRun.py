@@ -143,6 +143,10 @@ class MlPieRun:
 
         best_data['rerun'] = 'false'
 
+        uncertainties_df['run_id'] = self.run_id
+        feedback_data['run_id'] = self.run_id
+        best_data['run_id'] = self.run_id
+
         # save files
         uncertainties_df.to_csv(path_or_buf=self.path + "uncertainty-" + self.run_id + ".csv")
         feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
