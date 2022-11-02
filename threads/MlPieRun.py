@@ -13,6 +13,8 @@ import numpy as np
 
 import pandas as pd
 
+from util.PicklePersist import PicklePersist
+
 
 class MlPieRun:
     def __init__(self, run_id: str, optimization_thread: OptimizationThread,
@@ -145,6 +147,8 @@ class MlPieRun:
         feedback_data.to_csv(path_or_buf=self.path + "feedback-" + self.run_id + ".csv")
         torch.save(model, self.path + "nn-" + self.run_id + ".pth")
         best_data.to_csv(path_or_buf=self.path + "best-" + self.run_id + ".csv")
+        PicklePersist.compress_pickle(title=self.path + "trainer-" + self.run_id,
+                                      data=self.interpretability_estimate_updater.interpretability_estimator)
 
     def is_abandoned(self) -> bool:
         return time.time() - self.feedback_request_time > self.timeout_time
@@ -153,9 +157,11 @@ class MlPieRun:
         if self.optimization_thread.is_alive():
             return None
         front = self.optimization_thread.result.opt
-        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = self.parse_front(front, self.ground_truth_computer)
+        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = self.parse_front(front,
+                                                                                                            self.ground_truth_computer)
         return pd.DataFrame(list(zip(accuracies, interpretabilities, ground_truth_values, parsable_trees, latex_trees)),
-                            columns=['accuracy', 'interpretability', 'ground_truth_value', 'parsable_tree', 'latex_tree'])
+                            columns=['accuracy', 'interpretability', 'ground_truth_value', 'parsable_tree',
+                                     'latex_tree'])
 
     @staticmethod
     def safe_latex_format(tree: Node) -> str:
@@ -187,7 +193,8 @@ class MlPieRun:
         return t1_latex, t1_parsable, t2_latex, t2_parsable
 
     @staticmethod
-    def parse_optimization_history(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[list[str], list[str], list[float], list[float], list[float]]:
+    def parse_optimization_history(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[
+        list[str], list[str], list[float], list[float], list[float]]:
         parsable_trees = []
         latex_trees = []
         accuracies = []
@@ -208,7 +215,8 @@ class MlPieRun:
         return parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values
 
     @staticmethod
-    def parse_front(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[list[str], list[str], list[float], list[float], list[float]]:
+    def parse_front(optimal, ground_truth_computer: GroundTruthComputer = None) -> tuple[
+        list[str], list[str], list[float], list[float], list[float]]:
         parsable_trees = []
         latex_trees = []
         accuracies = []
