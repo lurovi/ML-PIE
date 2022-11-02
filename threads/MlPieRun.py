@@ -117,9 +117,10 @@ class MlPieRun:
         for iii in range(len(uncertainties)):
             gen_uncertainties = uncertainties[iii]
             current_avg_uncertainty = sum(gen_uncertainties) / len(gen_uncertainties)
-            current_avg_uncertainty = current_avg_uncertainty / initial_avg_uncertainty
+            normalized_current_avg_uncertainty = current_avg_uncertainty / initial_avg_uncertainty
             uncertainties_df["generation"].append(iii)
             uncertainties_df["average_uncertainty"].append(current_avg_uncertainty)
+            uncertainties_df["normalized_average_uncertainty"].append(normalized_current_avg_uncertainty)
             sss = ""
             for ggg in gen_uncertainties:
                 sss += str(ggg)
