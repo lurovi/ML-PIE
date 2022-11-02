@@ -202,8 +202,8 @@ def start_run(problem):
     )
 
     # feedback thread creation
-    # pair_chooser = RandomChooserOnlineFactory()
-    pair_chooser = UncertaintyChooserOnlineFactory()
+    pair_chooser = RandomChooserOnlineFactory()
+    # pair_chooser = UncertaintyChooserOnlineFactory()
     interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser)

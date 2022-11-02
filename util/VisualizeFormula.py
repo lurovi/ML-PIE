@@ -98,7 +98,7 @@ class VisualizeFormula:
         return s
 
     @staticmethod
-    def create_symbol_function_dict(n_features: int = 50) -> Dict:
+    def create_symbol_function_dict(n_features: int = 20) -> Dict:
         d = {"x_" + str(i): sympy.Symbol("x_" + str(i)) for i in range(n_features)}
         #d["+"] = lambda x, y: x+y
         #d["-"] = lambda x, y: x-y

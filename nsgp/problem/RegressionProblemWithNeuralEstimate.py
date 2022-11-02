@@ -1,4 +1,5 @@
 import threading
+from copy import deepcopy
 
 import numpy as np
 import torch
@@ -27,6 +28,8 @@ class RegressionProblemWithNeuralEstimate(Problem):
         self.__interpretability_estimator = interpretability_estimator
         self.__linear_scaling = linear_scaling
         self.__uncertainties = []
+        self.__first_pop = None
+        self.__first_pop_uncertainties = []
 
     def _evaluate(self, x, out, *args, **kwargs):
         if self.mutex is not None:
@@ -37,7 +40,11 @@ class RegressionProblemWithNeuralEstimate(Problem):
 
     def _eval(self, x, out, *args, **kwargs):
         cached_fitness = kwargs.get("fitness")
-
+        if self.__first_pop is None:
+            first_pop = x
+            encodings_first_pop = np.array([self.__tree_encoder.encode(first_pop[i, 0], True) for i in range(len(first_pop))])
+            encodings_first_pop = torch.from_numpy(encodings_first_pop).float()
+            self.__first_pop = encodings_first_pop
         out["F"] = np.empty((len(x), 2), dtype=np.float32)
         current_uncertainties = []
         for i in range(len(x)):
@@ -64,11 +71,20 @@ class RegressionProblemWithNeuralEstimate(Problem):
             current_uncertainties.append(uncertainty[0])
         self.__uncertainties.append(current_uncertainties)
 
+        _, uncertainty, _ = self.__interpretability_estimator.predict(self.__first_pop)
+        self.__first_pop_uncertainties.append(uncertainty)
+
     def get_uncertainties(self):
         return self.__uncertainties
 
     def reset_uncertainties(self):
         self.__uncertainties = []
+
+    def get_first_pop_uncertainties(self):
+        return self.__first_pop_uncertainties
+
+    def reset_first_pop_uncertainties(self):
+        self.__first_pop_uncertainties = []
 
     def __getstate__(self):
         state = self.__dict__.copy()
