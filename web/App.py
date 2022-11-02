@@ -7,7 +7,6 @@ import uuid
 from flask import Flask, request, render_template, abort
 from torch import nn
 
-from deeplearn.model.MLPNet import MLPNet
 from deeplearn.model.DropOutMLPNet import DropOutMLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.TwoPointsCompareTrainerFactory import TwoPointsCompareTrainerFactory
@@ -21,7 +20,6 @@ from nsgp.interpretability.InterpretabilityEstimateUpdater import Interpretabili
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
 from nsgp.sampling.RandomChooserOnlineFactory import RandomChooserOnlineFactory
-from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
 from nsgp.structure.TreeStructure import TreeStructure
 from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
