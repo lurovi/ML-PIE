@@ -20,6 +20,7 @@ from nsgp.interpretability.InterpretabilityEstimateUpdater import Interpretabili
 from nsgp.operator.TreeSetting import TreeSetting
 from nsgp.problem.RegressionProblemWithNeuralEstimate import RegressionProblemWithNeuralEstimate
 from nsgp.sampling.RandomChooserOnlineFactory import RandomChooserOnlineFactory
+from nsgp.sampling.UncertaintyChooserOnlineFactory import UncertaintyChooserOnlineFactory
 from nsgp.structure.TreeStructure import TreeStructure
 from threads.OptimizationThread import OptimizationThread
 from util.PicklePersist import PicklePersist
@@ -202,6 +203,7 @@ def start_run(problem):
 
     # feedback thread creation
     pair_chooser = RandomChooserOnlineFactory()
+    # pair_chooser = UncertaintyChooserOnlineFactory()
     interpretability_estimate_updater = InterpretabilityEstimateUpdater(individuals=population_storage, mutex=mutex,
                                                                         interpretability_estimator=interpretability_estimator,
                                                                         encoder=tree_encoder, pair_chooser=pair_chooser)
