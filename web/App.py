@@ -31,7 +31,7 @@ from threads.MlPieRun import MlPieRun
 
 dataset_split_seed = 40
 
-RESULTS_FOLDER = 'humanresults/'
+RESULTS_FOLDER = '../humanresults/'
 
 app = Flask(__name__)
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
@@ -40,18 +40,18 @@ accuracy_percentiles = [95, 75]
 
 hardcoded_results = {
     "heating": {
-        "size": pd.read_csv("gpresults/heating_size_" + str(dataset_split_seed) + ".csv"),
-        "phi": pd.read_csv("gpresults/heating_phi_" + str(dataset_split_seed) + ".csv")
+        "size": pd.read_csv("../gpresults/heating_size_" + str(dataset_split_seed) + ".csv"),
+        "phi": pd.read_csv("../gpresults/heating_phi_" + str(dataset_split_seed) + ".csv")
     },
     "boston": {
-        "size": pd.read_csv("gpresults/boston_size_" + str(dataset_split_seed) + ".csv"),
-        "phi": pd.read_csv("gpresults/boston_phi_" + str(dataset_split_seed) + ".csv")
+        "size": pd.read_csv("../gpresults/boston_size_" + str(dataset_split_seed) + ".csv"),
+        "phi": pd.read_csv("../gpresults/boston_phi_" + str(dataset_split_seed) + ".csv")
     }
 }
 
 available_problems = {
-    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating_" + str(dataset_split_seed) + ".pbz2"),
-    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston_" + str(dataset_split_seed) + ".pbz2")
+    "heating": PicklePersist.decompress_pickle("../exps/benchmark/heating_" + str(dataset_split_seed) + ".pbz2"),
+    "boston": PicklePersist.decompress_pickle("../exps/benchmark/boston_" + str(dataset_split_seed) + ".pbz2")
 }
 
 ongoing_runs = {}
@@ -92,7 +92,7 @@ structure_heating = TreeStructure(internal_nodes, n_features_heating, max_tree_d
                                   ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
 
-tree_encoder_boston = PicklePersist.decompress_pickle("web/encoders/boston_counts_encoder.pbz2")
+tree_encoder_boston = PicklePersist.decompress_pickle("encoders/boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)
 setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
 tree_sampling_boston = setting_boston.get_sampling()
@@ -100,7 +100,7 @@ tree_crossover_boston = setting_boston.get_crossover()
 tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
 
-tree_encoder_heating = PicklePersist.decompress_pickle("web/encoders/heating_counts_encoder.pbz2")
+tree_encoder_heating = PicklePersist.decompress_pickle("encoders/heating_counts_encoder.pbz2")
 structure_heating.register_encoder(tree_encoder_heating)
 setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 tree_sampling_heating = setting_heating.get_sampling()
@@ -376,3 +376,7 @@ def runs_cleanup():
                 del ongoing_runs[run_id]
             except KeyError:
                 pass
+
+
+if __name__ == "__main__":
+    app.run()
