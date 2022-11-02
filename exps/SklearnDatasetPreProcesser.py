@@ -8,6 +8,8 @@ from sklearn.preprocessing import RobustScaler
 from functools import partial
 import warnings
 
+from util.PicklePersist import PicklePersist
+
 
 class SklearnDatasetPreProcessor:
 
@@ -154,3 +156,11 @@ class SklearnDatasetPreProcessor:
                 "validation": (X_dev, y_dev),
                 "test": (X_test, y_test)}
 
+
+if __name__ == "__main__":
+    path_dict = {"heating": "benchmark/energyefficiency.xlsx", "cooling": "benchmark/energyefficiency.xlsx"}
+    for split_seed in [40, 41, 42]:
+        for dataset_path in ["heating", "boston"]:
+            dataset = SklearnDatasetPreProcessor.load_data(dataset_path, rng_seed=split_seed, previous_seed=100,
+                                                   path_dict=path_dict)
+            PicklePersist.compress_pickle("benchmark/"+dataset_path+"_"+str(split_seed), dataset)
