@@ -44,14 +44,14 @@ hardcoded_results = {
         "phi": pd.read_csv("gpresults/heating_phi_" + str(dataset_split_seed) + ".csv")
     },
     "boston": {
-        "size": pd.read_csv("gpresults/boston_size.csv"),
-        "phi": pd.read_csv("gpresults/boston_phi.csv")
+        "size": pd.read_csv("gpresults/boston_size_" + str(dataset_split_seed) + ".csv"),
+        "phi": pd.read_csv("gpresults/boston_phi_" + str(dataset_split_seed) + ".csv")
     }
 }
 
 available_problems = {
-    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating" + str(dataset_split_seed) + ".pbz2"),
-    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston" + str(dataset_split_seed) + ".pbz2")
+    "heating": PicklePersist.decompress_pickle("exps/benchmark/heating_" + str(dataset_split_seed) + ".pbz2"),
+    "boston": PicklePersist.decompress_pickle("exps/benchmark/boston_" + str(dataset_split_seed) + ".pbz2")
 }
 
 ongoing_runs = {}
