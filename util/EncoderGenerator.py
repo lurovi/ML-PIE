@@ -1,7 +1,6 @@
 import random
 
 import torch
-from flask import Flask
 
 from functools import partial
 

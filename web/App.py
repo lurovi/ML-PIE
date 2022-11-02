@@ -92,8 +92,7 @@ structure_heating = TreeStructure(internal_nodes, n_features_heating, max_tree_d
                                   ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating)
 
-tree_encoder_boston = PicklePersist.decompress_pickle(
-    "web/encoders/boston_counts_encoder.pbz2")
+tree_encoder_boston = PicklePersist.decompress_pickle("web/encoders/boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)
 setting_boston = TreeSetting(structure_boston, duplicates_elimination_data_boston)
 tree_sampling_boston = setting_boston.get_sampling()
@@ -101,8 +100,7 @@ tree_crossover_boston = setting_boston.get_crossover()
 tree_mutation_boston = setting_boston.get_mutation()
 duplicates_elimination_boston = setting_boston.get_duplicates_elimination()
 
-tree_encoder_heating = PicklePersist.decompress_pickle(
-    "web/encoders/heating_counts_encoder.pbz2")
+tree_encoder_heating = PicklePersist.decompress_pickle("web/encoders/heating_counts_encoder.pbz2")
 structure_heating.register_encoder(tree_encoder_heating)
 setting_heating = TreeSetting(structure_heating, duplicates_elimination_data_heating)
 tree_sampling_heating = setting_heating.get_sampling()
