@@ -137,6 +137,7 @@ class MlPieRun:
 
         # update dataframes
         for k in self.parameters.keys():
+            uncertainties_df[k] = self.parameters[k]
             feedback_data[k] = self.parameters[k]
             best_data[k] = self.parameters[k]
 
