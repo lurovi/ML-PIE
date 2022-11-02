@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-tau = False
+tau = True
 
 percentiles = [25, 50, 75]
 
@@ -23,7 +23,7 @@ for encoding in encodings:
                 for warm_up in warm_ups:
                     for optimization_seed in optimization_seeds:
                         for split_seed in split_seeds:
-                            filename = 'test_results_gp_simulated_user_d4_tanh/best-' + dataset + '-' + encoding + '-' + ground_truth + '-' + active_learning + '-' + warm_up + '-GPSU_' + str(
+                            filename = 'test_results_gp_simulated_user_dropout/best-' + dataset + '-' + encoding + '-' + ground_truth + '-' + active_learning + '-' + warm_up + '-GPSU_' + str(
                                 optimization_seed) + '_' + str(split_seed) + '.csv'
                             df = pd.read_csv(filename)
                             df = df.iloc[:, 1:]
