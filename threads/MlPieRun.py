@@ -111,7 +111,7 @@ class MlPieRun:
         model = self.interpretability_estimate_updater.interpretability_estimator.get_net()
 
         # uncertainties
-        uncertainties_df = {"generation": [], "average_uncertainty": [], "all_uncertainties": []}
+        uncertainties_df = {"generation": [], "average_uncertainty": [], "all_uncertainties": [], "normalized_average_uncertainty": []}
         uncertainties = self.optimization_thread.problem.get_uncertainties()
         initial_avg_uncertainty = sum(uncertainties[0]) / len(uncertainties[0])
         for iii in range(len(uncertainties)):
