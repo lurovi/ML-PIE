@@ -1,0 +1,14 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,73.87014770507812,-0.47988396883010864,"[**3, x_12]",x_{12}^{3},true
+1,22.184329986572266,-0.04501661658287048,"[-, -, max, *, x_8, x_10, x_5, **3, **3, x_8, x_12]","- x_{12} - \left(x_{8}^{3}\right)^{3} + \max\left(x_{5}, x_{10} x_{8}\right)",true
+2,22.363239288330078,-0.04682715982198715,"[-, -, max, **3, x_9, x_5, **3, **3, x_8, x_12]","- x_{12} - \left(x_{8}^{3}\right)^{3} + \max\left(x_{5}, x_{9}^{3}\right)",true
+3,53.659629821777344,-0.45292070508003235,"[+, x_12, log, log, log, x_8]",x_{12} + \log{\left(\left|{\log{\left(\left|{\log{\left(\left|{x_{8}}\right| \right)}}\right| \right)}}\right| \right)},true
+4,32.7897834777832,-0.3837130665779114,"[log, +, x_12, log, +, x_12, 2.84]",\log{\left(\left|{x_{12} + \log{\left(\left|{x_{12} + 2.84}\right| \right)}}\right| \right)},true
+5,31.93821144104004,-0.3728224039077759,"[log, +, x_12, log, -4.7]",\log{\left(\left|{x_{12} + \log{\left(4.7 \right)}}\right| \right)},true
+6,28.966842651367188,-0.3682102560997009,"[-, max, log, x_4, x_5, x_12]","- x_{12} + \max\left(x_{5}, \log{\left(\left|{x_{4}}\right| \right)}\right)",true
+7,22.670866012573242,-0.07603606581687927,"[-, max, -, log, x_5, x_12, max, x_3, x_5, x_12]","- x_{12} + \max\left(x_{3}, x_{5}, - x_{12} + \log{\left(\left|{x_{5}}\right| \right)}\right)",true
+8,39.54974365234375,-0.43033385276794434,"[+, x_12, log, log, -4.7]",x_{12} + \log{\left(\log{\left(4.7 \right)} \right)},true
+9,86.98703002929688,-0.48285192251205444,"[log, log, log, log, x_1]",\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{x_{1}}\right| \right)}}\right| \right)}}\right| \right)}}\right| \right)},true
+10,22.970592498779297,-0.32930925488471985,"[-, max, log, log, -3.43, x_5, x_12]","- x_{12} + \max\left(x_{5}, \log{\left(\log{\left(3.43 \right)} \right)}\right)",true
+11,22.167055130004883,0.044387590140104294,"[-, -, max, *, x_9, x_9, max, x_3, x_5, **3, **3, x_8, x_12]","- x_{12} - \left(x_{8}^{3}\right)^{3} + \max\left(x_{3}, x_{5}, x_{9} x_{9}\right)",true
+12,22.93648910522461,-0.2847031354904175,"[-, max, **3, **3, 0.85, x_5, x_12]","- x_{12} + \max\left(x_{5}, \left(0.85^{3}\right)^{3}\right)",true

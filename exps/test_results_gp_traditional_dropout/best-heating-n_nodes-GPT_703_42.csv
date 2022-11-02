@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,[x_4],x_4,22.431339263916016,1.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+1,"[+, +, x_6, x_4, x_4]",((x_6+x_4)+x_4),14.902466773986816,5.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+2,"[-, log, x_4, x_6]",(log(abs(x_4))-x_6),20.332239151000977,4.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+3,"[+, -, +, +, x_1, x_1, +, x_2, x_6, log, **3, x_4, +, x_6, +, **3, x_7, +, x_6, x_6]",((((x_1+x_1)+(x_2+x_6))-log(abs((x_4)**3)))+(x_6+((x_7)**3+(x_6+x_6)))),10.895539283752441,20.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+4,"[+, -, +, +, x_1, x_1, +, x_2, x_6, log, **3, x_4, +, +, +, x_2, x_6, +, -1.58, x_6, +, **3, x_1, +, x_6, x_6]",((((x_1+x_1)+(x_2+x_6))-log(abs((x_4)**3)))+(((x_2+x_6)+(-1.58+x_6))+((x_1)**3+(x_6+x_6)))),10.103800773620605,26.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+5,"[**3, -, +, x_6, +, x_2, x_6, log, x_4]",(((x_6+(x_2+x_6))-log(abs(x_4))))**3,11.917562484741211,9.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+6,"[+, **3, max, x_6, x_6, x_4]","((max(x_6,x_6))**3+x_4)",13.271806716918945,6.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+7,"[+, -, +, +, x_1, x_6, +, x_2, x_6, log, **3, x_4, +, x_6, +, +, x_1, x_1, +, x_1, x_6]",((((x_1+x_6)+(x_2+x_6))-log(abs((x_4)**3)))+(x_6+((x_1+x_1)+(x_1+x_6)))),10.45601749420166,21.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+8,"[+, -, +, +, x_6, x_1, +, x_1, x_6, log, **3, x_4, +, x_6, +, +, x_1, x_1, +, x_2, x_6]",((((x_6+x_1)+(x_1+x_6))-log(abs((x_4)**3)))+(x_6+((x_1+x_1)+(x_2+x_6)))),10.45601749420166,21.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42
+9,"[**3, -, +, +, x_6, x_6, +, x_2, x_6, log, x_4]",((((x_6+x_6)+(x_2+x_6))-log(abs(x_4))))**3,10.903593063354492,11.0,1234.0,703,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,42

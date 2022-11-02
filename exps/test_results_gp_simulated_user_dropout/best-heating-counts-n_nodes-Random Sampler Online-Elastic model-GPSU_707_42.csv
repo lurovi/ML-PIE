@@ -1,0 +1,12 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed,rerun
+0,"[log, **3, +, x_4, -, x_1, x_3]",log(abs(((x_4+(x_1-x_3)))**3)),16.870304107666016,-0.30270564556121826,-7.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+1,"[log, **3, **3, **3, x_3]",log(abs((((x_3)**3)**3)**3)),21.560138702392578,-0.35238587856292725,-5.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+2,"[-, **3, x_6, **3, **3, *, x_3, x_3]",((x_6)**3-(((x_3*x_3))**3)**3),13.271770477294922,-0.22808603942394257,-8.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+3,"[+, max, x_3, **3, log, x_1, max, log, +, -3.27, x_6, log, x_3]","(max(x_3,(log(abs(x_1)))**3)+max(log(abs((-3.27+x_6))),log(abs(x_3))))",12.352103233337402,0.014898879453539848,-13.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+4,"[log, **3, **3, *, x_3, x_3]",log(abs((((x_3*x_3))**3)**3)),22.334983825683594,-0.35884949564933777,-6.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+5,"[**3, **3, log, **3, x_1]",((log(abs((x_1)**3)))**3)**3,84.6114501953125,-0.4201226234436035,-5.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+6,"[**3, log, log, **3, x_0]",(log(abs(log(abs((x_0)**3)))))**3,85.91106414794922,-0.4299476444721222,-5.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+7,"[**3, **3, log, x_0]",((log(abs(x_0)))**3)**3,84.61869812011719,-0.4299473762512207,-4.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+8,"[**3, **3, log, log, x_4]",((log(abs(log(abs(x_4)))))**3)**3,22.431339263916016,-0.41436392068862915,-5.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+9,"[+, log, max, -3.82, x_4, *, +, -4.72, x_1, +, max, -1.09, x_6, x_1]","(log(abs(max(-3.82,x_4)))+((-4.72+x_1)*(max(-1.09,x_6)+x_1)))",9.816814422607422,0.10793410241603851,-14.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false
+10,"[+, log, x_4, *, +, -4.72, *, x_3, x_3, +, max, -1.09, x_6, x_1]","(log(abs(x_4))+((-4.72+(x_3*x_3))*(max(-1.09,x_6)+x_1)))",10.462539672851562,0.07176612317562103,-14.0,707,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,heating,42,false

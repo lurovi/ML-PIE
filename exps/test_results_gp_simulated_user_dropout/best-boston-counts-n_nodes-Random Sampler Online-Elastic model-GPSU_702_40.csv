@@ -1,0 +1,18 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed,rerun
+0,"[log, **3, -, x_12, -1.38]",log(abs(((x_12--1.38))**3)),24.927770614624023,-0.2771140933036804,-5.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+1,"[log, **3, **3, -, x_12, -1.38]",log(abs((((x_12--1.38))**3)**3)),24.927772521972656,-0.3212803304195404,-6.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+2,"[max, -, x_5, x_12, **3, **3, **3, x_3]","max((x_5-x_12),(((x_3)**3)**3)**3)",20.933971405029297,-0.22903567552566528,-8.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+3,"[max, -, x_5, x_12, **3, -, **3, x_3, max, x_8, x_3]","max((x_5-x_12),(((x_3)**3-max(x_8,x_3)))**3)",17.67027473449707,-0.13413988053798676,-11.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+4,"[max, -, -, max, x_8, x_5, x_12, x_12, -, -, **3, x_9, x_9, **3, *, x_8, x_4]","max(((max(x_8,x_5)-x_12)-x_12),(((x_9)**3-x_9)-((x_8*x_4))**3))",13.379526138305664,-0.022211873903870583,-17.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+5,"[-, **3, -, -, 4.07, x_12, x_12, x_10]",((((4.07-x_12)-x_12))**3-x_10),24.580902099609375,-0.23744377493858337,-8.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+6,"[max, -, x_5, x_12, **3, +, -, x_3, x_2, **3, -0.61]","max((x_5-x_12),(((x_3-x_2)+(-0.61)**3))**3)",19.257766723632812,-0.16692718863487244,-11.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+7,"[**3, **3, **3, **3, x_5]",((((x_5)**3)**3)**3)**3,50.45368957519531,-0.37338998913764954,-5.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+8,"[max, -, x_5, x_12, **3, +, -, x_3, x_9, **3, -0.61]","max((x_5-x_12),(((x_3-x_9)+(-0.61)**3))**3)",17.71660041809082,-0.15301430225372314,-11.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+9,"[max, x_5, **3, **3, **3, -0.81]","max(x_5,(((-0.81)**3)**3)**3)",31.28531837463379,-0.33681267499923706,-6.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+10,"[log, **3, **3, x_0]",log(abs(((x_0)**3)**3)),58.28513717651367,-0.39008840918540955,-4.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+11,"[max, **3, **3, log, x_10, x_5]","max(((log(abs(x_10)))**3)**3,x_5)",33.53221893310547,-0.36178532242774963,-6.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+12,"[max, **3, **3, **3, -0.61, x_5]","max((((-0.61)**3)**3)**3,x_5)",31.293540954589844,-0.34263479709625244,-6.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+13,"[max, **3, **3, **3, 0.47, x_5]","max((((0.47)**3)**3)**3,x_5)",31.29354476928711,-0.3460124731063843,-6.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+14,"[**3, log, **3, **3, x_2]",(log(abs(((x_2)**3)**3)))**3,76.53009033203125,-0.41861692070961,-5.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+15,"[**3, **3, **3, **3, x_11]",((((x_11)**3)**3)**3)**3,67.80904388427734,-0.41621437668800354,-5.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false
+16,"[max, -, -, max, x_8, x_5, x_12, x_12, **3, -, **3, x_3, max, x_8, x_3]","max(((max(x_8,x_5)-x_12)-x_12),(((x_3)**3-max(x_8,x_3)))**3)",14.165777206420898,-0.0441337488591671,-15.0,702,200,50,200,counts,n_nodes,Random Sampler Online,Elastic model,boston,40,false

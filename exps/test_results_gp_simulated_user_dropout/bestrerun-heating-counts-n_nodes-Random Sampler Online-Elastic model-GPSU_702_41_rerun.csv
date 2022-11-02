@@ -1,0 +1,16 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,9.033137321472168,0.28876179456710815,"[+, +, **3, +, x_1, x_6, +, +, x_6, x_6, +, x_1, x_3, +, log, x_3, +, +, x_6, x_6, -, x_2, x_0]",- x_{0} + x_{1} + x_{2} + x_{3} + x_{6} + x_{6} + x_{6} + x_{6} + \left(x_{1} + x_{6}\right)^{3} + \log{\left(\left|{x_{3}}\right| \right)},true
+1,11.936395645141602,0.0010884366929531097,"[-, log, /, x_4, x_0, *, x_6, **3, -1.92]",- \left(-1.92\right)^{3} x_{6} + \log{\left(\left|{\frac{x_{4}}{x_{0}}}\right| \right)},true
+2,16.899385452270508,-0.2506016194820404,"[log, **3, **3, /, x_3, x_1]",\log{\left(\left|{\left(\left(\frac{x_{3}}{x_{1}}\right)^{3}\right)^{3}}\right| \right)},true
+3,9.277549743652344,0.15677067637443542,"[-, *, x_6, **3, -1.92, +, log, x_4, +, +, x_6, x_2, -, x_2, x_0]",\left(-1.92\right)^{3} x_{6} - \left(- x_{0} + x_{2} + x_{2} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)}\right),true
+4,13.595892906188965,-0.06727010756731033,"[-, log, x_4, *, x_6, **3, -1.92]",- \left(-1.92\right)^{3} x_{6} + \log{\left(\left|{x_{4}}\right| \right)},true
+5,21.557477951049805,-0.335772842168808,"[log, x_3]",\log{\left(\left|{x_{3}}\right| \right)},true
+6,9.035246849060059,0.2794109284877777,"[+, +, **3, +, x_1, x_6, +, +, x_6, x_6, x_6, +, log, x_3, +, +, x_6, x_6, -, x_2, x_0]",- x_{0} + x_{2} + x_{6} + x_{6} + x_{6} + x_{6} + x_{6} + \left(x_{1} + x_{6}\right)^{3} + \log{\left(\left|{x_{3}}\right| \right)},true
+7,16.668540954589844,-0.0990847796201706,"[log, **3, +, log, x_3, *, x_1, x_4]",\log{\left(\left|{\left(x_{1} x_{4} + \log{\left(\left|{x_{3}}\right| \right)}\right)^{3}}\right| \right)},true
+8,21.550373077392578,-0.2912297546863556,"[log, **3, x_3]",\log{\left(\left|{x_{3}^{3}}\right| \right)},true
+9,10.949870109558105,0.12677451968193054,"[+, **3, +, x_6, x_6, +, log, x_3, +, +, x_4, x_2, *, x_1, 4.13]",x_{1} \cdot 4.13 + x_{2} + x_{4} + \left(x_{6} + x_{6}\right)^{3} + \log{\left(\left|{x_{3}}\right| \right)},true
+10,21.591123580932617,-0.3731714189052582,"[**3, log, x_3]",\log{\left(\left|{x_{3}}\right| \right)}^{3},true
+11,14.958405494689941,-0.07537896186113358,"[**3, -, **3, **3, x_4, **3, /, x_6, -1.49]",\left(\left(x_{4}^{3}\right)^{3} - \left(\frac{x_{6}}{-1.49}\right)^{3}\right)^{3},true
+12,9.257196426391602,0.1631479561328888,"[-, *, x_6, **3, -1.92, +, log, x_3, +, +, x_6, x_2, -, x_2, x_0]",\left(-1.92\right)^{3} x_{6} - \left(- x_{0} + x_{2} + x_{2} + x_{6} + \log{\left(\left|{x_{3}}\right| \right)}\right),true
+13,9.752753257751465,0.13265670835971832,"[-, *, x_6, **3, -1.92, +, log, x_3, +, +, x_0, x_2, /, x_4, x_0]",\left(-1.92\right)^{3} x_{6} - \left(x_{0} + x_{2} + \log{\left(\left|{x_{3}}\right| \right)} + \frac{x_{4}}{x_{0}}\right),true
+14,15.32754135131836,-0.09258931130170822,"[log, **3, +, log, x_3, +, x_6, x_3]",\log{\left(\left|{\left(x_{3} + x_{6} + \log{\left(\left|{x_{3}}\right| \right)}\right)^{3}}\right| \right)},true

@@ -1,0 +1,16 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,19.853561401367188,-0.1749364733695984,[x_4],x_{4},true
+1,19.847490310668945,-0.05994671210646629,"[log, x_3]",\log{\left(\left|{x_{3}}\right| \right)},true
+2,9.38316535949707,0.06473201513290405,"[-, max, log, x_0, log, log, x_3, x_6]","- x_{6} + \max\left(\log{\left(\left|{x_{0}}\right| \right)}, \log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+3,12.788111686706543,0.02273491397500038,"[-, max, x_3, log, log, x_3, x_6]","- x_{6} + \max\left(x_{3}, \log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+4,10.836424827575684,0.03310839831829071,"[-, max, x_0, log, log, x_3, x_6]","- x_{6} + \max\left(x_{0}, \log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+5,24.21516990661621,-0.22509825229644775,[x_3],x_{3},true
+6,13.387712478637695,0.001225586631335318,"[-, x_6, log, -, x_4, log, x_4]",x_{6} - \log{\left(\left|{x_{4} - \log{\left(\left|{x_{4}}\right| \right)}}\right| \right)},true
+7,18.0469970703125,-0.020274480804800987,"[+, x_6, log, x_3]",x_{6} + \log{\left(\left|{x_{3}}\right| \right)},true
+8,8.388014793395996,0.07149390131235123,"[-, max, **3, /, x_2, x_1, log, log, x_3, x_6]","- x_{6} + \max\left(\left(\frac{x_{2}}{x_{1}}\right)^{3}, \log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+9,10.267672538757324,0.0487590953707695,"[-, max, -, x_3, *, x_1, x_4, log, log, x_3, x_6]","- x_{6} + \max\left(- x_{1} x_{4} + x_{3}, \log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+10,15.243278503417969,-0.0004077953635714948,"[/, x_3, +, x_1, x_3]",\frac{x_{3}}{x_{1} + x_{3}},true
+11,14.895304679870605,0.0006533190608024597,"[log, log, -, x_3, *, x_1, x_4]",\log{\left(\left|{\log{\left(\left|{x_{1} x_{4} - x_{3}}\right| \right)}}\right| \right)},true
+12,16.774593353271484,-0.0006880005239509046,"[**3, -, x_6, log, log, x_4]",\left(x_{6} - \log{\left(\left|{\log{\left(\left|{x_{4}}\right| \right)}}\right| \right)}\right)^{3},true
+13,19.847461700439453,-0.021460792049765587,"[log, /, x_3, 0.87]",\log{\left(1.14 \left|{x_{3}}\right| \right)},true
+14,17.95406150817871,-0.006330456119030714,"[-, x_6, -, x_4, log, x_4]",x_{6} - \left(x_{4} - \log{\left(\left|{x_{4}}\right| \right)}\right),true

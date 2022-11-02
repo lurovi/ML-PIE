@@ -14,7 +14,7 @@ def latex_format(readable_repr: str) -> str:
     return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
 
 
-folder = '../exps/test_results_gp_traditional_pop200'
+folder = '../exps/test_results_gp_traditional_dropout'
 dataset = 'heating'
 model = 'elastic_model'
 target_model = 'phi'
@@ -32,5 +32,5 @@ df = df.rename(columns={"latex_tree": "readable_tree"})
 df["latex_tree"] = df["readable_tree"].map(latex_format)
 df["problem"] = dataset
 
-target_file = 'C:/Users/giorg/PycharmProjects/ML-PIE/gpresults/' + dataset + '_' + target_model + '.csv'
+target_file = dataset + '_' + target_model + '.csv'
 df.to_csv(target_file, index=False)

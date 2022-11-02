@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[log, **3, x_3]",log(abs((x_3)**3)),21.550373077392578,3.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+1,"[log, x_3]",log(abs(x_3)),21.557477951049805,2.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+2,[x_4],x_4,21.59109878540039,1.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+3,"[log, **3, -, log, x_3, x_0]",log(abs(((log(abs(x_3))-x_0))**3)),16.489973068237305,6.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+4,"[-, **3, max, -, x_4, x_6, x_0, log, x_3]","((max((x_4-x_6),x_0))**3-log(abs(x_3)))",16.33125877380371,9.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+5,"[/, x_4, +, -, +, x_4, 3.82, x_6, -, -, x_0, x_1, x_6]",(x_4/(((x_4+3.82)-x_6)+((x_0-x_1)-x_6))),12.267668724060059,13.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+6,"[+, x_6, log, x_3]",(x_6+log(abs(x_3))),19.513870239257812,4.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+7,"[-, +, -, -, x_0, x_6, x_6, -, -, x_0, x_2, x_6, **3, max, -, x_4, -1.71, +, x_3, x_3]","((((x_0-x_6)-x_6)+((x_0-x_2)-x_6))-(max((x_4--1.71),(x_3+x_3)))**3)",9.975729942321777,20.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+8,"[+, +, x_6, x_2, log, +, /, x_4, x_0, x_3]",((x_6+x_2)+log(abs(((x_4/x_0)+x_3)))),15.444751739501953,10.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+9,"[-, +, -, -, x_0, x_7, x_6, -, -, x_0, x_1, x_6, **3, max, -, x_4, -1.71, log, x_4]","((((x_0-x_7)-x_6)+((x_0-x_1)-x_6))-(max((x_4--1.71),log(abs(x_4))))**3)",11.802154541015625,19.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+10,"[-, **3, max, -, x_4, x_6, x_3, log, **3, /, x_3, x_1]","((max((x_4-x_6),x_3))**3-log(abs(((x_3/x_1))**3)))",13.331835746765137,12.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41
+11,"[log, /, x_3, **3, x_0]",log(abs((x_3/(x_0)**3))),17.844518661499023,5.0,1234.0,700,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,41

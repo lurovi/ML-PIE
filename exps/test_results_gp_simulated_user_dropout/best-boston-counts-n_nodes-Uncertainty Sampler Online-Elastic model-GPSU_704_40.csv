@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed,rerun
+0,"[max, *, x_9, /, x_12, -, -2.01, x_7, -, x_5, x_12]","max((x_9*(x_12/(-2.01-x_7))),(x_5-x_12))",14.414593696594238,-0.19905723631381989,-11.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+1,"[**3, -, -4.64, -, -, x_5, x_12, x_12]",((-4.64-((x_5-x_12)-x_12)))**3,17.609682083129883,-0.5999729037284851,-8.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+2,"[**3, **3, +, 2.36, -, 2.36, x_12]",(((2.36+(2.36-x_12)))**3)**3,24.643199920654297,-0.6448028087615967,-7.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+3,"[log, log, **3, +, 2.36, x_12]",log(abs(log(abs(((2.36+x_12))**3)))),23.964513778686523,-0.6057504415512085,-6.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+4,"[**3, **3, -, max, x_8, 4.96, x_12]","(((max(x_8,4.96)-x_12))**3)**3",24.518878936767578,-0.629176139831543,-7.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+5,"[max, log, **3, **3, x_9, x_12]","max(log(abs(((x_9)**3)**3)),x_12)",32.10724639892578,-0.6588104367256165,-6.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+6,"[**3, log, **3, **3, x_0]",(log(abs(((x_0)**3)**3)))**3,59.34977722167969,-0.6836522817611694,-5.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+7,"[log, **3, **3, **3, x_9]",log(abs((((x_9)**3)**3)**3)),61.086299896240234,-0.6839463710784912,-5.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+8,"[**3, x_4]",(x_4)**3,70.59371185302734,-0.7143205404281616,-2.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false
+9,"[**3, -, -, +, 2.36, x_5, x_12, x_12]",((((2.36+x_5)-x_12)-x_12))**3,21.755313873291016,-0.6047654151916504,-8.0,704,200,50,200,counts,n_nodes,Uncertainty Sampler Online,Elastic model,boston,40,false

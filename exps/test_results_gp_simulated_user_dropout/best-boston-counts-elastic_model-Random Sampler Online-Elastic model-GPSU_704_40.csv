@@ -1,0 +1,11 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed,rerun
+0,"[-, x_12, max, x_3, -, x_5, max, x_10, 0.08]","(x_12-max(x_3,(x_5-max(x_10,0.08))))",14.414316177368164,-0.1073998212814331,59.5,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+1,"[-, x_12, max, x_3, -, x_5, x_12]","(x_12-max(x_3,(x_5-x_12)))",14.466769218444824,-0.13227593898773193,68.29999999999998,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+2,"[-, x_12, max, x_5, -, -2.63, -, x_9, x_12]","(x_12-max(x_5,(-2.63-(x_9-x_12))))",24.447978973388672,-0.17192071676254272,67.39999999999999,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+3,"[-, x_12, max, 0.08, -, x_5, -, x_9, x_3]","(x_12-max(0.08,(x_5-(x_9-x_3))))",14.962530136108398,-0.14700227975845337,67.39999999999999,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+4,"[-, x_12, max, 0.08, -, x_5, x_12]","(x_12-max(0.08,(x_5-x_12)))",15.370203018188477,-0.15321297943592072,68.29999999999998,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+5,"[-, max, 0.08, -, x_5, x_0, x_12]","(max(0.08,(x_5-x_0))-x_12)",16.433101654052734,-0.15809127688407898,68.29999999999998,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+6,"[-, max, 0.08, max, x_5, x_12, x_12]","(max(0.08,max(x_5,x_12))-x_12)",19.735313415527344,-0.165180966258049,60.39999999999999,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+7,"[/, -, x_12, -, -, 0.08, x_12, x_12, 0.08]",((x_12-((0.08-x_12)-x_12))/0.08),32.10724639892578,-0.19677035510540009,75.3,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+8,"[/, -, x_12, max, 0.08, -, x_9, x_12, -4.48]","((x_12-max(0.08,(x_9-x_12)))/-4.48)",30.7441463470459,-0.1896003633737564,67.39999999999999,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false
+9,"[/, -, x_5, -, x_0, -, x_0, x_12, 0.08]",((x_5-(x_0-(x_0-x_12)))/0.08),25.76051902770996,-0.18912802636623383,75.3,704,200,50,200,counts,elastic_model,Random Sampler Online,Elastic model,boston,40,false

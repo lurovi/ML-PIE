@@ -1,0 +1,20 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,14.04715633392334,0.11649812757968903,"[max, max, -, x_5, x_12, -, max, x_3, x_11, log, -4.86, *, max, log, x_12, *, x_12, 3.17, *, x_9, x_7]","\max\left(x_{7} x_{9} \max\left(x_{12} \cdot 3.17, \log{\left(\left|{x_{12}}\right| \right)}\right), - x_{12} + x_{5}, \max\left(x_{11}, x_{3}\right) - \log{\left(4.86 \right)}\right)",true
+1,14.931180953979492,0.053213197737932205,"[max, -, x_5, x_12, *, max, log, x_2, *, x_4, x_12, *, x_9, x_7]","\max\left(x_{7} x_{9} \max\left(x_{12} x_{4}, \log{\left(\left|{x_{2}}\right| \right)}\right), - x_{12} + x_{5}\right)",true
+2,14.927603721618652,0.0683697760105133,"[max, -, x_5, x_12, *, max, /, x_6, x_7, *, x_4, x_12, *, x_9, x_7]","\max\left(x_{7} x_{9} \max\left(x_{12} x_{4}, \frac{x_{6}}{x_{7}}\right), - x_{12} + x_{5}\right)",true
+3,20.40833282470703,-0.02598424442112446,"[max, -, x_5, x_12, **3, *, x_9, x_7]","\max\left(\left(x_{7} x_{9}\right)^{3}, - x_{12} + x_{5}\right)",true
+4,20.933971405029297,-0.04062359407544136,"[max, max, -, x_5, x_12, **3, *, x_2, x_1, x_3]","\max\left(x_{3}, \left(x_{1} x_{2}\right)^{3}, - x_{12} + x_{5}\right)",true
+5,16.440153121948242,0.022771310061216354,"[max, -, x_5, x_12, *, max, log, x_9, *, x_4, x_12, *, x_2, x_7]","\max\left(x_{2} x_{7} \max\left(x_{12} x_{4}, \log{\left(\left|{x_{9}}\right| \right)}\right), - x_{12} + x_{5}\right)",true
+6,25.365036010742188,-0.15620778501033783,"[**3, -, log, 3.45, x_12]",\left(- x_{12} + \log{\left(3.45 \right)}\right)^{3},true
+7,32.496681213378906,-0.17296400666236877,"[log, **3, +, x_12, **3, -3.34]",\log{\left(\left|{\left(x_{12} + \left(-3.34\right)^{3}\right)^{3}}\right| \right)},true
+8,14.96560001373291,0.03793920576572418,"[max, -, x_5, x_12, *, max, log, x_7, *, x_4, x_12, *, x_9, x_7]","\max\left(x_{7} x_{9} \max\left(x_{12} x_{4}, \log{\left(\left|{x_{7}}\right| \right)}\right), - x_{12} + x_{5}\right)",true
+9,23.55148696899414,-0.13137006759643555,"[log, **3, +, x_12, /, x_11, x_11]",\log{\left(\left|{\left(x_{12} + \frac{x_{11}}{x_{11}}\right)^{3}}\right| \right)},true
+10,24.77199363708496,-0.1459157019853592,"[**3, **3, +, x_12, -4.52]",\left(\left(x_{12} - 4.52\right)^{3}\right)^{3},true
+11,59.4599609375,-0.19527019560337067,"[log, log, log, log, x_2]",\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{x_{2}}\right| \right)}}\right| \right)}}\right| \right)}}\right| \right)},true
+12,63.541221618652344,-0.20394109189510345,"[log, **3, log, **3, x_9]",\log{\left(\left|{\log{\left(\left|{x_{9}^{3}}\right| \right)}^{3}}\right| \right)},true
+13,26.98820686340332,-0.17231042683124542,"[**3, +, x_12, -4.52]",\left(x_{12} - 4.52\right)^{3},true
+14,31.296632766723633,-0.17269770801067352,"[max, x_5, **3, *, x_9, *, x_2, x_1]","\max\left(x_{5}, \left(x_{1} x_{2} x_{9}\right)^{3}\right)",true
+15,60.337318420410156,-0.20332348346710205,"[**3, x_9]",x_{9}^{3},true
+16,38.420284271240234,-0.1917611062526703,"[max, **3, log, x_2, x_5]","\max\left(x_{5}, \log{\left(\left|{x_{2}}\right| \right)}^{3}\right)",true
+17,73.2879867553711,-0.20880495011806488,"[**3, **3, log, log, x_3]",\left(\log{\left(\left|{\log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}^{3}\right)^{3},true
+18,15.033833503723145,0.02643907442688942,"[max, -, x_5, x_12, *, max, x_12, *, x_4, x_11, *, x_9, x_7]","\max\left(x_{7} x_{9} \max\left(x_{12}, x_{11} x_{4}\right), - x_{12} + x_{5}\right)",true

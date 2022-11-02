@@ -1,0 +1,23 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,19.847490310668945,-0.009040486067533493,"[log, x_3]",\log{\left(\left|{x_{3}}\right| \right)},true
+1,19.853561401367188,-0.1415337175130844,[x_4],x_{4},true
+2,11.583978652954102,0.12178008258342743,"[-, -, -, x_0, x_6, +, x_0, x_2, log, +, **3, 0.07, *, x_4, x_4]",x_{0} - x_{6} - \left(x_{0} + x_{2}\right) - \log{\left(\left|{x_{4} x_{4} + 0.07^{3}}\right| \right)},true
+3,11.914453506469727,0.0920744314789772,"[max, -, x_0, x_6, log, -, log, -1.65, log, x_4]","\max\left(x_{0} - x_{6}, \log{\left(\left|{\log{\left(\left|{x_{4}}\right| \right)} - \log{\left(1.65 \right)}}\right| \right)}\right)",true
+4,15.012886047363281,0.0407012477517128,"[+, +, x_4, **3, x_4, x_6]",x_{4}^{3} + x_{4} + x_{6},true
+5,10.993569374084473,0.12990373373031616,"[+, +, +, x_2, +, x_1, x_2, log, x_3, +, x_6, +, x_6, x_6]",x_{1} + x_{2} + x_{2} + x_{6} + x_{6} + x_{6} + \log{\left(\left|{x_{3}}\right| \right)},true
+6,12.149118423461914,0.057501859962940216,"[max, -, x_0, x_6, log, -, x_4, log, x_3]","\max\left(x_{0} - x_{6}, \log{\left(\left|{x_{4} - \log{\left(\left|{x_{3}}\right| \right)}}\right| \right)}\right)",true
+7,9.835892677307129,0.13860909640789032,"[-, +, +, log, -0.06, log, x_3, -, x_1, /, x_4, x_4, +, +, +, x_2, x_6, log, x_4, **3, x_4]",x_{1} - \left(x_{2} + x_{4}^{3} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)}\right) + \log{\left(\left|{x_{3}}\right| \right)} + \log{\left(0.06 \right)} - \frac{x_{4}}{x_{4}},true
+8,9.087495803833008,0.21212296187877655,"[-, -, -, -, x_0, x_6, +, x_6, x_5, +, max, x_2, x_3, x_2, +, +, max, -3.94, -3.85, log, x_4, +, +, x_6, x_6, +, x_6, x_1]","x_{0} - x_{6} - \left(x_{2} + \max\left(x_{2}, x_{3}\right)\right) - \left(x_{5} + x_{6}\right) - \left(x_{1} + x_{6} + x_{6} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)} - 3.85\right)",true
+9,24.21516990661621,-0.16234812140464783,[x_3],x_{3},true
+10,13.02771282196045,0.051378071308135986,"[log, -, +, -, 0.42, x_6, log, x_4, x_1]",\log{\left(\left|{x_{1} + x_{6} - \log{\left(\left|{x_{4}}\right| \right)} - 0.42}\right| \right)},true
+11,15.262340545654297,0.04045694321393967,"[log, **3, *, /, x_4, x_1, +, x_2, x_4]",\log{\left(\left|{\left(\frac{x_{4} \left(x_{2} + x_{4}\right)}{x_{1}}\right)^{3}}\right| \right)},true
+12,16.481643676757812,0.0258711576461792,"[log, **3, *, /, x_4, x_1, /, x_4, -3.15]",\log{\left(\left|{\left(\frac{x_{4} x_{4}}{\left(-3.15\right) x_{1}}\right)^{3}}\right| \right)},true
+13,15.36379337310791,0.032732170075178146,"[log, **3, +, x_1, log, x_3]",\log{\left(\left|{\left(x_{1} + \log{\left(\left|{x_{3}}\right| \right)}\right)^{3}}\right| \right)},true
+14,11.575533866882324,0.1296372413635254,"[-, -, -, -, x_0, x_6, +, x_7, x_2, x_1, +, log, x_4, +, -, x_2, x_5, +, x_6, -2.9]",x_{0} - x_{1} - x_{6} - \left(x_{2} + x_{7}\right) - \left(x_{2} - x_{5} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)} - 2.9\right),true
+15,16.737869262695312,0.0240752212703228,"[log, **3, /, x_3, x_1]",\log{\left(\left|{\left(\frac{x_{3}}{x_{1}}\right)^{3}}\right| \right)},true
+16,10.870124816894531,0.13535073399543762,"[-, -, -, -, x_0, x_6, +, x_6, x_2, x_1, +, log, x_4, +, -, x_7, x_5, +, x_6, -2.9]",x_{0} - x_{1} - x_{6} - \left(x_{2} + x_{6}\right) - \left(- x_{5} + x_{6} + x_{7} + \log{\left(\left|{x_{4}}\right| \right)} - 2.9\right),true
+17,16.797710418701172,0.011352192610502243,"[log, **3, /, **3, x_4, x_1]",\log{\left(\left|{\left(\frac{x_{4}^{3}}{x_{1}}\right)^{3}}\right| \right)},true
+18,100.25464630126953,-0.18787157535552979,[-3.85],-3.85,true
+19,11.933917999267578,0.08822397142648697,"[max, -, x_0, x_6, log, -, log, 1.05, log, x_4]","\max\left(x_{0} - x_{6}, \log{\left(\left|{\log{\left(\left|{x_{4}}\right| \right)} - \log{\left(1.05 \right)}}\right| \right)}\right)",true
+20,9.496402740478516,0.17749141156673431,"[-, -, -, -, x_0, x_6, +, x_2, x_5, +, x_6, x_6, +, +, max, -3.94, x_7, log, x_4, +, x_2, +, x_6, x_6]","x_{0} - x_{6} - \left(x_{2} + x_{5}\right) - \left(x_{6} + x_{6}\right) - \left(x_{2} + x_{6} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)} + \max\left(-3.94, x_{7}\right)\right)",true
+21,9.433572769165039,0.20367272198200226,"[-, -, -, -, x_0, x_6, +, x_6, x_5, +, max, x_1, x_3, +, x_2, x_6, +, +, max, -3.94, -3.85, log, x_4, +, +, x_6, x_6, +, x_6, x_1]","x_{0} - x_{6} - \left(x_{5} + x_{6}\right) - \left(x_{2} + x_{6} + \max\left(x_{1}, x_{3}\right)\right) - \left(x_{1} + x_{6} + x_{6} + x_{6} + \log{\left(\left|{x_{4}}\right| \right)} - 3.85\right)",true

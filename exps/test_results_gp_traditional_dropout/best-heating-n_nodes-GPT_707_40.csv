@@ -1,0 +1,13 @@
+,parsable_tree,latex_tree,accuracy,interpretability,ground_truth_value,seed,pop_size,num_gen,num_offsprings,encoder_type,ground_truth_type,sampling,warm-up,data,split_seed
+0,"[log, x_3]",log(abs(x_3)),19.847490310668945,2.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+1,[x_4],x_4,19.853561401367188,1.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+2,"[+, x_6, log, x_4]",(x_6+log(abs(x_4))),18.038414001464844,4.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+3,"[+, x_4, +, x_4, x_6]",(x_4+(x_4+x_6)),15.012886047363281,5.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+4,"[log, *, **3, +, x_6, x_4, **3, /, x_3, x_0]",log(abs((((x_6+x_4))**3*((x_3/x_0))**3))),12.407217025756836,10.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+5,"[+, max, -, max, x_4, x_4, +, 4.17, 2.76, -, log, x_4, *, x_7, x_6, +, x_6, +, -, x_6, x_0, max, x_4, x_2]","(max((max(x_4,x_4)-(4.17+2.76)),(log(abs(x_4))-(x_7*x_6)))+(x_6+((x_6-x_0)+max(x_4,x_2))))",9.258766174316406,24.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+6,"[log, *, +, x_6, x_4, **3, /, x_3, x_0]",log(abs(((x_6+x_4)*((x_3/x_0))**3))),14.829986572265625,9.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+7,"[+, max, -, **3, x_6, +, 4.17, 2.76, -, log, x_4, *, x_7, x_6, +, x_6, +, -, x_6, x_0, max, x_4, x_2]","(max(((x_6)**3-(4.17+2.76)),(log(abs(x_4))-(x_7*x_6)))+(x_6+((x_6-x_0)+max(x_4,x_2))))",9.38546371459961,23.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+8,"[+, max, -, max, x_7, x_1, +, 4.17, 2.76, -, log, x_4, /, x_4, x_1, +, x_6, x_6]","(max((max(x_7,x_1)-(4.17+2.76)),(log(abs(x_4))-(x_4/x_1)))+(x_6+x_6))",9.727154731750488,18.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+9,"[log, log, max, x_3, -, x_3, x_1]","log(abs(log(abs(max(x_3,(x_3-x_1))))))",14.895304679870605,7.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+10,"[+, max, -, x_0, +, 4.17, x_1, log, x_3, +, x_6, +, max, x_2, x_6, x_1]","(max((x_0-(4.17+x_1)),log(abs(x_3)))+(x_6+(max(x_2,x_6)+x_1)))",10.658565521240234,16.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40
+11,"[+, max, -, x_0, +, 4.17, x_1, -, log, x_3, **3, x_0, +, x_6, x_2]","(max((x_0-(4.17+x_1)),(log(abs(x_3))-(x_0)**3))+(x_6+x_2))",10.91211223602295,15.0,1234.0,707,200,50,200,not_spcified,n_nodes,not_specified,not_specified,heating,40

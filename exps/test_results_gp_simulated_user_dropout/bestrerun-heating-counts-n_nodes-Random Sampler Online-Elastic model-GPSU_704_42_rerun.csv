@@ -1,0 +1,14 @@
+,accuracy,interpretability,parsable_tree,latex_tree,rerun
+0,20.00782585144043,-0.3046988844871521,"[log, log, max, x_0, x_3]","\log{\left(\left|{\log{\left(\left|{\max\left(x_{0}, x_{3}\right)}\right| \right)}}\right| \right)}",true
+1,14.725811958312988,-0.07449965924024582,"[+, x_3, max, max, x_3, -, x_4, x_6, x_0]","x_{3} + \max\left(x_{0}, x_{3}, x_{4} - x_{6}\right)",true
+2,14.423858642578125,-0.055592287331819534,"[+, x_3, max, max, x_3, -, x_3, x_6, x_0]","x_{3} + \max\left(x_{0}, x_{3}, x_{3} - x_{6}\right)",true
+3,13.789268493652344,0.031612150371074677,"[**3, -, log, *, x_4, 0.04, +, x_2, +, x_7, x_6]",\left(- (x_{2} + x_{6} + x_{7}) + \log{\left(0.04 \left|{x_{4}}\right| \right)}\right)^{3},true
+4,17.11653709411621,-0.10680600255727768,"[+, x_3, max, max, x_3, -, x_4, x_7, x_0]","x_{3} + \max\left(x_{0}, x_{3}, x_{4} - x_{7}\right)",true
+5,16.19282341003418,-0.0915740430355072,"[+, x_3, max, max, x_3, -, x_1, x_6, x_0]","x_{3} + \max\left(x_{0}, x_{3}, x_{1} - x_{6}\right)",true
+6,21.560138702392578,-0.35175517201423645,"[log, **3, **3, **3, x_3]",\log{\left(\left|{\left(\left(x_{3}^{3}\right)^{3}\right)^{3}}\right| \right)},true
+7,17.284273147583008,-0.1730933040380478,"[log, +, x_3, max, *, 1.75, x_3, x_0]","\log{\left(\left|{x_{3} + \max\left(x_{0}, 1.75 x_{3}\right)}\right| \right)}",true
+8,18.074892044067383,-0.20859511196613312,"[+, x_3, max, **3, **3, x_3, x_0]","x_{3} + \max\left(x_{0}, \left(x_{3}^{3}\right)^{3}\right)",true
+9,22.431339263916016,-0.3777548670768738,"[**3, log, log, log, x_4]",\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{x_{4}}\right| \right)}}\right| \right)}}\right| \right)}^{3},true
+10,96.10690307617188,-0.3847903609275818,"[log, log, log, **3, x_0]",\log{\left(\left|{\log{\left(\left|{\log{\left(\left|{x_{0}^{3}}\right| \right)}}\right| \right)}}\right| \right)},true
+11,11.809560775756836,0.15937931835651398,"[+, x_3, max, max, max, x_4, x_3, -, x_0, x_6, x_0]","x_{3} + \max\left(x_{0}, x_{3}, x_{4}, x_{0} - x_{6}\right)",true
+12,99.91645812988281,-0.38702139258384705,"[log, **3, **3, x_2]",\log{\left(\left|{\left(x_{2}^{3}\right)^{3}}\right| \right)},true
