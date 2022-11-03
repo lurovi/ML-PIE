@@ -153,20 +153,23 @@ class GPSimulatedUserExpsExecutor:
         print(run_id)
 
         if rerun:
-            _ = self.execute_rerun(
+            _ = self.__execute_rerun(
                 optimization_seed=optimization_seed,
                 pop_size=pop_size,
                 num_gen=num_gen,
                 encoder=tree_encoder,
                 trainer=interpretability_estimator,
+                parameters=parameters,
                 filename=run_id + '_rerun',
-                path=self.__folder_name + "/"
+                path=self.__folder_name + "/",
+                ground_truth_type=ground_truth_type
             )
 
         return True
 
-    def execute_rerun(self, optimization_seed: int, pop_size: int, num_gen: int, encoder: TreeEncoder, trainer: Trainer,
-                      filename: str = None, path: str = None):
+    def __execute_rerun(self, optimization_seed: int, pop_size: int, num_gen: int, encoder: TreeEncoder,
+                        trainer: Trainer, parameters: dict, filename: str = None, path: str = None,
+                        ground_truth_type: str = None):
         mse_evaluator = MSEEvaluator(X=self.__dataset["training"][0], y=self.__dataset["training"][1],
                                      linear_scaling=True)
         net_evaluator = NeuralNetTreeEvaluator(encoder=encoder, trainer=trainer, negate=True)
@@ -181,11 +184,16 @@ class GPSimulatedUserExpsExecutor:
         )
         gp_result = gp.run_minimization(seed=optimization_seed)
         front = gp_result['result'].opt
-        parsable_trees, latex_trees, accuracies, interpretabilities, _ = MlPieRun.parse_front(front)
+        ground_truth_computer = None if ground_truth_type is None else self.__ground_truths_names[ground_truth_type]
+        parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = MlPieRun.parse_front(
+            optimal=front,
+            ground_truth_computer=ground_truth_computer)
         df = pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
                           columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
         df['rerun'] = 'true'
+        for k in parameters.keys():
+            df[k] = parameters[k]
         if filename:
-            df.to_csv(path+"bestrerun-"+filename+".csv")
+            df.to_csv(path + "bestrerun-" + filename + ".csv")
         print(filename)
         return df
