@@ -3,11 +3,13 @@ import re
 import pandas as pd
 from sympy import latex, parse_expr
 
+from threads.MlPieRun import MlPieRun
+
 
 def latex_format(readable_repr: str) -> str:
     try:
-        latex_repr = latex(parse_expr(readable_repr, evaluate=False))
-    except TypeError:
+        latex_repr = latex(parse_expr(readable_repr, evaluate=False, local_dict=MlPieRun.create_symbol_function_dict()))
+    except (RuntimeError, TypeError, ZeroDivisionError, Exception) as e:
         latex_repr = readable_repr
     return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
 
