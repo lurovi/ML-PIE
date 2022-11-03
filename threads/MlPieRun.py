@@ -188,8 +188,8 @@ class MlPieRun:
     def safe_latex_format(tree: Node) -> str:
         readable_repr = tree.get_readable_repr().replace("u-", "-")
         try:
-            # latex_repr = MlPieRun.GetLatexExpression(tree)
-            latex_repr = latex(parse_expr(readable_repr, evaluate=False, local_dict=MlPieRun.create_symbol_function_dict()))
+            latex_repr = MlPieRun.GetLatexExpression(tree)
+            # latex_repr = latex(parse_expr(readable_repr, evaluate=False, local_dict=MlPieRun.create_symbol_function_dict()))
         except (RuntimeError, TypeError, ZeroDivisionError, Exception) as e:
             latex_repr = readable_repr
         return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)

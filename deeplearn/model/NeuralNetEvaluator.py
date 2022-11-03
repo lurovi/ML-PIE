@@ -95,3 +95,19 @@ class NeuralNetEvaluator:
             y_pred, _ = Sort.heapsort(y_pred, lambda a, b: a[1] < b[1], inplace=False, reverse=False)
         net.train()
         return EvaluationMetrics.spearman_footrule(y_true, y_pred, lambda a, b: a[2] == b[2])
+
+    @staticmethod
+    def evaluate_average_uncertainty(net: nn.Module, dataloader: DataLoader, device: torch.device) -> float:
+        y_pred = []
+        net.eval()
+        with torch.no_grad():
+            for batch in dataloader:
+                inputs, labels = batch
+                inputs, labels = inputs.to(device).float(), labels.to(device).float()
+                _, uncertainties, _ = net(inputs)
+                for i in range(len(labels)):
+                    curr_input, curr_label, curr_uncert = inputs[i], labels[i].item(), uncertainties[i]
+                    y_pred.append(curr_uncert)
+            aaa = sum(y_pred) / len(y_pred)
+        net.train()
+        return aaa
