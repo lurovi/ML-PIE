@@ -188,8 +188,8 @@ class GPSimulatedUserExpsExecutor:
         parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = MlPieRun.parse_front(
             optimal=front,
             ground_truth_computer=ground_truth_computer)
-        df = pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees)),
-                          columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree'])
+        df = pd.DataFrame(list(zip(accuracies, interpretabilities, ground_truth_values, parsable_trees, latex_trees)),
+                          columns=['accuracy', 'interpretability', 'ground_truth_value', 'parsable_tree', 'latex_tree'])
         df['rerun'] = 'true'
         for k in parameters.keys():
             df[k] = parameters[k]
