@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from pymoo.indicators.hv import HV
 
+use_ground_truth = True
+
 encodings = ['counts']
 datasets = ['boston', 'heating']
 ground_truths = ['elastic_model', 'n_nodes', 'node_wise_weights_sum_1']
@@ -10,7 +12,7 @@ warm_ups = ['Elastic model']
 optimization_seeds = range(700, 710)
 split_seeds = [40, 41, 42]
 
-columns_to_keep = ['accuracy', 'interpretability']
+columns_to_keep = ['accuracy', 'interpretability', 'ground_truth_value']
 
 hypervolume_dataframes = []
 
@@ -37,6 +39,9 @@ for encoding in encodings:
                                     df.interpretability.max() - df.interpretability.min())
                             df['normalized_accuracy'] = (df.accuracy - df.accuracy.min()) / (
                                     df.accuracy.max() - df.accuracy.min())
+                            df['normalized_ground_truth_value'] = (
+                                                                          df.ground_truth_value - df.ground_truth_value.min()) / (
+                                                                          df.ground_truth_value.max() - df.ground_truth_value.min())
 
                             hypervolumes = dict()
 
@@ -44,13 +49,18 @@ for encoding in encodings:
                                 df_sub = df[df['run'] == run]
                                 normalized_accuracy = df_sub['normalized_accuracy'].tolist()
                                 normalized_interpretability = df_sub['normalized_interpretability'].tolist()
-                                points = np.array([np.array(list(a)) for a in
-                                                   zip(normalized_accuracy, normalized_interpretability)])
+                                normalized_ground_truth_value = df_sub['normalized_ground_truth_value'].tolist()
+                                points_i = np.array([np.array(list(a)) for a in
+                                                     zip(normalized_accuracy, normalized_interpretability)])
+                                points_gt = np.array([np.array(list(a)) for a in
+                                                      zip(normalized_accuracy, normalized_ground_truth_value)])
                                 ind = HV(ref_point=ref_point)
-                                hv = ind(points)
-                                hypervolumes[run] = [hv]
+                                hv_i = ind(points_i)
+                                hypervolumes['i_' + run] = [hv_i]
+                                hv_gt = ind(points_gt)
+                                hypervolumes['gt_' + run] = [hv_gt]
 
-                            hypervolume_df = pd.DataFrame(data=hypervolumes)
+                            hypervolume_df = pd.DataFrame(data=[hypervolumes])
                             hypervolume_df['encoding'] = encoding
                             hypervolume_df['dataset'] = dataset
                             hypervolume_df['ground_truth'] = ground_truth
@@ -62,5 +72,6 @@ for encoding in encodings:
                             hypervolume_dataframes.append(hypervolume_df)
 
 hypervolume_dataframe = pd.concat(hypervolume_dataframes).reset_index(inplace=False, drop=True)
-hypervolume_dataframe['delta'] = hypervolume_dataframe['rerun'] - hypervolume_dataframe['original']
+hypervolume_dataframe['i_delta'] = hypervolume_dataframe['i_rerun'] - hypervolume_dataframe['i_original']
+hypervolume_dataframe['gt_delta'] = hypervolume_dataframe['gt_rerun'] - hypervolume_dataframe['gt_original']
 hypervolume_dataframe.to_csv('hypervolumes.csv', index=False)

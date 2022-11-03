@@ -3,6 +3,8 @@ from typing import Dict, Tuple
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_boston
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.feature_selection import SelectFromModel
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import RobustScaler
 from functools import partial
@@ -14,18 +16,69 @@ from util.PicklePersist import PicklePersist
 class SklearnDatasetPreProcessor:
 
     @staticmethod
-    def load_data(dataset_name: str, rng_seed: int, previous_seed: int = None, path_dict: Dict[str, str] = None) -> Dict[str, Tuple[np.ndarray, np.ndarray]]:
+    def load_data(dataset_name: str, rng_seed: int, previous_seed: int = None, path_dict: Dict[str, str] = None) -> \
+            Dict[str, Tuple[np.ndarray, np.ndarray]]:
         if path_dict is None:
             path_dict = {}
         switch = {
-                 "boston":
-                 partial(SklearnDatasetPreProcessor.boston, rng_seed=rng_seed, previous_seed=previous_seed),
-                 "heating":
-                 partial(SklearnDatasetPreProcessor.heating, rng_seed=rng_seed, previous_seed=previous_seed, path=path_dict.get("heating")),
-                 "cooling":
-                 partial(SklearnDatasetPreProcessor.cooling, rng_seed=rng_seed, previous_seed=previous_seed, path=path_dict.get("cooling"))
-                 }
+            "boston":
+                partial(SklearnDatasetPreProcessor.boston, rng_seed=rng_seed, previous_seed=previous_seed),
+            "boston_restricted":
+                partial(SklearnDatasetPreProcessor.boston_restricted, rng_seed=rng_seed, previous_seed=previous_seed),
+            "heating":
+                partial(SklearnDatasetPreProcessor.heating, rng_seed=rng_seed, previous_seed=previous_seed,
+                        path=path_dict.get("heating")),
+            "cooling":
+                partial(SklearnDatasetPreProcessor.cooling, rng_seed=rng_seed, previous_seed=previous_seed,
+                        path=path_dict.get("cooling"))
+        }
         return switch.get(dataset_name)()
+
+    @staticmethod
+    def boston_restricted(rng_seed: int, previous_seed: int = None, n_features: int = 8) -> Dict[
+        str, Tuple[np.ndarray, np.ndarray]]:
+        random.seed(rng_seed)
+        np.random.seed(rng_seed)
+        with warnings.catch_warnings():
+            warnings.simplefilter(action='ignore', category=FutureWarning)
+            data, target = load_boston(return_X_y=True)
+
+        full_scaler = RobustScaler()
+        full_scaler.fit(data)
+        scaled_data = full_scaler.transform(data)
+
+        selector = SelectFromModel(estimator=RandomForestRegressor(), max_features=n_features, threshold=-np.inf)
+        selector.fit(scaled_data, target)
+        data = selector.transform(data)
+
+        df = pd.DataFrame(data=data)
+        df["target"] = target
+
+        df.dropna(inplace=True)
+        df.reset_index(drop=True, inplace=True)
+        # print(df.shape)
+        # print(df.head())
+        train, test = train_test_split(df, test_size=0.1, random_state=rng_seed)
+        train, val = train_test_split(train, test_size=0.2 / 0.9, random_state=rng_seed)
+
+        train_y, val_y, test_y = train["target"].copy(), val["target"].copy(), test["target"].copy()
+        train_X, val_X, test_X = train.drop(["target"], axis=1, inplace=False), val.drop(["target"], axis=1,
+                                                                                         inplace=False), test.drop(
+            ["target"], axis=1, inplace=False)
+
+        scaler = RobustScaler()
+        scaler.fit(train_X)
+
+        X_train, y_train = scaler.transform(train_X), train_y.values
+        X_dev, y_dev = scaler.transform(val_X), val_y.values
+        X_test, y_test = scaler.transform(test_X), test_y.values
+
+        random.seed(previous_seed)
+        np.random.seed(previous_seed)
+
+        return {"training": (X_train, y_train),
+                "validation": (X_dev, y_dev),
+                "test": (X_test, y_test)}
 
     @staticmethod
     def boston(rng_seed: int, previous_seed: int = None) -> Dict[str, Tuple[np.ndarray, np.ndarray]]:
@@ -36,12 +89,12 @@ class SklearnDatasetPreProcessor:
             data, target = load_boston(return_X_y=True)
         df = pd.DataFrame(data=data)
         df["target"] = target
-        #print(df.head())
-        #print(df.shape)
+        # print(df.head())
+        # print(df.shape)
         df.dropna(inplace=True)
         df.reset_index(drop=True, inplace=True)
-        #print(df.shape)
-        #print(df.head())
+        # print(df.shape)
+        # print(df.head())
         train, test = train_test_split(df, test_size=0.1, random_state=rng_seed)
         train, val = train_test_split(train, test_size=0.2 / 0.9, random_state=rng_seed)
 
@@ -50,7 +103,7 @@ class SklearnDatasetPreProcessor:
                                                                                          inplace=False), test.drop(
             ["target"], axis=1, inplace=False)
 
-        #print(train_X.describe(percentiles=[.25, .50, .75, .85, .95]))
+        # print(train_X.describe(percentiles=[.25, .50, .75, .85, .95]))
 
         # scaler = Pipeline([("power", PowerTransformer()), ("minmax", MinMaxScaler())])
         scaler = RobustScaler()
@@ -162,5 +215,5 @@ if __name__ == "__main__":
     for split_seed in [40, 41, 42]:
         for dataset_path in ["heating", "boston"]:
             dataset = SklearnDatasetPreProcessor.load_data(dataset_path, rng_seed=split_seed, previous_seed=100,
-                                                   path_dict=path_dict)
-            PicklePersist.compress_pickle("benchmark/"+dataset_path+"_"+str(split_seed), dataset)
+                                                           path_dict=path_dict)
+            PicklePersist.compress_pickle("benchmark/" + dataset_path + "_" + str(split_seed), dataset)

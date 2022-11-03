@@ -7,7 +7,6 @@ import torch
 from pymoo.algorithms.moo.nsga2 import binary_tournament
 from pymoo.operators.selection.tournament import TournamentSelection
 from torch import nn
-from deeplearn.model.MLPNet import MLPNet
 from deeplearn.model.DropOutMLPNet import DropOutMLPNet
 from deeplearn.trainer.OnlineTwoPointsCompareTrainer import OnlineTwoPointsCompareTrainer
 from deeplearn.trainer.Trainer import Trainer
@@ -35,32 +34,34 @@ from threads.OptimizationThread import OptimizationThread
 from typing import List, Dict
 
 
-class GPSimulatedUserExpsExecutor:
+class GPSimulatedDoubleDatasetUserExpsExecutor:
     def __init__(self, folder_name: str,
-                 data_name: str,
+                 data_names: tuple[str, str],
                  split_seed: int,
                  structure: TreeStructure,
                  ground_truths: List[GroundTruthComputer],
-                 dataset: Dict,
+                 datasets: tuple[Dict, Dict],
                  duplicates_elimination_little_data: np.ndarray,
                  device: torch.device,
                  data_generator: DatasetGenerator,
                  verbose: bool = False):
         self.__verbose = verbose
         self.__folder_name = folder_name
-        self.__data_name = data_name
+        self.__data_names = data_names
         self.__split_seed = split_seed
         self.__data_generator = deepcopy(data_generator)
         self.__device = device
         self.__structure = deepcopy(structure)
         self.__ground_truths = deepcopy(ground_truths)
-        self.__dataset = deepcopy(dataset)
+        self.__datasets = deepcopy(datasets)
         self.__duplicates_elimination_little_data = deepcopy(duplicates_elimination_little_data)
         self.__ground_truths_names = {k.get_name(): k for k in self.__ground_truths}
 
     def execute_gp_run(self, optimization_seed: int, pop_size: int, num_gen: int, encoding_type: str,
-                       ground_truth_type: str, sampler_factory: PairChooserFactory, warmup: str = None,
-                       rerun: bool = False) -> bool:
+                       ground_truth_type: str, sampler_factory: PairChooserFactory, warmup: str = None) -> bool:
+        data_name = self.__data_names[0]
+        dataset = self.__datasets[0]
+
         num_offsprings = pop_size
         termination = ("n_gen", num_gen)
         tournament_selection = TournamentSelection(func_comp=binary_tournament, pressure=2)
@@ -94,7 +95,6 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        # mlp_net = MLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size(), 1, [150, 50])
         mlp_net = DropOutMLPNet(nn.ReLU(), nn.Tanh(), tree_encoder.size())
         interpretability_estimator = OnlineTwoPointsCompareTrainer(mlp_net, self.__device,
                                                                    warmup_trainer_factory=pretrainer_factory,
@@ -103,8 +103,8 @@ class GPSimulatedUserExpsExecutor:
         population_storage = set()
 
         # optimization thread creation
-        problem = RegressionProblemWithNeuralEstimate(self.__dataset["training"][0],
-                                                      self.__dataset["training"][1],
+        problem = RegressionProblemWithNeuralEstimate(dataset["training"][0],
+                                                      dataset["training"][1],
                                                       mutex=mutex,
                                                       tree_encoder=tree_encoder,
                                                       interpretability_estimator=interpretability_estimator
@@ -133,7 +133,7 @@ class GPSimulatedUserExpsExecutor:
                       "pop_size": pop_size, "num_gen": num_gen, "num_offsprings": num_offsprings,
                       "encoder_type": encoding_type, "ground_truth_type": ground_truth_type,
                       "sampling": sampler_factory.create(1).get_string_repr(), "warm-up": warmup_plot,
-                      "data": self.__data_name, "split_seed": self.__split_seed}
+                      "data": data_name, "split_seed": self.__split_seed}
         run_id = parameters["data"] + "-" + parameters["encoder_type"] + "-" + parameters["ground_truth_type"] + "-" + \
                  parameters["sampling"] + "-" + parameters["warm-up"] + "-" + "GPSU" + "_" + str(
             optimization_seed) + "_" + str(self.__split_seed)
@@ -152,25 +152,28 @@ class GPSimulatedUserExpsExecutor:
         automatic_run.run_automatically(delay=5)
         print(run_id)
 
-        if rerun:
-            _ = self.__execute_rerun(
-                optimization_seed=optimization_seed,
-                pop_size=pop_size,
-                num_gen=num_gen,
-                encoder=tree_encoder,
-                trainer=interpretability_estimator,
-                parameters=parameters,
-                filename=run_id + '_rerun',
-                path=self.__folder_name + "/",
-                ground_truth_type=ground_truth_type
-            )
+        _ = self.__execute_cross_run(
+            optimization_seed=optimization_seed,
+            pop_size=pop_size,
+            num_gen=num_gen,
+            encoder=tree_encoder,
+            trainer=interpretability_estimator,
+            parameters=parameters,
+            filename=run_id + '_rerun',
+            path=self.__folder_name + "/",
+            ground_truth_type=ground_truth_type
+        )
 
         return True
 
-    def __execute_rerun(self, optimization_seed: int, pop_size: int, num_gen: int, encoder: TreeEncoder,
-                        trainer: Trainer, parameters: dict, filename: str = None, path: str = None,
-                        ground_truth_type: str = None):
-        mse_evaluator = MSEEvaluator(X=self.__dataset["training"][0], y=self.__dataset["training"][1],
+    def __execute_cross_run(self, optimization_seed: int, pop_size: int, num_gen: int, encoder: TreeEncoder,
+                            trainer: Trainer, parameters: dict, filename: str = None, path: str = None,
+                            ground_truth_type: str = None):
+        old_data_name = self.__data_names[0]
+        data_name = self.__data_names[1]
+        dataset = self.__datasets[1]
+
+        mse_evaluator = MSEEvaluator(X=dataset["training"][0], y=dataset["training"][1],
                                      linear_scaling=True)
         net_evaluator = NeuralNetTreeEvaluator(encoder=encoder, trainer=trainer, negate=True)
         num_offsprings = pop_size
@@ -188,13 +191,14 @@ class GPSimulatedUserExpsExecutor:
         parsable_trees, latex_trees, accuracies, interpretabilities, ground_truth_values = MlPieRun.parse_front(
             optimal=front,
             ground_truth_computer=ground_truth_computer)
-        df = pd.DataFrame(list(
-            zip(accuracies, interpretabilities, ground_truth_values, parsable_trees, latex_trees, ground_truth_values)),
-                          columns=['accuracy', 'interpretability', 'ground_truth_value', 'parsable_tree', 'latex_tree',
+        df = pd.DataFrame(list(zip(accuracies, interpretabilities, parsable_trees, latex_trees, ground_truth_values)),
+                          columns=['accuracy', 'interpretability', 'parsable_tree', 'latex_tree',
                                    'ground_truth_value'])
         df['rerun'] = 'true'
+        parameters['data'] = data_name
         for k in parameters.keys():
             df[k] = parameters[k]
+        filename = filename.replace(old_data_name, data_name)
         if filename:
             df.to_csv(path + "bestrerun-" + filename + ".csv")
         print(filename)
