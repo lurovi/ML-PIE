@@ -3,16 +3,8 @@ import re
 import pandas as pd
 from sympy import latex, parse_expr
 
+from genepro.util import tree_from_prefix_repr
 from threads.MlPieRun import MlPieRun
-
-
-def latex_format(readable_repr: str) -> str:
-    try:
-        latex_repr = latex(parse_expr(readable_repr, evaluate=False, local_dict=MlPieRun.create_symbol_function_dict()))
-    except (RuntimeError, TypeError, ZeroDivisionError, Exception) as e:
-        latex_repr = readable_repr
-    return re.sub(r"(\.[0-9][0-9])(\d+)", r"\1", latex_repr)
-
 
 folder = '../exps/test_results_gp_traditional_dropout'
 datasets = ['heating', 'boston']
@@ -36,7 +28,7 @@ for dataset in datasets:
             df = pd.concat(dataframes)
             df.drop(columns=df.columns[0], axis=1, inplace=True)
             df = df.rename(columns={"latex_tree": "readable_tree"})
-            df["latex_tree"] = df["readable_tree"].map(latex_format)
+            df["latex_tree"] = df["parsable_tree"].map(tree_from_prefix_repr).map(MlPieRun.safe_latex_format)
             df["problem"] = dataset
 
             target_file = dataset + '_' + target_model + '_' + str(split_seed) + '.csv'
