@@ -23,7 +23,8 @@ class MlPieRunProcess(multiprocessing.Process):
                  pair_chooser,
                  optimization_algorithm,
                  termination,
-                 path
+                 path,
+                 timeout=20 * 60
                  ):
         super().__init__()
         self.run_id = run_id
@@ -36,7 +37,7 @@ class MlPieRunProcess(multiprocessing.Process):
         self.termination = termination
         self.path = path
         self.problem = problem
-        self.delay = 1
+        self.timeout = timeout
         self.alert_pipe_parent, self.alert_pipe_child = multiprocessing.Pipe()
         self.request_pipe_parent, self.request_pipe_child = multiprocessing.Pipe()
         self.progress_pipe_parent, self.progress_pipe_child = multiprocessing.Pipe()
@@ -72,8 +73,7 @@ class MlPieRunProcess(multiprocessing.Process):
                               path=self.path,
                               parameters={"problem": self.problem})
         ml_pie_run.start()
-        # need to check better this
-        while True:
+        while self.alert_pipe_child.poll(self.timeout):
             message = self.alert_pipe_child.recv()
             if message == 'join':
                 ml_pie_run.join()
@@ -92,7 +92,9 @@ class MlPieRunProcess(multiprocessing.Process):
             elif message == 'pareto':
                 pareto_front = ml_pie_run.get_pareto_front()
                 self.pareto_pipe_child.send(pareto_front)
-                break
+                print(self.run_id + ' correctly ended')
+                return
+        print(self.run_id + ' timed out')
 
     def join(self, timeout: Optional[float] = ...) -> None:
         self.alert_pipe_parent.send("join")
