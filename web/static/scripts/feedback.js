@@ -62,7 +62,8 @@ function retrieveModels(){
         }
         else if (equals && retryCounter >= maxRetries){
             console.log("Equal models encountered, sending back the same feedback.");
-            return provideFeedback(lastFeedback);
+            provideFeedback(lastFeedback);
+            return retrieveModels();
         }
         // models
         $("#div-models-container").attr("hidden", false);
