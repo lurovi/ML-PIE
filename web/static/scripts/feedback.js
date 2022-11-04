@@ -53,6 +53,7 @@ function retrieveModels(){
         for (var i = 0; i < 2; i++) {
             if (!(lastModels[i] === data.models[i]["latex"])){
                 equals = false;
+                retryCounter = 0;
             }
         }
         if (equals && retryCounter < maxRetries){
