@@ -3,6 +3,10 @@ const progressRetrievalInterval = setInterval(function(){
 }, 3000);
 
 let lastProgressPercentage = 0;
+let lastModels = ["",""];
+let lastFeedback = 1;
+let retryCounter = 0;
+const maxRetries = 1;
 
 $(window).resize(function () {
     w = $("h4.mb-0").width()/4;
@@ -44,11 +48,29 @@ function retrieveModels(){
       if("over" in data){
         optimizationOver();
       } else {
+        // check for equality first
+        let equals = true;
+        for (var i = 0; i < 2; i++) {
+            if (!(lastModels[i] === data.models[i]["latex"])){
+                equals = false;
+            }
+        }
+        if (equals && retryCounter < maxRetries){
+            console.log("Equal models encountered, trying to fetch again.");
+            retryCounter = retryCounter + 1;
+            return retrieveModels();
+        }
+        else if (equals && retryCounter >= maxRetries){
+            console.log("Equal models encountered, sending back the same feedback.");
+            return provideFeedback(lastFeedback);
+        }
+        // models
         $("#div-models-container").attr("hidden", false);
         $("#div-loading-img").attr("hidden", true);
         formula_latex = $("h4.mb-0");
         for (var i = 0; i < 2; i++) {
           let new_model = data.models[i]["latex"];
+          lastModels[i] = data.models[i]["latex"]
           formula_latex[i].innerHTML = "$$" + new_model + "$$";
           w = $("h4.mb-0").width()/5;
           f_size = Math.min(1.5, w / new_model.length);
@@ -62,6 +84,7 @@ function retrieveModels(){
 }
 
 function provideFeedback(feedback){
+    lastFeedback = feedback;
     $.ajax({
       type: "POST",
       url: "provideFeedback",
