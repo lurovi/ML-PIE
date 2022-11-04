@@ -1,7 +1,8 @@
-import torch
-import torch.nn as nn
 import statistics
 from typing import Any, List, Tuple
+
+import torch
+import torch.nn as nn
 
 
 class DropOutMLPNet(nn.Module):
@@ -36,22 +37,25 @@ class DropOutMLPNet(nn.Module):
         return x
 
     def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, List[float], torch.Tensor]:
-        uncertainty: List[float] = []
+        uncertainties: List[float] = []
         predictions: List[float] = []
         if self.training:
             out: torch.Tensor = self.__apply_layers(x)
         else:
             z: torch.Tensor = x.detach().clone()
-            uncert: List = [self.__apply_layers(z) for _ in range(self.__num_uncertainty_samples)]
-            for i in range(x.size(0)):
-                curr_uncert: List = []
-                for j in range(len(uncert)):
-                    curr_uncert.append(uncert[j][i][0].item())
-                mu = statistics.mean(curr_uncert)
-                uncertainty.append(statistics.pstdev(curr_uncert, mu))
+            multiple_predictions: List = [self.__apply_layers(z) for _ in range(self.__num_uncertainty_samples)]
+            for input_index in range(x.size(0)):
+                multiple_predictions_for_current_input: List = []
+                for prediction_index in range(len(multiple_predictions)):
+                    multiple_predictions_for_current_input.append(
+                        multiple_predictions[prediction_index][input_index][0].item()
+                    )
+                mu = statistics.mean(multiple_predictions_for_current_input)
+                uncertainty = statistics.pstdev(multiple_predictions_for_current_input, mu)
+                uncertainties.append(uncertainty)
                 predictions.append(mu)
             out: torch.Tensor = torch.tensor(predictions, dtype=torch.float32).reshape(-1, 1)
-        return out, uncertainty, torch.tensor(1, dtype=torch.float32)
+        return out, uncertainties, torch.tensor(1, dtype=torch.float32)
 
     def number_of_output_neurons(self) -> int:
         return self.__output_layer_size
