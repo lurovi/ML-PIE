@@ -4,6 +4,8 @@ from pymoo.indicators.hv import HV
 
 use_ground_truth = True
 
+folder = 'D://Research//ML-PIE//gp_simulated//test_results_gp_simulated_user_dropout//'
+
 encodings = ['counts']
 datasets = ['boston', 'heating']
 ground_truths = ['elastic_model', 'n_nodes', 'node_wise_weights_sum_1']
@@ -25,7 +27,7 @@ for encoding in encodings:
                 for warm_up in warm_ups:
                     for optimization_seed in optimization_seeds:
                         for split_seed in split_seeds:
-                            name = 'test_results_gp_simulated_user_dropout/best-' + dataset + '-' + encoding + '-' + ground_truth + '-' + active_learning + '-' + warm_up + '-GPSU_' + str(
+                            name = folder + 'best-' + dataset + '-' + encoding + '-' + ground_truth + '-' + active_learning + '-' + warm_up + '-GPSU_' + str(
                                 optimization_seed) + '_' + str(split_seed)
                             original_filename = name + '.csv'
                             rerun_filename = name.replace('best', 'bestrerun') + '_rerun.csv'
@@ -56,9 +58,9 @@ for encoding in encodings:
                                                       zip(normalized_accuracy, normalized_ground_truth_value)])
                                 ind = HV(ref_point=ref_point)
                                 hv_i = ind(points_i)
-                                hypervolumes['i_' + run] = [hv_i]
+                                hypervolumes['i_' + run] = hv_i
                                 hv_gt = ind(points_gt)
-                                hypervolumes['gt_' + run] = [hv_gt]
+                                hypervolumes['gt_' + run] = hv_gt
 
                             hypervolume_df = pd.DataFrame(data=[hypervolumes])
                             hypervolume_df['encoding'] = encoding
