@@ -45,7 +45,8 @@ class GPSimulatedUserExpsExecutor:
                  duplicates_elimination_little_data: np.ndarray,
                  device: torch.device,
                  data_generator: DatasetGenerator,
-                 verbose: bool = False):
+                 verbose: bool = False,
+                 method_sleep: str = "random_uniform"):
         self.__verbose = verbose
         self.__folder_name = folder_name
         self.__data_name = data_name
@@ -57,6 +58,7 @@ class GPSimulatedUserExpsExecutor:
         self.__dataset = deepcopy(dataset)
         self.__duplicates_elimination_little_data = deepcopy(duplicates_elimination_little_data)
         self.__ground_truths_names = {k.get_name(): k for k in self.__ground_truths}
+        self.__method_sleep = method_sleep
 
     def execute_gp_run(self, optimization_seed: int, pop_size: int, num_gen: int, encoding_type: str,
                        ground_truth_type: str, sampler_factory: PairChooserFactory, warmup: str = None,
@@ -149,7 +151,7 @@ class GPSimulatedUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        automatic_run.run_automatically(delay=5)
+        automatic_run.run_automatically(delay=5, method_sleep=self.__method_sleep)
         print(run_id)
 
         if rerun:
