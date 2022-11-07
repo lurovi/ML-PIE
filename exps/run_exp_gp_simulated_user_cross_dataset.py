@@ -36,7 +36,7 @@ if __name__ == "__main__":
     idx = 1
     folder_name = "test_results_gp_cross_dataset"
     for split_seed in [40, 41, 42]:
-        for data_path_files in [("boston_restricted", "heating")]:
+        for data_path_files in [("heating", "boston_restricted"), ("boston_restricted", "heating")]:
             structure, ground_truths, _, duplicates_elimination_little_data = ExpsUtil.create_structure(
                 data_path_files[0], split_seed=split_seed, path_dict=path_dict)
             dataset0 = SklearnDatasetPreProcessor.load_data(data_path_files[0], rng_seed=split_seed, previous_seed=100,
