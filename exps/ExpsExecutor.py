@@ -113,8 +113,9 @@ class ExpsExecutor:
     def create_dict_experiment_nn_ranking_online(self, folder, encoding_type, ground_truth_type,
                                                  amount_of_feedback, activation_func,
                                              final_activation_func, hidden_layer_sizes, device, sampler,
-                                             warmup=None, eval_method="footrule"):
-        df = {"Amount of feedback": [], "Spearman footrule": [], "Encoding": [], "Ground-truth": [],
+                                             warmup=None):
+        df = {"Amount of feedback": [], "Spearman footrule": [], "Average uncertainty": [],
+              "Encoding": [], "Ground-truth": [],
               "Sampling": [], "Warm-up": [], "Seed": []}
         verbose = False
         repr_plot = encoding_type[0].upper() + encoding_type[1:]
@@ -156,15 +157,16 @@ class ExpsExecutor:
                                                                 sampler=sampler, X_tr=X_tr,
                                                                 y_tr=y_tr, verbose=verbose,
                                                                 valloader=validation, repr_plot=repr_plot, ground_plot=ground_plot,
-                                                                sampl_plot=sampl_plot, warmup_plot=warmup_plot,
-                                                                eval_method=eval_method)
+                                                                sampl_plot=sampl_plot, warmup_plot=warmup_plot
+                                                                )
         exec_res = pool.map(exec_func, list(range(self.__starting_seed, self.__starting_seed + self.__num_repeats)))
         pool.close()
         pool.join()
         for l in exec_res:
-            for curr_train_index, curr_ftrs, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot, curr_seed_val in l:
+            for curr_train_index, curr_ftrs, curr_uncert, curr_repr_plot, curr_ground_plot, curr_sampl_plot, curr_warmup_plot, curr_seed_val in l:
                 df["Amount of feedback"].append(curr_train_index)
                 df["Spearman footrule"].append(curr_ftrs)
+                df["Average uncertainty"].append(curr_uncert)
                 df["Encoding"].append(curr_repr_plot)
                 df["Ground-truth"].append(curr_ground_plot)
                 df["Sampling"].append(curr_sampl_plot)
@@ -268,19 +270,12 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
                                                                 sampler: PairSamplerFactory, X_tr: torch.Tensor,
                                                                 y_tr: torch.Tensor, verbose: bool,
                                                                 valloader: Dataset, repr_plot: str, ground_plot: str,
-                                                                sampl_plot: str, warmup_plot: str,
-                                                                eval_method: str) -> List:
+                                                                sampl_plot: str, warmup_plot: str
+                                                                ) -> List:
     curr_seed = exec_ind
     random.seed(curr_seed)
     np.random.seed(curr_seed)
     torch.manual_seed(curr_seed)
-
-    if eval_method == "footrule":
-        eval_func = NeuralNetEvaluator.evaluate_ranking
-    elif eval_method == "uncertainty":
-        eval_func = NeuralNetEvaluator.evaluate_average_uncertainty
-    else:
-        raise AttributeError(f"{eval_method} is not a valid evaluation method.")
 
     g_valloader = torch.Generator()
     g_valloader.manual_seed(curr_seed)
@@ -299,6 +294,7 @@ def parallel_execution_create_dict_experiment_nn_ranking_online(exec_ind: int, a
         loss_epoch_array = trainer.fit()
         if verbose and idx == amount_of_feedback - 1:
             print(f"Loss: {loss_epoch_array[0]}")
-        this_ftrs = eval_func(trainer.get_net(), valloader, device)
-        results.append((idx + 1, this_ftrs, repr_plot, ground_plot, sampl_plot, warmup_plot, curr_seed))
+        this_ftrs = NeuralNetEvaluator.evaluate_ranking(trainer.get_net(), valloader, device)
+        this_uncert = NeuralNetEvaluator.evaluate_average_uncertainty(trainer.get_net(), valloader, device)
+        results.append((idx + 1, this_ftrs, this_uncert, repr_plot, ground_plot, sampl_plot, warmup_plot, curr_seed))
     return results

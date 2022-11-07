@@ -106,7 +106,7 @@ if __name__ == "__main__":
                     df_list.append(exp_exec.create_dict_experiment_nn_ranking_online(folder_name, enc, gro,
                                                  amount_of_feedback, nn.ReLU(),
                                              nn.Tanh(), [150, 50], device, sampler=unc,
-                                             warmup=war, eval_method="uncertainty"))
+                                             warmup=war))
 
     df = PlotGenerator.merge_dictionaries_of_list(df_list)
     PicklePersist.compress_pickle(folder_name+"/dict_res_uncertainty", pd.DataFrame(df))
