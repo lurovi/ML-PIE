@@ -30,6 +30,7 @@ $("#btn-undo").on("click", function(){
 
 $("#btn-submit").on("click", function(){
     submitSurvey();
+    $("#btn-submit").attr("disabled", true);
     if(localStorage.getItem("next") != null){
         localStorage.setItem("problem", localStorage.getItem("next"));
         localStorage.removeItem("next");

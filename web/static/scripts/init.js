@@ -19,5 +19,7 @@ $("#btn-proceed").on("click",function() {
           localStorage.setItem("problem", data.problem);
           window.location = window.location.protocol + "//" + window.location.host + "/feedback";
         }
+    ).fail(() => {$("#btn-proceed").attr("disabled", false);}
     );
+    $("#btn-proceed").attr("disabled", true);
 })
