@@ -15,8 +15,16 @@ class PopulationAccumulator(Callback):
         self.__iterations_counter = -1
 
     def notify(self, algorithm):
+        old_population = set()
+        for old_individual in self.population_storage:
+            old_population.add(old_individual)
         for p in algorithm.pop:
-            self.population_storage.add(deepcopy(p.X[0]))
+            individual = deepcopy(p.X[0])
+            old_population.discard(individual)
+            self.population_storage.add(individual)
+        for old_individual in old_population:
+            self.population_storage.discard(old_individual)
+        print(self.__iterations_counter, " pop size ", len(self.population_storage))
         self.population_non_empty.set()
         self.__iterations_counter += 1
 
