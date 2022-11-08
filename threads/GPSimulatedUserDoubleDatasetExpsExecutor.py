@@ -149,7 +149,7 @@ class GPSimulatedDoubleDatasetUserExpsExecutor:
         random.seed(optimization_seed)
         np.random.seed(optimization_seed)
         torch.manual_seed(optimization_seed)
-        automatic_run.run_automatically(delay=5)
+        automatic_run.run_automatically(delay=5, method_sleep="constant_rate")
         print(run_id)
 
         _ = self.__execute_cross_run(

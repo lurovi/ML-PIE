@@ -60,7 +60,7 @@ if __name__ == "__main__":
                                                                                                         verbose=False)
             for encoding_type_str in ["counts"]:
                 for ground_truth_str in ["node_wise_weights_sum" + "_" + str(idx), "elastic_model", "n_nodes"]:
-                    for sampler_factory in [RandomChooserOnlineFactory(), UncertaintyChooserOnlineFactory()]:
+                    for sampler_factory in [RandomChooserOnlineFactory()]:
                         for warmup in ["elastic_model"]:
                             pp = partial(runner.execute_gp_run, pop_size=pop_size, num_gen=num_gen,
                                          encoding_type=encoding_type_str,
