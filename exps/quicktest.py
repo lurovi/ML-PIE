@@ -9,7 +9,15 @@ from exps.ExpsExecutor import ExpsExecutor
 
 from util.Sort import Sort
 
+
+def softmax_stable(x):
+    return(np.exp(x - np.max(x)) / np.exp(x - np.max(x)).sum())
+
+
 if __name__ == "__main__":
+    l = [2, 2, 2, 2, 1, 1, 1]
+    print(softmax_stable(l))
+    exit(1)
     scaler = MinMaxScaler()
     a = np.random.uniform(-5, 5, (100, 5))
     scaler.fit(a)

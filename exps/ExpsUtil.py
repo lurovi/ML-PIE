@@ -55,11 +55,14 @@ class ExpsUtil:
         internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                           node_impl.Cube(),
                           node_impl.Log(), node_impl.Max()]
+        internal_nodes_probs = [0.19593865, 0.19593865, 0.19593865, 0.19593865,
+                                0.0720818, 0.0720818, 0.0720818]
         normal_distribution_parameters = [(0, 1), (0, 1), (0, 3), (0, 8),
                                           (0, 8),
                                           (0, 30), (0, 15)] + [(0, 0.8)] * n_features + [(0, 0.5)]
         structure = TreeStructure(internal_nodes, n_features, max_depth, ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
-                                  normal_distribution_parameters=normal_distribution_parameters)
+                                  normal_distribution_parameters=normal_distribution_parameters,
+                                  p=internal_nodes_probs)
         structure.register_encoders([CountsEncoder(structure, True, 100), LevelWiseCountsEncoder(structure, True, 100),
                                      OneHotEncoder(structure)])
         ground_truths = [NumNodesNegComputer(), MathElasticModelComputer(),

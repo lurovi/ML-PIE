@@ -93,6 +93,8 @@ duplicates_elimination_data_heating = np.random.uniform(-5.0, 5.0, size=(5, n_fe
 internal_nodes = [node_impl.Plus(), node_impl.Minus(), node_impl.Times(), node_impl.Div(),
                   node_impl.Cube(),
                   node_impl.Log(), node_impl.Max()]
+internal_nodes_probs = [0.19593865, 0.19593865, 0.19593865, 0.19593865,
+                                0.0720818, 0.0720818, 0.0720818]
 normal_distribution_parameters_boston = [(0, 1), (0, 1), (0, 3), (0, 8),
                                          (0, 8),
                                          (0, 30), (0, 15)] + [(0, 0.8)] * n_features_boston + [(0, 0.5)]
@@ -101,10 +103,12 @@ normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8),
                                           (0, 30), (0, 15)] + [(0, 0.8)] * n_features_heating + [(0, 0.5)]
 structure_boston = TreeStructure(internal_nodes, n_features_boston, max_tree_depth,
                                  ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
-                                 normal_distribution_parameters=normal_distribution_parameters_boston)
+                                 normal_distribution_parameters=normal_distribution_parameters_boston,
+                                 p=internal_nodes_probs)
 structure_heating = TreeStructure(internal_nodes, n_features_heating, max_tree_depth,
                                   ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
-                                  normal_distribution_parameters=normal_distribution_parameters_heating)
+                                  normal_distribution_parameters=normal_distribution_parameters_heating,
+                                  p=internal_nodes_probs)
 
 tree_encoder_boston = PicklePersist.decompress_pickle("encoders/boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)

@@ -17,7 +17,8 @@ class TreeStructure:
                  max_depth: int,
                  constants: List[Constant] = None,
                  ephemeral_func: Callable = None,
-                 normal_distribution_parameters: List[Tuple[float, float]] = None):
+                 normal_distribution_parameters: List[Tuple[float, float]] = None, p: List[float] = None):
+        self.__p: List[float] = p
         self.__size: int = len(operators) + n_features + 1
         if normal_distribution_parameters is not None:
             if len(normal_distribution_parameters) != self.__size:
@@ -28,6 +29,10 @@ class TreeStructure:
         self.__symbols: List[str] = [str(op.symb) for op in operators]
         self.__operators: List[Node] = deepcopy(operators)
         self.__n_operators: int = len(operators)
+        if self.__p is None:
+            self.__p = [1.0/float(self.__n_operators)] * self.__n_operators
+        if self.__n_operators != len(self.__p):
+            raise AttributeError(f"The length of probability distribution for internal nodes p is {len(self.__p)} but the number of operators is {self.__n_operators}. These two numbers must be equal.")
         self.__n_features: int = n_features
         self.__features: List[Feature] = [Feature(i) for i in range(n_features)]
         self.__max_depth: int = max_depth
@@ -43,6 +48,9 @@ class TreeStructure:
         self.__n_terminals: int = len(self.__terminals) + (1 if self.__ephemeral_func is not None else 0)
 
         self.__encoding_func_dict: Dict[str, TreeEncoder] = {}
+
+    def get_p(self) -> List[float]:
+        return deepcopy(self.__p)
 
     def get_encoding_type_strings(self) -> List[str]:
         return list(self.__encoding_func_dict.keys())
@@ -132,11 +140,11 @@ class TreeStructure:
 
     def generate_tree(self) -> Node:
         return generate_random_tree(self.__operators, self.__terminals, max_depth=self.get_max_depth(),
-                                    curr_depth=0, ephemeral_func=self.__ephemeral_func)
+                                    curr_depth=0, ephemeral_func=self.__ephemeral_func, p=self.__p)
 
     def safe_subtree_mutation(self, tree: Node) -> Node:
         return safe_subtree_mutation(tree, self.__operators, self.__terminals, max_depth=self.__max_depth,
-                                     ephemeral_func=self.__ephemeral_func)
+                                     ephemeral_func=self.__ephemeral_func, p=self.__p)
 
     def safe_subtree_crossover_two_children(self, tree_1: Node, tree_2: Node) -> Tuple[Node, Node]:
         return safe_subtree_crossover_two_children(tree_1, tree_2, max_depth=self.__max_depth)
