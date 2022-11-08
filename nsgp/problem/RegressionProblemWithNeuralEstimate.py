@@ -12,8 +12,7 @@ from nsgp.encoder.TreeEncoder import TreeEncoder
 
 class RegressionProblemWithNeuralEstimate(Problem):
     def __init__(self, X: np.ndarray, y: np.ndarray, mutex: threading.Lock = None, tree_encoder: TreeEncoder = None,
-                 interpretability_estimator: Trainer = None, linear_scaling: bool = True, test_X: np.ndarray = None,
-                 test_y: np.ndarray = None):
+                 interpretability_estimator: Trainer = None, linear_scaling: bool = True):
         super().__init__(n_var=1, n_obj=2, n_ieq_constr=0, n_eq_constr=0)
         if y.shape[0] != X.shape[0]:
             raise AttributeError(
@@ -31,8 +30,6 @@ class RegressionProblemWithNeuralEstimate(Problem):
         self.__uncertainties = []
         self.__first_pop = None
         self.__first_pop_uncertainties = []
-        self.__test_X: np.ndarray = test_X
-        self.__test_y: np.ndarray = test_y
 
     def _evaluate(self, x, out, *args, **kwargs):
         if self.mutex is not None:
@@ -45,8 +42,7 @@ class RegressionProblemWithNeuralEstimate(Problem):
         cached_fitness = kwargs.get("fitness")
         if self.__first_pop is None:
             first_pop = x
-            encodings_first_pop = np.array(
-                [self.__tree_encoder.encode(first_pop[i, 0], True) for i in range(len(first_pop))])
+            encodings_first_pop = np.array([self.__tree_encoder.encode(first_pop[i, 0], True) for i in range(len(first_pop))])
             encodings_first_pop = torch.from_numpy(encodings_first_pop).float()
             self.__first_pop = encodings_first_pop
         out["F"] = np.empty((len(x), 2), dtype=np.float32)
@@ -77,27 +73,6 @@ class RegressionProblemWithNeuralEstimate(Problem):
 
         _, uncertainty, _ = self.__interpretability_estimator.predict(self.__first_pop)
         self.__first_pop_uncertainties.append(uncertainty)
-
-    def test_individual(self, tree) -> tuple[float, float]:
-        prediction: np.ndarray = np.core.umath.clip(tree(self.__X), -1e+10, 1e+10)
-        test_prediction: np.ndarray = np.core.umath.clip(tree(self.__test_X), -1e+10, 1e+10)
-        if self.__linear_scaling:
-            slope, intercept = compute_linear_scaling(self.__y, prediction)
-            slope = np.core.umath.clip(slope, -1e+10, 1e+10)
-            intercept = np.core.umath.clip(intercept, -1e+10, 1e+10)
-            prediction = intercept + np.core.umath.clip(slope * prediction, -1e+10, 1e+10)
-            prediction = np.core.umath.clip(prediction, -1e+10, 1e+10)
-            test_prediction = intercept + np.core.umath.clip(slope * test_prediction, -1e+10, 1e+10)
-            test_prediction = np.core.umath.clip(test_prediction, -1e+10, 1e+10)
-        train_mse: float = np.square(np.core.umath.clip(prediction - self.__y, -1e+20, 1e+20)).sum() / float(
-            self.__n_records)
-        test_mse: float = np.square(np.core.umath.clip(test_prediction - self.__test_y, -1e+20, 1e+20)).sum() / float(
-            self.__test_X.shape[0])
-        if train_mse > 1e+20:
-            train_mse = 1e+20
-        if test_mse > 1e+20:
-            test_mse = 1e+20
-        return train_mse, test_mse
 
     def get_uncertainties(self):
         return self.__uncertainties
