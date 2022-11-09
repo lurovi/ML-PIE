@@ -68,9 +68,9 @@ def test_from_folder(folder: str, target_folder: str = None):
 
 
 if __name__ == '__main__':
-    base_folder = 'D:\Research\ML-PIE\gp_simulated'
+    base_folder = 'D://Research//ML-PIE//gp_simulated//'
     folders = ['train_results_gp_cross_dataset', 'train_results_gp_simulated_user_constant_rate',
                'train_results_gp_simulated_user_lazy_end', 'train_results_gp_simulated_user_lazy_start']
     for folder in folders:
         target_folder = folder.replace("train", "test")
-        test_from_folder(folder, target_folder)
+        test_from_folder(base_folder + folder, base_folder + target_folder)
