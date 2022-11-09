@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 
+from os import listdir
+from os.path import isfile, join
+
 from exps.SklearnDatasetPreProcesser import SklearnDatasetPreProcessor
 from genepro.node import Node
 from genepro.util import compute_linear_scaling, tree_from_prefix_repr
@@ -29,7 +32,9 @@ def test_individual(tree: Node, X: np.ndarray, y: np.ndarray, X_test: np.ndarray
     return train_mse, test_mse
 
 
-def test_from_file(filename: str):
+def test_from_file(filename: str, target_filename: str = None):
+    if target_filename is None:
+        target_filename = filename.replace(".csv", "_test.csv")
     df = pd.read_csv(filename)
     test_mses = []
     for _, row in df.iterrows():
@@ -46,4 +51,23 @@ def test_from_file(filename: str):
         _, test_mse = test_individual(tree, training_X, training_y, test_X, test_y, True)
         test_mses.append(test_mse)
     df["test_mse"] = test_mses
-    df.to_csv(filename.replace(".csv", "_test.csv"), index=False)
+    df.to_csv(target_filename, index=False)
+
+
+def test_from_folder(folder: str, target_folder: str = None):
+    for file in listdir(folder):
+        filename = join(folder, file)
+        if isfile(filename):
+            if target_folder is not None:
+                test_from_file(filename, join(target_folder, file))
+            else:
+                test_from_file(filename)
+
+
+if __name__ == '__main__':
+    base_folder = 'D:\Research\ML-PIE\gp_simulated'
+    folders = ['train_results_gp_cross_dataset', 'train_results_gp_simulated_user_constant_rate',
+               'train_results_gp_simulated_user_lazy_end', 'train_results_gp_simulated_user_lazy_start']
+    for folder in folders:
+        target_folder = folder.replace("train", "test")
+        test_from_folder(folder, target_folder)
