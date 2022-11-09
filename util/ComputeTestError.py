@@ -4,6 +4,8 @@ import pandas as pd
 from os import listdir
 from os.path import isfile, join
 
+from multiprocessing import Process
+
 from exps.SklearnDatasetPreProcesser import SklearnDatasetPreProcessor
 from genepro.node import Node
 from genepro.util import compute_linear_scaling, tree_from_prefix_repr
@@ -33,14 +35,16 @@ def test_individual(tree: Node, X: np.ndarray, y: np.ndarray, X_test: np.ndarray
 
 
 def test_from_file(filename: str, target_filename: str = None):
+    path_dict = {"heating": "../exps/benchmark/energyefficiency.xlsx", "cooling": "benchmark/energyefficiency.xlsx"}
     if target_filename is None:
         target_filename = filename.replace(".csv", "_test.csv")
     df = pd.read_csv(filename)
+    train_mses = []
     test_mses = []
     for _, row in df.iterrows():
         dataset_name = row['data']
         split_seed = row['split_seed']
-        data = SklearnDatasetPreProcessor.load_data(dataset_name=dataset_name, rng_seed=split_seed)
+        data = SklearnDatasetPreProcessor.load_data(dataset_name=dataset_name, rng_seed=split_seed, path_dict=path_dict)
         parsable_tree = row['parsable_tree']
         tree = tree_from_prefix_repr(parsable_tree)
         training_X = data["training"][0]
@@ -51,20 +55,24 @@ def test_from_file(filename: str, target_filename: str = None):
         test_y = data["test"][1]
         test_X = np.concatenate((validation_X, test_X), axis=0)
         test_y = np.concatenate((validation_y, test_y), axis=None)
-        _, test_mse = test_individual(tree, training_X, training_y, test_X, test_y, True)
+        train_mse, test_mse = test_individual(tree, training_X, training_y, test_X, test_y, True)
+        train_mses.append(train_mse)
         test_mses.append(test_mse)
+    df["train_mse"] = train_mses
     df["test_mse"] = test_mses
+    print(target_filename)
     df.to_csv(target_filename, index=False)
 
 
 def test_from_folder(folder: str, target_folder: str = None):
     for file in listdir(folder):
-        filename = join(folder, file)
-        if isfile(filename):
-            if target_folder is not None:
-                test_from_file(filename, join(target_folder, file))
-            else:
-                test_from_file(filename)
+        if file.startswith("best"):
+            filename = join(folder, file)
+            if isfile(filename):
+                if target_folder is not None:
+                    test_from_file(filename, join(target_folder, file))
+                else:
+                    test_from_file(filename)
 
 
 if __name__ == '__main__':
@@ -73,4 +81,5 @@ if __name__ == '__main__':
                'train_results_gp_simulated_user_lazy_end', 'train_results_gp_simulated_user_lazy_start']
     for folder in folders:
         target_folder = folder.replace("train", "test")
-        test_from_folder(base_folder + folder, base_folder + target_folder)
+        p = Process(target=test_from_folder, args=(base_folder + folder, base_folder + target_folder))
+        p.start()
