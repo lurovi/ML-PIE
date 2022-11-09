@@ -104,11 +104,11 @@ normal_distribution_parameters_heating = [(0, 1), (0, 1), (0, 3), (0, 8),
 structure_boston = TreeStructure(internal_nodes, n_features_boston, max_tree_depth,
                                  ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                  normal_distribution_parameters=normal_distribution_parameters_boston,
-                                 p=internal_nodes_probs)
+                                 p=None)
 structure_heating = TreeStructure(internal_nodes, n_features_heating, max_tree_depth,
                                   ephemeral_func=partial(np.random.uniform, -5.0, 5.0),
                                   normal_distribution_parameters=normal_distribution_parameters_heating,
-                                  p=internal_nodes_probs)
+                                  p=None)
 
 tree_encoder_boston = PicklePersist.decompress_pickle("encoders/boston_counts_encoder.pbz2")
 structure_boston.register_encoder(tree_encoder_boston)

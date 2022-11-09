@@ -24,7 +24,7 @@ class PopulationAccumulator(Callback):
             self.population_storage.add(individual)
         for old_individual in old_population:
             self.population_storage.discard(old_individual)
-        print(self.__iterations_counter, " pop size ", len(self.population_storage))
+
         self.population_non_empty.set()
         self.__iterations_counter += 1
 
