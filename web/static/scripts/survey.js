@@ -132,12 +132,17 @@ function retrieveSurveyModels(){
         $('.model_cont').each(function(i, obj) {
             let formula = $(obj).text().replace("$$", "");
             w = $(obj).width()/5;
-            fsize = Math.min(1.4, w / formula.length);
-            $(obj).attr("style", "font-size: " + fsize + "em;");
+            f_size = Math.min(1.4, w / formula.length);
+            $(obj).attr("style", "font-size: " + f_size + "em;");
         });
-
-        MathJax.typeset();
-        $("#div-loading-img").attr("hidden", true);
+        try {
+          MathJax.typeset();
+        } catch (error) {
+          // MathJax failed
+          console.error(error);
+        } finally {
+          $("#div-loading-img").attr("hidden", true);
+        }
     }).fail(() => {window.location = window.location.protocol + "//" + window.location.host;}
     );
 }
