@@ -45,9 +45,12 @@ def test_from_file(filename: str, target_filename: str = None):
         tree = tree_from_prefix_repr(parsable_tree)
         training_X = data["training"][0]
         training_y = data["training"][1]
-        # TODO merge validation and test here
+        validation_X = data["validation"][0]
+        validation_y = data["validation"][1]
         test_X = data["test"][0]
         test_y = data["test"][1]
+        test_X = np.concatenate((validation_X, test_X), axis=0)
+        test_y = np.concatenate((validation_y, test_y), axis=None)
         _, test_mse = test_individual(tree, training_X, training_y, test_X, test_y, True)
         test_mses.append(test_mse)
     df["test_mse"] = test_mses
