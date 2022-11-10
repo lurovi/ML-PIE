@@ -39,7 +39,7 @@ def test_individual(tree: Node, X: np.ndarray, y: np.ndarray, X_test: np.ndarray
 
 
 def test_from_file(filename: str, target_filename: str = None):
-    path_dict = {"heating": "../exps/benchmark/energyefficiency.xlsx", "cooling": "benchmark/energyefficiency.xlsx"}
+    path_dict = {"heating": "../../exps/benchmark/energyefficiency.xlsx"}
     if target_filename is None:
         target_filename = filename.replace(".csv", "_test.csv")
     df = pd.read_csv(filename)
