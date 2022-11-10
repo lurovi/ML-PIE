@@ -44,8 +44,8 @@ class VisualizeFormula:
                 # tree = replace_specified_operators_with_mean_value_constants(tree, training[0], ["cos", "sin"])
                 train_res, training_mse, slope, intercept = ParetoFrontUtil.find_slope_intercept_training(training[0], training[1], tree)
                 val_res, validation_mse = ParetoFrontUtil.predict_validation_data(validation[0], validation[1], tree, slope, intercept)
-                df.at[j, "training_r2"] = r2_score(train_res, training[1])
-                df.at[j, "validation_r2"] = r2_score(val_res, validation[1])
+                df.at[j, "training_r2"] = r2_score(training[1], train_res)
+                df.at[j, "validation_r2"] = r2_score(validation[1], val_res)
                 df.at[j, "validation_mse"] = validation_mse
                 df.at[j, "training_mse"] = training_mse
                 df.at[j, "parsable_tree"] = str(tree.get_subtree())

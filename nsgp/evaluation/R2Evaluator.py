@@ -32,5 +32,5 @@ class R2Evaluator(TreeEvaluator):
             intercept = np.core.umath.clip(intercept, -1e+10, 1e+10)
             res = intercept + np.core.umath.clip(slope * res, -1e+10, 1e+10)
             res = np.core.umath.clip(res, -1e+10, 1e+10)
-        r2: float = self.__sign * r2_score(res, self.__y)
+        r2: float = self.__sign * r2_score(self.__y, res)
         return r2

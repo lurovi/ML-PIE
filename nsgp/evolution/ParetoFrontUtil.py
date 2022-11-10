@@ -35,9 +35,13 @@ class ParetoFrontUtil:
         return new_custom_front
 
     @staticmethod
-    def apply_tree_to_test_set_for_r2_score(test_set: np.ndarray, test_labels: np.ndarray, tree: Node) -> float:
-        res_test = tree(test_set)
-        return r2_score(res_test, test_labels)
+    def apply_tree_to_test_set_for_r2_score(test_set: np.ndarray, test_labels: np.ndarray, tree: Node, slope: float, intercept: float) -> float:
+        res_test = np.core.umath.clip(tree(test_set), -1e+10, 1e+10)
+        slope = np.core.umath.clip(slope, -1e+10, 1e+10)
+        intercept = np.core.umath.clip(intercept, -1e+10, 1e+10)
+        res_test = intercept + np.core.umath.clip(slope * res_test, -1e+10, 1e+10)
+        res_test = np.core.umath.clip(res_test, -1e+10, 1e+10)
+        return r2_score(test_labels, res_test)
 
     @staticmethod
     def find_slope_intercept_training(training_set: np.ndarray, training_labels: np.ndarray, tree: Node, linear_scaling: bool = True) -> Tuple[np.ndarray, float, float, float]:
