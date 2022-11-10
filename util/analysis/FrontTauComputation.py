@@ -6,7 +6,9 @@ tau = True
 base_folder = 'D:/Research/ML-PIE/gp_simulated/test_results_gp_simulated_user_'
 columns_to_keep = ['parsable_tree', 'latex_tree', 'accuracy', 'interpretability', 'ground_truth_value', 'seed',
                    'encoder_type', 'ground_truth_type', 'sampling', 'warm-up', 'data', 'split_seed', 'train_mse',
-                   'test_mse']
+                   'test_mse', 'train_r2', 'test_r2']
+
+target_folder = 'D:/Research/ML-PIE/'
 
 percentiles = [25, 50, 75]
 
@@ -73,10 +75,8 @@ for run in runs:
 
 accuracy_dataframe = pd.concat(accuracy_dataframes).reset_index(inplace=False, drop=True)
 accuracy_dataframe['tau'] = 'tau' if tau else 'percentile'
-accuracy_dataframe.to_csv('D:/Research/ML-PIE/accuracy_tau.csv' if tau else 'D:/Research/ML-PIE/accuracy.csv',
-                          index=False)
+accuracy_dataframe.to_csv(target_folder + ('accuracy_tau.csv' if tau else 'accuracy.csv'), index=False)
 
 ground_truth_dataframe = pd.concat(ground_truth_dataframes).reset_index(inplace=False, drop=True)
 ground_truth_dataframe['tau'] = 'tau' if tau else 'percentile'
-ground_truth_dataframe.to_csv(
-    'D:/Research/ML-PIE/ground_truth_tau.csv' if tau else 'D:/Research/ML-PIE/ground_truth.csv', index=False)
+ground_truth_dataframe.to_csv(target_folder + ('ground_truth_tau.csv' if tau else 'ground_truth.csv'), index=False)
