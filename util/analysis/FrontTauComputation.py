@@ -10,7 +10,7 @@ columns_to_keep = ['parsable_tree', 'latex_tree', 'accuracy', 'interpretability'
 
 target_folder = 'D:/Research/ML-PIE/'
 
-percentiles = [25, 50, 75]
+percentiles = [0, 25, 50, 75, 100]
 
 runs = ['original', 'rerun']
 rates = ['constant_rate', 'lazy_end', 'lazy_start']
