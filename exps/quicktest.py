@@ -1,11 +1,16 @@
 #from util.setting import *
 import numpy as np
+import pandas as pd
 import torch
+import seaborn as sns
+from matplotlib import pyplot as plt
 from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import MinMaxScaler
 from torch import nn
 
 from exps.ExpsExecutor import ExpsExecutor
+from util.PicklePersist import PicklePersist
+from util.PlotGenerator import PlotGenerator
 
 from util.Sort import Sort
 
@@ -17,6 +22,20 @@ def softmax_stable(x):
 if __name__ == "__main__":
     l = [2, 2, 2, 2, 1, 1, 1]
     print(softmax_stable(l))
+    df = {"Model": ["GP [10]", "Yang et al. [7]", "Kudugunta et al. [9]", "Lee et al. [8]",
+                    "Wei et al. [11]", "Cresci et al. [13]", "Botometer [12]", "Alhosseini et al. [14]", "Miller et al. [15]"]*3,
+          "Score": [0.76, 0.82, 0.82, 0.75, 0.71, 0.48, 0.56, 0.68, 0.48] +
+                    [0.78, 0.85, 0.75, 0.78, 0.75, 0.11, 0.49, 0.73, 0.63] +
+                    [0.52, 0.66, 0.67, 0.49, 0.42, 0.08, 0.16, 0.35, 0.014],
+          "Metric": ["Accuracy"]*9 + ["F1"]*9 + ["MCC"]*9}
+    df = pd.DataFrame(df)
+    sns.set(rc={"figure.figsize": (30, 10)})
+    sns.set_style("darkgrid")
+    g = sns.barplot(df, x="Model", y="Score", hue="Metric", palette="colorblind")
+    g.axhline(0.78)
+    g.axhline(0.76)
+    g.axhline(0.52)
+    plt.show()
     exit(1)
     scaler = MinMaxScaler()
     a = np.random.uniform(-5, 5, (100, 5))
