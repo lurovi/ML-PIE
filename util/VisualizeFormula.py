@@ -7,6 +7,7 @@ from typing import List, Dict
 
 from sklearn.metrics import r2_score
 
+from exps.SklearnDatasetPreProcesser import SklearnDatasetPreProcessor
 from genepro.util import tree_from_prefix_repr, replace_specified_operators_with_mean_value_constants
 from nsgp.evolution.ParetoFrontUtil import ParetoFrontUtil
 from threads.MlPieRun import MlPieRun
@@ -19,13 +20,14 @@ class VisualizeFormula:
 
     @staticmethod
     def read_file(folder_results: str, folder_dataset: str,
-                  file_type: str, dataset_name: str, groundtruth: str, warmup: str, starting_seed: int, num_repeats: int) -> List[pd.DataFrame]:
-        base_path = folder_results+"/"+file_type+"-"+dataset_name+"-"+"counts"+"-"+groundtruth+"-"+"Uncertainty Sampler Online"+"-"+warmup+"-"+"GPSU"+"_"
-        datasettt = PicklePersist.decompress_pickle(folder_dataset + "/" + dataset_name + ".pbz2")
+                  file_type: str, dataset_name: str, groundtruth: str, warmup: str, starting_seed: int, split: int, num_repeats: int) -> List[pd.DataFrame]:
+        base_path = folder_results+"/"+file_type+"-"+dataset_name+"-"+"counts"+"-"+groundtruth+"-"+"Random Sampler Online"+"-"+warmup+"-"+"GPSU"+"_"
+        path_dict = {"heating": "../exps/benchmark/energyefficiency.xlsx", "cooling": "../exps/benchmark/energyefficiency.xlsx"}
+        datasettt = SklearnDatasetPreProcessor.load_data(dataset_name, split, path_dict=path_dict)
         training, validation, test = datasettt["training"], datasettt["validation"], datasettt["test"]
         data = []
         for i in range(starting_seed, starting_seed + num_repeats):
-            file = base_path+str(i)
+            file = base_path+str(i)+"_"+str(split)
             if file_type == "nn":
                 file += ".pth"
             else:
@@ -59,15 +61,18 @@ class VisualizeFormula:
                                             file_type: str, dataset_names: List[str],
                                             groundtruth: str, warmup: str,
                                             percentiles: List[int], index_list: List[int],
-                                            starting_seed: int, num_repeats: int) -> str:
+                                            starting_seed: int, num_splits: List[int]) -> str:
         s = ""
         num_rows_data = str(len(percentiles) * len(index_list))
         num_rows_perc = str(len(index_list))
         for dataset_name in dataset_names:
-            data = VisualizeFormula.read_file(folder_results, folder_dataset, file_type,
+            data = []
+            for n in num_splits:
+                data.extend(VisualizeFormula.read_file(folder_results, folder_dataset, file_type,
                                           dataset_name, groundtruth,
                                           warmup, starting_seed=starting_seed,
-                                          num_repeats=num_repeats)
+                                              split=n,
+                                          num_repeats=1))
             s += "\n"
             s += "\\midrule"
             s += "\n"
@@ -85,14 +90,13 @@ class VisualizeFormula:
                         s += " & "
                     df = data[index]
                     ind = int(np.percentile(df["tao"], perc))
-                    formula = df.loc[ind]["latex_tree"]
                     tree = tree_from_prefix_repr(df.loc[ind]["parsable_tree"])
                     latex_formula = "$"+MlPieRun.safe_latex_format(tree)+"$"
-                    s += " & \\num{" + str(round(df.loc[ind]["training_r2"], 2)) + "}" + " | " + "\\num{" + str(
+                    s += " & \\num{" + str(round(df.loc[ind]["training_r2"], 2)) + "}" + " & " + "\\num{" + str(
                         round(df.loc[ind]["validation_r2"], 2)) + "}" + " & " + latex_formula + " \\\\"
                     s += "\n"
                     if j == len(index_list) - 1 and i != len(percentiles) - 1:
-                        s += "\\cline{2-4}"
+                        s += "\\cline{2-5}"
                         s += "\n"
 
         return s
@@ -125,18 +129,17 @@ class VisualizeFormula:
 
 
 if __name__ == "__main__":
-    starting_seed, num_repeats = 200, 10
+    starting_seed, num_repeats = 700, 10
     percentiles = [90, 50, 10]
-    repeats_id = [2, 3, 4]
+    index_list = [0, 1, 2]
 
-    print(VisualizeFormula.print_latex_table_with_tao_datasets("../exps/test_results_gp_simulated_user",
+    print(VisualizeFormula.print_latex_table_with_tao_datasets("../exps/test_results_gp_simulated_user_dropout",
                                                                "../exps/benchmark", "best",
-                                                               ["boston", "heating", "cooling"
-                                                                ],
+                                                               ["boston", "heating"],
                                                                "node_wise_weights_sum_1",
                                                                "Elastic model",
                                                                percentiles,
-                                                               repeats_id,
+                                                               index_list,
                                                                starting_seed=starting_seed,
-                                                               num_repeats=num_repeats
+                                                               num_splits=[40, 41, 42]
                                                                ))
