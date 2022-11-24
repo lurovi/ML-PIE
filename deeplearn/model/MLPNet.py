@@ -40,6 +40,7 @@ class MLPNet(nn.Module):
         self.__is_single_output: bool = True if self.__output_layer_size == 1 else False
         self.__dropout_in_train: bool = dropout_in_train
         self.__dropout_in_eval: bool = dropout_in_eval
+        self.__dropout = nn.Dropout(self.__dropout_prob)
 
     def __apply_layers(self, x: torch.Tensor, is_in_train_mode: bool) -> Tuple[torch.Tensor, torch.Tensor]:
         z: torch.Tensor = None
@@ -52,7 +53,7 @@ class MLPNet(nn.Module):
                     z = self.__activation_func(z)
                 if is_in_train_mode:
                     if self.__dropout_in_train:
-                        x = nn.Dropout(self.__dropout_prob)(x)
+                        x = self.__dropout(x)
                 else:
                     if self.__dropout_in_eval:
                         x = nn.Dropout(self.__dropout_prob)(x)
@@ -104,7 +105,7 @@ class MLPNet(nn.Module):
 
 
 if __name__ == "__main__":
-    net: nn.Module = MLPNet(nn.ReLU(), nn.Identity(), 50, 1, [], 0.25, True, False, 10)
+    net: nn.Module = MLPNet(nn.ReLU(), nn.Identity(), 50, 1, [50, 50], 0.25, False, False, 10)
     X: torch.Tensor = torch.randint(low=-5, high=5, size=(50000, 50))
     y: torch.Tensor = X.sum(dim=1)
     print(net)
