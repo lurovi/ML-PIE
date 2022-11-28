@@ -38,7 +38,9 @@ class StandardBatchTrainer(Trainer):
                 if self.is_classification_task:
                     labels = self.to_device(labels).long()
                 else:
-                    labels = self.to_device(labels).float().reshape((labels.shape[0], 1))
+                    labels = self.to_device(labels).float()
+                    if self.get_output_layer_size() == 1:
+                        labels = labels.reshape((labels.shape[0], 1))
                 self.optimizer_zero_grad()
                 outputs, _, _ = self.apply(inputs)
                 loss = self.loss_fn(outputs, labels)
