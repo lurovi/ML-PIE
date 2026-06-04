@@ -6,4 +6,4 @@ Genepro version: 1.3.1 -> https://github.com/giorgia-nadizar/genepro
 
 Multi-objective optimization is performed with pymoo -> pip3 install -U pymoo (https://pymoo.org/).
 
-To be updated soon.
+To be updated soon. Meanwhile, check the 'web' branch for the most updated code and results.
